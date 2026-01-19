@@ -6,12 +6,6 @@ description: Create DDoS transit Firewall Rule.
 
 # Infraprotect Firewall Rule
 
-!!! danger "High Risk Operation"
-    This resource includes operations that may cause significant changes. Review carefully before executing.
-
-!!! note "Confirmation Required"
-    Some operations on this resource require explicit confirmation before execution.
-
 List the set of infraprotect_firewall_rule in a namespace.
 
 ## Tools
@@ -43,23 +37,6 @@ List the set of infraprotect_firewall_rule in a namespace.
 | `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
 | `report_fields` | The report_fields parameter | `-` |
 | `report_status_fields` | The report_status_fields parameter | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- infraprotect-firewall-rule
-
-**Modifies:**
-
-- infraprotect-firewall-rule
-
-**Deletes:**
-
-- infraprotect-firewall-rule
-- contained_resources
 
 ## Example Usage
 

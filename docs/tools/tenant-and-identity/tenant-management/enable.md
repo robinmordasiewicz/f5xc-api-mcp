@@ -6,9 +6,6 @@ description: Enable tenant level OTP.
 
 # Enable
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Enable tenant level OTP enables OTP on tenant-level. It enforces each user within a tenant to enable
 OTP.
 
@@ -17,14 +14,6 @@ OTP.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-tenantandidentity-enable-update` | Enable tenant level OTP. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Modifies:**
-
-- enable
 
 ## Example Usage
 

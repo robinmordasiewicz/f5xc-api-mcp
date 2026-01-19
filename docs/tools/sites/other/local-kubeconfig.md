@@ -6,9 +6,6 @@ description: Create K8s Cluster Local Kube Config.
 
 # Local Kubeconfig
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Returns list of all local active kubeconfig minted for this site.
 
 ## Tools
@@ -26,14 +23,6 @@ Returns list of all local active kubeconfig minted for this site.
 |-----------|-------------|--------|
 | `name` | Name | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- local-kubeconfig
 
 ## Example Usage
 

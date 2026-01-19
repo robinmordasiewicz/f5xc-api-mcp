@@ -6,9 +6,6 @@ description: Flow Anomaly detection.
 
 # Top Flow Anomalie
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Request to GET flow anomaly records.
 
 ## Tools
@@ -16,14 +13,6 @@ Request to GET flow anomaly records.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-telemetryandinsights-top-flow-anomalie-create` | Flow Anomaly detection. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- top-flow-anomalie
 
 ## Example Usage
 

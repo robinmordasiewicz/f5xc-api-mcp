@@ -6,9 +6,6 @@ description: GET Status of Terraform for view.
 
 # Statu
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Returned from list of terraform parameter status objects for a given view.
 
 ## Tools

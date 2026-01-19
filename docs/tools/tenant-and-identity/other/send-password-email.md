@@ -6,9 +6,6 @@ description: Send Password Email.
 
 # Send Password Email
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 SendPasswordEmail allows admin user to trigger send password email for a user to update user's
 password.
 Deprecated: use ResetPasswordByAdmin RPC instead.
@@ -26,14 +23,6 @@ Deprecated: use ResetPasswordByAdmin RPC instead.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- send-password-email
 
 ## Example Usage
 

@@ -6,9 +6,6 @@ description: GET Network Policy Set.
 
 # Network Policy Set
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 List the set of network_policy_set in a namespace.
 
 ## Tools

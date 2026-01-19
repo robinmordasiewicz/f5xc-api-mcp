@@ -6,9 +6,6 @@ description: DDoS Alerts.
 
 # Alert
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 RPC to GET a list of Alerts. Alerts are raised when an attack is detected by L3/L4 provider.
 Alerts
 help to start investigate and mitigate any malicious or suspicious activate.
@@ -28,14 +25,6 @@ help to start investigate and mitigate any malicious or suspicious activate.
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
 | `alert_id` | Alert ID | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- alert
 
 ## Example Usage
 

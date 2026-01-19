@@ -6,9 +6,6 @@ description: GET Alert Policy Match.
 
 # Match
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET Alert Policies that match to a set of alert labels for a namespace.
 
 ## Tools
@@ -24,14 +21,6 @@ GET Alert Policies that match to a set of alert labels for a namespace.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- match
 
 ## Example Usage
 

@@ -6,9 +6,6 @@ description: GET API Endpoints Stats for Virtual Host.
 
 # Stat
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET API endpoints stats for the given Virtual Host.
 
 ## Tools

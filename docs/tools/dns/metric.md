@@ -6,9 +6,6 @@ description: DNS Zone Metrics.
 
 # Metric
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Request to GET DNS zone metrics data.
 
 ## Tools
@@ -24,14 +21,6 @@ Request to GET DNS zone metrics data.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- metric
 
 ## Example Usage
 

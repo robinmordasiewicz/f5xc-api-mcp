@@ -6,9 +6,6 @@ description: Configure AWS VPC Site Information.
 
 # Set Cloud Site Info
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Configure AWS VPC Site Information like public, private ips, subnet IDs and others.
 
 ## Tools
@@ -25,14 +22,6 @@ Configure AWS VPC Site Information like public, private ips, subnet IDs and othe
 |-----------|-------------|--------|
 | `name` | Name | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- set-cloud-site-info
 
 ## Example Usage
 

@@ -6,9 +6,6 @@ description: Status
 
 # Statu
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET Status of F5XC components.
 
 ## Tools

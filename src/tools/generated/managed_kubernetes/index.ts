@@ -71,7 +71,13 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         resourceType: "container-registry-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.password.secret_info_oneof",
+        options: ["spec.password.blindfold_secret_info", "spec.password.clear_secret_info"],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_site_management_standard",
@@ -394,7 +400,13 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         resourceType: "container-registry-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.password.secret_info_oneof",
+        options: ["spec.password.blindfold_secret_info", "spec.password.clear_secret_info"],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_site_management_standard",
@@ -470,7 +482,17 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         resourceType: "k8s-cluster-role-binding-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "subject_choice",
+        fieldPath: "spec.subjects[].subject_choice",
+        options: [
+          "spec.subjects[].group",
+          "spec.subjects[].service_account",
+          "spec.subjects[].user",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_site_management_standard",
@@ -795,7 +817,17 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         resourceType: "k8s-cluster-role-binding-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "subject_choice",
+        fieldPath: "spec.subjects[].subject_choice",
+        options: [
+          "spec.subjects[].group",
+          "spec.subjects[].service_account",
+          "spec.subjects[].user",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_site_management_standard",
@@ -871,7 +903,21 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         resourceType: "k8s-cluster-role-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "rule_choice",
+        fieldPath: "spec.rule_choice",
+        options: ["spec.k8s_cluster_role_selector", "spec.policy_rule_list", "spec.yaml"],
+      },
+      {
+        choiceField: "resource_choice",
+        fieldPath: "spec.policy_rule_list.policy_rule[].resource_choice",
+        options: [
+          "spec.policy_rule_list.policy_rule[].non_resource_url_list",
+          "spec.policy_rule_list.policy_rule[].resource_list",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_site_management_standard",
@@ -1196,7 +1242,21 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         resourceType: "k8s-cluster-role-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "rule_choice",
+        fieldPath: "spec.rule_choice",
+        options: ["spec.k8s_cluster_role_selector", "spec.policy_rule_list", "spec.yaml"],
+      },
+      {
+        choiceField: "resource_choice",
+        fieldPath: "spec.policy_rule_list.policy_rule[].resource_choice",
+        options: [
+          "spec.policy_rule_list.policy_rule[].non_resource_url_list",
+          "spec.policy_rule_list.policy_rule[].resource_list",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_site_management_standard",
@@ -1271,7 +1331,26 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         resourceType: "k8s-pod-security-admission-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "admission_mode_choice",
+        fieldPath: "spec.pod_security_admission_specs[].admission_mode_choice",
+        options: [
+          "spec.pod_security_admission_specs[].audit",
+          "spec.pod_security_admission_specs[].enforce",
+          "spec.pod_security_admission_specs[].warn",
+        ],
+      },
+      {
+        choiceField: "policy_type_choice",
+        fieldPath: "spec.pod_security_admission_specs[].policy_type_choice",
+        options: [
+          "spec.pod_security_admission_specs[].baseline",
+          "spec.pod_security_admission_specs[].privileged",
+          "spec.pod_security_admission_specs[].restricted",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_site_management_standard",
@@ -1595,7 +1674,26 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         resourceType: "k8s-pod-security-admission-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "admission_mode_choice",
+        fieldPath: "spec.pod_security_admission_specs[].admission_mode_choice",
+        options: [
+          "spec.pod_security_admission_specs[].audit",
+          "spec.pod_security_admission_specs[].enforce",
+          "spec.pod_security_admission_specs[].warn",
+        ],
+      },
+      {
+        choiceField: "policy_type_choice",
+        fieldPath: "spec.pod_security_admission_specs[].policy_type_choice",
+        options: [
+          "spec.pod_security_admission_specs[].baseline",
+          "spec.pod_security_admission_specs[].privileged",
+          "spec.pod_security_admission_specs[].restricted",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_site_management_standard",
@@ -1671,7 +1769,58 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         resourceType: "k8s-pod-security-policy-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "config_method_choice",
+        fieldPath: "spec.config_method_choice",
+        options: ["spec.psp_spec", "spec.yaml"],
+      },
+      {
+        choiceField: "allowed_capabilities_choice",
+        fieldPath: "spec.psp_spec.allowed_capabilities_choice",
+        options: ["spec.psp_spec.allowed_capabilities", "spec.psp_spec.no_allowed_capabilities"],
+      },
+      {
+        choiceField: "default_capabilities_choice",
+        fieldPath: "spec.psp_spec.default_capabilities_choice",
+        options: ["spec.psp_spec.default_capabilities", "spec.psp_spec.no_default_capabilities"],
+      },
+      {
+        choiceField: "drop_capabilities_choice",
+        fieldPath: "spec.psp_spec.drop_capabilities_choice",
+        options: ["spec.psp_spec.drop_capabilities", "spec.psp_spec.no_drop_capabilities"],
+      },
+      {
+        choiceField: "fs_group_choice",
+        fieldPath: "spec.psp_spec.fs_group_choice",
+        options: ["spec.psp_spec.fs_group_strategy_options", "spec.psp_spec.no_fs_groups"],
+      },
+      {
+        choiceField: "group_choice",
+        fieldPath: "spec.psp_spec.group_choice",
+        options: ["spec.psp_spec.no_run_as_group", "spec.psp_spec.run_as_group"],
+      },
+      {
+        choiceField: "runtime_class_choice",
+        fieldPath: "spec.psp_spec.runtime_class_choice",
+        options: ["spec.psp_spec.no_runtime_class"],
+      },
+      {
+        choiceField: "se_linux_choice",
+        fieldPath: "spec.psp_spec.se_linux_choice",
+        options: ["spec.psp_spec.no_se_linux_options"],
+      },
+      {
+        choiceField: "supplemental_group_choice",
+        fieldPath: "spec.psp_spec.supplemental_group_choice",
+        options: ["spec.psp_spec.no_supplemental_groups", "spec.psp_spec.supplemental_groups"],
+      },
+      {
+        choiceField: "user_choice",
+        fieldPath: "spec.psp_spec.user_choice",
+        options: ["spec.psp_spec.no_run_as_user", "spec.psp_spec.run_as_user"],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_site_management_standard",
@@ -1996,7 +2145,58 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         resourceType: "k8s-pod-security-policy-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "config_method_choice",
+        fieldPath: "spec.config_method_choice",
+        options: ["spec.psp_spec", "spec.yaml"],
+      },
+      {
+        choiceField: "allowed_capabilities_choice",
+        fieldPath: "spec.psp_spec.allowed_capabilities_choice",
+        options: ["spec.psp_spec.allowed_capabilities", "spec.psp_spec.no_allowed_capabilities"],
+      },
+      {
+        choiceField: "default_capabilities_choice",
+        fieldPath: "spec.psp_spec.default_capabilities_choice",
+        options: ["spec.psp_spec.default_capabilities", "spec.psp_spec.no_default_capabilities"],
+      },
+      {
+        choiceField: "drop_capabilities_choice",
+        fieldPath: "spec.psp_spec.drop_capabilities_choice",
+        options: ["spec.psp_spec.drop_capabilities", "spec.psp_spec.no_drop_capabilities"],
+      },
+      {
+        choiceField: "fs_group_choice",
+        fieldPath: "spec.psp_spec.fs_group_choice",
+        options: ["spec.psp_spec.fs_group_strategy_options", "spec.psp_spec.no_fs_groups"],
+      },
+      {
+        choiceField: "group_choice",
+        fieldPath: "spec.psp_spec.group_choice",
+        options: ["spec.psp_spec.no_run_as_group", "spec.psp_spec.run_as_group"],
+      },
+      {
+        choiceField: "runtime_class_choice",
+        fieldPath: "spec.psp_spec.runtime_class_choice",
+        options: ["spec.psp_spec.no_runtime_class"],
+      },
+      {
+        choiceField: "se_linux_choice",
+        fieldPath: "spec.psp_spec.se_linux_choice",
+        options: ["spec.psp_spec.no_se_linux_options"],
+      },
+      {
+        choiceField: "supplemental_group_choice",
+        fieldPath: "spec.psp_spec.supplemental_group_choice",
+        options: ["spec.psp_spec.no_supplemental_groups", "spec.psp_spec.supplemental_groups"],
+      },
+      {
+        choiceField: "user_choice",
+        fieldPath: "spec.psp_spec.user_choice",
+        options: ["spec.psp_spec.no_run_as_user", "spec.psp_spec.run_as_user"],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_site_management_standard",

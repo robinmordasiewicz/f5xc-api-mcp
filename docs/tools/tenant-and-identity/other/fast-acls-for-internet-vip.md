@@ -6,9 +6,6 @@ description: Set FastACLs For Internet VIPs.
 
 # Fast Acls For Internet Vip
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 SetFastACLsForInternetVIPs activates the passed list of FastACLs for Internet VIPs.
 An emtpy list in
 the request will clear FastACLs for Internet VIPs.
@@ -27,14 +24,6 @@ the request will clear FastACLs for Internet VIPs.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- fast-acls-for-internet-vip
 
 ## Example Usage
 

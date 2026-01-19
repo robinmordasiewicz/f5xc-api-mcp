@@ -6,9 +6,6 @@ description: Policy Document.
 
 # Get Policy Document
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GetPolicyDocument API returns secret policy document for the given policy that contains information
 about all the rules in the policy and policy_id.
 This document can be given to F5 Distributed Cloud

@@ -6,9 +6,6 @@ description: GET API Endpoints.
 
 # API Endpoint
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET list of all API Endpoints associated with the HTTP loadbalancer in format suitable for API
 Groups management.
 Deprecated: instead use GetAPIEndpoints in
@@ -39,14 +36,6 @@ VES.I/o.schema.virtual_host.apiepcustomapi.
 | `domains` | List of domains that needs to be sent as part of the request | `-` |
 | `end_time` | Format: unix_timestamp\|RFC 3339 | `-` |
 | `start_time` | Format: unix_timestamp\|RFC 3339 | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- api-endpoint
 
 ## Example Usage
 

@@ -6,9 +6,6 @@ description: Show LTE info.
 
 # Info
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET LTE runtime information.
 
 ## Tools

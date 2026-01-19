@@ -6,9 +6,6 @@ description: Traceroute.
 
 # Traceroute
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Run traceroute to a destination.
 
 ## Tools
@@ -25,14 +22,6 @@ Run traceroute to a destination.
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
 | `site` | Site Name | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- traceroute
 
 ## Example Usage
 

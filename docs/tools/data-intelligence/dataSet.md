@@ -6,9 +6,6 @@ description: GET Data Sets.
 
 # DataSet
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET the list of data sets eligible for the tenant.
 
 ## Tools

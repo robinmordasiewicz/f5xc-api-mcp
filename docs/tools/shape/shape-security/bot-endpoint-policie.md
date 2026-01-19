@@ -6,9 +6,6 @@ description: List All Bot Endpoint Policies And Versions.
 
 # Bot Endpoint Policie
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET all bot endpoint policies and versions.
 
 ## Tools

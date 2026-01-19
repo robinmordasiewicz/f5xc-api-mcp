@@ -6,9 +6,6 @@ description: Forensic Fields.
 
 # Field
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET
 
 ## Tools
@@ -24,14 +21,6 @@ GET
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- field
 
 ## Example Usage
 

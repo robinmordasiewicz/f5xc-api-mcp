@@ -750,7 +750,133 @@ export const blindfoldTools: ParsedOperation[] = [
         resourceType: "secret-management-access-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "auth_params",
+        fieldPath: "spec.access_info.auth_params",
+        options: ["spec.access_info.rest_auth_info", "spec.access_info.vault_auth_info"],
+      },
+      {
+        choiceField: "auth_params",
+        fieldPath: "spec.access_info.rest_auth_info.auth_params",
+        options: [
+          "spec.access_info.rest_auth_info.basic_auth",
+          "spec.access_info.rest_auth_info.headers_auth",
+          "spec.access_info.rest_auth_info.query_params_auth",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.access_info.rest_auth_info.basic_auth.password.secret_info_oneof",
+        options: [
+          "spec.access_info.rest_auth_info.basic_auth.password.blindfold_secret_info",
+          "spec.access_info.rest_auth_info.basic_auth.password.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "max_session_keys_type",
+        fieldPath: "spec.access_info.tls_config.max_session_keys_type",
+        options: [
+          "spec.access_info.tls_config.default_session_key_caching",
+          "spec.access_info.tls_config.disable_session_key_caching",
+          "spec.access_info.tls_config.max_session_keys",
+        ],
+      },
+      {
+        choiceField: "sni_choice",
+        fieldPath: "spec.access_info.tls_config.sni_choice",
+        options: [
+          "spec.access_info.tls_config.disable_sni",
+          "spec.access_info.tls_config.sni",
+          "spec.access_info.tls_config.use_host_header_as_sni",
+        ],
+      },
+      {
+        choiceField: "tls_params_choice",
+        fieldPath: "spec.access_info.tls_config.tls_params_choice",
+        options: [
+          "spec.access_info.tls_config.cert_params",
+          "spec.access_info.tls_config.common_params",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath: "spec.access_info.tls_config.cert_params.validation_params.trusted_ca_choice",
+        options: [
+          "spec.access_info.tls_config.cert_params.validation_params.trusted_ca",
+          "spec.access_info.tls_config.cert_params.validation_params.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "ocsp_stapling_choice",
+        fieldPath:
+          "spec.access_info.tls_config.common_params.tls_certificates[].ocsp_stapling_choice",
+        options: [
+          "spec.access_info.tls_config.common_params.tls_certificates[].custom_hash_algorithms",
+          "spec.access_info.tls_config.common_params.tls_certificates[].disable_ocsp_stapling",
+          "spec.access_info.tls_config.common_params.tls_certificates[].use_system_defaults",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.access_info.tls_config.common_params.tls_certificates[].private_key.secret_info_oneof",
+        options: [
+          "spec.access_info.tls_config.common_params.tls_certificates[].private_key.blindfold_secret_info",
+          "spec.access_info.tls_config.common_params.tls_certificates[].private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath: "spec.access_info.tls_config.common_params.validation_params.trusted_ca_choice",
+        options: [
+          "spec.access_info.tls_config.common_params.validation_params.trusted_ca",
+          "spec.access_info.tls_config.common_params.validation_params.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "auth_params",
+        fieldPath: "spec.access_info.vault_auth_info.auth_params",
+        options: [
+          "spec.access_info.vault_auth_info.app_role_auth",
+          "spec.access_info.vault_auth_info.token",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.access_info.vault_auth_info.app_role_auth.secret_id.secret_info_oneof",
+        options: [
+          "spec.access_info.vault_auth_info.app_role_auth.secret_id.blindfold_secret_info",
+          "spec.access_info.vault_auth_info.app_role_auth.secret_id.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.access_info.vault_auth_info.token.secret_info_oneof",
+        options: [
+          "spec.access_info.vault_auth_info.token.blindfold_secret_info",
+          "spec.access_info.vault_auth_info.token.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "ref_or_selector",
+        fieldPath: "spec.where.ref_or_selector",
+        options: ["spec.where.site", "spec.where.virtual_network", "spec.where.virtual_site"],
+      },
+      {
+        choiceField: "internet_vip_choice",
+        fieldPath: "spec.where.site.internet_vip_choice",
+        options: ["spec.where.site.disable_internet_vip", "spec.where.site.enable_internet_vip"],
+      },
+      {
+        choiceField: "internet_vip_choice",
+        fieldPath: "spec.where.virtual_site.internet_vip_choice",
+        options: [
+          "spec.where.virtual_site.disable_internet_vip",
+          "spec.where.virtual_site.enable_internet_vip",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -1099,7 +1225,133 @@ export const blindfoldTools: ParsedOperation[] = [
         resourceType: "secret-management-access-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "auth_params",
+        fieldPath: "spec.access_info.auth_params",
+        options: ["spec.access_info.rest_auth_info", "spec.access_info.vault_auth_info"],
+      },
+      {
+        choiceField: "auth_params",
+        fieldPath: "spec.access_info.rest_auth_info.auth_params",
+        options: [
+          "spec.access_info.rest_auth_info.basic_auth",
+          "spec.access_info.rest_auth_info.headers_auth",
+          "spec.access_info.rest_auth_info.query_params_auth",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.access_info.rest_auth_info.basic_auth.password.secret_info_oneof",
+        options: [
+          "spec.access_info.rest_auth_info.basic_auth.password.blindfold_secret_info",
+          "spec.access_info.rest_auth_info.basic_auth.password.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "max_session_keys_type",
+        fieldPath: "spec.access_info.tls_config.max_session_keys_type",
+        options: [
+          "spec.access_info.tls_config.default_session_key_caching",
+          "spec.access_info.tls_config.disable_session_key_caching",
+          "spec.access_info.tls_config.max_session_keys",
+        ],
+      },
+      {
+        choiceField: "sni_choice",
+        fieldPath: "spec.access_info.tls_config.sni_choice",
+        options: [
+          "spec.access_info.tls_config.disable_sni",
+          "spec.access_info.tls_config.sni",
+          "spec.access_info.tls_config.use_host_header_as_sni",
+        ],
+      },
+      {
+        choiceField: "tls_params_choice",
+        fieldPath: "spec.access_info.tls_config.tls_params_choice",
+        options: [
+          "spec.access_info.tls_config.cert_params",
+          "spec.access_info.tls_config.common_params",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath: "spec.access_info.tls_config.cert_params.validation_params.trusted_ca_choice",
+        options: [
+          "spec.access_info.tls_config.cert_params.validation_params.trusted_ca",
+          "spec.access_info.tls_config.cert_params.validation_params.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "ocsp_stapling_choice",
+        fieldPath:
+          "spec.access_info.tls_config.common_params.tls_certificates[].ocsp_stapling_choice",
+        options: [
+          "spec.access_info.tls_config.common_params.tls_certificates[].custom_hash_algorithms",
+          "spec.access_info.tls_config.common_params.tls_certificates[].disable_ocsp_stapling",
+          "spec.access_info.tls_config.common_params.tls_certificates[].use_system_defaults",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.access_info.tls_config.common_params.tls_certificates[].private_key.secret_info_oneof",
+        options: [
+          "spec.access_info.tls_config.common_params.tls_certificates[].private_key.blindfold_secret_info",
+          "spec.access_info.tls_config.common_params.tls_certificates[].private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath: "spec.access_info.tls_config.common_params.validation_params.trusted_ca_choice",
+        options: [
+          "spec.access_info.tls_config.common_params.validation_params.trusted_ca",
+          "spec.access_info.tls_config.common_params.validation_params.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "auth_params",
+        fieldPath: "spec.access_info.vault_auth_info.auth_params",
+        options: [
+          "spec.access_info.vault_auth_info.app_role_auth",
+          "spec.access_info.vault_auth_info.token",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.access_info.vault_auth_info.app_role_auth.secret_id.secret_info_oneof",
+        options: [
+          "spec.access_info.vault_auth_info.app_role_auth.secret_id.blindfold_secret_info",
+          "spec.access_info.vault_auth_info.app_role_auth.secret_id.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.access_info.vault_auth_info.token.secret_info_oneof",
+        options: [
+          "spec.access_info.vault_auth_info.token.blindfold_secret_info",
+          "spec.access_info.vault_auth_info.token.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "ref_or_selector",
+        fieldPath: "spec.where.ref_or_selector",
+        options: ["spec.where.site", "spec.where.virtual_network", "spec.where.virtual_site"],
+      },
+      {
+        choiceField: "internet_vip_choice",
+        fieldPath: "spec.where.site.internet_vip_choice",
+        options: ["spec.where.site.disable_internet_vip", "spec.where.site.enable_internet_vip"],
+      },
+      {
+        choiceField: "internet_vip_choice",
+        fieldPath: "spec.where.virtual_site.internet_vip_choice",
+        options: [
+          "spec.where.virtual_site.disable_internet_vip",
+          "spec.where.virtual_site.enable_internet_vip",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -1181,7 +1433,22 @@ export const blindfoldTools: ParsedOperation[] = [
         resourceType: "schemasecret-policy-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "rule_choice",
+        fieldPath: "spec.rule_choice",
+        options: ["spec.rule_list"],
+      },
+      {
+        choiceField: "client_choice",
+        fieldPath: "spec.rule_list.rules[].spec.client_choice",
+        options: [
+          "spec.rule_list.rules[].spec.client_name",
+          "spec.rule_list.rules[].spec.client_name_matcher",
+          "spec.rule_list.rules[].spec.client_selector",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -1520,7 +1787,13 @@ export const blindfoldTools: ParsedOperation[] = [
         resourceType: "schemasecret-policy-rule-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "client_choice",
+        fieldPath: "spec.client_choice",
+        options: ["spec.client_name", "spec.client_name_matcher", "spec.client_selector"],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -1869,7 +2142,13 @@ export const blindfoldTools: ParsedOperation[] = [
         resourceType: "schemasecret-policy-rule-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "client_choice",
+        fieldPath: "spec.client_choice",
+        options: ["spec.client_name", "spec.client_name_matcher", "spec.client_selector"],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -1961,7 +2240,22 @@ export const blindfoldTools: ParsedOperation[] = [
         resourceType: "schemasecret-policy-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "rule_choice",
+        fieldPath: "spec.rule_choice",
+        options: ["spec.legacy_rule_list", "spec.rule_list"],
+      },
+      {
+        choiceField: "client_choice",
+        fieldPath: "spec.rule_list.rules[].spec.client_choice",
+        options: [
+          "spec.rule_list.rules[].spec.client_name",
+          "spec.rule_list.rules[].spec.client_name_matcher",
+          "spec.rule_list.rules[].spec.client_selector",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -2119,7 +2413,75 @@ export const blindfoldTools: ParsedOperation[] = [
         resourceType: "schemavoltshare-admin-policy-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "allow_choice",
+        fieldPath: "spec.author_restrictions.allow_choice",
+        options: ["spec.author_restrictions.allow_all", "spec.author_restrictions.allow_list"],
+      },
+      {
+        choiceField: "deny_choice",
+        fieldPath: "spec.author_restrictions.deny_choice",
+        options: ["spec.author_restrictions.deny_all", "spec.author_restrictions.deny_list"],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.author_restrictions.allow_list.custom_list[].choice",
+        options: [
+          "spec.author_restrictions.allow_list.custom_list[].exact_value",
+          "spec.author_restrictions.allow_list.custom_list[].regex_pattern",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.author_restrictions.deny_list.custom_list[].choice",
+        options: [
+          "spec.author_restrictions.deny_list.custom_list[].exact_value",
+          "spec.author_restrictions.deny_list.custom_list[].regex_pattern",
+        ],
+      },
+      {
+        choiceField: "tenant_choice",
+        fieldPath: "spec.user_restrictions[].tenant_choice",
+        options: [
+          "spec.user_restrictions[].all_tenants",
+          "spec.user_restrictions[].individual_users",
+          "spec.user_restrictions[].tenant",
+        ],
+      },
+      {
+        choiceField: "allow_choice",
+        fieldPath: "spec.user_restrictions[].user_restrictions.allow_choice",
+        options: [
+          "spec.user_restrictions[].user_restrictions.allow_all",
+          "spec.user_restrictions[].user_restrictions.allow_list",
+        ],
+      },
+      {
+        choiceField: "deny_choice",
+        fieldPath: "spec.user_restrictions[].user_restrictions.deny_choice",
+        options: [
+          "spec.user_restrictions[].user_restrictions.deny_all",
+          "spec.user_restrictions[].user_restrictions.deny_list",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.user_restrictions[].user_restrictions.allow_list.custom_list[].choice",
+        options: [
+          "spec.user_restrictions[].user_restrictions.allow_list.custom_list[].exact_value",
+          "spec.user_restrictions[].user_restrictions.allow_list.custom_list[].regex_pattern",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.user_restrictions[].user_restrictions.deny_list.custom_list[].choice",
+        options: [
+          "spec.user_restrictions[].user_restrictions.deny_list.custom_list[].exact_value",
+          "spec.user_restrictions[].user_restrictions.deny_list.custom_list[].regex_pattern",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -2468,7 +2830,75 @@ export const blindfoldTools: ParsedOperation[] = [
         resourceType: "schemavoltshare-admin-policy-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "allow_choice",
+        fieldPath: "spec.author_restrictions.allow_choice",
+        options: ["spec.author_restrictions.allow_all", "spec.author_restrictions.allow_list"],
+      },
+      {
+        choiceField: "deny_choice",
+        fieldPath: "spec.author_restrictions.deny_choice",
+        options: ["spec.author_restrictions.deny_all", "spec.author_restrictions.deny_list"],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.author_restrictions.allow_list.custom_list[].choice",
+        options: [
+          "spec.author_restrictions.allow_list.custom_list[].exact_value",
+          "spec.author_restrictions.allow_list.custom_list[].regex_pattern",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.author_restrictions.deny_list.custom_list[].choice",
+        options: [
+          "spec.author_restrictions.deny_list.custom_list[].exact_value",
+          "spec.author_restrictions.deny_list.custom_list[].regex_pattern",
+        ],
+      },
+      {
+        choiceField: "tenant_choice",
+        fieldPath: "spec.user_restrictions[].tenant_choice",
+        options: [
+          "spec.user_restrictions[].all_tenants",
+          "spec.user_restrictions[].individual_users",
+          "spec.user_restrictions[].tenant",
+        ],
+      },
+      {
+        choiceField: "allow_choice",
+        fieldPath: "spec.user_restrictions[].user_restrictions.allow_choice",
+        options: [
+          "spec.user_restrictions[].user_restrictions.allow_all",
+          "spec.user_restrictions[].user_restrictions.allow_list",
+        ],
+      },
+      {
+        choiceField: "deny_choice",
+        fieldPath: "spec.user_restrictions[].user_restrictions.deny_choice",
+        options: [
+          "spec.user_restrictions[].user_restrictions.deny_all",
+          "spec.user_restrictions[].user_restrictions.deny_list",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.user_restrictions[].user_restrictions.allow_list.custom_list[].choice",
+        options: [
+          "spec.user_restrictions[].user_restrictions.allow_list.custom_list[].exact_value",
+          "spec.user_restrictions[].user_restrictions.allow_list.custom_list[].regex_pattern",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.user_restrictions[].user_restrictions.deny_list.custom_list[].choice",
+        options: [
+          "spec.user_restrictions[].user_restrictions.deny_list.custom_list[].exact_value",
+          "spec.user_restrictions[].user_restrictions.deny_list.custom_list[].regex_pattern",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",

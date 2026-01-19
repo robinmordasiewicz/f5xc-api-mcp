@@ -6,9 +6,6 @@ description: Unmerge Source from API Endpoint.
 
 # Unmerge Sources Openapi Schema
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Unmerge Source Discovered schema from API Endpoint merged schema.
 
 ## Tools
@@ -25,14 +22,6 @@ Unmerge Source Discovered schema from API Endpoint merged schema.
 |-----------|-------------|--------|
 | `name` | Virtual Host Name | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- unmerge-sources-openapi-schema
 
 ## Example Usage
 

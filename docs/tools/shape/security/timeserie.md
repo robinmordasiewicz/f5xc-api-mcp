@@ -6,9 +6,6 @@ description: Malicious Report APP Time Series.
 
 # Timeserie
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Malicious Report APP Time Series.
 
 ## Tools
@@ -24,14 +21,6 @@ Malicious Report APP Time Series.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- timeserie
 
 ## Example Usage
 

@@ -312,11 +312,15 @@ export function suggestParameters(toolName: string): SuggestionResult | null {
   const requiredFields = getRequiredFields(toolName);
   const mutuallyExclusiveGroups = getMutuallyExclusiveFields(toolName);
 
+  // Build notes for OneOf groups with recommended options (v2.0.34+)
+  const oneOfNotes = buildNotesFromOneOfGroups(mutuallyExclusiveGroups);
+
   // Priority 1: Check for x-f5xc-minimum-configuration example
   const minConfig = getMinimumConfiguration(toolName);
   if (minConfig?.example_json) {
     try {
       const payload = JSON.parse(minConfig.example_json) as Record<string, unknown>;
+      const allNotes = [...buildNotesFromMinConfig(minConfig), ...oneOfNotes];
       return {
         examplePayload: payload,
         description:
@@ -325,7 +329,7 @@ export function suggestParameters(toolName: string): SuggestionResult | null {
         requiredFields: requiredFields.length > 0 ? requiredFields : undefined,
         mutuallyExclusiveGroups:
           mutuallyExclusiveGroups.length > 0 ? mutuallyExclusiveGroups : undefined,
-        notes: buildNotesFromMinConfig(minConfig),
+        notes: allNotes,
         curlExample: minConfig.example_curl,
         yamlExample: minConfig.example_yaml,
       };
@@ -337,6 +341,11 @@ export function suggestParameters(toolName: string): SuggestionResult | null {
   // Priority 2: Check for curated example
   const curatedExample = COMMON_EXAMPLES[toolName];
   if (curatedExample) {
+    const baseNotes = [
+      "This is a complete, working example based on common usage patterns",
+      "Modify the values to match your specific requirements",
+      "Required fields are already included",
+    ];
     return {
       examplePayload: JSON.parse(JSON.stringify(curatedExample)), // Deep copy
       description: `Curated example payload for ${tool.resource} ${tool.operation}`,
@@ -344,17 +353,18 @@ export function suggestParameters(toolName: string): SuggestionResult | null {
       requiredFields: requiredFields.length > 0 ? requiredFields : undefined,
       mutuallyExclusiveGroups:
         mutuallyExclusiveGroups.length > 0 ? mutuallyExclusiveGroups : undefined,
-      notes: [
-        "This is a complete, working example based on common usage patterns",
-        "Modify the values to match your specific requirements",
-        "Required fields are already included",
-      ],
+      notes: [...baseNotes, ...oneOfNotes],
     };
   }
 
   // Priority 3: Generate from schema with smart defaults
   const generatedPayload = generateSmartExamplePayload(toolName);
   if (generatedPayload) {
+    const baseNotes = [
+      "This example was auto-generated from the schema",
+      "Review and modify values before using in production",
+      "Some nested objects may need additional configuration",
+    ];
     return {
       examplePayload: generatedPayload,
       description: `Auto-generated example payload for ${tool.resource} ${tool.operation}`,
@@ -362,11 +372,7 @@ export function suggestParameters(toolName: string): SuggestionResult | null {
       requiredFields: requiredFields.length > 0 ? requiredFields : undefined,
       mutuallyExclusiveGroups:
         mutuallyExclusiveGroups.length > 0 ? mutuallyExclusiveGroups : undefined,
-      notes: [
-        "This example was auto-generated from the schema",
-        "Review and modify values before using in production",
-        "Some nested objects may need additional configuration",
-      ],
+      notes: [...baseNotes, ...oneOfNotes],
     };
   }
 
@@ -395,6 +401,24 @@ function buildNotesFromMinConfig(minConfig: MinimumConfiguration): string[] {
 
   if (notes.length === 0) {
     notes.push("Example from official F5XC API specification");
+  }
+
+  return notes;
+}
+
+/**
+ * Build notes from mutually exclusive groups with recommended options (v2.0.34+)
+ */
+function buildNotesFromOneOfGroups(groups: MutuallyExclusiveGroup[]): string[] {
+  const notes: string[] = [];
+
+  for (const group of groups) {
+    const options = group.options.map((o) => o.fieldName).join(", ");
+    let note = `Configuration choice (${group.fieldPath}): ${options}`;
+    if (group.recommendedOption) {
+      note += ` (Recommended: ${group.recommendedOption})`;
+    }
+    notes.push(note);
   }
 
   return notes;

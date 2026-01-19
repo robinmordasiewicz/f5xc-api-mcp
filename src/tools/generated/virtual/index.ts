@@ -481,7 +481,102 @@ export const virtualTools: ParsedOperation[] = [
         resourceType: "cluster-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "http_protocol_type",
+        fieldPath: "spec.http_protocol_type",
+        options: ["spec.auto_http_config", "spec.http1_config", "spec.http2_options"],
+      },
+      {
+        choiceField: "panic_threshold_type",
+        fieldPath: "spec.panic_threshold_type",
+        options: ["spec.no_panic_threshold", "spec.panic_threshold"],
+      },
+      {
+        choiceField: "proxy_protocol_type",
+        fieldPath: "spec.proxy_protocol_type",
+        options: [
+          "spec.disable_proxy_protocol",
+          "spec.proxy_protocol_v1",
+          "spec.proxy_protocol_v2",
+        ],
+      },
+      {
+        choiceField: "header_transformation_choice",
+        fieldPath: "spec.http1_config.header_transformation.header_transformation_choice",
+        options: [
+          "spec.http1_config.header_transformation.default_header_transformation",
+          "spec.http1_config.header_transformation.legacy_header_transformation",
+          "spec.http1_config.header_transformation.preserve_case_header_transformation",
+          "spec.http1_config.header_transformation.proper_case_header_transformation",
+        ],
+      },
+      {
+        choiceField: "max_session_keys_type",
+        fieldPath: "spec.tls_parameters.max_session_keys_type",
+        options: [
+          "spec.tls_parameters.default_session_key_caching",
+          "spec.tls_parameters.disable_session_key_caching",
+          "spec.tls_parameters.max_session_keys",
+        ],
+      },
+      {
+        choiceField: "sni_choice",
+        fieldPath: "spec.tls_parameters.sni_choice",
+        options: [
+          "spec.tls_parameters.disable_sni",
+          "spec.tls_parameters.sni",
+          "spec.tls_parameters.use_host_header_as_sni",
+        ],
+      },
+      {
+        choiceField: "tls_params_choice",
+        fieldPath: "spec.tls_parameters.tls_params_choice",
+        options: ["spec.tls_parameters.cert_params", "spec.tls_parameters.common_params"],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath: "spec.tls_parameters.cert_params.validation_params.trusted_ca_choice",
+        options: [
+          "spec.tls_parameters.cert_params.validation_params.trusted_ca",
+          "spec.tls_parameters.cert_params.validation_params.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "ocsp_stapling_choice",
+        fieldPath: "spec.tls_parameters.common_params.tls_certificates[].ocsp_stapling_choice",
+        options: [
+          "spec.tls_parameters.common_params.tls_certificates[].custom_hash_algorithms",
+          "spec.tls_parameters.common_params.tls_certificates[].disable_ocsp_stapling",
+          "spec.tls_parameters.common_params.tls_certificates[].use_system_defaults",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.tls_parameters.common_params.tls_certificates[].private_key.secret_info_oneof",
+        options: [
+          "spec.tls_parameters.common_params.tls_certificates[].private_key.blindfold_secret_info",
+          "spec.tls_parameters.common_params.tls_certificates[].private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath: "spec.tls_parameters.common_params.validation_params.trusted_ca_choice",
+        options: [
+          "spec.tls_parameters.common_params.validation_params.trusted_ca",
+          "spec.tls_parameters.common_params.validation_params.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "map_downstream_to_upstream_conn_pool_type",
+        fieldPath: "spec.upstream_conn_pool_reuse_type.map_downstream_to_upstream_conn_pool_type",
+        options: [
+          "spec.upstream_conn_pool_reuse_type.disable_conn_pool_reuse",
+          "spec.upstream_conn_pool_reuse_type.enable_conn_pool_reuse",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -778,7 +873,102 @@ export const virtualTools: ParsedOperation[] = [
         resourceType: "cluster-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "http_protocol_type",
+        fieldPath: "spec.http_protocol_type",
+        options: ["spec.auto_http_config", "spec.http1_config", "spec.http2_options"],
+      },
+      {
+        choiceField: "panic_threshold_type",
+        fieldPath: "spec.panic_threshold_type",
+        options: ["spec.no_panic_threshold", "spec.panic_threshold"],
+      },
+      {
+        choiceField: "proxy_protocol_type",
+        fieldPath: "spec.proxy_protocol_type",
+        options: [
+          "spec.disable_proxy_protocol",
+          "spec.proxy_protocol_v1",
+          "spec.proxy_protocol_v2",
+        ],
+      },
+      {
+        choiceField: "header_transformation_choice",
+        fieldPath: "spec.http1_config.header_transformation.header_transformation_choice",
+        options: [
+          "spec.http1_config.header_transformation.default_header_transformation",
+          "spec.http1_config.header_transformation.legacy_header_transformation",
+          "spec.http1_config.header_transformation.preserve_case_header_transformation",
+          "spec.http1_config.header_transformation.proper_case_header_transformation",
+        ],
+      },
+      {
+        choiceField: "max_session_keys_type",
+        fieldPath: "spec.tls_parameters.max_session_keys_type",
+        options: [
+          "spec.tls_parameters.default_session_key_caching",
+          "spec.tls_parameters.disable_session_key_caching",
+          "spec.tls_parameters.max_session_keys",
+        ],
+      },
+      {
+        choiceField: "sni_choice",
+        fieldPath: "spec.tls_parameters.sni_choice",
+        options: [
+          "spec.tls_parameters.disable_sni",
+          "spec.tls_parameters.sni",
+          "spec.tls_parameters.use_host_header_as_sni",
+        ],
+      },
+      {
+        choiceField: "tls_params_choice",
+        fieldPath: "spec.tls_parameters.tls_params_choice",
+        options: ["spec.tls_parameters.cert_params", "spec.tls_parameters.common_params"],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath: "spec.tls_parameters.cert_params.validation_params.trusted_ca_choice",
+        options: [
+          "spec.tls_parameters.cert_params.validation_params.trusted_ca",
+          "spec.tls_parameters.cert_params.validation_params.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "ocsp_stapling_choice",
+        fieldPath: "spec.tls_parameters.common_params.tls_certificates[].ocsp_stapling_choice",
+        options: [
+          "spec.tls_parameters.common_params.tls_certificates[].custom_hash_algorithms",
+          "spec.tls_parameters.common_params.tls_certificates[].disable_ocsp_stapling",
+          "spec.tls_parameters.common_params.tls_certificates[].use_system_defaults",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.tls_parameters.common_params.tls_certificates[].private_key.secret_info_oneof",
+        options: [
+          "spec.tls_parameters.common_params.tls_certificates[].private_key.blindfold_secret_info",
+          "spec.tls_parameters.common_params.tls_certificates[].private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath: "spec.tls_parameters.common_params.validation_params.trusted_ca_choice",
+        options: [
+          "spec.tls_parameters.common_params.validation_params.trusted_ca",
+          "spec.tls_parameters.common_params.validation_params.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "map_downstream_to_upstream_conn_pool_type",
+        fieldPath: "spec.upstream_conn_pool_reuse_type.map_downstream_to_upstream_conn_pool_type",
+        options: [
+          "spec.upstream_conn_pool_reuse_type.disable_conn_pool_reuse",
+          "spec.upstream_conn_pool_reuse_type.enable_conn_pool_reuse",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -1019,7 +1209,13 @@ export const virtualTools: ParsedOperation[] = [
         resourceType: "geo-location-set-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "location_choice",
+        fieldPath: "spec.location_choice",
+        options: ["spec.custom_geo_location_selector", "spec.global"],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -1314,7 +1510,13 @@ export const virtualTools: ParsedOperation[] = [
         resourceType: "geo-location-set-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "location_choice",
+        fieldPath: "spec.location_choice",
+        options: ["spec.custom_geo_location_selector", "spec.global"],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -1552,7 +1754,22 @@ export const virtualTools: ParsedOperation[] = [
         resourceType: "healthcheck-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "health_check",
+        fieldPath: "spec.health_check",
+        options: ["spec.http_health_check", "spec.tcp_health_check", "spec.udp_icmp_health_check"],
+      },
+      {
+        choiceField: "host_header_choice",
+        fieldPath: "spec.http_health_check.host_header_choice",
+        options: [
+          "spec.http_health_check.host_header",
+          "spec.http_health_check.use_origin_server_name",
+        ],
+        recommendedOption: "spec.http_health_check.use_origin_server_name",
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -1849,7 +2066,22 @@ export const virtualTools: ParsedOperation[] = [
         resourceType: "healthcheck-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "health_check",
+        fieldPath: "spec.health_check",
+        options: ["spec.http_health_check", "spec.tcp_health_check", "spec.udp_icmp_health_check"],
+      },
+      {
+        choiceField: "host_header_choice",
+        fieldPath: "spec.http_health_check.host_header_choice",
+        options: [
+          "spec.http_health_check.host_header",
+          "spec.http_health_check.use_origin_server_name",
+        ],
+        recommendedOption: "spec.http_health_check.use_origin_server_name",
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -1917,7 +2149,3268 @@ export const virtualTools: ParsedOperation[] = [
         resourceType: "viewshttp-loadbalancer-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "advertise_choice",
+        fieldPath: "spec.advertise_choice",
+        options: [
+          "spec.advertise_custom",
+          "spec.advertise_on_public",
+          "spec.advertise_on_public_default_vip",
+          "spec.do_not_advertise",
+        ],
+      },
+      {
+        choiceField: "api_definition_choice",
+        fieldPath: "spec.api_definition_choice",
+        options: ["spec.api_specification", "spec.disable_api_definition"],
+      },
+      {
+        choiceField: "api_discovery_choice",
+        fieldPath: "spec.api_discovery_choice",
+        options: ["spec.disable_api_discovery", "spec.enable_api_discovery"],
+      },
+      {
+        choiceField: "api_testing_choice",
+        fieldPath: "spec.api_testing_choice",
+        options: ["spec.api_testing", "spec.disable_api_testing"],
+      },
+      {
+        choiceField: "bot_defense_choice",
+        fieldPath: "spec.bot_defense_choice",
+        options: ["spec.bot_defense", "spec.bot_defense_advanced", "spec.disable_bot_defense"],
+      },
+      {
+        choiceField: "cache_options",
+        fieldPath: "spec.cache_options",
+        options: ["spec.caching_policy", "spec.disable_caching"],
+      },
+      {
+        choiceField: "challenge_type",
+        fieldPath: "spec.challenge_type",
+        options: [
+          "spec.captcha_challenge",
+          "spec.enable_challenge",
+          "spec.js_challenge",
+          "spec.no_challenge",
+          "spec.policy_based_challenge",
+        ],
+      },
+      {
+        choiceField: "client_side_defense_choice",
+        fieldPath: "spec.client_side_defense_choice",
+        options: ["spec.client_side_defense", "spec.disable_client_side_defense"],
+      },
+      {
+        choiceField: "hash_policy_choice",
+        fieldPath: "spec.hash_policy_choice",
+        options: [
+          "spec.cookie_stickiness",
+          "spec.least_active",
+          "spec.random",
+          "spec.ring_hash",
+          "spec.round_robin",
+          "spec.source_ip_stickiness",
+        ],
+      },
+      {
+        choiceField: "ip_reputation_choice",
+        fieldPath: "spec.ip_reputation_choice",
+        options: ["spec.disable_ip_reputation", "spec.enable_ip_reputation"],
+      },
+      {
+        choiceField: "l7_ddos_auto_mitigation_action",
+        fieldPath: "spec.l7_ddos_auto_mitigation_action",
+        options: [
+          "spec.l7_ddos_action_block",
+          "spec.l7_ddos_action_default",
+          "spec.l7_ddos_action_js_challenge",
+        ],
+      },
+      {
+        choiceField: "loadbalancer_type",
+        fieldPath: "spec.loadbalancer_type",
+        options: ["spec.http", "spec.https", "spec.https_auto_cert"],
+      },
+      {
+        choiceField: "malicious_user_detection_choice",
+        fieldPath: "spec.malicious_user_detection_choice",
+        options: ["spec.disable_malicious_user_detection", "spec.enable_malicious_user_detection"],
+      },
+      {
+        choiceField: "malware_protection",
+        fieldPath: "spec.malware_protection",
+        options: ["spec.disable_malware_protection", "spec.malware_protection_settings"],
+      },
+      {
+        choiceField: "ml_config_choice",
+        fieldPath: "spec.ml_config_choice",
+        options: ["spec.multi_lb_app", "spec.single_lb_app"],
+      },
+      {
+        choiceField: "origin_pool_choice",
+        fieldPath: "spec.origin_pool_choice",
+        options: ["spec.default_pool", "spec.default_pool_list"],
+      },
+      {
+        choiceField: "rate_limit_choice",
+        fieldPath: "spec.rate_limit_choice",
+        options: ["spec.api_rate_limit", "spec.disable_rate_limit", "spec.rate_limit"],
+      },
+      {
+        choiceField: "sensitive_data_policy_choice",
+        fieldPath: "spec.sensitive_data_policy_choice",
+        options: ["spec.default_sensitive_data_policy", "spec.sensitive_data_policy"],
+      },
+      {
+        choiceField: "service_policy_choice",
+        fieldPath: "spec.service_policy_choice",
+        options: [
+          "spec.active_service_policies",
+          "spec.no_service_policies",
+          "spec.service_policies_from_namespace",
+        ],
+      },
+      {
+        choiceField: "slow_ddos_mitigation_choice",
+        fieldPath: "spec.slow_ddos_mitigation_choice",
+        options: ["spec.slow_ddos_mitigation", "spec.system_default_timeouts"],
+      },
+      {
+        choiceField: "threat_mesh_choice",
+        fieldPath: "spec.threat_mesh_choice",
+        options: ["spec.disable_threat_mesh", "spec.enable_threat_mesh"],
+      },
+      {
+        choiceField: "trust_client_ip_headers_choice",
+        fieldPath: "spec.trust_client_ip_headers_choice",
+        options: ["spec.disable_trust_client_ip_headers", "spec.enable_trust_client_ip_headers"],
+      },
+      {
+        choiceField: "user_id_choice",
+        fieldPath: "spec.user_id_choice",
+        options: ["spec.user_id_client_ip", "spec.user_identification"],
+      },
+      {
+        choiceField: "waf_choice",
+        fieldPath: "spec.waf_choice",
+        options: ["spec.app_firewall", "spec.disable_waf"],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.advertise_custom.advertise_where[].choice",
+        options: [
+          "spec.advertise_custom.advertise_where[].advertise_on_public",
+          "spec.advertise_custom.advertise_where[].cloud_edge_segment",
+          "spec.advertise_custom.advertise_where[].segment",
+          "spec.advertise_custom.advertise_where[].site",
+          "spec.advertise_custom.advertise_where[].site_segment",
+          "spec.advertise_custom.advertise_where[].virtual_network",
+          "spec.advertise_custom.advertise_where[].virtual_site",
+          "spec.advertise_custom.advertise_where[].virtual_site_segment",
+          "spec.advertise_custom.advertise_where[].virtual_site_with_vip",
+          "spec.advertise_custom.advertise_where[].vk8s_service",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.advertise_custom.advertise_where[].port_choice",
+        options: [
+          "spec.advertise_custom.advertise_where[].port",
+          "spec.advertise_custom.advertise_where[].port_ranges",
+          "spec.advertise_custom.advertise_where[].use_default_port",
+        ],
+      },
+      {
+        choiceField: "v6_vip_choice",
+        fieldPath: "spec.advertise_custom.advertise_where[].virtual_network.v6_vip_choice",
+        options: [
+          "spec.advertise_custom.advertise_where[].virtual_network.default_v6_vip",
+          "spec.advertise_custom.advertise_where[].virtual_network.specific_v6_vip",
+        ],
+      },
+      {
+        choiceField: "vip_choice",
+        fieldPath: "spec.advertise_custom.advertise_where[].virtual_network.vip_choice",
+        options: [
+          "spec.advertise_custom.advertise_where[].virtual_network.default_vip",
+          "spec.advertise_custom.advertise_where[].virtual_network.specific_vip",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.advertise_custom.advertise_where[].vk8s_service.choice",
+        options: [
+          "spec.advertise_custom.advertise_where[].vk8s_service.site",
+          "spec.advertise_custom.advertise_where[].vk8s_service.virtual_site",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.api_protection_rules.api_endpoint_rules[].domain_choice",
+        options: [
+          "spec.api_protection_rules.api_endpoint_rules[].any_domain",
+          "spec.api_protection_rules.api_endpoint_rules[].specific_domain",
+        ],
+      },
+      {
+        choiceField: "action",
+        fieldPath: "spec.api_protection_rules.api_endpoint_rules[].action.action",
+        options: [
+          "spec.api_protection_rules.api_endpoint_rules[].action.allow",
+          "spec.api_protection_rules.api_endpoint_rules[].action.deny",
+        ],
+      },
+      {
+        choiceField: "client_choice",
+        fieldPath: "spec.api_protection_rules.api_endpoint_rules[].client_matcher.client_choice",
+        options: [
+          "spec.api_protection_rules.api_endpoint_rules[].client_matcher.any_client",
+          "spec.api_protection_rules.api_endpoint_rules[].client_matcher.client_selector",
+          "spec.api_protection_rules.api_endpoint_rules[].client_matcher.ip_threat_category_list",
+        ],
+      },
+      {
+        choiceField: "ip_asn_choice",
+        fieldPath: "spec.api_protection_rules.api_endpoint_rules[].client_matcher.ip_asn_choice",
+        options: [
+          "spec.api_protection_rules.api_endpoint_rules[].client_matcher.any_ip",
+          "spec.api_protection_rules.api_endpoint_rules[].client_matcher.asn_list",
+          "spec.api_protection_rules.api_endpoint_rules[].client_matcher.asn_matcher",
+          "spec.api_protection_rules.api_endpoint_rules[].client_matcher.ip_matcher",
+          "spec.api_protection_rules.api_endpoint_rules[].client_matcher.ip_prefix_list",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath:
+          "spec.api_protection_rules.api_endpoint_rules[].request_matcher.cookie_matchers[].match",
+        options: [
+          "spec.api_protection_rules.api_endpoint_rules[].request_matcher.cookie_matchers[].check_not_present",
+          "spec.api_protection_rules.api_endpoint_rules[].request_matcher.cookie_matchers[].check_present",
+          "spec.api_protection_rules.api_endpoint_rules[].request_matcher.cookie_matchers[].item",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.api_protection_rules.api_endpoint_rules[].request_matcher.headers[].match",
+        options: [
+          "spec.api_protection_rules.api_endpoint_rules[].request_matcher.headers[].check_not_present",
+          "spec.api_protection_rules.api_endpoint_rules[].request_matcher.headers[].check_present",
+          "spec.api_protection_rules.api_endpoint_rules[].request_matcher.headers[].item",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath:
+          "spec.api_protection_rules.api_endpoint_rules[].request_matcher.jwt_claims[].match",
+        options: [
+          "spec.api_protection_rules.api_endpoint_rules[].request_matcher.jwt_claims[].check_not_present",
+          "spec.api_protection_rules.api_endpoint_rules[].request_matcher.jwt_claims[].check_present",
+          "spec.api_protection_rules.api_endpoint_rules[].request_matcher.jwt_claims[].item",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath:
+          "spec.api_protection_rules.api_endpoint_rules[].request_matcher.query_params[].match",
+        options: [
+          "spec.api_protection_rules.api_endpoint_rules[].request_matcher.query_params[].check_not_present",
+          "spec.api_protection_rules.api_endpoint_rules[].request_matcher.query_params[].check_present",
+          "spec.api_protection_rules.api_endpoint_rules[].request_matcher.query_params[].item",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.api_protection_rules.api_groups_rules[].domain_choice",
+        options: [
+          "spec.api_protection_rules.api_groups_rules[].any_domain",
+          "spec.api_protection_rules.api_groups_rules[].specific_domain",
+        ],
+      },
+      {
+        choiceField: "action",
+        fieldPath: "spec.api_protection_rules.api_groups_rules[].action.action",
+        options: [
+          "spec.api_protection_rules.api_groups_rules[].action.allow",
+          "spec.api_protection_rules.api_groups_rules[].action.deny",
+        ],
+      },
+      {
+        choiceField: "client_choice",
+        fieldPath: "spec.api_protection_rules.api_groups_rules[].client_matcher.client_choice",
+        options: [
+          "spec.api_protection_rules.api_groups_rules[].client_matcher.any_client",
+          "spec.api_protection_rules.api_groups_rules[].client_matcher.client_selector",
+          "spec.api_protection_rules.api_groups_rules[].client_matcher.ip_threat_category_list",
+        ],
+      },
+      {
+        choiceField: "ip_asn_choice",
+        fieldPath: "spec.api_protection_rules.api_groups_rules[].client_matcher.ip_asn_choice",
+        options: [
+          "spec.api_protection_rules.api_groups_rules[].client_matcher.any_ip",
+          "spec.api_protection_rules.api_groups_rules[].client_matcher.asn_list",
+          "spec.api_protection_rules.api_groups_rules[].client_matcher.asn_matcher",
+          "spec.api_protection_rules.api_groups_rules[].client_matcher.ip_matcher",
+          "spec.api_protection_rules.api_groups_rules[].client_matcher.ip_prefix_list",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath:
+          "spec.api_protection_rules.api_groups_rules[].request_matcher.cookie_matchers[].match",
+        options: [
+          "spec.api_protection_rules.api_groups_rules[].request_matcher.cookie_matchers[].check_not_present",
+          "spec.api_protection_rules.api_groups_rules[].request_matcher.cookie_matchers[].check_present",
+          "spec.api_protection_rules.api_groups_rules[].request_matcher.cookie_matchers[].item",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.api_protection_rules.api_groups_rules[].request_matcher.headers[].match",
+        options: [
+          "spec.api_protection_rules.api_groups_rules[].request_matcher.headers[].check_not_present",
+          "spec.api_protection_rules.api_groups_rules[].request_matcher.headers[].check_present",
+          "spec.api_protection_rules.api_groups_rules[].request_matcher.headers[].item",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath:
+          "spec.api_protection_rules.api_groups_rules[].request_matcher.jwt_claims[].match",
+        options: [
+          "spec.api_protection_rules.api_groups_rules[].request_matcher.jwt_claims[].check_not_present",
+          "spec.api_protection_rules.api_groups_rules[].request_matcher.jwt_claims[].check_present",
+          "spec.api_protection_rules.api_groups_rules[].request_matcher.jwt_claims[].item",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath:
+          "spec.api_protection_rules.api_groups_rules[].request_matcher.query_params[].match",
+        options: [
+          "spec.api_protection_rules.api_groups_rules[].request_matcher.query_params[].check_not_present",
+          "spec.api_protection_rules.api_groups_rules[].request_matcher.query_params[].check_present",
+          "spec.api_protection_rules.api_groups_rules[].request_matcher.query_params[].item",
+        ],
+      },
+      {
+        choiceField: "ip_allowed_list_choice",
+        fieldPath: "spec.api_rate_limit.ip_allowed_list_choice",
+        options: [
+          "spec.api_rate_limit.bypass_rate_limiting_rules",
+          "spec.api_rate_limit.custom_ip_allowed_list",
+          "spec.api_rate_limit.ip_allowed_list",
+          "spec.api_rate_limit.no_ip_allowed_list",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.api_rate_limit.api_endpoint_rules[].domain_choice",
+        options: [
+          "spec.api_rate_limit.api_endpoint_rules[].any_domain",
+          "spec.api_rate_limit.api_endpoint_rules[].specific_domain",
+        ],
+      },
+      {
+        choiceField: "rate_limiter_choice",
+        fieldPath: "spec.api_rate_limit.api_endpoint_rules[].rate_limiter_choice",
+        options: [
+          "spec.api_rate_limit.api_endpoint_rules[].inline_rate_limiter",
+          "spec.api_rate_limit.api_endpoint_rules[].ref_rate_limiter",
+        ],
+      },
+      {
+        choiceField: "client_choice",
+        fieldPath: "spec.api_rate_limit.api_endpoint_rules[].client_matcher.client_choice",
+        options: [
+          "spec.api_rate_limit.api_endpoint_rules[].client_matcher.any_client",
+          "spec.api_rate_limit.api_endpoint_rules[].client_matcher.client_selector",
+          "spec.api_rate_limit.api_endpoint_rules[].client_matcher.ip_threat_category_list",
+        ],
+      },
+      {
+        choiceField: "ip_asn_choice",
+        fieldPath: "spec.api_rate_limit.api_endpoint_rules[].client_matcher.ip_asn_choice",
+        options: [
+          "spec.api_rate_limit.api_endpoint_rules[].client_matcher.any_ip",
+          "spec.api_rate_limit.api_endpoint_rules[].client_matcher.asn_list",
+          "spec.api_rate_limit.api_endpoint_rules[].client_matcher.asn_matcher",
+          "spec.api_rate_limit.api_endpoint_rules[].client_matcher.ip_matcher",
+          "spec.api_rate_limit.api_endpoint_rules[].client_matcher.ip_prefix_list",
+        ],
+      },
+      {
+        choiceField: "count_by_choice",
+        fieldPath: "spec.api_rate_limit.api_endpoint_rules[].inline_rate_limiter.count_by_choice",
+        options: [
+          "spec.api_rate_limit.api_endpoint_rules[].inline_rate_limiter.ref_user_id",
+          "spec.api_rate_limit.api_endpoint_rules[].inline_rate_limiter.use_http_lb_user_id",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath:
+          "spec.api_rate_limit.api_endpoint_rules[].request_matcher.cookie_matchers[].match",
+        options: [
+          "spec.api_rate_limit.api_endpoint_rules[].request_matcher.cookie_matchers[].check_not_present",
+          "spec.api_rate_limit.api_endpoint_rules[].request_matcher.cookie_matchers[].check_present",
+          "spec.api_rate_limit.api_endpoint_rules[].request_matcher.cookie_matchers[].item",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.api_rate_limit.api_endpoint_rules[].request_matcher.headers[].match",
+        options: [
+          "spec.api_rate_limit.api_endpoint_rules[].request_matcher.headers[].check_not_present",
+          "spec.api_rate_limit.api_endpoint_rules[].request_matcher.headers[].check_present",
+          "spec.api_rate_limit.api_endpoint_rules[].request_matcher.headers[].item",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.api_rate_limit.api_endpoint_rules[].request_matcher.jwt_claims[].match",
+        options: [
+          "spec.api_rate_limit.api_endpoint_rules[].request_matcher.jwt_claims[].check_not_present",
+          "spec.api_rate_limit.api_endpoint_rules[].request_matcher.jwt_claims[].check_present",
+          "spec.api_rate_limit.api_endpoint_rules[].request_matcher.jwt_claims[].item",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.api_rate_limit.api_endpoint_rules[].request_matcher.query_params[].match",
+        options: [
+          "spec.api_rate_limit.api_endpoint_rules[].request_matcher.query_params[].check_not_present",
+          "spec.api_rate_limit.api_endpoint_rules[].request_matcher.query_params[].check_present",
+          "spec.api_rate_limit.api_endpoint_rules[].request_matcher.query_params[].item",
+        ],
+      },
+      {
+        choiceField: "destination_type",
+        fieldPath:
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].destination_type",
+        options: [
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].any_url",
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].api_endpoint",
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].api_groups",
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].base_path",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath:
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].domain_choice",
+        options: [
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].any_domain",
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].specific_domain",
+        ],
+      },
+      {
+        choiceField: "client_choice",
+        fieldPath:
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].client_matcher.client_choice",
+        options: [
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].client_matcher.any_client",
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].client_matcher.client_selector",
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].client_matcher.ip_threat_category_list",
+        ],
+      },
+      {
+        choiceField: "ip_asn_choice",
+        fieldPath:
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].client_matcher.ip_asn_choice",
+        options: [
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].client_matcher.any_ip",
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].client_matcher.asn_list",
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].client_matcher.asn_matcher",
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].client_matcher.ip_matcher",
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].client_matcher.ip_prefix_list",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath:
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].request_matcher.cookie_matchers[].match",
+        options: [
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].request_matcher.cookie_matchers[].check_not_present",
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].request_matcher.cookie_matchers[].check_present",
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].request_matcher.cookie_matchers[].item",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath:
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].request_matcher.headers[].match",
+        options: [
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].request_matcher.headers[].check_not_present",
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].request_matcher.headers[].check_present",
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].request_matcher.headers[].item",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath:
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].request_matcher.jwt_claims[].match",
+        options: [
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].request_matcher.jwt_claims[].check_not_present",
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].request_matcher.jwt_claims[].check_present",
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].request_matcher.jwt_claims[].item",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath:
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].request_matcher.query_params[].match",
+        options: [
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].request_matcher.query_params[].check_not_present",
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].request_matcher.query_params[].check_present",
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].request_matcher.query_params[].item",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.api_rate_limit.server_url_rules[].domain_choice",
+        options: [
+          "spec.api_rate_limit.server_url_rules[].any_domain",
+          "spec.api_rate_limit.server_url_rules[].specific_domain",
+        ],
+      },
+      {
+        choiceField: "rate_limiter_choice",
+        fieldPath: "spec.api_rate_limit.server_url_rules[].rate_limiter_choice",
+        options: [
+          "spec.api_rate_limit.server_url_rules[].inline_rate_limiter",
+          "spec.api_rate_limit.server_url_rules[].ref_rate_limiter",
+        ],
+      },
+      {
+        choiceField: "client_choice",
+        fieldPath: "spec.api_rate_limit.server_url_rules[].client_matcher.client_choice",
+        options: [
+          "spec.api_rate_limit.server_url_rules[].client_matcher.any_client",
+          "spec.api_rate_limit.server_url_rules[].client_matcher.client_selector",
+          "spec.api_rate_limit.server_url_rules[].client_matcher.ip_threat_category_list",
+        ],
+      },
+      {
+        choiceField: "ip_asn_choice",
+        fieldPath: "spec.api_rate_limit.server_url_rules[].client_matcher.ip_asn_choice",
+        options: [
+          "spec.api_rate_limit.server_url_rules[].client_matcher.any_ip",
+          "spec.api_rate_limit.server_url_rules[].client_matcher.asn_list",
+          "spec.api_rate_limit.server_url_rules[].client_matcher.asn_matcher",
+          "spec.api_rate_limit.server_url_rules[].client_matcher.ip_matcher",
+          "spec.api_rate_limit.server_url_rules[].client_matcher.ip_prefix_list",
+        ],
+      },
+      {
+        choiceField: "count_by_choice",
+        fieldPath: "spec.api_rate_limit.server_url_rules[].inline_rate_limiter.count_by_choice",
+        options: [
+          "spec.api_rate_limit.server_url_rules[].inline_rate_limiter.ref_user_id",
+          "spec.api_rate_limit.server_url_rules[].inline_rate_limiter.use_http_lb_user_id",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.api_rate_limit.server_url_rules[].request_matcher.cookie_matchers[].match",
+        options: [
+          "spec.api_rate_limit.server_url_rules[].request_matcher.cookie_matchers[].check_not_present",
+          "spec.api_rate_limit.server_url_rules[].request_matcher.cookie_matchers[].check_present",
+          "spec.api_rate_limit.server_url_rules[].request_matcher.cookie_matchers[].item",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.api_rate_limit.server_url_rules[].request_matcher.headers[].match",
+        options: [
+          "spec.api_rate_limit.server_url_rules[].request_matcher.headers[].check_not_present",
+          "spec.api_rate_limit.server_url_rules[].request_matcher.headers[].check_present",
+          "spec.api_rate_limit.server_url_rules[].request_matcher.headers[].item",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.api_rate_limit.server_url_rules[].request_matcher.jwt_claims[].match",
+        options: [
+          "spec.api_rate_limit.server_url_rules[].request_matcher.jwt_claims[].check_not_present",
+          "spec.api_rate_limit.server_url_rules[].request_matcher.jwt_claims[].check_present",
+          "spec.api_rate_limit.server_url_rules[].request_matcher.jwt_claims[].item",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.api_rate_limit.server_url_rules[].request_matcher.query_params[].match",
+        options: [
+          "spec.api_rate_limit.server_url_rules[].request_matcher.query_params[].check_not_present",
+          "spec.api_rate_limit.server_url_rules[].request_matcher.query_params[].check_present",
+          "spec.api_rate_limit.server_url_rules[].request_matcher.query_params[].item",
+        ],
+      },
+      {
+        choiceField: "validation_target_choice",
+        fieldPath: "spec.api_specification.validation_target_choice",
+        options: [
+          "spec.api_specification.validation_all_spec_endpoints",
+          "spec.api_specification.validation_custom_list",
+          "spec.api_specification.validation_disabled",
+        ],
+      },
+      {
+        choiceField: "oversized_body_choice",
+        fieldPath: "spec.api_specification.validation_all_spec_endpoints.oversized_body_choice",
+        options: [],
+      },
+      {
+        choiceField: "fall_through_mode_choice",
+        fieldPath:
+          "spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_choice",
+        options: [
+          "spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_allow",
+          "spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_custom",
+        ],
+      },
+      {
+        choiceField: "action_choice",
+        fieldPath:
+          "spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].action_choice",
+        options: [
+          "spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].action_block",
+          "spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].action_report",
+          "spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].action_skip",
+        ],
+      },
+      {
+        choiceField: "condition_type_choice",
+        fieldPath:
+          "spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].condition_type_choice",
+        options: [
+          "spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].api_endpoint",
+          "spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].api_group",
+          "spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].base_path",
+        ],
+      },
+      {
+        choiceField: "fail_configuration",
+        fieldPath:
+          "spec.api_specification.validation_all_spec_endpoints.settings.fail_configuration",
+        options: [],
+      },
+      {
+        choiceField: "oversized_body_choice",
+        fieldPath:
+          "spec.api_specification.validation_all_spec_endpoints.settings.oversized_body_choice",
+        options: [
+          "spec.api_specification.validation_all_spec_endpoints.settings.oversized_body_fail_validation",
+          "spec.api_specification.validation_all_spec_endpoints.settings.oversized_body_skip_validation",
+        ],
+      },
+      {
+        choiceField: "property_validation_settings_choice",
+        fieldPath:
+          "spec.api_specification.validation_all_spec_endpoints.settings.property_validation_settings_choice",
+        options: [
+          "spec.api_specification.validation_all_spec_endpoints.settings.property_validation_settings_custom",
+          "spec.api_specification.validation_all_spec_endpoints.settings.property_validation_settings_default",
+        ],
+      },
+      {
+        choiceField: "additional_parameters_choice",
+        fieldPath:
+          "spec.api_specification.validation_all_spec_endpoints.settings.property_validation_settings_custom.queryParameters.additional_parameters_choice",
+        options: [
+          "spec.api_specification.validation_all_spec_endpoints.settings.property_validation_settings_custom.queryParameters.allow_additional_parameters",
+          "spec.api_specification.validation_all_spec_endpoints.settings.property_validation_settings_custom.queryParameters.disallow_additional_parameters",
+        ],
+      },
+      {
+        choiceField: "response_validation_mode_choice",
+        fieldPath:
+          "spec.api_specification.validation_all_spec_endpoints.validation_mode.response_validation_mode_choice",
+        options: [
+          "spec.api_specification.validation_all_spec_endpoints.validation_mode.response_validation_mode_active",
+          "spec.api_specification.validation_all_spec_endpoints.validation_mode.skip_response_validation",
+        ],
+      },
+      {
+        choiceField: "validation_mode_choice",
+        fieldPath:
+          "spec.api_specification.validation_all_spec_endpoints.validation_mode.validation_mode_choice",
+        options: [
+          "spec.api_specification.validation_all_spec_endpoints.validation_mode.skip_validation",
+          "spec.api_specification.validation_all_spec_endpoints.validation_mode.validation_mode_active",
+        ],
+      },
+      {
+        choiceField: "validation_enforcement_type",
+        fieldPath:
+          "spec.api_specification.validation_all_spec_endpoints.validation_mode.response_validation_mode_active.validation_enforcement_type",
+        options: [
+          "spec.api_specification.validation_all_spec_endpoints.validation_mode.response_validation_mode_active.enforcement_block",
+          "spec.api_specification.validation_all_spec_endpoints.validation_mode.response_validation_mode_active.enforcement_report",
+        ],
+      },
+      {
+        choiceField: "validation_enforcement_type",
+        fieldPath:
+          "spec.api_specification.validation_all_spec_endpoints.validation_mode.validation_mode_active.validation_enforcement_type",
+        options: [
+          "spec.api_specification.validation_all_spec_endpoints.validation_mode.validation_mode_active.enforcement_block",
+          "spec.api_specification.validation_all_spec_endpoints.validation_mode.validation_mode_active.enforcement_report",
+        ],
+      },
+      {
+        choiceField: "oversized_body_choice",
+        fieldPath: "spec.api_specification.validation_custom_list.oversized_body_choice",
+        options: [],
+      },
+      {
+        choiceField: "fall_through_mode_choice",
+        fieldPath:
+          "spec.api_specification.validation_custom_list.fall_through_mode.fall_through_mode_choice",
+        options: [
+          "spec.api_specification.validation_custom_list.fall_through_mode.fall_through_mode_allow",
+          "spec.api_specification.validation_custom_list.fall_through_mode.fall_through_mode_custom",
+        ],
+      },
+      {
+        choiceField: "action_choice",
+        fieldPath:
+          "spec.api_specification.validation_custom_list.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].action_choice",
+        options: [
+          "spec.api_specification.validation_custom_list.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].action_block",
+          "spec.api_specification.validation_custom_list.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].action_report",
+          "spec.api_specification.validation_custom_list.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].action_skip",
+        ],
+      },
+      {
+        choiceField: "condition_type_choice",
+        fieldPath:
+          "spec.api_specification.validation_custom_list.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].condition_type_choice",
+        options: [
+          "spec.api_specification.validation_custom_list.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].api_endpoint",
+          "spec.api_specification.validation_custom_list.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].api_group",
+          "spec.api_specification.validation_custom_list.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].base_path",
+        ],
+      },
+      {
+        choiceField: "condition_type_choice",
+        fieldPath:
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].condition_type_choice",
+        options: [
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].api_endpoint",
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].api_group",
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].base_path",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath:
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].domain_choice",
+        options: [
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].any_domain",
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].specific_domain",
+        ],
+      },
+      {
+        choiceField: "response_validation_mode_choice",
+        fieldPath:
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].validation_mode.response_validation_mode_choice",
+        options: [
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].validation_mode.response_validation_mode_active",
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].validation_mode.skip_response_validation",
+        ],
+      },
+      {
+        choiceField: "validation_mode_choice",
+        fieldPath:
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].validation_mode.validation_mode_choice",
+        options: [
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].validation_mode.skip_validation",
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].validation_mode.validation_mode_active",
+        ],
+      },
+      {
+        choiceField: "validation_enforcement_type",
+        fieldPath:
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].validation_mode.response_validation_mode_active.validation_enforcement_type",
+        options: [
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].validation_mode.response_validation_mode_active.enforcement_block",
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].validation_mode.response_validation_mode_active.enforcement_report",
+        ],
+      },
+      {
+        choiceField: "validation_enforcement_type",
+        fieldPath:
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].validation_mode.validation_mode_active.validation_enforcement_type",
+        options: [
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].validation_mode.validation_mode_active.enforcement_block",
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].validation_mode.validation_mode_active.enforcement_report",
+        ],
+      },
+      {
+        choiceField: "fail_configuration",
+        fieldPath: "spec.api_specification.validation_custom_list.settings.fail_configuration",
+        options: [],
+      },
+      {
+        choiceField: "oversized_body_choice",
+        fieldPath: "spec.api_specification.validation_custom_list.settings.oversized_body_choice",
+        options: [
+          "spec.api_specification.validation_custom_list.settings.oversized_body_fail_validation",
+          "spec.api_specification.validation_custom_list.settings.oversized_body_skip_validation",
+        ],
+      },
+      {
+        choiceField: "property_validation_settings_choice",
+        fieldPath:
+          "spec.api_specification.validation_custom_list.settings.property_validation_settings_choice",
+        options: [
+          "spec.api_specification.validation_custom_list.settings.property_validation_settings_custom",
+          "spec.api_specification.validation_custom_list.settings.property_validation_settings_default",
+        ],
+      },
+      {
+        choiceField: "additional_parameters_choice",
+        fieldPath:
+          "spec.api_specification.validation_custom_list.settings.property_validation_settings_custom.queryParameters.additional_parameters_choice",
+        options: [
+          "spec.api_specification.validation_custom_list.settings.property_validation_settings_custom.queryParameters.allow_additional_parameters",
+          "spec.api_specification.validation_custom_list.settings.property_validation_settings_custom.queryParameters.disallow_additional_parameters",
+        ],
+      },
+      {
+        choiceField: "frequency_choice",
+        fieldPath: "spec.api_testing.frequency_choice",
+        options: [
+          "spec.api_testing.every_day",
+          "spec.api_testing.every_month",
+          "spec.api_testing.every_week",
+        ],
+      },
+      {
+        choiceField: "credentials_choice",
+        fieldPath: "spec.api_testing.domains[].credentials[].credentials_choice",
+        options: [
+          "spec.api_testing.domains[].credentials[].api_key",
+          "spec.api_testing.domains[].credentials[].basic_auth",
+          "spec.api_testing.domains[].credentials[].bearer_token",
+          "spec.api_testing.domains[].credentials[].login_endpoint",
+        ],
+      },
+      {
+        choiceField: "role_choice",
+        fieldPath: "spec.api_testing.domains[].credentials[].role_choice",
+        options: [
+          "spec.api_testing.domains[].credentials[].admin",
+          "spec.api_testing.domains[].credentials[].standard",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.api_testing.domains[].credentials[].api_key.value.secret_info_oneof",
+        options: [
+          "spec.api_testing.domains[].credentials[].api_key.value.blindfold_secret_info",
+          "spec.api_testing.domains[].credentials[].api_key.value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.api_testing.domains[].credentials[].basic_auth.password.secret_info_oneof",
+        options: [
+          "spec.api_testing.domains[].credentials[].basic_auth.password.blindfold_secret_info",
+          "spec.api_testing.domains[].credentials[].basic_auth.password.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.api_testing.domains[].credentials[].bearer_token.token.secret_info_oneof",
+        options: [
+          "spec.api_testing.domains[].credentials[].bearer_token.token.blindfold_secret_info",
+          "spec.api_testing.domains[].credentials[].bearer_token.token.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.api_testing.domains[].credentials[].login_endpoint.json_payload.secret_info_oneof",
+        options: [
+          "spec.api_testing.domains[].credentials[].login_endpoint.json_payload.blindfold_secret_info",
+          "spec.api_testing.domains[].credentials[].login_endpoint.json_payload.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "action_choice",
+        fieldPath: "spec.blocked_clients[].action_choice",
+        options: [
+          "spec.blocked_clients[].bot_skip_processing",
+          "spec.blocked_clients[].skip_processing",
+          "spec.blocked_clients[].waf_skip_processing",
+        ],
+      },
+      {
+        choiceField: "client_source_choice",
+        fieldPath: "spec.blocked_clients[].client_source_choice",
+        options: [
+          "spec.blocked_clients[].as_number",
+          "spec.blocked_clients[].http_header",
+          "spec.blocked_clients[].ip_prefix",
+          "spec.blocked_clients[].ipv6_prefix",
+          "spec.blocked_clients[].user_identifier",
+        ],
+      },
+      {
+        choiceField: "value_match",
+        fieldPath: "spec.blocked_clients[].http_header.headers[].value_match",
+        options: [
+          "spec.blocked_clients[].http_header.headers[].exact",
+          "spec.blocked_clients[].http_header.headers[].presence",
+          "spec.blocked_clients[].http_header.headers[].regex",
+        ],
+      },
+      {
+        choiceField: "cors_support_choice",
+        fieldPath: "spec.bot_defense.cors_support_choice",
+        options: ["spec.bot_defense.disable_cors_support", "spec.bot_defense.enable_cors_support"],
+      },
+      {
+        choiceField: "java_script_choice",
+        fieldPath: "spec.bot_defense.policy.java_script_choice",
+        options: [
+          "spec.bot_defense.policy.disable_js_insert",
+          "spec.bot_defense.policy.js_insert_all_pages",
+          "spec.bot_defense.policy.js_insert_all_pages_except",
+          "spec.bot_defense.policy.js_insertion_rules",
+        ],
+      },
+      {
+        choiceField: "mobile_sdk_choice",
+        fieldPath: "spec.bot_defense.policy.mobile_sdk_choice",
+        options: [
+          "spec.bot_defense.policy.disable_mobile_sdk",
+          "spec.bot_defense.policy.mobile_sdk_config",
+        ],
+      },
+      {
+        choiceField: "domain_matcher_choice",
+        fieldPath:
+          "spec.bot_defense.policy.js_insert_all_pages_except.exclude_list[].domain_matcher_choice",
+        options: [
+          "spec.bot_defense.policy.js_insert_all_pages_except.exclude_list[].any_domain",
+          "spec.bot_defense.policy.js_insert_all_pages_except.exclude_list[].domain",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath:
+          "spec.bot_defense.policy.js_insert_all_pages_except.exclude_list[].domain.domain_choice",
+        options: [
+          "spec.bot_defense.policy.js_insert_all_pages_except.exclude_list[].domain.exact_value",
+          "spec.bot_defense.policy.js_insert_all_pages_except.exclude_list[].domain.regex_value",
+          "spec.bot_defense.policy.js_insert_all_pages_except.exclude_list[].domain.suffix_value",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath:
+          "spec.bot_defense.policy.js_insert_all_pages_except.exclude_list[].path.path_match",
+        options: [
+          "spec.bot_defense.policy.js_insert_all_pages_except.exclude_list[].path.path",
+          "spec.bot_defense.policy.js_insert_all_pages_except.exclude_list[].path.prefix",
+          "spec.bot_defense.policy.js_insert_all_pages_except.exclude_list[].path.regex",
+        ],
+      },
+      {
+        choiceField: "domain_matcher_choice",
+        fieldPath:
+          "spec.bot_defense.policy.js_insertion_rules.exclude_list[].domain_matcher_choice",
+        options: [
+          "spec.bot_defense.policy.js_insertion_rules.exclude_list[].any_domain",
+          "spec.bot_defense.policy.js_insertion_rules.exclude_list[].domain",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.bot_defense.policy.js_insertion_rules.exclude_list[].domain.domain_choice",
+        options: [
+          "spec.bot_defense.policy.js_insertion_rules.exclude_list[].domain.exact_value",
+          "spec.bot_defense.policy.js_insertion_rules.exclude_list[].domain.regex_value",
+          "spec.bot_defense.policy.js_insertion_rules.exclude_list[].domain.suffix_value",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath: "spec.bot_defense.policy.js_insertion_rules.exclude_list[].path.path_match",
+        options: [
+          "spec.bot_defense.policy.js_insertion_rules.exclude_list[].path.path",
+          "spec.bot_defense.policy.js_insertion_rules.exclude_list[].path.prefix",
+          "spec.bot_defense.policy.js_insertion_rules.exclude_list[].path.regex",
+        ],
+      },
+      {
+        choiceField: "domain_matcher_choice",
+        fieldPath: "spec.bot_defense.policy.js_insertion_rules.rules[].domain_matcher_choice",
+        options: [
+          "spec.bot_defense.policy.js_insertion_rules.rules[].any_domain",
+          "spec.bot_defense.policy.js_insertion_rules.rules[].domain",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.bot_defense.policy.js_insertion_rules.rules[].domain.domain_choice",
+        options: [
+          "spec.bot_defense.policy.js_insertion_rules.rules[].domain.exact_value",
+          "spec.bot_defense.policy.js_insertion_rules.rules[].domain.regex_value",
+          "spec.bot_defense.policy.js_insertion_rules.rules[].domain.suffix_value",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath: "spec.bot_defense.policy.js_insertion_rules.rules[].path.path_match",
+        options: [
+          "spec.bot_defense.policy.js_insertion_rules.rules[].path.path",
+          "spec.bot_defense.policy.js_insertion_rules.rules[].path.prefix",
+          "spec.bot_defense.policy.js_insertion_rules.rules[].path.regex",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.bot_defense.policy.mobile_sdk_config.mobile_identifier.headers[].match",
+        options: [
+          "spec.bot_defense.policy.mobile_sdk_config.mobile_identifier.headers[].check_not_present",
+          "spec.bot_defense.policy.mobile_sdk_config.mobile_identifier.headers[].check_present",
+          "spec.bot_defense.policy.mobile_sdk_config.mobile_identifier.headers[].item",
+        ],
+      },
+      {
+        choiceField: "app_traffic_type_choice",
+        fieldPath: "spec.bot_defense.policy.protected_app_endpoints[].app_traffic_type_choice",
+        options: [
+          "spec.bot_defense.policy.protected_app_endpoints[].mobile",
+          "spec.bot_defense.policy.protected_app_endpoints[].web",
+          "spec.bot_defense.policy.protected_app_endpoints[].web_mobile",
+        ],
+      },
+      {
+        choiceField: "domain_matcher_choice",
+        fieldPath: "spec.bot_defense.policy.protected_app_endpoints[].domain_matcher_choice",
+        options: [
+          "spec.bot_defense.policy.protected_app_endpoints[].any_domain",
+          "spec.bot_defense.policy.protected_app_endpoints[].domain",
+        ],
+      },
+      {
+        choiceField: "flow_label_choice",
+        fieldPath: "spec.bot_defense.policy.protected_app_endpoints[].flow_label_choice",
+        options: [
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label",
+          "spec.bot_defense.policy.protected_app_endpoints[].undefined_flow_label",
+        ],
+      },
+      {
+        choiceField: "goodbot_choice",
+        fieldPath: "spec.bot_defense.policy.protected_app_endpoints[].goodbot_choice",
+        options: [
+          "spec.bot_defense.policy.protected_app_endpoints[].allow_good_bots",
+          "spec.bot_defense.policy.protected_app_endpoints[].mitigate_good_bots",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.bot_defense.policy.protected_app_endpoints[].domain.domain_choice",
+        options: [
+          "spec.bot_defense.policy.protected_app_endpoints[].domain.exact_value",
+          "spec.bot_defense.policy.protected_app_endpoints[].domain.regex_value",
+          "spec.bot_defense.policy.protected_app_endpoints[].domain.suffix_value",
+        ],
+      },
+      {
+        choiceField: "flow_label_choice",
+        fieldPath: "spec.bot_defense.policy.protected_app_endpoints[].flow_label.flow_label_choice",
+        options: [
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.account_management",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.authentication",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.financial_services",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.flight",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.profile_management",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.search",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.shopping_gift_cards",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.account_management.label_choice",
+        options: [
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.account_management.create",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.account_management.password_reset",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.authentication.label_choice",
+        options: [
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.authentication.login",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.authentication.login_mfa",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.authentication.login_partner",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.authentication.logout",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.authentication.token_refresh",
+        ],
+      },
+      {
+        choiceField: "transaction_result_choice",
+        fieldPath:
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.authentication.login.transaction_result_choice",
+        options: [
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.authentication.login.disable_transaction_result",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.authentication.login.transaction_result",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.financial_services.label_choice",
+        options: [
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.financial_services.apply",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.financial_services.money_transfer",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.flight.label_choice",
+        options: ["spec.bot_defense.policy.protected_app_endpoints[].flow_label.flight.checkin"],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.profile_management.label_choice",
+        options: [
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.profile_management.create",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.profile_management.update",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.profile_management.view",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.search.label_choice",
+        options: [
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.search.flight_search",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.search.product_search",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.search.reservation_search",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.search.room_search",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.shopping_gift_cards.label_choice",
+        options: [
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.shopping_gift_cards.gift_card_make_purchase_with_gift_card",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.shopping_gift_cards.gift_card_validation",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.shopping_gift_cards.shop_add_to_cart",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.shopping_gift_cards.shop_checkout",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.shopping_gift_cards.shop_choose_seat",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.shopping_gift_cards.shop_enter_drawing_submission",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.shopping_gift_cards.shop_make_payment",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.shopping_gift_cards.shop_order",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.shopping_gift_cards.shop_price_inquiry",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.shopping_gift_cards.shop_promo_code_validation",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.shopping_gift_cards.shop_purchase_gift_card",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.shopping_gift_cards.shop_update_quantity",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.bot_defense.policy.protected_app_endpoints[].headers[].match",
+        options: [
+          "spec.bot_defense.policy.protected_app_endpoints[].headers[].check_not_present",
+          "spec.bot_defense.policy.protected_app_endpoints[].headers[].check_present",
+          "spec.bot_defense.policy.protected_app_endpoints[].headers[].item",
+        ],
+      },
+      {
+        choiceField: "action_type",
+        fieldPath: "spec.bot_defense.policy.protected_app_endpoints[].mitigation.action_type",
+        options: [
+          "spec.bot_defense.policy.protected_app_endpoints[].mitigation.block",
+          "spec.bot_defense.policy.protected_app_endpoints[].mitigation.flag",
+          "spec.bot_defense.policy.protected_app_endpoints[].mitigation.redirect",
+        ],
+      },
+      {
+        choiceField: "send_headers_choice",
+        fieldPath:
+          "spec.bot_defense.policy.protected_app_endpoints[].mitigation.flag.send_headers_choice",
+        options: [
+          "spec.bot_defense.policy.protected_app_endpoints[].mitigation.flag.append_headers",
+          "spec.bot_defense.policy.protected_app_endpoints[].mitigation.flag.no_headers",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath: "spec.bot_defense.policy.protected_app_endpoints[].path.path_match",
+        options: [
+          "spec.bot_defense.policy.protected_app_endpoints[].path.path",
+          "spec.bot_defense.policy.protected_app_endpoints[].path.prefix",
+          "spec.bot_defense.policy.protected_app_endpoints[].path.regex",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.bot_defense.policy.protected_app_endpoints[].query_params[].match",
+        options: [
+          "spec.bot_defense.policy.protected_app_endpoints[].query_params[].check_not_present",
+          "spec.bot_defense.policy.protected_app_endpoints[].query_params[].check_present",
+          "spec.bot_defense.policy.protected_app_endpoints[].query_params[].item",
+        ],
+      },
+      {
+        choiceField: "java_script_choice",
+        fieldPath: "spec.bot_defense_advanced.java_script_choice",
+        options: [
+          "spec.bot_defense_advanced.disable_js_insert",
+          "spec.bot_defense_advanced.js_insert_all_pages",
+          "spec.bot_defense_advanced.js_insert_all_pages_except",
+          "spec.bot_defense_advanced.js_insertion_rules",
+        ],
+      },
+      {
+        choiceField: "mobile_sdk_choice",
+        fieldPath: "spec.bot_defense_advanced.mobile_sdk_choice",
+        options: [
+          "spec.bot_defense_advanced.disable_mobile_sdk",
+          "spec.bot_defense_advanced.mobile_sdk_config",
+        ],
+      },
+      {
+        choiceField: "domain_matcher_choice",
+        fieldPath:
+          "spec.bot_defense_advanced.js_insert_all_pages_except.exclude_list[].domain_matcher_choice",
+        options: [
+          "spec.bot_defense_advanced.js_insert_all_pages_except.exclude_list[].any_domain",
+          "spec.bot_defense_advanced.js_insert_all_pages_except.exclude_list[].domain",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath:
+          "spec.bot_defense_advanced.js_insert_all_pages_except.exclude_list[].domain.domain_choice",
+        options: [
+          "spec.bot_defense_advanced.js_insert_all_pages_except.exclude_list[].domain.exact_value",
+          "spec.bot_defense_advanced.js_insert_all_pages_except.exclude_list[].domain.regex_value",
+          "spec.bot_defense_advanced.js_insert_all_pages_except.exclude_list[].domain.suffix_value",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath:
+          "spec.bot_defense_advanced.js_insert_all_pages_except.exclude_list[].path.path_match",
+        options: [
+          "spec.bot_defense_advanced.js_insert_all_pages_except.exclude_list[].path.path",
+          "spec.bot_defense_advanced.js_insert_all_pages_except.exclude_list[].path.prefix",
+          "spec.bot_defense_advanced.js_insert_all_pages_except.exclude_list[].path.regex",
+        ],
+      },
+      {
+        choiceField: "domain_matcher_choice",
+        fieldPath:
+          "spec.bot_defense_advanced.js_insertion_rules.exclude_list[].domain_matcher_choice",
+        options: [
+          "spec.bot_defense_advanced.js_insertion_rules.exclude_list[].any_domain",
+          "spec.bot_defense_advanced.js_insertion_rules.exclude_list[].domain",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath:
+          "spec.bot_defense_advanced.js_insertion_rules.exclude_list[].domain.domain_choice",
+        options: [
+          "spec.bot_defense_advanced.js_insertion_rules.exclude_list[].domain.exact_value",
+          "spec.bot_defense_advanced.js_insertion_rules.exclude_list[].domain.regex_value",
+          "spec.bot_defense_advanced.js_insertion_rules.exclude_list[].domain.suffix_value",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath: "spec.bot_defense_advanced.js_insertion_rules.exclude_list[].path.path_match",
+        options: [
+          "spec.bot_defense_advanced.js_insertion_rules.exclude_list[].path.path",
+          "spec.bot_defense_advanced.js_insertion_rules.exclude_list[].path.prefix",
+          "spec.bot_defense_advanced.js_insertion_rules.exclude_list[].path.regex",
+        ],
+      },
+      {
+        choiceField: "domain_matcher_choice",
+        fieldPath: "spec.bot_defense_advanced.js_insertion_rules.rules[].domain_matcher_choice",
+        options: [
+          "spec.bot_defense_advanced.js_insertion_rules.rules[].any_domain",
+          "spec.bot_defense_advanced.js_insertion_rules.rules[].domain",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.bot_defense_advanced.js_insertion_rules.rules[].domain.domain_choice",
+        options: [
+          "spec.bot_defense_advanced.js_insertion_rules.rules[].domain.exact_value",
+          "spec.bot_defense_advanced.js_insertion_rules.rules[].domain.regex_value",
+          "spec.bot_defense_advanced.js_insertion_rules.rules[].domain.suffix_value",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath: "spec.bot_defense_advanced.js_insertion_rules.rules[].path.path_match",
+        options: [
+          "spec.bot_defense_advanced.js_insertion_rules.rules[].path.path",
+          "spec.bot_defense_advanced.js_insertion_rules.rules[].path.prefix",
+          "spec.bot_defense_advanced.js_insertion_rules.rules[].path.regex",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.bot_defense_advanced.mobile_sdk_config.mobile_identifier.headers[].match",
+        options: [
+          "spec.bot_defense_advanced.mobile_sdk_config.mobile_identifier.headers[].check_not_present",
+          "spec.bot_defense_advanced.mobile_sdk_config.mobile_identifier.headers[].check_present",
+          "spec.bot_defense_advanced.mobile_sdk_config.mobile_identifier.headers[].item",
+        ],
+      },
+      {
+        choiceField: "cache_actions",
+        fieldPath: "spec.caching_policy.default_cache_action.cache_actions",
+        options: [
+          "spec.caching_policy.default_cache_action.cache_disabled",
+          "spec.caching_policy.default_cache_action.cache_ttl_default",
+          "spec.caching_policy.default_cache_action.cache_ttl_override",
+        ],
+      },
+      {
+        choiceField: "java_script_choice",
+        fieldPath: "spec.client_side_defense.policy.java_script_choice",
+        options: [
+          "spec.client_side_defense.policy.disable_js_insert",
+          "spec.client_side_defense.policy.js_insert_all_pages",
+          "spec.client_side_defense.policy.js_insert_all_pages_except",
+          "spec.client_side_defense.policy.js_insertion_rules",
+        ],
+      },
+      {
+        choiceField: "domain_matcher_choice",
+        fieldPath:
+          "spec.client_side_defense.policy.js_insert_all_pages_except.exclude_list[].domain_matcher_choice",
+        options: [
+          "spec.client_side_defense.policy.js_insert_all_pages_except.exclude_list[].any_domain",
+          "spec.client_side_defense.policy.js_insert_all_pages_except.exclude_list[].domain",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath:
+          "spec.client_side_defense.policy.js_insert_all_pages_except.exclude_list[].domain.domain_choice",
+        options: [
+          "spec.client_side_defense.policy.js_insert_all_pages_except.exclude_list[].domain.exact_value",
+          "spec.client_side_defense.policy.js_insert_all_pages_except.exclude_list[].domain.regex_value",
+          "spec.client_side_defense.policy.js_insert_all_pages_except.exclude_list[].domain.suffix_value",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath:
+          "spec.client_side_defense.policy.js_insert_all_pages_except.exclude_list[].path.path_match",
+        options: [
+          "spec.client_side_defense.policy.js_insert_all_pages_except.exclude_list[].path.path",
+          "spec.client_side_defense.policy.js_insert_all_pages_except.exclude_list[].path.prefix",
+          "spec.client_side_defense.policy.js_insert_all_pages_except.exclude_list[].path.regex",
+        ],
+      },
+      {
+        choiceField: "domain_matcher_choice",
+        fieldPath:
+          "spec.client_side_defense.policy.js_insertion_rules.exclude_list[].domain_matcher_choice",
+        options: [
+          "spec.client_side_defense.policy.js_insertion_rules.exclude_list[].any_domain",
+          "spec.client_side_defense.policy.js_insertion_rules.exclude_list[].domain",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath:
+          "spec.client_side_defense.policy.js_insertion_rules.exclude_list[].domain.domain_choice",
+        options: [
+          "spec.client_side_defense.policy.js_insertion_rules.exclude_list[].domain.exact_value",
+          "spec.client_side_defense.policy.js_insertion_rules.exclude_list[].domain.regex_value",
+          "spec.client_side_defense.policy.js_insertion_rules.exclude_list[].domain.suffix_value",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath:
+          "spec.client_side_defense.policy.js_insertion_rules.exclude_list[].path.path_match",
+        options: [
+          "spec.client_side_defense.policy.js_insertion_rules.exclude_list[].path.path",
+          "spec.client_side_defense.policy.js_insertion_rules.exclude_list[].path.prefix",
+          "spec.client_side_defense.policy.js_insertion_rules.exclude_list[].path.regex",
+        ],
+      },
+      {
+        choiceField: "domain_matcher_choice",
+        fieldPath:
+          "spec.client_side_defense.policy.js_insertion_rules.rules[].domain_matcher_choice",
+        options: [
+          "spec.client_side_defense.policy.js_insertion_rules.rules[].any_domain",
+          "spec.client_side_defense.policy.js_insertion_rules.rules[].domain",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath:
+          "spec.client_side_defense.policy.js_insertion_rules.rules[].domain.domain_choice",
+        options: [
+          "spec.client_side_defense.policy.js_insertion_rules.rules[].domain.exact_value",
+          "spec.client_side_defense.policy.js_insertion_rules.rules[].domain.regex_value",
+          "spec.client_side_defense.policy.js_insertion_rules.rules[].domain.suffix_value",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath: "spec.client_side_defense.policy.js_insertion_rules.rules[].path.path_match",
+        options: [
+          "spec.client_side_defense.policy.js_insertion_rules.rules[].path.path",
+          "spec.client_side_defense.policy.js_insertion_rules.rules[].path.prefix",
+          "spec.client_side_defense.policy.js_insertion_rules.rules[].path.regex",
+        ],
+      },
+      {
+        choiceField: "httponly",
+        fieldPath: "spec.cookie_stickiness.httponly",
+        options: ["spec.cookie_stickiness.add_httponly", "spec.cookie_stickiness.ignore_httponly"],
+      },
+      {
+        choiceField: "samesite",
+        fieldPath: "spec.cookie_stickiness.samesite",
+        options: [
+          "spec.cookie_stickiness.ignore_samesite",
+          "spec.cookie_stickiness.samesite_lax",
+          "spec.cookie_stickiness.samesite_none",
+          "spec.cookie_stickiness.samesite_strict",
+        ],
+      },
+      {
+        choiceField: "secure",
+        fieldPath: "spec.cookie_stickiness.secure",
+        options: ["spec.cookie_stickiness.add_secure", "spec.cookie_stickiness.ignore_secure"],
+      },
+      {
+        choiceField: "allowed_domains",
+        fieldPath: "spec.csrf_policy.allowed_domains",
+        options: [
+          "spec.csrf_policy.all_load_balancer_domains",
+          "spec.csrf_policy.custom_domain_list",
+          "spec.csrf_policy.disabled",
+        ],
+      },
+      {
+        choiceField: "action_choice",
+        fieldPath: "spec.data_guard_rules[].action_choice",
+        options: [
+          "spec.data_guard_rules[].apply_data_guard",
+          "spec.data_guard_rules[].skip_data_guard",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.data_guard_rules[].domain_choice",
+        options: [
+          "spec.data_guard_rules[].any_domain",
+          "spec.data_guard_rules[].exact_value",
+          "spec.data_guard_rules[].suffix_value",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath: "spec.data_guard_rules[].path.path_match",
+        options: [
+          "spec.data_guard_rules[].path.path",
+          "spec.data_guard_rules[].path.prefix",
+          "spec.data_guard_rules[].path.regex",
+        ],
+      },
+      {
+        choiceField: "mitigation_action",
+        fieldPath: "spec.ddos_mitigation_rules[].mitigation_action",
+        options: ["spec.ddos_mitigation_rules[].block"],
+      },
+      {
+        choiceField: "mitigation_choice",
+        fieldPath: "spec.ddos_mitigation_rules[].mitigation_choice",
+        options: [
+          "spec.ddos_mitigation_rules[].ddos_client_source",
+          "spec.ddos_mitigation_rules[].ip_prefix_list",
+        ],
+      },
+      {
+        choiceField: "health_check_port_choice",
+        fieldPath: "spec.default_pool.health_check_port_choice",
+        options: ["spec.default_pool.health_check_port", "spec.default_pool.same_as_endpoint_port"],
+        recommendedOption: "spec.default_pool.same_as_endpoint_port",
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.default_pool.port_choice",
+        options: [
+          "spec.default_pool.automatic_port",
+          "spec.default_pool.lb_port",
+          "spec.default_pool.port",
+        ],
+      },
+      {
+        choiceField: "tls_choice",
+        fieldPath: "spec.default_pool.tls_choice",
+        options: ["spec.default_pool.no_tls", "spec.default_pool.use_tls"],
+        recommendedOption: "spec.default_pool.no_tls",
+      },
+      {
+        choiceField: "circuit_breaker_choice",
+        fieldPath: "spec.default_pool.advanced_options.circuit_breaker_choice",
+        options: [
+          "spec.default_pool.advanced_options.circuit_breaker",
+          "spec.default_pool.advanced_options.default_circuit_breaker",
+          "spec.default_pool.advanced_options.disable_circuit_breaker",
+        ],
+        recommendedOption: "spec.default_pool.advanced_options.default_circuit_breaker",
+      },
+      {
+        choiceField: "http_protocol_type",
+        fieldPath: "spec.default_pool.advanced_options.http_protocol_type",
+        options: [
+          "spec.default_pool.advanced_options.auto_http_config",
+          "spec.default_pool.advanced_options.http1_config",
+          "spec.default_pool.advanced_options.http2_options",
+        ],
+        recommendedOption: "spec.default_pool.advanced_options.auto_http_config",
+      },
+      {
+        choiceField: "lb_source_ip_persistance_choice",
+        fieldPath: "spec.default_pool.advanced_options.lb_source_ip_persistance_choice",
+        options: [
+          "spec.default_pool.advanced_options.disable_lb_source_ip_persistance",
+          "spec.default_pool.advanced_options.enable_lb_source_ip_persistance",
+        ],
+        recommendedOption: "spec.default_pool.advanced_options.disable_lb_source_ip_persistance",
+      },
+      {
+        choiceField: "outlier_detection_choice",
+        fieldPath: "spec.default_pool.advanced_options.outlier_detection_choice",
+        options: [
+          "spec.default_pool.advanced_options.disable_outlier_detection",
+          "spec.default_pool.advanced_options.outlier_detection",
+        ],
+        recommendedOption: "spec.default_pool.advanced_options.disable_outlier_detection",
+      },
+      {
+        choiceField: "panic_threshold_type",
+        fieldPath: "spec.default_pool.advanced_options.panic_threshold_type",
+        options: [
+          "spec.default_pool.advanced_options.no_panic_threshold",
+          "spec.default_pool.advanced_options.panic_threshold",
+        ],
+        recommendedOption: "spec.default_pool.advanced_options.no_panic_threshold",
+      },
+      {
+        choiceField: "proxy_protocol_choice",
+        fieldPath: "spec.default_pool.advanced_options.proxy_protocol_choice",
+        options: [
+          "spec.default_pool.advanced_options.disable_proxy_protocol",
+          "spec.default_pool.advanced_options.proxy_protocol_v1",
+          "spec.default_pool.advanced_options.proxy_protocol_v2",
+        ],
+        recommendedOption: "spec.default_pool.advanced_options.disable_proxy_protocol",
+      },
+      {
+        choiceField: "subset_choice",
+        fieldPath: "spec.default_pool.advanced_options.subset_choice",
+        options: [
+          "spec.default_pool.advanced_options.disable_subsets",
+          "spec.default_pool.advanced_options.enable_subsets",
+        ],
+        recommendedOption: "spec.default_pool.advanced_options.disable_subsets",
+      },
+      {
+        choiceField: "fallback_policy_choice",
+        fieldPath: "spec.default_pool.advanced_options.enable_subsets.fallback_policy_choice",
+        options: [
+          "spec.default_pool.advanced_options.enable_subsets.any_endpoint",
+          "spec.default_pool.advanced_options.enable_subsets.default_subset",
+          "spec.default_pool.advanced_options.enable_subsets.fail_request",
+        ],
+      },
+      {
+        choiceField: "header_transformation_choice",
+        fieldPath:
+          "spec.default_pool.advanced_options.http1_config.header_transformation.header_transformation_choice",
+        options: [
+          "spec.default_pool.advanced_options.http1_config.header_transformation.default_header_transformation",
+          "spec.default_pool.advanced_options.http1_config.header_transformation.legacy_header_transformation",
+          "spec.default_pool.advanced_options.http1_config.header_transformation.preserve_case_header_transformation",
+          "spec.default_pool.advanced_options.http1_config.header_transformation.proper_case_header_transformation",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.default_pool.origin_servers[].choice",
+        options: [
+          "spec.default_pool.origin_servers[].cbip_service",
+          "spec.default_pool.origin_servers[].consul_service",
+          "spec.default_pool.origin_servers[].custom_endpoint_object",
+          "spec.default_pool.origin_servers[].k8s_service",
+          "spec.default_pool.origin_servers[].private_ip",
+          "spec.default_pool.origin_servers[].private_name",
+          "spec.default_pool.origin_servers[].public_ip",
+          "spec.default_pool.origin_servers[].public_name",
+          "spec.default_pool.origin_servers[].vn_private_ip",
+          "spec.default_pool.origin_servers[].vn_private_name",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath: "spec.default_pool.origin_servers[].consul_service.network_choice",
+        options: [
+          "spec.default_pool.origin_servers[].consul_service.inside_network",
+          "spec.default_pool.origin_servers[].consul_service.outside_network",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.default_pool.origin_servers[].consul_service.site_locator.choice",
+        options: [
+          "spec.default_pool.origin_servers[].consul_service.site_locator.site",
+          "spec.default_pool.origin_servers[].consul_service.site_locator.virtual_site",
+        ],
+      },
+      {
+        choiceField: "snat_pool_choice",
+        fieldPath: "spec.default_pool.origin_servers[].consul_service.snat_pool.snat_pool_choice",
+        options: [
+          "spec.default_pool.origin_servers[].consul_service.snat_pool.no_snat_pool",
+          "spec.default_pool.origin_servers[].consul_service.snat_pool.snat_pool",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath: "spec.default_pool.origin_servers[].k8s_service.network_choice",
+        options: [
+          "spec.default_pool.origin_servers[].k8s_service.inside_network",
+          "spec.default_pool.origin_servers[].k8s_service.outside_network",
+          "spec.default_pool.origin_servers[].k8s_service.vk8s_networks",
+        ],
+      },
+      {
+        choiceField: "service_info",
+        fieldPath: "spec.default_pool.origin_servers[].k8s_service.service_info",
+        options: ["spec.default_pool.origin_servers[].k8s_service.service_name"],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.default_pool.origin_servers[].k8s_service.site_locator.choice",
+        options: [
+          "spec.default_pool.origin_servers[].k8s_service.site_locator.site",
+          "spec.default_pool.origin_servers[].k8s_service.site_locator.virtual_site",
+        ],
+      },
+      {
+        choiceField: "snat_pool_choice",
+        fieldPath: "spec.default_pool.origin_servers[].k8s_service.snat_pool.snat_pool_choice",
+        options: [
+          "spec.default_pool.origin_servers[].k8s_service.snat_pool.no_snat_pool",
+          "spec.default_pool.origin_servers[].k8s_service.snat_pool.snat_pool",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath: "spec.default_pool.origin_servers[].private_ip.network_choice",
+        options: [
+          "spec.default_pool.origin_servers[].private_ip.inside_network",
+          "spec.default_pool.origin_servers[].private_ip.outside_network",
+          "spec.default_pool.origin_servers[].private_ip.segment",
+        ],
+      },
+      {
+        choiceField: "private_ip_choice",
+        fieldPath: "spec.default_pool.origin_servers[].private_ip.private_ip_choice",
+        options: ["spec.default_pool.origin_servers[].private_ip.ip"],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.default_pool.origin_servers[].private_ip.site_locator.choice",
+        options: [
+          "spec.default_pool.origin_servers[].private_ip.site_locator.site",
+          "spec.default_pool.origin_servers[].private_ip.site_locator.virtual_site",
+        ],
+      },
+      {
+        choiceField: "snat_pool_choice",
+        fieldPath: "spec.default_pool.origin_servers[].private_ip.snat_pool.snat_pool_choice",
+        options: [
+          "spec.default_pool.origin_servers[].private_ip.snat_pool.no_snat_pool",
+          "spec.default_pool.origin_servers[].private_ip.snat_pool.snat_pool",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath: "spec.default_pool.origin_servers[].private_name.network_choice",
+        options: [
+          "spec.default_pool.origin_servers[].private_name.inside_network",
+          "spec.default_pool.origin_servers[].private_name.outside_network",
+          "spec.default_pool.origin_servers[].private_name.segment",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.default_pool.origin_servers[].private_name.site_locator.choice",
+        options: [
+          "spec.default_pool.origin_servers[].private_name.site_locator.site",
+          "spec.default_pool.origin_servers[].private_name.site_locator.virtual_site",
+        ],
+      },
+      {
+        choiceField: "snat_pool_choice",
+        fieldPath: "spec.default_pool.origin_servers[].private_name.snat_pool.snat_pool_choice",
+        options: [
+          "spec.default_pool.origin_servers[].private_name.snat_pool.no_snat_pool",
+          "spec.default_pool.origin_servers[].private_name.snat_pool.snat_pool",
+        ],
+      },
+      {
+        choiceField: "public_ip_choice",
+        fieldPath: "spec.default_pool.origin_servers[].public_ip.public_ip_choice",
+        options: ["spec.default_pool.origin_servers[].public_ip.ip"],
+      },
+      {
+        choiceField: "virtual_network_ip_choice",
+        fieldPath: "spec.default_pool.origin_servers[].vn_private_ip.virtual_network_ip_choice",
+        options: ["spec.default_pool.origin_servers[].vn_private_ip.ip"],
+      },
+      {
+        choiceField: "map_downstream_to_upstream_conn_pool_type",
+        fieldPath:
+          "spec.default_pool.upstream_conn_pool_reuse_type.map_downstream_to_upstream_conn_pool_type",
+        options: [
+          "spec.default_pool.upstream_conn_pool_reuse_type.disable_conn_pool_reuse",
+          "spec.default_pool.upstream_conn_pool_reuse_type.enable_conn_pool_reuse",
+        ],
+      },
+      {
+        choiceField: "max_session_keys_type",
+        fieldPath: "spec.default_pool.use_tls.max_session_keys_type",
+        options: [
+          "spec.default_pool.use_tls.default_session_key_caching",
+          "spec.default_pool.use_tls.disable_session_key_caching",
+          "spec.default_pool.use_tls.max_session_keys",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath: "spec.default_pool.use_tls.mtls_choice",
+        options: [
+          "spec.default_pool.use_tls.no_mtls",
+          "spec.default_pool.use_tls.use_mtls",
+          "spec.default_pool.use_tls.use_mtls_obj",
+        ],
+      },
+      {
+        choiceField: "server_validation_choice",
+        fieldPath: "spec.default_pool.use_tls.server_validation_choice",
+        options: [
+          "spec.default_pool.use_tls.skip_server_verification",
+          "spec.default_pool.use_tls.use_server_verification",
+          "spec.default_pool.use_tls.volterra_trusted_ca",
+        ],
+      },
+      {
+        choiceField: "sni_choice",
+        fieldPath: "spec.default_pool.use_tls.sni_choice",
+        options: [
+          "spec.default_pool.use_tls.disable_sni",
+          "spec.default_pool.use_tls.sni",
+          "spec.default_pool.use_tls.use_host_header_as_sni",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.default_pool.use_tls.tls_config.choice",
+        options: [
+          "spec.default_pool.use_tls.tls_config.custom_security",
+          "spec.default_pool.use_tls.tls_config.default_security",
+          "spec.default_pool.use_tls.tls_config.low_security",
+          "spec.default_pool.use_tls.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "ocsp_stapling_choice",
+        fieldPath: "spec.default_pool.use_tls.use_mtls.tls_certificates[].ocsp_stapling_choice",
+        options: [
+          "spec.default_pool.use_tls.use_mtls.tls_certificates[].custom_hash_algorithms",
+          "spec.default_pool.use_tls.use_mtls.tls_certificates[].disable_ocsp_stapling",
+          "spec.default_pool.use_tls.use_mtls.tls_certificates[].use_system_defaults",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.default_pool.use_tls.use_mtls.tls_certificates[].private_key.secret_info_oneof",
+        options: [
+          "spec.default_pool.use_tls.use_mtls.tls_certificates[].private_key.blindfold_secret_info",
+          "spec.default_pool.use_tls.use_mtls.tls_certificates[].private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath: "spec.default_pool.use_tls.use_server_verification.trusted_ca_choice",
+        options: [
+          "spec.default_pool.use_tls.use_server_verification.trusted_ca",
+          "spec.default_pool.use_tls.use_server_verification.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "pool_choice",
+        fieldPath: "spec.default_pool_list.pools[].pool_choice",
+        options: ["spec.default_pool_list.pools[].cluster", "spec.default_pool_list.pools[].pool"],
+      },
+      {
+        choiceField: "pool_choice",
+        fieldPath: "spec.default_route_pools[].pool_choice",
+        options: ["spec.default_route_pools[].cluster", "spec.default_route_pools[].pool"],
+      },
+      {
+        choiceField: "api_discovery_settings_choice",
+        fieldPath: "spec.enable_api_discovery.api_discovery_settings_choice",
+        options: [
+          "spec.enable_api_discovery.custom_api_auth_discovery",
+          "spec.enable_api_discovery.default_api_auth_discovery",
+        ],
+      },
+      {
+        choiceField: "learn_from_redirect_traffic",
+        fieldPath: "spec.enable_api_discovery.learn_from_redirect_traffic",
+        options: [
+          "spec.enable_api_discovery.disable_learn_from_redirect_traffic",
+          "spec.enable_api_discovery.enable_learn_from_redirect_traffic",
+        ],
+      },
+      {
+        choiceField: "api_crawler",
+        fieldPath: "spec.enable_api_discovery.api_crawler.api_crawler",
+        options: [
+          "spec.enable_api_discovery.api_crawler.api_crawler_config",
+          "spec.enable_api_discovery.api_crawler.disable_api_crawler",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.enable_api_discovery.api_crawler.api_crawler_config.domains[].simple_login.password.secret_info_oneof",
+        options: [
+          "spec.enable_api_discovery.api_crawler.api_crawler_config.domains[].simple_login.password.blindfold_secret_info",
+          "spec.enable_api_discovery.api_crawler.api_crawler_config.domains[].simple_login.password.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "api_repos_choice",
+        fieldPath:
+          "spec.enable_api_discovery.api_discovery_from_code_scan.code_base_integrations[].api_repos_choice",
+        options: [
+          "spec.enable_api_discovery.api_discovery_from_code_scan.code_base_integrations[].all_repos",
+          "spec.enable_api_discovery.api_discovery_from_code_scan.code_base_integrations[].selected_repos",
+        ],
+      },
+      {
+        choiceField: "captcha_challenge_parameters_choice",
+        fieldPath: "spec.enable_challenge.captcha_challenge_parameters_choice",
+        options: [
+          "spec.enable_challenge.captcha_challenge_parameters",
+          "spec.enable_challenge.default_captcha_challenge_parameters",
+        ],
+      },
+      {
+        choiceField: "js_challenge_parameters_choice",
+        fieldPath: "spec.enable_challenge.js_challenge_parameters_choice",
+        options: [
+          "spec.enable_challenge.default_js_challenge_parameters",
+          "spec.enable_challenge.js_challenge_parameters",
+        ],
+      },
+      {
+        choiceField: "malicious_user_mitigation_choice",
+        fieldPath: "spec.enable_challenge.malicious_user_mitigation_choice",
+        options: [
+          "spec.enable_challenge.default_mitigation_settings",
+          "spec.enable_challenge.malicious_user_mitigation",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.graphql_rules[].domain_choice",
+        options: [
+          "spec.graphql_rules[].any_domain",
+          "spec.graphql_rules[].exact_value",
+          "spec.graphql_rules[].suffix_value",
+        ],
+      },
+      {
+        choiceField: "method_choice",
+        fieldPath: "spec.graphql_rules[].method_choice",
+        options: ["spec.graphql_rules[].method_get", "spec.graphql_rules[].method_post"],
+      },
+      {
+        choiceField: "allow_introspection_queries_choice",
+        fieldPath: "spec.graphql_rules[].graphql_settings.allow_introspection_queries_choice",
+        options: [
+          "spec.graphql_rules[].graphql_settings.disable_introspection",
+          "spec.graphql_rules[].graphql_settings.enable_introspection",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.http.port_choice",
+        options: ["spec.http.port", "spec.http.port_ranges"],
+      },
+      {
+        choiceField: "default_lb_choice",
+        fieldPath: "spec.https.default_lb_choice",
+        options: ["spec.https.default_loadbalancer", "spec.https.non_default_loadbalancer"],
+      },
+      {
+        choiceField: "path_normalize_choice",
+        fieldPath: "spec.https.path_normalize_choice",
+        options: ["spec.https.disable_path_normalize", "spec.https.enable_path_normalize"],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.https.port_choice",
+        options: ["spec.https.port", "spec.https.port_ranges"],
+      },
+      {
+        choiceField: "server_header_choice",
+        fieldPath: "spec.https.server_header_choice",
+        options: [
+          "spec.https.append_server_name",
+          "spec.https.default_header",
+          "spec.https.pass_through",
+          "spec.https.server_name",
+        ],
+      },
+      {
+        choiceField: "tls_certificates_choice",
+        fieldPath: "spec.https.tls_certificates_choice",
+        options: ["spec.https.tls_cert_params", "spec.https.tls_parameters"],
+      },
+      {
+        choiceField: "coalescing_choice",
+        fieldPath: "spec.https.coalescing_options.coalescing_choice",
+        options: [
+          "spec.https.coalescing_options.default_coalescing",
+          "spec.https.coalescing_options.strict_coalescing",
+        ],
+      },
+      {
+        choiceField: "http_protocol_choice",
+        fieldPath: "spec.https.http_protocol_options.http_protocol_choice",
+        options: [
+          "spec.https.http_protocol_options.http_protocol_enable_v1_only",
+          "spec.https.http_protocol_options.http_protocol_enable_v1_v2",
+          "spec.https.http_protocol_options.http_protocol_enable_v2_only",
+        ],
+      },
+      {
+        choiceField: "header_transformation_choice",
+        fieldPath:
+          "spec.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.header_transformation_choice",
+        options: [
+          "spec.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.default_header_transformation",
+          "spec.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.legacy_header_transformation",
+          "spec.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.preserve_case_header_transformation",
+          "spec.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.proper_case_header_transformation",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath: "spec.https.tls_cert_params.mtls_choice",
+        options: ["spec.https.tls_cert_params.no_mtls", "spec.https.tls_cert_params.use_mtls"],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.https.tls_cert_params.tls_config.choice",
+        options: [
+          "spec.https.tls_cert_params.tls_config.custom_security",
+          "spec.https.tls_cert_params.tls_config.default_security",
+          "spec.https.tls_cert_params.tls_config.low_security",
+          "spec.https.tls_cert_params.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath: "spec.https.tls_cert_params.use_mtls.crl_choice",
+        options: [
+          "spec.https.tls_cert_params.use_mtls.crl",
+          "spec.https.tls_cert_params.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath: "spec.https.tls_cert_params.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.https.tls_cert_params.use_mtls.trusted_ca",
+          "spec.https.tls_cert_params.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath: "spec.https.tls_cert_params.use_mtls.xfcc_header",
+        options: [
+          "spec.https.tls_cert_params.use_mtls.xfcc_disabled",
+          "spec.https.tls_cert_params.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath: "spec.https.tls_parameters.mtls_choice",
+        options: ["spec.https.tls_parameters.no_mtls", "spec.https.tls_parameters.use_mtls"],
+      },
+      {
+        choiceField: "ocsp_stapling_choice",
+        fieldPath: "spec.https.tls_parameters.tls_certificates[].ocsp_stapling_choice",
+        options: [
+          "spec.https.tls_parameters.tls_certificates[].custom_hash_algorithms",
+          "spec.https.tls_parameters.tls_certificates[].disable_ocsp_stapling",
+          "spec.https.tls_parameters.tls_certificates[].use_system_defaults",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.https.tls_parameters.tls_certificates[].private_key.secret_info_oneof",
+        options: [
+          "spec.https.tls_parameters.tls_certificates[].private_key.blindfold_secret_info",
+          "spec.https.tls_parameters.tls_certificates[].private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.https.tls_parameters.tls_config.choice",
+        options: [
+          "spec.https.tls_parameters.tls_config.custom_security",
+          "spec.https.tls_parameters.tls_config.default_security",
+          "spec.https.tls_parameters.tls_config.low_security",
+          "spec.https.tls_parameters.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath: "spec.https.tls_parameters.use_mtls.crl_choice",
+        options: [
+          "spec.https.tls_parameters.use_mtls.crl",
+          "spec.https.tls_parameters.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath: "spec.https.tls_parameters.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.https.tls_parameters.use_mtls.trusted_ca",
+          "spec.https.tls_parameters.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath: "spec.https.tls_parameters.use_mtls.xfcc_header",
+        options: [
+          "spec.https.tls_parameters.use_mtls.xfcc_disabled",
+          "spec.https.tls_parameters.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "default_lb_choice",
+        fieldPath: "spec.https_auto_cert.default_lb_choice",
+        options: [
+          "spec.https_auto_cert.default_loadbalancer",
+          "spec.https_auto_cert.non_default_loadbalancer",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath: "spec.https_auto_cert.mtls_choice",
+        options: ["spec.https_auto_cert.no_mtls", "spec.https_auto_cert.use_mtls"],
+      },
+      {
+        choiceField: "path_normalize_choice",
+        fieldPath: "spec.https_auto_cert.path_normalize_choice",
+        options: [
+          "spec.https_auto_cert.disable_path_normalize",
+          "spec.https_auto_cert.enable_path_normalize",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.https_auto_cert.port_choice",
+        options: ["spec.https_auto_cert.port", "spec.https_auto_cert.port_ranges"],
+      },
+      {
+        choiceField: "server_header_choice",
+        fieldPath: "spec.https_auto_cert.server_header_choice",
+        options: [
+          "spec.https_auto_cert.append_server_name",
+          "spec.https_auto_cert.default_header",
+          "spec.https_auto_cert.pass_through",
+          "spec.https_auto_cert.server_name",
+        ],
+      },
+      {
+        choiceField: "coalescing_choice",
+        fieldPath: "spec.https_auto_cert.coalescing_options.coalescing_choice",
+        options: [
+          "spec.https_auto_cert.coalescing_options.default_coalescing",
+          "spec.https_auto_cert.coalescing_options.strict_coalescing",
+        ],
+      },
+      {
+        choiceField: "http_protocol_choice",
+        fieldPath: "spec.https_auto_cert.http_protocol_options.http_protocol_choice",
+        options: [
+          "spec.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only",
+          "spec.https_auto_cert.http_protocol_options.http_protocol_enable_v1_v2",
+          "spec.https_auto_cert.http_protocol_options.http_protocol_enable_v2_only",
+        ],
+      },
+      {
+        choiceField: "header_transformation_choice",
+        fieldPath:
+          "spec.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.header_transformation_choice",
+        options: [
+          "spec.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.default_header_transformation",
+          "spec.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.legacy_header_transformation",
+          "spec.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.preserve_case_header_transformation",
+          "spec.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.proper_case_header_transformation",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.https_auto_cert.tls_config.choice",
+        options: [
+          "spec.https_auto_cert.tls_config.custom_security",
+          "spec.https_auto_cert.tls_config.default_security",
+          "spec.https_auto_cert.tls_config.low_security",
+          "spec.https_auto_cert.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath: "spec.https_auto_cert.use_mtls.crl_choice",
+        options: ["spec.https_auto_cert.use_mtls.crl", "spec.https_auto_cert.use_mtls.no_crl"],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath: "spec.https_auto_cert.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.https_auto_cert.use_mtls.trusted_ca",
+          "spec.https_auto_cert.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath: "spec.https_auto_cert.use_mtls.xfcc_header",
+        options: [
+          "spec.https_auto_cert.use_mtls.xfcc_disabled",
+          "spec.https_auto_cert.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "jwks_configuration",
+        fieldPath: "spec.jwt_validation.jwks_configuration",
+        options: ["spec.jwt_validation.jwks_config"],
+      },
+      {
+        choiceField: "action_choice",
+        fieldPath: "spec.jwt_validation.action.action_choice",
+        options: ["spec.jwt_validation.action.block", "spec.jwt_validation.action.report"],
+      },
+      {
+        choiceField: "audience_validation",
+        fieldPath: "spec.jwt_validation.reserved_claims.audience_validation",
+        options: [
+          "spec.jwt_validation.reserved_claims.audience",
+          "spec.jwt_validation.reserved_claims.audience_disable",
+        ],
+      },
+      {
+        choiceField: "issuer_validation",
+        fieldPath: "spec.jwt_validation.reserved_claims.issuer_validation",
+        options: [
+          "spec.jwt_validation.reserved_claims.issuer",
+          "spec.jwt_validation.reserved_claims.issuer_disable",
+        ],
+      },
+      {
+        choiceField: "validate_period",
+        fieldPath: "spec.jwt_validation.reserved_claims.validate_period",
+        options: [
+          "spec.jwt_validation.reserved_claims.validate_period_disable",
+          "spec.jwt_validation.reserved_claims.validate_period_enable",
+        ],
+      },
+      {
+        choiceField: "target",
+        fieldPath: "spec.jwt_validation.target.target",
+        options: [
+          "spec.jwt_validation.target.all_endpoint",
+          "spec.jwt_validation.target.api_groups",
+          "spec.jwt_validation.target.base_paths",
+        ],
+      },
+      {
+        choiceField: "token_location",
+        fieldPath: "spec.jwt_validation.token_location.token_location",
+        options: ["spec.jwt_validation.token_location.bearer_token"],
+      },
+      {
+        choiceField: "clientside_action_choice",
+        fieldPath: "spec.l7_ddos_protection.clientside_action_choice",
+        options: [
+          "spec.l7_ddos_protection.clientside_action_captcha_challenge",
+          "spec.l7_ddos_protection.clientside_action_js_challenge",
+          "spec.l7_ddos_protection.clientside_action_none",
+        ],
+      },
+      {
+        choiceField: "ddos_policy_choice",
+        fieldPath: "spec.l7_ddos_protection.ddos_policy_choice",
+        options: [
+          "spec.l7_ddos_protection.ddos_policy_custom",
+          "spec.l7_ddos_protection.ddos_policy_none",
+        ],
+      },
+      {
+        choiceField: "mitigation_action_choice",
+        fieldPath: "spec.l7_ddos_protection.mitigation_action_choice",
+        options: [
+          "spec.l7_ddos_protection.mitigation_block",
+          "spec.l7_ddos_protection.mitigation_captcha_challenge",
+          "spec.l7_ddos_protection.mitigation_js_challenge",
+        ],
+      },
+      {
+        choiceField: "rps_threshold_choice",
+        fieldPath: "spec.l7_ddos_protection.rps_threshold_choice",
+        options: [
+          "spec.l7_ddos_protection.default_rps_threshold",
+          "spec.l7_ddos_protection.rps_threshold",
+        ],
+      },
+      {
+        choiceField: "action_choice",
+        fieldPath:
+          "spec.malware_protection_settings.malware_protection_rules[].action.action_choice",
+        options: [
+          "spec.malware_protection_settings.malware_protection_rules[].action.block",
+          "spec.malware_protection_settings.malware_protection_rules[].action.report",
+        ],
+      },
+      {
+        choiceField: "domain_matcher",
+        fieldPath:
+          "spec.malware_protection_settings.malware_protection_rules[].domain.domain_matcher",
+        options: [
+          "spec.malware_protection_settings.malware_protection_rules[].domain.any_domain",
+          "spec.malware_protection_settings.malware_protection_rules[].domain.domain",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath:
+          "spec.malware_protection_settings.malware_protection_rules[].domain.domain.domain_choice",
+        options: [
+          "spec.malware_protection_settings.malware_protection_rules[].domain.domain.exact_value",
+          "spec.malware_protection_settings.malware_protection_rules[].domain.domain.regex_value",
+          "spec.malware_protection_settings.malware_protection_rules[].domain.domain.suffix_value",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath: "spec.malware_protection_settings.malware_protection_rules[].path.path_match",
+        options: [
+          "spec.malware_protection_settings.malware_protection_rules[].path.path",
+          "spec.malware_protection_settings.malware_protection_rules[].path.prefix",
+          "spec.malware_protection_settings.malware_protection_rules[].path.regex",
+        ],
+      },
+      {
+        choiceField: "path_normalize_choice",
+        fieldPath: "spec.more_option.path_normalize_choice",
+        options: [
+          "spec.more_option.disable_path_normalize",
+          "spec.more_option.enable_path_normalize",
+        ],
+      },
+      {
+        choiceField: "strict_sni_host_header_check_choice",
+        fieldPath: "spec.more_option.strict_sni_host_header_check_choice",
+        options: [],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath: "spec.more_option.request_cookies_to_add[].value_choice",
+        options: [
+          "spec.more_option.request_cookies_to_add[].secret_value",
+          "spec.more_option.request_cookies_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.more_option.request_cookies_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.more_option.request_cookies_to_add[].secret_value.blindfold_secret_info",
+          "spec.more_option.request_cookies_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath: "spec.more_option.request_headers_to_add[].value_choice",
+        options: [
+          "spec.more_option.request_headers_to_add[].secret_value",
+          "spec.more_option.request_headers_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.more_option.request_headers_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.more_option.request_headers_to_add[].secret_value.blindfold_secret_info",
+          "spec.more_option.request_headers_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.more_option.response_cookies_to_add[].domain_choice",
+        options: [
+          "spec.more_option.response_cookies_to_add[].add_domain",
+          "spec.more_option.response_cookies_to_add[].ignore_domain",
+        ],
+      },
+      {
+        choiceField: "expiry_choice",
+        fieldPath: "spec.more_option.response_cookies_to_add[].expiry_choice",
+        options: [
+          "spec.more_option.response_cookies_to_add[].add_expiry",
+          "spec.more_option.response_cookies_to_add[].ignore_expiry",
+        ],
+      },
+      {
+        choiceField: "httponly_choice",
+        fieldPath: "spec.more_option.response_cookies_to_add[].httponly_choice",
+        options: [
+          "spec.more_option.response_cookies_to_add[].add_httponly",
+          "spec.more_option.response_cookies_to_add[].ignore_httponly",
+        ],
+      },
+      {
+        choiceField: "max_age_choice",
+        fieldPath: "spec.more_option.response_cookies_to_add[].max_age_choice",
+        options: [
+          "spec.more_option.response_cookies_to_add[].ignore_max_age",
+          "spec.more_option.response_cookies_to_add[].max_age_value",
+        ],
+      },
+      {
+        choiceField: "partitioned_choice",
+        fieldPath: "spec.more_option.response_cookies_to_add[].partitioned_choice",
+        options: [
+          "spec.more_option.response_cookies_to_add[].add_partitioned",
+          "spec.more_option.response_cookies_to_add[].ignore_partitioned",
+        ],
+      },
+      {
+        choiceField: "path_choice",
+        fieldPath: "spec.more_option.response_cookies_to_add[].path_choice",
+        options: [
+          "spec.more_option.response_cookies_to_add[].add_path",
+          "spec.more_option.response_cookies_to_add[].ignore_path",
+        ],
+      },
+      {
+        choiceField: "samesite_choice",
+        fieldPath: "spec.more_option.response_cookies_to_add[].samesite_choice",
+        options: [
+          "spec.more_option.response_cookies_to_add[].ignore_samesite",
+          "spec.more_option.response_cookies_to_add[].samesite_lax",
+          "spec.more_option.response_cookies_to_add[].samesite_none",
+          "spec.more_option.response_cookies_to_add[].samesite_strict",
+        ],
+      },
+      {
+        choiceField: "secure_choice",
+        fieldPath: "spec.more_option.response_cookies_to_add[].secure_choice",
+        options: [
+          "spec.more_option.response_cookies_to_add[].add_secure",
+          "spec.more_option.response_cookies_to_add[].ignore_secure",
+        ],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath: "spec.more_option.response_cookies_to_add[].value_choice",
+        options: [
+          "spec.more_option.response_cookies_to_add[].ignore_value",
+          "spec.more_option.response_cookies_to_add[].secret_value",
+          "spec.more_option.response_cookies_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.more_option.response_cookies_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.more_option.response_cookies_to_add[].secret_value.blindfold_secret_info",
+          "spec.more_option.response_cookies_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath: "spec.more_option.response_headers_to_add[].value_choice",
+        options: [
+          "spec.more_option.response_headers_to_add[].secret_value",
+          "spec.more_option.response_headers_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.more_option.response_headers_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.more_option.response_headers_to_add[].secret_value.blindfold_secret_info",
+          "spec.more_option.response_headers_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "asn_choice",
+        fieldPath: "spec.origin_server_subset_rule_list.origin_server_subset_rules[].asn_choice",
+        options: [
+          "spec.origin_server_subset_rule_list.origin_server_subset_rules[].any_asn",
+          "spec.origin_server_subset_rule_list.origin_server_subset_rules[].asn_list",
+          "spec.origin_server_subset_rule_list.origin_server_subset_rules[].asn_matcher",
+        ],
+      },
+      {
+        choiceField: "ip_choice",
+        fieldPath: "spec.origin_server_subset_rule_list.origin_server_subset_rules[].ip_choice",
+        options: [
+          "spec.origin_server_subset_rule_list.origin_server_subset_rules[].any_ip",
+          "spec.origin_server_subset_rule_list.origin_server_subset_rules[].ip_matcher",
+          "spec.origin_server_subset_rule_list.origin_server_subset_rules[].ip_prefix_list",
+        ],
+      },
+      {
+        choiceField: "selector_choice",
+        fieldPath:
+          "spec.origin_server_subset_rule_list.origin_server_subset_rules[].selector_choice",
+        options: [
+          "spec.origin_server_subset_rule_list.origin_server_subset_rules[].client_selector",
+          "spec.origin_server_subset_rule_list.origin_server_subset_rules[].none",
+        ],
+      },
+      {
+        choiceField: "captcha_challenge_parameters_choice",
+        fieldPath: "spec.policy_based_challenge.captcha_challenge_parameters_choice",
+        options: [
+          "spec.policy_based_challenge.captcha_challenge_parameters",
+          "spec.policy_based_challenge.default_captcha_challenge_parameters",
+        ],
+      },
+      {
+        choiceField: "challenge_choice",
+        fieldPath: "spec.policy_based_challenge.challenge_choice",
+        options: [
+          "spec.policy_based_challenge.always_enable_captcha_challenge",
+          "spec.policy_based_challenge.always_enable_js_challenge",
+          "spec.policy_based_challenge.no_challenge",
+        ],
+      },
+      {
+        choiceField: "js_challenge_parameters_choice",
+        fieldPath: "spec.policy_based_challenge.js_challenge_parameters_choice",
+        options: [
+          "spec.policy_based_challenge.default_js_challenge_parameters",
+          "spec.policy_based_challenge.js_challenge_parameters",
+        ],
+      },
+      {
+        choiceField: "malicious_user_mitigation_choice",
+        fieldPath: "spec.policy_based_challenge.malicious_user_mitigation_choice",
+        options: [
+          "spec.policy_based_challenge.default_mitigation_settings",
+          "spec.policy_based_challenge.malicious_user_mitigation",
+        ],
+      },
+      {
+        choiceField: "temporary_blocking_parameters_choice",
+        fieldPath: "spec.policy_based_challenge.temporary_blocking_parameters_choice",
+        options: [
+          "spec.policy_based_challenge.default_temporary_blocking_parameters",
+          "spec.policy_based_challenge.temporary_user_blocking",
+        ],
+      },
+      {
+        choiceField: "asn_choice",
+        fieldPath: "spec.policy_based_challenge.rule_list.rules[].spec.asn_choice",
+        options: [
+          "spec.policy_based_challenge.rule_list.rules[].spec.any_asn",
+          "spec.policy_based_challenge.rule_list.rules[].spec.asn_list",
+          "spec.policy_based_challenge.rule_list.rules[].spec.asn_matcher",
+        ],
+      },
+      {
+        choiceField: "challenge_action",
+        fieldPath: "spec.policy_based_challenge.rule_list.rules[].spec.challenge_action",
+        options: [
+          "spec.policy_based_challenge.rule_list.rules[].spec.disable_challenge",
+          "spec.policy_based_challenge.rule_list.rules[].spec.enable_captcha_challenge",
+          "spec.policy_based_challenge.rule_list.rules[].spec.enable_javascript_challenge",
+        ],
+      },
+      {
+        choiceField: "client_choice",
+        fieldPath: "spec.policy_based_challenge.rule_list.rules[].spec.client_choice",
+        options: [
+          "spec.policy_based_challenge.rule_list.rules[].spec.any_client",
+          "spec.policy_based_challenge.rule_list.rules[].spec.client_selector",
+        ],
+      },
+      {
+        choiceField: "ip_choice",
+        fieldPath: "spec.policy_based_challenge.rule_list.rules[].spec.ip_choice",
+        options: [
+          "spec.policy_based_challenge.rule_list.rules[].spec.any_ip",
+          "spec.policy_based_challenge.rule_list.rules[].spec.ip_matcher",
+          "spec.policy_based_challenge.rule_list.rules[].spec.ip_prefix_list",
+        ],
+      },
+      {
+        choiceField: "tls_fingerprint_choice",
+        fieldPath: "spec.policy_based_challenge.rule_list.rules[].spec.tls_fingerprint_choice",
+        options: ["spec.policy_based_challenge.rule_list.rules[].spec.tls_fingerprint_matcher"],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.policy_based_challenge.rule_list.rules[].spec.arg_matchers[].match",
+        options: [
+          "spec.policy_based_challenge.rule_list.rules[].spec.arg_matchers[].check_not_present",
+          "spec.policy_based_challenge.rule_list.rules[].spec.arg_matchers[].check_present",
+          "spec.policy_based_challenge.rule_list.rules[].spec.arg_matchers[].item",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.policy_based_challenge.rule_list.rules[].spec.cookie_matchers[].match",
+        options: [
+          "spec.policy_based_challenge.rule_list.rules[].spec.cookie_matchers[].check_not_present",
+          "spec.policy_based_challenge.rule_list.rules[].spec.cookie_matchers[].check_present",
+          "spec.policy_based_challenge.rule_list.rules[].spec.cookie_matchers[].item",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.policy_based_challenge.rule_list.rules[].spec.headers[].match",
+        options: [
+          "spec.policy_based_challenge.rule_list.rules[].spec.headers[].check_not_present",
+          "spec.policy_based_challenge.rule_list.rules[].spec.headers[].check_present",
+          "spec.policy_based_challenge.rule_list.rules[].spec.headers[].item",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.policy_based_challenge.rule_list.rules[].spec.query_params[].match",
+        options: [
+          "spec.policy_based_challenge.rule_list.rules[].spec.query_params[].check_not_present",
+          "spec.policy_based_challenge.rule_list.rules[].spec.query_params[].check_present",
+          "spec.policy_based_challenge.rule_list.rules[].spec.query_params[].item",
+        ],
+      },
+      {
+        choiceField: "cookie_tampering",
+        fieldPath: "spec.protected_cookies[].cookie_tampering",
+        options: [
+          "spec.protected_cookies[].disable_tampering_protection",
+          "spec.protected_cookies[].enable_tampering_protection",
+        ],
+      },
+      {
+        choiceField: "httponly",
+        fieldPath: "spec.protected_cookies[].httponly",
+        options: [
+          "spec.protected_cookies[].add_httponly",
+          "spec.protected_cookies[].ignore_httponly",
+        ],
+      },
+      {
+        choiceField: "max_age",
+        fieldPath: "spec.protected_cookies[].max_age",
+        options: [
+          "spec.protected_cookies[].ignore_max_age",
+          "spec.protected_cookies[].max_age_value",
+        ],
+      },
+      {
+        choiceField: "samesite",
+        fieldPath: "spec.protected_cookies[].samesite",
+        options: [
+          "spec.protected_cookies[].ignore_samesite",
+          "spec.protected_cookies[].samesite_lax",
+          "spec.protected_cookies[].samesite_none",
+          "spec.protected_cookies[].samesite_strict",
+        ],
+      },
+      {
+        choiceField: "secure",
+        fieldPath: "spec.protected_cookies[].secure",
+        options: ["spec.protected_cookies[].add_secure", "spec.protected_cookies[].ignore_secure"],
+      },
+      {
+        choiceField: "ip_allowed_list_choice",
+        fieldPath: "spec.rate_limit.ip_allowed_list_choice",
+        options: [
+          "spec.rate_limit.custom_ip_allowed_list",
+          "spec.rate_limit.ip_allowed_list",
+          "spec.rate_limit.no_ip_allowed_list",
+        ],
+      },
+      {
+        choiceField: "policy_choice",
+        fieldPath: "spec.rate_limit.policy_choice",
+        options: ["spec.rate_limit.no_policies", "spec.rate_limit.policies"],
+      },
+      {
+        choiceField: "action_choice",
+        fieldPath: "spec.rate_limit.rate_limiter.action_choice",
+        options: [
+          "spec.rate_limit.rate_limiter.action_block",
+          "spec.rate_limit.rate_limiter.disabled",
+        ],
+      },
+      {
+        choiceField: "algorithm",
+        fieldPath: "spec.rate_limit.rate_limiter.algorithm",
+        options: [
+          "spec.rate_limit.rate_limiter.leaky_bucket",
+          "spec.rate_limit.rate_limiter.token_bucket",
+        ],
+      },
+      {
+        choiceField: "block_duration_choice",
+        fieldPath: "spec.rate_limit.rate_limiter.action_block.block_duration_choice",
+        options: [
+          "spec.rate_limit.rate_limiter.action_block.hours",
+          "spec.rate_limit.rate_limiter.action_block.minutes",
+          "spec.rate_limit.rate_limiter.action_block.seconds",
+        ],
+      },
+      {
+        choiceField: "policy_specifier",
+        fieldPath: "spec.ring_hash.hash_policy[].policy_specifier",
+        options: [
+          "spec.ring_hash.hash_policy[].cookie",
+          "spec.ring_hash.hash_policy[].header_name",
+          "spec.ring_hash.hash_policy[].source_ip",
+        ],
+      },
+      {
+        choiceField: "httponly",
+        fieldPath: "spec.ring_hash.hash_policy[].cookie.httponly",
+        options: [
+          "spec.ring_hash.hash_policy[].cookie.add_httponly",
+          "spec.ring_hash.hash_policy[].cookie.ignore_httponly",
+        ],
+      },
+      {
+        choiceField: "samesite",
+        fieldPath: "spec.ring_hash.hash_policy[].cookie.samesite",
+        options: [
+          "spec.ring_hash.hash_policy[].cookie.ignore_samesite",
+          "spec.ring_hash.hash_policy[].cookie.samesite_lax",
+          "spec.ring_hash.hash_policy[].cookie.samesite_none",
+          "spec.ring_hash.hash_policy[].cookie.samesite_strict",
+        ],
+      },
+      {
+        choiceField: "secure",
+        fieldPath: "spec.ring_hash.hash_policy[].cookie.secure",
+        options: [
+          "spec.ring_hash.hash_policy[].cookie.add_secure",
+          "spec.ring_hash.hash_policy[].cookie.ignore_secure",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.routes[].choice",
+        options: [
+          "spec.routes[].custom_route_object",
+          "spec.routes[].direct_response_route",
+          "spec.routes[].redirect_route",
+          "spec.routes[].simple_route",
+        ],
+      },
+      {
+        choiceField: "value_match",
+        fieldPath: "spec.routes[].direct_response_route.headers[].value_match",
+        options: [
+          "spec.routes[].direct_response_route.headers[].exact",
+          "spec.routes[].direct_response_route.headers[].presence",
+          "spec.routes[].direct_response_route.headers[].regex",
+        ],
+      },
+      {
+        choiceField: "port_match",
+        fieldPath: "spec.routes[].direct_response_route.incoming_port.port_match",
+        options: [
+          "spec.routes[].direct_response_route.incoming_port.no_port_match",
+          "spec.routes[].direct_response_route.incoming_port.port",
+          "spec.routes[].direct_response_route.incoming_port.port_ranges",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath: "spec.routes[].direct_response_route.path.path_match",
+        options: [
+          "spec.routes[].direct_response_route.path.path",
+          "spec.routes[].direct_response_route.path.prefix",
+          "spec.routes[].direct_response_route.path.regex",
+        ],
+      },
+      {
+        choiceField: "value_match",
+        fieldPath: "spec.routes[].redirect_route.headers[].value_match",
+        options: [
+          "spec.routes[].redirect_route.headers[].exact",
+          "spec.routes[].redirect_route.headers[].presence",
+          "spec.routes[].redirect_route.headers[].regex",
+        ],
+      },
+      {
+        choiceField: "port_match",
+        fieldPath: "spec.routes[].redirect_route.incoming_port.port_match",
+        options: [
+          "spec.routes[].redirect_route.incoming_port.no_port_match",
+          "spec.routes[].redirect_route.incoming_port.port",
+          "spec.routes[].redirect_route.incoming_port.port_ranges",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath: "spec.routes[].redirect_route.path.path_match",
+        options: [
+          "spec.routes[].redirect_route.path.path",
+          "spec.routes[].redirect_route.path.prefix",
+          "spec.routes[].redirect_route.path.regex",
+        ],
+      },
+      {
+        choiceField: "query_params",
+        fieldPath: "spec.routes[].redirect_route.route_redirect.query_params",
+        options: [
+          "spec.routes[].redirect_route.route_redirect.remove_all_params",
+          "spec.routes[].redirect_route.route_redirect.replace_params",
+          "spec.routes[].redirect_route.route_redirect.retain_all_params",
+        ],
+      },
+      {
+        choiceField: "redirect_path_choice",
+        fieldPath: "spec.routes[].redirect_route.route_redirect.redirect_path_choice",
+        options: [
+          "spec.routes[].redirect_route.route_redirect.path_redirect",
+          "spec.routes[].redirect_route.route_redirect.prefix_rewrite",
+        ],
+      },
+      {
+        choiceField: "host_rewrite_params",
+        fieldPath: "spec.routes[].simple_route.host_rewrite_params",
+        options: [
+          "spec.routes[].simple_route.auto_host_rewrite",
+          "spec.routes[].simple_route.disable_host_rewrite",
+          "spec.routes[].simple_route.host_rewrite",
+        ],
+      },
+      {
+        choiceField: "bot_defense_javascript_injection_choice",
+        fieldPath:
+          "spec.routes[].simple_route.advanced_options.bot_defense_javascript_injection_choice",
+        options: [
+          "spec.routes[].simple_route.advanced_options.bot_defense_javascript_injection",
+          "spec.routes[].simple_route.advanced_options.inherited_bot_defense_javascript_injection",
+        ],
+      },
+      {
+        choiceField: "buffer_choice",
+        fieldPath: "spec.routes[].simple_route.advanced_options.buffer_choice",
+        options: [
+          "spec.routes[].simple_route.advanced_options.buffer_policy",
+          "spec.routes[].simple_route.advanced_options.common_buffering",
+        ],
+      },
+      {
+        choiceField: "cluster_retract_choice",
+        fieldPath: "spec.routes[].simple_route.advanced_options.cluster_retract_choice",
+        options: [
+          "spec.routes[].simple_route.advanced_options.do_not_retract_cluster",
+          "spec.routes[].simple_route.advanced_options.retract_cluster",
+        ],
+      },
+      {
+        choiceField: "hash_policy_choice",
+        fieldPath: "spec.routes[].simple_route.advanced_options.hash_policy_choice",
+        options: [
+          "spec.routes[].simple_route.advanced_options.common_hash_policy",
+          "spec.routes[].simple_route.advanced_options.specific_hash_policy",
+        ],
+      },
+      {
+        choiceField: "mirroring_choice",
+        fieldPath: "spec.routes[].simple_route.advanced_options.mirroring_choice",
+        options: [
+          "spec.routes[].simple_route.advanced_options.disable_mirroring",
+          "spec.routes[].simple_route.advanced_options.mirror_policy",
+        ],
+      },
+      {
+        choiceField: "retry_policy_choice",
+        fieldPath: "spec.routes[].simple_route.advanced_options.retry_policy_choice",
+        options: [
+          "spec.routes[].simple_route.advanced_options.default_retry_policy",
+          "spec.routes[].simple_route.advanced_options.no_retry_policy",
+          "spec.routes[].simple_route.advanced_options.retry_policy",
+        ],
+      },
+      {
+        choiceField: "rewrite_choice",
+        fieldPath: "spec.routes[].simple_route.advanced_options.rewrite_choice",
+        options: [
+          "spec.routes[].simple_route.advanced_options.disable_prefix_rewrite",
+          "spec.routes[].simple_route.advanced_options.prefix_rewrite",
+          "spec.routes[].simple_route.advanced_options.regex_rewrite",
+        ],
+      },
+      {
+        choiceField: "spdy_choice",
+        fieldPath: "spec.routes[].simple_route.advanced_options.spdy_choice",
+        options: [
+          "spec.routes[].simple_route.advanced_options.disable_spdy",
+          "spec.routes[].simple_route.advanced_options.enable_spdy",
+        ],
+      },
+      {
+        choiceField: "waf_choice",
+        fieldPath: "spec.routes[].simple_route.advanced_options.waf_choice",
+        options: [
+          "spec.routes[].simple_route.advanced_options.app_firewall",
+          "spec.routes[].simple_route.advanced_options.disable_waf",
+          "spec.routes[].simple_route.advanced_options.inherited_waf",
+        ],
+      },
+      {
+        choiceField: "waf_exclusion_choice",
+        fieldPath: "spec.routes[].simple_route.advanced_options.waf_exclusion_choice",
+        options: [
+          "spec.routes[].simple_route.advanced_options.inherited_waf_exclusion",
+          "spec.routes[].simple_route.advanced_options.waf_exclusion_policy",
+        ],
+      },
+      {
+        choiceField: "websocket_choice",
+        fieldPath: "spec.routes[].simple_route.advanced_options.websocket_choice",
+        options: [
+          "spec.routes[].simple_route.advanced_options.disable_web_socket_config",
+          "spec.routes[].simple_route.advanced_options.web_socket_config",
+        ],
+      },
+      {
+        choiceField: "allowed_domains",
+        fieldPath: "spec.routes[].simple_route.advanced_options.csrf_policy.allowed_domains",
+        options: [
+          "spec.routes[].simple_route.advanced_options.csrf_policy.all_load_balancer_domains",
+          "spec.routes[].simple_route.advanced_options.csrf_policy.custom_domain_list",
+          "spec.routes[].simple_route.advanced_options.csrf_policy.disabled",
+        ],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath:
+          "spec.routes[].simple_route.advanced_options.request_cookies_to_add[].value_choice",
+        options: [
+          "spec.routes[].simple_route.advanced_options.request_cookies_to_add[].secret_value",
+          "spec.routes[].simple_route.advanced_options.request_cookies_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.routes[].simple_route.advanced_options.request_cookies_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.routes[].simple_route.advanced_options.request_cookies_to_add[].secret_value.blindfold_secret_info",
+          "spec.routes[].simple_route.advanced_options.request_cookies_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath:
+          "spec.routes[].simple_route.advanced_options.request_headers_to_add[].value_choice",
+        options: [
+          "spec.routes[].simple_route.advanced_options.request_headers_to_add[].secret_value",
+          "spec.routes[].simple_route.advanced_options.request_headers_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.routes[].simple_route.advanced_options.request_headers_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.routes[].simple_route.advanced_options.request_headers_to_add[].secret_value.blindfold_secret_info",
+          "spec.routes[].simple_route.advanced_options.request_headers_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath:
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].domain_choice",
+        options: [
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].add_domain",
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].ignore_domain",
+        ],
+      },
+      {
+        choiceField: "expiry_choice",
+        fieldPath:
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].expiry_choice",
+        options: [
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].add_expiry",
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].ignore_expiry",
+        ],
+      },
+      {
+        choiceField: "httponly_choice",
+        fieldPath:
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].httponly_choice",
+        options: [
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].add_httponly",
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].ignore_httponly",
+        ],
+      },
+      {
+        choiceField: "max_age_choice",
+        fieldPath:
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].max_age_choice",
+        options: [
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].ignore_max_age",
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].max_age_value",
+        ],
+      },
+      {
+        choiceField: "partitioned_choice",
+        fieldPath:
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].partitioned_choice",
+        options: [
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].add_partitioned",
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].ignore_partitioned",
+        ],
+      },
+      {
+        choiceField: "path_choice",
+        fieldPath:
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].path_choice",
+        options: [
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].add_path",
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].ignore_path",
+        ],
+      },
+      {
+        choiceField: "samesite_choice",
+        fieldPath:
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].samesite_choice",
+        options: [
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].ignore_samesite",
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].samesite_lax",
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].samesite_none",
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].samesite_strict",
+        ],
+      },
+      {
+        choiceField: "secure_choice",
+        fieldPath:
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].secure_choice",
+        options: [
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].add_secure",
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].ignore_secure",
+        ],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath:
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].value_choice",
+        options: [
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].ignore_value",
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].secret_value",
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].secret_value.blindfold_secret_info",
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath:
+          "spec.routes[].simple_route.advanced_options.response_headers_to_add[].value_choice",
+        options: [
+          "spec.routes[].simple_route.advanced_options.response_headers_to_add[].secret_value",
+          "spec.routes[].simple_route.advanced_options.response_headers_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.routes[].simple_route.advanced_options.response_headers_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.routes[].simple_route.advanced_options.response_headers_to_add[].secret_value.blindfold_secret_info",
+          "spec.routes[].simple_route.advanced_options.response_headers_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "policy_specifier",
+        fieldPath:
+          "spec.routes[].simple_route.advanced_options.specific_hash_policy.hash_policy[].policy_specifier",
+        options: [
+          "spec.routes[].simple_route.advanced_options.specific_hash_policy.hash_policy[].cookie",
+          "spec.routes[].simple_route.advanced_options.specific_hash_policy.hash_policy[].header_name",
+          "spec.routes[].simple_route.advanced_options.specific_hash_policy.hash_policy[].source_ip",
+        ],
+      },
+      {
+        choiceField: "httponly",
+        fieldPath:
+          "spec.routes[].simple_route.advanced_options.specific_hash_policy.hash_policy[].cookie.httponly",
+        options: [
+          "spec.routes[].simple_route.advanced_options.specific_hash_policy.hash_policy[].cookie.add_httponly",
+          "spec.routes[].simple_route.advanced_options.specific_hash_policy.hash_policy[].cookie.ignore_httponly",
+        ],
+      },
+      {
+        choiceField: "samesite",
+        fieldPath:
+          "spec.routes[].simple_route.advanced_options.specific_hash_policy.hash_policy[].cookie.samesite",
+        options: [
+          "spec.routes[].simple_route.advanced_options.specific_hash_policy.hash_policy[].cookie.ignore_samesite",
+          "spec.routes[].simple_route.advanced_options.specific_hash_policy.hash_policy[].cookie.samesite_lax",
+          "spec.routes[].simple_route.advanced_options.specific_hash_policy.hash_policy[].cookie.samesite_none",
+          "spec.routes[].simple_route.advanced_options.specific_hash_policy.hash_policy[].cookie.samesite_strict",
+        ],
+      },
+      {
+        choiceField: "secure",
+        fieldPath:
+          "spec.routes[].simple_route.advanced_options.specific_hash_policy.hash_policy[].cookie.secure",
+        options: [
+          "spec.routes[].simple_route.advanced_options.specific_hash_policy.hash_policy[].cookie.add_secure",
+          "spec.routes[].simple_route.advanced_options.specific_hash_policy.hash_policy[].cookie.ignore_secure",
+        ],
+      },
+      {
+        choiceField: "value_match",
+        fieldPath: "spec.routes[].simple_route.headers[].value_match",
+        options: [
+          "spec.routes[].simple_route.headers[].exact",
+          "spec.routes[].simple_route.headers[].presence",
+          "spec.routes[].simple_route.headers[].regex",
+        ],
+      },
+      {
+        choiceField: "port_match",
+        fieldPath: "spec.routes[].simple_route.incoming_port.port_match",
+        options: [
+          "spec.routes[].simple_route.incoming_port.no_port_match",
+          "spec.routes[].simple_route.incoming_port.port",
+          "spec.routes[].simple_route.incoming_port.port_ranges",
+        ],
+      },
+      {
+        choiceField: "pool_choice",
+        fieldPath: "spec.routes[].simple_route.origin_pools[].pool_choice",
+        options: [
+          "spec.routes[].simple_route.origin_pools[].cluster",
+          "spec.routes[].simple_route.origin_pools[].pool",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath: "spec.routes[].simple_route.path.path_match",
+        options: [
+          "spec.routes[].simple_route.path.path",
+          "spec.routes[].simple_route.path.prefix",
+          "spec.routes[].simple_route.path.regex",
+        ],
+      },
+      {
+        choiceField: "query_params",
+        fieldPath: "spec.routes[].simple_route.query_params.query_params",
+        options: [
+          "spec.routes[].simple_route.query_params.remove_all_params",
+          "spec.routes[].simple_route.query_params.replace_params",
+          "spec.routes[].simple_route.query_params.retain_all_params",
+        ],
+      },
+      {
+        choiceField: "masking_mode_choice",
+        fieldPath:
+          "spec.sensitive_data_disclosure_rules.sensitive_data_types_in_response[].masking_mode_choice",
+        options: [
+          "spec.sensitive_data_disclosure_rules.sensitive_data_types_in_response[].mask",
+          "spec.sensitive_data_disclosure_rules.sensitive_data_types_in_response[].report",
+        ],
+      },
+      {
+        choiceField: "type_condition_type_choice",
+        fieldPath:
+          "spec.sensitive_data_disclosure_rules.sensitive_data_types_in_response[].type_condition_type_choice",
+        options: [
+          "spec.sensitive_data_disclosure_rules.sensitive_data_types_in_response[].api_endpoint",
+        ],
+      },
+      {
+        choiceField: "api_discovery_choice",
+        fieldPath: "spec.single_lb_app.api_discovery_choice",
+        options: ["spec.single_lb_app.disable_discovery", "spec.single_lb_app.enable_discovery"],
+      },
+      {
+        choiceField: "malicious_user_detection_choice",
+        fieldPath: "spec.single_lb_app.malicious_user_detection_choice",
+        options: [
+          "spec.single_lb_app.disable_malicious_user_detection",
+          "spec.single_lb_app.enable_malicious_user_detection",
+        ],
+      },
+      {
+        choiceField: "api_discovery_settings_choice",
+        fieldPath: "spec.single_lb_app.enable_discovery.api_discovery_settings_choice",
+        options: [
+          "spec.single_lb_app.enable_discovery.custom_api_auth_discovery",
+          "spec.single_lb_app.enable_discovery.default_api_auth_discovery",
+        ],
+      },
+      {
+        choiceField: "learn_from_redirect_traffic",
+        fieldPath: "spec.single_lb_app.enable_discovery.learn_from_redirect_traffic",
+        options: [
+          "spec.single_lb_app.enable_discovery.disable_learn_from_redirect_traffic",
+          "spec.single_lb_app.enable_discovery.enable_learn_from_redirect_traffic",
+        ],
+      },
+      {
+        choiceField: "api_crawler",
+        fieldPath: "spec.single_lb_app.enable_discovery.api_crawler.api_crawler",
+        options: [
+          "spec.single_lb_app.enable_discovery.api_crawler.api_crawler_config",
+          "spec.single_lb_app.enable_discovery.api_crawler.disable_api_crawler",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.single_lb_app.enable_discovery.api_crawler.api_crawler_config.domains[].simple_login.password.secret_info_oneof",
+        options: [
+          "spec.single_lb_app.enable_discovery.api_crawler.api_crawler_config.domains[].simple_login.password.blindfold_secret_info",
+          "spec.single_lb_app.enable_discovery.api_crawler.api_crawler_config.domains[].simple_login.password.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "api_repos_choice",
+        fieldPath:
+          "spec.single_lb_app.enable_discovery.api_discovery_from_code_scan.code_base_integrations[].api_repos_choice",
+        options: [
+          "spec.single_lb_app.enable_discovery.api_discovery_from_code_scan.code_base_integrations[].all_repos",
+          "spec.single_lb_app.enable_discovery.api_discovery_from_code_scan.code_base_integrations[].selected_repos",
+        ],
+      },
+      {
+        choiceField: "request_timeout_choice",
+        fieldPath: "spec.slow_ddos_mitigation.request_timeout_choice",
+        options: [
+          "spec.slow_ddos_mitigation.disable_request_timeout",
+          "spec.slow_ddos_mitigation.request_timeout",
+        ],
+      },
+      {
+        choiceField: "action_choice",
+        fieldPath: "spec.trusted_clients[].action_choice",
+        options: [
+          "spec.trusted_clients[].bot_skip_processing",
+          "spec.trusted_clients[].skip_processing",
+          "spec.trusted_clients[].waf_skip_processing",
+        ],
+      },
+      {
+        choiceField: "client_source_choice",
+        fieldPath: "spec.trusted_clients[].client_source_choice",
+        options: [
+          "spec.trusted_clients[].as_number",
+          "spec.trusted_clients[].http_header",
+          "spec.trusted_clients[].ip_prefix",
+          "spec.trusted_clients[].ipv6_prefix",
+          "spec.trusted_clients[].user_identifier",
+        ],
+      },
+      {
+        choiceField: "value_match",
+        fieldPath: "spec.trusted_clients[].http_header.headers[].value_match",
+        options: [
+          "spec.trusted_clients[].http_header.headers[].exact",
+          "spec.trusted_clients[].http_header.headers[].presence",
+          "spec.trusted_clients[].http_header.headers[].regex",
+        ],
+      },
+      {
+        choiceField: "waf_exclusion_choice",
+        fieldPath: "spec.waf_exclusion.waf_exclusion_choice",
+        options: [
+          "spec.waf_exclusion.waf_exclusion_inline_rules",
+          "spec.waf_exclusion.waf_exclusion_policy",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.waf_exclusion.waf_exclusion_inline_rules.rules[].domain_choice",
+        options: [
+          "spec.waf_exclusion.waf_exclusion_inline_rules.rules[].any_domain",
+          "spec.waf_exclusion.waf_exclusion_inline_rules.rules[].exact_value",
+          "spec.waf_exclusion.waf_exclusion_inline_rules.rules[].suffix_value",
+        ],
+      },
+      {
+        choiceField: "path_choice",
+        fieldPath: "spec.waf_exclusion.waf_exclusion_inline_rules.rules[].path_choice",
+        options: [
+          "spec.waf_exclusion.waf_exclusion_inline_rules.rules[].any_path",
+          "spec.waf_exclusion.waf_exclusion_inline_rules.rules[].path_prefix",
+          "spec.waf_exclusion.waf_exclusion_inline_rules.rules[].path_regex",
+        ],
+      },
+      {
+        choiceField: "waf_advanced_configuration",
+        fieldPath:
+          "spec.waf_exclusion.waf_exclusion_inline_rules.rules[].waf_advanced_configuration",
+        options: [
+          "spec.waf_exclusion.waf_exclusion_inline_rules.rules[].app_firewall_detection_control",
+          "spec.waf_exclusion.waf_exclusion_inline_rules.rules[].waf_skip_processing",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -2212,7 +5705,3268 @@ export const virtualTools: ParsedOperation[] = [
         resourceType: "viewshttp-loadbalancer-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "advertise_choice",
+        fieldPath: "spec.advertise_choice",
+        options: [
+          "spec.advertise_custom",
+          "spec.advertise_on_public",
+          "spec.advertise_on_public_default_vip",
+          "spec.do_not_advertise",
+        ],
+      },
+      {
+        choiceField: "api_definition_choice",
+        fieldPath: "spec.api_definition_choice",
+        options: ["spec.api_specification", "spec.disable_api_definition"],
+      },
+      {
+        choiceField: "api_discovery_choice",
+        fieldPath: "spec.api_discovery_choice",
+        options: ["spec.disable_api_discovery", "spec.enable_api_discovery"],
+      },
+      {
+        choiceField: "api_testing_choice",
+        fieldPath: "spec.api_testing_choice",
+        options: ["spec.api_testing", "spec.disable_api_testing"],
+      },
+      {
+        choiceField: "bot_defense_choice",
+        fieldPath: "spec.bot_defense_choice",
+        options: ["spec.bot_defense", "spec.bot_defense_advanced", "spec.disable_bot_defense"],
+      },
+      {
+        choiceField: "cache_options",
+        fieldPath: "spec.cache_options",
+        options: ["spec.caching_policy", "spec.disable_caching"],
+      },
+      {
+        choiceField: "challenge_type",
+        fieldPath: "spec.challenge_type",
+        options: [
+          "spec.captcha_challenge",
+          "spec.enable_challenge",
+          "spec.js_challenge",
+          "spec.no_challenge",
+          "spec.policy_based_challenge",
+        ],
+      },
+      {
+        choiceField: "client_side_defense_choice",
+        fieldPath: "spec.client_side_defense_choice",
+        options: ["spec.client_side_defense", "spec.disable_client_side_defense"],
+      },
+      {
+        choiceField: "hash_policy_choice",
+        fieldPath: "spec.hash_policy_choice",
+        options: [
+          "spec.cookie_stickiness",
+          "spec.least_active",
+          "spec.random",
+          "spec.ring_hash",
+          "spec.round_robin",
+          "spec.source_ip_stickiness",
+        ],
+      },
+      {
+        choiceField: "ip_reputation_choice",
+        fieldPath: "spec.ip_reputation_choice",
+        options: ["spec.disable_ip_reputation", "spec.enable_ip_reputation"],
+      },
+      {
+        choiceField: "l7_ddos_auto_mitigation_action",
+        fieldPath: "spec.l7_ddos_auto_mitigation_action",
+        options: [
+          "spec.l7_ddos_action_block",
+          "spec.l7_ddos_action_default",
+          "spec.l7_ddos_action_js_challenge",
+        ],
+      },
+      {
+        choiceField: "loadbalancer_type",
+        fieldPath: "spec.loadbalancer_type",
+        options: ["spec.http", "spec.https", "spec.https_auto_cert"],
+      },
+      {
+        choiceField: "malicious_user_detection_choice",
+        fieldPath: "spec.malicious_user_detection_choice",
+        options: ["spec.disable_malicious_user_detection", "spec.enable_malicious_user_detection"],
+      },
+      {
+        choiceField: "malware_protection",
+        fieldPath: "spec.malware_protection",
+        options: ["spec.disable_malware_protection", "spec.malware_protection_settings"],
+      },
+      {
+        choiceField: "ml_config_choice",
+        fieldPath: "spec.ml_config_choice",
+        options: ["spec.multi_lb_app", "spec.single_lb_app"],
+      },
+      {
+        choiceField: "origin_pool_choice",
+        fieldPath: "spec.origin_pool_choice",
+        options: ["spec.default_pool", "spec.default_pool_list"],
+      },
+      {
+        choiceField: "rate_limit_choice",
+        fieldPath: "spec.rate_limit_choice",
+        options: ["spec.api_rate_limit", "spec.disable_rate_limit", "spec.rate_limit"],
+      },
+      {
+        choiceField: "sensitive_data_policy_choice",
+        fieldPath: "spec.sensitive_data_policy_choice",
+        options: ["spec.default_sensitive_data_policy", "spec.sensitive_data_policy"],
+      },
+      {
+        choiceField: "service_policy_choice",
+        fieldPath: "spec.service_policy_choice",
+        options: [
+          "spec.active_service_policies",
+          "spec.no_service_policies",
+          "spec.service_policies_from_namespace",
+        ],
+      },
+      {
+        choiceField: "slow_ddos_mitigation_choice",
+        fieldPath: "spec.slow_ddos_mitigation_choice",
+        options: ["spec.slow_ddos_mitigation", "spec.system_default_timeouts"],
+      },
+      {
+        choiceField: "threat_mesh_choice",
+        fieldPath: "spec.threat_mesh_choice",
+        options: ["spec.disable_threat_mesh", "spec.enable_threat_mesh"],
+      },
+      {
+        choiceField: "trust_client_ip_headers_choice",
+        fieldPath: "spec.trust_client_ip_headers_choice",
+        options: ["spec.disable_trust_client_ip_headers", "spec.enable_trust_client_ip_headers"],
+      },
+      {
+        choiceField: "user_id_choice",
+        fieldPath: "spec.user_id_choice",
+        options: ["spec.user_id_client_ip", "spec.user_identification"],
+      },
+      {
+        choiceField: "waf_choice",
+        fieldPath: "spec.waf_choice",
+        options: ["spec.app_firewall", "spec.disable_waf"],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.advertise_custom.advertise_where[].choice",
+        options: [
+          "spec.advertise_custom.advertise_where[].advertise_on_public",
+          "spec.advertise_custom.advertise_where[].cloud_edge_segment",
+          "spec.advertise_custom.advertise_where[].segment",
+          "spec.advertise_custom.advertise_where[].site",
+          "spec.advertise_custom.advertise_where[].site_segment",
+          "spec.advertise_custom.advertise_where[].virtual_network",
+          "spec.advertise_custom.advertise_where[].virtual_site",
+          "spec.advertise_custom.advertise_where[].virtual_site_segment",
+          "spec.advertise_custom.advertise_where[].virtual_site_with_vip",
+          "spec.advertise_custom.advertise_where[].vk8s_service",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.advertise_custom.advertise_where[].port_choice",
+        options: [
+          "spec.advertise_custom.advertise_where[].port",
+          "spec.advertise_custom.advertise_where[].port_ranges",
+          "spec.advertise_custom.advertise_where[].use_default_port",
+        ],
+      },
+      {
+        choiceField: "v6_vip_choice",
+        fieldPath: "spec.advertise_custom.advertise_where[].virtual_network.v6_vip_choice",
+        options: [
+          "spec.advertise_custom.advertise_where[].virtual_network.default_v6_vip",
+          "spec.advertise_custom.advertise_where[].virtual_network.specific_v6_vip",
+        ],
+      },
+      {
+        choiceField: "vip_choice",
+        fieldPath: "spec.advertise_custom.advertise_where[].virtual_network.vip_choice",
+        options: [
+          "spec.advertise_custom.advertise_where[].virtual_network.default_vip",
+          "spec.advertise_custom.advertise_where[].virtual_network.specific_vip",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.advertise_custom.advertise_where[].vk8s_service.choice",
+        options: [
+          "spec.advertise_custom.advertise_where[].vk8s_service.site",
+          "spec.advertise_custom.advertise_where[].vk8s_service.virtual_site",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.api_protection_rules.api_endpoint_rules[].domain_choice",
+        options: [
+          "spec.api_protection_rules.api_endpoint_rules[].any_domain",
+          "spec.api_protection_rules.api_endpoint_rules[].specific_domain",
+        ],
+      },
+      {
+        choiceField: "action",
+        fieldPath: "spec.api_protection_rules.api_endpoint_rules[].action.action",
+        options: [
+          "spec.api_protection_rules.api_endpoint_rules[].action.allow",
+          "spec.api_protection_rules.api_endpoint_rules[].action.deny",
+        ],
+      },
+      {
+        choiceField: "client_choice",
+        fieldPath: "spec.api_protection_rules.api_endpoint_rules[].client_matcher.client_choice",
+        options: [
+          "spec.api_protection_rules.api_endpoint_rules[].client_matcher.any_client",
+          "spec.api_protection_rules.api_endpoint_rules[].client_matcher.client_selector",
+          "spec.api_protection_rules.api_endpoint_rules[].client_matcher.ip_threat_category_list",
+        ],
+      },
+      {
+        choiceField: "ip_asn_choice",
+        fieldPath: "spec.api_protection_rules.api_endpoint_rules[].client_matcher.ip_asn_choice",
+        options: [
+          "spec.api_protection_rules.api_endpoint_rules[].client_matcher.any_ip",
+          "spec.api_protection_rules.api_endpoint_rules[].client_matcher.asn_list",
+          "spec.api_protection_rules.api_endpoint_rules[].client_matcher.asn_matcher",
+          "spec.api_protection_rules.api_endpoint_rules[].client_matcher.ip_matcher",
+          "spec.api_protection_rules.api_endpoint_rules[].client_matcher.ip_prefix_list",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath:
+          "spec.api_protection_rules.api_endpoint_rules[].request_matcher.cookie_matchers[].match",
+        options: [
+          "spec.api_protection_rules.api_endpoint_rules[].request_matcher.cookie_matchers[].check_not_present",
+          "spec.api_protection_rules.api_endpoint_rules[].request_matcher.cookie_matchers[].check_present",
+          "spec.api_protection_rules.api_endpoint_rules[].request_matcher.cookie_matchers[].item",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.api_protection_rules.api_endpoint_rules[].request_matcher.headers[].match",
+        options: [
+          "spec.api_protection_rules.api_endpoint_rules[].request_matcher.headers[].check_not_present",
+          "spec.api_protection_rules.api_endpoint_rules[].request_matcher.headers[].check_present",
+          "spec.api_protection_rules.api_endpoint_rules[].request_matcher.headers[].item",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath:
+          "spec.api_protection_rules.api_endpoint_rules[].request_matcher.jwt_claims[].match",
+        options: [
+          "spec.api_protection_rules.api_endpoint_rules[].request_matcher.jwt_claims[].check_not_present",
+          "spec.api_protection_rules.api_endpoint_rules[].request_matcher.jwt_claims[].check_present",
+          "spec.api_protection_rules.api_endpoint_rules[].request_matcher.jwt_claims[].item",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath:
+          "spec.api_protection_rules.api_endpoint_rules[].request_matcher.query_params[].match",
+        options: [
+          "spec.api_protection_rules.api_endpoint_rules[].request_matcher.query_params[].check_not_present",
+          "spec.api_protection_rules.api_endpoint_rules[].request_matcher.query_params[].check_present",
+          "spec.api_protection_rules.api_endpoint_rules[].request_matcher.query_params[].item",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.api_protection_rules.api_groups_rules[].domain_choice",
+        options: [
+          "spec.api_protection_rules.api_groups_rules[].any_domain",
+          "spec.api_protection_rules.api_groups_rules[].specific_domain",
+        ],
+      },
+      {
+        choiceField: "action",
+        fieldPath: "spec.api_protection_rules.api_groups_rules[].action.action",
+        options: [
+          "spec.api_protection_rules.api_groups_rules[].action.allow",
+          "spec.api_protection_rules.api_groups_rules[].action.deny",
+        ],
+      },
+      {
+        choiceField: "client_choice",
+        fieldPath: "spec.api_protection_rules.api_groups_rules[].client_matcher.client_choice",
+        options: [
+          "spec.api_protection_rules.api_groups_rules[].client_matcher.any_client",
+          "spec.api_protection_rules.api_groups_rules[].client_matcher.client_selector",
+          "spec.api_protection_rules.api_groups_rules[].client_matcher.ip_threat_category_list",
+        ],
+      },
+      {
+        choiceField: "ip_asn_choice",
+        fieldPath: "spec.api_protection_rules.api_groups_rules[].client_matcher.ip_asn_choice",
+        options: [
+          "spec.api_protection_rules.api_groups_rules[].client_matcher.any_ip",
+          "spec.api_protection_rules.api_groups_rules[].client_matcher.asn_list",
+          "spec.api_protection_rules.api_groups_rules[].client_matcher.asn_matcher",
+          "spec.api_protection_rules.api_groups_rules[].client_matcher.ip_matcher",
+          "spec.api_protection_rules.api_groups_rules[].client_matcher.ip_prefix_list",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath:
+          "spec.api_protection_rules.api_groups_rules[].request_matcher.cookie_matchers[].match",
+        options: [
+          "spec.api_protection_rules.api_groups_rules[].request_matcher.cookie_matchers[].check_not_present",
+          "spec.api_protection_rules.api_groups_rules[].request_matcher.cookie_matchers[].check_present",
+          "spec.api_protection_rules.api_groups_rules[].request_matcher.cookie_matchers[].item",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.api_protection_rules.api_groups_rules[].request_matcher.headers[].match",
+        options: [
+          "spec.api_protection_rules.api_groups_rules[].request_matcher.headers[].check_not_present",
+          "spec.api_protection_rules.api_groups_rules[].request_matcher.headers[].check_present",
+          "spec.api_protection_rules.api_groups_rules[].request_matcher.headers[].item",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath:
+          "spec.api_protection_rules.api_groups_rules[].request_matcher.jwt_claims[].match",
+        options: [
+          "spec.api_protection_rules.api_groups_rules[].request_matcher.jwt_claims[].check_not_present",
+          "spec.api_protection_rules.api_groups_rules[].request_matcher.jwt_claims[].check_present",
+          "spec.api_protection_rules.api_groups_rules[].request_matcher.jwt_claims[].item",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath:
+          "spec.api_protection_rules.api_groups_rules[].request_matcher.query_params[].match",
+        options: [
+          "spec.api_protection_rules.api_groups_rules[].request_matcher.query_params[].check_not_present",
+          "spec.api_protection_rules.api_groups_rules[].request_matcher.query_params[].check_present",
+          "spec.api_protection_rules.api_groups_rules[].request_matcher.query_params[].item",
+        ],
+      },
+      {
+        choiceField: "ip_allowed_list_choice",
+        fieldPath: "spec.api_rate_limit.ip_allowed_list_choice",
+        options: [
+          "spec.api_rate_limit.bypass_rate_limiting_rules",
+          "spec.api_rate_limit.custom_ip_allowed_list",
+          "spec.api_rate_limit.ip_allowed_list",
+          "spec.api_rate_limit.no_ip_allowed_list",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.api_rate_limit.api_endpoint_rules[].domain_choice",
+        options: [
+          "spec.api_rate_limit.api_endpoint_rules[].any_domain",
+          "spec.api_rate_limit.api_endpoint_rules[].specific_domain",
+        ],
+      },
+      {
+        choiceField: "rate_limiter_choice",
+        fieldPath: "spec.api_rate_limit.api_endpoint_rules[].rate_limiter_choice",
+        options: [
+          "spec.api_rate_limit.api_endpoint_rules[].inline_rate_limiter",
+          "spec.api_rate_limit.api_endpoint_rules[].ref_rate_limiter",
+        ],
+      },
+      {
+        choiceField: "client_choice",
+        fieldPath: "spec.api_rate_limit.api_endpoint_rules[].client_matcher.client_choice",
+        options: [
+          "spec.api_rate_limit.api_endpoint_rules[].client_matcher.any_client",
+          "spec.api_rate_limit.api_endpoint_rules[].client_matcher.client_selector",
+          "spec.api_rate_limit.api_endpoint_rules[].client_matcher.ip_threat_category_list",
+        ],
+      },
+      {
+        choiceField: "ip_asn_choice",
+        fieldPath: "spec.api_rate_limit.api_endpoint_rules[].client_matcher.ip_asn_choice",
+        options: [
+          "spec.api_rate_limit.api_endpoint_rules[].client_matcher.any_ip",
+          "spec.api_rate_limit.api_endpoint_rules[].client_matcher.asn_list",
+          "spec.api_rate_limit.api_endpoint_rules[].client_matcher.asn_matcher",
+          "spec.api_rate_limit.api_endpoint_rules[].client_matcher.ip_matcher",
+          "spec.api_rate_limit.api_endpoint_rules[].client_matcher.ip_prefix_list",
+        ],
+      },
+      {
+        choiceField: "count_by_choice",
+        fieldPath: "spec.api_rate_limit.api_endpoint_rules[].inline_rate_limiter.count_by_choice",
+        options: [
+          "spec.api_rate_limit.api_endpoint_rules[].inline_rate_limiter.ref_user_id",
+          "spec.api_rate_limit.api_endpoint_rules[].inline_rate_limiter.use_http_lb_user_id",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath:
+          "spec.api_rate_limit.api_endpoint_rules[].request_matcher.cookie_matchers[].match",
+        options: [
+          "spec.api_rate_limit.api_endpoint_rules[].request_matcher.cookie_matchers[].check_not_present",
+          "spec.api_rate_limit.api_endpoint_rules[].request_matcher.cookie_matchers[].check_present",
+          "spec.api_rate_limit.api_endpoint_rules[].request_matcher.cookie_matchers[].item",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.api_rate_limit.api_endpoint_rules[].request_matcher.headers[].match",
+        options: [
+          "spec.api_rate_limit.api_endpoint_rules[].request_matcher.headers[].check_not_present",
+          "spec.api_rate_limit.api_endpoint_rules[].request_matcher.headers[].check_present",
+          "spec.api_rate_limit.api_endpoint_rules[].request_matcher.headers[].item",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.api_rate_limit.api_endpoint_rules[].request_matcher.jwt_claims[].match",
+        options: [
+          "spec.api_rate_limit.api_endpoint_rules[].request_matcher.jwt_claims[].check_not_present",
+          "spec.api_rate_limit.api_endpoint_rules[].request_matcher.jwt_claims[].check_present",
+          "spec.api_rate_limit.api_endpoint_rules[].request_matcher.jwt_claims[].item",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.api_rate_limit.api_endpoint_rules[].request_matcher.query_params[].match",
+        options: [
+          "spec.api_rate_limit.api_endpoint_rules[].request_matcher.query_params[].check_not_present",
+          "spec.api_rate_limit.api_endpoint_rules[].request_matcher.query_params[].check_present",
+          "spec.api_rate_limit.api_endpoint_rules[].request_matcher.query_params[].item",
+        ],
+      },
+      {
+        choiceField: "destination_type",
+        fieldPath:
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].destination_type",
+        options: [
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].any_url",
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].api_endpoint",
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].api_groups",
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].base_path",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath:
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].domain_choice",
+        options: [
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].any_domain",
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].specific_domain",
+        ],
+      },
+      {
+        choiceField: "client_choice",
+        fieldPath:
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].client_matcher.client_choice",
+        options: [
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].client_matcher.any_client",
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].client_matcher.client_selector",
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].client_matcher.ip_threat_category_list",
+        ],
+      },
+      {
+        choiceField: "ip_asn_choice",
+        fieldPath:
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].client_matcher.ip_asn_choice",
+        options: [
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].client_matcher.any_ip",
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].client_matcher.asn_list",
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].client_matcher.asn_matcher",
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].client_matcher.ip_matcher",
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].client_matcher.ip_prefix_list",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath:
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].request_matcher.cookie_matchers[].match",
+        options: [
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].request_matcher.cookie_matchers[].check_not_present",
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].request_matcher.cookie_matchers[].check_present",
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].request_matcher.cookie_matchers[].item",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath:
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].request_matcher.headers[].match",
+        options: [
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].request_matcher.headers[].check_not_present",
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].request_matcher.headers[].check_present",
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].request_matcher.headers[].item",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath:
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].request_matcher.jwt_claims[].match",
+        options: [
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].request_matcher.jwt_claims[].check_not_present",
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].request_matcher.jwt_claims[].check_present",
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].request_matcher.jwt_claims[].item",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath:
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].request_matcher.query_params[].match",
+        options: [
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].request_matcher.query_params[].check_not_present",
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].request_matcher.query_params[].check_present",
+          "spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].request_matcher.query_params[].item",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.api_rate_limit.server_url_rules[].domain_choice",
+        options: [
+          "spec.api_rate_limit.server_url_rules[].any_domain",
+          "spec.api_rate_limit.server_url_rules[].specific_domain",
+        ],
+      },
+      {
+        choiceField: "rate_limiter_choice",
+        fieldPath: "spec.api_rate_limit.server_url_rules[].rate_limiter_choice",
+        options: [
+          "spec.api_rate_limit.server_url_rules[].inline_rate_limiter",
+          "spec.api_rate_limit.server_url_rules[].ref_rate_limiter",
+        ],
+      },
+      {
+        choiceField: "client_choice",
+        fieldPath: "spec.api_rate_limit.server_url_rules[].client_matcher.client_choice",
+        options: [
+          "spec.api_rate_limit.server_url_rules[].client_matcher.any_client",
+          "spec.api_rate_limit.server_url_rules[].client_matcher.client_selector",
+          "spec.api_rate_limit.server_url_rules[].client_matcher.ip_threat_category_list",
+        ],
+      },
+      {
+        choiceField: "ip_asn_choice",
+        fieldPath: "spec.api_rate_limit.server_url_rules[].client_matcher.ip_asn_choice",
+        options: [
+          "spec.api_rate_limit.server_url_rules[].client_matcher.any_ip",
+          "spec.api_rate_limit.server_url_rules[].client_matcher.asn_list",
+          "spec.api_rate_limit.server_url_rules[].client_matcher.asn_matcher",
+          "spec.api_rate_limit.server_url_rules[].client_matcher.ip_matcher",
+          "spec.api_rate_limit.server_url_rules[].client_matcher.ip_prefix_list",
+        ],
+      },
+      {
+        choiceField: "count_by_choice",
+        fieldPath: "spec.api_rate_limit.server_url_rules[].inline_rate_limiter.count_by_choice",
+        options: [
+          "spec.api_rate_limit.server_url_rules[].inline_rate_limiter.ref_user_id",
+          "spec.api_rate_limit.server_url_rules[].inline_rate_limiter.use_http_lb_user_id",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.api_rate_limit.server_url_rules[].request_matcher.cookie_matchers[].match",
+        options: [
+          "spec.api_rate_limit.server_url_rules[].request_matcher.cookie_matchers[].check_not_present",
+          "spec.api_rate_limit.server_url_rules[].request_matcher.cookie_matchers[].check_present",
+          "spec.api_rate_limit.server_url_rules[].request_matcher.cookie_matchers[].item",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.api_rate_limit.server_url_rules[].request_matcher.headers[].match",
+        options: [
+          "spec.api_rate_limit.server_url_rules[].request_matcher.headers[].check_not_present",
+          "spec.api_rate_limit.server_url_rules[].request_matcher.headers[].check_present",
+          "spec.api_rate_limit.server_url_rules[].request_matcher.headers[].item",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.api_rate_limit.server_url_rules[].request_matcher.jwt_claims[].match",
+        options: [
+          "spec.api_rate_limit.server_url_rules[].request_matcher.jwt_claims[].check_not_present",
+          "spec.api_rate_limit.server_url_rules[].request_matcher.jwt_claims[].check_present",
+          "spec.api_rate_limit.server_url_rules[].request_matcher.jwt_claims[].item",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.api_rate_limit.server_url_rules[].request_matcher.query_params[].match",
+        options: [
+          "spec.api_rate_limit.server_url_rules[].request_matcher.query_params[].check_not_present",
+          "spec.api_rate_limit.server_url_rules[].request_matcher.query_params[].check_present",
+          "spec.api_rate_limit.server_url_rules[].request_matcher.query_params[].item",
+        ],
+      },
+      {
+        choiceField: "validation_target_choice",
+        fieldPath: "spec.api_specification.validation_target_choice",
+        options: [
+          "spec.api_specification.validation_all_spec_endpoints",
+          "spec.api_specification.validation_custom_list",
+          "spec.api_specification.validation_disabled",
+        ],
+      },
+      {
+        choiceField: "oversized_body_choice",
+        fieldPath: "spec.api_specification.validation_all_spec_endpoints.oversized_body_choice",
+        options: [],
+      },
+      {
+        choiceField: "fall_through_mode_choice",
+        fieldPath:
+          "spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_choice",
+        options: [
+          "spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_allow",
+          "spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_custom",
+        ],
+      },
+      {
+        choiceField: "action_choice",
+        fieldPath:
+          "spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].action_choice",
+        options: [
+          "spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].action_block",
+          "spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].action_report",
+          "spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].action_skip",
+        ],
+      },
+      {
+        choiceField: "condition_type_choice",
+        fieldPath:
+          "spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].condition_type_choice",
+        options: [
+          "spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].api_endpoint",
+          "spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].api_group",
+          "spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].base_path",
+        ],
+      },
+      {
+        choiceField: "fail_configuration",
+        fieldPath:
+          "spec.api_specification.validation_all_spec_endpoints.settings.fail_configuration",
+        options: [],
+      },
+      {
+        choiceField: "oversized_body_choice",
+        fieldPath:
+          "spec.api_specification.validation_all_spec_endpoints.settings.oversized_body_choice",
+        options: [
+          "spec.api_specification.validation_all_spec_endpoints.settings.oversized_body_fail_validation",
+          "spec.api_specification.validation_all_spec_endpoints.settings.oversized_body_skip_validation",
+        ],
+      },
+      {
+        choiceField: "property_validation_settings_choice",
+        fieldPath:
+          "spec.api_specification.validation_all_spec_endpoints.settings.property_validation_settings_choice",
+        options: [
+          "spec.api_specification.validation_all_spec_endpoints.settings.property_validation_settings_custom",
+          "spec.api_specification.validation_all_spec_endpoints.settings.property_validation_settings_default",
+        ],
+      },
+      {
+        choiceField: "additional_parameters_choice",
+        fieldPath:
+          "spec.api_specification.validation_all_spec_endpoints.settings.property_validation_settings_custom.queryParameters.additional_parameters_choice",
+        options: [
+          "spec.api_specification.validation_all_spec_endpoints.settings.property_validation_settings_custom.queryParameters.allow_additional_parameters",
+          "spec.api_specification.validation_all_spec_endpoints.settings.property_validation_settings_custom.queryParameters.disallow_additional_parameters",
+        ],
+      },
+      {
+        choiceField: "response_validation_mode_choice",
+        fieldPath:
+          "spec.api_specification.validation_all_spec_endpoints.validation_mode.response_validation_mode_choice",
+        options: [
+          "spec.api_specification.validation_all_spec_endpoints.validation_mode.response_validation_mode_active",
+          "spec.api_specification.validation_all_spec_endpoints.validation_mode.skip_response_validation",
+        ],
+      },
+      {
+        choiceField: "validation_mode_choice",
+        fieldPath:
+          "spec.api_specification.validation_all_spec_endpoints.validation_mode.validation_mode_choice",
+        options: [
+          "spec.api_specification.validation_all_spec_endpoints.validation_mode.skip_validation",
+          "spec.api_specification.validation_all_spec_endpoints.validation_mode.validation_mode_active",
+        ],
+      },
+      {
+        choiceField: "validation_enforcement_type",
+        fieldPath:
+          "spec.api_specification.validation_all_spec_endpoints.validation_mode.response_validation_mode_active.validation_enforcement_type",
+        options: [
+          "spec.api_specification.validation_all_spec_endpoints.validation_mode.response_validation_mode_active.enforcement_block",
+          "spec.api_specification.validation_all_spec_endpoints.validation_mode.response_validation_mode_active.enforcement_report",
+        ],
+      },
+      {
+        choiceField: "validation_enforcement_type",
+        fieldPath:
+          "spec.api_specification.validation_all_spec_endpoints.validation_mode.validation_mode_active.validation_enforcement_type",
+        options: [
+          "spec.api_specification.validation_all_spec_endpoints.validation_mode.validation_mode_active.enforcement_block",
+          "spec.api_specification.validation_all_spec_endpoints.validation_mode.validation_mode_active.enforcement_report",
+        ],
+      },
+      {
+        choiceField: "oversized_body_choice",
+        fieldPath: "spec.api_specification.validation_custom_list.oversized_body_choice",
+        options: [],
+      },
+      {
+        choiceField: "fall_through_mode_choice",
+        fieldPath:
+          "spec.api_specification.validation_custom_list.fall_through_mode.fall_through_mode_choice",
+        options: [
+          "spec.api_specification.validation_custom_list.fall_through_mode.fall_through_mode_allow",
+          "spec.api_specification.validation_custom_list.fall_through_mode.fall_through_mode_custom",
+        ],
+      },
+      {
+        choiceField: "action_choice",
+        fieldPath:
+          "spec.api_specification.validation_custom_list.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].action_choice",
+        options: [
+          "spec.api_specification.validation_custom_list.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].action_block",
+          "spec.api_specification.validation_custom_list.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].action_report",
+          "spec.api_specification.validation_custom_list.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].action_skip",
+        ],
+      },
+      {
+        choiceField: "condition_type_choice",
+        fieldPath:
+          "spec.api_specification.validation_custom_list.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].condition_type_choice",
+        options: [
+          "spec.api_specification.validation_custom_list.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].api_endpoint",
+          "spec.api_specification.validation_custom_list.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].api_group",
+          "spec.api_specification.validation_custom_list.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].base_path",
+        ],
+      },
+      {
+        choiceField: "condition_type_choice",
+        fieldPath:
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].condition_type_choice",
+        options: [
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].api_endpoint",
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].api_group",
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].base_path",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath:
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].domain_choice",
+        options: [
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].any_domain",
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].specific_domain",
+        ],
+      },
+      {
+        choiceField: "response_validation_mode_choice",
+        fieldPath:
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].validation_mode.response_validation_mode_choice",
+        options: [
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].validation_mode.response_validation_mode_active",
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].validation_mode.skip_response_validation",
+        ],
+      },
+      {
+        choiceField: "validation_mode_choice",
+        fieldPath:
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].validation_mode.validation_mode_choice",
+        options: [
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].validation_mode.skip_validation",
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].validation_mode.validation_mode_active",
+        ],
+      },
+      {
+        choiceField: "validation_enforcement_type",
+        fieldPath:
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].validation_mode.response_validation_mode_active.validation_enforcement_type",
+        options: [
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].validation_mode.response_validation_mode_active.enforcement_block",
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].validation_mode.response_validation_mode_active.enforcement_report",
+        ],
+      },
+      {
+        choiceField: "validation_enforcement_type",
+        fieldPath:
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].validation_mode.validation_mode_active.validation_enforcement_type",
+        options: [
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].validation_mode.validation_mode_active.enforcement_block",
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].validation_mode.validation_mode_active.enforcement_report",
+        ],
+      },
+      {
+        choiceField: "fail_configuration",
+        fieldPath: "spec.api_specification.validation_custom_list.settings.fail_configuration",
+        options: [],
+      },
+      {
+        choiceField: "oversized_body_choice",
+        fieldPath: "spec.api_specification.validation_custom_list.settings.oversized_body_choice",
+        options: [
+          "spec.api_specification.validation_custom_list.settings.oversized_body_fail_validation",
+          "spec.api_specification.validation_custom_list.settings.oversized_body_skip_validation",
+        ],
+      },
+      {
+        choiceField: "property_validation_settings_choice",
+        fieldPath:
+          "spec.api_specification.validation_custom_list.settings.property_validation_settings_choice",
+        options: [
+          "spec.api_specification.validation_custom_list.settings.property_validation_settings_custom",
+          "spec.api_specification.validation_custom_list.settings.property_validation_settings_default",
+        ],
+      },
+      {
+        choiceField: "additional_parameters_choice",
+        fieldPath:
+          "spec.api_specification.validation_custom_list.settings.property_validation_settings_custom.queryParameters.additional_parameters_choice",
+        options: [
+          "spec.api_specification.validation_custom_list.settings.property_validation_settings_custom.queryParameters.allow_additional_parameters",
+          "spec.api_specification.validation_custom_list.settings.property_validation_settings_custom.queryParameters.disallow_additional_parameters",
+        ],
+      },
+      {
+        choiceField: "frequency_choice",
+        fieldPath: "spec.api_testing.frequency_choice",
+        options: [
+          "spec.api_testing.every_day",
+          "spec.api_testing.every_month",
+          "spec.api_testing.every_week",
+        ],
+      },
+      {
+        choiceField: "credentials_choice",
+        fieldPath: "spec.api_testing.domains[].credentials[].credentials_choice",
+        options: [
+          "spec.api_testing.domains[].credentials[].api_key",
+          "spec.api_testing.domains[].credentials[].basic_auth",
+          "spec.api_testing.domains[].credentials[].bearer_token",
+          "spec.api_testing.domains[].credentials[].login_endpoint",
+        ],
+      },
+      {
+        choiceField: "role_choice",
+        fieldPath: "spec.api_testing.domains[].credentials[].role_choice",
+        options: [
+          "spec.api_testing.domains[].credentials[].admin",
+          "spec.api_testing.domains[].credentials[].standard",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.api_testing.domains[].credentials[].api_key.value.secret_info_oneof",
+        options: [
+          "spec.api_testing.domains[].credentials[].api_key.value.blindfold_secret_info",
+          "spec.api_testing.domains[].credentials[].api_key.value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.api_testing.domains[].credentials[].basic_auth.password.secret_info_oneof",
+        options: [
+          "spec.api_testing.domains[].credentials[].basic_auth.password.blindfold_secret_info",
+          "spec.api_testing.domains[].credentials[].basic_auth.password.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.api_testing.domains[].credentials[].bearer_token.token.secret_info_oneof",
+        options: [
+          "spec.api_testing.domains[].credentials[].bearer_token.token.blindfold_secret_info",
+          "spec.api_testing.domains[].credentials[].bearer_token.token.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.api_testing.domains[].credentials[].login_endpoint.json_payload.secret_info_oneof",
+        options: [
+          "spec.api_testing.domains[].credentials[].login_endpoint.json_payload.blindfold_secret_info",
+          "spec.api_testing.domains[].credentials[].login_endpoint.json_payload.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "action_choice",
+        fieldPath: "spec.blocked_clients[].action_choice",
+        options: [
+          "spec.blocked_clients[].bot_skip_processing",
+          "spec.blocked_clients[].skip_processing",
+          "spec.blocked_clients[].waf_skip_processing",
+        ],
+      },
+      {
+        choiceField: "client_source_choice",
+        fieldPath: "spec.blocked_clients[].client_source_choice",
+        options: [
+          "spec.blocked_clients[].as_number",
+          "spec.blocked_clients[].http_header",
+          "spec.blocked_clients[].ip_prefix",
+          "spec.blocked_clients[].ipv6_prefix",
+          "spec.blocked_clients[].user_identifier",
+        ],
+      },
+      {
+        choiceField: "value_match",
+        fieldPath: "spec.blocked_clients[].http_header.headers[].value_match",
+        options: [
+          "spec.blocked_clients[].http_header.headers[].exact",
+          "spec.blocked_clients[].http_header.headers[].presence",
+          "spec.blocked_clients[].http_header.headers[].regex",
+        ],
+      },
+      {
+        choiceField: "cors_support_choice",
+        fieldPath: "spec.bot_defense.cors_support_choice",
+        options: ["spec.bot_defense.disable_cors_support", "spec.bot_defense.enable_cors_support"],
+      },
+      {
+        choiceField: "java_script_choice",
+        fieldPath: "spec.bot_defense.policy.java_script_choice",
+        options: [
+          "spec.bot_defense.policy.disable_js_insert",
+          "spec.bot_defense.policy.js_insert_all_pages",
+          "spec.bot_defense.policy.js_insert_all_pages_except",
+          "spec.bot_defense.policy.js_insertion_rules",
+        ],
+      },
+      {
+        choiceField: "mobile_sdk_choice",
+        fieldPath: "spec.bot_defense.policy.mobile_sdk_choice",
+        options: [
+          "spec.bot_defense.policy.disable_mobile_sdk",
+          "spec.bot_defense.policy.mobile_sdk_config",
+        ],
+      },
+      {
+        choiceField: "domain_matcher_choice",
+        fieldPath:
+          "spec.bot_defense.policy.js_insert_all_pages_except.exclude_list[].domain_matcher_choice",
+        options: [
+          "spec.bot_defense.policy.js_insert_all_pages_except.exclude_list[].any_domain",
+          "spec.bot_defense.policy.js_insert_all_pages_except.exclude_list[].domain",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath:
+          "spec.bot_defense.policy.js_insert_all_pages_except.exclude_list[].domain.domain_choice",
+        options: [
+          "spec.bot_defense.policy.js_insert_all_pages_except.exclude_list[].domain.exact_value",
+          "spec.bot_defense.policy.js_insert_all_pages_except.exclude_list[].domain.regex_value",
+          "spec.bot_defense.policy.js_insert_all_pages_except.exclude_list[].domain.suffix_value",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath:
+          "spec.bot_defense.policy.js_insert_all_pages_except.exclude_list[].path.path_match",
+        options: [
+          "spec.bot_defense.policy.js_insert_all_pages_except.exclude_list[].path.path",
+          "spec.bot_defense.policy.js_insert_all_pages_except.exclude_list[].path.prefix",
+          "spec.bot_defense.policy.js_insert_all_pages_except.exclude_list[].path.regex",
+        ],
+      },
+      {
+        choiceField: "domain_matcher_choice",
+        fieldPath:
+          "spec.bot_defense.policy.js_insertion_rules.exclude_list[].domain_matcher_choice",
+        options: [
+          "spec.bot_defense.policy.js_insertion_rules.exclude_list[].any_domain",
+          "spec.bot_defense.policy.js_insertion_rules.exclude_list[].domain",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.bot_defense.policy.js_insertion_rules.exclude_list[].domain.domain_choice",
+        options: [
+          "spec.bot_defense.policy.js_insertion_rules.exclude_list[].domain.exact_value",
+          "spec.bot_defense.policy.js_insertion_rules.exclude_list[].domain.regex_value",
+          "spec.bot_defense.policy.js_insertion_rules.exclude_list[].domain.suffix_value",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath: "spec.bot_defense.policy.js_insertion_rules.exclude_list[].path.path_match",
+        options: [
+          "spec.bot_defense.policy.js_insertion_rules.exclude_list[].path.path",
+          "spec.bot_defense.policy.js_insertion_rules.exclude_list[].path.prefix",
+          "spec.bot_defense.policy.js_insertion_rules.exclude_list[].path.regex",
+        ],
+      },
+      {
+        choiceField: "domain_matcher_choice",
+        fieldPath: "spec.bot_defense.policy.js_insertion_rules.rules[].domain_matcher_choice",
+        options: [
+          "spec.bot_defense.policy.js_insertion_rules.rules[].any_domain",
+          "spec.bot_defense.policy.js_insertion_rules.rules[].domain",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.bot_defense.policy.js_insertion_rules.rules[].domain.domain_choice",
+        options: [
+          "spec.bot_defense.policy.js_insertion_rules.rules[].domain.exact_value",
+          "spec.bot_defense.policy.js_insertion_rules.rules[].domain.regex_value",
+          "spec.bot_defense.policy.js_insertion_rules.rules[].domain.suffix_value",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath: "spec.bot_defense.policy.js_insertion_rules.rules[].path.path_match",
+        options: [
+          "spec.bot_defense.policy.js_insertion_rules.rules[].path.path",
+          "spec.bot_defense.policy.js_insertion_rules.rules[].path.prefix",
+          "spec.bot_defense.policy.js_insertion_rules.rules[].path.regex",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.bot_defense.policy.mobile_sdk_config.mobile_identifier.headers[].match",
+        options: [
+          "spec.bot_defense.policy.mobile_sdk_config.mobile_identifier.headers[].check_not_present",
+          "spec.bot_defense.policy.mobile_sdk_config.mobile_identifier.headers[].check_present",
+          "spec.bot_defense.policy.mobile_sdk_config.mobile_identifier.headers[].item",
+        ],
+      },
+      {
+        choiceField: "app_traffic_type_choice",
+        fieldPath: "spec.bot_defense.policy.protected_app_endpoints[].app_traffic_type_choice",
+        options: [
+          "spec.bot_defense.policy.protected_app_endpoints[].mobile",
+          "spec.bot_defense.policy.protected_app_endpoints[].web",
+          "spec.bot_defense.policy.protected_app_endpoints[].web_mobile",
+        ],
+      },
+      {
+        choiceField: "domain_matcher_choice",
+        fieldPath: "spec.bot_defense.policy.protected_app_endpoints[].domain_matcher_choice",
+        options: [
+          "spec.bot_defense.policy.protected_app_endpoints[].any_domain",
+          "spec.bot_defense.policy.protected_app_endpoints[].domain",
+        ],
+      },
+      {
+        choiceField: "flow_label_choice",
+        fieldPath: "spec.bot_defense.policy.protected_app_endpoints[].flow_label_choice",
+        options: [
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label",
+          "spec.bot_defense.policy.protected_app_endpoints[].undefined_flow_label",
+        ],
+      },
+      {
+        choiceField: "goodbot_choice",
+        fieldPath: "spec.bot_defense.policy.protected_app_endpoints[].goodbot_choice",
+        options: [
+          "spec.bot_defense.policy.protected_app_endpoints[].allow_good_bots",
+          "spec.bot_defense.policy.protected_app_endpoints[].mitigate_good_bots",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.bot_defense.policy.protected_app_endpoints[].domain.domain_choice",
+        options: [
+          "spec.bot_defense.policy.protected_app_endpoints[].domain.exact_value",
+          "spec.bot_defense.policy.protected_app_endpoints[].domain.regex_value",
+          "spec.bot_defense.policy.protected_app_endpoints[].domain.suffix_value",
+        ],
+      },
+      {
+        choiceField: "flow_label_choice",
+        fieldPath: "spec.bot_defense.policy.protected_app_endpoints[].flow_label.flow_label_choice",
+        options: [
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.account_management",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.authentication",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.financial_services",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.flight",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.profile_management",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.search",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.shopping_gift_cards",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.account_management.label_choice",
+        options: [
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.account_management.create",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.account_management.password_reset",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.authentication.label_choice",
+        options: [
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.authentication.login",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.authentication.login_mfa",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.authentication.login_partner",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.authentication.logout",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.authentication.token_refresh",
+        ],
+      },
+      {
+        choiceField: "transaction_result_choice",
+        fieldPath:
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.authentication.login.transaction_result_choice",
+        options: [
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.authentication.login.disable_transaction_result",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.authentication.login.transaction_result",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.financial_services.label_choice",
+        options: [
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.financial_services.apply",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.financial_services.money_transfer",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.flight.label_choice",
+        options: ["spec.bot_defense.policy.protected_app_endpoints[].flow_label.flight.checkin"],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.profile_management.label_choice",
+        options: [
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.profile_management.create",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.profile_management.update",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.profile_management.view",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.search.label_choice",
+        options: [
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.search.flight_search",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.search.product_search",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.search.reservation_search",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.search.room_search",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.shopping_gift_cards.label_choice",
+        options: [
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.shopping_gift_cards.gift_card_make_purchase_with_gift_card",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.shopping_gift_cards.gift_card_validation",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.shopping_gift_cards.shop_add_to_cart",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.shopping_gift_cards.shop_checkout",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.shopping_gift_cards.shop_choose_seat",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.shopping_gift_cards.shop_enter_drawing_submission",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.shopping_gift_cards.shop_make_payment",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.shopping_gift_cards.shop_order",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.shopping_gift_cards.shop_price_inquiry",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.shopping_gift_cards.shop_promo_code_validation",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.shopping_gift_cards.shop_purchase_gift_card",
+          "spec.bot_defense.policy.protected_app_endpoints[].flow_label.shopping_gift_cards.shop_update_quantity",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.bot_defense.policy.protected_app_endpoints[].headers[].match",
+        options: [
+          "spec.bot_defense.policy.protected_app_endpoints[].headers[].check_not_present",
+          "spec.bot_defense.policy.protected_app_endpoints[].headers[].check_present",
+          "spec.bot_defense.policy.protected_app_endpoints[].headers[].item",
+        ],
+      },
+      {
+        choiceField: "action_type",
+        fieldPath: "spec.bot_defense.policy.protected_app_endpoints[].mitigation.action_type",
+        options: [
+          "spec.bot_defense.policy.protected_app_endpoints[].mitigation.block",
+          "spec.bot_defense.policy.protected_app_endpoints[].mitigation.flag",
+          "spec.bot_defense.policy.protected_app_endpoints[].mitigation.redirect",
+        ],
+      },
+      {
+        choiceField: "send_headers_choice",
+        fieldPath:
+          "spec.bot_defense.policy.protected_app_endpoints[].mitigation.flag.send_headers_choice",
+        options: [
+          "spec.bot_defense.policy.protected_app_endpoints[].mitigation.flag.append_headers",
+          "spec.bot_defense.policy.protected_app_endpoints[].mitigation.flag.no_headers",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath: "spec.bot_defense.policy.protected_app_endpoints[].path.path_match",
+        options: [
+          "spec.bot_defense.policy.protected_app_endpoints[].path.path",
+          "spec.bot_defense.policy.protected_app_endpoints[].path.prefix",
+          "spec.bot_defense.policy.protected_app_endpoints[].path.regex",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.bot_defense.policy.protected_app_endpoints[].query_params[].match",
+        options: [
+          "spec.bot_defense.policy.protected_app_endpoints[].query_params[].check_not_present",
+          "spec.bot_defense.policy.protected_app_endpoints[].query_params[].check_present",
+          "spec.bot_defense.policy.protected_app_endpoints[].query_params[].item",
+        ],
+      },
+      {
+        choiceField: "java_script_choice",
+        fieldPath: "spec.bot_defense_advanced.java_script_choice",
+        options: [
+          "spec.bot_defense_advanced.disable_js_insert",
+          "spec.bot_defense_advanced.js_insert_all_pages",
+          "spec.bot_defense_advanced.js_insert_all_pages_except",
+          "spec.bot_defense_advanced.js_insertion_rules",
+        ],
+      },
+      {
+        choiceField: "mobile_sdk_choice",
+        fieldPath: "spec.bot_defense_advanced.mobile_sdk_choice",
+        options: [
+          "spec.bot_defense_advanced.disable_mobile_sdk",
+          "spec.bot_defense_advanced.mobile_sdk_config",
+        ],
+      },
+      {
+        choiceField: "domain_matcher_choice",
+        fieldPath:
+          "spec.bot_defense_advanced.js_insert_all_pages_except.exclude_list[].domain_matcher_choice",
+        options: [
+          "spec.bot_defense_advanced.js_insert_all_pages_except.exclude_list[].any_domain",
+          "spec.bot_defense_advanced.js_insert_all_pages_except.exclude_list[].domain",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath:
+          "spec.bot_defense_advanced.js_insert_all_pages_except.exclude_list[].domain.domain_choice",
+        options: [
+          "spec.bot_defense_advanced.js_insert_all_pages_except.exclude_list[].domain.exact_value",
+          "spec.bot_defense_advanced.js_insert_all_pages_except.exclude_list[].domain.regex_value",
+          "spec.bot_defense_advanced.js_insert_all_pages_except.exclude_list[].domain.suffix_value",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath:
+          "spec.bot_defense_advanced.js_insert_all_pages_except.exclude_list[].path.path_match",
+        options: [
+          "spec.bot_defense_advanced.js_insert_all_pages_except.exclude_list[].path.path",
+          "spec.bot_defense_advanced.js_insert_all_pages_except.exclude_list[].path.prefix",
+          "spec.bot_defense_advanced.js_insert_all_pages_except.exclude_list[].path.regex",
+        ],
+      },
+      {
+        choiceField: "domain_matcher_choice",
+        fieldPath:
+          "spec.bot_defense_advanced.js_insertion_rules.exclude_list[].domain_matcher_choice",
+        options: [
+          "spec.bot_defense_advanced.js_insertion_rules.exclude_list[].any_domain",
+          "spec.bot_defense_advanced.js_insertion_rules.exclude_list[].domain",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath:
+          "spec.bot_defense_advanced.js_insertion_rules.exclude_list[].domain.domain_choice",
+        options: [
+          "spec.bot_defense_advanced.js_insertion_rules.exclude_list[].domain.exact_value",
+          "spec.bot_defense_advanced.js_insertion_rules.exclude_list[].domain.regex_value",
+          "spec.bot_defense_advanced.js_insertion_rules.exclude_list[].domain.suffix_value",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath: "spec.bot_defense_advanced.js_insertion_rules.exclude_list[].path.path_match",
+        options: [
+          "spec.bot_defense_advanced.js_insertion_rules.exclude_list[].path.path",
+          "spec.bot_defense_advanced.js_insertion_rules.exclude_list[].path.prefix",
+          "spec.bot_defense_advanced.js_insertion_rules.exclude_list[].path.regex",
+        ],
+      },
+      {
+        choiceField: "domain_matcher_choice",
+        fieldPath: "spec.bot_defense_advanced.js_insertion_rules.rules[].domain_matcher_choice",
+        options: [
+          "spec.bot_defense_advanced.js_insertion_rules.rules[].any_domain",
+          "spec.bot_defense_advanced.js_insertion_rules.rules[].domain",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.bot_defense_advanced.js_insertion_rules.rules[].domain.domain_choice",
+        options: [
+          "spec.bot_defense_advanced.js_insertion_rules.rules[].domain.exact_value",
+          "spec.bot_defense_advanced.js_insertion_rules.rules[].domain.regex_value",
+          "spec.bot_defense_advanced.js_insertion_rules.rules[].domain.suffix_value",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath: "spec.bot_defense_advanced.js_insertion_rules.rules[].path.path_match",
+        options: [
+          "spec.bot_defense_advanced.js_insertion_rules.rules[].path.path",
+          "spec.bot_defense_advanced.js_insertion_rules.rules[].path.prefix",
+          "spec.bot_defense_advanced.js_insertion_rules.rules[].path.regex",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.bot_defense_advanced.mobile_sdk_config.mobile_identifier.headers[].match",
+        options: [
+          "spec.bot_defense_advanced.mobile_sdk_config.mobile_identifier.headers[].check_not_present",
+          "spec.bot_defense_advanced.mobile_sdk_config.mobile_identifier.headers[].check_present",
+          "spec.bot_defense_advanced.mobile_sdk_config.mobile_identifier.headers[].item",
+        ],
+      },
+      {
+        choiceField: "cache_actions",
+        fieldPath: "spec.caching_policy.default_cache_action.cache_actions",
+        options: [
+          "spec.caching_policy.default_cache_action.cache_disabled",
+          "spec.caching_policy.default_cache_action.cache_ttl_default",
+          "spec.caching_policy.default_cache_action.cache_ttl_override",
+        ],
+      },
+      {
+        choiceField: "java_script_choice",
+        fieldPath: "spec.client_side_defense.policy.java_script_choice",
+        options: [
+          "spec.client_side_defense.policy.disable_js_insert",
+          "spec.client_side_defense.policy.js_insert_all_pages",
+          "spec.client_side_defense.policy.js_insert_all_pages_except",
+          "spec.client_side_defense.policy.js_insertion_rules",
+        ],
+      },
+      {
+        choiceField: "domain_matcher_choice",
+        fieldPath:
+          "spec.client_side_defense.policy.js_insert_all_pages_except.exclude_list[].domain_matcher_choice",
+        options: [
+          "spec.client_side_defense.policy.js_insert_all_pages_except.exclude_list[].any_domain",
+          "spec.client_side_defense.policy.js_insert_all_pages_except.exclude_list[].domain",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath:
+          "spec.client_side_defense.policy.js_insert_all_pages_except.exclude_list[].domain.domain_choice",
+        options: [
+          "spec.client_side_defense.policy.js_insert_all_pages_except.exclude_list[].domain.exact_value",
+          "spec.client_side_defense.policy.js_insert_all_pages_except.exclude_list[].domain.regex_value",
+          "spec.client_side_defense.policy.js_insert_all_pages_except.exclude_list[].domain.suffix_value",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath:
+          "spec.client_side_defense.policy.js_insert_all_pages_except.exclude_list[].path.path_match",
+        options: [
+          "spec.client_side_defense.policy.js_insert_all_pages_except.exclude_list[].path.path",
+          "spec.client_side_defense.policy.js_insert_all_pages_except.exclude_list[].path.prefix",
+          "spec.client_side_defense.policy.js_insert_all_pages_except.exclude_list[].path.regex",
+        ],
+      },
+      {
+        choiceField: "domain_matcher_choice",
+        fieldPath:
+          "spec.client_side_defense.policy.js_insertion_rules.exclude_list[].domain_matcher_choice",
+        options: [
+          "spec.client_side_defense.policy.js_insertion_rules.exclude_list[].any_domain",
+          "spec.client_side_defense.policy.js_insertion_rules.exclude_list[].domain",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath:
+          "spec.client_side_defense.policy.js_insertion_rules.exclude_list[].domain.domain_choice",
+        options: [
+          "spec.client_side_defense.policy.js_insertion_rules.exclude_list[].domain.exact_value",
+          "spec.client_side_defense.policy.js_insertion_rules.exclude_list[].domain.regex_value",
+          "spec.client_side_defense.policy.js_insertion_rules.exclude_list[].domain.suffix_value",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath:
+          "spec.client_side_defense.policy.js_insertion_rules.exclude_list[].path.path_match",
+        options: [
+          "spec.client_side_defense.policy.js_insertion_rules.exclude_list[].path.path",
+          "spec.client_side_defense.policy.js_insertion_rules.exclude_list[].path.prefix",
+          "spec.client_side_defense.policy.js_insertion_rules.exclude_list[].path.regex",
+        ],
+      },
+      {
+        choiceField: "domain_matcher_choice",
+        fieldPath:
+          "spec.client_side_defense.policy.js_insertion_rules.rules[].domain_matcher_choice",
+        options: [
+          "spec.client_side_defense.policy.js_insertion_rules.rules[].any_domain",
+          "spec.client_side_defense.policy.js_insertion_rules.rules[].domain",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath:
+          "spec.client_side_defense.policy.js_insertion_rules.rules[].domain.domain_choice",
+        options: [
+          "spec.client_side_defense.policy.js_insertion_rules.rules[].domain.exact_value",
+          "spec.client_side_defense.policy.js_insertion_rules.rules[].domain.regex_value",
+          "spec.client_side_defense.policy.js_insertion_rules.rules[].domain.suffix_value",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath: "spec.client_side_defense.policy.js_insertion_rules.rules[].path.path_match",
+        options: [
+          "spec.client_side_defense.policy.js_insertion_rules.rules[].path.path",
+          "spec.client_side_defense.policy.js_insertion_rules.rules[].path.prefix",
+          "spec.client_side_defense.policy.js_insertion_rules.rules[].path.regex",
+        ],
+      },
+      {
+        choiceField: "httponly",
+        fieldPath: "spec.cookie_stickiness.httponly",
+        options: ["spec.cookie_stickiness.add_httponly", "spec.cookie_stickiness.ignore_httponly"],
+      },
+      {
+        choiceField: "samesite",
+        fieldPath: "spec.cookie_stickiness.samesite",
+        options: [
+          "spec.cookie_stickiness.ignore_samesite",
+          "spec.cookie_stickiness.samesite_lax",
+          "spec.cookie_stickiness.samesite_none",
+          "spec.cookie_stickiness.samesite_strict",
+        ],
+      },
+      {
+        choiceField: "secure",
+        fieldPath: "spec.cookie_stickiness.secure",
+        options: ["spec.cookie_stickiness.add_secure", "spec.cookie_stickiness.ignore_secure"],
+      },
+      {
+        choiceField: "allowed_domains",
+        fieldPath: "spec.csrf_policy.allowed_domains",
+        options: [
+          "spec.csrf_policy.all_load_balancer_domains",
+          "spec.csrf_policy.custom_domain_list",
+          "spec.csrf_policy.disabled",
+        ],
+      },
+      {
+        choiceField: "action_choice",
+        fieldPath: "spec.data_guard_rules[].action_choice",
+        options: [
+          "spec.data_guard_rules[].apply_data_guard",
+          "spec.data_guard_rules[].skip_data_guard",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.data_guard_rules[].domain_choice",
+        options: [
+          "spec.data_guard_rules[].any_domain",
+          "spec.data_guard_rules[].exact_value",
+          "spec.data_guard_rules[].suffix_value",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath: "spec.data_guard_rules[].path.path_match",
+        options: [
+          "spec.data_guard_rules[].path.path",
+          "spec.data_guard_rules[].path.prefix",
+          "spec.data_guard_rules[].path.regex",
+        ],
+      },
+      {
+        choiceField: "mitigation_action",
+        fieldPath: "spec.ddos_mitigation_rules[].mitigation_action",
+        options: ["spec.ddos_mitigation_rules[].block"],
+      },
+      {
+        choiceField: "mitigation_choice",
+        fieldPath: "spec.ddos_mitigation_rules[].mitigation_choice",
+        options: [
+          "spec.ddos_mitigation_rules[].ddos_client_source",
+          "spec.ddos_mitigation_rules[].ip_prefix_list",
+        ],
+      },
+      {
+        choiceField: "health_check_port_choice",
+        fieldPath: "spec.default_pool.health_check_port_choice",
+        options: ["spec.default_pool.health_check_port", "spec.default_pool.same_as_endpoint_port"],
+        recommendedOption: "spec.default_pool.same_as_endpoint_port",
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.default_pool.port_choice",
+        options: [
+          "spec.default_pool.automatic_port",
+          "spec.default_pool.lb_port",
+          "spec.default_pool.port",
+        ],
+      },
+      {
+        choiceField: "tls_choice",
+        fieldPath: "spec.default_pool.tls_choice",
+        options: ["spec.default_pool.no_tls", "spec.default_pool.use_tls"],
+        recommendedOption: "spec.default_pool.no_tls",
+      },
+      {
+        choiceField: "circuit_breaker_choice",
+        fieldPath: "spec.default_pool.advanced_options.circuit_breaker_choice",
+        options: [
+          "spec.default_pool.advanced_options.circuit_breaker",
+          "spec.default_pool.advanced_options.default_circuit_breaker",
+          "spec.default_pool.advanced_options.disable_circuit_breaker",
+        ],
+        recommendedOption: "spec.default_pool.advanced_options.default_circuit_breaker",
+      },
+      {
+        choiceField: "http_protocol_type",
+        fieldPath: "spec.default_pool.advanced_options.http_protocol_type",
+        options: [
+          "spec.default_pool.advanced_options.auto_http_config",
+          "spec.default_pool.advanced_options.http1_config",
+          "spec.default_pool.advanced_options.http2_options",
+        ],
+        recommendedOption: "spec.default_pool.advanced_options.auto_http_config",
+      },
+      {
+        choiceField: "lb_source_ip_persistance_choice",
+        fieldPath: "spec.default_pool.advanced_options.lb_source_ip_persistance_choice",
+        options: [
+          "spec.default_pool.advanced_options.disable_lb_source_ip_persistance",
+          "spec.default_pool.advanced_options.enable_lb_source_ip_persistance",
+        ],
+        recommendedOption: "spec.default_pool.advanced_options.disable_lb_source_ip_persistance",
+      },
+      {
+        choiceField: "outlier_detection_choice",
+        fieldPath: "spec.default_pool.advanced_options.outlier_detection_choice",
+        options: [
+          "spec.default_pool.advanced_options.disable_outlier_detection",
+          "spec.default_pool.advanced_options.outlier_detection",
+        ],
+        recommendedOption: "spec.default_pool.advanced_options.disable_outlier_detection",
+      },
+      {
+        choiceField: "panic_threshold_type",
+        fieldPath: "spec.default_pool.advanced_options.panic_threshold_type",
+        options: [
+          "spec.default_pool.advanced_options.no_panic_threshold",
+          "spec.default_pool.advanced_options.panic_threshold",
+        ],
+        recommendedOption: "spec.default_pool.advanced_options.no_panic_threshold",
+      },
+      {
+        choiceField: "proxy_protocol_choice",
+        fieldPath: "spec.default_pool.advanced_options.proxy_protocol_choice",
+        options: [
+          "spec.default_pool.advanced_options.disable_proxy_protocol",
+          "spec.default_pool.advanced_options.proxy_protocol_v1",
+          "spec.default_pool.advanced_options.proxy_protocol_v2",
+        ],
+        recommendedOption: "spec.default_pool.advanced_options.disable_proxy_protocol",
+      },
+      {
+        choiceField: "subset_choice",
+        fieldPath: "spec.default_pool.advanced_options.subset_choice",
+        options: [
+          "spec.default_pool.advanced_options.disable_subsets",
+          "spec.default_pool.advanced_options.enable_subsets",
+        ],
+        recommendedOption: "spec.default_pool.advanced_options.disable_subsets",
+      },
+      {
+        choiceField: "fallback_policy_choice",
+        fieldPath: "spec.default_pool.advanced_options.enable_subsets.fallback_policy_choice",
+        options: [
+          "spec.default_pool.advanced_options.enable_subsets.any_endpoint",
+          "spec.default_pool.advanced_options.enable_subsets.default_subset",
+          "spec.default_pool.advanced_options.enable_subsets.fail_request",
+        ],
+      },
+      {
+        choiceField: "header_transformation_choice",
+        fieldPath:
+          "spec.default_pool.advanced_options.http1_config.header_transformation.header_transformation_choice",
+        options: [
+          "spec.default_pool.advanced_options.http1_config.header_transformation.default_header_transformation",
+          "spec.default_pool.advanced_options.http1_config.header_transformation.legacy_header_transformation",
+          "spec.default_pool.advanced_options.http1_config.header_transformation.preserve_case_header_transformation",
+          "spec.default_pool.advanced_options.http1_config.header_transformation.proper_case_header_transformation",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.default_pool.origin_servers[].choice",
+        options: [
+          "spec.default_pool.origin_servers[].cbip_service",
+          "spec.default_pool.origin_servers[].consul_service",
+          "spec.default_pool.origin_servers[].custom_endpoint_object",
+          "spec.default_pool.origin_servers[].k8s_service",
+          "spec.default_pool.origin_servers[].private_ip",
+          "spec.default_pool.origin_servers[].private_name",
+          "spec.default_pool.origin_servers[].public_ip",
+          "spec.default_pool.origin_servers[].public_name",
+          "spec.default_pool.origin_servers[].vn_private_ip",
+          "spec.default_pool.origin_servers[].vn_private_name",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath: "spec.default_pool.origin_servers[].consul_service.network_choice",
+        options: [
+          "spec.default_pool.origin_servers[].consul_service.inside_network",
+          "spec.default_pool.origin_servers[].consul_service.outside_network",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.default_pool.origin_servers[].consul_service.site_locator.choice",
+        options: [
+          "spec.default_pool.origin_servers[].consul_service.site_locator.site",
+          "spec.default_pool.origin_servers[].consul_service.site_locator.virtual_site",
+        ],
+      },
+      {
+        choiceField: "snat_pool_choice",
+        fieldPath: "spec.default_pool.origin_servers[].consul_service.snat_pool.snat_pool_choice",
+        options: [
+          "spec.default_pool.origin_servers[].consul_service.snat_pool.no_snat_pool",
+          "spec.default_pool.origin_servers[].consul_service.snat_pool.snat_pool",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath: "spec.default_pool.origin_servers[].k8s_service.network_choice",
+        options: [
+          "spec.default_pool.origin_servers[].k8s_service.inside_network",
+          "spec.default_pool.origin_servers[].k8s_service.outside_network",
+          "spec.default_pool.origin_servers[].k8s_service.vk8s_networks",
+        ],
+      },
+      {
+        choiceField: "service_info",
+        fieldPath: "spec.default_pool.origin_servers[].k8s_service.service_info",
+        options: ["spec.default_pool.origin_servers[].k8s_service.service_name"],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.default_pool.origin_servers[].k8s_service.site_locator.choice",
+        options: [
+          "spec.default_pool.origin_servers[].k8s_service.site_locator.site",
+          "spec.default_pool.origin_servers[].k8s_service.site_locator.virtual_site",
+        ],
+      },
+      {
+        choiceField: "snat_pool_choice",
+        fieldPath: "spec.default_pool.origin_servers[].k8s_service.snat_pool.snat_pool_choice",
+        options: [
+          "spec.default_pool.origin_servers[].k8s_service.snat_pool.no_snat_pool",
+          "spec.default_pool.origin_servers[].k8s_service.snat_pool.snat_pool",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath: "spec.default_pool.origin_servers[].private_ip.network_choice",
+        options: [
+          "spec.default_pool.origin_servers[].private_ip.inside_network",
+          "spec.default_pool.origin_servers[].private_ip.outside_network",
+          "spec.default_pool.origin_servers[].private_ip.segment",
+        ],
+      },
+      {
+        choiceField: "private_ip_choice",
+        fieldPath: "spec.default_pool.origin_servers[].private_ip.private_ip_choice",
+        options: ["spec.default_pool.origin_servers[].private_ip.ip"],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.default_pool.origin_servers[].private_ip.site_locator.choice",
+        options: [
+          "spec.default_pool.origin_servers[].private_ip.site_locator.site",
+          "spec.default_pool.origin_servers[].private_ip.site_locator.virtual_site",
+        ],
+      },
+      {
+        choiceField: "snat_pool_choice",
+        fieldPath: "spec.default_pool.origin_servers[].private_ip.snat_pool.snat_pool_choice",
+        options: [
+          "spec.default_pool.origin_servers[].private_ip.snat_pool.no_snat_pool",
+          "spec.default_pool.origin_servers[].private_ip.snat_pool.snat_pool",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath: "spec.default_pool.origin_servers[].private_name.network_choice",
+        options: [
+          "spec.default_pool.origin_servers[].private_name.inside_network",
+          "spec.default_pool.origin_servers[].private_name.outside_network",
+          "spec.default_pool.origin_servers[].private_name.segment",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.default_pool.origin_servers[].private_name.site_locator.choice",
+        options: [
+          "spec.default_pool.origin_servers[].private_name.site_locator.site",
+          "spec.default_pool.origin_servers[].private_name.site_locator.virtual_site",
+        ],
+      },
+      {
+        choiceField: "snat_pool_choice",
+        fieldPath: "spec.default_pool.origin_servers[].private_name.snat_pool.snat_pool_choice",
+        options: [
+          "spec.default_pool.origin_servers[].private_name.snat_pool.no_snat_pool",
+          "spec.default_pool.origin_servers[].private_name.snat_pool.snat_pool",
+        ],
+      },
+      {
+        choiceField: "public_ip_choice",
+        fieldPath: "spec.default_pool.origin_servers[].public_ip.public_ip_choice",
+        options: ["spec.default_pool.origin_servers[].public_ip.ip"],
+      },
+      {
+        choiceField: "virtual_network_ip_choice",
+        fieldPath: "spec.default_pool.origin_servers[].vn_private_ip.virtual_network_ip_choice",
+        options: ["spec.default_pool.origin_servers[].vn_private_ip.ip"],
+      },
+      {
+        choiceField: "map_downstream_to_upstream_conn_pool_type",
+        fieldPath:
+          "spec.default_pool.upstream_conn_pool_reuse_type.map_downstream_to_upstream_conn_pool_type",
+        options: [
+          "spec.default_pool.upstream_conn_pool_reuse_type.disable_conn_pool_reuse",
+          "spec.default_pool.upstream_conn_pool_reuse_type.enable_conn_pool_reuse",
+        ],
+      },
+      {
+        choiceField: "max_session_keys_type",
+        fieldPath: "spec.default_pool.use_tls.max_session_keys_type",
+        options: [
+          "spec.default_pool.use_tls.default_session_key_caching",
+          "spec.default_pool.use_tls.disable_session_key_caching",
+          "spec.default_pool.use_tls.max_session_keys",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath: "spec.default_pool.use_tls.mtls_choice",
+        options: [
+          "spec.default_pool.use_tls.no_mtls",
+          "spec.default_pool.use_tls.use_mtls",
+          "spec.default_pool.use_tls.use_mtls_obj",
+        ],
+      },
+      {
+        choiceField: "server_validation_choice",
+        fieldPath: "spec.default_pool.use_tls.server_validation_choice",
+        options: [
+          "spec.default_pool.use_tls.skip_server_verification",
+          "spec.default_pool.use_tls.use_server_verification",
+          "spec.default_pool.use_tls.volterra_trusted_ca",
+        ],
+      },
+      {
+        choiceField: "sni_choice",
+        fieldPath: "spec.default_pool.use_tls.sni_choice",
+        options: [
+          "spec.default_pool.use_tls.disable_sni",
+          "spec.default_pool.use_tls.sni",
+          "spec.default_pool.use_tls.use_host_header_as_sni",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.default_pool.use_tls.tls_config.choice",
+        options: [
+          "spec.default_pool.use_tls.tls_config.custom_security",
+          "spec.default_pool.use_tls.tls_config.default_security",
+          "spec.default_pool.use_tls.tls_config.low_security",
+          "spec.default_pool.use_tls.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "ocsp_stapling_choice",
+        fieldPath: "spec.default_pool.use_tls.use_mtls.tls_certificates[].ocsp_stapling_choice",
+        options: [
+          "spec.default_pool.use_tls.use_mtls.tls_certificates[].custom_hash_algorithms",
+          "spec.default_pool.use_tls.use_mtls.tls_certificates[].disable_ocsp_stapling",
+          "spec.default_pool.use_tls.use_mtls.tls_certificates[].use_system_defaults",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.default_pool.use_tls.use_mtls.tls_certificates[].private_key.secret_info_oneof",
+        options: [
+          "spec.default_pool.use_tls.use_mtls.tls_certificates[].private_key.blindfold_secret_info",
+          "spec.default_pool.use_tls.use_mtls.tls_certificates[].private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath: "spec.default_pool.use_tls.use_server_verification.trusted_ca_choice",
+        options: [
+          "spec.default_pool.use_tls.use_server_verification.trusted_ca",
+          "spec.default_pool.use_tls.use_server_verification.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "pool_choice",
+        fieldPath: "spec.default_pool_list.pools[].pool_choice",
+        options: ["spec.default_pool_list.pools[].cluster", "spec.default_pool_list.pools[].pool"],
+      },
+      {
+        choiceField: "pool_choice",
+        fieldPath: "spec.default_route_pools[].pool_choice",
+        options: ["spec.default_route_pools[].cluster", "spec.default_route_pools[].pool"],
+      },
+      {
+        choiceField: "api_discovery_settings_choice",
+        fieldPath: "spec.enable_api_discovery.api_discovery_settings_choice",
+        options: [
+          "spec.enable_api_discovery.custom_api_auth_discovery",
+          "spec.enable_api_discovery.default_api_auth_discovery",
+        ],
+      },
+      {
+        choiceField: "learn_from_redirect_traffic",
+        fieldPath: "spec.enable_api_discovery.learn_from_redirect_traffic",
+        options: [
+          "spec.enable_api_discovery.disable_learn_from_redirect_traffic",
+          "spec.enable_api_discovery.enable_learn_from_redirect_traffic",
+        ],
+      },
+      {
+        choiceField: "api_crawler",
+        fieldPath: "spec.enable_api_discovery.api_crawler.api_crawler",
+        options: [
+          "spec.enable_api_discovery.api_crawler.api_crawler_config",
+          "spec.enable_api_discovery.api_crawler.disable_api_crawler",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.enable_api_discovery.api_crawler.api_crawler_config.domains[].simple_login.password.secret_info_oneof",
+        options: [
+          "spec.enable_api_discovery.api_crawler.api_crawler_config.domains[].simple_login.password.blindfold_secret_info",
+          "spec.enable_api_discovery.api_crawler.api_crawler_config.domains[].simple_login.password.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "api_repos_choice",
+        fieldPath:
+          "spec.enable_api_discovery.api_discovery_from_code_scan.code_base_integrations[].api_repos_choice",
+        options: [
+          "spec.enable_api_discovery.api_discovery_from_code_scan.code_base_integrations[].all_repos",
+          "spec.enable_api_discovery.api_discovery_from_code_scan.code_base_integrations[].selected_repos",
+        ],
+      },
+      {
+        choiceField: "captcha_challenge_parameters_choice",
+        fieldPath: "spec.enable_challenge.captcha_challenge_parameters_choice",
+        options: [
+          "spec.enable_challenge.captcha_challenge_parameters",
+          "spec.enable_challenge.default_captcha_challenge_parameters",
+        ],
+      },
+      {
+        choiceField: "js_challenge_parameters_choice",
+        fieldPath: "spec.enable_challenge.js_challenge_parameters_choice",
+        options: [
+          "spec.enable_challenge.default_js_challenge_parameters",
+          "spec.enable_challenge.js_challenge_parameters",
+        ],
+      },
+      {
+        choiceField: "malicious_user_mitigation_choice",
+        fieldPath: "spec.enable_challenge.malicious_user_mitigation_choice",
+        options: [
+          "spec.enable_challenge.default_mitigation_settings",
+          "spec.enable_challenge.malicious_user_mitigation",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.graphql_rules[].domain_choice",
+        options: [
+          "spec.graphql_rules[].any_domain",
+          "spec.graphql_rules[].exact_value",
+          "spec.graphql_rules[].suffix_value",
+        ],
+      },
+      {
+        choiceField: "method_choice",
+        fieldPath: "spec.graphql_rules[].method_choice",
+        options: ["spec.graphql_rules[].method_get", "spec.graphql_rules[].method_post"],
+      },
+      {
+        choiceField: "allow_introspection_queries_choice",
+        fieldPath: "spec.graphql_rules[].graphql_settings.allow_introspection_queries_choice",
+        options: [
+          "spec.graphql_rules[].graphql_settings.disable_introspection",
+          "spec.graphql_rules[].graphql_settings.enable_introspection",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.http.port_choice",
+        options: ["spec.http.port", "spec.http.port_ranges"],
+      },
+      {
+        choiceField: "default_lb_choice",
+        fieldPath: "spec.https.default_lb_choice",
+        options: ["spec.https.default_loadbalancer", "spec.https.non_default_loadbalancer"],
+      },
+      {
+        choiceField: "path_normalize_choice",
+        fieldPath: "spec.https.path_normalize_choice",
+        options: ["spec.https.disable_path_normalize", "spec.https.enable_path_normalize"],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.https.port_choice",
+        options: ["spec.https.port", "spec.https.port_ranges"],
+      },
+      {
+        choiceField: "server_header_choice",
+        fieldPath: "spec.https.server_header_choice",
+        options: [
+          "spec.https.append_server_name",
+          "spec.https.default_header",
+          "spec.https.pass_through",
+          "spec.https.server_name",
+        ],
+      },
+      {
+        choiceField: "tls_certificates_choice",
+        fieldPath: "spec.https.tls_certificates_choice",
+        options: ["spec.https.tls_cert_params", "spec.https.tls_parameters"],
+      },
+      {
+        choiceField: "coalescing_choice",
+        fieldPath: "spec.https.coalescing_options.coalescing_choice",
+        options: [
+          "spec.https.coalescing_options.default_coalescing",
+          "spec.https.coalescing_options.strict_coalescing",
+        ],
+      },
+      {
+        choiceField: "http_protocol_choice",
+        fieldPath: "spec.https.http_protocol_options.http_protocol_choice",
+        options: [
+          "spec.https.http_protocol_options.http_protocol_enable_v1_only",
+          "spec.https.http_protocol_options.http_protocol_enable_v1_v2",
+          "spec.https.http_protocol_options.http_protocol_enable_v2_only",
+        ],
+      },
+      {
+        choiceField: "header_transformation_choice",
+        fieldPath:
+          "spec.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.header_transformation_choice",
+        options: [
+          "spec.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.default_header_transformation",
+          "spec.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.legacy_header_transformation",
+          "spec.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.preserve_case_header_transformation",
+          "spec.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.proper_case_header_transformation",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath: "spec.https.tls_cert_params.mtls_choice",
+        options: ["spec.https.tls_cert_params.no_mtls", "spec.https.tls_cert_params.use_mtls"],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.https.tls_cert_params.tls_config.choice",
+        options: [
+          "spec.https.tls_cert_params.tls_config.custom_security",
+          "spec.https.tls_cert_params.tls_config.default_security",
+          "spec.https.tls_cert_params.tls_config.low_security",
+          "spec.https.tls_cert_params.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath: "spec.https.tls_cert_params.use_mtls.crl_choice",
+        options: [
+          "spec.https.tls_cert_params.use_mtls.crl",
+          "spec.https.tls_cert_params.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath: "spec.https.tls_cert_params.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.https.tls_cert_params.use_mtls.trusted_ca",
+          "spec.https.tls_cert_params.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath: "spec.https.tls_cert_params.use_mtls.xfcc_header",
+        options: [
+          "spec.https.tls_cert_params.use_mtls.xfcc_disabled",
+          "spec.https.tls_cert_params.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath: "spec.https.tls_parameters.mtls_choice",
+        options: ["spec.https.tls_parameters.no_mtls", "spec.https.tls_parameters.use_mtls"],
+      },
+      {
+        choiceField: "ocsp_stapling_choice",
+        fieldPath: "spec.https.tls_parameters.tls_certificates[].ocsp_stapling_choice",
+        options: [
+          "spec.https.tls_parameters.tls_certificates[].custom_hash_algorithms",
+          "spec.https.tls_parameters.tls_certificates[].disable_ocsp_stapling",
+          "spec.https.tls_parameters.tls_certificates[].use_system_defaults",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.https.tls_parameters.tls_certificates[].private_key.secret_info_oneof",
+        options: [
+          "spec.https.tls_parameters.tls_certificates[].private_key.blindfold_secret_info",
+          "spec.https.tls_parameters.tls_certificates[].private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.https.tls_parameters.tls_config.choice",
+        options: [
+          "spec.https.tls_parameters.tls_config.custom_security",
+          "spec.https.tls_parameters.tls_config.default_security",
+          "spec.https.tls_parameters.tls_config.low_security",
+          "spec.https.tls_parameters.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath: "spec.https.tls_parameters.use_mtls.crl_choice",
+        options: [
+          "spec.https.tls_parameters.use_mtls.crl",
+          "spec.https.tls_parameters.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath: "spec.https.tls_parameters.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.https.tls_parameters.use_mtls.trusted_ca",
+          "spec.https.tls_parameters.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath: "spec.https.tls_parameters.use_mtls.xfcc_header",
+        options: [
+          "spec.https.tls_parameters.use_mtls.xfcc_disabled",
+          "spec.https.tls_parameters.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "default_lb_choice",
+        fieldPath: "spec.https_auto_cert.default_lb_choice",
+        options: [
+          "spec.https_auto_cert.default_loadbalancer",
+          "spec.https_auto_cert.non_default_loadbalancer",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath: "spec.https_auto_cert.mtls_choice",
+        options: ["spec.https_auto_cert.no_mtls", "spec.https_auto_cert.use_mtls"],
+      },
+      {
+        choiceField: "path_normalize_choice",
+        fieldPath: "spec.https_auto_cert.path_normalize_choice",
+        options: [
+          "spec.https_auto_cert.disable_path_normalize",
+          "spec.https_auto_cert.enable_path_normalize",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.https_auto_cert.port_choice",
+        options: ["spec.https_auto_cert.port", "spec.https_auto_cert.port_ranges"],
+      },
+      {
+        choiceField: "server_header_choice",
+        fieldPath: "spec.https_auto_cert.server_header_choice",
+        options: [
+          "spec.https_auto_cert.append_server_name",
+          "spec.https_auto_cert.default_header",
+          "spec.https_auto_cert.pass_through",
+          "spec.https_auto_cert.server_name",
+        ],
+      },
+      {
+        choiceField: "coalescing_choice",
+        fieldPath: "spec.https_auto_cert.coalescing_options.coalescing_choice",
+        options: [
+          "spec.https_auto_cert.coalescing_options.default_coalescing",
+          "spec.https_auto_cert.coalescing_options.strict_coalescing",
+        ],
+      },
+      {
+        choiceField: "http_protocol_choice",
+        fieldPath: "spec.https_auto_cert.http_protocol_options.http_protocol_choice",
+        options: [
+          "spec.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only",
+          "spec.https_auto_cert.http_protocol_options.http_protocol_enable_v1_v2",
+          "spec.https_auto_cert.http_protocol_options.http_protocol_enable_v2_only",
+        ],
+      },
+      {
+        choiceField: "header_transformation_choice",
+        fieldPath:
+          "spec.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.header_transformation_choice",
+        options: [
+          "spec.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.default_header_transformation",
+          "spec.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.legacy_header_transformation",
+          "spec.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.preserve_case_header_transformation",
+          "spec.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.proper_case_header_transformation",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.https_auto_cert.tls_config.choice",
+        options: [
+          "spec.https_auto_cert.tls_config.custom_security",
+          "spec.https_auto_cert.tls_config.default_security",
+          "spec.https_auto_cert.tls_config.low_security",
+          "spec.https_auto_cert.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath: "spec.https_auto_cert.use_mtls.crl_choice",
+        options: ["spec.https_auto_cert.use_mtls.crl", "spec.https_auto_cert.use_mtls.no_crl"],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath: "spec.https_auto_cert.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.https_auto_cert.use_mtls.trusted_ca",
+          "spec.https_auto_cert.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath: "spec.https_auto_cert.use_mtls.xfcc_header",
+        options: [
+          "spec.https_auto_cert.use_mtls.xfcc_disabled",
+          "spec.https_auto_cert.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "jwks_configuration",
+        fieldPath: "spec.jwt_validation.jwks_configuration",
+        options: ["spec.jwt_validation.jwks_config"],
+      },
+      {
+        choiceField: "action_choice",
+        fieldPath: "spec.jwt_validation.action.action_choice",
+        options: ["spec.jwt_validation.action.block", "spec.jwt_validation.action.report"],
+      },
+      {
+        choiceField: "audience_validation",
+        fieldPath: "spec.jwt_validation.reserved_claims.audience_validation",
+        options: [
+          "spec.jwt_validation.reserved_claims.audience",
+          "spec.jwt_validation.reserved_claims.audience_disable",
+        ],
+      },
+      {
+        choiceField: "issuer_validation",
+        fieldPath: "spec.jwt_validation.reserved_claims.issuer_validation",
+        options: [
+          "spec.jwt_validation.reserved_claims.issuer",
+          "spec.jwt_validation.reserved_claims.issuer_disable",
+        ],
+      },
+      {
+        choiceField: "validate_period",
+        fieldPath: "spec.jwt_validation.reserved_claims.validate_period",
+        options: [
+          "spec.jwt_validation.reserved_claims.validate_period_disable",
+          "spec.jwt_validation.reserved_claims.validate_period_enable",
+        ],
+      },
+      {
+        choiceField: "target",
+        fieldPath: "spec.jwt_validation.target.target",
+        options: [
+          "spec.jwt_validation.target.all_endpoint",
+          "spec.jwt_validation.target.api_groups",
+          "spec.jwt_validation.target.base_paths",
+        ],
+      },
+      {
+        choiceField: "token_location",
+        fieldPath: "spec.jwt_validation.token_location.token_location",
+        options: ["spec.jwt_validation.token_location.bearer_token"],
+      },
+      {
+        choiceField: "clientside_action_choice",
+        fieldPath: "spec.l7_ddos_protection.clientside_action_choice",
+        options: [
+          "spec.l7_ddos_protection.clientside_action_captcha_challenge",
+          "spec.l7_ddos_protection.clientside_action_js_challenge",
+          "spec.l7_ddos_protection.clientside_action_none",
+        ],
+      },
+      {
+        choiceField: "ddos_policy_choice",
+        fieldPath: "spec.l7_ddos_protection.ddos_policy_choice",
+        options: [
+          "spec.l7_ddos_protection.ddos_policy_custom",
+          "spec.l7_ddos_protection.ddos_policy_none",
+        ],
+      },
+      {
+        choiceField: "mitigation_action_choice",
+        fieldPath: "spec.l7_ddos_protection.mitigation_action_choice",
+        options: [
+          "spec.l7_ddos_protection.mitigation_block",
+          "spec.l7_ddos_protection.mitigation_captcha_challenge",
+          "spec.l7_ddos_protection.mitigation_js_challenge",
+        ],
+      },
+      {
+        choiceField: "rps_threshold_choice",
+        fieldPath: "spec.l7_ddos_protection.rps_threshold_choice",
+        options: [
+          "spec.l7_ddos_protection.default_rps_threshold",
+          "spec.l7_ddos_protection.rps_threshold",
+        ],
+      },
+      {
+        choiceField: "action_choice",
+        fieldPath:
+          "spec.malware_protection_settings.malware_protection_rules[].action.action_choice",
+        options: [
+          "spec.malware_protection_settings.malware_protection_rules[].action.block",
+          "spec.malware_protection_settings.malware_protection_rules[].action.report",
+        ],
+      },
+      {
+        choiceField: "domain_matcher",
+        fieldPath:
+          "spec.malware_protection_settings.malware_protection_rules[].domain.domain_matcher",
+        options: [
+          "spec.malware_protection_settings.malware_protection_rules[].domain.any_domain",
+          "spec.malware_protection_settings.malware_protection_rules[].domain.domain",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath:
+          "spec.malware_protection_settings.malware_protection_rules[].domain.domain.domain_choice",
+        options: [
+          "spec.malware_protection_settings.malware_protection_rules[].domain.domain.exact_value",
+          "spec.malware_protection_settings.malware_protection_rules[].domain.domain.regex_value",
+          "spec.malware_protection_settings.malware_protection_rules[].domain.domain.suffix_value",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath: "spec.malware_protection_settings.malware_protection_rules[].path.path_match",
+        options: [
+          "spec.malware_protection_settings.malware_protection_rules[].path.path",
+          "spec.malware_protection_settings.malware_protection_rules[].path.prefix",
+          "spec.malware_protection_settings.malware_protection_rules[].path.regex",
+        ],
+      },
+      {
+        choiceField: "path_normalize_choice",
+        fieldPath: "spec.more_option.path_normalize_choice",
+        options: [
+          "spec.more_option.disable_path_normalize",
+          "spec.more_option.enable_path_normalize",
+        ],
+      },
+      {
+        choiceField: "strict_sni_host_header_check_choice",
+        fieldPath: "spec.more_option.strict_sni_host_header_check_choice",
+        options: [],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath: "spec.more_option.request_cookies_to_add[].value_choice",
+        options: [
+          "spec.more_option.request_cookies_to_add[].secret_value",
+          "spec.more_option.request_cookies_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.more_option.request_cookies_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.more_option.request_cookies_to_add[].secret_value.blindfold_secret_info",
+          "spec.more_option.request_cookies_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath: "spec.more_option.request_headers_to_add[].value_choice",
+        options: [
+          "spec.more_option.request_headers_to_add[].secret_value",
+          "spec.more_option.request_headers_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.more_option.request_headers_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.more_option.request_headers_to_add[].secret_value.blindfold_secret_info",
+          "spec.more_option.request_headers_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.more_option.response_cookies_to_add[].domain_choice",
+        options: [
+          "spec.more_option.response_cookies_to_add[].add_domain",
+          "spec.more_option.response_cookies_to_add[].ignore_domain",
+        ],
+      },
+      {
+        choiceField: "expiry_choice",
+        fieldPath: "spec.more_option.response_cookies_to_add[].expiry_choice",
+        options: [
+          "spec.more_option.response_cookies_to_add[].add_expiry",
+          "spec.more_option.response_cookies_to_add[].ignore_expiry",
+        ],
+      },
+      {
+        choiceField: "httponly_choice",
+        fieldPath: "spec.more_option.response_cookies_to_add[].httponly_choice",
+        options: [
+          "spec.more_option.response_cookies_to_add[].add_httponly",
+          "spec.more_option.response_cookies_to_add[].ignore_httponly",
+        ],
+      },
+      {
+        choiceField: "max_age_choice",
+        fieldPath: "spec.more_option.response_cookies_to_add[].max_age_choice",
+        options: [
+          "spec.more_option.response_cookies_to_add[].ignore_max_age",
+          "spec.more_option.response_cookies_to_add[].max_age_value",
+        ],
+      },
+      {
+        choiceField: "partitioned_choice",
+        fieldPath: "spec.more_option.response_cookies_to_add[].partitioned_choice",
+        options: [
+          "spec.more_option.response_cookies_to_add[].add_partitioned",
+          "spec.more_option.response_cookies_to_add[].ignore_partitioned",
+        ],
+      },
+      {
+        choiceField: "path_choice",
+        fieldPath: "spec.more_option.response_cookies_to_add[].path_choice",
+        options: [
+          "spec.more_option.response_cookies_to_add[].add_path",
+          "spec.more_option.response_cookies_to_add[].ignore_path",
+        ],
+      },
+      {
+        choiceField: "samesite_choice",
+        fieldPath: "spec.more_option.response_cookies_to_add[].samesite_choice",
+        options: [
+          "spec.more_option.response_cookies_to_add[].ignore_samesite",
+          "spec.more_option.response_cookies_to_add[].samesite_lax",
+          "spec.more_option.response_cookies_to_add[].samesite_none",
+          "spec.more_option.response_cookies_to_add[].samesite_strict",
+        ],
+      },
+      {
+        choiceField: "secure_choice",
+        fieldPath: "spec.more_option.response_cookies_to_add[].secure_choice",
+        options: [
+          "spec.more_option.response_cookies_to_add[].add_secure",
+          "spec.more_option.response_cookies_to_add[].ignore_secure",
+        ],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath: "spec.more_option.response_cookies_to_add[].value_choice",
+        options: [
+          "spec.more_option.response_cookies_to_add[].ignore_value",
+          "spec.more_option.response_cookies_to_add[].secret_value",
+          "spec.more_option.response_cookies_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.more_option.response_cookies_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.more_option.response_cookies_to_add[].secret_value.blindfold_secret_info",
+          "spec.more_option.response_cookies_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath: "spec.more_option.response_headers_to_add[].value_choice",
+        options: [
+          "spec.more_option.response_headers_to_add[].secret_value",
+          "spec.more_option.response_headers_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.more_option.response_headers_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.more_option.response_headers_to_add[].secret_value.blindfold_secret_info",
+          "spec.more_option.response_headers_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "asn_choice",
+        fieldPath: "spec.origin_server_subset_rule_list.origin_server_subset_rules[].asn_choice",
+        options: [
+          "spec.origin_server_subset_rule_list.origin_server_subset_rules[].any_asn",
+          "spec.origin_server_subset_rule_list.origin_server_subset_rules[].asn_list",
+          "spec.origin_server_subset_rule_list.origin_server_subset_rules[].asn_matcher",
+        ],
+      },
+      {
+        choiceField: "ip_choice",
+        fieldPath: "spec.origin_server_subset_rule_list.origin_server_subset_rules[].ip_choice",
+        options: [
+          "spec.origin_server_subset_rule_list.origin_server_subset_rules[].any_ip",
+          "spec.origin_server_subset_rule_list.origin_server_subset_rules[].ip_matcher",
+          "spec.origin_server_subset_rule_list.origin_server_subset_rules[].ip_prefix_list",
+        ],
+      },
+      {
+        choiceField: "selector_choice",
+        fieldPath:
+          "spec.origin_server_subset_rule_list.origin_server_subset_rules[].selector_choice",
+        options: [
+          "spec.origin_server_subset_rule_list.origin_server_subset_rules[].client_selector",
+          "spec.origin_server_subset_rule_list.origin_server_subset_rules[].none",
+        ],
+      },
+      {
+        choiceField: "captcha_challenge_parameters_choice",
+        fieldPath: "spec.policy_based_challenge.captcha_challenge_parameters_choice",
+        options: [
+          "spec.policy_based_challenge.captcha_challenge_parameters",
+          "spec.policy_based_challenge.default_captcha_challenge_parameters",
+        ],
+      },
+      {
+        choiceField: "challenge_choice",
+        fieldPath: "spec.policy_based_challenge.challenge_choice",
+        options: [
+          "spec.policy_based_challenge.always_enable_captcha_challenge",
+          "spec.policy_based_challenge.always_enable_js_challenge",
+          "spec.policy_based_challenge.no_challenge",
+        ],
+      },
+      {
+        choiceField: "js_challenge_parameters_choice",
+        fieldPath: "spec.policy_based_challenge.js_challenge_parameters_choice",
+        options: [
+          "spec.policy_based_challenge.default_js_challenge_parameters",
+          "spec.policy_based_challenge.js_challenge_parameters",
+        ],
+      },
+      {
+        choiceField: "malicious_user_mitigation_choice",
+        fieldPath: "spec.policy_based_challenge.malicious_user_mitigation_choice",
+        options: [
+          "spec.policy_based_challenge.default_mitigation_settings",
+          "spec.policy_based_challenge.malicious_user_mitigation",
+        ],
+      },
+      {
+        choiceField: "temporary_blocking_parameters_choice",
+        fieldPath: "spec.policy_based_challenge.temporary_blocking_parameters_choice",
+        options: [
+          "spec.policy_based_challenge.default_temporary_blocking_parameters",
+          "spec.policy_based_challenge.temporary_user_blocking",
+        ],
+      },
+      {
+        choiceField: "asn_choice",
+        fieldPath: "spec.policy_based_challenge.rule_list.rules[].spec.asn_choice",
+        options: [
+          "spec.policy_based_challenge.rule_list.rules[].spec.any_asn",
+          "spec.policy_based_challenge.rule_list.rules[].spec.asn_list",
+          "spec.policy_based_challenge.rule_list.rules[].spec.asn_matcher",
+        ],
+      },
+      {
+        choiceField: "challenge_action",
+        fieldPath: "spec.policy_based_challenge.rule_list.rules[].spec.challenge_action",
+        options: [
+          "spec.policy_based_challenge.rule_list.rules[].spec.disable_challenge",
+          "spec.policy_based_challenge.rule_list.rules[].spec.enable_captcha_challenge",
+          "spec.policy_based_challenge.rule_list.rules[].spec.enable_javascript_challenge",
+        ],
+      },
+      {
+        choiceField: "client_choice",
+        fieldPath: "spec.policy_based_challenge.rule_list.rules[].spec.client_choice",
+        options: [
+          "spec.policy_based_challenge.rule_list.rules[].spec.any_client",
+          "spec.policy_based_challenge.rule_list.rules[].spec.client_selector",
+        ],
+      },
+      {
+        choiceField: "ip_choice",
+        fieldPath: "spec.policy_based_challenge.rule_list.rules[].spec.ip_choice",
+        options: [
+          "spec.policy_based_challenge.rule_list.rules[].spec.any_ip",
+          "spec.policy_based_challenge.rule_list.rules[].spec.ip_matcher",
+          "spec.policy_based_challenge.rule_list.rules[].spec.ip_prefix_list",
+        ],
+      },
+      {
+        choiceField: "tls_fingerprint_choice",
+        fieldPath: "spec.policy_based_challenge.rule_list.rules[].spec.tls_fingerprint_choice",
+        options: ["spec.policy_based_challenge.rule_list.rules[].spec.tls_fingerprint_matcher"],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.policy_based_challenge.rule_list.rules[].spec.arg_matchers[].match",
+        options: [
+          "spec.policy_based_challenge.rule_list.rules[].spec.arg_matchers[].check_not_present",
+          "spec.policy_based_challenge.rule_list.rules[].spec.arg_matchers[].check_present",
+          "spec.policy_based_challenge.rule_list.rules[].spec.arg_matchers[].item",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.policy_based_challenge.rule_list.rules[].spec.cookie_matchers[].match",
+        options: [
+          "spec.policy_based_challenge.rule_list.rules[].spec.cookie_matchers[].check_not_present",
+          "spec.policy_based_challenge.rule_list.rules[].spec.cookie_matchers[].check_present",
+          "spec.policy_based_challenge.rule_list.rules[].spec.cookie_matchers[].item",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.policy_based_challenge.rule_list.rules[].spec.headers[].match",
+        options: [
+          "spec.policy_based_challenge.rule_list.rules[].spec.headers[].check_not_present",
+          "spec.policy_based_challenge.rule_list.rules[].spec.headers[].check_present",
+          "spec.policy_based_challenge.rule_list.rules[].spec.headers[].item",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.policy_based_challenge.rule_list.rules[].spec.query_params[].match",
+        options: [
+          "spec.policy_based_challenge.rule_list.rules[].spec.query_params[].check_not_present",
+          "spec.policy_based_challenge.rule_list.rules[].spec.query_params[].check_present",
+          "spec.policy_based_challenge.rule_list.rules[].spec.query_params[].item",
+        ],
+      },
+      {
+        choiceField: "cookie_tampering",
+        fieldPath: "spec.protected_cookies[].cookie_tampering",
+        options: [
+          "spec.protected_cookies[].disable_tampering_protection",
+          "spec.protected_cookies[].enable_tampering_protection",
+        ],
+      },
+      {
+        choiceField: "httponly",
+        fieldPath: "spec.protected_cookies[].httponly",
+        options: [
+          "spec.protected_cookies[].add_httponly",
+          "spec.protected_cookies[].ignore_httponly",
+        ],
+      },
+      {
+        choiceField: "max_age",
+        fieldPath: "spec.protected_cookies[].max_age",
+        options: [
+          "spec.protected_cookies[].ignore_max_age",
+          "spec.protected_cookies[].max_age_value",
+        ],
+      },
+      {
+        choiceField: "samesite",
+        fieldPath: "spec.protected_cookies[].samesite",
+        options: [
+          "spec.protected_cookies[].ignore_samesite",
+          "spec.protected_cookies[].samesite_lax",
+          "spec.protected_cookies[].samesite_none",
+          "spec.protected_cookies[].samesite_strict",
+        ],
+      },
+      {
+        choiceField: "secure",
+        fieldPath: "spec.protected_cookies[].secure",
+        options: ["spec.protected_cookies[].add_secure", "spec.protected_cookies[].ignore_secure"],
+      },
+      {
+        choiceField: "ip_allowed_list_choice",
+        fieldPath: "spec.rate_limit.ip_allowed_list_choice",
+        options: [
+          "spec.rate_limit.custom_ip_allowed_list",
+          "spec.rate_limit.ip_allowed_list",
+          "spec.rate_limit.no_ip_allowed_list",
+        ],
+      },
+      {
+        choiceField: "policy_choice",
+        fieldPath: "spec.rate_limit.policy_choice",
+        options: ["spec.rate_limit.no_policies", "spec.rate_limit.policies"],
+      },
+      {
+        choiceField: "action_choice",
+        fieldPath: "spec.rate_limit.rate_limiter.action_choice",
+        options: [
+          "spec.rate_limit.rate_limiter.action_block",
+          "spec.rate_limit.rate_limiter.disabled",
+        ],
+      },
+      {
+        choiceField: "algorithm",
+        fieldPath: "spec.rate_limit.rate_limiter.algorithm",
+        options: [
+          "spec.rate_limit.rate_limiter.leaky_bucket",
+          "spec.rate_limit.rate_limiter.token_bucket",
+        ],
+      },
+      {
+        choiceField: "block_duration_choice",
+        fieldPath: "spec.rate_limit.rate_limiter.action_block.block_duration_choice",
+        options: [
+          "spec.rate_limit.rate_limiter.action_block.hours",
+          "spec.rate_limit.rate_limiter.action_block.minutes",
+          "spec.rate_limit.rate_limiter.action_block.seconds",
+        ],
+      },
+      {
+        choiceField: "policy_specifier",
+        fieldPath: "spec.ring_hash.hash_policy[].policy_specifier",
+        options: [
+          "spec.ring_hash.hash_policy[].cookie",
+          "spec.ring_hash.hash_policy[].header_name",
+          "spec.ring_hash.hash_policy[].source_ip",
+        ],
+      },
+      {
+        choiceField: "httponly",
+        fieldPath: "spec.ring_hash.hash_policy[].cookie.httponly",
+        options: [
+          "spec.ring_hash.hash_policy[].cookie.add_httponly",
+          "spec.ring_hash.hash_policy[].cookie.ignore_httponly",
+        ],
+      },
+      {
+        choiceField: "samesite",
+        fieldPath: "spec.ring_hash.hash_policy[].cookie.samesite",
+        options: [
+          "spec.ring_hash.hash_policy[].cookie.ignore_samesite",
+          "spec.ring_hash.hash_policy[].cookie.samesite_lax",
+          "spec.ring_hash.hash_policy[].cookie.samesite_none",
+          "spec.ring_hash.hash_policy[].cookie.samesite_strict",
+        ],
+      },
+      {
+        choiceField: "secure",
+        fieldPath: "spec.ring_hash.hash_policy[].cookie.secure",
+        options: [
+          "spec.ring_hash.hash_policy[].cookie.add_secure",
+          "spec.ring_hash.hash_policy[].cookie.ignore_secure",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.routes[].choice",
+        options: [
+          "spec.routes[].custom_route_object",
+          "spec.routes[].direct_response_route",
+          "spec.routes[].redirect_route",
+          "spec.routes[].simple_route",
+        ],
+      },
+      {
+        choiceField: "value_match",
+        fieldPath: "spec.routes[].direct_response_route.headers[].value_match",
+        options: [
+          "spec.routes[].direct_response_route.headers[].exact",
+          "spec.routes[].direct_response_route.headers[].presence",
+          "spec.routes[].direct_response_route.headers[].regex",
+        ],
+      },
+      {
+        choiceField: "port_match",
+        fieldPath: "spec.routes[].direct_response_route.incoming_port.port_match",
+        options: [
+          "spec.routes[].direct_response_route.incoming_port.no_port_match",
+          "spec.routes[].direct_response_route.incoming_port.port",
+          "spec.routes[].direct_response_route.incoming_port.port_ranges",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath: "spec.routes[].direct_response_route.path.path_match",
+        options: [
+          "spec.routes[].direct_response_route.path.path",
+          "spec.routes[].direct_response_route.path.prefix",
+          "spec.routes[].direct_response_route.path.regex",
+        ],
+      },
+      {
+        choiceField: "value_match",
+        fieldPath: "spec.routes[].redirect_route.headers[].value_match",
+        options: [
+          "spec.routes[].redirect_route.headers[].exact",
+          "spec.routes[].redirect_route.headers[].presence",
+          "spec.routes[].redirect_route.headers[].regex",
+        ],
+      },
+      {
+        choiceField: "port_match",
+        fieldPath: "spec.routes[].redirect_route.incoming_port.port_match",
+        options: [
+          "spec.routes[].redirect_route.incoming_port.no_port_match",
+          "spec.routes[].redirect_route.incoming_port.port",
+          "spec.routes[].redirect_route.incoming_port.port_ranges",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath: "spec.routes[].redirect_route.path.path_match",
+        options: [
+          "spec.routes[].redirect_route.path.path",
+          "spec.routes[].redirect_route.path.prefix",
+          "spec.routes[].redirect_route.path.regex",
+        ],
+      },
+      {
+        choiceField: "query_params",
+        fieldPath: "spec.routes[].redirect_route.route_redirect.query_params",
+        options: [
+          "spec.routes[].redirect_route.route_redirect.remove_all_params",
+          "spec.routes[].redirect_route.route_redirect.replace_params",
+          "spec.routes[].redirect_route.route_redirect.retain_all_params",
+        ],
+      },
+      {
+        choiceField: "redirect_path_choice",
+        fieldPath: "spec.routes[].redirect_route.route_redirect.redirect_path_choice",
+        options: [
+          "spec.routes[].redirect_route.route_redirect.path_redirect",
+          "spec.routes[].redirect_route.route_redirect.prefix_rewrite",
+        ],
+      },
+      {
+        choiceField: "host_rewrite_params",
+        fieldPath: "spec.routes[].simple_route.host_rewrite_params",
+        options: [
+          "spec.routes[].simple_route.auto_host_rewrite",
+          "spec.routes[].simple_route.disable_host_rewrite",
+          "spec.routes[].simple_route.host_rewrite",
+        ],
+      },
+      {
+        choiceField: "bot_defense_javascript_injection_choice",
+        fieldPath:
+          "spec.routes[].simple_route.advanced_options.bot_defense_javascript_injection_choice",
+        options: [
+          "spec.routes[].simple_route.advanced_options.bot_defense_javascript_injection",
+          "spec.routes[].simple_route.advanced_options.inherited_bot_defense_javascript_injection",
+        ],
+      },
+      {
+        choiceField: "buffer_choice",
+        fieldPath: "spec.routes[].simple_route.advanced_options.buffer_choice",
+        options: [
+          "spec.routes[].simple_route.advanced_options.buffer_policy",
+          "spec.routes[].simple_route.advanced_options.common_buffering",
+        ],
+      },
+      {
+        choiceField: "cluster_retract_choice",
+        fieldPath: "spec.routes[].simple_route.advanced_options.cluster_retract_choice",
+        options: [
+          "spec.routes[].simple_route.advanced_options.do_not_retract_cluster",
+          "spec.routes[].simple_route.advanced_options.retract_cluster",
+        ],
+      },
+      {
+        choiceField: "hash_policy_choice",
+        fieldPath: "spec.routes[].simple_route.advanced_options.hash_policy_choice",
+        options: [
+          "spec.routes[].simple_route.advanced_options.common_hash_policy",
+          "spec.routes[].simple_route.advanced_options.specific_hash_policy",
+        ],
+      },
+      {
+        choiceField: "mirroring_choice",
+        fieldPath: "spec.routes[].simple_route.advanced_options.mirroring_choice",
+        options: [
+          "spec.routes[].simple_route.advanced_options.disable_mirroring",
+          "spec.routes[].simple_route.advanced_options.mirror_policy",
+        ],
+      },
+      {
+        choiceField: "retry_policy_choice",
+        fieldPath: "spec.routes[].simple_route.advanced_options.retry_policy_choice",
+        options: [
+          "spec.routes[].simple_route.advanced_options.default_retry_policy",
+          "spec.routes[].simple_route.advanced_options.no_retry_policy",
+          "spec.routes[].simple_route.advanced_options.retry_policy",
+        ],
+      },
+      {
+        choiceField: "rewrite_choice",
+        fieldPath: "spec.routes[].simple_route.advanced_options.rewrite_choice",
+        options: [
+          "spec.routes[].simple_route.advanced_options.disable_prefix_rewrite",
+          "spec.routes[].simple_route.advanced_options.prefix_rewrite",
+          "spec.routes[].simple_route.advanced_options.regex_rewrite",
+        ],
+      },
+      {
+        choiceField: "spdy_choice",
+        fieldPath: "spec.routes[].simple_route.advanced_options.spdy_choice",
+        options: [
+          "spec.routes[].simple_route.advanced_options.disable_spdy",
+          "spec.routes[].simple_route.advanced_options.enable_spdy",
+        ],
+      },
+      {
+        choiceField: "waf_choice",
+        fieldPath: "spec.routes[].simple_route.advanced_options.waf_choice",
+        options: [
+          "spec.routes[].simple_route.advanced_options.app_firewall",
+          "spec.routes[].simple_route.advanced_options.disable_waf",
+          "spec.routes[].simple_route.advanced_options.inherited_waf",
+        ],
+      },
+      {
+        choiceField: "waf_exclusion_choice",
+        fieldPath: "spec.routes[].simple_route.advanced_options.waf_exclusion_choice",
+        options: [
+          "spec.routes[].simple_route.advanced_options.inherited_waf_exclusion",
+          "spec.routes[].simple_route.advanced_options.waf_exclusion_policy",
+        ],
+      },
+      {
+        choiceField: "websocket_choice",
+        fieldPath: "spec.routes[].simple_route.advanced_options.websocket_choice",
+        options: [
+          "spec.routes[].simple_route.advanced_options.disable_web_socket_config",
+          "spec.routes[].simple_route.advanced_options.web_socket_config",
+        ],
+      },
+      {
+        choiceField: "allowed_domains",
+        fieldPath: "spec.routes[].simple_route.advanced_options.csrf_policy.allowed_domains",
+        options: [
+          "spec.routes[].simple_route.advanced_options.csrf_policy.all_load_balancer_domains",
+          "spec.routes[].simple_route.advanced_options.csrf_policy.custom_domain_list",
+          "spec.routes[].simple_route.advanced_options.csrf_policy.disabled",
+        ],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath:
+          "spec.routes[].simple_route.advanced_options.request_cookies_to_add[].value_choice",
+        options: [
+          "spec.routes[].simple_route.advanced_options.request_cookies_to_add[].secret_value",
+          "spec.routes[].simple_route.advanced_options.request_cookies_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.routes[].simple_route.advanced_options.request_cookies_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.routes[].simple_route.advanced_options.request_cookies_to_add[].secret_value.blindfold_secret_info",
+          "spec.routes[].simple_route.advanced_options.request_cookies_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath:
+          "spec.routes[].simple_route.advanced_options.request_headers_to_add[].value_choice",
+        options: [
+          "spec.routes[].simple_route.advanced_options.request_headers_to_add[].secret_value",
+          "spec.routes[].simple_route.advanced_options.request_headers_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.routes[].simple_route.advanced_options.request_headers_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.routes[].simple_route.advanced_options.request_headers_to_add[].secret_value.blindfold_secret_info",
+          "spec.routes[].simple_route.advanced_options.request_headers_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath:
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].domain_choice",
+        options: [
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].add_domain",
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].ignore_domain",
+        ],
+      },
+      {
+        choiceField: "expiry_choice",
+        fieldPath:
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].expiry_choice",
+        options: [
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].add_expiry",
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].ignore_expiry",
+        ],
+      },
+      {
+        choiceField: "httponly_choice",
+        fieldPath:
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].httponly_choice",
+        options: [
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].add_httponly",
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].ignore_httponly",
+        ],
+      },
+      {
+        choiceField: "max_age_choice",
+        fieldPath:
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].max_age_choice",
+        options: [
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].ignore_max_age",
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].max_age_value",
+        ],
+      },
+      {
+        choiceField: "partitioned_choice",
+        fieldPath:
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].partitioned_choice",
+        options: [
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].add_partitioned",
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].ignore_partitioned",
+        ],
+      },
+      {
+        choiceField: "path_choice",
+        fieldPath:
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].path_choice",
+        options: [
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].add_path",
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].ignore_path",
+        ],
+      },
+      {
+        choiceField: "samesite_choice",
+        fieldPath:
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].samesite_choice",
+        options: [
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].ignore_samesite",
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].samesite_lax",
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].samesite_none",
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].samesite_strict",
+        ],
+      },
+      {
+        choiceField: "secure_choice",
+        fieldPath:
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].secure_choice",
+        options: [
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].add_secure",
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].ignore_secure",
+        ],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath:
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].value_choice",
+        options: [
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].ignore_value",
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].secret_value",
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].secret_value.blindfold_secret_info",
+          "spec.routes[].simple_route.advanced_options.response_cookies_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath:
+          "spec.routes[].simple_route.advanced_options.response_headers_to_add[].value_choice",
+        options: [
+          "spec.routes[].simple_route.advanced_options.response_headers_to_add[].secret_value",
+          "spec.routes[].simple_route.advanced_options.response_headers_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.routes[].simple_route.advanced_options.response_headers_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.routes[].simple_route.advanced_options.response_headers_to_add[].secret_value.blindfold_secret_info",
+          "spec.routes[].simple_route.advanced_options.response_headers_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "policy_specifier",
+        fieldPath:
+          "spec.routes[].simple_route.advanced_options.specific_hash_policy.hash_policy[].policy_specifier",
+        options: [
+          "spec.routes[].simple_route.advanced_options.specific_hash_policy.hash_policy[].cookie",
+          "spec.routes[].simple_route.advanced_options.specific_hash_policy.hash_policy[].header_name",
+          "spec.routes[].simple_route.advanced_options.specific_hash_policy.hash_policy[].source_ip",
+        ],
+      },
+      {
+        choiceField: "httponly",
+        fieldPath:
+          "spec.routes[].simple_route.advanced_options.specific_hash_policy.hash_policy[].cookie.httponly",
+        options: [
+          "spec.routes[].simple_route.advanced_options.specific_hash_policy.hash_policy[].cookie.add_httponly",
+          "spec.routes[].simple_route.advanced_options.specific_hash_policy.hash_policy[].cookie.ignore_httponly",
+        ],
+      },
+      {
+        choiceField: "samesite",
+        fieldPath:
+          "spec.routes[].simple_route.advanced_options.specific_hash_policy.hash_policy[].cookie.samesite",
+        options: [
+          "spec.routes[].simple_route.advanced_options.specific_hash_policy.hash_policy[].cookie.ignore_samesite",
+          "spec.routes[].simple_route.advanced_options.specific_hash_policy.hash_policy[].cookie.samesite_lax",
+          "spec.routes[].simple_route.advanced_options.specific_hash_policy.hash_policy[].cookie.samesite_none",
+          "spec.routes[].simple_route.advanced_options.specific_hash_policy.hash_policy[].cookie.samesite_strict",
+        ],
+      },
+      {
+        choiceField: "secure",
+        fieldPath:
+          "spec.routes[].simple_route.advanced_options.specific_hash_policy.hash_policy[].cookie.secure",
+        options: [
+          "spec.routes[].simple_route.advanced_options.specific_hash_policy.hash_policy[].cookie.add_secure",
+          "spec.routes[].simple_route.advanced_options.specific_hash_policy.hash_policy[].cookie.ignore_secure",
+        ],
+      },
+      {
+        choiceField: "value_match",
+        fieldPath: "spec.routes[].simple_route.headers[].value_match",
+        options: [
+          "spec.routes[].simple_route.headers[].exact",
+          "spec.routes[].simple_route.headers[].presence",
+          "spec.routes[].simple_route.headers[].regex",
+        ],
+      },
+      {
+        choiceField: "port_match",
+        fieldPath: "spec.routes[].simple_route.incoming_port.port_match",
+        options: [
+          "spec.routes[].simple_route.incoming_port.no_port_match",
+          "spec.routes[].simple_route.incoming_port.port",
+          "spec.routes[].simple_route.incoming_port.port_ranges",
+        ],
+      },
+      {
+        choiceField: "pool_choice",
+        fieldPath: "spec.routes[].simple_route.origin_pools[].pool_choice",
+        options: [
+          "spec.routes[].simple_route.origin_pools[].cluster",
+          "spec.routes[].simple_route.origin_pools[].pool",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath: "spec.routes[].simple_route.path.path_match",
+        options: [
+          "spec.routes[].simple_route.path.path",
+          "spec.routes[].simple_route.path.prefix",
+          "spec.routes[].simple_route.path.regex",
+        ],
+      },
+      {
+        choiceField: "query_params",
+        fieldPath: "spec.routes[].simple_route.query_params.query_params",
+        options: [
+          "spec.routes[].simple_route.query_params.remove_all_params",
+          "spec.routes[].simple_route.query_params.replace_params",
+          "spec.routes[].simple_route.query_params.retain_all_params",
+        ],
+      },
+      {
+        choiceField: "masking_mode_choice",
+        fieldPath:
+          "spec.sensitive_data_disclosure_rules.sensitive_data_types_in_response[].masking_mode_choice",
+        options: [
+          "spec.sensitive_data_disclosure_rules.sensitive_data_types_in_response[].mask",
+          "spec.sensitive_data_disclosure_rules.sensitive_data_types_in_response[].report",
+        ],
+      },
+      {
+        choiceField: "type_condition_type_choice",
+        fieldPath:
+          "spec.sensitive_data_disclosure_rules.sensitive_data_types_in_response[].type_condition_type_choice",
+        options: [
+          "spec.sensitive_data_disclosure_rules.sensitive_data_types_in_response[].api_endpoint",
+        ],
+      },
+      {
+        choiceField: "api_discovery_choice",
+        fieldPath: "spec.single_lb_app.api_discovery_choice",
+        options: ["spec.single_lb_app.disable_discovery", "spec.single_lb_app.enable_discovery"],
+      },
+      {
+        choiceField: "malicious_user_detection_choice",
+        fieldPath: "spec.single_lb_app.malicious_user_detection_choice",
+        options: [
+          "spec.single_lb_app.disable_malicious_user_detection",
+          "spec.single_lb_app.enable_malicious_user_detection",
+        ],
+      },
+      {
+        choiceField: "api_discovery_settings_choice",
+        fieldPath: "spec.single_lb_app.enable_discovery.api_discovery_settings_choice",
+        options: [
+          "spec.single_lb_app.enable_discovery.custom_api_auth_discovery",
+          "spec.single_lb_app.enable_discovery.default_api_auth_discovery",
+        ],
+      },
+      {
+        choiceField: "learn_from_redirect_traffic",
+        fieldPath: "spec.single_lb_app.enable_discovery.learn_from_redirect_traffic",
+        options: [
+          "spec.single_lb_app.enable_discovery.disable_learn_from_redirect_traffic",
+          "spec.single_lb_app.enable_discovery.enable_learn_from_redirect_traffic",
+        ],
+      },
+      {
+        choiceField: "api_crawler",
+        fieldPath: "spec.single_lb_app.enable_discovery.api_crawler.api_crawler",
+        options: [
+          "spec.single_lb_app.enable_discovery.api_crawler.api_crawler_config",
+          "spec.single_lb_app.enable_discovery.api_crawler.disable_api_crawler",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.single_lb_app.enable_discovery.api_crawler.api_crawler_config.domains[].simple_login.password.secret_info_oneof",
+        options: [
+          "spec.single_lb_app.enable_discovery.api_crawler.api_crawler_config.domains[].simple_login.password.blindfold_secret_info",
+          "spec.single_lb_app.enable_discovery.api_crawler.api_crawler_config.domains[].simple_login.password.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "api_repos_choice",
+        fieldPath:
+          "spec.single_lb_app.enable_discovery.api_discovery_from_code_scan.code_base_integrations[].api_repos_choice",
+        options: [
+          "spec.single_lb_app.enable_discovery.api_discovery_from_code_scan.code_base_integrations[].all_repos",
+          "spec.single_lb_app.enable_discovery.api_discovery_from_code_scan.code_base_integrations[].selected_repos",
+        ],
+      },
+      {
+        choiceField: "request_timeout_choice",
+        fieldPath: "spec.slow_ddos_mitigation.request_timeout_choice",
+        options: [
+          "spec.slow_ddos_mitigation.disable_request_timeout",
+          "spec.slow_ddos_mitigation.request_timeout",
+        ],
+      },
+      {
+        choiceField: "action_choice",
+        fieldPath: "spec.trusted_clients[].action_choice",
+        options: [
+          "spec.trusted_clients[].bot_skip_processing",
+          "spec.trusted_clients[].skip_processing",
+          "spec.trusted_clients[].waf_skip_processing",
+        ],
+      },
+      {
+        choiceField: "client_source_choice",
+        fieldPath: "spec.trusted_clients[].client_source_choice",
+        options: [
+          "spec.trusted_clients[].as_number",
+          "spec.trusted_clients[].http_header",
+          "spec.trusted_clients[].ip_prefix",
+          "spec.trusted_clients[].ipv6_prefix",
+          "spec.trusted_clients[].user_identifier",
+        ],
+      },
+      {
+        choiceField: "value_match",
+        fieldPath: "spec.trusted_clients[].http_header.headers[].value_match",
+        options: [
+          "spec.trusted_clients[].http_header.headers[].exact",
+          "spec.trusted_clients[].http_header.headers[].presence",
+          "spec.trusted_clients[].http_header.headers[].regex",
+        ],
+      },
+      {
+        choiceField: "waf_exclusion_choice",
+        fieldPath: "spec.waf_exclusion.waf_exclusion_choice",
+        options: [
+          "spec.waf_exclusion.waf_exclusion_inline_rules",
+          "spec.waf_exclusion.waf_exclusion_policy",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.waf_exclusion.waf_exclusion_inline_rules.rules[].domain_choice",
+        options: [
+          "spec.waf_exclusion.waf_exclusion_inline_rules.rules[].any_domain",
+          "spec.waf_exclusion.waf_exclusion_inline_rules.rules[].exact_value",
+          "spec.waf_exclusion.waf_exclusion_inline_rules.rules[].suffix_value",
+        ],
+      },
+      {
+        choiceField: "path_choice",
+        fieldPath: "spec.waf_exclusion.waf_exclusion_inline_rules.rules[].path_choice",
+        options: [
+          "spec.waf_exclusion.waf_exclusion_inline_rules.rules[].any_path",
+          "spec.waf_exclusion.waf_exclusion_inline_rules.rules[].path_prefix",
+          "spec.waf_exclusion.waf_exclusion_inline_rules.rules[].path_regex",
+        ],
+      },
+      {
+        choiceField: "waf_advanced_configuration",
+        fieldPath:
+          "spec.waf_exclusion.waf_exclusion_inline_rules.rules[].waf_advanced_configuration",
+        options: [
+          "spec.waf_exclusion.waf_exclusion_inline_rules.rules[].app_firewall_detection_control",
+          "spec.waf_exclusion.waf_exclusion_inline_rules.rules[].waf_skip_processing",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -2439,7 +9193,318 @@ export const virtualTools: ParsedOperation[] = [
         resourceType: "viewsorigin-pool-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "health_check_port_choice",
+        fieldPath: "spec.health_check_port_choice",
+        options: ["spec.health_check_port", "spec.same_as_endpoint_port"],
+        recommendedOption: "spec.same_as_endpoint_port",
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.port_choice",
+        options: ["spec.automatic_port", "spec.lb_port", "spec.port"],
+      },
+      {
+        choiceField: "tls_choice",
+        fieldPath: "spec.tls_choice",
+        options: ["spec.no_tls", "spec.use_tls"],
+        recommendedOption: "spec.no_tls",
+      },
+      {
+        choiceField: "circuit_breaker_choice",
+        fieldPath: "spec.advanced_options.circuit_breaker_choice",
+        options: [
+          "spec.advanced_options.circuit_breaker",
+          "spec.advanced_options.default_circuit_breaker",
+          "spec.advanced_options.disable_circuit_breaker",
+        ],
+        recommendedOption: "spec.advanced_options.default_circuit_breaker",
+      },
+      {
+        choiceField: "http_protocol_type",
+        fieldPath: "spec.advanced_options.http_protocol_type",
+        options: [
+          "spec.advanced_options.auto_http_config",
+          "spec.advanced_options.http1_config",
+          "spec.advanced_options.http2_options",
+        ],
+        recommendedOption: "spec.advanced_options.auto_http_config",
+      },
+      {
+        choiceField: "lb_source_ip_persistance_choice",
+        fieldPath: "spec.advanced_options.lb_source_ip_persistance_choice",
+        options: [
+          "spec.advanced_options.disable_lb_source_ip_persistance",
+          "spec.advanced_options.enable_lb_source_ip_persistance",
+        ],
+        recommendedOption: "spec.advanced_options.disable_lb_source_ip_persistance",
+      },
+      {
+        choiceField: "outlier_detection_choice",
+        fieldPath: "spec.advanced_options.outlier_detection_choice",
+        options: [
+          "spec.advanced_options.disable_outlier_detection",
+          "spec.advanced_options.outlier_detection",
+        ],
+        recommendedOption: "spec.advanced_options.disable_outlier_detection",
+      },
+      {
+        choiceField: "panic_threshold_type",
+        fieldPath: "spec.advanced_options.panic_threshold_type",
+        options: [
+          "spec.advanced_options.no_panic_threshold",
+          "spec.advanced_options.panic_threshold",
+        ],
+        recommendedOption: "spec.advanced_options.no_panic_threshold",
+      },
+      {
+        choiceField: "proxy_protocol_choice",
+        fieldPath: "spec.advanced_options.proxy_protocol_choice",
+        options: [
+          "spec.advanced_options.disable_proxy_protocol",
+          "spec.advanced_options.proxy_protocol_v1",
+          "spec.advanced_options.proxy_protocol_v2",
+        ],
+        recommendedOption: "spec.advanced_options.disable_proxy_protocol",
+      },
+      {
+        choiceField: "subset_choice",
+        fieldPath: "spec.advanced_options.subset_choice",
+        options: ["spec.advanced_options.disable_subsets", "spec.advanced_options.enable_subsets"],
+        recommendedOption: "spec.advanced_options.disable_subsets",
+      },
+      {
+        choiceField: "fallback_policy_choice",
+        fieldPath: "spec.advanced_options.enable_subsets.fallback_policy_choice",
+        options: [
+          "spec.advanced_options.enable_subsets.any_endpoint",
+          "spec.advanced_options.enable_subsets.default_subset",
+          "spec.advanced_options.enable_subsets.fail_request",
+        ],
+      },
+      {
+        choiceField: "header_transformation_choice",
+        fieldPath:
+          "spec.advanced_options.http1_config.header_transformation.header_transformation_choice",
+        options: [
+          "spec.advanced_options.http1_config.header_transformation.default_header_transformation",
+          "spec.advanced_options.http1_config.header_transformation.legacy_header_transformation",
+          "spec.advanced_options.http1_config.header_transformation.preserve_case_header_transformation",
+          "spec.advanced_options.http1_config.header_transformation.proper_case_header_transformation",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.origin_servers[].choice",
+        options: [
+          "spec.origin_servers[].cbip_service",
+          "spec.origin_servers[].consul_service",
+          "spec.origin_servers[].custom_endpoint_object",
+          "spec.origin_servers[].k8s_service",
+          "spec.origin_servers[].private_ip",
+          "spec.origin_servers[].private_name",
+          "spec.origin_servers[].public_ip",
+          "spec.origin_servers[].public_name",
+          "spec.origin_servers[].vn_private_ip",
+          "spec.origin_servers[].vn_private_name",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath: "spec.origin_servers[].consul_service.network_choice",
+        options: [
+          "spec.origin_servers[].consul_service.inside_network",
+          "spec.origin_servers[].consul_service.outside_network",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.origin_servers[].consul_service.site_locator.choice",
+        options: [
+          "spec.origin_servers[].consul_service.site_locator.site",
+          "spec.origin_servers[].consul_service.site_locator.virtual_site",
+        ],
+      },
+      {
+        choiceField: "snat_pool_choice",
+        fieldPath: "spec.origin_servers[].consul_service.snat_pool.snat_pool_choice",
+        options: [
+          "spec.origin_servers[].consul_service.snat_pool.no_snat_pool",
+          "spec.origin_servers[].consul_service.snat_pool.snat_pool",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath: "spec.origin_servers[].k8s_service.network_choice",
+        options: [
+          "spec.origin_servers[].k8s_service.inside_network",
+          "spec.origin_servers[].k8s_service.outside_network",
+          "spec.origin_servers[].k8s_service.vk8s_networks",
+        ],
+      },
+      {
+        choiceField: "service_info",
+        fieldPath: "spec.origin_servers[].k8s_service.service_info",
+        options: ["spec.origin_servers[].k8s_service.service_name"],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.origin_servers[].k8s_service.site_locator.choice",
+        options: [
+          "spec.origin_servers[].k8s_service.site_locator.site",
+          "spec.origin_servers[].k8s_service.site_locator.virtual_site",
+        ],
+      },
+      {
+        choiceField: "snat_pool_choice",
+        fieldPath: "spec.origin_servers[].k8s_service.snat_pool.snat_pool_choice",
+        options: [
+          "spec.origin_servers[].k8s_service.snat_pool.no_snat_pool",
+          "spec.origin_servers[].k8s_service.snat_pool.snat_pool",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath: "spec.origin_servers[].private_ip.network_choice",
+        options: [
+          "spec.origin_servers[].private_ip.inside_network",
+          "spec.origin_servers[].private_ip.outside_network",
+          "spec.origin_servers[].private_ip.segment",
+        ],
+      },
+      {
+        choiceField: "private_ip_choice",
+        fieldPath: "spec.origin_servers[].private_ip.private_ip_choice",
+        options: ["spec.origin_servers[].private_ip.ip"],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.origin_servers[].private_ip.site_locator.choice",
+        options: [
+          "spec.origin_servers[].private_ip.site_locator.site",
+          "spec.origin_servers[].private_ip.site_locator.virtual_site",
+        ],
+      },
+      {
+        choiceField: "snat_pool_choice",
+        fieldPath: "spec.origin_servers[].private_ip.snat_pool.snat_pool_choice",
+        options: [
+          "spec.origin_servers[].private_ip.snat_pool.no_snat_pool",
+          "spec.origin_servers[].private_ip.snat_pool.snat_pool",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath: "spec.origin_servers[].private_name.network_choice",
+        options: [
+          "spec.origin_servers[].private_name.inside_network",
+          "spec.origin_servers[].private_name.outside_network",
+          "spec.origin_servers[].private_name.segment",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.origin_servers[].private_name.site_locator.choice",
+        options: [
+          "spec.origin_servers[].private_name.site_locator.site",
+          "spec.origin_servers[].private_name.site_locator.virtual_site",
+        ],
+      },
+      {
+        choiceField: "snat_pool_choice",
+        fieldPath: "spec.origin_servers[].private_name.snat_pool.snat_pool_choice",
+        options: [
+          "spec.origin_servers[].private_name.snat_pool.no_snat_pool",
+          "spec.origin_servers[].private_name.snat_pool.snat_pool",
+        ],
+      },
+      {
+        choiceField: "public_ip_choice",
+        fieldPath: "spec.origin_servers[].public_ip.public_ip_choice",
+        options: ["spec.origin_servers[].public_ip.ip"],
+      },
+      {
+        choiceField: "virtual_network_ip_choice",
+        fieldPath: "spec.origin_servers[].vn_private_ip.virtual_network_ip_choice",
+        options: ["spec.origin_servers[].vn_private_ip.ip"],
+      },
+      {
+        choiceField: "map_downstream_to_upstream_conn_pool_type",
+        fieldPath: "spec.upstream_conn_pool_reuse_type.map_downstream_to_upstream_conn_pool_type",
+        options: [
+          "spec.upstream_conn_pool_reuse_type.disable_conn_pool_reuse",
+          "spec.upstream_conn_pool_reuse_type.enable_conn_pool_reuse",
+        ],
+      },
+      {
+        choiceField: "max_session_keys_type",
+        fieldPath: "spec.use_tls.max_session_keys_type",
+        options: [
+          "spec.use_tls.default_session_key_caching",
+          "spec.use_tls.disable_session_key_caching",
+          "spec.use_tls.max_session_keys",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath: "spec.use_tls.mtls_choice",
+        options: ["spec.use_tls.no_mtls", "spec.use_tls.use_mtls", "spec.use_tls.use_mtls_obj"],
+      },
+      {
+        choiceField: "server_validation_choice",
+        fieldPath: "spec.use_tls.server_validation_choice",
+        options: [
+          "spec.use_tls.skip_server_verification",
+          "spec.use_tls.use_server_verification",
+          "spec.use_tls.volterra_trusted_ca",
+        ],
+      },
+      {
+        choiceField: "sni_choice",
+        fieldPath: "spec.use_tls.sni_choice",
+        options: [
+          "spec.use_tls.disable_sni",
+          "spec.use_tls.sni",
+          "spec.use_tls.use_host_header_as_sni",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.use_tls.tls_config.choice",
+        options: [
+          "spec.use_tls.tls_config.custom_security",
+          "spec.use_tls.tls_config.default_security",
+          "spec.use_tls.tls_config.low_security",
+          "spec.use_tls.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "ocsp_stapling_choice",
+        fieldPath: "spec.use_tls.use_mtls.tls_certificates[].ocsp_stapling_choice",
+        options: [
+          "spec.use_tls.use_mtls.tls_certificates[].custom_hash_algorithms",
+          "spec.use_tls.use_mtls.tls_certificates[].disable_ocsp_stapling",
+          "spec.use_tls.use_mtls.tls_certificates[].use_system_defaults",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.use_tls.use_mtls.tls_certificates[].private_key.secret_info_oneof",
+        options: [
+          "spec.use_tls.use_mtls.tls_certificates[].private_key.blindfold_secret_info",
+          "spec.use_tls.use_mtls.tls_certificates[].private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath: "spec.use_tls.use_server_verification.trusted_ca_choice",
+        options: [
+          "spec.use_tls.use_server_verification.trusted_ca",
+          "spec.use_tls.use_server_verification.trusted_ca_url",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -2733,7 +9798,318 @@ export const virtualTools: ParsedOperation[] = [
         resourceType: "viewsorigin-pool-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "health_check_port_choice",
+        fieldPath: "spec.health_check_port_choice",
+        options: ["spec.health_check_port", "spec.same_as_endpoint_port"],
+        recommendedOption: "spec.same_as_endpoint_port",
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.port_choice",
+        options: ["spec.automatic_port", "spec.lb_port", "spec.port"],
+      },
+      {
+        choiceField: "tls_choice",
+        fieldPath: "spec.tls_choice",
+        options: ["spec.no_tls", "spec.use_tls"],
+        recommendedOption: "spec.no_tls",
+      },
+      {
+        choiceField: "circuit_breaker_choice",
+        fieldPath: "spec.advanced_options.circuit_breaker_choice",
+        options: [
+          "spec.advanced_options.circuit_breaker",
+          "spec.advanced_options.default_circuit_breaker",
+          "spec.advanced_options.disable_circuit_breaker",
+        ],
+        recommendedOption: "spec.advanced_options.default_circuit_breaker",
+      },
+      {
+        choiceField: "http_protocol_type",
+        fieldPath: "spec.advanced_options.http_protocol_type",
+        options: [
+          "spec.advanced_options.auto_http_config",
+          "spec.advanced_options.http1_config",
+          "spec.advanced_options.http2_options",
+        ],
+        recommendedOption: "spec.advanced_options.auto_http_config",
+      },
+      {
+        choiceField: "lb_source_ip_persistance_choice",
+        fieldPath: "spec.advanced_options.lb_source_ip_persistance_choice",
+        options: [
+          "spec.advanced_options.disable_lb_source_ip_persistance",
+          "spec.advanced_options.enable_lb_source_ip_persistance",
+        ],
+        recommendedOption: "spec.advanced_options.disable_lb_source_ip_persistance",
+      },
+      {
+        choiceField: "outlier_detection_choice",
+        fieldPath: "spec.advanced_options.outlier_detection_choice",
+        options: [
+          "spec.advanced_options.disable_outlier_detection",
+          "spec.advanced_options.outlier_detection",
+        ],
+        recommendedOption: "spec.advanced_options.disable_outlier_detection",
+      },
+      {
+        choiceField: "panic_threshold_type",
+        fieldPath: "spec.advanced_options.panic_threshold_type",
+        options: [
+          "spec.advanced_options.no_panic_threshold",
+          "spec.advanced_options.panic_threshold",
+        ],
+        recommendedOption: "spec.advanced_options.no_panic_threshold",
+      },
+      {
+        choiceField: "proxy_protocol_choice",
+        fieldPath: "spec.advanced_options.proxy_protocol_choice",
+        options: [
+          "spec.advanced_options.disable_proxy_protocol",
+          "spec.advanced_options.proxy_protocol_v1",
+          "spec.advanced_options.proxy_protocol_v2",
+        ],
+        recommendedOption: "spec.advanced_options.disable_proxy_protocol",
+      },
+      {
+        choiceField: "subset_choice",
+        fieldPath: "spec.advanced_options.subset_choice",
+        options: ["spec.advanced_options.disable_subsets", "spec.advanced_options.enable_subsets"],
+        recommendedOption: "spec.advanced_options.disable_subsets",
+      },
+      {
+        choiceField: "fallback_policy_choice",
+        fieldPath: "spec.advanced_options.enable_subsets.fallback_policy_choice",
+        options: [
+          "spec.advanced_options.enable_subsets.any_endpoint",
+          "spec.advanced_options.enable_subsets.default_subset",
+          "spec.advanced_options.enable_subsets.fail_request",
+        ],
+      },
+      {
+        choiceField: "header_transformation_choice",
+        fieldPath:
+          "spec.advanced_options.http1_config.header_transformation.header_transformation_choice",
+        options: [
+          "spec.advanced_options.http1_config.header_transformation.default_header_transformation",
+          "spec.advanced_options.http1_config.header_transformation.legacy_header_transformation",
+          "spec.advanced_options.http1_config.header_transformation.preserve_case_header_transformation",
+          "spec.advanced_options.http1_config.header_transformation.proper_case_header_transformation",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.origin_servers[].choice",
+        options: [
+          "spec.origin_servers[].cbip_service",
+          "spec.origin_servers[].consul_service",
+          "spec.origin_servers[].custom_endpoint_object",
+          "spec.origin_servers[].k8s_service",
+          "spec.origin_servers[].private_ip",
+          "spec.origin_servers[].private_name",
+          "spec.origin_servers[].public_ip",
+          "spec.origin_servers[].public_name",
+          "spec.origin_servers[].vn_private_ip",
+          "spec.origin_servers[].vn_private_name",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath: "spec.origin_servers[].consul_service.network_choice",
+        options: [
+          "spec.origin_servers[].consul_service.inside_network",
+          "spec.origin_servers[].consul_service.outside_network",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.origin_servers[].consul_service.site_locator.choice",
+        options: [
+          "spec.origin_servers[].consul_service.site_locator.site",
+          "spec.origin_servers[].consul_service.site_locator.virtual_site",
+        ],
+      },
+      {
+        choiceField: "snat_pool_choice",
+        fieldPath: "spec.origin_servers[].consul_service.snat_pool.snat_pool_choice",
+        options: [
+          "spec.origin_servers[].consul_service.snat_pool.no_snat_pool",
+          "spec.origin_servers[].consul_service.snat_pool.snat_pool",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath: "spec.origin_servers[].k8s_service.network_choice",
+        options: [
+          "spec.origin_servers[].k8s_service.inside_network",
+          "spec.origin_servers[].k8s_service.outside_network",
+          "spec.origin_servers[].k8s_service.vk8s_networks",
+        ],
+      },
+      {
+        choiceField: "service_info",
+        fieldPath: "spec.origin_servers[].k8s_service.service_info",
+        options: ["spec.origin_servers[].k8s_service.service_name"],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.origin_servers[].k8s_service.site_locator.choice",
+        options: [
+          "spec.origin_servers[].k8s_service.site_locator.site",
+          "spec.origin_servers[].k8s_service.site_locator.virtual_site",
+        ],
+      },
+      {
+        choiceField: "snat_pool_choice",
+        fieldPath: "spec.origin_servers[].k8s_service.snat_pool.snat_pool_choice",
+        options: [
+          "spec.origin_servers[].k8s_service.snat_pool.no_snat_pool",
+          "spec.origin_servers[].k8s_service.snat_pool.snat_pool",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath: "spec.origin_servers[].private_ip.network_choice",
+        options: [
+          "spec.origin_servers[].private_ip.inside_network",
+          "spec.origin_servers[].private_ip.outside_network",
+          "spec.origin_servers[].private_ip.segment",
+        ],
+      },
+      {
+        choiceField: "private_ip_choice",
+        fieldPath: "spec.origin_servers[].private_ip.private_ip_choice",
+        options: ["spec.origin_servers[].private_ip.ip"],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.origin_servers[].private_ip.site_locator.choice",
+        options: [
+          "spec.origin_servers[].private_ip.site_locator.site",
+          "spec.origin_servers[].private_ip.site_locator.virtual_site",
+        ],
+      },
+      {
+        choiceField: "snat_pool_choice",
+        fieldPath: "spec.origin_servers[].private_ip.snat_pool.snat_pool_choice",
+        options: [
+          "spec.origin_servers[].private_ip.snat_pool.no_snat_pool",
+          "spec.origin_servers[].private_ip.snat_pool.snat_pool",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath: "spec.origin_servers[].private_name.network_choice",
+        options: [
+          "spec.origin_servers[].private_name.inside_network",
+          "spec.origin_servers[].private_name.outside_network",
+          "spec.origin_servers[].private_name.segment",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.origin_servers[].private_name.site_locator.choice",
+        options: [
+          "spec.origin_servers[].private_name.site_locator.site",
+          "spec.origin_servers[].private_name.site_locator.virtual_site",
+        ],
+      },
+      {
+        choiceField: "snat_pool_choice",
+        fieldPath: "spec.origin_servers[].private_name.snat_pool.snat_pool_choice",
+        options: [
+          "spec.origin_servers[].private_name.snat_pool.no_snat_pool",
+          "spec.origin_servers[].private_name.snat_pool.snat_pool",
+        ],
+      },
+      {
+        choiceField: "public_ip_choice",
+        fieldPath: "spec.origin_servers[].public_ip.public_ip_choice",
+        options: ["spec.origin_servers[].public_ip.ip"],
+      },
+      {
+        choiceField: "virtual_network_ip_choice",
+        fieldPath: "spec.origin_servers[].vn_private_ip.virtual_network_ip_choice",
+        options: ["spec.origin_servers[].vn_private_ip.ip"],
+      },
+      {
+        choiceField: "map_downstream_to_upstream_conn_pool_type",
+        fieldPath: "spec.upstream_conn_pool_reuse_type.map_downstream_to_upstream_conn_pool_type",
+        options: [
+          "spec.upstream_conn_pool_reuse_type.disable_conn_pool_reuse",
+          "spec.upstream_conn_pool_reuse_type.enable_conn_pool_reuse",
+        ],
+      },
+      {
+        choiceField: "max_session_keys_type",
+        fieldPath: "spec.use_tls.max_session_keys_type",
+        options: [
+          "spec.use_tls.default_session_key_caching",
+          "spec.use_tls.disable_session_key_caching",
+          "spec.use_tls.max_session_keys",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath: "spec.use_tls.mtls_choice",
+        options: ["spec.use_tls.no_mtls", "spec.use_tls.use_mtls", "spec.use_tls.use_mtls_obj"],
+      },
+      {
+        choiceField: "server_validation_choice",
+        fieldPath: "spec.use_tls.server_validation_choice",
+        options: [
+          "spec.use_tls.skip_server_verification",
+          "spec.use_tls.use_server_verification",
+          "spec.use_tls.volterra_trusted_ca",
+        ],
+      },
+      {
+        choiceField: "sni_choice",
+        fieldPath: "spec.use_tls.sni_choice",
+        options: [
+          "spec.use_tls.disable_sni",
+          "spec.use_tls.sni",
+          "spec.use_tls.use_host_header_as_sni",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.use_tls.tls_config.choice",
+        options: [
+          "spec.use_tls.tls_config.custom_security",
+          "spec.use_tls.tls_config.default_security",
+          "spec.use_tls.tls_config.low_security",
+          "spec.use_tls.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "ocsp_stapling_choice",
+        fieldPath: "spec.use_tls.use_mtls.tls_certificates[].ocsp_stapling_choice",
+        options: [
+          "spec.use_tls.use_mtls.tls_certificates[].custom_hash_algorithms",
+          "spec.use_tls.use_mtls.tls_certificates[].disable_ocsp_stapling",
+          "spec.use_tls.use_mtls.tls_certificates[].use_system_defaults",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.use_tls.use_mtls.tls_certificates[].private_key.secret_info_oneof",
+        options: [
+          "spec.use_tls.use_mtls.tls_certificates[].private_key.blindfold_secret_info",
+          "spec.use_tls.use_mtls.tls_certificates[].private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath: "spec.use_tls.use_server_verification.trusted_ca_choice",
+        options: [
+          "spec.use_tls.use_server_verification.trusted_ca",
+          "spec.use_tls.use_server_verification.trusted_ca_url",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -2876,7 +10252,652 @@ export const virtualTools: ParsedOperation[] = [
         resourceType: "viewsproxy-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "network_choice",
+        fieldPath: "spec.network_choice",
+        options: ["spec.site_local_inside_network", "spec.site_local_network"],
+      },
+      {
+        choiceField: "proxy_choice",
+        fieldPath: "spec.proxy_choice",
+        options: ["spec.dynamic_proxy", "spec.http_proxy"],
+      },
+      {
+        choiceField: "proxy_policy_choice",
+        fieldPath: "spec.proxy_policy_choice",
+        options: ["spec.active_forward_proxy_policies", "spec.no_forward_proxy_policy"],
+      },
+      {
+        choiceField: "site_choice",
+        fieldPath: "spec.site_choice",
+        options: ["spec.do_not_advertise", "spec.site_virtual_sites"],
+      },
+      {
+        choiceField: "tls_interception_choice",
+        fieldPath: "spec.tls_interception_choice",
+        options: ["spec.no_interception", "spec.tls_intercept"],
+      },
+      {
+        choiceField: "dns_choice",
+        fieldPath: "spec.dynamic_proxy.dns_choice",
+        options: [
+          "spec.dynamic_proxy.disable_dns_masquerade",
+          "spec.dynamic_proxy.enable_dns_masquerade",
+        ],
+      },
+      {
+        choiceField: "proxy_choice",
+        fieldPath: "spec.dynamic_proxy.proxy_choice",
+        options: [
+          "spec.dynamic_proxy.http_proxy",
+          "spec.dynamic_proxy.https_proxy",
+          "spec.dynamic_proxy.sni_proxy",
+        ],
+      },
+      {
+        choiceField: "path_normalize_choice",
+        fieldPath: "spec.dynamic_proxy.http_proxy.more_option.path_normalize_choice",
+        options: [
+          "spec.dynamic_proxy.http_proxy.more_option.disable_path_normalize",
+          "spec.dynamic_proxy.http_proxy.more_option.enable_path_normalize",
+        ],
+      },
+      {
+        choiceField: "strict_sni_host_header_check_choice",
+        fieldPath: "spec.dynamic_proxy.http_proxy.more_option.strict_sni_host_header_check_choice",
+        options: [],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath:
+          "spec.dynamic_proxy.http_proxy.more_option.request_cookies_to_add[].value_choice",
+        options: [
+          "spec.dynamic_proxy.http_proxy.more_option.request_cookies_to_add[].secret_value",
+          "spec.dynamic_proxy.http_proxy.more_option.request_cookies_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.dynamic_proxy.http_proxy.more_option.request_cookies_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.dynamic_proxy.http_proxy.more_option.request_cookies_to_add[].secret_value.blindfold_secret_info",
+          "spec.dynamic_proxy.http_proxy.more_option.request_cookies_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath:
+          "spec.dynamic_proxy.http_proxy.more_option.request_headers_to_add[].value_choice",
+        options: [
+          "spec.dynamic_proxy.http_proxy.more_option.request_headers_to_add[].secret_value",
+          "spec.dynamic_proxy.http_proxy.more_option.request_headers_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.dynamic_proxy.http_proxy.more_option.request_headers_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.dynamic_proxy.http_proxy.more_option.request_headers_to_add[].secret_value.blindfold_secret_info",
+          "spec.dynamic_proxy.http_proxy.more_option.request_headers_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath:
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].domain_choice",
+        options: [
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].add_domain",
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].ignore_domain",
+        ],
+      },
+      {
+        choiceField: "expiry_choice",
+        fieldPath:
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].expiry_choice",
+        options: [
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].add_expiry",
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].ignore_expiry",
+        ],
+      },
+      {
+        choiceField: "httponly_choice",
+        fieldPath:
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].httponly_choice",
+        options: [
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].add_httponly",
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].ignore_httponly",
+        ],
+      },
+      {
+        choiceField: "max_age_choice",
+        fieldPath:
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].max_age_choice",
+        options: [
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].ignore_max_age",
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].max_age_value",
+        ],
+      },
+      {
+        choiceField: "partitioned_choice",
+        fieldPath:
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].partitioned_choice",
+        options: [
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].add_partitioned",
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].ignore_partitioned",
+        ],
+      },
+      {
+        choiceField: "path_choice",
+        fieldPath:
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].path_choice",
+        options: [
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].add_path",
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].ignore_path",
+        ],
+      },
+      {
+        choiceField: "samesite_choice",
+        fieldPath:
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].samesite_choice",
+        options: [
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].ignore_samesite",
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].samesite_lax",
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].samesite_none",
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].samesite_strict",
+        ],
+      },
+      {
+        choiceField: "secure_choice",
+        fieldPath:
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].secure_choice",
+        options: [
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].add_secure",
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].ignore_secure",
+        ],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath:
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].value_choice",
+        options: [
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].ignore_value",
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].secret_value",
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].secret_value.blindfold_secret_info",
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath:
+          "spec.dynamic_proxy.http_proxy.more_option.response_headers_to_add[].value_choice",
+        options: [
+          "spec.dynamic_proxy.http_proxy.more_option.response_headers_to_add[].secret_value",
+          "spec.dynamic_proxy.http_proxy.more_option.response_headers_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.dynamic_proxy.http_proxy.more_option.response_headers_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.dynamic_proxy.http_proxy.more_option.response_headers_to_add[].secret_value.blindfold_secret_info",
+          "spec.dynamic_proxy.http_proxy.more_option.response_headers_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "path_normalize_choice",
+        fieldPath: "spec.dynamic_proxy.https_proxy.more_option.path_normalize_choice",
+        options: [
+          "spec.dynamic_proxy.https_proxy.more_option.disable_path_normalize",
+          "spec.dynamic_proxy.https_proxy.more_option.enable_path_normalize",
+        ],
+      },
+      {
+        choiceField: "strict_sni_host_header_check_choice",
+        fieldPath: "spec.dynamic_proxy.https_proxy.more_option.strict_sni_host_header_check_choice",
+        options: [],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath:
+          "spec.dynamic_proxy.https_proxy.more_option.request_cookies_to_add[].value_choice",
+        options: [
+          "spec.dynamic_proxy.https_proxy.more_option.request_cookies_to_add[].secret_value",
+          "spec.dynamic_proxy.https_proxy.more_option.request_cookies_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.dynamic_proxy.https_proxy.more_option.request_cookies_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.dynamic_proxy.https_proxy.more_option.request_cookies_to_add[].secret_value.blindfold_secret_info",
+          "spec.dynamic_proxy.https_proxy.more_option.request_cookies_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath:
+          "spec.dynamic_proxy.https_proxy.more_option.request_headers_to_add[].value_choice",
+        options: [
+          "spec.dynamic_proxy.https_proxy.more_option.request_headers_to_add[].secret_value",
+          "spec.dynamic_proxy.https_proxy.more_option.request_headers_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.dynamic_proxy.https_proxy.more_option.request_headers_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.dynamic_proxy.https_proxy.more_option.request_headers_to_add[].secret_value.blindfold_secret_info",
+          "spec.dynamic_proxy.https_proxy.more_option.request_headers_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath:
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].domain_choice",
+        options: [
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].add_domain",
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].ignore_domain",
+        ],
+      },
+      {
+        choiceField: "expiry_choice",
+        fieldPath:
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].expiry_choice",
+        options: [
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].add_expiry",
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].ignore_expiry",
+        ],
+      },
+      {
+        choiceField: "httponly_choice",
+        fieldPath:
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].httponly_choice",
+        options: [
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].add_httponly",
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].ignore_httponly",
+        ],
+      },
+      {
+        choiceField: "max_age_choice",
+        fieldPath:
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].max_age_choice",
+        options: [
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].ignore_max_age",
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].max_age_value",
+        ],
+      },
+      {
+        choiceField: "partitioned_choice",
+        fieldPath:
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].partitioned_choice",
+        options: [
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].add_partitioned",
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].ignore_partitioned",
+        ],
+      },
+      {
+        choiceField: "path_choice",
+        fieldPath:
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].path_choice",
+        options: [
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].add_path",
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].ignore_path",
+        ],
+      },
+      {
+        choiceField: "samesite_choice",
+        fieldPath:
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].samesite_choice",
+        options: [
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].ignore_samesite",
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].samesite_lax",
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].samesite_none",
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].samesite_strict",
+        ],
+      },
+      {
+        choiceField: "secure_choice",
+        fieldPath:
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].secure_choice",
+        options: [
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].add_secure",
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].ignore_secure",
+        ],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath:
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].value_choice",
+        options: [
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].ignore_value",
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].secret_value",
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].secret_value.blindfold_secret_info",
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath:
+          "spec.dynamic_proxy.https_proxy.more_option.response_headers_to_add[].value_choice",
+        options: [
+          "spec.dynamic_proxy.https_proxy.more_option.response_headers_to_add[].secret_value",
+          "spec.dynamic_proxy.https_proxy.more_option.response_headers_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.dynamic_proxy.https_proxy.more_option.response_headers_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.dynamic_proxy.https_proxy.more_option.response_headers_to_add[].secret_value.blindfold_secret_info",
+          "spec.dynamic_proxy.https_proxy.more_option.response_headers_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath: "spec.dynamic_proxy.https_proxy.tls_params.mtls_choice",
+        options: [
+          "spec.dynamic_proxy.https_proxy.tls_params.no_mtls",
+          "spec.dynamic_proxy.https_proxy.tls_params.use_mtls",
+        ],
+      },
+      {
+        choiceField: "ocsp_stapling_choice",
+        fieldPath:
+          "spec.dynamic_proxy.https_proxy.tls_params.tls_certificates[].ocsp_stapling_choice",
+        options: [
+          "spec.dynamic_proxy.https_proxy.tls_params.tls_certificates[].custom_hash_algorithms",
+          "spec.dynamic_proxy.https_proxy.tls_params.tls_certificates[].disable_ocsp_stapling",
+          "spec.dynamic_proxy.https_proxy.tls_params.tls_certificates[].use_system_defaults",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.dynamic_proxy.https_proxy.tls_params.tls_certificates[].private_key.secret_info_oneof",
+        options: [
+          "spec.dynamic_proxy.https_proxy.tls_params.tls_certificates[].private_key.blindfold_secret_info",
+          "spec.dynamic_proxy.https_proxy.tls_params.tls_certificates[].private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.dynamic_proxy.https_proxy.tls_params.tls_config.choice",
+        options: [
+          "spec.dynamic_proxy.https_proxy.tls_params.tls_config.custom_security",
+          "spec.dynamic_proxy.https_proxy.tls_params.tls_config.default_security",
+          "spec.dynamic_proxy.https_proxy.tls_params.tls_config.low_security",
+          "spec.dynamic_proxy.https_proxy.tls_params.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath: "spec.dynamic_proxy.https_proxy.tls_params.use_mtls.crl_choice",
+        options: [
+          "spec.dynamic_proxy.https_proxy.tls_params.use_mtls.crl",
+          "spec.dynamic_proxy.https_proxy.tls_params.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath: "spec.dynamic_proxy.https_proxy.tls_params.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.dynamic_proxy.https_proxy.tls_params.use_mtls.trusted_ca",
+          "spec.dynamic_proxy.https_proxy.tls_params.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath: "spec.dynamic_proxy.https_proxy.tls_params.use_mtls.xfcc_header",
+        options: [
+          "spec.dynamic_proxy.https_proxy.tls_params.use_mtls.xfcc_disabled",
+          "spec.dynamic_proxy.https_proxy.tls_params.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "http_https_choice",
+        fieldPath: "spec.http_proxy.http_https_choice",
+        options: ["spec.http_proxy.enable_http"],
+      },
+      {
+        choiceField: "path_normalize_choice",
+        fieldPath: "spec.http_proxy.more_option.path_normalize_choice",
+        options: [
+          "spec.http_proxy.more_option.disable_path_normalize",
+          "spec.http_proxy.more_option.enable_path_normalize",
+        ],
+      },
+      {
+        choiceField: "strict_sni_host_header_check_choice",
+        fieldPath: "spec.http_proxy.more_option.strict_sni_host_header_check_choice",
+        options: [],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath: "spec.http_proxy.more_option.request_cookies_to_add[].value_choice",
+        options: [
+          "spec.http_proxy.more_option.request_cookies_to_add[].secret_value",
+          "spec.http_proxy.more_option.request_cookies_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.http_proxy.more_option.request_cookies_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.http_proxy.more_option.request_cookies_to_add[].secret_value.blindfold_secret_info",
+          "spec.http_proxy.more_option.request_cookies_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath: "spec.http_proxy.more_option.request_headers_to_add[].value_choice",
+        options: [
+          "spec.http_proxy.more_option.request_headers_to_add[].secret_value",
+          "spec.http_proxy.more_option.request_headers_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.http_proxy.more_option.request_headers_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.http_proxy.more_option.request_headers_to_add[].secret_value.blindfold_secret_info",
+          "spec.http_proxy.more_option.request_headers_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.http_proxy.more_option.response_cookies_to_add[].domain_choice",
+        options: [
+          "spec.http_proxy.more_option.response_cookies_to_add[].add_domain",
+          "spec.http_proxy.more_option.response_cookies_to_add[].ignore_domain",
+        ],
+      },
+      {
+        choiceField: "expiry_choice",
+        fieldPath: "spec.http_proxy.more_option.response_cookies_to_add[].expiry_choice",
+        options: [
+          "spec.http_proxy.more_option.response_cookies_to_add[].add_expiry",
+          "spec.http_proxy.more_option.response_cookies_to_add[].ignore_expiry",
+        ],
+      },
+      {
+        choiceField: "httponly_choice",
+        fieldPath: "spec.http_proxy.more_option.response_cookies_to_add[].httponly_choice",
+        options: [
+          "spec.http_proxy.more_option.response_cookies_to_add[].add_httponly",
+          "spec.http_proxy.more_option.response_cookies_to_add[].ignore_httponly",
+        ],
+      },
+      {
+        choiceField: "max_age_choice",
+        fieldPath: "spec.http_proxy.more_option.response_cookies_to_add[].max_age_choice",
+        options: [
+          "spec.http_proxy.more_option.response_cookies_to_add[].ignore_max_age",
+          "spec.http_proxy.more_option.response_cookies_to_add[].max_age_value",
+        ],
+      },
+      {
+        choiceField: "partitioned_choice",
+        fieldPath: "spec.http_proxy.more_option.response_cookies_to_add[].partitioned_choice",
+        options: [
+          "spec.http_proxy.more_option.response_cookies_to_add[].add_partitioned",
+          "spec.http_proxy.more_option.response_cookies_to_add[].ignore_partitioned",
+        ],
+      },
+      {
+        choiceField: "path_choice",
+        fieldPath: "spec.http_proxy.more_option.response_cookies_to_add[].path_choice",
+        options: [
+          "spec.http_proxy.more_option.response_cookies_to_add[].add_path",
+          "spec.http_proxy.more_option.response_cookies_to_add[].ignore_path",
+        ],
+      },
+      {
+        choiceField: "samesite_choice",
+        fieldPath: "spec.http_proxy.more_option.response_cookies_to_add[].samesite_choice",
+        options: [
+          "spec.http_proxy.more_option.response_cookies_to_add[].ignore_samesite",
+          "spec.http_proxy.more_option.response_cookies_to_add[].samesite_lax",
+          "spec.http_proxy.more_option.response_cookies_to_add[].samesite_none",
+          "spec.http_proxy.more_option.response_cookies_to_add[].samesite_strict",
+        ],
+      },
+      {
+        choiceField: "secure_choice",
+        fieldPath: "spec.http_proxy.more_option.response_cookies_to_add[].secure_choice",
+        options: [
+          "spec.http_proxy.more_option.response_cookies_to_add[].add_secure",
+          "spec.http_proxy.more_option.response_cookies_to_add[].ignore_secure",
+        ],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath: "spec.http_proxy.more_option.response_cookies_to_add[].value_choice",
+        options: [
+          "spec.http_proxy.more_option.response_cookies_to_add[].ignore_value",
+          "spec.http_proxy.more_option.response_cookies_to_add[].secret_value",
+          "spec.http_proxy.more_option.response_cookies_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.http_proxy.more_option.response_cookies_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.http_proxy.more_option.response_cookies_to_add[].secret_value.blindfold_secret_info",
+          "spec.http_proxy.more_option.response_cookies_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath: "spec.http_proxy.more_option.response_headers_to_add[].value_choice",
+        options: [
+          "spec.http_proxy.more_option.response_headers_to_add[].secret_value",
+          "spec.http_proxy.more_option.response_headers_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.http_proxy.more_option.response_headers_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.http_proxy.more_option.response_headers_to_add[].secret_value.blindfold_secret_info",
+          "spec.http_proxy.more_option.response_headers_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.site_virtual_sites.advertise_where[].choice",
+        options: [
+          "spec.site_virtual_sites.advertise_where[].site",
+          "spec.site_virtual_sites.advertise_where[].virtual_site",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.site_virtual_sites.advertise_where[].port_choice",
+        options: [
+          "spec.site_virtual_sites.advertise_where[].port",
+          "spec.site_virtual_sites.advertise_where[].use_default_port",
+        ],
+      },
+      {
+        choiceField: "interception_policy_choice",
+        fieldPath: "spec.tls_intercept.interception_policy_choice",
+        options: ["spec.tls_intercept.enable_for_all_domains", "spec.tls_intercept.policy"],
+      },
+      {
+        choiceField: "signing_cert_choice",
+        fieldPath: "spec.tls_intercept.signing_cert_choice",
+        options: [
+          "spec.tls_intercept.custom_certificate",
+          "spec.tls_intercept.volterra_certificate",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath: "spec.tls_intercept.trusted_ca_choice",
+        options: ["spec.tls_intercept.trusted_ca_url", "spec.tls_intercept.volterra_trusted_ca"],
+      },
+      {
+        choiceField: "ocsp_stapling_choice",
+        fieldPath: "spec.tls_intercept.custom_certificate.ocsp_stapling_choice",
+        options: [
+          "spec.tls_intercept.custom_certificate.custom_hash_algorithms",
+          "spec.tls_intercept.custom_certificate.disable_ocsp_stapling",
+          "spec.tls_intercept.custom_certificate.use_system_defaults",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.tls_intercept.custom_certificate.private_key.secret_info_oneof",
+        options: [
+          "spec.tls_intercept.custom_certificate.private_key.blindfold_secret_info",
+          "spec.tls_intercept.custom_certificate.private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "enable_disable_choice",
+        fieldPath: "spec.tls_intercept.policy.interception_rules[].enable_disable_choice",
+        options: [
+          "spec.tls_intercept.policy.interception_rules[].disable_interception",
+          "spec.tls_intercept.policy.interception_rules[].enable_interception",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.tls_intercept.policy.interception_rules[].domain_match.domain_choice",
+        options: [
+          "spec.tls_intercept.policy.interception_rules[].domain_match.exact_value",
+          "spec.tls_intercept.policy.interception_rules[].domain_match.regex_value",
+          "spec.tls_intercept.policy.interception_rules[].domain_match.suffix_value",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -3171,7 +11192,652 @@ export const virtualTools: ParsedOperation[] = [
         resourceType: "viewsproxy-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "network_choice",
+        fieldPath: "spec.network_choice",
+        options: ["spec.site_local_inside_network", "spec.site_local_network"],
+      },
+      {
+        choiceField: "proxy_choice",
+        fieldPath: "spec.proxy_choice",
+        options: ["spec.dynamic_proxy", "spec.http_proxy"],
+      },
+      {
+        choiceField: "proxy_policy_choice",
+        fieldPath: "spec.proxy_policy_choice",
+        options: ["spec.active_forward_proxy_policies", "spec.no_forward_proxy_policy"],
+      },
+      {
+        choiceField: "site_choice",
+        fieldPath: "spec.site_choice",
+        options: ["spec.do_not_advertise", "spec.site_virtual_sites"],
+      },
+      {
+        choiceField: "tls_interception_choice",
+        fieldPath: "spec.tls_interception_choice",
+        options: ["spec.no_interception", "spec.tls_intercept"],
+      },
+      {
+        choiceField: "dns_choice",
+        fieldPath: "spec.dynamic_proxy.dns_choice",
+        options: [
+          "spec.dynamic_proxy.disable_dns_masquerade",
+          "spec.dynamic_proxy.enable_dns_masquerade",
+        ],
+      },
+      {
+        choiceField: "proxy_choice",
+        fieldPath: "spec.dynamic_proxy.proxy_choice",
+        options: [
+          "spec.dynamic_proxy.http_proxy",
+          "spec.dynamic_proxy.https_proxy",
+          "spec.dynamic_proxy.sni_proxy",
+        ],
+      },
+      {
+        choiceField: "path_normalize_choice",
+        fieldPath: "spec.dynamic_proxy.http_proxy.more_option.path_normalize_choice",
+        options: [
+          "spec.dynamic_proxy.http_proxy.more_option.disable_path_normalize",
+          "spec.dynamic_proxy.http_proxy.more_option.enable_path_normalize",
+        ],
+      },
+      {
+        choiceField: "strict_sni_host_header_check_choice",
+        fieldPath: "spec.dynamic_proxy.http_proxy.more_option.strict_sni_host_header_check_choice",
+        options: [],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath:
+          "spec.dynamic_proxy.http_proxy.more_option.request_cookies_to_add[].value_choice",
+        options: [
+          "spec.dynamic_proxy.http_proxy.more_option.request_cookies_to_add[].secret_value",
+          "spec.dynamic_proxy.http_proxy.more_option.request_cookies_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.dynamic_proxy.http_proxy.more_option.request_cookies_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.dynamic_proxy.http_proxy.more_option.request_cookies_to_add[].secret_value.blindfold_secret_info",
+          "spec.dynamic_proxy.http_proxy.more_option.request_cookies_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath:
+          "spec.dynamic_proxy.http_proxy.more_option.request_headers_to_add[].value_choice",
+        options: [
+          "spec.dynamic_proxy.http_proxy.more_option.request_headers_to_add[].secret_value",
+          "spec.dynamic_proxy.http_proxy.more_option.request_headers_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.dynamic_proxy.http_proxy.more_option.request_headers_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.dynamic_proxy.http_proxy.more_option.request_headers_to_add[].secret_value.blindfold_secret_info",
+          "spec.dynamic_proxy.http_proxy.more_option.request_headers_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath:
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].domain_choice",
+        options: [
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].add_domain",
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].ignore_domain",
+        ],
+      },
+      {
+        choiceField: "expiry_choice",
+        fieldPath:
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].expiry_choice",
+        options: [
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].add_expiry",
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].ignore_expiry",
+        ],
+      },
+      {
+        choiceField: "httponly_choice",
+        fieldPath:
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].httponly_choice",
+        options: [
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].add_httponly",
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].ignore_httponly",
+        ],
+      },
+      {
+        choiceField: "max_age_choice",
+        fieldPath:
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].max_age_choice",
+        options: [
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].ignore_max_age",
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].max_age_value",
+        ],
+      },
+      {
+        choiceField: "partitioned_choice",
+        fieldPath:
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].partitioned_choice",
+        options: [
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].add_partitioned",
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].ignore_partitioned",
+        ],
+      },
+      {
+        choiceField: "path_choice",
+        fieldPath:
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].path_choice",
+        options: [
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].add_path",
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].ignore_path",
+        ],
+      },
+      {
+        choiceField: "samesite_choice",
+        fieldPath:
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].samesite_choice",
+        options: [
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].ignore_samesite",
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].samesite_lax",
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].samesite_none",
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].samesite_strict",
+        ],
+      },
+      {
+        choiceField: "secure_choice",
+        fieldPath:
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].secure_choice",
+        options: [
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].add_secure",
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].ignore_secure",
+        ],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath:
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].value_choice",
+        options: [
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].ignore_value",
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].secret_value",
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].secret_value.blindfold_secret_info",
+          "spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath:
+          "spec.dynamic_proxy.http_proxy.more_option.response_headers_to_add[].value_choice",
+        options: [
+          "spec.dynamic_proxy.http_proxy.more_option.response_headers_to_add[].secret_value",
+          "spec.dynamic_proxy.http_proxy.more_option.response_headers_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.dynamic_proxy.http_proxy.more_option.response_headers_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.dynamic_proxy.http_proxy.more_option.response_headers_to_add[].secret_value.blindfold_secret_info",
+          "spec.dynamic_proxy.http_proxy.more_option.response_headers_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "path_normalize_choice",
+        fieldPath: "spec.dynamic_proxy.https_proxy.more_option.path_normalize_choice",
+        options: [
+          "spec.dynamic_proxy.https_proxy.more_option.disable_path_normalize",
+          "spec.dynamic_proxy.https_proxy.more_option.enable_path_normalize",
+        ],
+      },
+      {
+        choiceField: "strict_sni_host_header_check_choice",
+        fieldPath: "spec.dynamic_proxy.https_proxy.more_option.strict_sni_host_header_check_choice",
+        options: [],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath:
+          "spec.dynamic_proxy.https_proxy.more_option.request_cookies_to_add[].value_choice",
+        options: [
+          "spec.dynamic_proxy.https_proxy.more_option.request_cookies_to_add[].secret_value",
+          "spec.dynamic_proxy.https_proxy.more_option.request_cookies_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.dynamic_proxy.https_proxy.more_option.request_cookies_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.dynamic_proxy.https_proxy.more_option.request_cookies_to_add[].secret_value.blindfold_secret_info",
+          "spec.dynamic_proxy.https_proxy.more_option.request_cookies_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath:
+          "spec.dynamic_proxy.https_proxy.more_option.request_headers_to_add[].value_choice",
+        options: [
+          "spec.dynamic_proxy.https_proxy.more_option.request_headers_to_add[].secret_value",
+          "spec.dynamic_proxy.https_proxy.more_option.request_headers_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.dynamic_proxy.https_proxy.more_option.request_headers_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.dynamic_proxy.https_proxy.more_option.request_headers_to_add[].secret_value.blindfold_secret_info",
+          "spec.dynamic_proxy.https_proxy.more_option.request_headers_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath:
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].domain_choice",
+        options: [
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].add_domain",
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].ignore_domain",
+        ],
+      },
+      {
+        choiceField: "expiry_choice",
+        fieldPath:
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].expiry_choice",
+        options: [
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].add_expiry",
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].ignore_expiry",
+        ],
+      },
+      {
+        choiceField: "httponly_choice",
+        fieldPath:
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].httponly_choice",
+        options: [
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].add_httponly",
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].ignore_httponly",
+        ],
+      },
+      {
+        choiceField: "max_age_choice",
+        fieldPath:
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].max_age_choice",
+        options: [
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].ignore_max_age",
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].max_age_value",
+        ],
+      },
+      {
+        choiceField: "partitioned_choice",
+        fieldPath:
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].partitioned_choice",
+        options: [
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].add_partitioned",
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].ignore_partitioned",
+        ],
+      },
+      {
+        choiceField: "path_choice",
+        fieldPath:
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].path_choice",
+        options: [
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].add_path",
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].ignore_path",
+        ],
+      },
+      {
+        choiceField: "samesite_choice",
+        fieldPath:
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].samesite_choice",
+        options: [
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].ignore_samesite",
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].samesite_lax",
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].samesite_none",
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].samesite_strict",
+        ],
+      },
+      {
+        choiceField: "secure_choice",
+        fieldPath:
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].secure_choice",
+        options: [
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].add_secure",
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].ignore_secure",
+        ],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath:
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].value_choice",
+        options: [
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].ignore_value",
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].secret_value",
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].secret_value.blindfold_secret_info",
+          "spec.dynamic_proxy.https_proxy.more_option.response_cookies_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath:
+          "spec.dynamic_proxy.https_proxy.more_option.response_headers_to_add[].value_choice",
+        options: [
+          "spec.dynamic_proxy.https_proxy.more_option.response_headers_to_add[].secret_value",
+          "spec.dynamic_proxy.https_proxy.more_option.response_headers_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.dynamic_proxy.https_proxy.more_option.response_headers_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.dynamic_proxy.https_proxy.more_option.response_headers_to_add[].secret_value.blindfold_secret_info",
+          "spec.dynamic_proxy.https_proxy.more_option.response_headers_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath: "spec.dynamic_proxy.https_proxy.tls_params.mtls_choice",
+        options: [
+          "spec.dynamic_proxy.https_proxy.tls_params.no_mtls",
+          "spec.dynamic_proxy.https_proxy.tls_params.use_mtls",
+        ],
+      },
+      {
+        choiceField: "ocsp_stapling_choice",
+        fieldPath:
+          "spec.dynamic_proxy.https_proxy.tls_params.tls_certificates[].ocsp_stapling_choice",
+        options: [
+          "spec.dynamic_proxy.https_proxy.tls_params.tls_certificates[].custom_hash_algorithms",
+          "spec.dynamic_proxy.https_proxy.tls_params.tls_certificates[].disable_ocsp_stapling",
+          "spec.dynamic_proxy.https_proxy.tls_params.tls_certificates[].use_system_defaults",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.dynamic_proxy.https_proxy.tls_params.tls_certificates[].private_key.secret_info_oneof",
+        options: [
+          "spec.dynamic_proxy.https_proxy.tls_params.tls_certificates[].private_key.blindfold_secret_info",
+          "spec.dynamic_proxy.https_proxy.tls_params.tls_certificates[].private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.dynamic_proxy.https_proxy.tls_params.tls_config.choice",
+        options: [
+          "spec.dynamic_proxy.https_proxy.tls_params.tls_config.custom_security",
+          "spec.dynamic_proxy.https_proxy.tls_params.tls_config.default_security",
+          "spec.dynamic_proxy.https_proxy.tls_params.tls_config.low_security",
+          "spec.dynamic_proxy.https_proxy.tls_params.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath: "spec.dynamic_proxy.https_proxy.tls_params.use_mtls.crl_choice",
+        options: [
+          "spec.dynamic_proxy.https_proxy.tls_params.use_mtls.crl",
+          "spec.dynamic_proxy.https_proxy.tls_params.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath: "spec.dynamic_proxy.https_proxy.tls_params.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.dynamic_proxy.https_proxy.tls_params.use_mtls.trusted_ca",
+          "spec.dynamic_proxy.https_proxy.tls_params.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath: "spec.dynamic_proxy.https_proxy.tls_params.use_mtls.xfcc_header",
+        options: [
+          "spec.dynamic_proxy.https_proxy.tls_params.use_mtls.xfcc_disabled",
+          "spec.dynamic_proxy.https_proxy.tls_params.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "http_https_choice",
+        fieldPath: "spec.http_proxy.http_https_choice",
+        options: ["spec.http_proxy.enable_http"],
+      },
+      {
+        choiceField: "path_normalize_choice",
+        fieldPath: "spec.http_proxy.more_option.path_normalize_choice",
+        options: [
+          "spec.http_proxy.more_option.disable_path_normalize",
+          "spec.http_proxy.more_option.enable_path_normalize",
+        ],
+      },
+      {
+        choiceField: "strict_sni_host_header_check_choice",
+        fieldPath: "spec.http_proxy.more_option.strict_sni_host_header_check_choice",
+        options: [],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath: "spec.http_proxy.more_option.request_cookies_to_add[].value_choice",
+        options: [
+          "spec.http_proxy.more_option.request_cookies_to_add[].secret_value",
+          "spec.http_proxy.more_option.request_cookies_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.http_proxy.more_option.request_cookies_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.http_proxy.more_option.request_cookies_to_add[].secret_value.blindfold_secret_info",
+          "spec.http_proxy.more_option.request_cookies_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath: "spec.http_proxy.more_option.request_headers_to_add[].value_choice",
+        options: [
+          "spec.http_proxy.more_option.request_headers_to_add[].secret_value",
+          "spec.http_proxy.more_option.request_headers_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.http_proxy.more_option.request_headers_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.http_proxy.more_option.request_headers_to_add[].secret_value.blindfold_secret_info",
+          "spec.http_proxy.more_option.request_headers_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.http_proxy.more_option.response_cookies_to_add[].domain_choice",
+        options: [
+          "spec.http_proxy.more_option.response_cookies_to_add[].add_domain",
+          "spec.http_proxy.more_option.response_cookies_to_add[].ignore_domain",
+        ],
+      },
+      {
+        choiceField: "expiry_choice",
+        fieldPath: "spec.http_proxy.more_option.response_cookies_to_add[].expiry_choice",
+        options: [
+          "spec.http_proxy.more_option.response_cookies_to_add[].add_expiry",
+          "spec.http_proxy.more_option.response_cookies_to_add[].ignore_expiry",
+        ],
+      },
+      {
+        choiceField: "httponly_choice",
+        fieldPath: "spec.http_proxy.more_option.response_cookies_to_add[].httponly_choice",
+        options: [
+          "spec.http_proxy.more_option.response_cookies_to_add[].add_httponly",
+          "spec.http_proxy.more_option.response_cookies_to_add[].ignore_httponly",
+        ],
+      },
+      {
+        choiceField: "max_age_choice",
+        fieldPath: "spec.http_proxy.more_option.response_cookies_to_add[].max_age_choice",
+        options: [
+          "spec.http_proxy.more_option.response_cookies_to_add[].ignore_max_age",
+          "spec.http_proxy.more_option.response_cookies_to_add[].max_age_value",
+        ],
+      },
+      {
+        choiceField: "partitioned_choice",
+        fieldPath: "spec.http_proxy.more_option.response_cookies_to_add[].partitioned_choice",
+        options: [
+          "spec.http_proxy.more_option.response_cookies_to_add[].add_partitioned",
+          "spec.http_proxy.more_option.response_cookies_to_add[].ignore_partitioned",
+        ],
+      },
+      {
+        choiceField: "path_choice",
+        fieldPath: "spec.http_proxy.more_option.response_cookies_to_add[].path_choice",
+        options: [
+          "spec.http_proxy.more_option.response_cookies_to_add[].add_path",
+          "spec.http_proxy.more_option.response_cookies_to_add[].ignore_path",
+        ],
+      },
+      {
+        choiceField: "samesite_choice",
+        fieldPath: "spec.http_proxy.more_option.response_cookies_to_add[].samesite_choice",
+        options: [
+          "spec.http_proxy.more_option.response_cookies_to_add[].ignore_samesite",
+          "spec.http_proxy.more_option.response_cookies_to_add[].samesite_lax",
+          "spec.http_proxy.more_option.response_cookies_to_add[].samesite_none",
+          "spec.http_proxy.more_option.response_cookies_to_add[].samesite_strict",
+        ],
+      },
+      {
+        choiceField: "secure_choice",
+        fieldPath: "spec.http_proxy.more_option.response_cookies_to_add[].secure_choice",
+        options: [
+          "spec.http_proxy.more_option.response_cookies_to_add[].add_secure",
+          "spec.http_proxy.more_option.response_cookies_to_add[].ignore_secure",
+        ],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath: "spec.http_proxy.more_option.response_cookies_to_add[].value_choice",
+        options: [
+          "spec.http_proxy.more_option.response_cookies_to_add[].ignore_value",
+          "spec.http_proxy.more_option.response_cookies_to_add[].secret_value",
+          "spec.http_proxy.more_option.response_cookies_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.http_proxy.more_option.response_cookies_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.http_proxy.more_option.response_cookies_to_add[].secret_value.blindfold_secret_info",
+          "spec.http_proxy.more_option.response_cookies_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath: "spec.http_proxy.more_option.response_headers_to_add[].value_choice",
+        options: [
+          "spec.http_proxy.more_option.response_headers_to_add[].secret_value",
+          "spec.http_proxy.more_option.response_headers_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.http_proxy.more_option.response_headers_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.http_proxy.more_option.response_headers_to_add[].secret_value.blindfold_secret_info",
+          "spec.http_proxy.more_option.response_headers_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.site_virtual_sites.advertise_where[].choice",
+        options: [
+          "spec.site_virtual_sites.advertise_where[].site",
+          "spec.site_virtual_sites.advertise_where[].virtual_site",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.site_virtual_sites.advertise_where[].port_choice",
+        options: [
+          "spec.site_virtual_sites.advertise_where[].port",
+          "spec.site_virtual_sites.advertise_where[].use_default_port",
+        ],
+      },
+      {
+        choiceField: "interception_policy_choice",
+        fieldPath: "spec.tls_intercept.interception_policy_choice",
+        options: ["spec.tls_intercept.enable_for_all_domains", "spec.tls_intercept.policy"],
+      },
+      {
+        choiceField: "signing_cert_choice",
+        fieldPath: "spec.tls_intercept.signing_cert_choice",
+        options: [
+          "spec.tls_intercept.custom_certificate",
+          "spec.tls_intercept.volterra_certificate",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath: "spec.tls_intercept.trusted_ca_choice",
+        options: ["spec.tls_intercept.trusted_ca_url", "spec.tls_intercept.volterra_trusted_ca"],
+      },
+      {
+        choiceField: "ocsp_stapling_choice",
+        fieldPath: "spec.tls_intercept.custom_certificate.ocsp_stapling_choice",
+        options: [
+          "spec.tls_intercept.custom_certificate.custom_hash_algorithms",
+          "spec.tls_intercept.custom_certificate.disable_ocsp_stapling",
+          "spec.tls_intercept.custom_certificate.use_system_defaults",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.tls_intercept.custom_certificate.private_key.secret_info_oneof",
+        options: [
+          "spec.tls_intercept.custom_certificate.private_key.blindfold_secret_info",
+          "spec.tls_intercept.custom_certificate.private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "enable_disable_choice",
+        fieldPath: "spec.tls_intercept.policy.interception_rules[].enable_disable_choice",
+        options: [
+          "spec.tls_intercept.policy.interception_rules[].disable_interception",
+          "spec.tls_intercept.policy.interception_rules[].enable_interception",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.tls_intercept.policy.interception_rules[].domain_match.domain_choice",
+        options: [
+          "spec.tls_intercept.policy.interception_rules[].domain_match.exact_value",
+          "spec.tls_intercept.policy.interception_rules[].domain_match.regex_value",
+          "spec.tls_intercept.policy.interception_rules[].domain_match.suffix_value",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -3239,7 +11905,59 @@ export const virtualTools: ParsedOperation[] = [
         resourceType: "viewsrate-limiter-policy-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "server_choice",
+        fieldPath: "spec.server_choice",
+        options: [
+          "spec.any_server",
+          "spec.server_name",
+          "spec.server_name_matcher",
+          "spec.server_selector",
+        ],
+      },
+      {
+        choiceField: "action_choice",
+        fieldPath: "spec.rules[].spec.action_choice",
+        options: [
+          "spec.rules[].spec.apply_rate_limiter",
+          "spec.rules[].spec.bypass_rate_limiter",
+          "spec.rules[].spec.custom_rate_limiter",
+        ],
+      },
+      {
+        choiceField: "asn_choice",
+        fieldPath: "spec.rules[].spec.asn_choice",
+        options: [
+          "spec.rules[].spec.any_asn",
+          "spec.rules[].spec.asn_list",
+          "spec.rules[].spec.asn_matcher",
+        ],
+      },
+      {
+        choiceField: "country_choice",
+        fieldPath: "spec.rules[].spec.country_choice",
+        options: ["spec.rules[].spec.any_country", "spec.rules[].spec.country_list"],
+      },
+      {
+        choiceField: "ip_choice",
+        fieldPath: "spec.rules[].spec.ip_choice",
+        options: [
+          "spec.rules[].spec.any_ip",
+          "spec.rules[].spec.ip_matcher",
+          "spec.rules[].spec.ip_prefix_list",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.rules[].spec.headers[].match",
+        options: [
+          "spec.rules[].spec.headers[].check_not_present",
+          "spec.rules[].spec.headers[].check_present",
+          "spec.rules[].spec.headers[].item",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -3586,7 +12304,59 @@ export const virtualTools: ParsedOperation[] = [
         resourceType: "viewsrate-limiter-policy-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "server_choice",
+        fieldPath: "spec.server_choice",
+        options: [
+          "spec.any_server",
+          "spec.server_name",
+          "spec.server_name_matcher",
+          "spec.server_selector",
+        ],
+      },
+      {
+        choiceField: "action_choice",
+        fieldPath: "spec.rules[].spec.action_choice",
+        options: [
+          "spec.rules[].spec.apply_rate_limiter",
+          "spec.rules[].spec.bypass_rate_limiter",
+          "spec.rules[].spec.custom_rate_limiter",
+        ],
+      },
+      {
+        choiceField: "asn_choice",
+        fieldPath: "spec.rules[].spec.asn_choice",
+        options: [
+          "spec.rules[].spec.any_asn",
+          "spec.rules[].spec.asn_list",
+          "spec.rules[].spec.asn_matcher",
+        ],
+      },
+      {
+        choiceField: "country_choice",
+        fieldPath: "spec.rules[].spec.country_choice",
+        options: ["spec.rules[].spec.any_country", "spec.rules[].spec.country_list"],
+      },
+      {
+        choiceField: "ip_choice",
+        fieldPath: "spec.rules[].spec.ip_choice",
+        options: [
+          "spec.rules[].spec.any_ip",
+          "spec.rules[].spec.ip_matcher",
+          "spec.rules[].spec.ip_prefix_list",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.rules[].spec.headers[].match",
+        options: [
+          "spec.rules[].spec.headers[].check_not_present",
+          "spec.rules[].spec.headers[].check_present",
+          "spec.rules[].spec.headers[].item",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -3668,7 +12438,286 @@ export const virtualTools: ParsedOperation[] = [
         resourceType: "schemaservice-policy-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "rule_choice",
+        fieldPath: "spec.rule_choice",
+        options: [
+          "spec.allow_all_requests",
+          "spec.allow_list",
+          "spec.deny_all_requests",
+          "spec.deny_list",
+          "spec.rule_list",
+        ],
+      },
+      {
+        choiceField: "server_choice",
+        fieldPath: "spec.server_choice",
+        options: [
+          "spec.any_server",
+          "spec.server_name",
+          "spec.server_name_matcher",
+          "spec.server_selector",
+        ],
+      },
+      {
+        choiceField: "default_action_choice",
+        fieldPath: "spec.allow_list.default_action_choice",
+        options: [
+          "spec.allow_list.default_action_allow",
+          "spec.allow_list.default_action_deny",
+          "spec.allow_list.default_action_next_policy",
+        ],
+      },
+      {
+        choiceField: "default_action_choice",
+        fieldPath: "spec.deny_list.default_action_choice",
+        options: [
+          "spec.deny_list.default_action_allow",
+          "spec.deny_list.default_action_deny",
+          "spec.deny_list.default_action_next_policy",
+        ],
+      },
+      {
+        choiceField: "asn_choice",
+        fieldPath: "spec.rule_list.rules[].spec.asn_choice",
+        options: [
+          "spec.rule_list.rules[].spec.any_asn",
+          "spec.rule_list.rules[].spec.asn_list",
+          "spec.rule_list.rules[].spec.asn_matcher",
+        ],
+      },
+      {
+        choiceField: "client_choice",
+        fieldPath: "spec.rule_list.rules[].spec.client_choice",
+        options: [
+          "spec.rule_list.rules[].spec.any_client",
+          "spec.rule_list.rules[].spec.client_name",
+          "spec.rule_list.rules[].spec.client_name_matcher",
+          "spec.rule_list.rules[].spec.client_selector",
+          "spec.rule_list.rules[].spec.ip_threat_category_list",
+        ],
+      },
+      {
+        choiceField: "dst_asn_choice",
+        fieldPath: "spec.rule_list.rules[].spec.dst_asn_choice",
+        options: [],
+      },
+      {
+        choiceField: "dst_ip_choice",
+        fieldPath: "spec.rule_list.rules[].spec.dst_ip_choice",
+        options: [],
+      },
+      {
+        choiceField: "ip_choice",
+        fieldPath: "spec.rule_list.rules[].spec.ip_choice",
+        options: [
+          "spec.rule_list.rules[].spec.any_ip",
+          "spec.rule_list.rules[].spec.ip_matcher",
+          "spec.rule_list.rules[].spec.ip_prefix_list",
+        ],
+      },
+      {
+        choiceField: "tls_fingerprint_choice",
+        fieldPath: "spec.rule_list.rules[].spec.tls_fingerprint_choice",
+        options: [
+          "spec.rule_list.rules[].spec.ja4_tls_fingerprint",
+          "spec.rule_list.rules[].spec.tls_fingerprint_matcher",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.rule_list.rules[].spec.arg_matchers[].match",
+        options: [
+          "spec.rule_list.rules[].spec.arg_matchers[].check_not_present",
+          "spec.rule_list.rules[].spec.arg_matchers[].check_present",
+          "spec.rule_list.rules[].spec.arg_matchers[].item",
+        ],
+      },
+      {
+        choiceField: "action_type",
+        fieldPath: "spec.rule_list.rules[].spec.bot_action.action_type",
+        options: [
+          "spec.rule_list.rules[].spec.bot_action.bot_skip_processing",
+          "spec.rule_list.rules[].spec.bot_action.none",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.rule_list.rules[].spec.cookie_matchers[].match",
+        options: [
+          "spec.rule_list.rules[].spec.cookie_matchers[].check_not_present",
+          "spec.rule_list.rules[].spec.cookie_matchers[].check_present",
+          "spec.rule_list.rules[].spec.cookie_matchers[].item",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.rule_list.rules[].spec.headers[].match",
+        options: [
+          "spec.rule_list.rules[].spec.headers[].check_not_present",
+          "spec.rule_list.rules[].spec.headers[].check_present",
+          "spec.rule_list.rules[].spec.headers[].item",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.rule_list.rules[].spec.jwt_claims[].match",
+        options: [
+          "spec.rule_list.rules[].spec.jwt_claims[].check_not_present",
+          "spec.rule_list.rules[].spec.jwt_claims[].check_present",
+          "spec.rule_list.rules[].spec.jwt_claims[].item",
+        ],
+      },
+      {
+        choiceField: "action_type",
+        fieldPath: "spec.rule_list.rules[].spec.mum_action.action_type",
+        options: [
+          "spec.rule_list.rules[].spec.mum_action.default",
+          "spec.rule_list.rules[].spec.mum_action.skip_processing",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.rule_list.rules[].spec.query_params[].match",
+        options: [
+          "spec.rule_list.rules[].spec.query_params[].check_not_present",
+          "spec.rule_list.rules[].spec.query_params[].check_present",
+          "spec.rule_list.rules[].spec.query_params[].item",
+        ],
+      },
+      {
+        choiceField: "max_cookie_count_choice",
+        fieldPath: "spec.rule_list.rules[].spec.request_constraints.max_cookie_count_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_cookie_count_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_cookie_count_none",
+        ],
+      },
+      {
+        choiceField: "max_cookie_key_size_choice",
+        fieldPath: "spec.rule_list.rules[].spec.request_constraints.max_cookie_key_size_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_cookie_key_size_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_cookie_key_size_none",
+        ],
+      },
+      {
+        choiceField: "max_cookie_value_size_choice",
+        fieldPath: "spec.rule_list.rules[].spec.request_constraints.max_cookie_value_size_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_cookie_value_size_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_cookie_value_size_none",
+        ],
+      },
+      {
+        choiceField: "max_header_count_choice",
+        fieldPath: "spec.rule_list.rules[].spec.request_constraints.max_header_count_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_header_count_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_header_count_none",
+        ],
+      },
+      {
+        choiceField: "max_header_key_size_choice",
+        fieldPath: "spec.rule_list.rules[].spec.request_constraints.max_header_key_size_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_header_key_size_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_header_key_size_none",
+        ],
+      },
+      {
+        choiceField: "max_header_value_size_choice",
+        fieldPath: "spec.rule_list.rules[].spec.request_constraints.max_header_value_size_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_header_value_size_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_header_value_size_none",
+        ],
+      },
+      {
+        choiceField: "max_parameter_count_choice",
+        fieldPath: "spec.rule_list.rules[].spec.request_constraints.max_parameter_count_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_parameter_count_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_parameter_count_none",
+        ],
+      },
+      {
+        choiceField: "max_parameter_name_size_choice",
+        fieldPath: "spec.rule_list.rules[].spec.request_constraints.max_parameter_name_size_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_parameter_name_size_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_parameter_name_size_none",
+        ],
+      },
+      {
+        choiceField: "max_parameter_value_size_choice",
+        fieldPath:
+          "spec.rule_list.rules[].spec.request_constraints.max_parameter_value_size_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_parameter_value_size_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_parameter_value_size_none",
+        ],
+      },
+      {
+        choiceField: "max_query_size_choice",
+        fieldPath: "spec.rule_list.rules[].spec.request_constraints.max_query_size_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_query_size_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_query_size_none",
+        ],
+      },
+      {
+        choiceField: "max_request_line_size_choice",
+        fieldPath: "spec.rule_list.rules[].spec.request_constraints.max_request_line_size_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_request_line_size_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_request_line_size_none",
+        ],
+      },
+      {
+        choiceField: "max_request_size_choice",
+        fieldPath: "spec.rule_list.rules[].spec.request_constraints.max_request_size_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_request_size_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_request_size_none",
+        ],
+      },
+      {
+        choiceField: "max_url_size_choice",
+        fieldPath: "spec.rule_list.rules[].spec.request_constraints.max_url_size_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_url_size_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_url_size_none",
+        ],
+      },
+      {
+        choiceField: "dst_segment_choice",
+        fieldPath: "spec.rule_list.rules[].spec.segment_policy.dst_segment_choice",
+        options: [
+          "spec.rule_list.rules[].spec.segment_policy.dst_any",
+          "spec.rule_list.rules[].spec.segment_policy.dst_segments",
+          "spec.rule_list.rules[].spec.segment_policy.intra_segment",
+        ],
+      },
+      {
+        choiceField: "src_segment_choice",
+        fieldPath: "spec.rule_list.rules[].spec.segment_policy.src_segment_choice",
+        options: [
+          "spec.rule_list.rules[].spec.segment_policy.src_any",
+          "spec.rule_list.rules[].spec.segment_policy.src_segments",
+        ],
+      },
+      {
+        choiceField: "action_type",
+        fieldPath: "spec.rule_list.rules[].spec.waf_action.action_type",
+        options: [
+          "spec.rule_list.rules[].spec.waf_action.app_firewall_detection_control",
+          "spec.rule_list.rules[].spec.waf_action.none",
+          "spec.rule_list.rules[].spec.waf_action.waf_skip_processing",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -4007,7 +13056,226 @@ export const virtualTools: ParsedOperation[] = [
         resourceType: "schemaservice-policy-rule-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "asn_choice",
+        fieldPath: "spec.asn_choice",
+        options: ["spec.any_asn", "spec.asn_list", "spec.asn_matcher"],
+      },
+      {
+        choiceField: "client_choice",
+        fieldPath: "spec.client_choice",
+        options: [
+          "spec.any_client",
+          "spec.client_name",
+          "spec.client_name_matcher",
+          "spec.client_selector",
+          "spec.ip_threat_category_list",
+        ],
+      },
+      {
+        choiceField: "dst_asn_choice",
+        fieldPath: "spec.dst_asn_choice",
+        options: [],
+      },
+      {
+        choiceField: "dst_ip_choice",
+        fieldPath: "spec.dst_ip_choice",
+        options: [],
+      },
+      {
+        choiceField: "ip_choice",
+        fieldPath: "spec.ip_choice",
+        options: ["spec.any_ip", "spec.ip_matcher", "spec.ip_prefix_list"],
+      },
+      {
+        choiceField: "tls_fingerprint_choice",
+        fieldPath: "spec.tls_fingerprint_choice",
+        options: ["spec.ja4_tls_fingerprint", "spec.tls_fingerprint_matcher"],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.arg_matchers[].match",
+        options: [
+          "spec.arg_matchers[].check_not_present",
+          "spec.arg_matchers[].check_present",
+          "spec.arg_matchers[].item",
+        ],
+      },
+      {
+        choiceField: "action_type",
+        fieldPath: "spec.bot_action.action_type",
+        options: ["spec.bot_action.bot_skip_processing", "spec.bot_action.none"],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.cookie_matchers[].match",
+        options: [
+          "spec.cookie_matchers[].check_not_present",
+          "spec.cookie_matchers[].check_present",
+          "spec.cookie_matchers[].item",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.headers[].match",
+        options: [
+          "spec.headers[].check_not_present",
+          "spec.headers[].check_present",
+          "spec.headers[].item",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.jwt_claims[].match",
+        options: [
+          "spec.jwt_claims[].check_not_present",
+          "spec.jwt_claims[].check_present",
+          "spec.jwt_claims[].item",
+        ],
+      },
+      {
+        choiceField: "action_type",
+        fieldPath: "spec.mum_action.action_type",
+        options: ["spec.mum_action.default", "spec.mum_action.skip_processing"],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.query_params[].match",
+        options: [
+          "spec.query_params[].check_not_present",
+          "spec.query_params[].check_present",
+          "spec.query_params[].item",
+        ],
+      },
+      {
+        choiceField: "max_cookie_count_choice",
+        fieldPath: "spec.request_constraints.max_cookie_count_choice",
+        options: [
+          "spec.request_constraints.max_cookie_count_exceeds",
+          "spec.request_constraints.max_cookie_count_none",
+        ],
+      },
+      {
+        choiceField: "max_cookie_key_size_choice",
+        fieldPath: "spec.request_constraints.max_cookie_key_size_choice",
+        options: [
+          "spec.request_constraints.max_cookie_key_size_exceeds",
+          "spec.request_constraints.max_cookie_key_size_none",
+        ],
+      },
+      {
+        choiceField: "max_cookie_value_size_choice",
+        fieldPath: "spec.request_constraints.max_cookie_value_size_choice",
+        options: [
+          "spec.request_constraints.max_cookie_value_size_exceeds",
+          "spec.request_constraints.max_cookie_value_size_none",
+        ],
+      },
+      {
+        choiceField: "max_header_count_choice",
+        fieldPath: "spec.request_constraints.max_header_count_choice",
+        options: [
+          "spec.request_constraints.max_header_count_exceeds",
+          "spec.request_constraints.max_header_count_none",
+        ],
+      },
+      {
+        choiceField: "max_header_key_size_choice",
+        fieldPath: "spec.request_constraints.max_header_key_size_choice",
+        options: [
+          "spec.request_constraints.max_header_key_size_exceeds",
+          "spec.request_constraints.max_header_key_size_none",
+        ],
+      },
+      {
+        choiceField: "max_header_value_size_choice",
+        fieldPath: "spec.request_constraints.max_header_value_size_choice",
+        options: [
+          "spec.request_constraints.max_header_value_size_exceeds",
+          "spec.request_constraints.max_header_value_size_none",
+        ],
+      },
+      {
+        choiceField: "max_parameter_count_choice",
+        fieldPath: "spec.request_constraints.max_parameter_count_choice",
+        options: [
+          "spec.request_constraints.max_parameter_count_exceeds",
+          "spec.request_constraints.max_parameter_count_none",
+        ],
+      },
+      {
+        choiceField: "max_parameter_name_size_choice",
+        fieldPath: "spec.request_constraints.max_parameter_name_size_choice",
+        options: [
+          "spec.request_constraints.max_parameter_name_size_exceeds",
+          "spec.request_constraints.max_parameter_name_size_none",
+        ],
+      },
+      {
+        choiceField: "max_parameter_value_size_choice",
+        fieldPath: "spec.request_constraints.max_parameter_value_size_choice",
+        options: [
+          "spec.request_constraints.max_parameter_value_size_exceeds",
+          "spec.request_constraints.max_parameter_value_size_none",
+        ],
+      },
+      {
+        choiceField: "max_query_size_choice",
+        fieldPath: "spec.request_constraints.max_query_size_choice",
+        options: [
+          "spec.request_constraints.max_query_size_exceeds",
+          "spec.request_constraints.max_query_size_none",
+        ],
+      },
+      {
+        choiceField: "max_request_line_size_choice",
+        fieldPath: "spec.request_constraints.max_request_line_size_choice",
+        options: [
+          "spec.request_constraints.max_request_line_size_exceeds",
+          "spec.request_constraints.max_request_line_size_none",
+        ],
+      },
+      {
+        choiceField: "max_request_size_choice",
+        fieldPath: "spec.request_constraints.max_request_size_choice",
+        options: [
+          "spec.request_constraints.max_request_size_exceeds",
+          "spec.request_constraints.max_request_size_none",
+        ],
+      },
+      {
+        choiceField: "max_url_size_choice",
+        fieldPath: "spec.request_constraints.max_url_size_choice",
+        options: [
+          "spec.request_constraints.max_url_size_exceeds",
+          "spec.request_constraints.max_url_size_none",
+        ],
+      },
+      {
+        choiceField: "dst_segment_choice",
+        fieldPath: "spec.segment_policy.dst_segment_choice",
+        options: [
+          "spec.segment_policy.dst_any",
+          "spec.segment_policy.dst_segments",
+          "spec.segment_policy.intra_segment",
+        ],
+      },
+      {
+        choiceField: "src_segment_choice",
+        fieldPath: "spec.segment_policy.src_segment_choice",
+        options: ["spec.segment_policy.src_any", "spec.segment_policy.src_segments"],
+      },
+      {
+        choiceField: "action_type",
+        fieldPath: "spec.waf_action.action_type",
+        options: [
+          "spec.waf_action.app_firewall_detection_control",
+          "spec.waf_action.none",
+          "spec.waf_action.waf_skip_processing",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -4356,7 +13624,226 @@ export const virtualTools: ParsedOperation[] = [
         resourceType: "schemaservice-policy-rule-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "asn_choice",
+        fieldPath: "spec.asn_choice",
+        options: ["spec.any_asn", "spec.asn_list", "spec.asn_matcher"],
+      },
+      {
+        choiceField: "client_choice",
+        fieldPath: "spec.client_choice",
+        options: [
+          "spec.any_client",
+          "spec.client_name",
+          "spec.client_name_matcher",
+          "spec.client_selector",
+          "spec.ip_threat_category_list",
+        ],
+      },
+      {
+        choiceField: "dst_asn_choice",
+        fieldPath: "spec.dst_asn_choice",
+        options: [],
+      },
+      {
+        choiceField: "dst_ip_choice",
+        fieldPath: "spec.dst_ip_choice",
+        options: [],
+      },
+      {
+        choiceField: "ip_choice",
+        fieldPath: "spec.ip_choice",
+        options: ["spec.any_ip", "spec.ip_matcher", "spec.ip_prefix_list"],
+      },
+      {
+        choiceField: "tls_fingerprint_choice",
+        fieldPath: "spec.tls_fingerprint_choice",
+        options: ["spec.ja4_tls_fingerprint", "spec.tls_fingerprint_matcher"],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.arg_matchers[].match",
+        options: [
+          "spec.arg_matchers[].check_not_present",
+          "spec.arg_matchers[].check_present",
+          "spec.arg_matchers[].item",
+        ],
+      },
+      {
+        choiceField: "action_type",
+        fieldPath: "spec.bot_action.action_type",
+        options: ["spec.bot_action.bot_skip_processing", "spec.bot_action.none"],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.cookie_matchers[].match",
+        options: [
+          "spec.cookie_matchers[].check_not_present",
+          "spec.cookie_matchers[].check_present",
+          "spec.cookie_matchers[].item",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.headers[].match",
+        options: [
+          "spec.headers[].check_not_present",
+          "spec.headers[].check_present",
+          "spec.headers[].item",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.jwt_claims[].match",
+        options: [
+          "spec.jwt_claims[].check_not_present",
+          "spec.jwt_claims[].check_present",
+          "spec.jwt_claims[].item",
+        ],
+      },
+      {
+        choiceField: "action_type",
+        fieldPath: "spec.mum_action.action_type",
+        options: ["spec.mum_action.default", "spec.mum_action.skip_processing"],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.query_params[].match",
+        options: [
+          "spec.query_params[].check_not_present",
+          "spec.query_params[].check_present",
+          "spec.query_params[].item",
+        ],
+      },
+      {
+        choiceField: "max_cookie_count_choice",
+        fieldPath: "spec.request_constraints.max_cookie_count_choice",
+        options: [
+          "spec.request_constraints.max_cookie_count_exceeds",
+          "spec.request_constraints.max_cookie_count_none",
+        ],
+      },
+      {
+        choiceField: "max_cookie_key_size_choice",
+        fieldPath: "spec.request_constraints.max_cookie_key_size_choice",
+        options: [
+          "spec.request_constraints.max_cookie_key_size_exceeds",
+          "spec.request_constraints.max_cookie_key_size_none",
+        ],
+      },
+      {
+        choiceField: "max_cookie_value_size_choice",
+        fieldPath: "spec.request_constraints.max_cookie_value_size_choice",
+        options: [
+          "spec.request_constraints.max_cookie_value_size_exceeds",
+          "spec.request_constraints.max_cookie_value_size_none",
+        ],
+      },
+      {
+        choiceField: "max_header_count_choice",
+        fieldPath: "spec.request_constraints.max_header_count_choice",
+        options: [
+          "spec.request_constraints.max_header_count_exceeds",
+          "spec.request_constraints.max_header_count_none",
+        ],
+      },
+      {
+        choiceField: "max_header_key_size_choice",
+        fieldPath: "spec.request_constraints.max_header_key_size_choice",
+        options: [
+          "spec.request_constraints.max_header_key_size_exceeds",
+          "spec.request_constraints.max_header_key_size_none",
+        ],
+      },
+      {
+        choiceField: "max_header_value_size_choice",
+        fieldPath: "spec.request_constraints.max_header_value_size_choice",
+        options: [
+          "spec.request_constraints.max_header_value_size_exceeds",
+          "spec.request_constraints.max_header_value_size_none",
+        ],
+      },
+      {
+        choiceField: "max_parameter_count_choice",
+        fieldPath: "spec.request_constraints.max_parameter_count_choice",
+        options: [
+          "spec.request_constraints.max_parameter_count_exceeds",
+          "spec.request_constraints.max_parameter_count_none",
+        ],
+      },
+      {
+        choiceField: "max_parameter_name_size_choice",
+        fieldPath: "spec.request_constraints.max_parameter_name_size_choice",
+        options: [
+          "spec.request_constraints.max_parameter_name_size_exceeds",
+          "spec.request_constraints.max_parameter_name_size_none",
+        ],
+      },
+      {
+        choiceField: "max_parameter_value_size_choice",
+        fieldPath: "spec.request_constraints.max_parameter_value_size_choice",
+        options: [
+          "spec.request_constraints.max_parameter_value_size_exceeds",
+          "spec.request_constraints.max_parameter_value_size_none",
+        ],
+      },
+      {
+        choiceField: "max_query_size_choice",
+        fieldPath: "spec.request_constraints.max_query_size_choice",
+        options: [
+          "spec.request_constraints.max_query_size_exceeds",
+          "spec.request_constraints.max_query_size_none",
+        ],
+      },
+      {
+        choiceField: "max_request_line_size_choice",
+        fieldPath: "spec.request_constraints.max_request_line_size_choice",
+        options: [
+          "spec.request_constraints.max_request_line_size_exceeds",
+          "spec.request_constraints.max_request_line_size_none",
+        ],
+      },
+      {
+        choiceField: "max_request_size_choice",
+        fieldPath: "spec.request_constraints.max_request_size_choice",
+        options: [
+          "spec.request_constraints.max_request_size_exceeds",
+          "spec.request_constraints.max_request_size_none",
+        ],
+      },
+      {
+        choiceField: "max_url_size_choice",
+        fieldPath: "spec.request_constraints.max_url_size_choice",
+        options: [
+          "spec.request_constraints.max_url_size_exceeds",
+          "spec.request_constraints.max_url_size_none",
+        ],
+      },
+      {
+        choiceField: "dst_segment_choice",
+        fieldPath: "spec.segment_policy.dst_segment_choice",
+        options: [
+          "spec.segment_policy.dst_any",
+          "spec.segment_policy.dst_segments",
+          "spec.segment_policy.intra_segment",
+        ],
+      },
+      {
+        choiceField: "src_segment_choice",
+        fieldPath: "spec.segment_policy.src_segment_choice",
+        options: ["spec.segment_policy.src_any", "spec.segment_policy.src_segments"],
+      },
+      {
+        choiceField: "action_type",
+        fieldPath: "spec.waf_action.action_type",
+        options: [
+          "spec.waf_action.app_firewall_detection_control",
+          "spec.waf_action.none",
+          "spec.waf_action.waf_skip_processing",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -4629,7 +14116,287 @@ export const virtualTools: ParsedOperation[] = [
         resourceType: "schemaservice-policy-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "rule_choice",
+        fieldPath: "spec.rule_choice",
+        options: [
+          "spec.allow_all_requests",
+          "spec.allow_list",
+          "spec.deny_all_requests",
+          "spec.deny_list",
+          "spec.legacy_rule_list",
+          "spec.rule_list",
+        ],
+      },
+      {
+        choiceField: "server_choice",
+        fieldPath: "spec.server_choice",
+        options: [
+          "spec.any_server",
+          "spec.server_name",
+          "spec.server_name_matcher",
+          "spec.server_selector",
+        ],
+      },
+      {
+        choiceField: "default_action_choice",
+        fieldPath: "spec.allow_list.default_action_choice",
+        options: [
+          "spec.allow_list.default_action_allow",
+          "spec.allow_list.default_action_deny",
+          "spec.allow_list.default_action_next_policy",
+        ],
+      },
+      {
+        choiceField: "default_action_choice",
+        fieldPath: "spec.deny_list.default_action_choice",
+        options: [
+          "spec.deny_list.default_action_allow",
+          "spec.deny_list.default_action_deny",
+          "spec.deny_list.default_action_next_policy",
+        ],
+      },
+      {
+        choiceField: "asn_choice",
+        fieldPath: "spec.rule_list.rules[].spec.asn_choice",
+        options: [
+          "spec.rule_list.rules[].spec.any_asn",
+          "spec.rule_list.rules[].spec.asn_list",
+          "spec.rule_list.rules[].spec.asn_matcher",
+        ],
+      },
+      {
+        choiceField: "client_choice",
+        fieldPath: "spec.rule_list.rules[].spec.client_choice",
+        options: [
+          "spec.rule_list.rules[].spec.any_client",
+          "spec.rule_list.rules[].spec.client_name",
+          "spec.rule_list.rules[].spec.client_name_matcher",
+          "spec.rule_list.rules[].spec.client_selector",
+          "spec.rule_list.rules[].spec.ip_threat_category_list",
+        ],
+      },
+      {
+        choiceField: "dst_asn_choice",
+        fieldPath: "spec.rule_list.rules[].spec.dst_asn_choice",
+        options: [],
+      },
+      {
+        choiceField: "dst_ip_choice",
+        fieldPath: "spec.rule_list.rules[].spec.dst_ip_choice",
+        options: [],
+      },
+      {
+        choiceField: "ip_choice",
+        fieldPath: "spec.rule_list.rules[].spec.ip_choice",
+        options: [
+          "spec.rule_list.rules[].spec.any_ip",
+          "spec.rule_list.rules[].spec.ip_matcher",
+          "spec.rule_list.rules[].spec.ip_prefix_list",
+        ],
+      },
+      {
+        choiceField: "tls_fingerprint_choice",
+        fieldPath: "spec.rule_list.rules[].spec.tls_fingerprint_choice",
+        options: [
+          "spec.rule_list.rules[].spec.ja4_tls_fingerprint",
+          "spec.rule_list.rules[].spec.tls_fingerprint_matcher",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.rule_list.rules[].spec.arg_matchers[].match",
+        options: [
+          "spec.rule_list.rules[].spec.arg_matchers[].check_not_present",
+          "spec.rule_list.rules[].spec.arg_matchers[].check_present",
+          "spec.rule_list.rules[].spec.arg_matchers[].item",
+        ],
+      },
+      {
+        choiceField: "action_type",
+        fieldPath: "spec.rule_list.rules[].spec.bot_action.action_type",
+        options: [
+          "spec.rule_list.rules[].spec.bot_action.bot_skip_processing",
+          "spec.rule_list.rules[].spec.bot_action.none",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.rule_list.rules[].spec.cookie_matchers[].match",
+        options: [
+          "spec.rule_list.rules[].spec.cookie_matchers[].check_not_present",
+          "spec.rule_list.rules[].spec.cookie_matchers[].check_present",
+          "spec.rule_list.rules[].spec.cookie_matchers[].item",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.rule_list.rules[].spec.headers[].match",
+        options: [
+          "spec.rule_list.rules[].spec.headers[].check_not_present",
+          "spec.rule_list.rules[].spec.headers[].check_present",
+          "spec.rule_list.rules[].spec.headers[].item",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.rule_list.rules[].spec.jwt_claims[].match",
+        options: [
+          "spec.rule_list.rules[].spec.jwt_claims[].check_not_present",
+          "spec.rule_list.rules[].spec.jwt_claims[].check_present",
+          "spec.rule_list.rules[].spec.jwt_claims[].item",
+        ],
+      },
+      {
+        choiceField: "action_type",
+        fieldPath: "spec.rule_list.rules[].spec.mum_action.action_type",
+        options: [
+          "spec.rule_list.rules[].spec.mum_action.default",
+          "spec.rule_list.rules[].spec.mum_action.skip_processing",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.rule_list.rules[].spec.query_params[].match",
+        options: [
+          "spec.rule_list.rules[].spec.query_params[].check_not_present",
+          "spec.rule_list.rules[].spec.query_params[].check_present",
+          "spec.rule_list.rules[].spec.query_params[].item",
+        ],
+      },
+      {
+        choiceField: "max_cookie_count_choice",
+        fieldPath: "spec.rule_list.rules[].spec.request_constraints.max_cookie_count_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_cookie_count_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_cookie_count_none",
+        ],
+      },
+      {
+        choiceField: "max_cookie_key_size_choice",
+        fieldPath: "spec.rule_list.rules[].spec.request_constraints.max_cookie_key_size_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_cookie_key_size_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_cookie_key_size_none",
+        ],
+      },
+      {
+        choiceField: "max_cookie_value_size_choice",
+        fieldPath: "spec.rule_list.rules[].spec.request_constraints.max_cookie_value_size_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_cookie_value_size_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_cookie_value_size_none",
+        ],
+      },
+      {
+        choiceField: "max_header_count_choice",
+        fieldPath: "spec.rule_list.rules[].spec.request_constraints.max_header_count_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_header_count_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_header_count_none",
+        ],
+      },
+      {
+        choiceField: "max_header_key_size_choice",
+        fieldPath: "spec.rule_list.rules[].spec.request_constraints.max_header_key_size_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_header_key_size_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_header_key_size_none",
+        ],
+      },
+      {
+        choiceField: "max_header_value_size_choice",
+        fieldPath: "spec.rule_list.rules[].spec.request_constraints.max_header_value_size_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_header_value_size_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_header_value_size_none",
+        ],
+      },
+      {
+        choiceField: "max_parameter_count_choice",
+        fieldPath: "spec.rule_list.rules[].spec.request_constraints.max_parameter_count_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_parameter_count_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_parameter_count_none",
+        ],
+      },
+      {
+        choiceField: "max_parameter_name_size_choice",
+        fieldPath: "spec.rule_list.rules[].spec.request_constraints.max_parameter_name_size_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_parameter_name_size_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_parameter_name_size_none",
+        ],
+      },
+      {
+        choiceField: "max_parameter_value_size_choice",
+        fieldPath:
+          "spec.rule_list.rules[].spec.request_constraints.max_parameter_value_size_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_parameter_value_size_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_parameter_value_size_none",
+        ],
+      },
+      {
+        choiceField: "max_query_size_choice",
+        fieldPath: "spec.rule_list.rules[].spec.request_constraints.max_query_size_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_query_size_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_query_size_none",
+        ],
+      },
+      {
+        choiceField: "max_request_line_size_choice",
+        fieldPath: "spec.rule_list.rules[].spec.request_constraints.max_request_line_size_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_request_line_size_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_request_line_size_none",
+        ],
+      },
+      {
+        choiceField: "max_request_size_choice",
+        fieldPath: "spec.rule_list.rules[].spec.request_constraints.max_request_size_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_request_size_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_request_size_none",
+        ],
+      },
+      {
+        choiceField: "max_url_size_choice",
+        fieldPath: "spec.rule_list.rules[].spec.request_constraints.max_url_size_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_url_size_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_url_size_none",
+        ],
+      },
+      {
+        choiceField: "dst_segment_choice",
+        fieldPath: "spec.rule_list.rules[].spec.segment_policy.dst_segment_choice",
+        options: [
+          "spec.rule_list.rules[].spec.segment_policy.dst_any",
+          "spec.rule_list.rules[].spec.segment_policy.dst_segments",
+          "spec.rule_list.rules[].spec.segment_policy.intra_segment",
+        ],
+      },
+      {
+        choiceField: "src_segment_choice",
+        fieldPath: "spec.rule_list.rules[].spec.segment_policy.src_segment_choice",
+        options: [
+          "spec.rule_list.rules[].spec.segment_policy.src_any",
+          "spec.rule_list.rules[].spec.segment_policy.src_segments",
+        ],
+      },
+      {
+        choiceField: "action_type",
+        fieldPath: "spec.rule_list.rules[].spec.waf_action.action_type",
+        options: [
+          "spec.rule_list.rules[].spec.waf_action.app_firewall_detection_control",
+          "spec.rule_list.rules[].spec.waf_action.none",
+          "spec.rule_list.rules[].spec.waf_action.waf_skip_processing",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -4929,7 +14696,247 @@ export const virtualTools: ParsedOperation[] = [
         resourceType: "viewstcp-loadbalancer-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "advertise_choice",
+        fieldPath: "spec.advertise_choice",
+        options: [
+          "spec.advertise_custom",
+          "spec.advertise_on_public",
+          "spec.advertise_on_public_default_vip",
+          "spec.do_not_advertise",
+        ],
+      },
+      {
+        choiceField: "cluster_retract_choice",
+        fieldPath: "spec.cluster_retract_choice",
+        options: ["spec.do_not_retract_cluster", "spec.retract_cluster"],
+      },
+      {
+        choiceField: "hash_policy_choice",
+        fieldPath: "spec.hash_policy_choice",
+        options: [
+          "spec.hash_policy_choice_least_active",
+          "spec.hash_policy_choice_random",
+          "spec.hash_policy_choice_round_robin",
+          "spec.hash_policy_choice_source_ip_stickiness",
+        ],
+      },
+      {
+        choiceField: "loadbalancer_type",
+        fieldPath: "spec.loadbalancer_type",
+        options: ["spec.tcp", "spec.tls_tcp", "spec.tls_tcp_auto_cert"],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.port_choice",
+        options: ["spec.listen_port", "spec.port_ranges"],
+      },
+      {
+        choiceField: "service_policy_choice",
+        fieldPath: "spec.service_policy_choice",
+        options: [
+          "spec.active_service_policies",
+          "spec.no_service_policies",
+          "spec.service_policies_from_namespace",
+        ],
+      },
+      {
+        choiceField: "sni_default_lb_choice",
+        fieldPath: "spec.sni_default_lb_choice",
+        options: ["spec.default_lb_with_sni", "spec.no_sni", "spec.sni"],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.advertise_custom.advertise_where[].choice",
+        options: [
+          "spec.advertise_custom.advertise_where[].advertise_on_public",
+          "spec.advertise_custom.advertise_where[].cloud_edge_segment",
+          "spec.advertise_custom.advertise_where[].segment",
+          "spec.advertise_custom.advertise_where[].site",
+          "spec.advertise_custom.advertise_where[].site_segment",
+          "spec.advertise_custom.advertise_where[].virtual_network",
+          "spec.advertise_custom.advertise_where[].virtual_site",
+          "spec.advertise_custom.advertise_where[].virtual_site_segment",
+          "spec.advertise_custom.advertise_where[].virtual_site_with_vip",
+          "spec.advertise_custom.advertise_where[].vk8s_service",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.advertise_custom.advertise_where[].port_choice",
+        options: [
+          "spec.advertise_custom.advertise_where[].port",
+          "spec.advertise_custom.advertise_where[].port_ranges",
+          "spec.advertise_custom.advertise_where[].use_default_port",
+        ],
+      },
+      {
+        choiceField: "v6_vip_choice",
+        fieldPath: "spec.advertise_custom.advertise_where[].virtual_network.v6_vip_choice",
+        options: [
+          "spec.advertise_custom.advertise_where[].virtual_network.default_v6_vip",
+          "spec.advertise_custom.advertise_where[].virtual_network.specific_v6_vip",
+        ],
+      },
+      {
+        choiceField: "vip_choice",
+        fieldPath: "spec.advertise_custom.advertise_where[].virtual_network.vip_choice",
+        options: [
+          "spec.advertise_custom.advertise_where[].virtual_network.default_vip",
+          "spec.advertise_custom.advertise_where[].virtual_network.specific_vip",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.advertise_custom.advertise_where[].vk8s_service.choice",
+        options: [
+          "spec.advertise_custom.advertise_where[].vk8s_service.site",
+          "spec.advertise_custom.advertise_where[].vk8s_service.virtual_site",
+        ],
+      },
+      {
+        choiceField: "pool_choice",
+        fieldPath: "spec.origin_pools_weights[].pool_choice",
+        options: ["spec.origin_pools_weights[].cluster", "spec.origin_pools_weights[].pool"],
+      },
+      {
+        choiceField: "tls_certificates_choice",
+        fieldPath: "spec.tls_tcp.tls_certificates_choice",
+        options: ["spec.tls_tcp.tls_cert_params", "spec.tls_tcp.tls_parameters"],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath: "spec.tls_tcp.tls_cert_params.mtls_choice",
+        options: ["spec.tls_tcp.tls_cert_params.no_mtls", "spec.tls_tcp.tls_cert_params.use_mtls"],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.tls_tcp.tls_cert_params.tls_config.choice",
+        options: [
+          "spec.tls_tcp.tls_cert_params.tls_config.custom_security",
+          "spec.tls_tcp.tls_cert_params.tls_config.default_security",
+          "spec.tls_tcp.tls_cert_params.tls_config.low_security",
+          "spec.tls_tcp.tls_cert_params.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath: "spec.tls_tcp.tls_cert_params.use_mtls.crl_choice",
+        options: [
+          "spec.tls_tcp.tls_cert_params.use_mtls.crl",
+          "spec.tls_tcp.tls_cert_params.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath: "spec.tls_tcp.tls_cert_params.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.tls_tcp.tls_cert_params.use_mtls.trusted_ca",
+          "spec.tls_tcp.tls_cert_params.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath: "spec.tls_tcp.tls_cert_params.use_mtls.xfcc_header",
+        options: [
+          "spec.tls_tcp.tls_cert_params.use_mtls.xfcc_disabled",
+          "spec.tls_tcp.tls_cert_params.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath: "spec.tls_tcp.tls_parameters.mtls_choice",
+        options: ["spec.tls_tcp.tls_parameters.no_mtls", "spec.tls_tcp.tls_parameters.use_mtls"],
+      },
+      {
+        choiceField: "ocsp_stapling_choice",
+        fieldPath: "spec.tls_tcp.tls_parameters.tls_certificates[].ocsp_stapling_choice",
+        options: [
+          "spec.tls_tcp.tls_parameters.tls_certificates[].custom_hash_algorithms",
+          "spec.tls_tcp.tls_parameters.tls_certificates[].disable_ocsp_stapling",
+          "spec.tls_tcp.tls_parameters.tls_certificates[].use_system_defaults",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.tls_tcp.tls_parameters.tls_certificates[].private_key.secret_info_oneof",
+        options: [
+          "spec.tls_tcp.tls_parameters.tls_certificates[].private_key.blindfold_secret_info",
+          "spec.tls_tcp.tls_parameters.tls_certificates[].private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.tls_tcp.tls_parameters.tls_config.choice",
+        options: [
+          "spec.tls_tcp.tls_parameters.tls_config.custom_security",
+          "spec.tls_tcp.tls_parameters.tls_config.default_security",
+          "spec.tls_tcp.tls_parameters.tls_config.low_security",
+          "spec.tls_tcp.tls_parameters.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath: "spec.tls_tcp.tls_parameters.use_mtls.crl_choice",
+        options: [
+          "spec.tls_tcp.tls_parameters.use_mtls.crl",
+          "spec.tls_tcp.tls_parameters.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath: "spec.tls_tcp.tls_parameters.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.tls_tcp.tls_parameters.use_mtls.trusted_ca",
+          "spec.tls_tcp.tls_parameters.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath: "spec.tls_tcp.tls_parameters.use_mtls.xfcc_header",
+        options: [
+          "spec.tls_tcp.tls_parameters.use_mtls.xfcc_disabled",
+          "spec.tls_tcp.tls_parameters.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath: "spec.tls_tcp_auto_cert.mtls_choice",
+        options: ["spec.tls_tcp_auto_cert.no_mtls", "spec.tls_tcp_auto_cert.use_mtls"],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.tls_tcp_auto_cert.tls_config.choice",
+        options: [
+          "spec.tls_tcp_auto_cert.tls_config.custom_security",
+          "spec.tls_tcp_auto_cert.tls_config.default_security",
+          "spec.tls_tcp_auto_cert.tls_config.low_security",
+          "spec.tls_tcp_auto_cert.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath: "spec.tls_tcp_auto_cert.use_mtls.crl_choice",
+        options: ["spec.tls_tcp_auto_cert.use_mtls.crl", "spec.tls_tcp_auto_cert.use_mtls.no_crl"],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath: "spec.tls_tcp_auto_cert.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.tls_tcp_auto_cert.use_mtls.trusted_ca",
+          "spec.tls_tcp_auto_cert.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath: "spec.tls_tcp_auto_cert.use_mtls.xfcc_header",
+        options: [
+          "spec.tls_tcp_auto_cert.use_mtls.xfcc_disabled",
+          "spec.tls_tcp_auto_cert.use_mtls.xfcc_options",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -5224,7 +15231,247 @@ export const virtualTools: ParsedOperation[] = [
         resourceType: "viewstcp-loadbalancer-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "advertise_choice",
+        fieldPath: "spec.advertise_choice",
+        options: [
+          "spec.advertise_custom",
+          "spec.advertise_on_public",
+          "spec.advertise_on_public_default_vip",
+          "spec.do_not_advertise",
+        ],
+      },
+      {
+        choiceField: "cluster_retract_choice",
+        fieldPath: "spec.cluster_retract_choice",
+        options: ["spec.do_not_retract_cluster", "spec.retract_cluster"],
+      },
+      {
+        choiceField: "hash_policy_choice",
+        fieldPath: "spec.hash_policy_choice",
+        options: [
+          "spec.hash_policy_choice_least_active",
+          "spec.hash_policy_choice_random",
+          "spec.hash_policy_choice_round_robin",
+          "spec.hash_policy_choice_source_ip_stickiness",
+        ],
+      },
+      {
+        choiceField: "loadbalancer_type",
+        fieldPath: "spec.loadbalancer_type",
+        options: ["spec.tcp", "spec.tls_tcp", "spec.tls_tcp_auto_cert"],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.port_choice",
+        options: ["spec.listen_port", "spec.port_ranges"],
+      },
+      {
+        choiceField: "service_policy_choice",
+        fieldPath: "spec.service_policy_choice",
+        options: [
+          "spec.active_service_policies",
+          "spec.no_service_policies",
+          "spec.service_policies_from_namespace",
+        ],
+      },
+      {
+        choiceField: "sni_default_lb_choice",
+        fieldPath: "spec.sni_default_lb_choice",
+        options: ["spec.default_lb_with_sni", "spec.no_sni", "spec.sni"],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.advertise_custom.advertise_where[].choice",
+        options: [
+          "spec.advertise_custom.advertise_where[].advertise_on_public",
+          "spec.advertise_custom.advertise_where[].cloud_edge_segment",
+          "spec.advertise_custom.advertise_where[].segment",
+          "spec.advertise_custom.advertise_where[].site",
+          "spec.advertise_custom.advertise_where[].site_segment",
+          "spec.advertise_custom.advertise_where[].virtual_network",
+          "spec.advertise_custom.advertise_where[].virtual_site",
+          "spec.advertise_custom.advertise_where[].virtual_site_segment",
+          "spec.advertise_custom.advertise_where[].virtual_site_with_vip",
+          "spec.advertise_custom.advertise_where[].vk8s_service",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.advertise_custom.advertise_where[].port_choice",
+        options: [
+          "spec.advertise_custom.advertise_where[].port",
+          "spec.advertise_custom.advertise_where[].port_ranges",
+          "spec.advertise_custom.advertise_where[].use_default_port",
+        ],
+      },
+      {
+        choiceField: "v6_vip_choice",
+        fieldPath: "spec.advertise_custom.advertise_where[].virtual_network.v6_vip_choice",
+        options: [
+          "spec.advertise_custom.advertise_where[].virtual_network.default_v6_vip",
+          "spec.advertise_custom.advertise_where[].virtual_network.specific_v6_vip",
+        ],
+      },
+      {
+        choiceField: "vip_choice",
+        fieldPath: "spec.advertise_custom.advertise_where[].virtual_network.vip_choice",
+        options: [
+          "spec.advertise_custom.advertise_where[].virtual_network.default_vip",
+          "spec.advertise_custom.advertise_where[].virtual_network.specific_vip",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.advertise_custom.advertise_where[].vk8s_service.choice",
+        options: [
+          "spec.advertise_custom.advertise_where[].vk8s_service.site",
+          "spec.advertise_custom.advertise_where[].vk8s_service.virtual_site",
+        ],
+      },
+      {
+        choiceField: "pool_choice",
+        fieldPath: "spec.origin_pools_weights[].pool_choice",
+        options: ["spec.origin_pools_weights[].cluster", "spec.origin_pools_weights[].pool"],
+      },
+      {
+        choiceField: "tls_certificates_choice",
+        fieldPath: "spec.tls_tcp.tls_certificates_choice",
+        options: ["spec.tls_tcp.tls_cert_params", "spec.tls_tcp.tls_parameters"],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath: "spec.tls_tcp.tls_cert_params.mtls_choice",
+        options: ["spec.tls_tcp.tls_cert_params.no_mtls", "spec.tls_tcp.tls_cert_params.use_mtls"],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.tls_tcp.tls_cert_params.tls_config.choice",
+        options: [
+          "spec.tls_tcp.tls_cert_params.tls_config.custom_security",
+          "spec.tls_tcp.tls_cert_params.tls_config.default_security",
+          "spec.tls_tcp.tls_cert_params.tls_config.low_security",
+          "spec.tls_tcp.tls_cert_params.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath: "spec.tls_tcp.tls_cert_params.use_mtls.crl_choice",
+        options: [
+          "spec.tls_tcp.tls_cert_params.use_mtls.crl",
+          "spec.tls_tcp.tls_cert_params.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath: "spec.tls_tcp.tls_cert_params.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.tls_tcp.tls_cert_params.use_mtls.trusted_ca",
+          "spec.tls_tcp.tls_cert_params.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath: "spec.tls_tcp.tls_cert_params.use_mtls.xfcc_header",
+        options: [
+          "spec.tls_tcp.tls_cert_params.use_mtls.xfcc_disabled",
+          "spec.tls_tcp.tls_cert_params.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath: "spec.tls_tcp.tls_parameters.mtls_choice",
+        options: ["spec.tls_tcp.tls_parameters.no_mtls", "spec.tls_tcp.tls_parameters.use_mtls"],
+      },
+      {
+        choiceField: "ocsp_stapling_choice",
+        fieldPath: "spec.tls_tcp.tls_parameters.tls_certificates[].ocsp_stapling_choice",
+        options: [
+          "spec.tls_tcp.tls_parameters.tls_certificates[].custom_hash_algorithms",
+          "spec.tls_tcp.tls_parameters.tls_certificates[].disable_ocsp_stapling",
+          "spec.tls_tcp.tls_parameters.tls_certificates[].use_system_defaults",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.tls_tcp.tls_parameters.tls_certificates[].private_key.secret_info_oneof",
+        options: [
+          "spec.tls_tcp.tls_parameters.tls_certificates[].private_key.blindfold_secret_info",
+          "spec.tls_tcp.tls_parameters.tls_certificates[].private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.tls_tcp.tls_parameters.tls_config.choice",
+        options: [
+          "spec.tls_tcp.tls_parameters.tls_config.custom_security",
+          "spec.tls_tcp.tls_parameters.tls_config.default_security",
+          "spec.tls_tcp.tls_parameters.tls_config.low_security",
+          "spec.tls_tcp.tls_parameters.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath: "spec.tls_tcp.tls_parameters.use_mtls.crl_choice",
+        options: [
+          "spec.tls_tcp.tls_parameters.use_mtls.crl",
+          "spec.tls_tcp.tls_parameters.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath: "spec.tls_tcp.tls_parameters.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.tls_tcp.tls_parameters.use_mtls.trusted_ca",
+          "spec.tls_tcp.tls_parameters.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath: "spec.tls_tcp.tls_parameters.use_mtls.xfcc_header",
+        options: [
+          "spec.tls_tcp.tls_parameters.use_mtls.xfcc_disabled",
+          "spec.tls_tcp.tls_parameters.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath: "spec.tls_tcp_auto_cert.mtls_choice",
+        options: ["spec.tls_tcp_auto_cert.no_mtls", "spec.tls_tcp_auto_cert.use_mtls"],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.tls_tcp_auto_cert.tls_config.choice",
+        options: [
+          "spec.tls_tcp_auto_cert.tls_config.custom_security",
+          "spec.tls_tcp_auto_cert.tls_config.default_security",
+          "spec.tls_tcp_auto_cert.tls_config.low_security",
+          "spec.tls_tcp_auto_cert.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath: "spec.tls_tcp_auto_cert.use_mtls.crl_choice",
+        options: ["spec.tls_tcp_auto_cert.use_mtls.crl", "spec.tls_tcp_auto_cert.use_mtls.no_crl"],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath: "spec.tls_tcp_auto_cert.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.tls_tcp_auto_cert.use_mtls.trusted_ca",
+          "spec.tls_tcp_auto_cert.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath: "spec.tls_tcp_auto_cert.use_mtls.xfcc_header",
+        options: [
+          "spec.tls_tcp_auto_cert.use_mtls.xfcc_disabled",
+          "spec.tls_tcp_auto_cert.use_mtls.xfcc_options",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -5412,7 +15659,96 @@ export const virtualTools: ParsedOperation[] = [
         resourceType: "viewsudp-loadbalancer-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "advertise_choice",
+        fieldPath: "spec.advertise_choice",
+        options: [
+          "spec.advertise_custom",
+          "spec.advertise_on_public",
+          "spec.advertise_on_public_default_vip",
+          "spec.do_not_advertise",
+        ],
+      },
+      {
+        choiceField: "cluster_retract_choice",
+        fieldPath: "spec.cluster_retract_choice",
+        options: [],
+      },
+      {
+        choiceField: "hash_policy_choice",
+        fieldPath: "spec.hash_policy_choice",
+        options: [
+          "spec.hash_policy_choice_random",
+          "spec.hash_policy_choice_round_robin",
+          "spec.hash_policy_choice_source_ip_stickiness",
+        ],
+      },
+      {
+        choiceField: "loadbalancer_type",
+        fieldPath: "spec.loadbalancer_type",
+        options: ["spec.udp"],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.port_choice",
+        options: ["spec.listen_port", "spec.port_ranges"],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.advertise_custom.advertise_where[].choice",
+        options: [
+          "spec.advertise_custom.advertise_where[].advertise_on_public",
+          "spec.advertise_custom.advertise_where[].cloud_edge_segment",
+          "spec.advertise_custom.advertise_where[].segment",
+          "spec.advertise_custom.advertise_where[].site",
+          "spec.advertise_custom.advertise_where[].site_segment",
+          "spec.advertise_custom.advertise_where[].virtual_network",
+          "spec.advertise_custom.advertise_where[].virtual_site",
+          "spec.advertise_custom.advertise_where[].virtual_site_segment",
+          "spec.advertise_custom.advertise_where[].virtual_site_with_vip",
+          "spec.advertise_custom.advertise_where[].vk8s_service",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.advertise_custom.advertise_where[].port_choice",
+        options: [
+          "spec.advertise_custom.advertise_where[].port",
+          "spec.advertise_custom.advertise_where[].port_ranges",
+          "spec.advertise_custom.advertise_where[].use_default_port",
+        ],
+      },
+      {
+        choiceField: "v6_vip_choice",
+        fieldPath: "spec.advertise_custom.advertise_where[].virtual_network.v6_vip_choice",
+        options: [
+          "spec.advertise_custom.advertise_where[].virtual_network.default_v6_vip",
+          "spec.advertise_custom.advertise_where[].virtual_network.specific_v6_vip",
+        ],
+      },
+      {
+        choiceField: "vip_choice",
+        fieldPath: "spec.advertise_custom.advertise_where[].virtual_network.vip_choice",
+        options: [
+          "spec.advertise_custom.advertise_where[].virtual_network.default_vip",
+          "spec.advertise_custom.advertise_where[].virtual_network.specific_vip",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.advertise_custom.advertise_where[].vk8s_service.choice",
+        options: [
+          "spec.advertise_custom.advertise_where[].vk8s_service.site",
+          "spec.advertise_custom.advertise_where[].vk8s_service.virtual_site",
+        ],
+      },
+      {
+        choiceField: "pool_choice",
+        fieldPath: "spec.origin_pools_weights[].pool_choice",
+        options: ["spec.origin_pools_weights[].cluster", "spec.origin_pools_weights[].pool"],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -5707,7 +16043,96 @@ export const virtualTools: ParsedOperation[] = [
         resourceType: "viewsudp-loadbalancer-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "advertise_choice",
+        fieldPath: "spec.advertise_choice",
+        options: [
+          "spec.advertise_custom",
+          "spec.advertise_on_public",
+          "spec.advertise_on_public_default_vip",
+          "spec.do_not_advertise",
+        ],
+      },
+      {
+        choiceField: "cluster_retract_choice",
+        fieldPath: "spec.cluster_retract_choice",
+        options: [],
+      },
+      {
+        choiceField: "hash_policy_choice",
+        fieldPath: "spec.hash_policy_choice",
+        options: [
+          "spec.hash_policy_choice_random",
+          "spec.hash_policy_choice_round_robin",
+          "spec.hash_policy_choice_source_ip_stickiness",
+        ],
+      },
+      {
+        choiceField: "loadbalancer_type",
+        fieldPath: "spec.loadbalancer_type",
+        options: ["spec.udp"],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.port_choice",
+        options: ["spec.listen_port", "spec.port_ranges"],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.advertise_custom.advertise_where[].choice",
+        options: [
+          "spec.advertise_custom.advertise_where[].advertise_on_public",
+          "spec.advertise_custom.advertise_where[].cloud_edge_segment",
+          "spec.advertise_custom.advertise_where[].segment",
+          "spec.advertise_custom.advertise_where[].site",
+          "spec.advertise_custom.advertise_where[].site_segment",
+          "spec.advertise_custom.advertise_where[].virtual_network",
+          "spec.advertise_custom.advertise_where[].virtual_site",
+          "spec.advertise_custom.advertise_where[].virtual_site_segment",
+          "spec.advertise_custom.advertise_where[].virtual_site_with_vip",
+          "spec.advertise_custom.advertise_where[].vk8s_service",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.advertise_custom.advertise_where[].port_choice",
+        options: [
+          "spec.advertise_custom.advertise_where[].port",
+          "spec.advertise_custom.advertise_where[].port_ranges",
+          "spec.advertise_custom.advertise_where[].use_default_port",
+        ],
+      },
+      {
+        choiceField: "v6_vip_choice",
+        fieldPath: "spec.advertise_custom.advertise_where[].virtual_network.v6_vip_choice",
+        options: [
+          "spec.advertise_custom.advertise_where[].virtual_network.default_v6_vip",
+          "spec.advertise_custom.advertise_where[].virtual_network.specific_v6_vip",
+        ],
+      },
+      {
+        choiceField: "vip_choice",
+        fieldPath: "spec.advertise_custom.advertise_where[].virtual_network.vip_choice",
+        options: [
+          "spec.advertise_custom.advertise_where[].virtual_network.default_vip",
+          "spec.advertise_custom.advertise_where[].virtual_network.specific_vip",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.advertise_custom.advertise_where[].vk8s_service.choice",
+        options: [
+          "spec.advertise_custom.advertise_where[].vk8s_service.site",
+          "spec.advertise_custom.advertise_where[].vk8s_service.virtual_site",
+        ],
+      },
+      {
+        choiceField: "pool_choice",
+        fieldPath: "spec.origin_pools_weights[].pool_choice",
+        options: ["spec.origin_pools_weights[].cluster", "spec.origin_pools_weights[].pool"],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -6041,7 +16466,322 @@ export const virtualTools: ParsedOperation[] = [
         resourceType: "schemavirtual-host-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "authentication_choice",
+        fieldPath: "spec.authentication_choice",
+        options: ["spec.authentication", "spec.no_authentication"],
+      },
+      {
+        choiceField: "challenge_type",
+        fieldPath: "spec.challenge_type",
+        options: ["spec.captcha_challenge", "spec.js_challenge", "spec.no_challenge"],
+      },
+      {
+        choiceField: "default_lb_choice",
+        fieldPath: "spec.default_lb_choice",
+        options: ["spec.default_loadbalancer", "spec.non_default_loadbalancer"],
+      },
+      {
+        choiceField: "path_normalize_choice",
+        fieldPath: "spec.path_normalize_choice",
+        options: ["spec.disable_path_normalize", "spec.enable_path_normalize"],
+      },
+      {
+        choiceField: "server_header_choice",
+        fieldPath: "spec.server_header_choice",
+        options: [
+          "spec.append_server_name",
+          "spec.default_header",
+          "spec.pass_through",
+          "spec.server_name",
+        ],
+      },
+      {
+        choiceField: "strict_sni_host_header_check_choice",
+        fieldPath: "spec.strict_sni_host_header_check_choice",
+        options: [],
+      },
+      {
+        choiceField: "tls_certificates_choice",
+        fieldPath: "spec.tls_certificates_choice",
+        options: ["spec.tls_cert_params", "spec.tls_parameters"],
+      },
+      {
+        choiceField: "cookie_params_choice",
+        fieldPath: "spec.authentication.cookie_params_choice",
+        options: [
+          "spec.authentication.cookie_params",
+          "spec.authentication.use_auth_object_config",
+        ],
+      },
+      {
+        choiceField: "redirect_url_choice",
+        fieldPath: "spec.authentication.redirect_url_choice",
+        options: ["spec.authentication.redirect_dynamic", "spec.authentication.redirect_url"],
+      },
+      {
+        choiceField: "secret_choice",
+        fieldPath: "spec.authentication.cookie_params.secret_choice",
+        options: [
+          "spec.authentication.cookie_params.auth_hmac",
+          "spec.authentication.cookie_params.kms_key_hmac",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.authentication.cookie_params.auth_hmac.prim_key.secret_info_oneof",
+        options: [
+          "spec.authentication.cookie_params.auth_hmac.prim_key.blindfold_secret_info",
+          "spec.authentication.cookie_params.auth_hmac.prim_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.authentication.cookie_params.auth_hmac.sec_key.secret_info_oneof",
+        options: [
+          "spec.authentication.cookie_params.auth_hmac.sec_key.blindfold_secret_info",
+          "spec.authentication.cookie_params.auth_hmac.sec_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "coalescing_choice",
+        fieldPath: "spec.coalescing_options.coalescing_choice",
+        options: [
+          "spec.coalescing_options.default_coalescing",
+          "spec.coalescing_options.strict_coalescing",
+        ],
+      },
+      {
+        choiceField: "allowed_domains",
+        fieldPath: "spec.csrf_policy.allowed_domains",
+        options: [
+          "spec.csrf_policy.all_load_balancer_domains",
+          "spec.csrf_policy.custom_domain_list",
+          "spec.csrf_policy.disabled",
+        ],
+      },
+      {
+        choiceField: "http_protocol_choice",
+        fieldPath: "spec.http_protocol_options.http_protocol_choice",
+        options: [
+          "spec.http_protocol_options.http_protocol_enable_v1_only",
+          "spec.http_protocol_options.http_protocol_enable_v1_v2",
+          "spec.http_protocol_options.http_protocol_enable_v2_only",
+        ],
+      },
+      {
+        choiceField: "header_transformation_choice",
+        fieldPath:
+          "spec.http_protocol_options.http_protocol_enable_v1_only.header_transformation.header_transformation_choice",
+        options: [
+          "spec.http_protocol_options.http_protocol_enable_v1_only.header_transformation.default_header_transformation",
+          "spec.http_protocol_options.http_protocol_enable_v1_only.header_transformation.legacy_header_transformation",
+          "spec.http_protocol_options.http_protocol_enable_v1_only.header_transformation.preserve_case_header_transformation",
+          "spec.http_protocol_options.http_protocol_enable_v1_only.header_transformation.proper_case_header_transformation",
+        ],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath: "spec.request_cookies_to_add[].value_choice",
+        options: [
+          "spec.request_cookies_to_add[].secret_value",
+          "spec.request_cookies_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.request_cookies_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.request_cookies_to_add[].secret_value.blindfold_secret_info",
+          "spec.request_cookies_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath: "spec.request_headers_to_add[].value_choice",
+        options: [
+          "spec.request_headers_to_add[].secret_value",
+          "spec.request_headers_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.request_headers_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.request_headers_to_add[].secret_value.blindfold_secret_info",
+          "spec.request_headers_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.response_cookies_to_add[].domain_choice",
+        options: [
+          "spec.response_cookies_to_add[].add_domain",
+          "spec.response_cookies_to_add[].ignore_domain",
+        ],
+      },
+      {
+        choiceField: "expiry_choice",
+        fieldPath: "spec.response_cookies_to_add[].expiry_choice",
+        options: [
+          "spec.response_cookies_to_add[].add_expiry",
+          "spec.response_cookies_to_add[].ignore_expiry",
+        ],
+      },
+      {
+        choiceField: "httponly_choice",
+        fieldPath: "spec.response_cookies_to_add[].httponly_choice",
+        options: [
+          "spec.response_cookies_to_add[].add_httponly",
+          "spec.response_cookies_to_add[].ignore_httponly",
+        ],
+      },
+      {
+        choiceField: "max_age_choice",
+        fieldPath: "spec.response_cookies_to_add[].max_age_choice",
+        options: [
+          "spec.response_cookies_to_add[].ignore_max_age",
+          "spec.response_cookies_to_add[].max_age_value",
+        ],
+      },
+      {
+        choiceField: "partitioned_choice",
+        fieldPath: "spec.response_cookies_to_add[].partitioned_choice",
+        options: [
+          "spec.response_cookies_to_add[].add_partitioned",
+          "spec.response_cookies_to_add[].ignore_partitioned",
+        ],
+      },
+      {
+        choiceField: "path_choice",
+        fieldPath: "spec.response_cookies_to_add[].path_choice",
+        options: [
+          "spec.response_cookies_to_add[].add_path",
+          "spec.response_cookies_to_add[].ignore_path",
+        ],
+      },
+      {
+        choiceField: "samesite_choice",
+        fieldPath: "spec.response_cookies_to_add[].samesite_choice",
+        options: [
+          "spec.response_cookies_to_add[].ignore_samesite",
+          "spec.response_cookies_to_add[].samesite_lax",
+          "spec.response_cookies_to_add[].samesite_none",
+          "spec.response_cookies_to_add[].samesite_strict",
+        ],
+      },
+      {
+        choiceField: "secure_choice",
+        fieldPath: "spec.response_cookies_to_add[].secure_choice",
+        options: [
+          "spec.response_cookies_to_add[].add_secure",
+          "spec.response_cookies_to_add[].ignore_secure",
+        ],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath: "spec.response_cookies_to_add[].value_choice",
+        options: [
+          "spec.response_cookies_to_add[].ignore_value",
+          "spec.response_cookies_to_add[].secret_value",
+          "spec.response_cookies_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.response_cookies_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.response_cookies_to_add[].secret_value.blindfold_secret_info",
+          "spec.response_cookies_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath: "spec.response_headers_to_add[].value_choice",
+        options: [
+          "spec.response_headers_to_add[].secret_value",
+          "spec.response_headers_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.response_headers_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.response_headers_to_add[].secret_value.blindfold_secret_info",
+          "spec.response_headers_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "request_timeout_choice",
+        fieldPath: "spec.slow_ddos_mitigation.request_timeout_choice",
+        options: [
+          "spec.slow_ddos_mitigation.disable_request_timeout",
+          "spec.slow_ddos_mitigation.request_timeout",
+        ],
+      },
+      {
+        choiceField: "client_certificate_verify_choice",
+        fieldPath: "spec.tls_cert_params.client_certificate_verify_choice",
+        options: [
+          "spec.tls_cert_params.client_certificate_optional",
+          "spec.tls_cert_params.client_certificate_required",
+          "spec.tls_cert_params.no_client_certificate",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath: "spec.tls_cert_params.validation_params.trusted_ca_choice",
+        options: [
+          "spec.tls_cert_params.validation_params.trusted_ca",
+          "spec.tls_cert_params.validation_params.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "client_certificate_verify_choice",
+        fieldPath: "spec.tls_parameters.client_certificate_verify_choice",
+        options: [
+          "spec.tls_parameters.client_certificate_optional",
+          "spec.tls_parameters.client_certificate_required",
+          "spec.tls_parameters.no_client_certificate",
+        ],
+      },
+      {
+        choiceField: "ocsp_stapling_choice",
+        fieldPath: "spec.tls_parameters.common_params.tls_certificates[].ocsp_stapling_choice",
+        options: [
+          "spec.tls_parameters.common_params.tls_certificates[].custom_hash_algorithms",
+          "spec.tls_parameters.common_params.tls_certificates[].disable_ocsp_stapling",
+          "spec.tls_parameters.common_params.tls_certificates[].use_system_defaults",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.tls_parameters.common_params.tls_certificates[].private_key.secret_info_oneof",
+        options: [
+          "spec.tls_parameters.common_params.tls_certificates[].private_key.blindfold_secret_info",
+          "spec.tls_parameters.common_params.tls_certificates[].private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath: "spec.tls_parameters.common_params.validation_params.trusted_ca_choice",
+        options: [
+          "spec.tls_parameters.common_params.validation_params.trusted_ca",
+          "spec.tls_parameters.common_params.validation_params.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "ref_type",
+        fieldPath: "spec.waf_type.ref_type",
+        options: [
+          "spec.waf_type.app_firewall",
+          "spec.waf_type.disable_waf",
+          "spec.waf_type.inherit_waf",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -6336,7 +17076,322 @@ export const virtualTools: ParsedOperation[] = [
         resourceType: "schemavirtual-host-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "authentication_choice",
+        fieldPath: "spec.authentication_choice",
+        options: ["spec.authentication", "spec.no_authentication"],
+      },
+      {
+        choiceField: "challenge_type",
+        fieldPath: "spec.challenge_type",
+        options: ["spec.captcha_challenge", "spec.js_challenge", "spec.no_challenge"],
+      },
+      {
+        choiceField: "default_lb_choice",
+        fieldPath: "spec.default_lb_choice",
+        options: ["spec.default_loadbalancer", "spec.non_default_loadbalancer"],
+      },
+      {
+        choiceField: "path_normalize_choice",
+        fieldPath: "spec.path_normalize_choice",
+        options: ["spec.disable_path_normalize", "spec.enable_path_normalize"],
+      },
+      {
+        choiceField: "server_header_choice",
+        fieldPath: "spec.server_header_choice",
+        options: [
+          "spec.append_server_name",
+          "spec.default_header",
+          "spec.pass_through",
+          "spec.server_name",
+        ],
+      },
+      {
+        choiceField: "strict_sni_host_header_check_choice",
+        fieldPath: "spec.strict_sni_host_header_check_choice",
+        options: [],
+      },
+      {
+        choiceField: "tls_certificates_choice",
+        fieldPath: "spec.tls_certificates_choice",
+        options: ["spec.tls_cert_params", "spec.tls_parameters"],
+      },
+      {
+        choiceField: "cookie_params_choice",
+        fieldPath: "spec.authentication.cookie_params_choice",
+        options: [
+          "spec.authentication.cookie_params",
+          "spec.authentication.use_auth_object_config",
+        ],
+      },
+      {
+        choiceField: "redirect_url_choice",
+        fieldPath: "spec.authentication.redirect_url_choice",
+        options: ["spec.authentication.redirect_dynamic", "spec.authentication.redirect_url"],
+      },
+      {
+        choiceField: "secret_choice",
+        fieldPath: "spec.authentication.cookie_params.secret_choice",
+        options: [
+          "spec.authentication.cookie_params.auth_hmac",
+          "spec.authentication.cookie_params.kms_key_hmac",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.authentication.cookie_params.auth_hmac.prim_key.secret_info_oneof",
+        options: [
+          "spec.authentication.cookie_params.auth_hmac.prim_key.blindfold_secret_info",
+          "spec.authentication.cookie_params.auth_hmac.prim_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.authentication.cookie_params.auth_hmac.sec_key.secret_info_oneof",
+        options: [
+          "spec.authentication.cookie_params.auth_hmac.sec_key.blindfold_secret_info",
+          "spec.authentication.cookie_params.auth_hmac.sec_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "coalescing_choice",
+        fieldPath: "spec.coalescing_options.coalescing_choice",
+        options: [
+          "spec.coalescing_options.default_coalescing",
+          "spec.coalescing_options.strict_coalescing",
+        ],
+      },
+      {
+        choiceField: "allowed_domains",
+        fieldPath: "spec.csrf_policy.allowed_domains",
+        options: [
+          "spec.csrf_policy.all_load_balancer_domains",
+          "spec.csrf_policy.custom_domain_list",
+          "spec.csrf_policy.disabled",
+        ],
+      },
+      {
+        choiceField: "http_protocol_choice",
+        fieldPath: "spec.http_protocol_options.http_protocol_choice",
+        options: [
+          "spec.http_protocol_options.http_protocol_enable_v1_only",
+          "spec.http_protocol_options.http_protocol_enable_v1_v2",
+          "spec.http_protocol_options.http_protocol_enable_v2_only",
+        ],
+      },
+      {
+        choiceField: "header_transformation_choice",
+        fieldPath:
+          "spec.http_protocol_options.http_protocol_enable_v1_only.header_transformation.header_transformation_choice",
+        options: [
+          "spec.http_protocol_options.http_protocol_enable_v1_only.header_transformation.default_header_transformation",
+          "spec.http_protocol_options.http_protocol_enable_v1_only.header_transformation.legacy_header_transformation",
+          "spec.http_protocol_options.http_protocol_enable_v1_only.header_transformation.preserve_case_header_transformation",
+          "spec.http_protocol_options.http_protocol_enable_v1_only.header_transformation.proper_case_header_transformation",
+        ],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath: "spec.request_cookies_to_add[].value_choice",
+        options: [
+          "spec.request_cookies_to_add[].secret_value",
+          "spec.request_cookies_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.request_cookies_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.request_cookies_to_add[].secret_value.blindfold_secret_info",
+          "spec.request_cookies_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath: "spec.request_headers_to_add[].value_choice",
+        options: [
+          "spec.request_headers_to_add[].secret_value",
+          "spec.request_headers_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.request_headers_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.request_headers_to_add[].secret_value.blindfold_secret_info",
+          "spec.request_headers_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.response_cookies_to_add[].domain_choice",
+        options: [
+          "spec.response_cookies_to_add[].add_domain",
+          "spec.response_cookies_to_add[].ignore_domain",
+        ],
+      },
+      {
+        choiceField: "expiry_choice",
+        fieldPath: "spec.response_cookies_to_add[].expiry_choice",
+        options: [
+          "spec.response_cookies_to_add[].add_expiry",
+          "spec.response_cookies_to_add[].ignore_expiry",
+        ],
+      },
+      {
+        choiceField: "httponly_choice",
+        fieldPath: "spec.response_cookies_to_add[].httponly_choice",
+        options: [
+          "spec.response_cookies_to_add[].add_httponly",
+          "spec.response_cookies_to_add[].ignore_httponly",
+        ],
+      },
+      {
+        choiceField: "max_age_choice",
+        fieldPath: "spec.response_cookies_to_add[].max_age_choice",
+        options: [
+          "spec.response_cookies_to_add[].ignore_max_age",
+          "spec.response_cookies_to_add[].max_age_value",
+        ],
+      },
+      {
+        choiceField: "partitioned_choice",
+        fieldPath: "spec.response_cookies_to_add[].partitioned_choice",
+        options: [
+          "spec.response_cookies_to_add[].add_partitioned",
+          "spec.response_cookies_to_add[].ignore_partitioned",
+        ],
+      },
+      {
+        choiceField: "path_choice",
+        fieldPath: "spec.response_cookies_to_add[].path_choice",
+        options: [
+          "spec.response_cookies_to_add[].add_path",
+          "spec.response_cookies_to_add[].ignore_path",
+        ],
+      },
+      {
+        choiceField: "samesite_choice",
+        fieldPath: "spec.response_cookies_to_add[].samesite_choice",
+        options: [
+          "spec.response_cookies_to_add[].ignore_samesite",
+          "spec.response_cookies_to_add[].samesite_lax",
+          "spec.response_cookies_to_add[].samesite_none",
+          "spec.response_cookies_to_add[].samesite_strict",
+        ],
+      },
+      {
+        choiceField: "secure_choice",
+        fieldPath: "spec.response_cookies_to_add[].secure_choice",
+        options: [
+          "spec.response_cookies_to_add[].add_secure",
+          "spec.response_cookies_to_add[].ignore_secure",
+        ],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath: "spec.response_cookies_to_add[].value_choice",
+        options: [
+          "spec.response_cookies_to_add[].ignore_value",
+          "spec.response_cookies_to_add[].secret_value",
+          "spec.response_cookies_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.response_cookies_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.response_cookies_to_add[].secret_value.blindfold_secret_info",
+          "spec.response_cookies_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath: "spec.response_headers_to_add[].value_choice",
+        options: [
+          "spec.response_headers_to_add[].secret_value",
+          "spec.response_headers_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.response_headers_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.response_headers_to_add[].secret_value.blindfold_secret_info",
+          "spec.response_headers_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "request_timeout_choice",
+        fieldPath: "spec.slow_ddos_mitigation.request_timeout_choice",
+        options: [
+          "spec.slow_ddos_mitigation.disable_request_timeout",
+          "spec.slow_ddos_mitigation.request_timeout",
+        ],
+      },
+      {
+        choiceField: "client_certificate_verify_choice",
+        fieldPath: "spec.tls_cert_params.client_certificate_verify_choice",
+        options: [
+          "spec.tls_cert_params.client_certificate_optional",
+          "spec.tls_cert_params.client_certificate_required",
+          "spec.tls_cert_params.no_client_certificate",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath: "spec.tls_cert_params.validation_params.trusted_ca_choice",
+        options: [
+          "spec.tls_cert_params.validation_params.trusted_ca",
+          "spec.tls_cert_params.validation_params.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "client_certificate_verify_choice",
+        fieldPath: "spec.tls_parameters.client_certificate_verify_choice",
+        options: [
+          "spec.tls_parameters.client_certificate_optional",
+          "spec.tls_parameters.client_certificate_required",
+          "spec.tls_parameters.no_client_certificate",
+        ],
+      },
+      {
+        choiceField: "ocsp_stapling_choice",
+        fieldPath: "spec.tls_parameters.common_params.tls_certificates[].ocsp_stapling_choice",
+        options: [
+          "spec.tls_parameters.common_params.tls_certificates[].custom_hash_algorithms",
+          "spec.tls_parameters.common_params.tls_certificates[].disable_ocsp_stapling",
+          "spec.tls_parameters.common_params.tls_certificates[].use_system_defaults",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.tls_parameters.common_params.tls_certificates[].private_key.secret_info_oneof",
+        options: [
+          "spec.tls_parameters.common_params.tls_certificates[].private_key.blindfold_secret_info",
+          "spec.tls_parameters.common_params.tls_certificates[].private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath: "spec.tls_parameters.common_params.validation_params.trusted_ca_choice",
+        options: [
+          "spec.tls_parameters.common_params.validation_params.trusted_ca",
+          "spec.tls_parameters.common_params.validation_params.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "ref_type",
+        fieldPath: "spec.waf_type.ref_type",
+        options: [
+          "spec.waf_type.app_firewall",
+          "spec.waf_type.disable_waf",
+          "spec.waf_type.inherit_waf",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {

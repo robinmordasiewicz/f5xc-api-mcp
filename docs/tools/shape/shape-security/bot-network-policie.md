@@ -6,9 +6,6 @@ description: List All Bot Network Policies And Versions.
 
 # Bot Network Policie
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET all bot network policies and versions.
 
 ## Tools

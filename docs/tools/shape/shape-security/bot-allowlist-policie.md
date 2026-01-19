@@ -6,9 +6,6 @@ description: List All Bot Allowlist Policies And Versions.
 
 # Bot Allowlist Policie
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET all bot allowlist policies and versions.
 
 ## Tools

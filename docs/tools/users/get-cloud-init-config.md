@@ -6,9 +6,6 @@ description: GET Cloud Init Config.
 
 # Get Cloud Init Config
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Returns cloud-init counfig for kvm provider with JWT token.
 
 ## Tools

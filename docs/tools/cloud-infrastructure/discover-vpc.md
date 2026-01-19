@@ -6,9 +6,6 @@ description: Cloud Connect VPC Discovery.
 
 # Discover VPC
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Returns all the vpcs for a specified cloud provider, region and cred.
 For AWS it returns all the
 vpcs which are not attached to any transit gateway in that region.
@@ -18,14 +15,6 @@ vpcs which are not attached to any transit gateway in that region.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-cloudinfrastructure-discover-vpc-create` | Cloud Connect VPC Discovery. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- discover-vpc
 
 ## Example Usage
 

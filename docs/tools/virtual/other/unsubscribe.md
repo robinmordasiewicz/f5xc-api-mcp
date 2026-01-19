@@ -6,9 +6,6 @@ description: Unsubscribe to Malware Protection.
 
 # Unsubscribe
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Unsubscribe to Malware Protection.
 
 ## Tools
@@ -16,14 +13,6 @@ Unsubscribe to Malware Protection.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-virtual-unsubscribe-create` | Unsubscribe to Malware Protection. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- unsubscribe
 
 ## Example Usage
 

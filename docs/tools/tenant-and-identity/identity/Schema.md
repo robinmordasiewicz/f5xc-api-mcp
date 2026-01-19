@@ -6,9 +6,6 @@ description: Schemas By ID.
 
 # Schema
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Getschemabyid CustomPublicAPI.
 
 ## Tools

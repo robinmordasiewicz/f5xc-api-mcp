@@ -6,9 +6,6 @@ description: Mitigation IPs.
 
 # IP
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Returns list of IPs involved in a mitigation (and allows for searching through it)
 
 ## Tools

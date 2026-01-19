@@ -6,9 +6,6 @@ description: Pre upgrade check.
 
 # Pre Upgrade Check
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 API to check if site is ready for upgrade.
 
 ## Tools

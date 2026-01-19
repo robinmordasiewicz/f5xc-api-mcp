@@ -6,9 +6,6 @@ description: Provision
 
 # Provision
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Provision CustomAPI.
 
 ## Tools
@@ -16,14 +13,6 @@ Provision CustomAPI.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-botandthreatdefense-provision-create` | Provision |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- provision
 
 ## Example Usage
 

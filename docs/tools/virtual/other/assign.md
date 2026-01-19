@@ -6,9 +6,6 @@ description: Assign API Definition.
 
 # Assign
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Set a reference to the API Definition, with an option to create an empty one if not
 exists.
 DEPRECATED. Instead use virtual host public custom API - AssignAPIDefinition.
@@ -27,14 +24,6 @@ DEPRECATED. Instead use virtual host public custom API - AssignAPIDefinition.
 |-----------|-------------|--------|
 | `name` | Name | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- assign
 
 ## Example Usage
 

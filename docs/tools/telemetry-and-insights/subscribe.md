@@ -6,9 +6,6 @@ description: Subscribe to Flow Collection.
 
 # Subscribe
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Subscribe to Flow Collection.
 
 ## Tools
@@ -16,14 +13,6 @@ Subscribe to Flow Collection.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-telemetryandinsights-subscribe-create` | Subscribe to Flow Collection. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- subscribe
 
 ## Example Usage
 

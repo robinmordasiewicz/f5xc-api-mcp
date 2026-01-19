@@ -6,12 +6,6 @@ description: Create NGINX Service Discovery.
 
 # Nginx Service Discovery
 
-!!! danger "High Risk Operation"
-    This resource includes operations that may cause significant changes. Review carefully before executing.
-
-!!! note "Confirmation Required"
-    Some operations on this resource require explicit confirmation before execution.
-
 API to replace NGINX Service Discovery object for a site or virtual site in system namespace.
 
 ## Tools
@@ -43,23 +37,6 @@ API to replace NGINX Service Discovery object for a site or virtual site in syst
 | `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
 | `report_fields` | The report_fields parameter | `-` |
 | `report_status_fields` | The report_status_fields parameter | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- nginx-service-discovery
-
-**Modifies:**
-
-- nginx-service-discovery
-
-**Deletes:**
-
-- nginx-service-discovery
-- contained_resources
 
 ## Example Usage
 

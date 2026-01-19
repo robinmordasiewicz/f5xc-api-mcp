@@ -6,9 +6,6 @@ description: VK8s Events Query.
 
 # Vk8s Event
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Request to GET Virtual K8s events that matches the criteria in request for a given namespace.
 If no
 match conditions are specified in the request, then the response contains all
@@ -30,14 +27,6 @@ given tenant.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- vk8s-event
 
 ## Example Usage
 

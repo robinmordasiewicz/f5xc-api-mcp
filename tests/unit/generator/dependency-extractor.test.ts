@@ -329,6 +329,187 @@ describe("Dependency Extractor", () => {
 
       expect(groups).toEqual([]);
     });
+
+    it("should extract nested oneOf patterns from properties", () => {
+      const schema = {
+        properties: {
+          spec: {
+            properties: {
+              http_health_check: {
+                "x-ves-oneof-field-host_header_choice": '["host_header","use_origin_server_name"]',
+                properties: {
+                  host_header_choice: {
+                    description: "Choose how to set the host header",
+                  },
+                },
+              },
+            },
+          },
+        },
+      };
+
+      const groups = extractOneOfPatterns(schema);
+
+      expect(groups).toHaveLength(1);
+      expect(groups[0]?.choiceField).toBe("host_header_choice");
+      expect(groups[0]?.fieldPath).toBe("spec.http_health_check.host_header_choice");
+      expect(groups[0]?.options).toEqual([
+        "spec.http_health_check.host_header",
+        "spec.http_health_check.use_origin_server_name",
+      ]);
+    });
+
+    it("should extract oneOf patterns from allOf compositions", () => {
+      const schema = {
+        allOf: [
+          {
+            "x-ves-oneof-field-backend_choice": '["origin_pool","service_mesh"]',
+          },
+          {
+            properties: {
+              backend_choice: {
+                description: "Choose backend type",
+              },
+            },
+          },
+        ],
+      };
+
+      const groups = extractOneOfPatterns(schema);
+
+      expect(groups).toHaveLength(1);
+      expect(groups[0]?.choiceField).toBe("backend_choice");
+      expect(groups[0]?.options).toEqual(["origin_pool", "service_mesh"]);
+    });
+
+    it("should extract oneOf patterns at multiple nesting levels", () => {
+      const schema = {
+        "x-ves-oneof-field-top_choice": '["option1","option2"]',
+        properties: {
+          spec: {
+            "x-ves-oneof-field-spec_choice": '["spec_opt1","spec_opt2"]',
+            properties: {
+              deep: {
+                "x-ves-oneof-field-deep_choice": '["deep_opt1","deep_opt2"]',
+              },
+            },
+          },
+        },
+      };
+
+      const groups = extractOneOfPatterns(schema);
+
+      expect(groups).toHaveLength(3);
+
+      // Find each group by choiceField
+      const topGroup = groups.find((g) => g.choiceField === "top_choice");
+      const specGroup = groups.find((g) => g.choiceField === "spec_choice");
+      const deepGroup = groups.find((g) => g.choiceField === "deep_choice");
+
+      expect(topGroup).toBeDefined();
+      expect(topGroup?.fieldPath).toBe("top_choice");
+      expect(topGroup?.options).toEqual(["option1", "option2"]);
+
+      expect(specGroup).toBeDefined();
+      expect(specGroup?.fieldPath).toBe("spec.spec_choice");
+      expect(specGroup?.options).toEqual(["spec.spec_opt1", "spec.spec_opt2"]);
+
+      expect(deepGroup).toBeDefined();
+      expect(deepGroup?.fieldPath).toBe("spec.deep.deep_choice");
+      expect(deepGroup?.options).toEqual(["spec.deep.deep_opt1", "spec.deep.deep_opt2"]);
+    });
+
+    it("should build full paths for recommended options", () => {
+      const schema = {
+        properties: {
+          spec: {
+            properties: {
+              http_health_check: {
+                "x-ves-oneof-field-host_header_choice": '["host_header","use_origin_server_name"]',
+                "x-f5xc-recommended-oneof-variant-host_header_choice": "use_origin_server_name",
+                properties: {
+                  use_origin_server_name: {},
+                  host_header: {},
+                },
+              },
+            },
+          },
+        },
+      };
+
+      const groups = extractOneOfPatterns(schema);
+
+      expect(groups).toHaveLength(1);
+      expect(groups[0]?.recommendedOption).toBe("spec.http_health_check.use_origin_server_name");
+    });
+
+    it("should infer recommended option from x-f5xc-server-default with full path", () => {
+      const schema = {
+        properties: {
+          spec: {
+            properties: {
+              config: {
+                "x-ves-oneof-field-mode_choice": '["manual","automatic"]',
+                properties: {
+                  automatic: {
+                    "x-f5xc-server-default": true,
+                  },
+                  manual: {},
+                },
+              },
+            },
+          },
+        },
+      };
+
+      const groups = extractOneOfPatterns(schema);
+
+      expect(groups).toHaveLength(1);
+      expect(groups[0]?.recommendedOption).toBe("spec.config.automatic");
+    });
+
+    it("should handle depth protection for deeply nested schemas", () => {
+      // Create a schema that would exceed default max depth
+      const createDeepOneOfSchema = (depth: number): Record<string, unknown> => {
+        if (depth === 0) {
+          return {
+            "x-ves-oneof-field-deep_choice": '["opt1","opt2"]',
+          };
+        }
+        return {
+          properties: {
+            nested: createDeepOneOfSchema(depth - 1),
+          },
+        };
+      };
+
+      // Create schema at depth 25 (exceeds default maxDepth of 20)
+      const deepSchema = createDeepOneOfSchema(25);
+
+      // Should not throw, but may not extract the deeply nested pattern
+      const groups = extractOneOfPatterns(deepSchema);
+
+      // Depth protection prevents extraction beyond maxDepth
+      expect(Array.isArray(groups)).toBe(true);
+    });
+
+    it("should extract oneOf from array items", () => {
+      const schema = {
+        properties: {
+          routes: {
+            items: {
+              "x-ves-oneof-field-route_choice": '["simple","advanced"]',
+            },
+          },
+        },
+      };
+
+      const groups = extractOneOfPatterns(schema);
+
+      expect(groups).toHaveLength(1);
+      expect(groups[0]?.fieldPath).toBe("routes[].route_choice");
+      expect(groups[0]?.options).toEqual(["routes[].simple", "routes[].advanced"]);
+    });
   });
 
   describe("formatAddonDisplayName", () => {

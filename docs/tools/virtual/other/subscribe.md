@@ -6,9 +6,6 @@ description: Subscribe to Malware Protection.
 
 # Subscribe
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Subscribe to Malware Protection.
 
 ## Tools
@@ -16,14 +13,6 @@ Subscribe to Malware Protection.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-virtual-subscribe-create` | Subscribe to Malware Protection. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- subscribe
 
 ## Example Usage
 

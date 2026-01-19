@@ -6,9 +6,6 @@ description: GET Status.
 
 # Status At Site
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET status of an object in a given site.
 
 ## Tools

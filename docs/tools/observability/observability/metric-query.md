@@ -6,9 +6,6 @@ description: GET Metric Query Data.
 
 # Metric Query
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Returns time series data of monitor metric query by region.
 
 ## Tools
@@ -24,14 +21,6 @@ Returns time series data of monitor metric query by region.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- metric-query
 
 ## Example Usage
 

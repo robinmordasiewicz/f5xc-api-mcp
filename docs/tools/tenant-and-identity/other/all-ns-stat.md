@@ -6,9 +6,6 @@ description: GET API Endpoints Stats for All Namespaces.
 
 # All Ns Stat
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET API endpoints stats for all Namespaces. This API is specific to system namespace.
 
 ## Tools
@@ -16,14 +13,6 @@ GET API endpoints stats for all Namespaces. This API is specific to system names
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-tenantandidentity-all-ns-stat-create` | GET API Endpoints Stats for All Namespaces. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- all-ns-stat
 
 ## Example Usage
 

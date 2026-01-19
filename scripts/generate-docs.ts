@@ -25,6 +25,7 @@ import { basename, join, dirname } from "path";
 import { fileURLToPath } from "url";
 import YAML from "yaml";
 import type { ParsedOperation } from "../src/generator/openapi-parser.js";
+import type { OneOfGroup } from "../src/generator/dependency-types.js";
 import {
   resourceToTitle,
   getAllUsedSubcategories,
@@ -141,6 +142,8 @@ interface AggregatedMetadata {
   };
   /** Parameter examples */
   parameterExamples: Record<string, string>;
+  /** Configuration choices (oneOf groups) with recommended options (v2.0.34+) */
+  oneOfGroups: OneOfGroup[];
 }
 
 /**
@@ -248,6 +251,42 @@ function formatSideEffects(sideEffects: AggregatedMetadata["sideEffects"]): stri
     for (const item of sideEffects.deletes) {
       content += `- ${item}\n`;
     }
+    content += "\n";
+  }
+
+  return content;
+}
+
+/**
+ * Format configuration choices (oneOf groups) for markdown display (v2.0.34+)
+ */
+function formatConfigurationChoices(oneOfGroups: OneOfGroup[]): string {
+  if (oneOfGroups.length === 0) {
+    return "";
+  }
+
+  let content = "\n## Configuration Choices\n\n";
+  content += "This resource includes mutually exclusive configuration options:\n\n";
+
+  for (const group of oneOfGroups) {
+    content += `### ${group.choiceField}\n\n`;
+
+    if (group.description) {
+      content += `${group.description}\n\n`;
+    }
+
+    content += "| Option | Description | Recommended |\n|--------|-------------|-------------|\n";
+
+    for (const option of group.options) {
+      const isRecommended = group.recommendedOption === option ? "✅ Yes" : "";
+      const description = group.description || "-";
+      content += `| \`${option}\` | ${description} | ${isRecommended} |\n`;
+    }
+
+    if (group.recommendedOption) {
+      content += `\n!!! tip "Recommended Option"\n    Use \`${group.recommendedOption}\` for most use cases.\n\n`;
+    }
+
     content += "\n";
   }
 
@@ -443,6 +482,9 @@ ${generateCurlCommand(resource, "delete", categoryPath.domain)}
   // Generate side effects from enriched specs
   const sideEffectsSection = formatSideEffects(metadata.sideEffects);
 
+  // Generate configuration choices from oneOf groups (v2.0.34+)
+  const configChoicesSection = formatConfigurationChoices(metadata.oneOfGroups);
+
   // Build the full markdown with YAML lineWidth to wrap long descriptions
   const markdown = `---
 ${YAML.stringify(frontMatter, { lineWidth: 100 }).trim()}
@@ -457,7 +499,7 @@ ${dangerBadge}${confirmationWarning}${wrappedBodyDescription}
 | Tool | Description |
 |------|-------------|
 ${toolRows}
-${parametersSection}${sideEffectsSection}${exampleSection}${curlSection}`;
+${parametersSection}${configChoicesSection}${sideEffectsSection}${exampleSection}${curlSection}`;
 
   return markdown;
 }
@@ -516,6 +558,7 @@ function aggregateMetadata(tools: ParsedOperation[]): AggregatedMetadata {
   const modifies = new Set<string>();
   const deletes = new Set<string>();
   const parameterExamples: Record<string, string> = {};
+  const oneOfGroupsMap = new Map<string, OneOfGroup>();
 
   for (const tool of tools) {
     // Aggregate danger level (track all for finding max)
@@ -555,6 +598,16 @@ function aggregateMetadata(tools: ParsedOperation[]): AggregatedMetadata {
         }
       }
     }
+
+    // Aggregate oneOf groups (v2.0.34+)
+    if (tool.oneOfGroups) {
+      for (const group of tool.oneOfGroups) {
+        // Use choiceField as key to deduplicate across tools
+        if (!oneOfGroupsMap.has(group.choiceField)) {
+          oneOfGroupsMap.set(group.choiceField, group);
+        }
+      }
+    }
   }
 
   // Determine max danger level
@@ -576,6 +629,7 @@ function aggregateMetadata(tools: ParsedOperation[]): AggregatedMetadata {
       deletes: Array.from(deletes),
     },
     parameterExamples,
+    oneOfGroups: Array.from(oneOfGroupsMap.values()),
   };
 }
 

@@ -6,9 +6,6 @@ description: List current usage details.
 
 # Current Usage
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 List current usage details per tenant and namespace. Some usage have only sense in the system
 namespace and this selector has no effect on it.
 
@@ -25,14 +22,6 @@ namespace and this selector has no effect on it.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- current-usage
 
 ## Example Usage
 

@@ -6,9 +6,6 @@ description: Connectivity Edge Query.
 
 # Edge
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Request to GET Connectivity data for an edge.
 This query is used to GET time-series data for a given
 edge.
@@ -26,14 +23,6 @@ edge.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- edge
 
 ## Example Usage
 

@@ -6,9 +6,6 @@ description: GET Monitor Events.
 
 # Monitor Event
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Returns the healthy and critical events for the specified monitor.
 
 ## Tools

@@ -6,9 +6,6 @@ description: Event mitigation annotation.
 
 # Mitigation Annotation
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Return mitigation annotations that occur while an event is active.
 
 ## Tools

@@ -6,9 +6,6 @@ description: List Available API Definitions.
 
 # Available
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 List API definitions suitable for API Inventory management
 API Definitions which are associated at
 most with one app type.

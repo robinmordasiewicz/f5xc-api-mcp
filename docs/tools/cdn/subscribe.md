@@ -6,9 +6,6 @@ description: Subscribe to CDN Loadbalancer.
 
 # Subscribe
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Subscribe to CDN Loadbalancer.
 
 ## Tools
@@ -16,14 +13,6 @@ Subscribe to CDN Loadbalancer.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-cdn-subscribe-create` | Subscribe to CDN Loadbalancer. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- subscribe
 
 ## Example Usage
 

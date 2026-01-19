@@ -6,9 +6,6 @@ description: Revoke SCIM API credential.
 
 # Scim Token
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GetScimToken implements querying of scim token.
 SCIM API token value will be visible only on create
 API response.
@@ -28,14 +25,6 @@ This detail RPC will show the current token's expiry. Returns API credential obj
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- scim-token
 
 ## Example Usage
 

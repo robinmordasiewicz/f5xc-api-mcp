@@ -6,9 +6,6 @@ description: Migrate CTM child tenants.
 
 # Migrate
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Migrate ACTIVE child tenants from existing CTM to a specified new CTM.
 
 ## Tools
@@ -25,13 +22,15 @@ Migrate ACTIVE child tenants from existing CTM to a specified new CTM.
 |-----------|-------------|--------|
 | `name` | Name | `-` |
 
-## Side Effects
+## Configuration Choices
 
-Operations on this resource may have the following effects:
+This resource includes mutually exclusive configuration options:
 
-**Creates:**
+### migratectmchildtenantsreqchoice
 
-- migrate
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `ct_list_to_target_ctm` | - |  |
 
 ## Example Usage
 

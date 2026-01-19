@@ -6,9 +6,6 @@ description: GET CDN Metrics.
 
 # Metric
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Initial metrics request for CDN loadbalancers.
 
 ## Tools
@@ -24,14 +21,6 @@ Initial metrics request for CDN loadbalancers.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- metric
 
 ## Example Usage
 

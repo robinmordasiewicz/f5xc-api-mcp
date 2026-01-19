@@ -6,9 +6,6 @@ description: GetPasswordPolicy.
 
 # Password Policy
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GetPasswordPolicy returns password policy for tenant.
 
 ## Tools

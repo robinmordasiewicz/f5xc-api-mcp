@@ -6,9 +6,6 @@ description: PostSafeBlockRule.
 
 # Rule
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Edit exising block rule.
 
 ## Tools
@@ -24,14 +21,6 @@ Edit exising block rule.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- rule
 
 ## Example Usage
 

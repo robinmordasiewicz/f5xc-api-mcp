@@ -6,9 +6,6 @@ description: ListInactiveUsers.
 
 # Inactive
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Returns list of users for which no login events was found for last 90 days of time.
 It consider all
 users within current tenant.

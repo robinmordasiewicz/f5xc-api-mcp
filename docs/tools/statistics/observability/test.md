@@ -6,9 +6,6 @@ description: Test Alert Receiver.
 
 # Test
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 API to send test alert.
 
 ## Tools
@@ -25,14 +22,6 @@ API to send test alert.
 |-----------|-------------|--------|
 | `name` | Name | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- test
 
 ## Example Usage
 

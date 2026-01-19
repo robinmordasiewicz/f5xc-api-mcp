@@ -6,9 +6,6 @@ description: Preauth
 
 # Preauth
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Pre-flight auth checks before calling the Provision API.
 
 ## Tools
@@ -16,14 +13,6 @@ Pre-flight auth checks before calling the Provision API.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-botandthreatdefense-preauth-create` | Preauth |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- preauth
 
 ## Example Usage
 

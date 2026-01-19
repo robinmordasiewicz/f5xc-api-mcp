@@ -6,9 +6,6 @@ description: Update allow advertise on public.
 
 # Update Allow Advertise On Public
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 UpdateAllowAdvertiseOnPublic can update a config to allow advertise on public.
 
 ## Tools
@@ -16,14 +13,6 @@ UpdateAllowAdvertiseOnPublic can update a config to allow advertise on public.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-tenantandidentity-update-allow-advertise-on-public-create` | Update allow advertise on public. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- update-allow-advertise-on-public
 
 ## Example Usage
 

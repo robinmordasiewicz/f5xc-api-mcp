@@ -239,7 +239,16 @@ export const marketplaceTools: ParsedOperation[] = [
         resourceType: "addon-subscription-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "notification_type",
+        fieldPath: "spec.notification_preference.notification_type",
+        options: [
+          "spec.notification_preference.emails",
+          "spec.notification_preference.support_ticket_id",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -534,7 +543,16 @@ export const marketplaceTools: ParsedOperation[] = [
         resourceType: "addon-subscription-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "notification_type",
+        fieldPath: "spec.notification_preference.notification_type",
+        options: [
+          "spec.notification_preference.emails",
+          "spec.notification_preference.support_ticket_id",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -646,7 +664,18 @@ export const marketplaceTools: ParsedOperation[] = [
         resourceType: "cminstance-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.api_token.secret_info_oneof",
+        options: ["spec.api_token.blindfold_secret_info", "spec.api_token.clear_secret_info"],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.password.secret_info_oneof",
+        options: ["spec.password.blindfold_secret_info", "spec.password.clear_secret_info"],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -942,7 +971,18 @@ export const marketplaceTools: ParsedOperation[] = [
         resourceType: "cminstance-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.api_token.secret_info_oneof",
+        options: ["spec.api_token.blindfold_secret_info", "spec.api_token.clear_secret_info"],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.password.secret_info_oneof",
+        options: ["spec.password.blindfold_secret_info", "spec.password.clear_secret_info"],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -1010,7 +1050,57 @@ export const marketplaceTools: ParsedOperation[] = [
         resourceType: "external-connector-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "connection_type",
+        fieldPath: "spec.connection_type",
+        options: ["spec.ipsec"],
+      },
+      {
+        choiceField: "dpd_choice",
+        fieldPath: "spec.ipsec.ike_parameters.dpd_choice",
+        options: [
+          "spec.ipsec.ike_parameters.dpd_disabled",
+          "spec.ipsec.ike_parameters.dpd_keep_alive_timer",
+        ],
+      },
+      {
+        choiceField: "local_ike_id",
+        fieldPath: "spec.ipsec.ike_parameters.local_ike_id",
+        options: ["spec.ipsec.ike_parameters.use_default_local_ike_id"],
+      },
+      {
+        choiceField: "mode_choice",
+        fieldPath: "spec.ipsec.ike_parameters.mode_choice",
+        options: ["spec.ipsec.ike_parameters.initiator", "spec.ipsec.ike_parameters.responder"],
+      },
+      {
+        choiceField: "remote_ike_id",
+        fieldPath: "spec.ipsec.ike_parameters.remote_ike_id",
+        options: [
+          "spec.ipsec.ike_parameters.rm_hostname",
+          "spec.ipsec.ike_parameters.rm_ip_address",
+          "spec.ipsec.ike_parameters.use_default_remote_ike_id",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath: "spec.ipsec.ike_parameters.rm_ip_address.ver",
+        options: [
+          "spec.ipsec.ike_parameters.rm_ip_address.ipv4",
+          "spec.ipsec.ike_parameters.rm_ip_address.ipv6",
+        ],
+      },
+      {
+        choiceField: "tunnel_source_vn",
+        fieldPath: "spec.ipsec.ipsec_tunnel_parameters.tunnel_source_vn",
+        options: [
+          "spec.ipsec.ipsec_tunnel_parameters.segment",
+          "spec.ipsec.ipsec_tunnel_parameters.site_local_inside_network",
+          "spec.ipsec.ipsec_tunnel_parameters.site_local_network",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -1305,7 +1395,57 @@ export const marketplaceTools: ParsedOperation[] = [
         resourceType: "external-connector-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "connection_type",
+        fieldPath: "spec.connection_type",
+        options: ["spec.ipsec"],
+      },
+      {
+        choiceField: "dpd_choice",
+        fieldPath: "spec.ipsec.ike_parameters.dpd_choice",
+        options: [
+          "spec.ipsec.ike_parameters.dpd_disabled",
+          "spec.ipsec.ike_parameters.dpd_keep_alive_timer",
+        ],
+      },
+      {
+        choiceField: "local_ike_id",
+        fieldPath: "spec.ipsec.ike_parameters.local_ike_id",
+        options: ["spec.ipsec.ike_parameters.use_default_local_ike_id"],
+      },
+      {
+        choiceField: "mode_choice",
+        fieldPath: "spec.ipsec.ike_parameters.mode_choice",
+        options: ["spec.ipsec.ike_parameters.initiator", "spec.ipsec.ike_parameters.responder"],
+      },
+      {
+        choiceField: "remote_ike_id",
+        fieldPath: "spec.ipsec.ike_parameters.remote_ike_id",
+        options: [
+          "spec.ipsec.ike_parameters.rm_hostname",
+          "spec.ipsec.ike_parameters.rm_ip_address",
+          "spec.ipsec.ike_parameters.use_default_remote_ike_id",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath: "spec.ipsec.ike_parameters.rm_ip_address.ver",
+        options: [
+          "spec.ipsec.ike_parameters.rm_ip_address.ipv4",
+          "spec.ipsec.ike_parameters.rm_ip_address.ipv6",
+        ],
+      },
+      {
+        choiceField: "tunnel_source_vn",
+        fieldPath: "spec.ipsec.ipsec_tunnel_parameters.tunnel_source_vn",
+        options: [
+          "spec.ipsec.ipsec_tunnel_parameters.segment",
+          "spec.ipsec.ipsec_tunnel_parameters.site_local_inside_network",
+          "spec.ipsec.ipsec_tunnel_parameters.site_local_network",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -2312,7 +2452,297 @@ export const marketplaceTools: ParsedOperation[] = [
         resourceType: "viewsthird-party-application-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "api_definition_choice",
+        fieldPath: "spec.api_definition_choice",
+        options: ["spec.api_specification", "spec.disable_api_definition"],
+      },
+      {
+        choiceField: "api_discovery_choice",
+        fieldPath: "spec.api_discovery_choice",
+        options: ["spec.disable_api_discovery", "spec.enable_api_discovery"],
+      },
+      {
+        choiceField: "sensitive_data_policy_choice",
+        fieldPath: "spec.sensitive_data_policy_choice",
+        options: ["spec.default_sensitive_data_policy", "spec.sensitive_data_policy"],
+      },
+      {
+        choiceField: "validation_target_choice",
+        fieldPath: "spec.api_specification.validation_target_choice",
+        options: [
+          "spec.api_specification.validation_all_spec_endpoints",
+          "spec.api_specification.validation_custom_list",
+          "spec.api_specification.validation_disabled",
+        ],
+      },
+      {
+        choiceField: "oversized_body_choice",
+        fieldPath: "spec.api_specification.validation_all_spec_endpoints.oversized_body_choice",
+        options: [],
+      },
+      {
+        choiceField: "fall_through_mode_choice",
+        fieldPath:
+          "spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_choice",
+        options: [
+          "spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_allow",
+          "spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_custom",
+        ],
+      },
+      {
+        choiceField: "action_choice",
+        fieldPath:
+          "spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].action_choice",
+        options: [
+          "spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].action_block",
+          "spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].action_report",
+          "spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].action_skip",
+        ],
+      },
+      {
+        choiceField: "condition_type_choice",
+        fieldPath:
+          "spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].condition_type_choice",
+        options: [
+          "spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].api_endpoint",
+          "spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].api_group",
+          "spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].base_path",
+        ],
+      },
+      {
+        choiceField: "fail_configuration",
+        fieldPath:
+          "spec.api_specification.validation_all_spec_endpoints.settings.fail_configuration",
+        options: [],
+      },
+      {
+        choiceField: "oversized_body_choice",
+        fieldPath:
+          "spec.api_specification.validation_all_spec_endpoints.settings.oversized_body_choice",
+        options: [
+          "spec.api_specification.validation_all_spec_endpoints.settings.oversized_body_fail_validation",
+          "spec.api_specification.validation_all_spec_endpoints.settings.oversized_body_skip_validation",
+        ],
+      },
+      {
+        choiceField: "property_validation_settings_choice",
+        fieldPath:
+          "spec.api_specification.validation_all_spec_endpoints.settings.property_validation_settings_choice",
+        options: [
+          "spec.api_specification.validation_all_spec_endpoints.settings.property_validation_settings_custom",
+          "spec.api_specification.validation_all_spec_endpoints.settings.property_validation_settings_default",
+        ],
+      },
+      {
+        choiceField: "additional_parameters_choice",
+        fieldPath:
+          "spec.api_specification.validation_all_spec_endpoints.settings.property_validation_settings_custom.queryParameters.additional_parameters_choice",
+        options: [
+          "spec.api_specification.validation_all_spec_endpoints.settings.property_validation_settings_custom.queryParameters.allow_additional_parameters",
+          "spec.api_specification.validation_all_spec_endpoints.settings.property_validation_settings_custom.queryParameters.disallow_additional_parameters",
+        ],
+      },
+      {
+        choiceField: "response_validation_mode_choice",
+        fieldPath:
+          "spec.api_specification.validation_all_spec_endpoints.validation_mode.response_validation_mode_choice",
+        options: [
+          "spec.api_specification.validation_all_spec_endpoints.validation_mode.response_validation_mode_active",
+          "spec.api_specification.validation_all_spec_endpoints.validation_mode.skip_response_validation",
+        ],
+      },
+      {
+        choiceField: "validation_mode_choice",
+        fieldPath:
+          "spec.api_specification.validation_all_spec_endpoints.validation_mode.validation_mode_choice",
+        options: [
+          "spec.api_specification.validation_all_spec_endpoints.validation_mode.skip_validation",
+          "spec.api_specification.validation_all_spec_endpoints.validation_mode.validation_mode_active",
+        ],
+      },
+      {
+        choiceField: "validation_enforcement_type",
+        fieldPath:
+          "spec.api_specification.validation_all_spec_endpoints.validation_mode.response_validation_mode_active.validation_enforcement_type",
+        options: [
+          "spec.api_specification.validation_all_spec_endpoints.validation_mode.response_validation_mode_active.enforcement_block",
+          "spec.api_specification.validation_all_spec_endpoints.validation_mode.response_validation_mode_active.enforcement_report",
+        ],
+      },
+      {
+        choiceField: "validation_enforcement_type",
+        fieldPath:
+          "spec.api_specification.validation_all_spec_endpoints.validation_mode.validation_mode_active.validation_enforcement_type",
+        options: [
+          "spec.api_specification.validation_all_spec_endpoints.validation_mode.validation_mode_active.enforcement_block",
+          "spec.api_specification.validation_all_spec_endpoints.validation_mode.validation_mode_active.enforcement_report",
+        ],
+      },
+      {
+        choiceField: "oversized_body_choice",
+        fieldPath: "spec.api_specification.validation_custom_list.oversized_body_choice",
+        options: [],
+      },
+      {
+        choiceField: "fall_through_mode_choice",
+        fieldPath:
+          "spec.api_specification.validation_custom_list.fall_through_mode.fall_through_mode_choice",
+        options: [
+          "spec.api_specification.validation_custom_list.fall_through_mode.fall_through_mode_allow",
+          "spec.api_specification.validation_custom_list.fall_through_mode.fall_through_mode_custom",
+        ],
+      },
+      {
+        choiceField: "action_choice",
+        fieldPath:
+          "spec.api_specification.validation_custom_list.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].action_choice",
+        options: [
+          "spec.api_specification.validation_custom_list.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].action_block",
+          "spec.api_specification.validation_custom_list.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].action_report",
+          "spec.api_specification.validation_custom_list.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].action_skip",
+        ],
+      },
+      {
+        choiceField: "condition_type_choice",
+        fieldPath:
+          "spec.api_specification.validation_custom_list.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].condition_type_choice",
+        options: [
+          "spec.api_specification.validation_custom_list.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].api_endpoint",
+          "spec.api_specification.validation_custom_list.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].api_group",
+          "spec.api_specification.validation_custom_list.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].base_path",
+        ],
+      },
+      {
+        choiceField: "condition_type_choice",
+        fieldPath:
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].condition_type_choice",
+        options: [
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].api_endpoint",
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].api_group",
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].base_path",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath:
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].domain_choice",
+        options: [
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].any_domain",
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].specific_domain",
+        ],
+      },
+      {
+        choiceField: "response_validation_mode_choice",
+        fieldPath:
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].validation_mode.response_validation_mode_choice",
+        options: [
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].validation_mode.response_validation_mode_active",
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].validation_mode.skip_response_validation",
+        ],
+      },
+      {
+        choiceField: "validation_mode_choice",
+        fieldPath:
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].validation_mode.validation_mode_choice",
+        options: [
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].validation_mode.skip_validation",
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].validation_mode.validation_mode_active",
+        ],
+      },
+      {
+        choiceField: "validation_enforcement_type",
+        fieldPath:
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].validation_mode.response_validation_mode_active.validation_enforcement_type",
+        options: [
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].validation_mode.response_validation_mode_active.enforcement_block",
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].validation_mode.response_validation_mode_active.enforcement_report",
+        ],
+      },
+      {
+        choiceField: "validation_enforcement_type",
+        fieldPath:
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].validation_mode.validation_mode_active.validation_enforcement_type",
+        options: [
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].validation_mode.validation_mode_active.enforcement_block",
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].validation_mode.validation_mode_active.enforcement_report",
+        ],
+      },
+      {
+        choiceField: "fail_configuration",
+        fieldPath: "spec.api_specification.validation_custom_list.settings.fail_configuration",
+        options: [],
+      },
+      {
+        choiceField: "oversized_body_choice",
+        fieldPath: "spec.api_specification.validation_custom_list.settings.oversized_body_choice",
+        options: [
+          "spec.api_specification.validation_custom_list.settings.oversized_body_fail_validation",
+          "spec.api_specification.validation_custom_list.settings.oversized_body_skip_validation",
+        ],
+      },
+      {
+        choiceField: "property_validation_settings_choice",
+        fieldPath:
+          "spec.api_specification.validation_custom_list.settings.property_validation_settings_choice",
+        options: [
+          "spec.api_specification.validation_custom_list.settings.property_validation_settings_custom",
+          "spec.api_specification.validation_custom_list.settings.property_validation_settings_default",
+        ],
+      },
+      {
+        choiceField: "additional_parameters_choice",
+        fieldPath:
+          "spec.api_specification.validation_custom_list.settings.property_validation_settings_custom.queryParameters.additional_parameters_choice",
+        options: [
+          "spec.api_specification.validation_custom_list.settings.property_validation_settings_custom.queryParameters.allow_additional_parameters",
+          "spec.api_specification.validation_custom_list.settings.property_validation_settings_custom.queryParameters.disallow_additional_parameters",
+        ],
+      },
+      {
+        choiceField: "api_discovery_settings_choice",
+        fieldPath: "spec.enable_api_discovery.api_discovery_settings_choice",
+        options: [
+          "spec.enable_api_discovery.custom_api_auth_discovery",
+          "spec.enable_api_discovery.default_api_auth_discovery",
+        ],
+      },
+      {
+        choiceField: "learn_from_redirect_traffic",
+        fieldPath: "spec.enable_api_discovery.learn_from_redirect_traffic",
+        options: [
+          "spec.enable_api_discovery.disable_learn_from_redirect_traffic",
+          "spec.enable_api_discovery.enable_learn_from_redirect_traffic",
+        ],
+      },
+      {
+        choiceField: "api_crawler",
+        fieldPath: "spec.enable_api_discovery.api_crawler.api_crawler",
+        options: [
+          "spec.enable_api_discovery.api_crawler.api_crawler_config",
+          "spec.enable_api_discovery.api_crawler.disable_api_crawler",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.enable_api_discovery.api_crawler.api_crawler_config.domains[].simple_login.password.secret_info_oneof",
+        options: [
+          "spec.enable_api_discovery.api_crawler.api_crawler_config.domains[].simple_login.password.blindfold_secret_info",
+          "spec.enable_api_discovery.api_crawler.api_crawler_config.domains[].simple_login.password.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "api_repos_choice",
+        fieldPath:
+          "spec.enable_api_discovery.api_discovery_from_code_scan.code_base_integrations[].api_repos_choice",
+        options: [
+          "spec.enable_api_discovery.api_discovery_from_code_scan.code_base_integrations[].all_repos",
+          "spec.enable_api_discovery.api_discovery_from_code_scan.code_base_integrations[].selected_repos",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {

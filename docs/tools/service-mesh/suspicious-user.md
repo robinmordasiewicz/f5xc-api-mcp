@@ -6,9 +6,6 @@ description: GET Status of Suspicious users.
 
 # Suspicious User
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET status of suspicious users.
 
 ## Tools

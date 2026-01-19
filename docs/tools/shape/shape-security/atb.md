@@ -6,9 +6,6 @@ description: ATB
 
 # Atb
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Enable/disable ATB.
 
 ## Tools
@@ -32,13 +29,17 @@ Enable/disable ATB.
 |-----------|-------------|--------|
 | `virtual_host` | Name of Virtual Host to scope traffic overview query. | `-` |
 
-## Side Effects
+## Configuration Choices
 
-Operations on this resource may have the following effects:
+This resource includes mutually exclusive configuration options:
 
-**Creates:**
+### frequency
 
-- atb
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `daily` | - |  |
+| `monthly` | - |  |
+| `weekly` | - |  |
 
 ## Example Usage
 

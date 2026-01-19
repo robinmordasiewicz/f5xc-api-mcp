@@ -6,9 +6,6 @@ description: Bulk Revoke service credential.
 
 # Service Credential
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 It is used to revoke multiple service credentials. This API would disable the credentials and mark
 them for deletion.
 The actual removal of objects would be done in the background. Only admins are
@@ -31,18 +28,6 @@ allowed to access this API.
 |-----------|-------------|--------|
 | `name` | Credential name | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- service-credential
-
-**Modifies:**
-
-- service-credential
 
 ## Example Usage
 

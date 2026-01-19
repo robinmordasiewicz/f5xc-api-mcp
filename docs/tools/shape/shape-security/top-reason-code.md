@@ -6,9 +6,6 @@ description: Peergroup Top Reason Codes.
 
 # Top Reason Code
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET Top Reason Codes.
 
 ## Tools
@@ -16,14 +13,6 @@ GET Top Reason Codes.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-shape-top-reason-code-create` | Peergroup Top Reason Codes. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- top-reason-code
 
 ## Example Usage
 

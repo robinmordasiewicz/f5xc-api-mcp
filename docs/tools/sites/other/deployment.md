@@ -6,9 +6,6 @@ description: Deployment List.
 
 # Deployment
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 API to GET list of deployments for a given namespace in a site.
 
 ## Tools

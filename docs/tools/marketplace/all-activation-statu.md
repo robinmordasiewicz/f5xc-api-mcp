@@ -6,9 +6,6 @@ description: All Addon Service Activation Status.
 
 # All Activation Statu
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET current subscription status for all addon services in a feature tier. Response can indicate
 whether the service was successfully subscribed or in pending state.
 

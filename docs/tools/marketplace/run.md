@@ -6,9 +6,6 @@ description: Run Terraform Action for view.
 
 # Run
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Perform terraform actions for a given view. Supported actions are apply and plan.
 
 ## Tools
@@ -26,14 +23,6 @@ Perform terraform actions for a given view. Supported actions are apply and plan
 | `namespace` | Namespace | `-` |
 | `view_kind` | Kind of View | `-` |
 | `view_name` | Name of view | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- run
 
 ## Example Usage
 

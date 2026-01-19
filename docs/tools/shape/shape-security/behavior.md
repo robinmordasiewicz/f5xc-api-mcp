@@ -6,9 +6,6 @@ description: List Behaviors By Script.
 
 # Behavior
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 List all the behaviors for a script depending on start time and end time.
 
 ## Tools

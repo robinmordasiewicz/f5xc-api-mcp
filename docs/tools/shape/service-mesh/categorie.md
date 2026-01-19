@@ -6,9 +6,6 @@ description: Endpoint Categories.
 
 # Categorie
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET Endpoint Category Breakdown.
 
 ## Tools
@@ -24,14 +21,6 @@ GET Endpoint Category Breakdown.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- categorie
 
 ## Example Usage
 

@@ -6,9 +6,6 @@ description: Set Active Network Policies.
 
 # Active Network Policie
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 SetActiveNetworkPolicies sets the active network policies for the namespace
 An emtpy list in the
 request will clear the active network policies for the namespace.
@@ -27,14 +24,6 @@ request will clear the active network policies for the namespace.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- active-network-policie
 
 ## Example Usage
 

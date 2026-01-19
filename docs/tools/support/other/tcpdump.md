@@ -6,9 +6,6 @@ description: Tcpdump
 
 # Tcpdump
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Run tcpdump on an interface in a ver node.
 
 ## Tools
@@ -25,14 +22,6 @@ Run tcpdump on an interface in a ver node.
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
 | `site` | Site Name | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- tcpdump
 
 ## Example Usage
 

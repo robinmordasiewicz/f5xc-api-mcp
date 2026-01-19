@@ -6,9 +6,6 @@ description: Secret List.
 
 # Secret
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 API to GET list of secrets for a given namespace in a site.
 
 ## Tools

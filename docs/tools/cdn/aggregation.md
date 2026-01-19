@@ -6,9 +6,6 @@ description: CDN Access Log Aggregation Query.
 
 # Aggregation
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Request to GET summary/analytics data for the CDN access logs that matches the query in request for
 a given namespace.
 
@@ -25,14 +22,6 @@ a given namespace.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- aggregation
 
 ## Example Usage
 

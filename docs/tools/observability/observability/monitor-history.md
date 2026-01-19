@@ -6,9 +6,6 @@ description: GET Monitor History.
 
 # Monitor History
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Returns the healthy and critical statuses for the specified monitor.
 
 ## Tools

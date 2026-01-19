@@ -6,9 +6,6 @@ description: GET Filtered DNS Monitor List.
 
 # Filtered DNS Monitor List
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 List v1_dns_monitor in a namespace based on filter.
 
 ## Tools

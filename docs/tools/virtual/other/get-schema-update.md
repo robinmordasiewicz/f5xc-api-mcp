@@ -6,9 +6,6 @@ description: GET API Endpoints Schema Updates.
 
 # Get Schema Update
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET list of schema pairs, current and updated, for each endpoint in the request
 or all pending
 changes if empty list is provided.
@@ -30,14 +27,6 @@ DEPRECATED. USE virtual host custom API GetAPIEndpointsSchemaUpdates.
 |-----------|-------------|--------|
 | `name` | Name | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- get-schema-update
 
 ## Example Usage
 

@@ -6,9 +6,6 @@ description: Set Active Alert Policies.
 
 # Active Alert Policie
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 SetActiveAlertPolicies sets the active alert policies for the namespace
 An emtpy list in the request
 will clear the active alert policies for the namespace.
@@ -27,14 +24,6 @@ will clear the active alert policies for the namespace.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- active-alert-policie
 
 ## Example Usage
 

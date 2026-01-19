@@ -6,9 +6,6 @@ description: GET Plan
 
 # Plan
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET plan reads a given object from storage backend for metadata.namespace.
 
 ## Tools

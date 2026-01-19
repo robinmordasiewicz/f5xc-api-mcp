@@ -6,9 +6,6 @@ description: Customer access.
 
 # Acces
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 RPC to GET customer access and availability info.
 
 ## Tools

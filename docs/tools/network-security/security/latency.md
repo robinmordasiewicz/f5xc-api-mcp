@@ -6,9 +6,6 @@ description: Service Policy Latency.
 
 # Latency
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET the average latency for Service policy evaluation.
 
 ## Tools
@@ -24,14 +21,6 @@ GET the average latency for Service policy evaluation.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- latency
 
 ## Example Usage
 

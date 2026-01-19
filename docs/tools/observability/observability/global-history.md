@@ -6,9 +6,6 @@ description: GET Global History.
 
 # Global History
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Returns a time series of critical monitor counts in namespace.
 
 ## Tools

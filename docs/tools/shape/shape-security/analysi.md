@@ -6,9 +6,6 @@ description: Update FormField Analysis.
 
 # Analysi
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Mark / unmark field sensitivity by customer.
 
 ## Tools
@@ -24,14 +21,6 @@ Mark / unmark field sensitivity by customer.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- analysi
 
 ## Example Usage
 

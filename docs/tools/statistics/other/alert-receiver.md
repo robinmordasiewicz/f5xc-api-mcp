@@ -6,12 +6,6 @@ description: Create Alert Receiver.
 
 # Alert Receiver
 
-!!! danger "High Risk Operation"
-    This resource includes operations that may cause significant changes. Review carefully before executing.
-
-!!! note "Confirmation Required"
-    Some operations on this resource require explicit confirmation before execution.
-
 Replaces the content of an Alert Receiver object.
 
 ## Tools
@@ -43,23 +37,6 @@ Replaces the content of an Alert Receiver object.
 | `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
 | `report_fields` | The report_fields parameter | `-` |
 | `report_status_fields` | The report_status_fields parameter | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- alert-receiver
-
-**Modifies:**
-
-- alert-receiver
-
-**Deletes:**
-
-- alert-receiver
-- contained_resources
 
 ## Example Usage
 

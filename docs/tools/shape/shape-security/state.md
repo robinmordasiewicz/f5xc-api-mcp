@@ -6,9 +6,6 @@ description: State
 
 # State
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET customer State if after or before.
 
 ## Tools

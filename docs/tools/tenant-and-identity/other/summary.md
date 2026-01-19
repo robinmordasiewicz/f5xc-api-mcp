@@ -6,9 +6,6 @@ description: Summary
 
 # Summary
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 This API returns tenant summary.
 
 ## Tools

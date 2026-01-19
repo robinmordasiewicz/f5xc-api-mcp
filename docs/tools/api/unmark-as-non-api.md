@@ -6,9 +6,6 @@ description: Unmark As Non-API.
 
 # Unmark As Non API
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 DELETE the provided API endpoints from the API Definition's non-API list.
 
 ## Tools
@@ -25,14 +22,6 @@ DELETE the provided API endpoints from the API Definition's non-API list.
 |-----------|-------------|--------|
 | `name` | Name | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- unmark-as-non-api
 
 ## Example Usage
 

@@ -276,33 +276,99 @@ export function extractRefPatterns(
 }
 
 /**
- * Extract x-ves-oneof-field-* patterns from a schema
+ * Extract x-ves-oneof-field-* patterns from a schema recursively
+ *
+ * Traverses the schema tree to find all oneOf patterns at any nesting level,
+ * similar to extractRefPatterns().
  *
  * @param schema - OpenAPI schema object (typically a component schema)
- * @returns Array of OneOfGroup definitions
+ * @param currentPath - Current JSON path for fieldPath tracking
+ * @param depth - Current recursion depth (for cycle detection)
+ * @param maxDepth - Maximum allowed recursion depth (default: 20)
+ * @param componentSchemas - All component schemas for resolving $ref pointers
+ * @returns Array of OneOfGroup definitions with full paths
  */
-export function extractOneOfPatterns(schema: Record<string, unknown>): OneOfGroup[] {
+export function extractOneOfPatterns(
+  schema: Record<string, unknown>,
+  currentPath = "",
+  depth = 0,
+  maxDepth = 20,
+  componentSchemas: Record<string, unknown> = {}
+): OneOfGroup[] {
   const groups: OneOfGroup[] = [];
+
+  // Depth protection
+  if (depth > maxDepth) {
+    return groups;
+  }
 
   if (!schema || typeof schema !== "object") {
     return groups;
   }
 
-  // Look for x-ves-oneof-field-* keys
+  // Look for x-ves-oneof-field-* keys at current level
   for (const [key, value] of Object.entries(schema)) {
     if (key.startsWith("x-ves-oneof-field-") && typeof value === "string") {
       const choiceField = key.replace("x-ves-oneof-field-", "");
+      const fieldPath = currentPath ? `${currentPath}.${choiceField}` : choiceField;
 
       try {
         // Value is a JSON array string like "[\"option1\",\"option2\"]"
-        const options = JSON.parse(value) as unknown;
-        if (Array.isArray(options) && options.every((o) => typeof o === "string")) {
-          groups.push({
+        const parsedOptions = JSON.parse(value) as unknown;
+        if (Array.isArray(parsedOptions) && parsedOptions.every((o) => typeof o === "string")) {
+          // Build full paths for options
+          const optionsWithPaths = (parsedOptions as string[]).map((opt) =>
+            currentPath ? `${currentPath}.${opt}` : opt
+          );
+
+          const group: OneOfGroup = {
             choiceField,
-            options: options as string[],
-            fieldPath: choiceField,
+            options: optionsWithPaths,
+            fieldPath,
             description: undefined, // Could be extracted from property description if available
-          });
+            recommendedOption: undefined, // Will be populated below
+          };
+
+          // Look for description and recommended option
+          if (
+            "properties" in schema &&
+            typeof schema.properties === "object" &&
+            schema.properties
+          ) {
+            const properties = schema.properties as Record<string, unknown>;
+
+            // Check for description on the choice field
+            const prop = properties[choiceField];
+            if (prop && typeof prop === "object" && "description" in prop) {
+              group.description = String((prop as Record<string, unknown>).description);
+            }
+
+            // Method 1: Look for x-f5xc-recommended-oneof-variant-{choiceField} annotation
+            const recommendedKey = `x-f5xc-recommended-oneof-variant-${choiceField}`;
+            if (recommendedKey in schema && typeof schema[recommendedKey] === "string") {
+              // Build full path for recommended option
+              const recommendedOpt = schema[recommendedKey] as string;
+              group.recommendedOption = currentPath
+                ? `${currentPath}.${recommendedOpt}`
+                : recommendedOpt;
+            }
+
+            // Method 2: Infer recommended from x-f5xc-server-default: true on variant properties
+            if (!group.recommendedOption) {
+              for (const option of parsedOptions as string[]) {
+                const optionProp = properties[option];
+                if (optionProp && typeof optionProp === "object") {
+                  const optionObj = optionProp as Record<string, unknown>;
+                  if (optionObj["x-f5xc-server-default"] === true) {
+                    group.recommendedOption = currentPath ? `${currentPath}.${option}` : option;
+                    break;
+                  }
+                }
+              }
+            }
+          }
+
+          groups.push(group);
         }
       } catch {
         // Invalid JSON, skip this pattern
@@ -310,15 +376,117 @@ export function extractOneOfPatterns(schema: Record<string, unknown>): OneOfGrou
     }
   }
 
-  // Also check nested properties for description
+  // Recursively traverse properties
   if ("properties" in schema && typeof schema.properties === "object" && schema.properties) {
     const properties = schema.properties as Record<string, unknown>;
-    for (const group of groups) {
-      const prop = properties[group.choiceField];
-      if (prop && typeof prop === "object" && "description" in prop) {
-        group.description = String(prop.description);
+    for (const [propName, propSchema] of Object.entries(properties)) {
+      if (typeof propSchema === "object" && propSchema !== null) {
+        const propPath = currentPath ? `${currentPath}.${propName}` : propName;
+        const propObj = propSchema as Record<string, unknown>;
+
+        // Resolve $ref if present
+        let resolvedSchema = propObj;
+        if ("$ref" in propObj && typeof propObj.$ref === "string") {
+          const parsed = parseRef(propObj.$ref);
+          if (parsed?.schemaName && componentSchemas[parsed.schemaName]) {
+            resolvedSchema = componentSchemas[parsed.schemaName] as Record<string, unknown>;
+          }
+        }
+
+        groups.push(
+          ...extractOneOfPatterns(resolvedSchema, propPath, depth + 1, maxDepth, componentSchemas)
+        );
       }
     }
+  }
+
+  // Recursively traverse allOf
+  if ("allOf" in schema && Array.isArray(schema.allOf)) {
+    for (const item of schema.allOf) {
+      if (typeof item === "object" && item !== null) {
+        // allOf schemas share the same path context
+        let resolvedItem = item as Record<string, unknown>;
+        if ("$ref" in resolvedItem && typeof resolvedItem.$ref === "string") {
+          const parsed = parseRef(resolvedItem.$ref);
+          if (parsed?.schemaName && componentSchemas[parsed.schemaName]) {
+            resolvedItem = componentSchemas[parsed.schemaName] as Record<string, unknown>;
+          }
+        }
+        groups.push(
+          ...extractOneOfPatterns(resolvedItem, currentPath, depth + 1, maxDepth, componentSchemas)
+        );
+      }
+    }
+  }
+
+  // Recursively traverse oneOf
+  if ("oneOf" in schema && Array.isArray(schema.oneOf)) {
+    for (const item of schema.oneOf) {
+      if (typeof item === "object" && item !== null) {
+        let resolvedItem = item as Record<string, unknown>;
+        if ("$ref" in resolvedItem && typeof resolvedItem.$ref === "string") {
+          const parsed = parseRef(resolvedItem.$ref);
+          if (parsed?.schemaName && componentSchemas[parsed.schemaName]) {
+            resolvedItem = componentSchemas[parsed.schemaName] as Record<string, unknown>;
+          }
+        }
+        groups.push(
+          ...extractOneOfPatterns(resolvedItem, currentPath, depth + 1, maxDepth, componentSchemas)
+        );
+      }
+    }
+  }
+
+  // Recursively traverse anyOf
+  if ("anyOf" in schema && Array.isArray(schema.anyOf)) {
+    for (const item of schema.anyOf) {
+      if (typeof item === "object" && item !== null) {
+        let resolvedItem = item as Record<string, unknown>;
+        if ("$ref" in resolvedItem && typeof resolvedItem.$ref === "string") {
+          const parsed = parseRef(resolvedItem.$ref);
+          if (parsed?.schemaName && componentSchemas[parsed.schemaName]) {
+            resolvedItem = componentSchemas[parsed.schemaName] as Record<string, unknown>;
+          }
+        }
+        groups.push(
+          ...extractOneOfPatterns(resolvedItem, currentPath, depth + 1, maxDepth, componentSchemas)
+        );
+      }
+    }
+  }
+
+  // Recursively traverse array items
+  if ("items" in schema && typeof schema.items === "object" && schema.items !== null) {
+    const itemsPath = currentPath ? `${currentPath}[]` : "[]";
+    let resolvedItems = schema.items as Record<string, unknown>;
+    if ("$ref" in resolvedItems && typeof resolvedItems.$ref === "string") {
+      const parsed = parseRef(resolvedItems.$ref);
+      if (parsed?.schemaName && componentSchemas[parsed.schemaName]) {
+        resolvedItems = componentSchemas[parsed.schemaName] as Record<string, unknown>;
+      }
+    }
+    groups.push(
+      ...extractOneOfPatterns(resolvedItems, itemsPath, depth + 1, maxDepth, componentSchemas)
+    );
+  }
+
+  // Recursively traverse additionalProperties
+  if (
+    "additionalProperties" in schema &&
+    typeof schema.additionalProperties === "object" &&
+    schema.additionalProperties !== null
+  ) {
+    const addPropsPath = currentPath ? `${currentPath}[*]` : "[*]";
+    let resolvedAddProps = schema.additionalProperties as Record<string, unknown>;
+    if ("$ref" in resolvedAddProps && typeof resolvedAddProps.$ref === "string") {
+      const parsed = parseRef(resolvedAddProps.$ref);
+      if (parsed?.schemaName && componentSchemas[parsed.schemaName]) {
+        resolvedAddProps = componentSchemas[parsed.schemaName] as Record<string, unknown>;
+      }
+    }
+    groups.push(
+      ...extractOneOfPatterns(resolvedAddProps, addPropsPath, depth + 1, maxDepth, componentSchemas)
+    );
   }
 
   return groups;
@@ -462,8 +630,14 @@ export function extractOperationDependencies(
     if (parsed?.schemaName) {
       const componentSchema = componentSchemas[parsed.schemaName];
       if (componentSchema && typeof componentSchema === "object") {
-        // Extract oneOf patterns from the component schema
-        result.oneOfGroups = extractOneOfPatterns(componentSchema as Record<string, unknown>);
+        // Extract oneOf patterns from the component schema, passing componentSchemas for $ref resolution
+        result.oneOfGroups = extractOneOfPatterns(
+          componentSchema as Record<string, unknown>,
+          "",
+          0,
+          20,
+          componentSchemas
+        );
 
         // Also extract nested references from the component schema
         const componentRefs = extractRefPatterns(componentSchema as Record<string, unknown>);

@@ -6,9 +6,6 @@ description: L3l4 Event count.
 
 # Event Count
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Request to GET l3l4 Event counts over a period of time.
 
 ## Tools
@@ -25,14 +22,6 @@ Request to GET l3l4 Event counts over a period of time.
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
 | `network_id` | NetworkId | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- event-count
 
 ## Example Usage
 

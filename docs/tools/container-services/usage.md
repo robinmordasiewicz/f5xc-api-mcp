@@ -6,9 +6,6 @@ description: Usage Metrics.
 
 # Usage
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET the workload usage.
 
 ## Tools
@@ -24,14 +21,6 @@ GET the workload usage.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- usage
 
 ## Example Usage
 

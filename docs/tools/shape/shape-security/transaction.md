@@ -6,9 +6,6 @@ description: GET Bot Assessment for Transactions.
 
 # Transaction
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET Bot Transactions Information.
 
 ## Tools
@@ -16,14 +13,6 @@ GET Bot Transactions Information.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-shape-transaction-create` | GET Bot Assessment for Transactions. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- transaction
 
 ## Example Usage
 

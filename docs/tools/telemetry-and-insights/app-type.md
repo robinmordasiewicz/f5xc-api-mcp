@@ -6,9 +6,6 @@ description: Application Types.
 
 # App Type
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Request to GET list of application types for a given namespace.
 For system namespace, all the
 application types for the tenant

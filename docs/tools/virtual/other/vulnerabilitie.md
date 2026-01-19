@@ -6,9 +6,6 @@ description: GET Vulnerabilities for Virtual Host.
 
 # Vulnerabilitie
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET vulnerabilities for the given Virtual Host.
 
 ## Tools
@@ -26,13 +23,15 @@ GET vulnerabilities for the given Virtual Host.
 | `name` | Virtual Host Name | `-` |
 | `namespace` | Namespace | `-` |
 
-## Side Effects
+## Configuration Choices
 
-Operations on this resource may have the following effects:
+This resource includes mutually exclusive configuration options:
 
-**Creates:**
+### context
 
-- vulnerabilitie
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `api_endpoint` | - |  |
 
 ## Example Usage
 

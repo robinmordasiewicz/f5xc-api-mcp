@@ -6,9 +6,6 @@ description: Test JS
 
 # Testj
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Validate JS script tag injection in the target URL.
 
 ## Tools
@@ -24,14 +21,6 @@ Validate JS script tag injection in the target URL.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- testj
 
 ## Example Usage
 

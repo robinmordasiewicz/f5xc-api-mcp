@@ -6,9 +6,6 @@ description: Unsubscribe to XC addon services.
 
 # Unsubscribe
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Unsubscribe to XC addon services.
 
 ## Tools
@@ -17,13 +14,27 @@ Unsubscribe to XC addon services.
 |------|-------------|
 | `f5xc-api-billingandusage-unsubscribe-create` | Unsubscribe to XC addon services. |
 
-## Side Effects
+## Configuration Choices
 
-Operations on this resource may have the following effects:
+This resource includes mutually exclusive configuration options:
 
-**Creates:**
+### addon_choice
 
-- unsubscribe
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `f5xc_appstack_standard` | - |  |
+| `f5xc_big_ip_irule_standard` | - |  |
+| `f5xc_bigip_utilities_standard` | - |  |
+| `f5xc_content_delivery_network_advanced` | - |  |
+| `f5xc_content_delivery_network_standard` | - |  |
+| `f5xc_delegated_access_standard` | - |  |
+| `f5xc_securemesh_advanced` | - |  |
+| `f5xc_securemesh_standard` | - |  |
+| `f5xc_site_management_standard` | - |  |
+| `f5xc_synthetic_monitoring_standard` | - |  |
+| `f5xc_waap_advanced` | - |  |
+| `f5xc_waap_standard` | - |  |
+| `f5xc_web_app_scanning_standard` | - |  |
 
 ## Example Usage
 

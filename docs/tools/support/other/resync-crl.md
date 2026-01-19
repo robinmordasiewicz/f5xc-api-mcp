@@ -6,9 +6,6 @@ description: Resync CRL.
 
 # Resync Crl
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Resync CRL by downloading from the server again.
 
 ## Tools
@@ -26,13 +23,16 @@ Resync CRL by downloading from the server again.
 | `namespace` | Namespace | `-` |
 | `site` | Site Name | `-` |
 
-## Side Effects
+## Configuration Choices
 
-Operations on this resource may have the following effects:
+This resource includes mutually exclusive configuration options:
 
-**Creates:**
+### crl_id_choice
 
-- resync-crl
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `name` | - |  |
+| `uid` | - |  |
 
 ## Example Usage
 

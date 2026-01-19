@@ -6,9 +6,6 @@ description: Create User with Role Assignment.
 
 # User Role
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Create creates a user and namespace roles binding for this user.
 
 ## Tools
@@ -26,18 +23,6 @@ Create creates a user and namespace roles binding for this user.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- user-role
-
-**Modifies:**
-
-- user-role
 
 ## Example Usage
 

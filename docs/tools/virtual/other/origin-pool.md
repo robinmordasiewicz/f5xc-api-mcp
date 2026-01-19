@@ -6,12 +6,6 @@ description: Create Origin Pool.
 
 # Origin Pool
 
-!!! danger "High Risk Operation"
-    This resource includes operations that may cause significant changes. Review carefully before executing.
-
-!!! note "Confirmation Required"
-    Some operations on this resource require explicit confirmation before execution.
-
 Shape of the origin pool create specification.
 
 ## Tools
@@ -43,23 +37,6 @@ Shape of the origin pool create specification.
 | `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
 | `report_fields` | The report_fields parameter | `-` |
 | `report_status_fields` | The report_status_fields parameter | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- origin-pool
-
-**Modifies:**
-
-- origin-pool
-
-**Deletes:**
-
-- origin-pool
-- contained_resources
 
 ## Example Usage
 

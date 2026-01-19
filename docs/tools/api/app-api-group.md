@@ -6,12 +6,6 @@ description: Create API Group.
 
 # App API Group
 
-!!! danger "High Risk Operation"
-    This resource includes operations that may cause significant changes. Review carefully before executing.
-
-!!! note "Confirmation Required"
-    Some operations on this resource require explicit confirmation before execution.
-
 Replace app_api_group replaces an existing object in the storage backend for metadata.namespace.
 
 ## Tools
@@ -43,23 +37,6 @@ Replace app_api_group replaces an existing object in the storage backend for met
 | `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
 | `report_fields` | The report_fields parameter | `-` |
 | `report_status_fields` | The report_status_fields parameter | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- app-api-group
-
-**Modifies:**
-
-- app-api-group
-
-**Deletes:**
-
-- app-api-group
-- contained_resources
 
 ## Example Usage
 

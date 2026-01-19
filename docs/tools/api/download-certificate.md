@@ -6,9 +6,6 @@ description: Download Certificates.
 
 # Download Certificate
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Download the cerificates files for the Log Collerctor
 In order to establish connection from the
 third party application server to the
@@ -35,14 +32,6 @@ certificates files:
 |-----------|-------------|--------|
 | `name` | Discovery Name | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- download-certificate
 
 ## Example Usage
 

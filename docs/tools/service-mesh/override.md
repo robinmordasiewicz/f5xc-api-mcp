@@ -6,9 +6,6 @@ description: GET Override.
 
 # Override
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET all override for API endpoints configured for this App type.
 
 ## Tools

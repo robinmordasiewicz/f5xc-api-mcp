@@ -6,9 +6,6 @@ description: GET SAFE Analyst Transactions as a CSV file.
 
 # Transactions Csv
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET Safe transactions as CSV file.
 
 ## Tools
@@ -24,14 +21,6 @@ GET Safe transactions as CSV file.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- transactions-csv
 
 ## Example Usage
 

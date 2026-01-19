@@ -6,12 +6,6 @@ description: Create Alert Generation Policy.
 
 # Alert Gen Policy
 
-!!! danger "High Risk Operation"
-    This resource includes operations that may cause significant changes. Review carefully before executing.
-
-!!! note "Confirmation Required"
-    Some operations on this resource require explicit confirmation before execution.
-
 Replaces the content of an Alert Generation Policy object.
 
 ## Tools
@@ -43,23 +37,6 @@ Replaces the content of an Alert Generation Policy object.
 | `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
 | `report_fields` | The report_fields parameter | `-` |
 | `report_status_fields` | The report_status_fields parameter | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- alert-gen-policy
-
-**Modifies:**
-
-- alert-gen-policy
-
-**Deletes:**
-
-- alert-gen-policy
-- contained_resources
 
 ## Example Usage
 

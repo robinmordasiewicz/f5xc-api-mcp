@@ -71,7 +71,16 @@ export const apiTools: ParsedOperation[] = [
         resourceType: "api-crawler-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.domains[].simple_login.password.secret_info_oneof",
+        options: [
+          "spec.domains[].simple_login.password.blindfold_secret_info",
+          "spec.domains[].simple_login.password.clear_secret_info",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -418,7 +427,16 @@ export const apiTools: ParsedOperation[] = [
         resourceType: "api-crawler-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.domains[].simple_login.password.secret_info_oneof",
+        options: [
+          "spec.domains[].simple_login.password.blindfold_secret_info",
+          "spec.domains[].simple_login.password.clear_secret_info",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -499,7 +517,13 @@ export const apiTools: ParsedOperation[] = [
         resourceType: "viewsapi-definition-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "schema_updates_strategy",
+        fieldPath: "spec.schema_updates_strategy",
+        options: ["spec.mixed_schema_origin", "spec.strict_schema_origin"],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -846,7 +870,13 @@ export const apiTools: ParsedOperation[] = [
         resourceType: "viewsapi-definition-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "schema_updates_strategy",
+        fieldPath: "spec.schema_updates_strategy",
+        options: ["spec.mixed_schema_origin", "spec.strict_schema_origin"],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -1837,7 +1867,60 @@ export const apiTools: ParsedOperation[] = [
         resourceType: "api-testing-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "frequency_choice",
+        fieldPath: "spec.frequency_choice",
+        options: ["spec.every_day", "spec.every_month", "spec.every_week"],
+      },
+      {
+        choiceField: "credentials_choice",
+        fieldPath: "spec.domains[].credentials[].credentials_choice",
+        options: [
+          "spec.domains[].credentials[].api_key",
+          "spec.domains[].credentials[].basic_auth",
+          "spec.domains[].credentials[].bearer_token",
+          "spec.domains[].credentials[].login_endpoint",
+        ],
+      },
+      {
+        choiceField: "role_choice",
+        fieldPath: "spec.domains[].credentials[].role_choice",
+        options: ["spec.domains[].credentials[].admin", "spec.domains[].credentials[].standard"],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.domains[].credentials[].api_key.value.secret_info_oneof",
+        options: [
+          "spec.domains[].credentials[].api_key.value.blindfold_secret_info",
+          "spec.domains[].credentials[].api_key.value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.domains[].credentials[].basic_auth.password.secret_info_oneof",
+        options: [
+          "spec.domains[].credentials[].basic_auth.password.blindfold_secret_info",
+          "spec.domains[].credentials[].basic_auth.password.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.domains[].credentials[].bearer_token.token.secret_info_oneof",
+        options: [
+          "spec.domains[].credentials[].bearer_token.token.blindfold_secret_info",
+          "spec.domains[].credentials[].bearer_token.token.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.domains[].credentials[].login_endpoint.json_payload.secret_info_oneof",
+        options: [
+          "spec.domains[].credentials[].login_endpoint.json_payload.blindfold_secret_info",
+          "spec.domains[].credentials[].login_endpoint.json_payload.clear_secret_info",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -2184,7 +2267,60 @@ export const apiTools: ParsedOperation[] = [
         resourceType: "api-testing-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "frequency_choice",
+        fieldPath: "spec.frequency_choice",
+        options: ["spec.every_day", "spec.every_month", "spec.every_week"],
+      },
+      {
+        choiceField: "credentials_choice",
+        fieldPath: "spec.domains[].credentials[].credentials_choice",
+        options: [
+          "spec.domains[].credentials[].api_key",
+          "spec.domains[].credentials[].basic_auth",
+          "spec.domains[].credentials[].bearer_token",
+          "spec.domains[].credentials[].login_endpoint",
+        ],
+      },
+      {
+        choiceField: "role_choice",
+        fieldPath: "spec.domains[].credentials[].role_choice",
+        options: ["spec.domains[].credentials[].admin", "spec.domains[].credentials[].standard"],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.domains[].credentials[].api_key.value.secret_info_oneof",
+        options: [
+          "spec.domains[].credentials[].api_key.value.blindfold_secret_info",
+          "spec.domains[].credentials[].api_key.value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.domains[].credentials[].basic_auth.password.secret_info_oneof",
+        options: [
+          "spec.domains[].credentials[].basic_auth.password.blindfold_secret_info",
+          "spec.domains[].credentials[].basic_auth.password.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.domains[].credentials[].bearer_token.token.secret_info_oneof",
+        options: [
+          "spec.domains[].credentials[].bearer_token.token.blindfold_secret_info",
+          "spec.domains[].credentials[].bearer_token.token.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.domains[].credentials[].login_endpoint.json_payload.secret_info_oneof",
+        options: [
+          "spec.domains[].credentials[].login_endpoint.json_payload.blindfold_secret_info",
+          "spec.domains[].credentials[].login_endpoint.json_payload.clear_secret_info",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -2266,7 +2402,13 @@ export const apiTools: ParsedOperation[] = [
         resourceType: "viewsapp-api-group-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "scope_choice",
+        fieldPath: "spec.scope_choice",
+        options: ["spec.bigip_virtual_server", "spec.cdn_loadbalancer", "spec.http_loadbalancer"],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -2615,7 +2757,13 @@ export const apiTools: ParsedOperation[] = [
         resourceType: "viewsapp-api-group-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "scope_choice",
+        fieldPath: "spec.scope_choice",
+        options: ["spec.bigip_virtual_server", "spec.cdn_loadbalancer", "spec.http_loadbalancer"],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -2696,7 +2844,77 @@ export const apiTools: ParsedOperation[] = [
         resourceType: "code-base-integration-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "type",
+        fieldPath: "spec.code_base_integration.type",
+        options: [
+          "spec.code_base_integration.azure_repos",
+          "spec.code_base_integration.bitbucket",
+          "spec.code_base_integration.bitbucket_server",
+          "spec.code_base_integration.github",
+          "spec.code_base_integration.github_enterprise",
+          "spec.code_base_integration.gitlab",
+          "spec.code_base_integration.gitlab_enterprise",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.code_base_integration.azure_repos.access_token.secret_info_oneof",
+        options: [
+          "spec.code_base_integration.azure_repos.access_token.blindfold_secret_info",
+          "spec.code_base_integration.azure_repos.access_token.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.code_base_integration.bitbucket.passwd.secret_info_oneof",
+        options: [
+          "spec.code_base_integration.bitbucket.passwd.blindfold_secret_info",
+          "spec.code_base_integration.bitbucket.passwd.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.code_base_integration.bitbucket_server.passwd.secret_info_oneof",
+        options: [
+          "spec.code_base_integration.bitbucket_server.passwd.blindfold_secret_info",
+          "spec.code_base_integration.bitbucket_server.passwd.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.code_base_integration.github.access_token.secret_info_oneof",
+        options: [
+          "spec.code_base_integration.github.access_token.blindfold_secret_info",
+          "spec.code_base_integration.github.access_token.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.code_base_integration.github_enterprise.access_token.secret_info_oneof",
+        options: [
+          "spec.code_base_integration.github_enterprise.access_token.blindfold_secret_info",
+          "spec.code_base_integration.github_enterprise.access_token.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.code_base_integration.gitlab.access_token.secret_info_oneof",
+        options: [
+          "spec.code_base_integration.gitlab.access_token.blindfold_secret_info",
+          "spec.code_base_integration.gitlab.access_token.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.code_base_integration.gitlab_enterprise.access_token.secret_info_oneof",
+        options: [
+          "spec.code_base_integration.gitlab_enterprise.access_token.blindfold_secret_info",
+          "spec.code_base_integration.gitlab_enterprise.access_token.clear_secret_info",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -3043,7 +3261,77 @@ export const apiTools: ParsedOperation[] = [
         resourceType: "code-base-integration-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "type",
+        fieldPath: "spec.code_base_integration.type",
+        options: [
+          "spec.code_base_integration.azure_repos",
+          "spec.code_base_integration.bitbucket",
+          "spec.code_base_integration.bitbucket_server",
+          "spec.code_base_integration.github",
+          "spec.code_base_integration.github_enterprise",
+          "spec.code_base_integration.gitlab",
+          "spec.code_base_integration.gitlab_enterprise",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.code_base_integration.azure_repos.access_token.secret_info_oneof",
+        options: [
+          "spec.code_base_integration.azure_repos.access_token.blindfold_secret_info",
+          "spec.code_base_integration.azure_repos.access_token.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.code_base_integration.bitbucket.passwd.secret_info_oneof",
+        options: [
+          "spec.code_base_integration.bitbucket.passwd.blindfold_secret_info",
+          "spec.code_base_integration.bitbucket.passwd.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.code_base_integration.bitbucket_server.passwd.secret_info_oneof",
+        options: [
+          "spec.code_base_integration.bitbucket_server.passwd.blindfold_secret_info",
+          "spec.code_base_integration.bitbucket_server.passwd.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.code_base_integration.github.access_token.secret_info_oneof",
+        options: [
+          "spec.code_base_integration.github.access_token.blindfold_secret_info",
+          "spec.code_base_integration.github.access_token.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.code_base_integration.github_enterprise.access_token.secret_info_oneof",
+        options: [
+          "spec.code_base_integration.github_enterprise.access_token.blindfold_secret_info",
+          "spec.code_base_integration.github_enterprise.access_token.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.code_base_integration.gitlab.access_token.secret_info_oneof",
+        options: [
+          "spec.code_base_integration.gitlab.access_token.blindfold_secret_info",
+          "spec.code_base_integration.gitlab.access_token.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.code_base_integration.gitlab_enterprise.access_token.secret_info_oneof",
+        options: [
+          "spec.code_base_integration.gitlab_enterprise.access_token.blindfold_secret_info",
+          "spec.code_base_integration.gitlab_enterprise.access_token.clear_secret_info",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -3183,7 +3471,115 @@ export const apiTools: ParsedOperation[] = [
         resourceType: "discovery-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "cluster_identifier_choice",
+        fieldPath: "spec.cluster_identifier_choice",
+        options: ["spec.cluster_id", "spec.no_cluster_id"],
+      },
+      {
+        choiceField: "discovery_choice",
+        fieldPath: "spec.discovery_choice",
+        options: ["spec.discovery_consul", "spec.discovery_k8s"],
+      },
+      {
+        choiceField: "namespace_mapping_choice",
+        fieldPath: "spec.discovery_consul.namespace_mapping_choice",
+        options: [],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.discovery_consul.access_info.connection_info.tls_info.key_url.secret_info_oneof",
+        options: [
+          "spec.discovery_consul.access_info.connection_info.tls_info.key_url.blindfold_secret_info",
+          "spec.discovery_consul.access_info.connection_info.tls_info.key_url.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.discovery_consul.access_info.http_basic_auth_info.passwd_url.secret_info_oneof",
+        options: [
+          "spec.discovery_consul.access_info.http_basic_auth_info.passwd_url.blindfold_secret_info",
+          "spec.discovery_consul.access_info.http_basic_auth_info.passwd_url.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "publish_choice",
+        fieldPath: "spec.discovery_consul.publish_info.publish_choice",
+        options: [
+          "spec.discovery_consul.publish_info.disable",
+          "spec.discovery_consul.publish_info.publish",
+        ],
+      },
+      {
+        choiceField: "namespace_mapping_choice",
+        fieldPath: "spec.discovery_k8s.namespace_mapping_choice",
+        options: ["spec.discovery_k8s.default_all", "spec.discovery_k8s.namespace_mapping"],
+      },
+      {
+        choiceField: "config_type",
+        fieldPath: "spec.discovery_k8s.access_info.config_type",
+        options: [
+          "spec.discovery_k8s.access_info.connection_info",
+          "spec.discovery_k8s.access_info.kubeconfig_url",
+        ],
+      },
+      {
+        choiceField: "k8s_pod_network_choice",
+        fieldPath: "spec.discovery_k8s.access_info.k8s_pod_network_choice",
+        options: [
+          "spec.discovery_k8s.access_info.isolated",
+          "spec.discovery_k8s.access_info.reachable",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.discovery_k8s.access_info.connection_info.tls_info.key_url.secret_info_oneof",
+        options: [
+          "spec.discovery_k8s.access_info.connection_info.tls_info.key_url.blindfold_secret_info",
+          "spec.discovery_k8s.access_info.connection_info.tls_info.key_url.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.discovery_k8s.access_info.kubeconfig_url.secret_info_oneof",
+        options: [
+          "spec.discovery_k8s.access_info.kubeconfig_url.blindfold_secret_info",
+          "spec.discovery_k8s.access_info.kubeconfig_url.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "publish_choice",
+        fieldPath: "spec.discovery_k8s.publish_info.publish_choice",
+        options: [
+          "spec.discovery_k8s.publish_info.disable",
+          "spec.discovery_k8s.publish_info.dns_delegation",
+          "spec.discovery_k8s.publish_info.publish",
+          "spec.discovery_k8s.publish_info.publish_fqdns",
+        ],
+      },
+      {
+        choiceField: "ref_or_selector",
+        fieldPath: "spec.where.ref_or_selector",
+        options: ["spec.where.site", "spec.where.virtual_network", "spec.where.virtual_site"],
+      },
+      {
+        choiceField: "internet_vip_choice",
+        fieldPath: "spec.where.site.internet_vip_choice",
+        options: ["spec.where.site.disable_internet_vip", "spec.where.site.enable_internet_vip"],
+      },
+      {
+        choiceField: "internet_vip_choice",
+        fieldPath: "spec.where.virtual_site.internet_vip_choice",
+        options: [
+          "spec.where.virtual_site.disable_internet_vip",
+          "spec.where.virtual_site.enable_internet_vip",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -3530,7 +3926,115 @@ export const apiTools: ParsedOperation[] = [
         resourceType: "discovery-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "cluster_identifier_choice",
+        fieldPath: "spec.cluster_identifier_choice",
+        options: ["spec.cluster_id", "spec.no_cluster_id"],
+      },
+      {
+        choiceField: "discovery_choice",
+        fieldPath: "spec.discovery_choice",
+        options: ["spec.discovery_consul", "spec.discovery_k8s"],
+      },
+      {
+        choiceField: "namespace_mapping_choice",
+        fieldPath: "spec.discovery_consul.namespace_mapping_choice",
+        options: [],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.discovery_consul.access_info.connection_info.tls_info.key_url.secret_info_oneof",
+        options: [
+          "spec.discovery_consul.access_info.connection_info.tls_info.key_url.blindfold_secret_info",
+          "spec.discovery_consul.access_info.connection_info.tls_info.key_url.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.discovery_consul.access_info.http_basic_auth_info.passwd_url.secret_info_oneof",
+        options: [
+          "spec.discovery_consul.access_info.http_basic_auth_info.passwd_url.blindfold_secret_info",
+          "spec.discovery_consul.access_info.http_basic_auth_info.passwd_url.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "publish_choice",
+        fieldPath: "spec.discovery_consul.publish_info.publish_choice",
+        options: [
+          "spec.discovery_consul.publish_info.disable",
+          "spec.discovery_consul.publish_info.publish",
+        ],
+      },
+      {
+        choiceField: "namespace_mapping_choice",
+        fieldPath: "spec.discovery_k8s.namespace_mapping_choice",
+        options: ["spec.discovery_k8s.default_all", "spec.discovery_k8s.namespace_mapping"],
+      },
+      {
+        choiceField: "config_type",
+        fieldPath: "spec.discovery_k8s.access_info.config_type",
+        options: [
+          "spec.discovery_k8s.access_info.connection_info",
+          "spec.discovery_k8s.access_info.kubeconfig_url",
+        ],
+      },
+      {
+        choiceField: "k8s_pod_network_choice",
+        fieldPath: "spec.discovery_k8s.access_info.k8s_pod_network_choice",
+        options: [
+          "spec.discovery_k8s.access_info.isolated",
+          "spec.discovery_k8s.access_info.reachable",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.discovery_k8s.access_info.connection_info.tls_info.key_url.secret_info_oneof",
+        options: [
+          "spec.discovery_k8s.access_info.connection_info.tls_info.key_url.blindfold_secret_info",
+          "spec.discovery_k8s.access_info.connection_info.tls_info.key_url.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.discovery_k8s.access_info.kubeconfig_url.secret_info_oneof",
+        options: [
+          "spec.discovery_k8s.access_info.kubeconfig_url.blindfold_secret_info",
+          "spec.discovery_k8s.access_info.kubeconfig_url.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "publish_choice",
+        fieldPath: "spec.discovery_k8s.publish_info.publish_choice",
+        options: [
+          "spec.discovery_k8s.publish_info.disable",
+          "spec.discovery_k8s.publish_info.dns_delegation",
+          "spec.discovery_k8s.publish_info.publish",
+          "spec.discovery_k8s.publish_info.publish_fqdns",
+        ],
+      },
+      {
+        choiceField: "ref_or_selector",
+        fieldPath: "spec.where.ref_or_selector",
+        options: ["spec.where.site", "spec.where.virtual_network", "spec.where.virtual_site"],
+      },
+      {
+        choiceField: "internet_vip_choice",
+        fieldPath: "spec.where.site.internet_vip_choice",
+        options: ["spec.where.site.disable_internet_vip", "spec.where.site.enable_internet_vip"],
+      },
+      {
+        choiceField: "internet_vip_choice",
+        fieldPath: "spec.where.virtual_site.internet_vip_choice",
+        options: [
+          "spec.where.virtual_site.disable_internet_vip",
+          "spec.where.virtual_site.enable_internet_vip",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -3667,7 +4171,17 @@ export const apiTools: ParsedOperation[] = [
         resourceType: "viewsapp-api-group-global",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "scope_choice",
+        fieldPath: "api_group.scope_choice",
+        options: [
+          "api_group.bigip_virtual_server",
+          "api_group.cdn_loadbalancer",
+          "api_group.http_loadbalancer",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",

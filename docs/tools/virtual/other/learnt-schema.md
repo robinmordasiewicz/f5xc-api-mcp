@@ -6,9 +6,6 @@ description: GET GET Learnt Schema per API endpoint.
 
 # Learnt Schema
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET Learnt Schema per API endpoint for a given auto discovered API endpoint for Virtual Host.
 
 ## Tools

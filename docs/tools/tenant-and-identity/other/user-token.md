@@ -6,9 +6,6 @@ description: GET Web App Scanning Service User Token.
 
 # User Token
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET one time token to connect Web App Scanning Service.
 
 ## Tools

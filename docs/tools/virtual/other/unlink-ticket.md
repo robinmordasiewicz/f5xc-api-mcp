@@ -6,9 +6,6 @@ description: Unlink Tickets.
 
 # Unlink Ticket
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Remove the Ticket from vulnerability in XC platform
 External ticket systems will continue to have
 the record.
@@ -28,13 +25,16 @@ the record.
 | `name` | Virtual Host Name | `-` |
 | `namespace` | Namespace | `-` |
 
-## Side Effects
+## Configuration Choices
 
-Operations on this resource may have the following effects:
+This resource includes mutually exclusive configuration options:
 
-**Creates:**
+### unlink_choice
 
-- unlink-ticket
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `label_filter` | - |  |
+| `ticket_uid` | - |  |
 
 ## Example Usage
 

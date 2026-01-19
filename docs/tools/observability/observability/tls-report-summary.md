@@ -6,9 +6,6 @@ description: GET TLS Report Summary.
 
 # TLS Report Summary
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Returns the TLS report summary including grade, score, and protocol names.
 
 ## Tools

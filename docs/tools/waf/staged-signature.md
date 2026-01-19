@@ -6,9 +6,6 @@ description: Staged Signatures.
 
 # Staged Signature
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 API to GET Staged Signatures.
 
 ## Tools
@@ -25,14 +22,6 @@ API to GET Staged Signatures.
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
 | `vh_name` | Vh_name | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- staged-signature
 
 ## Example Usage
 

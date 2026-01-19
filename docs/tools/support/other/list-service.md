@@ -6,9 +6,6 @@ description: List F5XC services.
 
 # List Service
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET List of services managed by F5 Distributed Cloud.
 
 ## Tools

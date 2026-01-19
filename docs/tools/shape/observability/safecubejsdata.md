@@ -6,9 +6,6 @@ description: GetSafeCubeJSData.
 
 # Safecubejsdata
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET Safe CubeJS data request for a given query.
 
 ## Tools
@@ -16,14 +13,6 @@ GET Safe CubeJS data request for a given query.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-shape-safecubejsdata-create` | GetSafeCubeJSData. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- safecubejsdata
 
 ## Example Usage
 

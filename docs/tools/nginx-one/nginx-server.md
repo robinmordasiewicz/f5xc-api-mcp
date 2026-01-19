@@ -6,9 +6,6 @@ description: GET Request.
 
 # Nginx Server
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 List the set of nginx_server in a namespace.
 
 ## Tools

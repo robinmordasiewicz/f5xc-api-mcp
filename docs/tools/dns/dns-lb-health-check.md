@@ -6,12 +6,6 @@ description: Create DNS Load Balancer Health Check.
 
 # DNS Lb Health Check
 
-!!! danger "High Risk Operation"
-    This resource includes operations that may cause significant changes. Review carefully before executing.
-
-!!! note "Confirmation Required"
-    Some operations on this resource require explicit confirmation before execution.
-
 Create DNS Load Balancer Health Check in a given namespace. If one already exist it will give a
 error.
 
@@ -44,23 +38,6 @@ error.
 | `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
 | `report_fields` | The report_fields parameter | `-` |
 | `report_status_fields` | The report_status_fields parameter | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- dns-lb-health-check
-
-**Modifies:**
-
-- dns-lb-health-check
-
-**Deletes:**
-
-- dns-lb-health-check
-- contained_resources
 
 ## Example Usage
 

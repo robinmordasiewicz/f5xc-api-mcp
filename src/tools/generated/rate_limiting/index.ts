@@ -500,7 +500,18 @@ export const rate_limitingTools: ParsedOperation[] = [
         resourceType: "protocol-policer-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "type",
+        fieldPath: "spec.protocol_policer[].protocol.type",
+        options: [
+          "spec.protocol_policer[].protocol.dns",
+          "spec.protocol_policer[].protocol.icmp",
+          "spec.protocol_policer[].protocol.tcp",
+          "spec.protocol_policer[].protocol.udp",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -849,7 +860,18 @@ export const rate_limitingTools: ParsedOperation[] = [
         resourceType: "protocol-policer-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "type",
+        fieldPath: "spec.protocol_policer[].protocol.type",
+        options: [
+          "spec.protocol_policer[].protocol.dns",
+          "spec.protocol_policer[].protocol.icmp",
+          "spec.protocol_policer[].protocol.tcp",
+          "spec.protocol_policer[].protocol.udp",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -931,7 +953,27 @@ export const rate_limitingTools: ParsedOperation[] = [
         resourceType: "rate-limiter-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "action_choice",
+        fieldPath: "spec.limits[].action_choice",
+        options: ["spec.limits[].action_block", "spec.limits[].disabled"],
+      },
+      {
+        choiceField: "algorithm",
+        fieldPath: "spec.limits[].algorithm",
+        options: ["spec.limits[].leaky_bucket", "spec.limits[].token_bucket"],
+      },
+      {
+        choiceField: "block_duration_choice",
+        fieldPath: "spec.limits[].action_block.block_duration_choice",
+        options: [
+          "spec.limits[].action_block.hours",
+          "spec.limits[].action_block.minutes",
+          "spec.limits[].action_block.seconds",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -1280,7 +1322,27 @@ export const rate_limitingTools: ParsedOperation[] = [
         resourceType: "rate-limiter-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "action_choice",
+        fieldPath: "spec.limits[].action_choice",
+        options: ["spec.limits[].action_block", "spec.limits[].disabled"],
+      },
+      {
+        choiceField: "algorithm",
+        fieldPath: "spec.limits[].algorithm",
+        options: ["spec.limits[].leaky_bucket", "spec.limits[].token_bucket"],
+      },
+      {
+        choiceField: "block_duration_choice",
+        fieldPath: "spec.limits[].action_block.block_duration_choice",
+        options: [
+          "spec.limits[].action_block.hours",
+          "spec.limits[].action_block.minutes",
+          "spec.limits[].action_block.seconds",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",

@@ -6,9 +6,6 @@ description: GET admin ntfn preferences.
 
 # Admin Notification
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET admin ntfn preferences gets current admin notification preferences for user.
 It combines
 information from two sources:
@@ -24,14 +21,6 @@ object
 |------|-------------|
 | `f5xc-api-tenantandidentity-admin-notification-list` | GET admin ntfn preferences. |
 | `f5xc-api-tenantandidentity-admin-notification-update` | Update admin ntfn preferences. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Modifies:**
-
-- admin-notification
 
 ## Example Usage
 

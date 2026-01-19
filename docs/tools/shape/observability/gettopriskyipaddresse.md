@@ -6,9 +6,6 @@ description: GetTopRiskyIpAddresses.
 
 # Gettopriskyipaddresse
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET top risky IP addresses data request in a time range.
 
 ## Tools
@@ -16,14 +13,6 @@ GET top risky IP addresses data request in a time range.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-shape-gettopriskyipaddresse-create` | GetTopRiskyIpAddresses. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- gettopriskyipaddresse
 
 ## Example Usage
 

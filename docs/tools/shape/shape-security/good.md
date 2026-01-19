@@ -6,9 +6,6 @@ description: Top Good Bots.
 
 # Good
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET top good bots.
 
 ## Tools
@@ -24,14 +21,6 @@ GET top good bots.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- good
 
 ## Example Usage
 

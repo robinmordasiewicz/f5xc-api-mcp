@@ -6,9 +6,6 @@ description: Force DELETE NFV Service.
 
 # Force Delete
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Force DELETE NFV Service.
 
 ## Tools
@@ -24,14 +21,6 @@ Force DELETE NFV Service.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `name` | Name | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- force-delete
 
 ## Example Usage
 

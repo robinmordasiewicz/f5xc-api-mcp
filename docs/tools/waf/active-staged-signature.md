@@ -6,9 +6,6 @@ description: Active Staged Signatures.
 
 # Active Staged Signature
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 API to GET active Staged Signatures.
 
 ## Tools

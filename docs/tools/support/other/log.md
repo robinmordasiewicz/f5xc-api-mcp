@@ -6,9 +6,6 @@ description: Log
 
 # Log
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET logs for given service from the specific node.
 
 ## Tools

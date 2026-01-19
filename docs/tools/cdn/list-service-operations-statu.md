@@ -6,9 +6,6 @@ description: List of CDN Operation Commands.
 
 # List Service Operations Statu
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 List of service operations for a given CDN LB.
 
 ## Tools
@@ -25,13 +22,16 @@ List of service operations for a given CDN LB.
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
 
-## Side Effects
+## Configuration Choices
 
-Operations on this resource may have the following effects:
+This resource includes mutually exclusive configuration options:
 
-**Creates:**
+### options
 
-- list-service-operations-statu
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `lastn` | - |  |
+| `time_range` | - |  |
 
 ## Example Usage
 

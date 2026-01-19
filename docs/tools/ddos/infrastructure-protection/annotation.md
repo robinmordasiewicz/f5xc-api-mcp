@@ -6,9 +6,6 @@ description: Mitigation annotations.
 
 # Annotation
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Returns annotations of a single mitigation.
 
 ## Tools

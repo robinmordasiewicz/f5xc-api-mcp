@@ -6,9 +6,6 @@ description: DeactivateTenant.
 
 # Deactivate
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 This API mark tenant for deletion queue, after approve it will completely removed from the system.
 This API proxies the request to eywa’s tenant disable API.
 
@@ -17,14 +14,6 @@ This API proxies the request to eywa’s tenant disable API.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-tenantandidentity-deactivate-update` | DeactivateTenant. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Modifies:**
-
-- deactivate
 
 ## Example Usage
 

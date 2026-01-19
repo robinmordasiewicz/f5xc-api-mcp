@@ -6,9 +6,6 @@ description: ProcessPolicyInformation.
 
 # Process Policy Information
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 ProcessPolicyInformation API takes policy and secret name as input and returns a document containing
 .
 
@@ -17,14 +14,6 @@ ProcessPolicyInformation API takes policy and secret name as input and returns a
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-blindfold-process-policy-information-create` | ProcessPolicyInformation. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- process-policy-information
 
 ## Example Usage
 

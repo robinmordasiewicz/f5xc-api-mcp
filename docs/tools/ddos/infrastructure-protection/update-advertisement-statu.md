@@ -6,9 +6,6 @@ description: Update Infraprotect Internet prefix advertisement.
 
 # Update Advertisement Statu
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Update Infraprotect Internet prefix advertisement.
 
 ## Tools
@@ -25,13 +22,16 @@ Update Infraprotect Internet prefix advertisement.
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
 
-## Side Effects
+## Configuration Choices
 
-Operations on this resource may have the following effects:
+This resource includes mutually exclusive configuration options:
 
-**Creates:**
+### activation_selection
 
-- update-advertisement-statu
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `activation_announce` | - |  |
+| `activation_withdraw` | - |  |
 
 ## Example Usage
 

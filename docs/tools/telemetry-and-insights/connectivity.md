@@ -6,9 +6,6 @@ description: Connectivity Graph Query.
 
 # Connectivity
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Request to GET Connectivity data between the sites.
 
 ## Tools
@@ -24,14 +21,6 @@ Request to GET Connectivity data between the sites.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- connectivity
 
 ## Example Usage
 

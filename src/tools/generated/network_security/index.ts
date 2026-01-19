@@ -72,7 +72,88 @@ export const network_securityTools: ParsedOperation[] = [
         resourceType: "schemafast-acl-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "site_choice",
+        fieldPath: "spec.site_choice",
+        options: ["spec.re_acl", "spec.site_acl"],
+      },
+      {
+        choiceField: "vip_choice",
+        fieldPath: "spec.re_acl.vip_choice",
+        options: [
+          "spec.re_acl.all_public_vips",
+          "spec.re_acl.default_tenant_vip",
+          "spec.re_acl.selected_tenant_vip",
+        ],
+      },
+      {
+        choiceField: "source",
+        fieldPath: "spec.re_acl.fast_acl_rules[].source",
+        options: [
+          "spec.re_acl.fast_acl_rules[].ip_prefix_set",
+          "spec.re_acl.fast_acl_rules[].prefix",
+        ],
+      },
+      {
+        choiceField: "action",
+        fieldPath: "spec.re_acl.fast_acl_rules[].action.action",
+        options: [
+          "spec.re_acl.fast_acl_rules[].action.policer_action",
+          "spec.re_acl.fast_acl_rules[].action.protocol_policer_action",
+          "spec.re_acl.fast_acl_rules[].action.simple_action",
+        ],
+      },
+      {
+        choiceField: "port_value_type_choice",
+        fieldPath: "spec.re_acl.fast_acl_rules[].port[].port_value_type_choice",
+        options: [
+          "spec.re_acl.fast_acl_rules[].port[].all",
+          "spec.re_acl.fast_acl_rules[].port[].dns",
+          "spec.re_acl.fast_acl_rules[].port[].user_defined",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath: "spec.site_acl.network_choice",
+        options: ["spec.site_acl.inside_network", "spec.site_acl.outside_network"],
+      },
+      {
+        choiceField: "vip_choice",
+        fieldPath: "spec.site_acl.vip_choice",
+        options: [
+          "spec.site_acl.all_services",
+          "spec.site_acl.interface_services",
+          "spec.site_acl.vip_services",
+        ],
+      },
+      {
+        choiceField: "source",
+        fieldPath: "spec.site_acl.fast_acl_rules[].source",
+        options: [
+          "spec.site_acl.fast_acl_rules[].ip_prefix_set",
+          "spec.site_acl.fast_acl_rules[].prefix",
+        ],
+      },
+      {
+        choiceField: "action",
+        fieldPath: "spec.site_acl.fast_acl_rules[].action.action",
+        options: [
+          "spec.site_acl.fast_acl_rules[].action.policer_action",
+          "spec.site_acl.fast_acl_rules[].action.protocol_policer_action",
+          "spec.site_acl.fast_acl_rules[].action.simple_action",
+        ],
+      },
+      {
+        choiceField: "port_value_type_choice",
+        fieldPath: "spec.site_acl.fast_acl_rules[].port[].port_value_type_choice",
+        options: [
+          "spec.site_acl.fast_acl_rules[].port[].all",
+          "spec.site_acl.fast_acl_rules[].port[].dns",
+          "spec.site_acl.fast_acl_rules[].port[].user_defined",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -410,7 +491,27 @@ export const network_securityTools: ParsedOperation[] = [
         resourceType: "fast-acl-rule-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "source",
+        fieldPath: "spec.source",
+        options: ["spec.ip_prefix_set", "spec.prefix"],
+      },
+      {
+        choiceField: "action",
+        fieldPath: "spec.action.action",
+        options: [
+          "spec.action.policer_action",
+          "spec.action.protocol_policer_action",
+          "spec.action.simple_action",
+        ],
+      },
+      {
+        choiceField: "port_value_type_choice",
+        fieldPath: "spec.port[].port_value_type_choice",
+        options: ["spec.port[].all", "spec.port[].dns", "spec.port[].user_defined"],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -758,7 +859,27 @@ export const network_securityTools: ParsedOperation[] = [
         resourceType: "fast-acl-rule-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "source",
+        fieldPath: "spec.source",
+        options: ["spec.ip_prefix_set", "spec.prefix"],
+      },
+      {
+        choiceField: "action",
+        fieldPath: "spec.action.action",
+        options: [
+          "spec.action.policer_action",
+          "spec.action.protocol_policer_action",
+          "spec.action.simple_action",
+        ],
+      },
+      {
+        choiceField: "port_value_type_choice",
+        fieldPath: "spec.port[].port_value_type_choice",
+        options: ["spec.port[].all", "spec.port[].dns", "spec.port[].user_defined"],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -850,7 +971,88 @@ export const network_securityTools: ParsedOperation[] = [
         resourceType: "schemafast-acl-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "site_choice",
+        fieldPath: "spec.site_choice",
+        options: ["spec.re_acl", "spec.site_acl"],
+      },
+      {
+        choiceField: "vip_choice",
+        fieldPath: "spec.re_acl.vip_choice",
+        options: [
+          "spec.re_acl.all_public_vips",
+          "spec.re_acl.default_tenant_vip",
+          "spec.re_acl.selected_tenant_vip",
+        ],
+      },
+      {
+        choiceField: "source",
+        fieldPath: "spec.re_acl.fast_acl_rules[].source",
+        options: [
+          "spec.re_acl.fast_acl_rules[].ip_prefix_set",
+          "spec.re_acl.fast_acl_rules[].prefix",
+        ],
+      },
+      {
+        choiceField: "action",
+        fieldPath: "spec.re_acl.fast_acl_rules[].action.action",
+        options: [
+          "spec.re_acl.fast_acl_rules[].action.policer_action",
+          "spec.re_acl.fast_acl_rules[].action.protocol_policer_action",
+          "spec.re_acl.fast_acl_rules[].action.simple_action",
+        ],
+      },
+      {
+        choiceField: "port_value_type_choice",
+        fieldPath: "spec.re_acl.fast_acl_rules[].port[].port_value_type_choice",
+        options: [
+          "spec.re_acl.fast_acl_rules[].port[].all",
+          "spec.re_acl.fast_acl_rules[].port[].dns",
+          "spec.re_acl.fast_acl_rules[].port[].user_defined",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath: "spec.site_acl.network_choice",
+        options: ["spec.site_acl.inside_network", "spec.site_acl.outside_network"],
+      },
+      {
+        choiceField: "vip_choice",
+        fieldPath: "spec.site_acl.vip_choice",
+        options: [
+          "spec.site_acl.all_services",
+          "spec.site_acl.interface_services",
+          "spec.site_acl.vip_services",
+        ],
+      },
+      {
+        choiceField: "source",
+        fieldPath: "spec.site_acl.fast_acl_rules[].source",
+        options: [
+          "spec.site_acl.fast_acl_rules[].ip_prefix_set",
+          "spec.site_acl.fast_acl_rules[].prefix",
+        ],
+      },
+      {
+        choiceField: "action",
+        fieldPath: "spec.site_acl.fast_acl_rules[].action.action",
+        options: [
+          "spec.site_acl.fast_acl_rules[].action.policer_action",
+          "spec.site_acl.fast_acl_rules[].action.protocol_policer_action",
+          "spec.site_acl.fast_acl_rules[].action.simple_action",
+        ],
+      },
+      {
+        choiceField: "port_value_type_choice",
+        fieldPath: "spec.site_acl.fast_acl_rules[].port[].port_value_type_choice",
+        options: [
+          "spec.site_acl.fast_acl_rules[].port[].all",
+          "spec.site_acl.fast_acl_rules[].port[].dns",
+          "spec.site_acl.fast_acl_rules[].port[].user_defined",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -931,7 +1133,25 @@ export const network_securityTools: ParsedOperation[] = [
         resourceType: "filter-set-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "field_value",
+        fieldPath: "spec.filter_fields[].field_value",
+        options: [
+          "spec.filter_fields[].date_field",
+          "spec.filter_fields[].filter_expression_field",
+          "spec.filter_fields[].string_field",
+        ],
+      },
+      {
+        choiceField: "range_type",
+        fieldPath: "spec.filter_fields[].date_field.range_type",
+        options: [
+          "spec.filter_fields[].date_field.absolute",
+          "spec.filter_fields[].date_field.relative",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -1278,7 +1498,25 @@ export const network_securityTools: ParsedOperation[] = [
         resourceType: "filter-set-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "field_value",
+        fieldPath: "spec.filter_fields[].field_value",
+        options: [
+          "spec.filter_fields[].date_field",
+          "spec.filter_fields[].filter_expression_field",
+          "spec.filter_fields[].string_field",
+        ],
+      },
+      {
+        choiceField: "range_type",
+        fieldPath: "spec.filter_fields[].date_field.range_type",
+        options: [
+          "spec.filter_fields[].date_field.absolute",
+          "spec.filter_fields[].date_field.relative",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -1417,7 +1655,158 @@ export const network_securityTools: ParsedOperation[] = [
         resourceType: "viewsforward-proxy-policy-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "proxy_choice",
+        fieldPath: "spec.proxy_choice",
+        options: [
+          "spec.any_proxy",
+          "spec.drp_http_connect",
+          "spec.network_connector",
+          "spec.proxy_label_selector",
+        ],
+      },
+      {
+        choiceField: "rule_choice",
+        fieldPath: "spec.rule_choice",
+        options: ["spec.allow_all", "spec.allow_list", "spec.deny_list", "spec.rule_list"],
+      },
+      {
+        choiceField: "default_action_choice",
+        fieldPath: "spec.allow_list.default_action_choice",
+        options: [
+          "spec.allow_list.default_action_allow",
+          "spec.allow_list.default_action_deny",
+          "spec.allow_list.default_action_next_policy",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.allow_list.http_list[].domain_choice",
+        options: [
+          "spec.allow_list.http_list[].exact_value",
+          "spec.allow_list.http_list[].regex_value",
+          "spec.allow_list.http_list[].suffix_value",
+        ],
+      },
+      {
+        choiceField: "path_choice",
+        fieldPath: "spec.allow_list.http_list[].path_choice",
+        options: [
+          "spec.allow_list.http_list[].any_path",
+          "spec.allow_list.http_list[].path_exact_value",
+          "spec.allow_list.http_list[].path_prefix_value",
+          "spec.allow_list.http_list[].path_regex_value",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.allow_list.tls_list[].domain_choice",
+        options: [
+          "spec.allow_list.tls_list[].exact_value",
+          "spec.allow_list.tls_list[].regex_value",
+          "spec.allow_list.tls_list[].suffix_value",
+        ],
+      },
+      {
+        choiceField: "default_action_choice",
+        fieldPath: "spec.deny_list.default_action_choice",
+        options: [
+          "spec.deny_list.default_action_allow",
+          "spec.deny_list.default_action_deny",
+          "spec.deny_list.default_action_next_policy",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.deny_list.http_list[].domain_choice",
+        options: [
+          "spec.deny_list.http_list[].exact_value",
+          "spec.deny_list.http_list[].regex_value",
+          "spec.deny_list.http_list[].suffix_value",
+        ],
+      },
+      {
+        choiceField: "path_choice",
+        fieldPath: "spec.deny_list.http_list[].path_choice",
+        options: [
+          "spec.deny_list.http_list[].any_path",
+          "spec.deny_list.http_list[].path_exact_value",
+          "spec.deny_list.http_list[].path_prefix_value",
+          "spec.deny_list.http_list[].path_regex_value",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.deny_list.tls_list[].domain_choice",
+        options: [
+          "spec.deny_list.tls_list[].exact_value",
+          "spec.deny_list.tls_list[].regex_value",
+          "spec.deny_list.tls_list[].suffix_value",
+        ],
+      },
+      {
+        choiceField: "destination_choice",
+        fieldPath: "spec.rule_list.rules[].destination_choice",
+        options: [
+          "spec.rule_list.rules[].all_destinations",
+          "spec.rule_list.rules[].dst_asn_list",
+          "spec.rule_list.rules[].dst_asn_set",
+          "spec.rule_list.rules[].dst_ip_prefix_set",
+          "spec.rule_list.rules[].dst_label_selector",
+          "spec.rule_list.rules[].dst_prefix_list",
+          "spec.rule_list.rules[].http_list",
+          "spec.rule_list.rules[].tls_list",
+          "spec.rule_list.rules[].url_category_list",
+        ],
+      },
+      {
+        choiceField: "http_connect_choice",
+        fieldPath: "spec.rule_list.rules[].http_connect_choice",
+        options: [
+          "spec.rule_list.rules[].no_http_connect_port",
+          "spec.rule_list.rules[].port_matcher",
+        ],
+      },
+      {
+        choiceField: "source_choice",
+        fieldPath: "spec.rule_list.rules[].source_choice",
+        options: [
+          "spec.rule_list.rules[].all_sources",
+          "spec.rule_list.rules[].ip_prefix_set",
+          "spec.rule_list.rules[].label_selector",
+          "spec.rule_list.rules[].prefix_list",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.rule_list.rules[].http_list.http_list[].domain_choice",
+        options: [
+          "spec.rule_list.rules[].http_list.http_list[].exact_value",
+          "spec.rule_list.rules[].http_list.http_list[].regex_value",
+          "spec.rule_list.rules[].http_list.http_list[].suffix_value",
+        ],
+      },
+      {
+        choiceField: "path_choice",
+        fieldPath: "spec.rule_list.rules[].http_list.http_list[].path_choice",
+        options: [
+          "spec.rule_list.rules[].http_list.http_list[].any_path",
+          "spec.rule_list.rules[].http_list.http_list[].path_exact_value",
+          "spec.rule_list.rules[].http_list.http_list[].path_prefix_value",
+          "spec.rule_list.rules[].http_list.http_list[].path_regex_value",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.rule_list.rules[].tls_list.tls_list[].domain_choice",
+        options: [
+          "spec.rule_list.rules[].tls_list.tls_list[].exact_value",
+          "spec.rule_list.rules[].tls_list.tls_list[].regex_value",
+          "spec.rule_list.rules[].tls_list.tls_list[].suffix_value",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -1764,7 +2153,158 @@ export const network_securityTools: ParsedOperation[] = [
         resourceType: "viewsforward-proxy-policy-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "proxy_choice",
+        fieldPath: "spec.proxy_choice",
+        options: [
+          "spec.any_proxy",
+          "spec.drp_http_connect",
+          "spec.network_connector",
+          "spec.proxy_label_selector",
+        ],
+      },
+      {
+        choiceField: "rule_choice",
+        fieldPath: "spec.rule_choice",
+        options: ["spec.allow_all", "spec.allow_list", "spec.deny_list", "spec.rule_list"],
+      },
+      {
+        choiceField: "default_action_choice",
+        fieldPath: "spec.allow_list.default_action_choice",
+        options: [
+          "spec.allow_list.default_action_allow",
+          "spec.allow_list.default_action_deny",
+          "spec.allow_list.default_action_next_policy",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.allow_list.http_list[].domain_choice",
+        options: [
+          "spec.allow_list.http_list[].exact_value",
+          "spec.allow_list.http_list[].regex_value",
+          "spec.allow_list.http_list[].suffix_value",
+        ],
+      },
+      {
+        choiceField: "path_choice",
+        fieldPath: "spec.allow_list.http_list[].path_choice",
+        options: [
+          "spec.allow_list.http_list[].any_path",
+          "spec.allow_list.http_list[].path_exact_value",
+          "spec.allow_list.http_list[].path_prefix_value",
+          "spec.allow_list.http_list[].path_regex_value",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.allow_list.tls_list[].domain_choice",
+        options: [
+          "spec.allow_list.tls_list[].exact_value",
+          "spec.allow_list.tls_list[].regex_value",
+          "spec.allow_list.tls_list[].suffix_value",
+        ],
+      },
+      {
+        choiceField: "default_action_choice",
+        fieldPath: "spec.deny_list.default_action_choice",
+        options: [
+          "spec.deny_list.default_action_allow",
+          "spec.deny_list.default_action_deny",
+          "spec.deny_list.default_action_next_policy",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.deny_list.http_list[].domain_choice",
+        options: [
+          "spec.deny_list.http_list[].exact_value",
+          "spec.deny_list.http_list[].regex_value",
+          "spec.deny_list.http_list[].suffix_value",
+        ],
+      },
+      {
+        choiceField: "path_choice",
+        fieldPath: "spec.deny_list.http_list[].path_choice",
+        options: [
+          "spec.deny_list.http_list[].any_path",
+          "spec.deny_list.http_list[].path_exact_value",
+          "spec.deny_list.http_list[].path_prefix_value",
+          "spec.deny_list.http_list[].path_regex_value",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.deny_list.tls_list[].domain_choice",
+        options: [
+          "spec.deny_list.tls_list[].exact_value",
+          "spec.deny_list.tls_list[].regex_value",
+          "spec.deny_list.tls_list[].suffix_value",
+        ],
+      },
+      {
+        choiceField: "destination_choice",
+        fieldPath: "spec.rule_list.rules[].destination_choice",
+        options: [
+          "spec.rule_list.rules[].all_destinations",
+          "spec.rule_list.rules[].dst_asn_list",
+          "spec.rule_list.rules[].dst_asn_set",
+          "spec.rule_list.rules[].dst_ip_prefix_set",
+          "spec.rule_list.rules[].dst_label_selector",
+          "spec.rule_list.rules[].dst_prefix_list",
+          "spec.rule_list.rules[].http_list",
+          "spec.rule_list.rules[].tls_list",
+          "spec.rule_list.rules[].url_category_list",
+        ],
+      },
+      {
+        choiceField: "http_connect_choice",
+        fieldPath: "spec.rule_list.rules[].http_connect_choice",
+        options: [
+          "spec.rule_list.rules[].no_http_connect_port",
+          "spec.rule_list.rules[].port_matcher",
+        ],
+      },
+      {
+        choiceField: "source_choice",
+        fieldPath: "spec.rule_list.rules[].source_choice",
+        options: [
+          "spec.rule_list.rules[].all_sources",
+          "spec.rule_list.rules[].ip_prefix_set",
+          "spec.rule_list.rules[].label_selector",
+          "spec.rule_list.rules[].prefix_list",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.rule_list.rules[].http_list.http_list[].domain_choice",
+        options: [
+          "spec.rule_list.rules[].http_list.http_list[].exact_value",
+          "spec.rule_list.rules[].http_list.http_list[].regex_value",
+          "spec.rule_list.rules[].http_list.http_list[].suffix_value",
+        ],
+      },
+      {
+        choiceField: "path_choice",
+        fieldPath: "spec.rule_list.rules[].http_list.http_list[].path_choice",
+        options: [
+          "spec.rule_list.rules[].http_list.http_list[].any_path",
+          "spec.rule_list.rules[].http_list.http_list[].path_exact_value",
+          "spec.rule_list.rules[].http_list.http_list[].path_prefix_value",
+          "spec.rule_list.rules[].http_list.http_list[].path_regex_value",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.rule_list.rules[].tls_list.tls_list[].domain_choice",
+        options: [
+          "spec.rule_list.rules[].tls_list.tls_list[].exact_value",
+          "spec.rule_list.rules[].tls_list.tls_list[].regex_value",
+          "spec.rule_list.rules[].tls_list.tls_list[].suffix_value",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -2019,7 +2559,107 @@ export const network_securityTools: ParsedOperation[] = [
         resourceType: "nat-policy-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "applies_to_choice",
+        fieldPath: "spec.applies_to_choice",
+        options: ["spec.site"],
+      },
+      {
+        choiceField: "enable_choice",
+        fieldPath: "spec.rules[].enable_choice",
+        options: ["spec.rules[].disable", "spec.rules[].enable"],
+      },
+      {
+        choiceField: "scope_choice",
+        fieldPath: "spec.rules[].scope_choice",
+        options: [
+          "spec.rules[].cloud_connect",
+          "spec.rules[].network_interface",
+          "spec.rules[].segment",
+          "spec.rules[].virtual_network",
+        ],
+      },
+      {
+        choiceField: "source_nat_choice",
+        fieldPath: "spec.rules[].action.source_nat_choice",
+        options: ["spec.rules[].action.dynamic", "spec.rules[].action.virtual_cidr"],
+      },
+      {
+        choiceField: "pool_choice",
+        fieldPath: "spec.rules[].action.dynamic.pool_choice",
+        options: ["spec.rules[].action.dynamic.elastic_ips", "spec.rules[].action.dynamic.pools"],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath: "spec.rules[].criteria.network_choice",
+        options: ["spec.rules[].criteria.segment", "spec.rules[].criteria.virtual_network"],
+      },
+      {
+        choiceField: "protocol_choice",
+        fieldPath: "spec.rules[].criteria.protocol_choice",
+        options: [
+          "spec.rules[].criteria.any",
+          "spec.rules[].criteria.icmp",
+          "spec.rules[].criteria.tcp",
+          "spec.rules[].criteria.udp",
+        ],
+      },
+      {
+        choiceField: "port_match",
+        fieldPath: "spec.rules[].criteria.destination_port.port_match",
+        options: [
+          "spec.rules[].criteria.destination_port.no_port_match",
+          "spec.rules[].criteria.destination_port.port",
+          "spec.rules[].criteria.destination_port.port_ranges",
+        ],
+      },
+      {
+        choiceField: "port_match",
+        fieldPath: "spec.rules[].criteria.source_port.port_match",
+        options: [
+          "spec.rules[].criteria.source_port.no_port_match",
+          "spec.rules[].criteria.source_port.port",
+          "spec.rules[].criteria.source_port.port_ranges",
+        ],
+      },
+      {
+        choiceField: "port_match",
+        fieldPath: "spec.rules[].criteria.tcp.destination_port.port_match",
+        options: [
+          "spec.rules[].criteria.tcp.destination_port.no_port_match",
+          "spec.rules[].criteria.tcp.destination_port.port",
+          "spec.rules[].criteria.tcp.destination_port.port_ranges",
+        ],
+      },
+      {
+        choiceField: "port_match",
+        fieldPath: "spec.rules[].criteria.tcp.source_port.port_match",
+        options: [
+          "spec.rules[].criteria.tcp.source_port.no_port_match",
+          "spec.rules[].criteria.tcp.source_port.port",
+          "spec.rules[].criteria.tcp.source_port.port_ranges",
+        ],
+      },
+      {
+        choiceField: "port_match",
+        fieldPath: "spec.rules[].criteria.udp.destination_port.port_match",
+        options: [
+          "spec.rules[].criteria.udp.destination_port.no_port_match",
+          "spec.rules[].criteria.udp.destination_port.port",
+          "spec.rules[].criteria.udp.destination_port.port_ranges",
+        ],
+      },
+      {
+        choiceField: "port_match",
+        fieldPath: "spec.rules[].criteria.udp.source_port.port_match",
+        options: [
+          "spec.rules[].criteria.udp.source_port.no_port_match",
+          "spec.rules[].criteria.udp.source_port.port",
+          "spec.rules[].criteria.udp.source_port.port_ranges",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -2368,7 +3008,107 @@ export const network_securityTools: ParsedOperation[] = [
         resourceType: "nat-policy-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "applies_to_choice",
+        fieldPath: "spec.applies_to_choice",
+        options: ["spec.site"],
+      },
+      {
+        choiceField: "enable_choice",
+        fieldPath: "spec.rules[].enable_choice",
+        options: ["spec.rules[].disable", "spec.rules[].enable"],
+      },
+      {
+        choiceField: "scope_choice",
+        fieldPath: "spec.rules[].scope_choice",
+        options: [
+          "spec.rules[].cloud_connect",
+          "spec.rules[].network_interface",
+          "spec.rules[].segment",
+          "spec.rules[].virtual_network",
+        ],
+      },
+      {
+        choiceField: "source_nat_choice",
+        fieldPath: "spec.rules[].action.source_nat_choice",
+        options: ["spec.rules[].action.dynamic", "spec.rules[].action.virtual_cidr"],
+      },
+      {
+        choiceField: "pool_choice",
+        fieldPath: "spec.rules[].action.dynamic.pool_choice",
+        options: ["spec.rules[].action.dynamic.elastic_ips", "spec.rules[].action.dynamic.pools"],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath: "spec.rules[].criteria.network_choice",
+        options: ["spec.rules[].criteria.segment", "spec.rules[].criteria.virtual_network"],
+      },
+      {
+        choiceField: "protocol_choice",
+        fieldPath: "spec.rules[].criteria.protocol_choice",
+        options: [
+          "spec.rules[].criteria.any",
+          "spec.rules[].criteria.icmp",
+          "spec.rules[].criteria.tcp",
+          "spec.rules[].criteria.udp",
+        ],
+      },
+      {
+        choiceField: "port_match",
+        fieldPath: "spec.rules[].criteria.destination_port.port_match",
+        options: [
+          "spec.rules[].criteria.destination_port.no_port_match",
+          "spec.rules[].criteria.destination_port.port",
+          "spec.rules[].criteria.destination_port.port_ranges",
+        ],
+      },
+      {
+        choiceField: "port_match",
+        fieldPath: "spec.rules[].criteria.source_port.port_match",
+        options: [
+          "spec.rules[].criteria.source_port.no_port_match",
+          "spec.rules[].criteria.source_port.port",
+          "spec.rules[].criteria.source_port.port_ranges",
+        ],
+      },
+      {
+        choiceField: "port_match",
+        fieldPath: "spec.rules[].criteria.tcp.destination_port.port_match",
+        options: [
+          "spec.rules[].criteria.tcp.destination_port.no_port_match",
+          "spec.rules[].criteria.tcp.destination_port.port",
+          "spec.rules[].criteria.tcp.destination_port.port_ranges",
+        ],
+      },
+      {
+        choiceField: "port_match",
+        fieldPath: "spec.rules[].criteria.tcp.source_port.port_match",
+        options: [
+          "spec.rules[].criteria.tcp.source_port.no_port_match",
+          "spec.rules[].criteria.tcp.source_port.port",
+          "spec.rules[].criteria.tcp.source_port.port_ranges",
+        ],
+      },
+      {
+        choiceField: "port_match",
+        fieldPath: "spec.rules[].criteria.udp.destination_port.port_match",
+        options: [
+          "spec.rules[].criteria.udp.destination_port.no_port_match",
+          "spec.rules[].criteria.udp.destination_port.port",
+          "spec.rules[].criteria.udp.destination_port.port_ranges",
+        ],
+      },
+      {
+        choiceField: "port_match",
+        fieldPath: "spec.rules[].criteria.udp.source_port.port_match",
+        options: [
+          "spec.rules[].criteria.udp.source_port.no_port_match",
+          "spec.rules[].criteria.udp.source_port.port",
+          "spec.rules[].criteria.udp.source_port.port_ranges",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -2449,7 +3189,27 @@ export const network_securityTools: ParsedOperation[] = [
         resourceType: "network-firewall-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "fast_acl_choice",
+        fieldPath: "spec.fast_acl_choice",
+        options: ["spec.active_fast_acls", "spec.disable_fast_acl"],
+      },
+      {
+        choiceField: "forward_proxy_policy_choice",
+        fieldPath: "spec.forward_proxy_policy_choice",
+        options: ["spec.active_forward_proxy_policies", "spec.disable_forward_proxy_policy"],
+      },
+      {
+        choiceField: "network_policy_choice",
+        fieldPath: "spec.network_policy_choice",
+        options: [
+          "spec.active_enhanced_firewall_policies",
+          "spec.active_network_policies",
+          "spec.disable_network_policy",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -2796,7 +3556,27 @@ export const network_securityTools: ParsedOperation[] = [
         resourceType: "network-firewall-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "fast_acl_choice",
+        fieldPath: "spec.fast_acl_choice",
+        options: ["spec.active_fast_acls", "spec.disable_fast_acl"],
+      },
+      {
+        choiceField: "forward_proxy_policy_choice",
+        fieldPath: "spec.forward_proxy_policy_choice",
+        options: ["spec.active_forward_proxy_policies", "spec.disable_forward_proxy_policy"],
+      },
+      {
+        choiceField: "network_policy_choice",
+        fieldPath: "spec.network_policy_choice",
+        options: [
+          "spec.active_enhanced_firewall_policies",
+          "spec.active_network_policies",
+          "spec.disable_network_policy",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -2877,7 +3657,65 @@ export const network_securityTools: ParsedOperation[] = [
         resourceType: "schemanetwork-policy-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "endpoint_choice",
+        fieldPath: "spec.endpoint.endpoint_choice",
+        options: [
+          "spec.endpoint.any",
+          "spec.endpoint.inside_endpoints",
+          "spec.endpoint.label_selector",
+          "spec.endpoint.outside_endpoints",
+          "spec.endpoint.prefix_list",
+        ],
+      },
+      {
+        choiceField: "other_endpoint",
+        fieldPath: "spec.rules.egress_rules[].other_endpoint",
+        options: [
+          "spec.rules.egress_rules[].any",
+          "spec.rules.egress_rules[].inside_endpoints",
+          "spec.rules.egress_rules[].ip_prefix_set",
+          "spec.rules.egress_rules[].label_selector",
+          "spec.rules.egress_rules[].outside_endpoints",
+          "spec.rules.egress_rules[].prefix_list",
+        ],
+      },
+      {
+        choiceField: "traffic_choice",
+        fieldPath: "spec.rules.egress_rules[].traffic_choice",
+        options: [
+          "spec.rules.egress_rules[].all_tcp_traffic",
+          "spec.rules.egress_rules[].all_traffic",
+          "spec.rules.egress_rules[].all_udp_traffic",
+          "spec.rules.egress_rules[].applications",
+          "spec.rules.egress_rules[].protocol_port_range",
+        ],
+      },
+      {
+        choiceField: "other_endpoint",
+        fieldPath: "spec.rules.ingress_rules[].other_endpoint",
+        options: [
+          "spec.rules.ingress_rules[].any",
+          "spec.rules.ingress_rules[].inside_endpoints",
+          "spec.rules.ingress_rules[].ip_prefix_set",
+          "spec.rules.ingress_rules[].label_selector",
+          "spec.rules.ingress_rules[].outside_endpoints",
+          "spec.rules.ingress_rules[].prefix_list",
+        ],
+      },
+      {
+        choiceField: "traffic_choice",
+        fieldPath: "spec.rules.ingress_rules[].traffic_choice",
+        options: [
+          "spec.rules.ingress_rules[].all_tcp_traffic",
+          "spec.rules.ingress_rules[].all_traffic",
+          "spec.rules.ingress_rules[].all_udp_traffic",
+          "spec.rules.ingress_rules[].applications",
+          "spec.rules.ingress_rules[].protocol_port_range",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -3214,7 +4052,13 @@ export const network_securityTools: ParsedOperation[] = [
         resourceType: "network-policy-rule-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "remote_endpoint",
+        fieldPath: "spec.remote_endpoint",
+        options: ["spec.ip_prefix_set", "spec.prefix", "spec.prefix_selector"],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -3562,7 +4406,13 @@ export const network_securityTools: ParsedOperation[] = [
         resourceType: "network-policy-rule-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "remote_endpoint",
+        fieldPath: "spec.remote_endpoint",
+        options: ["spec.ip_prefix_set", "spec.prefix", "spec.prefix_selector"],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -3834,7 +4684,70 @@ export const network_securityTools: ParsedOperation[] = [
         resourceType: "schemanetwork-policy-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "rule_choice",
+        fieldPath: "spec.rule_choice",
+        options: ["spec.legacy_rules", "spec.rules"],
+      },
+      {
+        choiceField: "endpoint_choice",
+        fieldPath: "spec.endpoint.endpoint_choice",
+        options: [
+          "spec.endpoint.any",
+          "spec.endpoint.inside_endpoints",
+          "spec.endpoint.label_selector",
+          "spec.endpoint.outside_endpoints",
+          "spec.endpoint.prefix_list",
+        ],
+      },
+      {
+        choiceField: "other_endpoint",
+        fieldPath: "spec.rules.egress_rules[].other_endpoint",
+        options: [
+          "spec.rules.egress_rules[].any",
+          "spec.rules.egress_rules[].inside_endpoints",
+          "spec.rules.egress_rules[].ip_prefix_set",
+          "spec.rules.egress_rules[].label_selector",
+          "spec.rules.egress_rules[].outside_endpoints",
+          "spec.rules.egress_rules[].prefix_list",
+        ],
+      },
+      {
+        choiceField: "traffic_choice",
+        fieldPath: "spec.rules.egress_rules[].traffic_choice",
+        options: [
+          "spec.rules.egress_rules[].all_tcp_traffic",
+          "spec.rules.egress_rules[].all_traffic",
+          "spec.rules.egress_rules[].all_udp_traffic",
+          "spec.rules.egress_rules[].applications",
+          "spec.rules.egress_rules[].protocol_port_range",
+        ],
+      },
+      {
+        choiceField: "other_endpoint",
+        fieldPath: "spec.rules.ingress_rules[].other_endpoint",
+        options: [
+          "spec.rules.ingress_rules[].any",
+          "spec.rules.ingress_rules[].inside_endpoints",
+          "spec.rules.ingress_rules[].ip_prefix_set",
+          "spec.rules.ingress_rules[].label_selector",
+          "spec.rules.ingress_rules[].outside_endpoints",
+          "spec.rules.ingress_rules[].prefix_list",
+        ],
+      },
+      {
+        choiceField: "traffic_choice",
+        fieldPath: "spec.rules.ingress_rules[].traffic_choice",
+        options: [
+          "spec.rules.ingress_rules[].all_tcp_traffic",
+          "spec.rules.ingress_rules[].all_traffic",
+          "spec.rules.ingress_rules[].all_udp_traffic",
+          "spec.rules.ingress_rules[].applications",
+          "spec.rules.ingress_rules[].protocol_port_range",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -3915,7 +4828,65 @@ export const network_securityTools: ParsedOperation[] = [
         resourceType: "viewsnetwork-policy-view-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "other_endpoint",
+        fieldPath: "spec.egress_rules[].other_endpoint",
+        options: [
+          "spec.egress_rules[].any",
+          "spec.egress_rules[].inside_endpoints",
+          "spec.egress_rules[].ip_prefix_set",
+          "spec.egress_rules[].label_selector",
+          "spec.egress_rules[].outside_endpoints",
+          "spec.egress_rules[].prefix_list",
+        ],
+      },
+      {
+        choiceField: "traffic_choice",
+        fieldPath: "spec.egress_rules[].traffic_choice",
+        options: [
+          "spec.egress_rules[].all_tcp_traffic",
+          "spec.egress_rules[].all_traffic",
+          "spec.egress_rules[].all_udp_traffic",
+          "spec.egress_rules[].applications",
+          "spec.egress_rules[].protocol_port_range",
+        ],
+      },
+      {
+        choiceField: "endpoint_choice",
+        fieldPath: "spec.endpoint.endpoint_choice",
+        options: [
+          "spec.endpoint.any",
+          "spec.endpoint.inside_endpoints",
+          "spec.endpoint.label_selector",
+          "spec.endpoint.outside_endpoints",
+          "spec.endpoint.prefix_list",
+        ],
+      },
+      {
+        choiceField: "other_endpoint",
+        fieldPath: "spec.ingress_rules[].other_endpoint",
+        options: [
+          "spec.ingress_rules[].any",
+          "spec.ingress_rules[].inside_endpoints",
+          "spec.ingress_rules[].ip_prefix_set",
+          "spec.ingress_rules[].label_selector",
+          "spec.ingress_rules[].outside_endpoints",
+          "spec.ingress_rules[].prefix_list",
+        ],
+      },
+      {
+        choiceField: "traffic_choice",
+        fieldPath: "spec.ingress_rules[].traffic_choice",
+        options: [
+          "spec.ingress_rules[].all_tcp_traffic",
+          "spec.ingress_rules[].all_traffic",
+          "spec.ingress_rules[].all_udp_traffic",
+          "spec.ingress_rules[].applications",
+          "spec.ingress_rules[].protocol_port_range",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -4262,7 +5233,65 @@ export const network_securityTools: ParsedOperation[] = [
         resourceType: "viewsnetwork-policy-view-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "other_endpoint",
+        fieldPath: "spec.egress_rules[].other_endpoint",
+        options: [
+          "spec.egress_rules[].any",
+          "spec.egress_rules[].inside_endpoints",
+          "spec.egress_rules[].ip_prefix_set",
+          "spec.egress_rules[].label_selector",
+          "spec.egress_rules[].outside_endpoints",
+          "spec.egress_rules[].prefix_list",
+        ],
+      },
+      {
+        choiceField: "traffic_choice",
+        fieldPath: "spec.egress_rules[].traffic_choice",
+        options: [
+          "spec.egress_rules[].all_tcp_traffic",
+          "spec.egress_rules[].all_traffic",
+          "spec.egress_rules[].all_udp_traffic",
+          "spec.egress_rules[].applications",
+          "spec.egress_rules[].protocol_port_range",
+        ],
+      },
+      {
+        choiceField: "endpoint_choice",
+        fieldPath: "spec.endpoint.endpoint_choice",
+        options: [
+          "spec.endpoint.any",
+          "spec.endpoint.inside_endpoints",
+          "spec.endpoint.label_selector",
+          "spec.endpoint.outside_endpoints",
+          "spec.endpoint.prefix_list",
+        ],
+      },
+      {
+        choiceField: "other_endpoint",
+        fieldPath: "spec.ingress_rules[].other_endpoint",
+        options: [
+          "spec.ingress_rules[].any",
+          "spec.ingress_rules[].inside_endpoints",
+          "spec.ingress_rules[].ip_prefix_set",
+          "spec.ingress_rules[].label_selector",
+          "spec.ingress_rules[].outside_endpoints",
+          "spec.ingress_rules[].prefix_list",
+        ],
+      },
+      {
+        choiceField: "traffic_choice",
+        fieldPath: "spec.ingress_rules[].traffic_choice",
+        options: [
+          "spec.ingress_rules[].all_tcp_traffic",
+          "spec.ingress_rules[].all_traffic",
+          "spec.ingress_rules[].all_udp_traffic",
+          "spec.ingress_rules[].applications",
+          "spec.ingress_rules[].protocol_port_range",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -4343,7 +5372,93 @@ export const network_securityTools: ParsedOperation[] = [
         resourceType: "viewspolicy-based-routing-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "policy_choice",
+        fieldPath: "spec.policy_choice",
+        options: ["spec.forward_proxy_pbr", "spec.network_pbr"],
+      },
+      {
+        choiceField: "destination_choice",
+        fieldPath: "spec.forward_proxy_pbr.forward_proxy_pbr_rules[].destination_choice",
+        options: [
+          "spec.forward_proxy_pbr.forward_proxy_pbr_rules[].all_destinations",
+          "spec.forward_proxy_pbr.forward_proxy_pbr_rules[].http_list",
+          "spec.forward_proxy_pbr.forward_proxy_pbr_rules[].tls_list",
+        ],
+      },
+      {
+        choiceField: "source_choice",
+        fieldPath: "spec.forward_proxy_pbr.forward_proxy_pbr_rules[].source_choice",
+        options: [
+          "spec.forward_proxy_pbr.forward_proxy_pbr_rules[].all_sources",
+          "spec.forward_proxy_pbr.forward_proxy_pbr_rules[].ip_prefix_set",
+          "spec.forward_proxy_pbr.forward_proxy_pbr_rules[].label_selector",
+          "spec.forward_proxy_pbr.forward_proxy_pbr_rules[].prefix_list",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath:
+          "spec.forward_proxy_pbr.forward_proxy_pbr_rules[].http_list.http_list[].domain_choice",
+        options: [
+          "spec.forward_proxy_pbr.forward_proxy_pbr_rules[].http_list.http_list[].exact_value",
+          "spec.forward_proxy_pbr.forward_proxy_pbr_rules[].http_list.http_list[].regex_value",
+          "spec.forward_proxy_pbr.forward_proxy_pbr_rules[].http_list.http_list[].suffix_value",
+        ],
+      },
+      {
+        choiceField: "path_choice",
+        fieldPath:
+          "spec.forward_proxy_pbr.forward_proxy_pbr_rules[].http_list.http_list[].path_choice",
+        options: [
+          "spec.forward_proxy_pbr.forward_proxy_pbr_rules[].http_list.http_list[].any_path",
+          "spec.forward_proxy_pbr.forward_proxy_pbr_rules[].http_list.http_list[].path_exact_value",
+          "spec.forward_proxy_pbr.forward_proxy_pbr_rules[].http_list.http_list[].path_prefix_value",
+          "spec.forward_proxy_pbr.forward_proxy_pbr_rules[].http_list.http_list[].path_regex_value",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath:
+          "spec.forward_proxy_pbr.forward_proxy_pbr_rules[].tls_list.tls_list[].domain_choice",
+        options: [
+          "spec.forward_proxy_pbr.forward_proxy_pbr_rules[].tls_list.tls_list[].exact_value",
+          "spec.forward_proxy_pbr.forward_proxy_pbr_rules[].tls_list.tls_list[].regex_value",
+          "spec.forward_proxy_pbr.forward_proxy_pbr_rules[].tls_list.tls_list[].suffix_value",
+        ],
+      },
+      {
+        choiceField: "source_choice",
+        fieldPath: "spec.network_pbr.source_choice",
+        options: [
+          "spec.network_pbr.any",
+          "spec.network_pbr.label_selector",
+          "spec.network_pbr.prefix_list",
+        ],
+      },
+      {
+        choiceField: "destination",
+        fieldPath: "spec.network_pbr.network_pbr_rules[].destination",
+        options: [
+          "spec.network_pbr.network_pbr_rules[].any",
+          "spec.network_pbr.network_pbr_rules[].dns_name",
+          "spec.network_pbr.network_pbr_rules[].ip_prefix_set",
+          "spec.network_pbr.network_pbr_rules[].prefix_list",
+        ],
+      },
+      {
+        choiceField: "traffic_choice",
+        fieldPath: "spec.network_pbr.network_pbr_rules[].traffic_choice",
+        options: [
+          "spec.network_pbr.network_pbr_rules[].all_tcp_traffic",
+          "spec.network_pbr.network_pbr_rules[].all_traffic",
+          "spec.network_pbr.network_pbr_rules[].all_udp_traffic",
+          "spec.network_pbr.network_pbr_rules[].applications",
+          "spec.network_pbr.network_pbr_rules[].protocol_port_range",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -4690,7 +5805,93 @@ export const network_securityTools: ParsedOperation[] = [
         resourceType: "viewspolicy-based-routing-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "policy_choice",
+        fieldPath: "spec.policy_choice",
+        options: ["spec.forward_proxy_pbr", "spec.network_pbr"],
+      },
+      {
+        choiceField: "destination_choice",
+        fieldPath: "spec.forward_proxy_pbr.forward_proxy_pbr_rules[].destination_choice",
+        options: [
+          "spec.forward_proxy_pbr.forward_proxy_pbr_rules[].all_destinations",
+          "spec.forward_proxy_pbr.forward_proxy_pbr_rules[].http_list",
+          "spec.forward_proxy_pbr.forward_proxy_pbr_rules[].tls_list",
+        ],
+      },
+      {
+        choiceField: "source_choice",
+        fieldPath: "spec.forward_proxy_pbr.forward_proxy_pbr_rules[].source_choice",
+        options: [
+          "spec.forward_proxy_pbr.forward_proxy_pbr_rules[].all_sources",
+          "spec.forward_proxy_pbr.forward_proxy_pbr_rules[].ip_prefix_set",
+          "spec.forward_proxy_pbr.forward_proxy_pbr_rules[].label_selector",
+          "spec.forward_proxy_pbr.forward_proxy_pbr_rules[].prefix_list",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath:
+          "spec.forward_proxy_pbr.forward_proxy_pbr_rules[].http_list.http_list[].domain_choice",
+        options: [
+          "spec.forward_proxy_pbr.forward_proxy_pbr_rules[].http_list.http_list[].exact_value",
+          "spec.forward_proxy_pbr.forward_proxy_pbr_rules[].http_list.http_list[].regex_value",
+          "spec.forward_proxy_pbr.forward_proxy_pbr_rules[].http_list.http_list[].suffix_value",
+        ],
+      },
+      {
+        choiceField: "path_choice",
+        fieldPath:
+          "spec.forward_proxy_pbr.forward_proxy_pbr_rules[].http_list.http_list[].path_choice",
+        options: [
+          "spec.forward_proxy_pbr.forward_proxy_pbr_rules[].http_list.http_list[].any_path",
+          "spec.forward_proxy_pbr.forward_proxy_pbr_rules[].http_list.http_list[].path_exact_value",
+          "spec.forward_proxy_pbr.forward_proxy_pbr_rules[].http_list.http_list[].path_prefix_value",
+          "spec.forward_proxy_pbr.forward_proxy_pbr_rules[].http_list.http_list[].path_regex_value",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath:
+          "spec.forward_proxy_pbr.forward_proxy_pbr_rules[].tls_list.tls_list[].domain_choice",
+        options: [
+          "spec.forward_proxy_pbr.forward_proxy_pbr_rules[].tls_list.tls_list[].exact_value",
+          "spec.forward_proxy_pbr.forward_proxy_pbr_rules[].tls_list.tls_list[].regex_value",
+          "spec.forward_proxy_pbr.forward_proxy_pbr_rules[].tls_list.tls_list[].suffix_value",
+        ],
+      },
+      {
+        choiceField: "source_choice",
+        fieldPath: "spec.network_pbr.source_choice",
+        options: [
+          "spec.network_pbr.any",
+          "spec.network_pbr.label_selector",
+          "spec.network_pbr.prefix_list",
+        ],
+      },
+      {
+        choiceField: "destination",
+        fieldPath: "spec.network_pbr.network_pbr_rules[].destination",
+        options: [
+          "spec.network_pbr.network_pbr_rules[].any",
+          "spec.network_pbr.network_pbr_rules[].dns_name",
+          "spec.network_pbr.network_pbr_rules[].ip_prefix_set",
+          "spec.network_pbr.network_pbr_rules[].prefix_list",
+        ],
+      },
+      {
+        choiceField: "traffic_choice",
+        fieldPath: "spec.network_pbr.network_pbr_rules[].traffic_choice",
+        options: [
+          "spec.network_pbr.network_pbr_rules[].all_tcp_traffic",
+          "spec.network_pbr.network_pbr_rules[].all_traffic",
+          "spec.network_pbr.network_pbr_rules[].all_udp_traffic",
+          "spec.network_pbr.network_pbr_rules[].applications",
+          "spec.network_pbr.network_pbr_rules[].protocol_port_range",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -4962,7 +6163,13 @@ export const network_securityTools: ParsedOperation[] = [
         resourceType: "segment-connection-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "connection_choice",
+        fieldPath: "spec.connections[].connection_choice",
+        options: ["spec.connections[].direct"],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -5043,7 +6250,13 @@ export const network_securityTools: ParsedOperation[] = [
         resourceType: "schemasegment-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "internet_connection_choice",
+        fieldPath: "spec.internet_connection_choice",
+        options: ["spec.disable", "spec.enable"],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -5390,7 +6603,13 @@ export const network_securityTools: ParsedOperation[] = [
         resourceType: "schemasegment-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "internet_connection_choice",
+        fieldPath: "spec.internet_connection_choice",
+        options: ["spec.disable", "spec.enable"],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -5472,7 +6691,269 @@ export const network_securityTools: ParsedOperation[] = [
         resourceType: "schemaservice-policy-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "rule_choice",
+        fieldPath: "spec.rule_choice",
+        options: [
+          "spec.allow_all_requests",
+          "spec.allow_list",
+          "spec.deny_all_requests",
+          "spec.deny_list",
+          "spec.rule_list",
+        ],
+      },
+      {
+        choiceField: "server_choice",
+        fieldPath: "spec.server_choice",
+        options: [
+          "spec.any_server",
+          "spec.server_name",
+          "spec.server_name_matcher",
+          "spec.server_selector",
+        ],
+      },
+      {
+        choiceField: "default_action_choice",
+        fieldPath: "spec.allow_list.default_action_choice",
+        options: [
+          "spec.allow_list.default_action_allow",
+          "spec.allow_list.default_action_deny",
+          "spec.allow_list.default_action_next_policy",
+        ],
+      },
+      {
+        choiceField: "default_action_choice",
+        fieldPath: "spec.deny_list.default_action_choice",
+        options: [
+          "spec.deny_list.default_action_allow",
+          "spec.deny_list.default_action_deny",
+          "spec.deny_list.default_action_next_policy",
+        ],
+      },
+      {
+        choiceField: "asn_choice",
+        fieldPath: "spec.rule_list.rules[].spec.asn_choice",
+        options: [
+          "spec.rule_list.rules[].spec.any_asn",
+          "spec.rule_list.rules[].spec.asn_list",
+          "spec.rule_list.rules[].spec.asn_matcher",
+        ],
+      },
+      {
+        choiceField: "client_choice",
+        fieldPath: "spec.rule_list.rules[].spec.client_choice",
+        options: [
+          "spec.rule_list.rules[].spec.any_client",
+          "spec.rule_list.rules[].spec.client_name",
+          "spec.rule_list.rules[].spec.client_name_matcher",
+          "spec.rule_list.rules[].spec.client_selector",
+          "spec.rule_list.rules[].spec.ip_threat_category_list",
+        ],
+      },
+      {
+        choiceField: "dst_asn_choice",
+        fieldPath: "spec.rule_list.rules[].spec.dst_asn_choice",
+        options: [],
+      },
+      {
+        choiceField: "dst_ip_choice",
+        fieldPath: "spec.rule_list.rules[].spec.dst_ip_choice",
+        options: [],
+      },
+      {
+        choiceField: "ip_choice",
+        fieldPath: "spec.rule_list.rules[].spec.ip_choice",
+        options: [
+          "spec.rule_list.rules[].spec.any_ip",
+          "spec.rule_list.rules[].spec.ip_matcher",
+          "spec.rule_list.rules[].spec.ip_prefix_list",
+        ],
+      },
+      {
+        choiceField: "tls_fingerprint_choice",
+        fieldPath: "spec.rule_list.rules[].spec.tls_fingerprint_choice",
+        options: [
+          "spec.rule_list.rules[].spec.ja4_tls_fingerprint",
+          "spec.rule_list.rules[].spec.tls_fingerprint_matcher",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.rule_list.rules[].spec.arg_matchers[].match",
+        options: [
+          "spec.rule_list.rules[].spec.arg_matchers[].check_not_present",
+          "spec.rule_list.rules[].spec.arg_matchers[].check_present",
+          "spec.rule_list.rules[].spec.arg_matchers[].item",
+        ],
+      },
+      {
+        choiceField: "action_type",
+        fieldPath: "spec.rule_list.rules[].spec.bot_action.action_type",
+        options: [
+          "spec.rule_list.rules[].spec.bot_action.bot_skip_processing",
+          "spec.rule_list.rules[].spec.bot_action.none",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.rule_list.rules[].spec.cookie_matchers[].match",
+        options: [
+          "spec.rule_list.rules[].spec.cookie_matchers[].check_not_present",
+          "spec.rule_list.rules[].spec.cookie_matchers[].check_present",
+          "spec.rule_list.rules[].spec.cookie_matchers[].item",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.rule_list.rules[].spec.headers[].match",
+        options: [
+          "spec.rule_list.rules[].spec.headers[].check_not_present",
+          "spec.rule_list.rules[].spec.headers[].check_present",
+          "spec.rule_list.rules[].spec.headers[].item",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.rule_list.rules[].spec.jwt_claims[].match",
+        options: [
+          "spec.rule_list.rules[].spec.jwt_claims[].check_not_present",
+          "spec.rule_list.rules[].spec.jwt_claims[].check_present",
+          "spec.rule_list.rules[].spec.jwt_claims[].item",
+        ],
+      },
+      {
+        choiceField: "action_type",
+        fieldPath: "spec.rule_list.rules[].spec.mum_action.action_type",
+        options: [
+          "spec.rule_list.rules[].spec.mum_action.default",
+          "spec.rule_list.rules[].spec.mum_action.skip_processing",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.rule_list.rules[].spec.query_params[].match",
+        options: [
+          "spec.rule_list.rules[].spec.query_params[].check_not_present",
+          "spec.rule_list.rules[].spec.query_params[].check_present",
+          "spec.rule_list.rules[].spec.query_params[].item",
+        ],
+      },
+      {
+        choiceField: "max_cookie_count_choice",
+        fieldPath: "spec.rule_list.rules[].spec.request_constraints.max_cookie_count_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_cookie_count_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_cookie_count_none",
+        ],
+      },
+      {
+        choiceField: "max_cookie_key_size_choice",
+        fieldPath: "spec.rule_list.rules[].spec.request_constraints.max_cookie_key_size_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_cookie_key_size_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_cookie_key_size_none",
+        ],
+      },
+      {
+        choiceField: "max_cookie_value_size_choice",
+        fieldPath: "spec.rule_list.rules[].spec.request_constraints.max_cookie_value_size_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_cookie_value_size_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_cookie_value_size_none",
+        ],
+      },
+      {
+        choiceField: "max_header_count_choice",
+        fieldPath: "spec.rule_list.rules[].spec.request_constraints.max_header_count_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_header_count_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_header_count_none",
+        ],
+      },
+      {
+        choiceField: "max_header_key_size_choice",
+        fieldPath: "spec.rule_list.rules[].spec.request_constraints.max_header_key_size_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_header_key_size_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_header_key_size_none",
+        ],
+      },
+      {
+        choiceField: "max_header_value_size_choice",
+        fieldPath: "spec.rule_list.rules[].spec.request_constraints.max_header_value_size_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_header_value_size_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_header_value_size_none",
+        ],
+      },
+      {
+        choiceField: "max_parameter_count_choice",
+        fieldPath: "spec.rule_list.rules[].spec.request_constraints.max_parameter_count_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_parameter_count_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_parameter_count_none",
+        ],
+      },
+      {
+        choiceField: "max_parameter_name_size_choice",
+        fieldPath: "spec.rule_list.rules[].spec.request_constraints.max_parameter_name_size_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_parameter_name_size_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_parameter_name_size_none",
+        ],
+      },
+      {
+        choiceField: "max_parameter_value_size_choice",
+        fieldPath:
+          "spec.rule_list.rules[].spec.request_constraints.max_parameter_value_size_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_parameter_value_size_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_parameter_value_size_none",
+        ],
+      },
+      {
+        choiceField: "max_query_size_choice",
+        fieldPath: "spec.rule_list.rules[].spec.request_constraints.max_query_size_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_query_size_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_query_size_none",
+        ],
+      },
+      {
+        choiceField: "max_request_line_size_choice",
+        fieldPath: "spec.rule_list.rules[].spec.request_constraints.max_request_line_size_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_request_line_size_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_request_line_size_none",
+        ],
+      },
+      {
+        choiceField: "max_request_size_choice",
+        fieldPath: "spec.rule_list.rules[].spec.request_constraints.max_request_size_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_request_size_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_request_size_none",
+        ],
+      },
+      {
+        choiceField: "max_url_size_choice",
+        fieldPath: "spec.rule_list.rules[].spec.request_constraints.max_url_size_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_url_size_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_url_size_none",
+        ],
+      },
+      {
+        choiceField: "action_type",
+        fieldPath: "spec.rule_list.rules[].spec.waf_action.action_type",
+        options: [
+          "spec.rule_list.rules[].spec.waf_action.app_firewall_detection_control",
+          "spec.rule_list.rules[].spec.waf_action.none",
+          "spec.rule_list.rules[].spec.waf_action.waf_skip_processing",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -5821,7 +7302,270 @@ export const network_securityTools: ParsedOperation[] = [
         resourceType: "schemaservice-policy-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "rule_choice",
+        fieldPath: "spec.rule_choice",
+        options: [
+          "spec.allow_all_requests",
+          "spec.allow_list",
+          "spec.deny_all_requests",
+          "spec.deny_list",
+          "spec.legacy_rule_list",
+          "spec.rule_list",
+        ],
+      },
+      {
+        choiceField: "server_choice",
+        fieldPath: "spec.server_choice",
+        options: [
+          "spec.any_server",
+          "spec.server_name",
+          "spec.server_name_matcher",
+          "spec.server_selector",
+        ],
+      },
+      {
+        choiceField: "default_action_choice",
+        fieldPath: "spec.allow_list.default_action_choice",
+        options: [
+          "spec.allow_list.default_action_allow",
+          "spec.allow_list.default_action_deny",
+          "spec.allow_list.default_action_next_policy",
+        ],
+      },
+      {
+        choiceField: "default_action_choice",
+        fieldPath: "spec.deny_list.default_action_choice",
+        options: [
+          "spec.deny_list.default_action_allow",
+          "spec.deny_list.default_action_deny",
+          "spec.deny_list.default_action_next_policy",
+        ],
+      },
+      {
+        choiceField: "asn_choice",
+        fieldPath: "spec.rule_list.rules[].spec.asn_choice",
+        options: [
+          "spec.rule_list.rules[].spec.any_asn",
+          "spec.rule_list.rules[].spec.asn_list",
+          "spec.rule_list.rules[].spec.asn_matcher",
+        ],
+      },
+      {
+        choiceField: "client_choice",
+        fieldPath: "spec.rule_list.rules[].spec.client_choice",
+        options: [
+          "spec.rule_list.rules[].spec.any_client",
+          "spec.rule_list.rules[].spec.client_name",
+          "spec.rule_list.rules[].spec.client_name_matcher",
+          "spec.rule_list.rules[].spec.client_selector",
+          "spec.rule_list.rules[].spec.ip_threat_category_list",
+        ],
+      },
+      {
+        choiceField: "dst_asn_choice",
+        fieldPath: "spec.rule_list.rules[].spec.dst_asn_choice",
+        options: [],
+      },
+      {
+        choiceField: "dst_ip_choice",
+        fieldPath: "spec.rule_list.rules[].spec.dst_ip_choice",
+        options: [],
+      },
+      {
+        choiceField: "ip_choice",
+        fieldPath: "spec.rule_list.rules[].spec.ip_choice",
+        options: [
+          "spec.rule_list.rules[].spec.any_ip",
+          "spec.rule_list.rules[].spec.ip_matcher",
+          "spec.rule_list.rules[].spec.ip_prefix_list",
+        ],
+      },
+      {
+        choiceField: "tls_fingerprint_choice",
+        fieldPath: "spec.rule_list.rules[].spec.tls_fingerprint_choice",
+        options: [
+          "spec.rule_list.rules[].spec.ja4_tls_fingerprint",
+          "spec.rule_list.rules[].spec.tls_fingerprint_matcher",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.rule_list.rules[].spec.arg_matchers[].match",
+        options: [
+          "spec.rule_list.rules[].spec.arg_matchers[].check_not_present",
+          "spec.rule_list.rules[].spec.arg_matchers[].check_present",
+          "spec.rule_list.rules[].spec.arg_matchers[].item",
+        ],
+      },
+      {
+        choiceField: "action_type",
+        fieldPath: "spec.rule_list.rules[].spec.bot_action.action_type",
+        options: [
+          "spec.rule_list.rules[].spec.bot_action.bot_skip_processing",
+          "spec.rule_list.rules[].spec.bot_action.none",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.rule_list.rules[].spec.cookie_matchers[].match",
+        options: [
+          "spec.rule_list.rules[].spec.cookie_matchers[].check_not_present",
+          "spec.rule_list.rules[].spec.cookie_matchers[].check_present",
+          "spec.rule_list.rules[].spec.cookie_matchers[].item",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.rule_list.rules[].spec.headers[].match",
+        options: [
+          "spec.rule_list.rules[].spec.headers[].check_not_present",
+          "spec.rule_list.rules[].spec.headers[].check_present",
+          "spec.rule_list.rules[].spec.headers[].item",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.rule_list.rules[].spec.jwt_claims[].match",
+        options: [
+          "spec.rule_list.rules[].spec.jwt_claims[].check_not_present",
+          "spec.rule_list.rules[].spec.jwt_claims[].check_present",
+          "spec.rule_list.rules[].spec.jwt_claims[].item",
+        ],
+      },
+      {
+        choiceField: "action_type",
+        fieldPath: "spec.rule_list.rules[].spec.mum_action.action_type",
+        options: [
+          "spec.rule_list.rules[].spec.mum_action.default",
+          "spec.rule_list.rules[].spec.mum_action.skip_processing",
+        ],
+      },
+      {
+        choiceField: "match",
+        fieldPath: "spec.rule_list.rules[].spec.query_params[].match",
+        options: [
+          "spec.rule_list.rules[].spec.query_params[].check_not_present",
+          "spec.rule_list.rules[].spec.query_params[].check_present",
+          "spec.rule_list.rules[].spec.query_params[].item",
+        ],
+      },
+      {
+        choiceField: "max_cookie_count_choice",
+        fieldPath: "spec.rule_list.rules[].spec.request_constraints.max_cookie_count_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_cookie_count_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_cookie_count_none",
+        ],
+      },
+      {
+        choiceField: "max_cookie_key_size_choice",
+        fieldPath: "spec.rule_list.rules[].spec.request_constraints.max_cookie_key_size_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_cookie_key_size_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_cookie_key_size_none",
+        ],
+      },
+      {
+        choiceField: "max_cookie_value_size_choice",
+        fieldPath: "spec.rule_list.rules[].spec.request_constraints.max_cookie_value_size_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_cookie_value_size_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_cookie_value_size_none",
+        ],
+      },
+      {
+        choiceField: "max_header_count_choice",
+        fieldPath: "spec.rule_list.rules[].spec.request_constraints.max_header_count_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_header_count_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_header_count_none",
+        ],
+      },
+      {
+        choiceField: "max_header_key_size_choice",
+        fieldPath: "spec.rule_list.rules[].spec.request_constraints.max_header_key_size_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_header_key_size_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_header_key_size_none",
+        ],
+      },
+      {
+        choiceField: "max_header_value_size_choice",
+        fieldPath: "spec.rule_list.rules[].spec.request_constraints.max_header_value_size_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_header_value_size_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_header_value_size_none",
+        ],
+      },
+      {
+        choiceField: "max_parameter_count_choice",
+        fieldPath: "spec.rule_list.rules[].spec.request_constraints.max_parameter_count_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_parameter_count_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_parameter_count_none",
+        ],
+      },
+      {
+        choiceField: "max_parameter_name_size_choice",
+        fieldPath: "spec.rule_list.rules[].spec.request_constraints.max_parameter_name_size_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_parameter_name_size_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_parameter_name_size_none",
+        ],
+      },
+      {
+        choiceField: "max_parameter_value_size_choice",
+        fieldPath:
+          "spec.rule_list.rules[].spec.request_constraints.max_parameter_value_size_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_parameter_value_size_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_parameter_value_size_none",
+        ],
+      },
+      {
+        choiceField: "max_query_size_choice",
+        fieldPath: "spec.rule_list.rules[].spec.request_constraints.max_query_size_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_query_size_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_query_size_none",
+        ],
+      },
+      {
+        choiceField: "max_request_line_size_choice",
+        fieldPath: "spec.rule_list.rules[].spec.request_constraints.max_request_line_size_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_request_line_size_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_request_line_size_none",
+        ],
+      },
+      {
+        choiceField: "max_request_size_choice",
+        fieldPath: "spec.rule_list.rules[].spec.request_constraints.max_request_size_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_request_size_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_request_size_none",
+        ],
+      },
+      {
+        choiceField: "max_url_size_choice",
+        fieldPath: "spec.rule_list.rules[].spec.request_constraints.max_url_size_choice",
+        options: [
+          "spec.rule_list.rules[].spec.request_constraints.max_url_size_exceeds",
+          "spec.rule_list.rules[].spec.request_constraints.max_url_size_none",
+        ],
+      },
+      {
+        choiceField: "action_type",
+        fieldPath: "spec.rule_list.rules[].spec.waf_action.action_type",
+        options: [
+          "spec.rule_list.rules[].spec.waf_action.app_firewall_detection_control",
+          "spec.rule_list.rules[].spec.waf_action.none",
+          "spec.rule_list.rules[].spec.waf_action.waf_skip_processing",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",

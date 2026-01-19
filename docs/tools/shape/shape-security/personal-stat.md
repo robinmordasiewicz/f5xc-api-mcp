@@ -6,9 +6,6 @@ description: Insight Personal Stats.
 
 # Personal Stat
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Insight Personal Stats.
 
 ## Tools
@@ -24,14 +21,6 @@ Insight Personal Stats.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- personal-stat
 
 ## Example Usage
 

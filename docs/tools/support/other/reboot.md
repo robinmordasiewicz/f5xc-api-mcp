@@ -6,9 +6,6 @@ description: Reboot node.
 
 # Reboot
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Reboot specific node in site.
 
 ## Tools
@@ -26,14 +23,6 @@ Reboot specific node in site.
 | `namespace` | Namespace | `-` |
 | `node` | Node Name | `-` |
 | `site` | Site Name | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- reboot
 
 ## Example Usage
 

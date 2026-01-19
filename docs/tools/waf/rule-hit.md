@@ -6,9 +6,6 @@ description: Client Rule Hits Metrics.
 
 # Rule Hit
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET number of rule hits per client for a given namespace.
 The rule hits counter can be aggregated
 based on one or more labels listed here.
@@ -28,14 +25,6 @@ WAF_INSTANCE_ID, RULE_ID, RULE_SEVERITY, RULE_TAG.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- rule-hit
 
 ## Example Usage
 

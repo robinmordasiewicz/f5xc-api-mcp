@@ -6,9 +6,6 @@ description: PostSafeTransactionsOverTime.
 
 # Transactions Over Time
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 POST Safe Analyst Station Dashboard Transaction Breakdown request.
 
 ## Tools
@@ -24,14 +21,6 @@ POST Safe Analyst Station Dashboard Transaction Breakdown request.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- transactions-over-time
 
 ## Example Usage
 

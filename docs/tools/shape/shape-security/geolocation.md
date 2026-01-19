@@ -6,9 +6,6 @@ description: Top Human Geolocation.
 
 # Geolocation
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET top human geolocation.
 
 ## Tools
@@ -24,14 +21,6 @@ GET top human geolocation.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- geolocation
 
 ## Example Usage
 

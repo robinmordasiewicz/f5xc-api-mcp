@@ -6,9 +6,6 @@ description: Close a customer support ticket.
 
 # Close
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Closes selected customer support ticket (if not already closed). You can always attempt to reopen if
 needed to be.
 
@@ -26,14 +23,6 @@ needed to be.
 |-----------|-------------|--------|
 | `name` | Name | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- close
 
 ## Example Usage
 

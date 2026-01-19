@@ -6,9 +6,6 @@ description: All Cloud Connect Segment Metrics.
 
 # Segment Metric
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Cloud Connect APIs are used to GET the segment data for cloud connect.
 
 ## Tools
@@ -16,14 +13,6 @@ Cloud Connect APIs are used to GET the segment data for cloud connect.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-cloudinfrastructure-segment-metric-create` | All Cloud Connect Segment Metrics. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- segment-metric
 
 ## Example Usage
 

@@ -6,9 +6,6 @@ description: DaemonSet List.
 
 # Daemonset
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 API to GET list of daemon sets for a given namespace in a site.
 
 ## Tools

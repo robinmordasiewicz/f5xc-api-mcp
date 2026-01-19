@@ -6,9 +6,6 @@ description: Create TPM API Key.
 
 # Tpm API Key
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Replace a APIKey object's revocation or enable/disable status. A revoked APIKey is not considered
 disabled.
 Certificates minted using disabled APIKeys are rejected during system
@@ -44,18 +41,6 @@ they were minted after revocation date.
 | `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
 | `report_fields` | The report_fields parameter | `-` |
 | `report_status_fields` | The report_status_fields parameter | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- tpm-api-key
-
-**Modifies:**
-
-- tpm-api-key
 
 ## Example Usage
 

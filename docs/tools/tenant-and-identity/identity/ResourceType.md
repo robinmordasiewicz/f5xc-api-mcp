@@ -6,9 +6,6 @@ description: GET supported resources type.
 
 # ResourceType
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Getresourcetypesbyid CustomPublicAPI.
 
 ## Tools

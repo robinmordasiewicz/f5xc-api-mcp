@@ -6,9 +6,6 @@ description: DNS Load Balancer Pool Member Health Status Change Events.
 
 # Health Status Change Event
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET DNS Load Balancer Pool Health Status Changes.
 
 ## Tools

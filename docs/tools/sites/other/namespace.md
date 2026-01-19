@@ -6,9 +6,6 @@ description: Namespace List.
 
 # Namespace
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 API to GET list of namespaces in a site.
 
 ## Tools

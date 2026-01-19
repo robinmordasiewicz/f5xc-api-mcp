@@ -6,9 +6,6 @@ description: Cacheability query Query.
 
 # Lb Cache Content
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Request to GET time-series cacheable data for HTTP-LBs.
 
 ## Tools
@@ -24,14 +21,6 @@ Request to GET time-series cacheable data for HTTP-LBs.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- lb-cache-content
 
 ## Example Usage
 

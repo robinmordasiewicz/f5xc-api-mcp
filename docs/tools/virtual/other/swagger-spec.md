@@ -6,9 +6,6 @@ description: GET Swagger Spec for HTTP Load Balancer.
 
 # Swagger Spec
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET the corresponding Swagger spec for the given HTTP load balancer.
 
 ## Tools

@@ -6,9 +6,6 @@ description: List of mitigations.
 
 # Mitigation
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Returns details of a single mitigation.
 
 ## Tools
@@ -26,14 +23,6 @@ Returns details of a single mitigation.
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
 | `mitigation_id` | Mitigation ID | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- mitigation
 
 ## Example Usage
 

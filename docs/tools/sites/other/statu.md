@@ -6,9 +6,6 @@ description: Check Site Exist.
 
 # Statu
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Check Site Exist for a site.
 
 ## Tools
@@ -24,14 +21,6 @@ Check Site Exist for a site.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `name` | Name | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- statu
 
 ## Example Usage
 

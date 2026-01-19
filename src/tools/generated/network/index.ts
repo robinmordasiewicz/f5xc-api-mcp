@@ -357,7 +357,66 @@ export const networkTools: ParsedOperation[] = [
         resourceType: "advertise-policy-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.port_choice",
+        options: ["spec.port", "spec.port_ranges"],
+      },
+      {
+        choiceField: "client_certificate_verify_choice",
+        fieldPath: "spec.tls_parameters.client_certificate_verify_choice",
+        options: [
+          "spec.tls_parameters.client_certificate_optional",
+          "spec.tls_parameters.client_certificate_required",
+          "spec.tls_parameters.no_client_certificate",
+        ],
+      },
+      {
+        choiceField: "ocsp_stapling_choice",
+        fieldPath: "spec.tls_parameters.common_params.tls_certificates[].ocsp_stapling_choice",
+        options: [
+          "spec.tls_parameters.common_params.tls_certificates[].custom_hash_algorithms",
+          "spec.tls_parameters.common_params.tls_certificates[].disable_ocsp_stapling",
+          "spec.tls_parameters.common_params.tls_certificates[].use_system_defaults",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.tls_parameters.common_params.tls_certificates[].private_key.secret_info_oneof",
+        options: [
+          "spec.tls_parameters.common_params.tls_certificates[].private_key.blindfold_secret_info",
+          "spec.tls_parameters.common_params.tls_certificates[].private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath: "spec.tls_parameters.common_params.validation_params.trusted_ca_choice",
+        options: [
+          "spec.tls_parameters.common_params.validation_params.trusted_ca",
+          "spec.tls_parameters.common_params.validation_params.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "ref_or_selector",
+        fieldPath: "spec.where.ref_or_selector",
+        options: ["spec.where.site", "spec.where.virtual_network", "spec.where.virtual_site"],
+      },
+      {
+        choiceField: "internet_vip_choice",
+        fieldPath: "spec.where.site.internet_vip_choice",
+        options: ["spec.where.site.disable_internet_vip", "spec.where.site.enable_internet_vip"],
+      },
+      {
+        choiceField: "internet_vip_choice",
+        fieldPath: "spec.where.virtual_site.internet_vip_choice",
+        options: [
+          "spec.where.virtual_site.disable_internet_vip",
+          "spec.where.virtual_site.enable_internet_vip",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -654,7 +713,66 @@ export const networkTools: ParsedOperation[] = [
         resourceType: "advertise-policy-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.port_choice",
+        options: ["spec.port", "spec.port_ranges"],
+      },
+      {
+        choiceField: "client_certificate_verify_choice",
+        fieldPath: "spec.tls_parameters.client_certificate_verify_choice",
+        options: [
+          "spec.tls_parameters.client_certificate_optional",
+          "spec.tls_parameters.client_certificate_required",
+          "spec.tls_parameters.no_client_certificate",
+        ],
+      },
+      {
+        choiceField: "ocsp_stapling_choice",
+        fieldPath: "spec.tls_parameters.common_params.tls_certificates[].ocsp_stapling_choice",
+        options: [
+          "spec.tls_parameters.common_params.tls_certificates[].custom_hash_algorithms",
+          "spec.tls_parameters.common_params.tls_certificates[].disable_ocsp_stapling",
+          "spec.tls_parameters.common_params.tls_certificates[].use_system_defaults",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.tls_parameters.common_params.tls_certificates[].private_key.secret_info_oneof",
+        options: [
+          "spec.tls_parameters.common_params.tls_certificates[].private_key.blindfold_secret_info",
+          "spec.tls_parameters.common_params.tls_certificates[].private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath: "spec.tls_parameters.common_params.validation_params.trusted_ca_choice",
+        options: [
+          "spec.tls_parameters.common_params.validation_params.trusted_ca",
+          "spec.tls_parameters.common_params.validation_params.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "ref_or_selector",
+        fieldPath: "spec.where.ref_or_selector",
+        options: ["spec.where.site", "spec.where.virtual_network", "spec.where.virtual_site"],
+      },
+      {
+        choiceField: "internet_vip_choice",
+        fieldPath: "spec.where.site.internet_vip_choice",
+        options: ["spec.where.site.disable_internet_vip", "spec.where.site.enable_internet_vip"],
+      },
+      {
+        choiceField: "internet_vip_choice",
+        fieldPath: "spec.where.virtual_site.internet_vip_choice",
+        options: [
+          "spec.where.virtual_site.disable_internet_vip",
+          "spec.where.virtual_site.enable_internet_vip",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -1089,7 +1207,114 @@ export const networkTools: ParsedOperation[] = [
         resourceType: "bgp-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "router_id_choice",
+        fieldPath: "spec.bgp_parameters.router_id_choice",
+        options: [
+          "spec.bgp_parameters.from_site",
+          "spec.bgp_parameters.ip_address",
+          "spec.bgp_parameters.local_address",
+        ],
+      },
+      {
+        choiceField: "bfd_choice",
+        fieldPath: "spec.peers[].bfd_choice",
+        options: ["spec.peers[].bfd_disabled", "spec.peers[].bfd_enabled"],
+      },
+      {
+        choiceField: "enable_choice",
+        fieldPath: "spec.peers[].enable_choice",
+        options: ["spec.peers[].disable", "spec.peers[].routing_policies"],
+      },
+      {
+        choiceField: "passive_choice",
+        fieldPath: "spec.peers[].passive_choice",
+        options: ["spec.peers[].passive_mode_disabled", "spec.peers[].passive_mode_enabled"],
+      },
+      {
+        choiceField: "type_choice",
+        fieldPath: "spec.peers[].type_choice",
+        options: ["spec.peers[].external"],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath: "spec.peers[].external.address_choice",
+        options: [
+          "spec.peers[].external.address",
+          "spec.peers[].external.default_gateway",
+          "spec.peers[].external.disable",
+          "spec.peers[].external.external_connector",
+          "spec.peers[].external.from_site",
+          "spec.peers[].external.subnet_begin_offset",
+          "spec.peers[].external.subnet_end_offset",
+        ],
+      },
+      {
+        choiceField: "address_choice_v6",
+        fieldPath: "spec.peers[].external.address_choice_v6",
+        options: [
+          "spec.peers[].external.address_ipv6",
+          "spec.peers[].external.default_gateway_v6",
+          "spec.peers[].external.disable_v6",
+          "spec.peers[].external.from_site_v6",
+          "spec.peers[].external.subnet_begin_offset_v6",
+          "spec.peers[].external.subnet_end_offset_v6",
+        ],
+      },
+      {
+        choiceField: "auth_choice",
+        fieldPath: "spec.peers[].external.auth_choice",
+        options: ["spec.peers[].external.md5_auth_key", "spec.peers[].external.no_authentication"],
+      },
+      {
+        choiceField: "interface_choice",
+        fieldPath: "spec.peers[].external.interface_choice",
+        options: ["spec.peers[].external.interface", "spec.peers[].external.interface_list"],
+      },
+      {
+        choiceField: "enable_choice",
+        fieldPath: "spec.peers[].external.family_inet.enable_choice",
+        options: [
+          "spec.peers[].external.family_inet.disable",
+          "spec.peers[].external.family_inet.enable",
+        ],
+      },
+      {
+        choiceField: "direction",
+        fieldPath: "spec.peers[].routing_policies.route_policy[].direction",
+        options: [
+          "spec.peers[].routing_policies.route_policy[].inbound",
+          "spec.peers[].routing_policies.route_policy[].outbound",
+        ],
+      },
+      {
+        choiceField: "node_choice",
+        fieldPath: "spec.peers[].routing_policies.route_policy[].node_choice",
+        options: [
+          "spec.peers[].routing_policies.route_policy[].all_nodes",
+          "spec.peers[].routing_policies.route_policy[].node_name",
+        ],
+      },
+      {
+        choiceField: "ref_or_selector",
+        fieldPath: "spec.where.ref_or_selector",
+        options: ["spec.where.site", "spec.where.virtual_site"],
+      },
+      {
+        choiceField: "internet_vip_choice",
+        fieldPath: "spec.where.site.internet_vip_choice",
+        options: ["spec.where.site.disable_internet_vip", "spec.where.site.enable_internet_vip"],
+      },
+      {
+        choiceField: "internet_vip_choice",
+        fieldPath: "spec.where.virtual_site.internet_vip_choice",
+        options: [
+          "spec.where.virtual_site.disable_internet_vip",
+          "spec.where.virtual_site.enable_internet_vip",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -1482,7 +1707,39 @@ export const networkTools: ParsedOperation[] = [
         resourceType: "schemabgp-routing-policy-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "action_type",
+        fieldPath: "spec.rules[].action.action_type",
+        options: [
+          "spec.rules[].action.aggregate",
+          "spec.rules[].action.allow",
+          "spec.rules[].action.as_path",
+          "spec.rules[].action.community",
+          "spec.rules[].action.deny",
+          "spec.rules[].action.local_preference",
+          "spec.rules[].action.metric",
+        ],
+      },
+      {
+        choiceField: "type_of_match",
+        fieldPath: "spec.rules[].match.type_of_match",
+        options: [
+          "spec.rules[].match.as_path",
+          "spec.rules[].match.community",
+          "spec.rules[].match.ip_prefixes",
+        ],
+      },
+      {
+        choiceField: "prefix_length_match",
+        fieldPath: "spec.rules[].match.ip_prefixes.prefixes[].prefix_length_match",
+        options: [
+          "spec.rules[].match.ip_prefixes.prefixes[].equal_or_longer_than",
+          "spec.rules[].match.ip_prefixes.prefixes[].exact_match",
+          "spec.rules[].match.ip_prefixes.prefixes[].longer_than",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -1778,7 +2035,39 @@ export const networkTools: ParsedOperation[] = [
         resourceType: "schemabgp-routing-policy-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "action_type",
+        fieldPath: "spec.rules[].action.action_type",
+        options: [
+          "spec.rules[].action.aggregate",
+          "spec.rules[].action.allow",
+          "spec.rules[].action.as_path",
+          "spec.rules[].action.community",
+          "spec.rules[].action.deny",
+          "spec.rules[].action.local_preference",
+          "spec.rules[].action.metric",
+        ],
+      },
+      {
+        choiceField: "type_of_match",
+        fieldPath: "spec.rules[].match.type_of_match",
+        options: [
+          "spec.rules[].match.as_path",
+          "spec.rules[].match.community",
+          "spec.rules[].match.ip_prefixes",
+        ],
+      },
+      {
+        choiceField: "prefix_length_match",
+        fieldPath: "spec.rules[].match.ip_prefixes.prefixes[].prefix_length_match",
+        options: [
+          "spec.rules[].match.ip_prefixes.prefixes[].equal_or_longer_than",
+          "spec.rules[].match.ip_prefixes.prefixes[].exact_match",
+          "spec.rules[].match.ip_prefixes.prefixes[].longer_than",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -1857,7 +2146,114 @@ export const networkTools: ParsedOperation[] = [
         resourceType: "bgp-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "router_id_choice",
+        fieldPath: "spec.bgp_parameters.router_id_choice",
+        options: [
+          "spec.bgp_parameters.from_site",
+          "spec.bgp_parameters.ip_address",
+          "spec.bgp_parameters.local_address",
+        ],
+      },
+      {
+        choiceField: "bfd_choice",
+        fieldPath: "spec.peers[].bfd_choice",
+        options: ["spec.peers[].bfd_disabled", "spec.peers[].bfd_enabled"],
+      },
+      {
+        choiceField: "enable_choice",
+        fieldPath: "spec.peers[].enable_choice",
+        options: ["spec.peers[].disable", "spec.peers[].routing_policies"],
+      },
+      {
+        choiceField: "passive_choice",
+        fieldPath: "spec.peers[].passive_choice",
+        options: ["spec.peers[].passive_mode_disabled", "spec.peers[].passive_mode_enabled"],
+      },
+      {
+        choiceField: "type_choice",
+        fieldPath: "spec.peers[].type_choice",
+        options: ["spec.peers[].external"],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath: "spec.peers[].external.address_choice",
+        options: [
+          "spec.peers[].external.address",
+          "spec.peers[].external.default_gateway",
+          "spec.peers[].external.disable",
+          "spec.peers[].external.external_connector",
+          "spec.peers[].external.from_site",
+          "spec.peers[].external.subnet_begin_offset",
+          "spec.peers[].external.subnet_end_offset",
+        ],
+      },
+      {
+        choiceField: "address_choice_v6",
+        fieldPath: "spec.peers[].external.address_choice_v6",
+        options: [
+          "spec.peers[].external.address_ipv6",
+          "spec.peers[].external.default_gateway_v6",
+          "spec.peers[].external.disable_v6",
+          "spec.peers[].external.from_site_v6",
+          "spec.peers[].external.subnet_begin_offset_v6",
+          "spec.peers[].external.subnet_end_offset_v6",
+        ],
+      },
+      {
+        choiceField: "auth_choice",
+        fieldPath: "spec.peers[].external.auth_choice",
+        options: ["spec.peers[].external.md5_auth_key", "spec.peers[].external.no_authentication"],
+      },
+      {
+        choiceField: "interface_choice",
+        fieldPath: "spec.peers[].external.interface_choice",
+        options: ["spec.peers[].external.interface", "spec.peers[].external.interface_list"],
+      },
+      {
+        choiceField: "enable_choice",
+        fieldPath: "spec.peers[].external.family_inet.enable_choice",
+        options: [
+          "spec.peers[].external.family_inet.disable",
+          "spec.peers[].external.family_inet.enable",
+        ],
+      },
+      {
+        choiceField: "direction",
+        fieldPath: "spec.peers[].routing_policies.route_policy[].direction",
+        options: [
+          "spec.peers[].routing_policies.route_policy[].inbound",
+          "spec.peers[].routing_policies.route_policy[].outbound",
+        ],
+      },
+      {
+        choiceField: "node_choice",
+        fieldPath: "spec.peers[].routing_policies.route_policy[].node_choice",
+        options: [
+          "spec.peers[].routing_policies.route_policy[].all_nodes",
+          "spec.peers[].routing_policies.route_policy[].node_name",
+        ],
+      },
+      {
+        choiceField: "ref_or_selector",
+        fieldPath: "spec.where.ref_or_selector",
+        options: ["spec.where.site", "spec.where.virtual_site"],
+      },
+      {
+        choiceField: "internet_vip_choice",
+        fieldPath: "spec.where.site.internet_vip_choice",
+        options: ["spec.where.site.disable_internet_vip", "spec.where.site.enable_internet_vip"],
+      },
+      {
+        choiceField: "internet_vip_choice",
+        fieldPath: "spec.where.virtual_site.internet_vip_choice",
+        options: [
+          "spec.where.virtual_site.disable_internet_vip",
+          "spec.where.virtual_site.enable_internet_vip",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -1989,7 +2385,13 @@ export const networkTools: ParsedOperation[] = [
         resourceType: "dc-cluster-group-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "dc_cluster_group_mesh_choice",
+        fieldPath: "spec.type.dc_cluster_group_mesh_choice",
+        options: ["spec.type.control_and_data_plane_mesh", "spec.type.data_plane_mesh"],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -2284,7 +2686,13 @@ export const networkTools: ParsedOperation[] = [
         resourceType: "dc-cluster-group-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "dc_cluster_group_mesh_choice",
+        fieldPath: "spec.type.dc_cluster_group_mesh_choice",
+        options: ["spec.type.control_and_data_plane_mesh", "spec.type.data_plane_mesh"],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -2352,7 +2760,23 @@ export const networkTools: ParsedOperation[] = [
         resourceType: "forwarding-class-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "marking_choice",
+        fieldPath: "spec.marking_choice",
+        options: ["spec.dscp", "spec.no_marking", "spec.tos_value"],
+      },
+      {
+        choiceField: "policer_choice",
+        fieldPath: "spec.policer_choice",
+        options: ["spec.no_policer", "spec.policer"],
+      },
+      {
+        choiceField: "queueing_choice",
+        fieldPath: "spec.queueing_choice",
+        options: ["spec.dscp_based_queue", "spec.queue_id_to_use"],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -2647,7 +3071,23 @@ export const networkTools: ParsedOperation[] = [
         resourceType: "forwarding-class-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "marking_choice",
+        fieldPath: "spec.marking_choice",
+        options: ["spec.dscp", "spec.no_marking", "spec.tos_value"],
+      },
+      {
+        choiceField: "policer_choice",
+        fieldPath: "spec.policer_choice",
+        options: ["spec.no_policer", "spec.policer"],
+      },
+      {
+        choiceField: "queueing_choice",
+        fieldPath: "spec.queueing_choice",
+        options: ["spec.dscp_based_queue", "spec.queue_id_to_use"],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -2715,7 +3155,22 @@ export const networkTools: ParsedOperation[] = [
         resourceType: "ike-phase1-profile-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "ike_key_lifetime",
+        fieldPath: "spec.ike_key_lifetime",
+        options: [
+          "spec.ike_keylifetime_hours",
+          "spec.ike_keylifetime_minutes",
+          "spec.use_default_keylifetime",
+        ],
+      },
+      {
+        choiceField: "ike_reauth_timeout",
+        fieldPath: "spec.ike_reauth_timeout",
+        options: ["spec.reauth_disabled", "spec.reauth_timeout_days", "spec.reauth_timeout_hours"],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -3010,7 +3465,22 @@ export const networkTools: ParsedOperation[] = [
         resourceType: "ike-phase1-profile-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "ike_key_lifetime",
+        fieldPath: "spec.ike_key_lifetime",
+        options: [
+          "spec.ike_keylifetime_hours",
+          "spec.ike_keylifetime_minutes",
+          "spec.use_default_keylifetime",
+        ],
+      },
+      {
+        choiceField: "ike_reauth_timeout",
+        fieldPath: "spec.ike_reauth_timeout",
+        options: ["spec.reauth_disabled", "spec.reauth_timeout_days", "spec.reauth_timeout_hours"],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -3078,7 +3548,22 @@ export const networkTools: ParsedOperation[] = [
         resourceType: "viewsike-phase2-profile-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "ike_key_lifetime",
+        fieldPath: "spec.ike_key_lifetime",
+        options: [
+          "spec.ike_keylifetime_hours",
+          "spec.ike_keylifetime_minutes",
+          "spec.use_default_keylifetime",
+        ],
+      },
+      {
+        choiceField: "pfs_mode",
+        fieldPath: "spec.pfs_mode",
+        options: ["spec.dh_group_set", "spec.disable_pfs"],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -3373,7 +3858,22 @@ export const networkTools: ParsedOperation[] = [
         resourceType: "viewsike-phase2-profile-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "ike_key_lifetime",
+        fieldPath: "spec.ike_key_lifetime",
+        options: [
+          "spec.ike_keylifetime_hours",
+          "spec.ike_keylifetime_minutes",
+          "spec.use_default_keylifetime",
+        ],
+      },
+      {
+        choiceField: "pfs_mode",
+        fieldPath: "spec.pfs_mode",
+        options: ["spec.dh_group_set", "spec.disable_pfs"],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -3441,7 +3941,22 @@ export const networkTools: ParsedOperation[] = [
         resourceType: "schemaike1create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "ike_key_lifetime",
+        fieldPath: "spec.ike_key_lifetime",
+        options: [
+          "spec.ike_keylifetime_hours",
+          "spec.ike_keylifetime_minutes",
+          "spec.use_default_keylifetime",
+        ],
+      },
+      {
+        choiceField: "ike_reauth_timeout",
+        fieldPath: "spec.ike_reauth_timeout",
+        options: ["spec.reauth_disabled", "spec.reauth_timeout_days", "spec.reauth_timeout_hours"],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -3736,7 +4251,22 @@ export const networkTools: ParsedOperation[] = [
         resourceType: "schemaike1replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "ike_key_lifetime",
+        fieldPath: "spec.ike_key_lifetime",
+        options: [
+          "spec.ike_keylifetime_hours",
+          "spec.ike_keylifetime_minutes",
+          "spec.use_default_keylifetime",
+        ],
+      },
+      {
+        choiceField: "ike_reauth_timeout",
+        fieldPath: "spec.ike_reauth_timeout",
+        options: ["spec.reauth_disabled", "spec.reauth_timeout_days", "spec.reauth_timeout_hours"],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -3804,7 +4334,22 @@ export const networkTools: ParsedOperation[] = [
         resourceType: "schemaike2create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "ike_key_lifetime",
+        fieldPath: "spec.ike_key_lifetime",
+        options: [
+          "spec.ike_keylifetime_hours",
+          "spec.ike_keylifetime_minutes",
+          "spec.use_default_keylifetime",
+        ],
+      },
+      {
+        choiceField: "pfs_mode",
+        fieldPath: "spec.pfs_mode",
+        options: ["spec.dh_group_set", "spec.disable_pfs"],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -4099,7 +4644,22 @@ export const networkTools: ParsedOperation[] = [
         resourceType: "schemaike2replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "ike_key_lifetime",
+        fieldPath: "spec.ike_key_lifetime",
+        options: [
+          "spec.ike_keylifetime_hours",
+          "spec.ike_keylifetime_minutes",
+          "spec.use_default_keylifetime",
+        ],
+      },
+      {
+        choiceField: "pfs_mode",
+        fieldPath: "spec.pfs_mode",
+        options: ["spec.dh_group_set", "spec.disable_pfs"],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -4586,7 +5146,98 @@ export const networkTools: ParsedOperation[] = [
         resourceType: "network-connector-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "connector_choice",
+        fieldPath: "spec.connector_choice",
+        options: ["spec.sli_to_global_dr", "spec.sli_to_slo_snat", "spec.slo_to_global_dr"],
+      },
+      {
+        choiceField: "forward_proxy_choice",
+        fieldPath: "spec.forward_proxy_choice",
+        options: ["spec.disable_forward_proxy", "spec.enable_forward_proxy"],
+      },
+      {
+        choiceField: "tls_interception_choice",
+        fieldPath: "spec.enable_forward_proxy.tls_interception_choice",
+        options: [
+          "spec.enable_forward_proxy.no_interception",
+          "spec.enable_forward_proxy.tls_intercept",
+        ],
+      },
+      {
+        choiceField: "interception_policy_choice",
+        fieldPath: "spec.enable_forward_proxy.tls_intercept.interception_policy_choice",
+        options: [
+          "spec.enable_forward_proxy.tls_intercept.enable_for_all_domains",
+          "spec.enable_forward_proxy.tls_intercept.policy",
+        ],
+      },
+      {
+        choiceField: "signing_cert_choice",
+        fieldPath: "spec.enable_forward_proxy.tls_intercept.signing_cert_choice",
+        options: [
+          "spec.enable_forward_proxy.tls_intercept.custom_certificate",
+          "spec.enable_forward_proxy.tls_intercept.volterra_certificate",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath: "spec.enable_forward_proxy.tls_intercept.trusted_ca_choice",
+        options: [
+          "spec.enable_forward_proxy.tls_intercept.trusted_ca_url",
+          "spec.enable_forward_proxy.tls_intercept.volterra_trusted_ca",
+        ],
+      },
+      {
+        choiceField: "ocsp_stapling_choice",
+        fieldPath:
+          "spec.enable_forward_proxy.tls_intercept.custom_certificate.ocsp_stapling_choice",
+        options: [
+          "spec.enable_forward_proxy.tls_intercept.custom_certificate.custom_hash_algorithms",
+          "spec.enable_forward_proxy.tls_intercept.custom_certificate.disable_ocsp_stapling",
+          "spec.enable_forward_proxy.tls_intercept.custom_certificate.use_system_defaults",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.enable_forward_proxy.tls_intercept.custom_certificate.private_key.secret_info_oneof",
+        options: [
+          "spec.enable_forward_proxy.tls_intercept.custom_certificate.private_key.blindfold_secret_info",
+          "spec.enable_forward_proxy.tls_intercept.custom_certificate.private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "enable_disable_choice",
+        fieldPath:
+          "spec.enable_forward_proxy.tls_intercept.policy.interception_rules[].enable_disable_choice",
+        options: [
+          "spec.enable_forward_proxy.tls_intercept.policy.interception_rules[].disable_interception",
+          "spec.enable_forward_proxy.tls_intercept.policy.interception_rules[].enable_interception",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath:
+          "spec.enable_forward_proxy.tls_intercept.policy.interception_rules[].domain_match.domain_choice",
+        options: [
+          "spec.enable_forward_proxy.tls_intercept.policy.interception_rules[].domain_match.exact_value",
+          "spec.enable_forward_proxy.tls_intercept.policy.interception_rules[].domain_match.regex_value",
+          "spec.enable_forward_proxy.tls_intercept.policy.interception_rules[].domain_match.suffix_value",
+        ],
+      },
+      {
+        choiceField: "pool_choice",
+        fieldPath: "spec.sli_to_slo_snat.pool_choice",
+        options: ["spec.sli_to_slo_snat.interface_ip"],
+      },
+      {
+        choiceField: "routing_choice",
+        fieldPath: "spec.sli_to_slo_snat.routing_choice",
+        options: ["spec.sli_to_slo_snat.default_gw_snat"],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -4881,7 +5532,98 @@ export const networkTools: ParsedOperation[] = [
         resourceType: "network-connector-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "connector_choice",
+        fieldPath: "spec.connector_choice",
+        options: ["spec.sli_to_global_dr", "spec.sli_to_slo_snat", "spec.slo_to_global_dr"],
+      },
+      {
+        choiceField: "forward_proxy_choice",
+        fieldPath: "spec.forward_proxy_choice",
+        options: ["spec.disable_forward_proxy", "spec.enable_forward_proxy"],
+      },
+      {
+        choiceField: "tls_interception_choice",
+        fieldPath: "spec.enable_forward_proxy.tls_interception_choice",
+        options: [
+          "spec.enable_forward_proxy.no_interception",
+          "spec.enable_forward_proxy.tls_intercept",
+        ],
+      },
+      {
+        choiceField: "interception_policy_choice",
+        fieldPath: "spec.enable_forward_proxy.tls_intercept.interception_policy_choice",
+        options: [
+          "spec.enable_forward_proxy.tls_intercept.enable_for_all_domains",
+          "spec.enable_forward_proxy.tls_intercept.policy",
+        ],
+      },
+      {
+        choiceField: "signing_cert_choice",
+        fieldPath: "spec.enable_forward_proxy.tls_intercept.signing_cert_choice",
+        options: [
+          "spec.enable_forward_proxy.tls_intercept.custom_certificate",
+          "spec.enable_forward_proxy.tls_intercept.volterra_certificate",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath: "spec.enable_forward_proxy.tls_intercept.trusted_ca_choice",
+        options: [
+          "spec.enable_forward_proxy.tls_intercept.trusted_ca_url",
+          "spec.enable_forward_proxy.tls_intercept.volterra_trusted_ca",
+        ],
+      },
+      {
+        choiceField: "ocsp_stapling_choice",
+        fieldPath:
+          "spec.enable_forward_proxy.tls_intercept.custom_certificate.ocsp_stapling_choice",
+        options: [
+          "spec.enable_forward_proxy.tls_intercept.custom_certificate.custom_hash_algorithms",
+          "spec.enable_forward_proxy.tls_intercept.custom_certificate.disable_ocsp_stapling",
+          "spec.enable_forward_proxy.tls_intercept.custom_certificate.use_system_defaults",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.enable_forward_proxy.tls_intercept.custom_certificate.private_key.secret_info_oneof",
+        options: [
+          "spec.enable_forward_proxy.tls_intercept.custom_certificate.private_key.blindfold_secret_info",
+          "spec.enable_forward_proxy.tls_intercept.custom_certificate.private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "enable_disable_choice",
+        fieldPath:
+          "spec.enable_forward_proxy.tls_intercept.policy.interception_rules[].enable_disable_choice",
+        options: [
+          "spec.enable_forward_proxy.tls_intercept.policy.interception_rules[].disable_interception",
+          "spec.enable_forward_proxy.tls_intercept.policy.interception_rules[].enable_interception",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath:
+          "spec.enable_forward_proxy.tls_intercept.policy.interception_rules[].domain_match.domain_choice",
+        options: [
+          "spec.enable_forward_proxy.tls_intercept.policy.interception_rules[].domain_match.exact_value",
+          "spec.enable_forward_proxy.tls_intercept.policy.interception_rules[].domain_match.regex_value",
+          "spec.enable_forward_proxy.tls_intercept.policy.interception_rules[].domain_match.suffix_value",
+        ],
+      },
+      {
+        choiceField: "pool_choice",
+        fieldPath: "spec.sli_to_slo_snat.pool_choice",
+        options: ["spec.sli_to_slo_snat.interface_ip"],
+      },
+      {
+        choiceField: "routing_choice",
+        fieldPath: "spec.sli_to_slo_snat.routing_choice",
+        options: ["spec.sli_to_slo_snat.default_gw_snat"],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -5185,7 +5927,304 @@ export const networkTools: ParsedOperation[] = [
         resourceType: "schemaroute-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "bot_defense_javascript_injection_choice",
+        fieldPath: "spec.routes[].bot_defense_javascript_injection_choice",
+        options: [
+          "spec.routes[].bot_defense_javascript_injection",
+          "spec.routes[].inherited_bot_defense_javascript_injection",
+        ],
+      },
+      {
+        choiceField: "route_action",
+        fieldPath: "spec.routes[].route_action",
+        options: [
+          "spec.routes[].route_destination",
+          "spec.routes[].route_direct_response",
+          "spec.routes[].route_redirect",
+        ],
+      },
+      {
+        choiceField: "waf_exclusion_choice",
+        fieldPath: "spec.routes[].waf_exclusion_choice",
+        options: ["spec.routes[].inherited_waf_exclusion", "spec.routes[].waf_exclusion_policy"],
+      },
+      {
+        choiceField: "value_match",
+        fieldPath: "spec.routes[].match[].headers[].value_match",
+        options: [
+          "spec.routes[].match[].headers[].exact",
+          "spec.routes[].match[].headers[].presence",
+          "spec.routes[].match[].headers[].regex",
+        ],
+      },
+      {
+        choiceField: "port_match",
+        fieldPath: "spec.routes[].match[].incoming_port.port_match",
+        options: [
+          "spec.routes[].match[].incoming_port.no_port_match",
+          "spec.routes[].match[].incoming_port.port",
+          "spec.routes[].match[].incoming_port.port_ranges",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath: "spec.routes[].match[].path.path_match",
+        options: [
+          "spec.routes[].match[].path.path",
+          "spec.routes[].match[].path.prefix",
+          "spec.routes[].match[].path.regex",
+        ],
+      },
+      {
+        choiceField: "value_match",
+        fieldPath: "spec.routes[].match[].query_params[].value_match",
+        options: [
+          "spec.routes[].match[].query_params[].exact",
+          "spec.routes[].match[].query_params[].regex",
+        ],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath: "spec.routes[].request_cookies_to_add[].value_choice",
+        options: [
+          "spec.routes[].request_cookies_to_add[].secret_value",
+          "spec.routes[].request_cookies_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.routes[].request_cookies_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.routes[].request_cookies_to_add[].secret_value.blindfold_secret_info",
+          "spec.routes[].request_cookies_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath: "spec.routes[].request_headers_to_add[].value_choice",
+        options: [
+          "spec.routes[].request_headers_to_add[].secret_value",
+          "spec.routes[].request_headers_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.routes[].request_headers_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.routes[].request_headers_to_add[].secret_value.blindfold_secret_info",
+          "spec.routes[].request_headers_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.routes[].response_cookies_to_add[].domain_choice",
+        options: [
+          "spec.routes[].response_cookies_to_add[].add_domain",
+          "spec.routes[].response_cookies_to_add[].ignore_domain",
+        ],
+      },
+      {
+        choiceField: "expiry_choice",
+        fieldPath: "spec.routes[].response_cookies_to_add[].expiry_choice",
+        options: [
+          "spec.routes[].response_cookies_to_add[].add_expiry",
+          "spec.routes[].response_cookies_to_add[].ignore_expiry",
+        ],
+      },
+      {
+        choiceField: "httponly_choice",
+        fieldPath: "spec.routes[].response_cookies_to_add[].httponly_choice",
+        options: [
+          "spec.routes[].response_cookies_to_add[].add_httponly",
+          "spec.routes[].response_cookies_to_add[].ignore_httponly",
+        ],
+      },
+      {
+        choiceField: "max_age_choice",
+        fieldPath: "spec.routes[].response_cookies_to_add[].max_age_choice",
+        options: [
+          "spec.routes[].response_cookies_to_add[].ignore_max_age",
+          "spec.routes[].response_cookies_to_add[].max_age_value",
+        ],
+      },
+      {
+        choiceField: "partitioned_choice",
+        fieldPath: "spec.routes[].response_cookies_to_add[].partitioned_choice",
+        options: [
+          "spec.routes[].response_cookies_to_add[].add_partitioned",
+          "spec.routes[].response_cookies_to_add[].ignore_partitioned",
+        ],
+      },
+      {
+        choiceField: "path_choice",
+        fieldPath: "spec.routes[].response_cookies_to_add[].path_choice",
+        options: [
+          "spec.routes[].response_cookies_to_add[].add_path",
+          "spec.routes[].response_cookies_to_add[].ignore_path",
+        ],
+      },
+      {
+        choiceField: "samesite_choice",
+        fieldPath: "spec.routes[].response_cookies_to_add[].samesite_choice",
+        options: [
+          "spec.routes[].response_cookies_to_add[].ignore_samesite",
+          "spec.routes[].response_cookies_to_add[].samesite_lax",
+          "spec.routes[].response_cookies_to_add[].samesite_none",
+          "spec.routes[].response_cookies_to_add[].samesite_strict",
+        ],
+      },
+      {
+        choiceField: "secure_choice",
+        fieldPath: "spec.routes[].response_cookies_to_add[].secure_choice",
+        options: [
+          "spec.routes[].response_cookies_to_add[].add_secure",
+          "spec.routes[].response_cookies_to_add[].ignore_secure",
+        ],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath: "spec.routes[].response_cookies_to_add[].value_choice",
+        options: [
+          "spec.routes[].response_cookies_to_add[].ignore_value",
+          "spec.routes[].response_cookies_to_add[].secret_value",
+          "spec.routes[].response_cookies_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.routes[].response_cookies_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.routes[].response_cookies_to_add[].secret_value.blindfold_secret_info",
+          "spec.routes[].response_cookies_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath: "spec.routes[].response_headers_to_add[].value_choice",
+        options: [
+          "spec.routes[].response_headers_to_add[].secret_value",
+          "spec.routes[].response_headers_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.routes[].response_headers_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.routes[].response_headers_to_add[].secret_value.blindfold_secret_info",
+          "spec.routes[].response_headers_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "cluster_retract_choice",
+        fieldPath: "spec.routes[].route_destination.cluster_retract_choice",
+        options: [
+          "spec.routes[].route_destination.do_not_retract_cluster",
+          "spec.routes[].route_destination.retract_cluster",
+        ],
+      },
+      {
+        choiceField: "host_rewrite_params",
+        fieldPath: "spec.routes[].route_destination.host_rewrite_params",
+        options: [
+          "spec.routes[].route_destination.auto_host_rewrite",
+          "spec.routes[].route_destination.host_rewrite",
+        ],
+      },
+      {
+        choiceField: "route_destination_rewrite",
+        fieldPath: "spec.routes[].route_destination.route_destination_rewrite",
+        options: [
+          "spec.routes[].route_destination.prefix_rewrite",
+          "spec.routes[].route_destination.regex_rewrite",
+        ],
+      },
+      {
+        choiceField: "allowed_domains",
+        fieldPath: "spec.routes[].route_destination.csrf_policy.allowed_domains",
+        options: [
+          "spec.routes[].route_destination.csrf_policy.all_load_balancer_domains",
+          "spec.routes[].route_destination.csrf_policy.custom_domain_list",
+          "spec.routes[].route_destination.csrf_policy.disabled",
+        ],
+      },
+      {
+        choiceField: "policy_specifier",
+        fieldPath: "spec.routes[].route_destination.hash_policy[].policy_specifier",
+        options: [
+          "spec.routes[].route_destination.hash_policy[].cookie",
+          "spec.routes[].route_destination.hash_policy[].header_name",
+          "spec.routes[].route_destination.hash_policy[].source_ip",
+        ],
+      },
+      {
+        choiceField: "httponly",
+        fieldPath: "spec.routes[].route_destination.hash_policy[].cookie.httponly",
+        options: [
+          "spec.routes[].route_destination.hash_policy[].cookie.add_httponly",
+          "spec.routes[].route_destination.hash_policy[].cookie.ignore_httponly",
+        ],
+      },
+      {
+        choiceField: "samesite",
+        fieldPath: "spec.routes[].route_destination.hash_policy[].cookie.samesite",
+        options: [
+          "spec.routes[].route_destination.hash_policy[].cookie.ignore_samesite",
+          "spec.routes[].route_destination.hash_policy[].cookie.samesite_lax",
+          "spec.routes[].route_destination.hash_policy[].cookie.samesite_none",
+          "spec.routes[].route_destination.hash_policy[].cookie.samesite_strict",
+        ],
+      },
+      {
+        choiceField: "secure",
+        fieldPath: "spec.routes[].route_destination.hash_policy[].cookie.secure",
+        options: [
+          "spec.routes[].route_destination.hash_policy[].cookie.add_secure",
+          "spec.routes[].route_destination.hash_policy[].cookie.ignore_secure",
+        ],
+      },
+      {
+        choiceField: "query_params",
+        fieldPath: "spec.routes[].route_destination.query_params.query_params",
+        options: [
+          "spec.routes[].route_destination.query_params.remove_all_params",
+          "spec.routes[].route_destination.query_params.replace_params",
+          "spec.routes[].route_destination.query_params.retain_all_params",
+        ],
+      },
+      {
+        choiceField: "query_params",
+        fieldPath: "spec.routes[].route_redirect.query_params",
+        options: [
+          "spec.routes[].route_redirect.remove_all_params",
+          "spec.routes[].route_redirect.replace_params",
+          "spec.routes[].route_redirect.retain_all_params",
+        ],
+      },
+      {
+        choiceField: "redirect_path_choice",
+        fieldPath: "spec.routes[].route_redirect.redirect_path_choice",
+        options: [
+          "spec.routes[].route_redirect.path_redirect",
+          "spec.routes[].route_redirect.prefix_rewrite",
+        ],
+      },
+      {
+        choiceField: "service_policy_choice",
+        fieldPath: "spec.routes[].service_policy.service_policy_choice",
+        options: ["spec.routes[].service_policy.disable"],
+      },
+      {
+        choiceField: "ref_type",
+        fieldPath: "spec.routes[].waf_type.ref_type",
+        options: [
+          "spec.routes[].waf_type.app_firewall",
+          "spec.routes[].waf_type.disable_waf",
+          "spec.routes[].waf_type.inherit_waf",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -5482,7 +6521,304 @@ export const networkTools: ParsedOperation[] = [
         resourceType: "schemaroute-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "bot_defense_javascript_injection_choice",
+        fieldPath: "spec.routes[].bot_defense_javascript_injection_choice",
+        options: [
+          "spec.routes[].bot_defense_javascript_injection",
+          "spec.routes[].inherited_bot_defense_javascript_injection",
+        ],
+      },
+      {
+        choiceField: "route_action",
+        fieldPath: "spec.routes[].route_action",
+        options: [
+          "spec.routes[].route_destination",
+          "spec.routes[].route_direct_response",
+          "spec.routes[].route_redirect",
+        ],
+      },
+      {
+        choiceField: "waf_exclusion_choice",
+        fieldPath: "spec.routes[].waf_exclusion_choice",
+        options: ["spec.routes[].inherited_waf_exclusion", "spec.routes[].waf_exclusion_policy"],
+      },
+      {
+        choiceField: "value_match",
+        fieldPath: "spec.routes[].match[].headers[].value_match",
+        options: [
+          "spec.routes[].match[].headers[].exact",
+          "spec.routes[].match[].headers[].presence",
+          "spec.routes[].match[].headers[].regex",
+        ],
+      },
+      {
+        choiceField: "port_match",
+        fieldPath: "spec.routes[].match[].incoming_port.port_match",
+        options: [
+          "spec.routes[].match[].incoming_port.no_port_match",
+          "spec.routes[].match[].incoming_port.port",
+          "spec.routes[].match[].incoming_port.port_ranges",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath: "spec.routes[].match[].path.path_match",
+        options: [
+          "spec.routes[].match[].path.path",
+          "spec.routes[].match[].path.prefix",
+          "spec.routes[].match[].path.regex",
+        ],
+      },
+      {
+        choiceField: "value_match",
+        fieldPath: "spec.routes[].match[].query_params[].value_match",
+        options: [
+          "spec.routes[].match[].query_params[].exact",
+          "spec.routes[].match[].query_params[].regex",
+        ],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath: "spec.routes[].request_cookies_to_add[].value_choice",
+        options: [
+          "spec.routes[].request_cookies_to_add[].secret_value",
+          "spec.routes[].request_cookies_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.routes[].request_cookies_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.routes[].request_cookies_to_add[].secret_value.blindfold_secret_info",
+          "spec.routes[].request_cookies_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath: "spec.routes[].request_headers_to_add[].value_choice",
+        options: [
+          "spec.routes[].request_headers_to_add[].secret_value",
+          "spec.routes[].request_headers_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.routes[].request_headers_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.routes[].request_headers_to_add[].secret_value.blindfold_secret_info",
+          "spec.routes[].request_headers_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.routes[].response_cookies_to_add[].domain_choice",
+        options: [
+          "spec.routes[].response_cookies_to_add[].add_domain",
+          "spec.routes[].response_cookies_to_add[].ignore_domain",
+        ],
+      },
+      {
+        choiceField: "expiry_choice",
+        fieldPath: "spec.routes[].response_cookies_to_add[].expiry_choice",
+        options: [
+          "spec.routes[].response_cookies_to_add[].add_expiry",
+          "spec.routes[].response_cookies_to_add[].ignore_expiry",
+        ],
+      },
+      {
+        choiceField: "httponly_choice",
+        fieldPath: "spec.routes[].response_cookies_to_add[].httponly_choice",
+        options: [
+          "spec.routes[].response_cookies_to_add[].add_httponly",
+          "spec.routes[].response_cookies_to_add[].ignore_httponly",
+        ],
+      },
+      {
+        choiceField: "max_age_choice",
+        fieldPath: "spec.routes[].response_cookies_to_add[].max_age_choice",
+        options: [
+          "spec.routes[].response_cookies_to_add[].ignore_max_age",
+          "spec.routes[].response_cookies_to_add[].max_age_value",
+        ],
+      },
+      {
+        choiceField: "partitioned_choice",
+        fieldPath: "spec.routes[].response_cookies_to_add[].partitioned_choice",
+        options: [
+          "spec.routes[].response_cookies_to_add[].add_partitioned",
+          "spec.routes[].response_cookies_to_add[].ignore_partitioned",
+        ],
+      },
+      {
+        choiceField: "path_choice",
+        fieldPath: "spec.routes[].response_cookies_to_add[].path_choice",
+        options: [
+          "spec.routes[].response_cookies_to_add[].add_path",
+          "spec.routes[].response_cookies_to_add[].ignore_path",
+        ],
+      },
+      {
+        choiceField: "samesite_choice",
+        fieldPath: "spec.routes[].response_cookies_to_add[].samesite_choice",
+        options: [
+          "spec.routes[].response_cookies_to_add[].ignore_samesite",
+          "spec.routes[].response_cookies_to_add[].samesite_lax",
+          "spec.routes[].response_cookies_to_add[].samesite_none",
+          "spec.routes[].response_cookies_to_add[].samesite_strict",
+        ],
+      },
+      {
+        choiceField: "secure_choice",
+        fieldPath: "spec.routes[].response_cookies_to_add[].secure_choice",
+        options: [
+          "spec.routes[].response_cookies_to_add[].add_secure",
+          "spec.routes[].response_cookies_to_add[].ignore_secure",
+        ],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath: "spec.routes[].response_cookies_to_add[].value_choice",
+        options: [
+          "spec.routes[].response_cookies_to_add[].ignore_value",
+          "spec.routes[].response_cookies_to_add[].secret_value",
+          "spec.routes[].response_cookies_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.routes[].response_cookies_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.routes[].response_cookies_to_add[].secret_value.blindfold_secret_info",
+          "spec.routes[].response_cookies_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "value_choice",
+        fieldPath: "spec.routes[].response_headers_to_add[].value_choice",
+        options: [
+          "spec.routes[].response_headers_to_add[].secret_value",
+          "spec.routes[].response_headers_to_add[].value",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.routes[].response_headers_to_add[].secret_value.secret_info_oneof",
+        options: [
+          "spec.routes[].response_headers_to_add[].secret_value.blindfold_secret_info",
+          "spec.routes[].response_headers_to_add[].secret_value.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "cluster_retract_choice",
+        fieldPath: "spec.routes[].route_destination.cluster_retract_choice",
+        options: [
+          "spec.routes[].route_destination.do_not_retract_cluster",
+          "spec.routes[].route_destination.retract_cluster",
+        ],
+      },
+      {
+        choiceField: "host_rewrite_params",
+        fieldPath: "spec.routes[].route_destination.host_rewrite_params",
+        options: [
+          "spec.routes[].route_destination.auto_host_rewrite",
+          "spec.routes[].route_destination.host_rewrite",
+        ],
+      },
+      {
+        choiceField: "route_destination_rewrite",
+        fieldPath: "spec.routes[].route_destination.route_destination_rewrite",
+        options: [
+          "spec.routes[].route_destination.prefix_rewrite",
+          "spec.routes[].route_destination.regex_rewrite",
+        ],
+      },
+      {
+        choiceField: "allowed_domains",
+        fieldPath: "spec.routes[].route_destination.csrf_policy.allowed_domains",
+        options: [
+          "spec.routes[].route_destination.csrf_policy.all_load_balancer_domains",
+          "spec.routes[].route_destination.csrf_policy.custom_domain_list",
+          "spec.routes[].route_destination.csrf_policy.disabled",
+        ],
+      },
+      {
+        choiceField: "policy_specifier",
+        fieldPath: "spec.routes[].route_destination.hash_policy[].policy_specifier",
+        options: [
+          "spec.routes[].route_destination.hash_policy[].cookie",
+          "spec.routes[].route_destination.hash_policy[].header_name",
+          "spec.routes[].route_destination.hash_policy[].source_ip",
+        ],
+      },
+      {
+        choiceField: "httponly",
+        fieldPath: "spec.routes[].route_destination.hash_policy[].cookie.httponly",
+        options: [
+          "spec.routes[].route_destination.hash_policy[].cookie.add_httponly",
+          "spec.routes[].route_destination.hash_policy[].cookie.ignore_httponly",
+        ],
+      },
+      {
+        choiceField: "samesite",
+        fieldPath: "spec.routes[].route_destination.hash_policy[].cookie.samesite",
+        options: [
+          "spec.routes[].route_destination.hash_policy[].cookie.ignore_samesite",
+          "spec.routes[].route_destination.hash_policy[].cookie.samesite_lax",
+          "spec.routes[].route_destination.hash_policy[].cookie.samesite_none",
+          "spec.routes[].route_destination.hash_policy[].cookie.samesite_strict",
+        ],
+      },
+      {
+        choiceField: "secure",
+        fieldPath: "spec.routes[].route_destination.hash_policy[].cookie.secure",
+        options: [
+          "spec.routes[].route_destination.hash_policy[].cookie.add_secure",
+          "spec.routes[].route_destination.hash_policy[].cookie.ignore_secure",
+        ],
+      },
+      {
+        choiceField: "query_params",
+        fieldPath: "spec.routes[].route_destination.query_params.query_params",
+        options: [
+          "spec.routes[].route_destination.query_params.remove_all_params",
+          "spec.routes[].route_destination.query_params.replace_params",
+          "spec.routes[].route_destination.query_params.retain_all_params",
+        ],
+      },
+      {
+        choiceField: "query_params",
+        fieldPath: "spec.routes[].route_redirect.query_params",
+        options: [
+          "spec.routes[].route_redirect.remove_all_params",
+          "spec.routes[].route_redirect.replace_params",
+          "spec.routes[].route_redirect.retain_all_params",
+        ],
+      },
+      {
+        choiceField: "redirect_path_choice",
+        fieldPath: "spec.routes[].route_redirect.redirect_path_choice",
+        options: [
+          "spec.routes[].route_redirect.path_redirect",
+          "spec.routes[].route_redirect.prefix_rewrite",
+        ],
+      },
+      {
+        choiceField: "service_policy_choice",
+        fieldPath: "spec.routes[].service_policy.service_policy_choice",
+        options: ["spec.routes[].service_policy.disable"],
+      },
+      {
+        choiceField: "ref_type",
+        fieldPath: "spec.routes[].waf_type.ref_type",
+        options: [
+          "spec.routes[].waf_type.app_firewall",
+          "spec.routes[].waf_type.disable_waf",
+          "spec.routes[].waf_type.inherit_waf",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -5991,7 +7327,26 @@ export const networkTools: ParsedOperation[] = [
         resourceType: "schemasubnet-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "connection_choice",
+        fieldPath: "spec.connection_choice",
+        options: ["spec.connect_to_layer2", "spec.connect_to_slo", "spec.isolated_nw"],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath: "spec.site_subnet_params[].address_choice",
+        options: ["spec.site_subnet_params[].dhcp", "spec.site_subnet_params[].static_ip"],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.site_subnet_params[].subnet_dhcp_server_params.dhcp_networks[].network_prefix_choice",
+        options: [
+          "spec.site_subnet_params[].subnet_dhcp_server_params.dhcp_networks[].network_prefix",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -6286,7 +7641,13 @@ export const networkTools: ParsedOperation[] = [
         resourceType: "schemasubnet-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "connection_choice",
+        fieldPath: "spec.connection_choice",
+        options: ["spec.connect_to_layer2", "spec.connect_to_slo", "spec.isolated_nw"],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -6341,7 +7702,18 @@ export const networkTools: ParsedOperation[] = [
     operationMetadata: null,
     curlExample: null,
     dependencies: [],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "hostname_or_ip",
+        fieldPath: "dest.hostname_or_ip",
+        options: ["dest.hostname", "dest.ip"],
+      },
+      {
+        choiceField: "interface_choice",
+        fieldPath: "intf.interface_choice",
+        options: ["intf.any_intf", "intf.intf"],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -6409,7 +7781,58 @@ export const networkTools: ParsedOperation[] = [
         resourceType: "schematunnel-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "type",
+        fieldPath: "spec.local_ip.type",
+        options: ["spec.local_ip.intf", "spec.local_ip.ip_address"],
+      },
+      {
+        choiceField: "type",
+        fieldPath: "spec.local_ip.ip_address.type",
+        options: ["spec.local_ip.ip_address.auto", "spec.local_ip.ip_address.ip_address"],
+      },
+      {
+        choiceField: "ver",
+        fieldPath: "spec.local_ip.ip_address.ip_address.ver",
+        options: [
+          "spec.local_ip.ip_address.ip_address.ipv4",
+          "spec.local_ip.ip_address.ip_address.ipv6",
+        ],
+      },
+      {
+        choiceField: "vn_type_choice",
+        fieldPath: "spec.local_ip.ip_address.virtual_network_type.vn_type_choice",
+        options: [
+          "spec.local_ip.ip_address.virtual_network_type.public",
+          "spec.local_ip.ip_address.virtual_network_type.site_local",
+          "spec.local_ip.ip_address.virtual_network_type.site_local_inside",
+        ],
+      },
+      {
+        choiceField: "type",
+        fieldPath: "spec.params.type",
+        options: ["spec.params.ipsec"],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.params.ipsec.ipsec_psk.secret_info_oneof",
+        options: [
+          "spec.params.ipsec.ipsec_psk.blindfold_secret_info",
+          "spec.params.ipsec.ipsec_psk.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "type",
+        fieldPath: "spec.remote_ip.type",
+        options: ["spec.remote_ip.endpoints", "spec.remote_ip.ip"],
+      },
+      {
+        choiceField: "ver",
+        fieldPath: "spec.remote_ip.ip.ver",
+        options: ["spec.remote_ip.ip.ipv4", "spec.remote_ip.ip.ipv6"],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_site_management_standard",
@@ -6732,7 +8155,58 @@ export const networkTools: ParsedOperation[] = [
         resourceType: "schematunnel-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "type",
+        fieldPath: "spec.local_ip.type",
+        options: ["spec.local_ip.intf", "spec.local_ip.ip_address"],
+      },
+      {
+        choiceField: "type",
+        fieldPath: "spec.local_ip.ip_address.type",
+        options: ["spec.local_ip.ip_address.auto", "spec.local_ip.ip_address.ip_address"],
+      },
+      {
+        choiceField: "ver",
+        fieldPath: "spec.local_ip.ip_address.ip_address.ver",
+        options: [
+          "spec.local_ip.ip_address.ip_address.ipv4",
+          "spec.local_ip.ip_address.ip_address.ipv6",
+        ],
+      },
+      {
+        choiceField: "vn_type_choice",
+        fieldPath: "spec.local_ip.ip_address.virtual_network_type.vn_type_choice",
+        options: [
+          "spec.local_ip.ip_address.virtual_network_type.public",
+          "spec.local_ip.ip_address.virtual_network_type.site_local",
+          "spec.local_ip.ip_address.virtual_network_type.site_local_inside",
+        ],
+      },
+      {
+        choiceField: "type",
+        fieldPath: "spec.params.type",
+        options: ["spec.params.ipsec"],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.params.ipsec.ipsec_psk.secret_info_oneof",
+        options: [
+          "spec.params.ipsec.ipsec_psk.blindfold_secret_info",
+          "spec.params.ipsec.ipsec_psk.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "type",
+        fieldPath: "spec.remote_ip.type",
+        options: ["spec.remote_ip.endpoints", "spec.remote_ip.ip"],
+      },
+      {
+        choiceField: "ver",
+        fieldPath: "spec.remote_ip.ip.ver",
+        options: ["spec.remote_ip.ip.ipv4", "spec.remote_ip.ip.ipv6"],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_site_management_standard",
@@ -6807,7 +8281,27 @@ export const networkTools: ParsedOperation[] = [
         resourceType: "virtual-network-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "network_choice",
+        fieldPath: "spec.network_choice",
+        options: [
+          "spec.global_network",
+          "spec.legacy_type",
+          "spec.site_local_inside_network",
+          "spec.site_local_network",
+        ],
+      },
+      {
+        choiceField: "next_hop_choice",
+        fieldPath: "spec.static_routes[].next_hop_choice",
+        options: [
+          "spec.static_routes[].default_gateway",
+          "spec.static_routes[].ip_address",
+          "spec.static_routes[].node_interface",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -7102,7 +8596,27 @@ export const networkTools: ParsedOperation[] = [
         resourceType: "virtual-network-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "network_choice",
+        fieldPath: "spec.network_choice",
+        options: [
+          "spec.global_network",
+          "spec.legacy_type",
+          "spec.site_local_inside_network",
+          "spec.site_local_network",
+        ],
+      },
+      {
+        choiceField: "next_hop_choice",
+        fieldPath: "spec.static_routes[].next_hop_choice",
+        options: [
+          "spec.static_routes[].default_gateway",
+          "spec.static_routes[].ip_address",
+          "spec.static_routes[].node_interface",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
 ];

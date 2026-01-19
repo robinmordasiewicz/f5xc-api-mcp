@@ -6,9 +6,6 @@ description: Service List.
 
 # Service
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 API to GET list of services for a given namespace in a site.
 
 ## Tools

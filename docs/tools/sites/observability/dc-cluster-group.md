@@ -6,9 +6,6 @@ description: DC Cluster Topology.
 
 # Dc Cluster Group
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET summary of all DC Cluster groups.
 
 ## Tools
@@ -25,14 +22,6 @@ GET summary of all DC Cluster groups.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `dc_cluster_group` | DC Cluster group | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- dc-cluster-group
 
 ## Example Usage
 

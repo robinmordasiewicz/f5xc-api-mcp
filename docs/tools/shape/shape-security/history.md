@@ -6,9 +6,6 @@ description: GET the change history for a bot detection rule.
 
 # History
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Getbotdetectionrulechangehistory CustomAPI.
 
 ## Tools

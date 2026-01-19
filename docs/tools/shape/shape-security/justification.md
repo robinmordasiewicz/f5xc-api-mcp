@@ -6,12 +6,6 @@ description: Update Script Justification.
 
 # Justification
 
-!!! danger "High Risk Operation"
-    This resource includes operations that may cause significant changes. Review carefully before executing.
-
-!!! note "Confirmation Required"
-    Some operations on this resource require explicit confirmation before execution.
-
 DELETE the specified script justification.
 
 ## Tools
@@ -30,19 +24,6 @@ DELETE the specified script justification.
 | `namespace` | Namespace | `-` |
 | `script_id` | Script_id | `-` |
 | `justification_id` | Justification_id | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- justification
-
-**Deletes:**
-
-- justification
-- contained_resources
 
 ## Example Usage
 

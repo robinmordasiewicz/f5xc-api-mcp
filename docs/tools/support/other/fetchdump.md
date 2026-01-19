@@ -6,9 +6,6 @@ description: FetchDump
 
 # Fetchdump
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Fetch the captured pcap data from an earlier Tcpdump request.
 
 ## Tools
@@ -25,14 +22,6 @@ Fetch the captured pcap data from an earlier Tcpdump request.
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
 | `site` | Site Name | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- fetchdump
 
 ## Example Usage
 

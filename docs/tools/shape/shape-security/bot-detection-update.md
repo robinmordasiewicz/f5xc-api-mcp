@@ -6,9 +6,6 @@ description: GET bot detection updates.
 
 # Bot Detection Update
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Getbotdetectionupdates CustomAPI.
 
 ## Tools

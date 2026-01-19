@@ -6,9 +6,6 @@ description: Top Attacked BFP.
 
 # Bfp
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Top Attacked BFP.
 
 ## Tools
@@ -24,14 +21,6 @@ Top Attacked BFP.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- bfp
 
 ## Example Usage
 

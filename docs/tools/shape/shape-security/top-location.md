@@ -6,9 +6,6 @@ description: POST SAFE Top Locations.
 
 # Top Location
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 POST SAFE Analyst Station Dashboard Transaction Breakdown request.
 
 ## Tools
@@ -34,14 +31,6 @@ POST SAFE Analyst Station Dashboard Transaction Breakdown request.
 | `limit` | Limited number of records. | `-` |
 | `to` | Timestamp representing end date of the requested period in millieseconds. | `-` |
 | `version` | The API version to use. | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- top-location
 
 ## Example Usage
 

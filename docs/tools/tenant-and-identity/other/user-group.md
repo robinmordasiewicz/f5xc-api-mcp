@@ -6,12 +6,6 @@ description: Create User Group.
 
 # User Group
 
-!!! danger "High Risk Operation"
-    This resource includes operations that may cause significant changes. Review carefully before executing.
-
-!!! note "Confirmation Required"
-    Some operations on this resource require explicit confirmation before execution.
-
 Replace allows updating of the different user group fields like the display name, description, user
 associations and RBAC accesses.
 The name of the user group cannot be edited and the sync_id can be
@@ -42,23 +36,6 @@ the request, it will be considered as the removal of the field value.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `attempt_remove_references` | The attempt_remove_references parameter | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- user-group
-
-**Modifies:**
-
-- user-group
-
-**Deletes:**
-
-- user-group
-- contained_resources
 
 ## Example Usage
 

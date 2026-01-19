@@ -6,9 +6,6 @@ description: Create a ticket for a vulnerability.
 
 # Create Ticket
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Create a ticket for the given vulnerability.
 
 ## Tools
@@ -25,14 +22,6 @@ Create a ticket for the given vulnerability.
 |-----------|-------------|--------|
 | `name` | Virtual Host Name | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- create-ticket
 
 ## Example Usage
 

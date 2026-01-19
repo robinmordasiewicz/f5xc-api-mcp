@@ -6,9 +6,6 @@ description: Deploy Policies to Bot Infra.
 
 # Policie
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Deploy Policies to Bot Infrastructure.
 
 ## Tools
@@ -25,14 +22,6 @@ Deploy Policies to Bot Infrastructure.
 |-----------|-------------|--------|
 | `name` | Bot Infra Name | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- policie
 
 ## Example Usage
 

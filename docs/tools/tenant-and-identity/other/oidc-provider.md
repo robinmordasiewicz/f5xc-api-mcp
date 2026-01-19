@@ -6,9 +6,6 @@ description: Create
 
 # Oidc Provider
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Replace updates OIDC provider parameters for a given provider instance.
 Since we never store client
 secret, any time this operation is performed,
@@ -51,18 +48,6 @@ request.
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
 | `name` | Name | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- oidc-provider
-
-**Modifies:**
-
-- oidc-provider
 
 ## Example Usage
 

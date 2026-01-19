@@ -6,9 +6,6 @@ description: Update LTE configuration.
 
 # Config
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Update LTE configuration on the node.
 
 ## Tools
@@ -27,14 +24,6 @@ Update LTE configuration on the node.
 | `namespace` | Namespace | `-` |
 | `node` | Node Name | `-` |
 | `site` | Site Name | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- config
 
 ## Example Usage
 

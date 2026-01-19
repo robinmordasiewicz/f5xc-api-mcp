@@ -6,9 +6,6 @@ description: PersistentVolumeClaim List.
 
 # Persistentvolumeclaim
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 API to GET list of PVCs for a given namespace in a site.
 
 ## Tools

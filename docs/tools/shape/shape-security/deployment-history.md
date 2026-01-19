@@ -6,9 +6,6 @@ description: Deployment History.
 
 # Deployment History
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET deployment history.
 
 ## Tools

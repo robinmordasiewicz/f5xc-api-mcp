@@ -6,9 +6,6 @@ description: Reset password.
 
 # Reset
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Reset password resets password for user who is making this request.
 
 ## Tools
@@ -16,14 +13,6 @@ Reset password resets password for user who is making this request.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-tenantandidentity-reset-create` | Reset password. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- reset
 
 ## Example Usage
 

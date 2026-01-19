@@ -6,9 +6,6 @@ description: Top Human Device.
 
 # Device
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET top human device.
 
 ## Tools
@@ -24,14 +21,6 @@ GET top human device.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- device
 
 ## Example Usage
 

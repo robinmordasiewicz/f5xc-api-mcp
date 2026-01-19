@@ -39,6 +39,12 @@ export interface OneOfGroup {
   fieldPath: string;
   /** Human-readable description of the choice */
   description?: string;
+  /**
+   * Recommended option for this choice group (v2.0.34+)
+   * Extracted from x-f5xc-recommended-oneof-variant-{choiceField} or
+   * inferred from x-f5xc-server-default: true on a variant property
+   */
+  recommendedOption?: string;
 }
 
 /**

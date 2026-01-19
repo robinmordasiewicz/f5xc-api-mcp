@@ -6,9 +6,6 @@ description: Validate Ticket Tracking System.
 
 # Validate Ticket Tracking System
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Validate input for the ticket tracking system like the credentials + organization.
 
 ## Tools
@@ -17,13 +14,15 @@ Validate input for the ticket tracking system like the credentials + organizatio
 |------|-------------|
 | `f5xc-api-support-validate-ticket-tracking-system-create` | Validate Ticket Tracking System. |
 
-## Side Effects
+## Configuration Choices
 
-Operations on this resource may have the following effects:
+This resource includes mutually exclusive configuration options:
 
-**Creates:**
+### provider_config
 
-- validate-ticket-tracking-system
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `jira_config` | - |  |
 
 ## Example Usage
 

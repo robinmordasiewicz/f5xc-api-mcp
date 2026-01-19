@@ -6,12 +6,6 @@ description: Create Service Policy Rule.
 
 # Service Policy Rule
 
-!!! danger "High Risk Operation"
-    This resource includes operations that may cause significant changes. Review carefully before executing.
-
-!!! note "Confirmation Required"
-    Some operations on this resource require explicit confirmation before execution.
-
 Replace service_policy_rule replaces an existing object in the storage backend for
 metadata.namespace.
 
@@ -44,23 +38,6 @@ metadata.namespace.
 | `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
 | `report_fields` | The report_fields parameter | `-` |
 | `report_status_fields` | The report_status_fields parameter | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- service-policy-rule
-
-**Modifies:**
-
-- service-policy-rule
-
-**Deletes:**
-
-- service-policy-rule
-- contained_resources
 
 ## Example Usage
 

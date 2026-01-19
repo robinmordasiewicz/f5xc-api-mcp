@@ -6,9 +6,6 @@ description: Import DNS Zone.
 
 # Import Axfr
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Import DNS Zone via AXFR.
 
 ## Tools
@@ -16,14 +13,6 @@ Import DNS Zone via AXFR.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-dns-import-axfr-create` | Import DNS Zone. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- import-axfr
 
 ## Example Usage
 

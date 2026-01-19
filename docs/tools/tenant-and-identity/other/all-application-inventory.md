@@ -6,9 +6,6 @@ description: All Application Objects Inventory.
 
 # All Application Inventory
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 AllApplicationInventory returns inventory of configured application related objects for all
 namespaces.
 
@@ -17,14 +14,6 @@ namespaces.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-tenantandidentity-all-application-inventory-create` | All Application Objects Inventory. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- all-application-inventory
 
 ## Example Usage
 

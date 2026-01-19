@@ -6,9 +6,6 @@ description: Exec Log
 
 # Exec Log
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Retrieve exec history on node.
 
 ## Tools

@@ -6,9 +6,6 @@ description: Suggest Open API specification validation rule.
 
 # Oas Validation
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Suggest Open API specification validation rule for a given path.
 
 ## Tools
@@ -24,14 +21,6 @@ Suggest Open API specification validation rule for a given path.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- oas-validation
 
 ## Example Usage
 

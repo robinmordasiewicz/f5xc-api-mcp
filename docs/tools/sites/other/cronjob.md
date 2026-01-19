@@ -6,9 +6,6 @@ description: CronJob List.
 
 # Cronjob
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 API to GET list of cronjobs for a given namespace in a site.
 
 ## Tools

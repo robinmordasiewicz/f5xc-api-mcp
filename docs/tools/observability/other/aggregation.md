@@ -6,9 +6,6 @@ description: Access Log Aggregation Query.
 
 # Aggregation
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Request to GET summary/analytics data for the access logs that matches the query in request for a
 given namespace.
 Typically, virtual host is specified as match condition in the request to GET the
@@ -28,14 +25,6 @@ for a virtual host.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- aggregation
 
 ## Example Usage
 

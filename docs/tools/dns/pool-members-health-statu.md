@@ -6,9 +6,6 @@ description: DNS Load Balancer Pool Members Health Status List.
 
 # Pool Members Health Statu
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET Health Status of all DNS Load Balancer Pool Members in a namespace.
 
 ## Tools

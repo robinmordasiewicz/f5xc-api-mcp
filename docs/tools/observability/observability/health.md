@@ -6,9 +6,6 @@ description: GET Synthetic Monitoring Health Check.
 
 # Health
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Returns 200 Ok if the service is healthy.
 
 ## Tools

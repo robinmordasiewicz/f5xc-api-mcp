@@ -6,9 +6,6 @@ description: DELETE USB Enablement Rules.
 
 # Delete
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 DELETE USB Enablement Rules.
 
 ## Tools
@@ -26,14 +23,6 @@ DELETE USB Enablement Rules.
 | `namespace` | Namespace | `-` |
 | `node` | Node Name | `-` |
 | `site` | Site Name | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- delete
 
 ## Example Usage
 

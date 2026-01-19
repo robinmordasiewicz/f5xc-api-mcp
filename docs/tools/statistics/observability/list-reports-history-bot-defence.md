@@ -6,9 +6,6 @@ description: List Reports History Bot Defence.
 
 # List Reports History Bot Defence
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 List Reports history bot defence for the list of report configurations in the given namespace.
 
 ## Tools
@@ -24,14 +21,6 @@ List Reports history bot defence for the list of report configurations in the gi
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- list-reports-history-bot-defence
 
 ## Example Usage
 

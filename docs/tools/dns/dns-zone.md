@@ -6,12 +6,6 @@ description: Create DNS Zone.
 
 # DNS Zone
 
-!!! danger "High Risk Operation"
-    This resource includes operations that may cause significant changes. Review carefully before executing.
-
-!!! note "Confirmation Required"
-    Some operations on this resource require explicit confirmation before execution.
-
 Create DNS Zone in a given namespace. If one already exist it will give a error.
 
 ## Tools
@@ -43,23 +37,6 @@ Create DNS Zone in a given namespace. If one already exist it will give a error.
 | `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
 | `report_fields` | The report_fields parameter | `-` |
 | `report_status_fields` | The report_status_fields parameter | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- dns-zone
-
-**Modifies:**
-
-- dns-zone
-
-**Deletes:**
-
-- dns-zone
-- contained_resources
 
 ## Example Usage
 

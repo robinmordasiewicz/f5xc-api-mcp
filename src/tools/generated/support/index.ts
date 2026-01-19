@@ -136,7 +136,18 @@ export const supportTools: ParsedOperation[] = [
         resourceType: "schema-secret",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "current_password.secret_info_oneof",
+        options: ["current_password.blindfold_secret_info", "current_password.clear_secret_info"],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "new_password.secret_info_oneof",
+        options: ["new_password.blindfold_secret_info", "new_password.clear_secret_info"],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -1779,7 +1790,18 @@ export const supportTools: ParsedOperation[] = [
     operationMetadata: null,
     curlExample: null,
     dependencies: [],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "hostname_or_ip",
+        fieldPath: "dest.hostname_or_ip",
+        options: ["dest.hostname", "dest.ip"],
+      },
+      {
+        choiceField: "interface_choice",
+        fieldPath: "intf.interface_choice",
+        options: ["intf.any_intf", "intf.intf"],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -2467,7 +2489,13 @@ export const supportTools: ParsedOperation[] = [
     operationMetadata: null,
     curlExample: null,
     dependencies: [],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "interface_choice",
+        fieldPath: "intf.interface_choice",
+        options: ["intf.intf", "intf.pod", "intf.vn", "intf.vn_type"],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -2535,7 +2563,18 @@ export const supportTools: ParsedOperation[] = [
         resourceType: "ticket-tracking-system-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "provider_config",
+        fieldPath: "spec.provider_config",
+        options: ["spec.jira_config"],
+      },
+      {
+        choiceField: "config",
+        fieldPath: "spec.jira_config.config",
+        options: ["spec.jira_config.adhoc_rest_api"],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -2829,7 +2868,18 @@ export const supportTools: ParsedOperation[] = [
         resourceType: "ticket-tracking-system-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "provider_config",
+        fieldPath: "spec.provider_config",
+        options: ["spec.jira_config"],
+      },
+      {
+        choiceField: "config",
+        fieldPath: "spec.jira_config.config",
+        options: ["spec.jira_config.adhoc_rest_api"],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -2878,6 +2928,11 @@ export const supportTools: ParsedOperation[] = [
         choiceField: "provider_config",
         fieldPath: "provider_config",
         options: ["jira_config"],
+      },
+      {
+        choiceField: "config",
+        fieldPath: "jira_config.config",
+        options: ["jira_config.adhoc_rest_api"],
       },
     ],
     subscriptionRequirements: [],

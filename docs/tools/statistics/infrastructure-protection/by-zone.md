@@ -6,9 +6,6 @@ description: L3l4 Zone Traffic Query.
 
 # By Zone
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Request to GET l3l4 zone destination Traffic data.
 
 ## Tools
@@ -25,14 +22,6 @@ Request to GET l3l4 zone destination Traffic data.
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
 | `network_id` | NetworkId | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- by-zone
 
 ## Example Usage
 

@@ -6,9 +6,6 @@ description: Update Domains.
 
 # Update Domain
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Update domain from mitigated domains to allowed domains and vice versa.
 
 ## Tools
@@ -25,13 +22,16 @@ Update domain from mitigated domains to allowed domains and vice versa.
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
 
-## Side Effects
+## Configuration Choices
 
-Operations on this resource may have the following effects:
+This resource includes mutually exclusive configuration options:
 
-**Creates:**
+### allowed_or_mitigated_domains
 
-- update-domain
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `add_to_allowed_domains` | - |  |
+| `add_to_mitigated_domains` | - |  |
 
 ## Example Usage
 

@@ -6,9 +6,6 @@ description: Upgrade SW.
 
 # Upgrade Sw
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Upgrade Site SW version.
 
 ## Tools
@@ -25,14 +22,6 @@ Upgrade Site SW version.
 |-----------|-------------|--------|
 | `name` | Name | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- upgrade-sw
 
 ## Example Usage
 

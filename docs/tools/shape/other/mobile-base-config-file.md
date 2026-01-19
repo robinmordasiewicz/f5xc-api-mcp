@@ -6,9 +6,6 @@ description: GET Mobile Base Configuration File.
 
 # Mobile Base Config File
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET Mobile Base Configuration File.
 
 ## Tools

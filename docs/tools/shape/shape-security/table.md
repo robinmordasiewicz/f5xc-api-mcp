@@ -6,9 +6,6 @@ description: GET SAFE Analyst Block Table as a CSV file.
 
 # Table
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET Safe block table as CSV file.
 
 ## Tools

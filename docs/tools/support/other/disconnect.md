@@ -6,9 +6,6 @@ description: Disconnect.
 
 # Disconnect
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Disconnect the node from LTE network.
 
 ## Tools
@@ -26,14 +23,6 @@ Disconnect the node from LTE network.
 | `namespace` | Namespace | `-` |
 | `node` | Node Name | `-` |
 | `site` | Site Name | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- disconnect
 
 ## Example Usage
 

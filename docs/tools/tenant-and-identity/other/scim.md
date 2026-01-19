@@ -6,9 +6,6 @@ description: Update OIDC provider SCIM Integration.
 
 # Scim
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Enables / Disables the SCIM integration for the OIDC provider.
 
 ## Tools
@@ -25,14 +22,6 @@ Enables / Disables the SCIM integration for the OIDC provider.
 |-----------|-------------|--------|
 | `name` | Name | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Modifies:**
-
-- scim
 
 ## Example Usage
 

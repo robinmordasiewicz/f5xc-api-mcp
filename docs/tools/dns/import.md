@@ -6,9 +6,6 @@ description: Import F5 Cloud Services DNS Zone.
 
 # Import
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Import F5 Cloud Services DNS Zone.
 
 ## Tools
@@ -16,14 +13,6 @@ Import F5 Cloud Services DNS Zone.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-dns-import-create` | Import F5 Cloud Services DNS Zone. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- import
 
 ## Example Usage
 

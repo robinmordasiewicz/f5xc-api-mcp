@@ -6,9 +6,6 @@ description: GET Alerts History.
 
 # History
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET the history of alert notifications sent to the end-user between the start_time and end_time that
 matches the
 filter specified in the request.

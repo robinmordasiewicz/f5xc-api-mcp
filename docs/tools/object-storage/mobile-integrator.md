@@ -6,9 +6,6 @@ description: GET List Of Mobile Integrators.
 
 # Mobile Integrator
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 ListMobileIntegrators is an API to list all mobile integrators available for download.
 
 ## Tools

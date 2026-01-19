@@ -6,9 +6,6 @@ description: GET API Group.
 
 # API Group
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET api_group reads a given object from storage backend for metadata.namespace.
 
 ## Tools

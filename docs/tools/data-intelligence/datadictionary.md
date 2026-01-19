@@ -6,9 +6,6 @@ description: GET Data Dictionary.
 
 # Datadictionary
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET the dataset features from Data dictionary API.
 
 ## Tools

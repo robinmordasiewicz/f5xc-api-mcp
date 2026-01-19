@@ -6,9 +6,6 @@ description: ExecUser
 
 # Exec User
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Run supported exec command on node with lower privilege.
 
 ## Tools
@@ -26,14 +23,6 @@ Run supported exec command on node with lower privilege.
 | `namespace` | Namespace | `-` |
 | `node` | Node Name | `-` |
 | `site` | Site Name | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- exec-user
 
 ## Example Usage
 

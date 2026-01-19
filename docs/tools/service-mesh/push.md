@@ -6,9 +6,6 @@ description: Add Override.
 
 # Push
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Add override for dynamic component for API endpoints discovered for this App type.
 
 ## Tools
@@ -25,14 +22,6 @@ Add override for dynamic component for API endpoints discovered for this App typ
 |-----------|-------------|--------|
 | `app_type_name` | App Type | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- push
 
 ## Example Usage
 

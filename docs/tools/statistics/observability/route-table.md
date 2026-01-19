@@ -6,9 +6,6 @@ description: GET Network Route Tables.
 
 # Route Table
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Gets Route Tables Associated with a Network.
 
 ## Tools

@@ -6,9 +6,6 @@ description: GET Remote Zone File.
 
 # Remote Zone File
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET remote zone file from primary DNS.
 
 ## Tools

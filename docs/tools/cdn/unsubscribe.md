@@ -6,9 +6,6 @@ description: Unsubscribe to CDN Loadbalancer.
 
 # Unsubscribe
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Unsubscribe to CDN Loadbalancer.
 
 ## Tools
@@ -16,14 +13,6 @@ Unsubscribe to CDN Loadbalancer.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-cdn-unsubscribe-create` | Unsubscribe to CDN Loadbalancer. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- unsubscribe
 
 ## Example Usage
 

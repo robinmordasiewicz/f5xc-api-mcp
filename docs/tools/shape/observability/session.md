@@ -6,9 +6,6 @@ description: GET Devices By Session.
 
 # Session
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET devices session information.
 
 ## Tools
@@ -16,14 +13,6 @@ GET devices session information.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-shape-session-create` | GET Devices By Session. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- session
 
 ## Example Usage
 

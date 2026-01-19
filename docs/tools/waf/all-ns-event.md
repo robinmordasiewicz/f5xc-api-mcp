@@ -6,9 +6,6 @@ description: Security Events Query All Namespaces.
 
 # All Ns Event
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET security events for the given namespace.
 For `system` namespace, all security events for the
 tenant matching the query specified
@@ -23,14 +20,6 @@ This API is specific to system namespace.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-waf-all-ns-event-create` | Security Events Query All Namespaces. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- all-ns-event
 
 ## Example Usage
 

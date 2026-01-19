@@ -205,7 +205,45 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
     operationMetadata: null,
     curlExample: null,
     dependencies: [],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "advertise_choice",
+        fieldPath: "http_lb_request.advertise_choice",
+        options: [],
+      },
+      {
+        choiceField: "loadbalancer_type",
+        fieldPath: "http_lb_request.loadbalancer_type",
+        options: [
+          "http_lb_request.http",
+          "http_lb_request.https",
+          "http_lb_request.https_auto_cert",
+        ],
+      },
+      {
+        choiceField: "server_validation_choice",
+        fieldPath: "http_lb_request.server_validation_choice",
+        options: ["http_lb_request.skip_server_verification", "http_lb_request.trusted_ca"],
+      },
+      {
+        choiceField: "advertise_choice",
+        fieldPath: "http_lb_request.http.advertise_choice",
+        options: [
+          "http_lb_request.http.advertise_on_public_default_vip",
+          "http_lb_request.http.site",
+          "http_lb_request.http.virtual_site",
+        ],
+      },
+      {
+        choiceField: "advertise_choice",
+        fieldPath: "http_lb_request.https.advertise_choice",
+        options: [
+          "http_lb_request.https.advertise_on_public_default_vip",
+          "http_lb_request.https.site",
+          "http_lb_request.https.virtual_site",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -262,7 +300,76 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
     operationMetadata: null,
     curlExample: null,
     dependencies: [],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "advertise_choice",
+        fieldPath: "tcp_lb_request.advertise_choice",
+        options: [
+          "tcp_lb_request.advertise_custom",
+          "tcp_lb_request.advertise_on_public_default_vip",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "tcp_lb_request.port_choice",
+        options: ["tcp_lb_request.listen_port", "tcp_lb_request.port_ranges"],
+      },
+      {
+        choiceField: "sni_default_lb_choice",
+        fieldPath: "tcp_lb_request.sni_default_lb_choice",
+        options: ["tcp_lb_request.no_sni", "tcp_lb_request.sni"],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "tcp_lb_request.advertise_custom.advertise_where[].choice",
+        options: [
+          "tcp_lb_request.advertise_custom.advertise_where[].advertise_on_public",
+          "tcp_lb_request.advertise_custom.advertise_where[].cloud_edge_segment",
+          "tcp_lb_request.advertise_custom.advertise_where[].segment",
+          "tcp_lb_request.advertise_custom.advertise_where[].site",
+          "tcp_lb_request.advertise_custom.advertise_where[].site_segment",
+          "tcp_lb_request.advertise_custom.advertise_where[].virtual_network",
+          "tcp_lb_request.advertise_custom.advertise_where[].virtual_site",
+          "tcp_lb_request.advertise_custom.advertise_where[].virtual_site_segment",
+          "tcp_lb_request.advertise_custom.advertise_where[].virtual_site_with_vip",
+          "tcp_lb_request.advertise_custom.advertise_where[].vk8s_service",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "tcp_lb_request.advertise_custom.advertise_where[].port_choice",
+        options: [
+          "tcp_lb_request.advertise_custom.advertise_where[].port",
+          "tcp_lb_request.advertise_custom.advertise_where[].port_ranges",
+          "tcp_lb_request.advertise_custom.advertise_where[].use_default_port",
+        ],
+      },
+      {
+        choiceField: "v6_vip_choice",
+        fieldPath:
+          "tcp_lb_request.advertise_custom.advertise_where[].virtual_network.v6_vip_choice",
+        options: [
+          "tcp_lb_request.advertise_custom.advertise_where[].virtual_network.default_v6_vip",
+          "tcp_lb_request.advertise_custom.advertise_where[].virtual_network.specific_v6_vip",
+        ],
+      },
+      {
+        choiceField: "vip_choice",
+        fieldPath: "tcp_lb_request.advertise_custom.advertise_where[].virtual_network.vip_choice",
+        options: [
+          "tcp_lb_request.advertise_custom.advertise_where[].virtual_network.default_vip",
+          "tcp_lb_request.advertise_custom.advertise_where[].virtual_network.specific_vip",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "tcp_lb_request.advertise_custom.advertise_where[].vk8s_service.choice",
+        options: [
+          "tcp_lb_request.advertise_custom.advertise_where[].vk8s_service.site",
+          "tcp_lb_request.advertise_custom.advertise_where[].vk8s_service.virtual_site",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {

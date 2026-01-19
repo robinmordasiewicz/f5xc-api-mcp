@@ -6,9 +6,6 @@ description: PostSafeBlockFeedback.
 
 # Feedback
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 POST Safe block feedback.
 
 ## Tools
@@ -24,14 +21,6 @@ POST Safe block feedback.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- feedback
 
 ## Example Usage
 

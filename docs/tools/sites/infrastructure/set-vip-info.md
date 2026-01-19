@@ -6,9 +6,6 @@ description: Configure AWS TGW Site VIP Information.
 
 # Set Vip Info
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Configure AWS TGW Site VIP Information.
 
 ## Tools
@@ -25,14 +22,6 @@ Configure AWS TGW Site VIP Information.
 |-----------|-------------|--------|
 | `name` | Name | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- set-vip-info
 
 ## Example Usage
 

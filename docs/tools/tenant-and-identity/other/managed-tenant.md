@@ -6,12 +6,6 @@ description: Create Managed Tenant.
 
 # Managed Tenant
 
-!!! danger "High Risk Operation"
-    This resource includes operations that may cause significant changes. Review carefully before executing.
-
-!!! note "Confirmation Required"
-    Some operations on this resource require explicit confirmation before execution.
-
 GET list of managed tenants that user have access to based on assingned membership.
 This is an
 optimized list generated based on the requesting user's current group assignments
@@ -47,23 +41,6 @@ access to managed tenant.
 | `page_limit` | PageLimit will hold the limit of items required per query. | `-` |
 | `page_start` | PageStart will hold the UUID of the first item in the requested page. | `-` |
 | `search_keyword` | Search Keyword for filtering the Managed Tenant List. | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- managed-tenant
-
-**Modifies:**
-
-- managed-tenant
-
-**Deletes:**
-
-- managed-tenant
-- contained_resources
 
 ## Example Usage
 

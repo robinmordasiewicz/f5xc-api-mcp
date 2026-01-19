@@ -6,9 +6,6 @@ description: GET Certificate Summary.
 
 # Certificate Summary
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Returns list of TLS certificate expirations in specified time window for HTTPS monitors running in
 namespace.
 

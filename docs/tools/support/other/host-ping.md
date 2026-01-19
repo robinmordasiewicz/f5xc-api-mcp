@@ -6,9 +6,6 @@ description: Host Ping
 
 # Host Ping
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Ping intiated from host kernel.
 
 ## Tools
@@ -26,14 +23,6 @@ Ping intiated from host kernel.
 | `namespace` | Namespace | `-` |
 | `node` | Node Name | `-` |
 | `site` | Site Name | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- host-ping
 
 ## Example Usage
 

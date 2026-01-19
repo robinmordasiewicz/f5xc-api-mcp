@@ -6,9 +6,6 @@ description: All Cloud Connect Metrics.
 
 # Metric
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Cloud Connect APIs are used to GET the data for cloud connect.
 
 ## Tools
@@ -16,14 +13,6 @@ Cloud Connect APIs are used to GET the data for cloud connect.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-cloudinfrastructure-metric-create` | All Cloud Connect Metrics. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- metric
 
 ## Example Usage
 

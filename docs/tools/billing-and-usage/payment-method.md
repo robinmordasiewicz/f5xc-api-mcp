@@ -6,12 +6,6 @@ description: Create payment method specification.
 
 # Payment Method
 
-!!! danger "High Risk Operation"
-    This resource includes operations that may cause significant changes. Review carefully before executing.
-
-!!! note "Confirmation Required"
-    Some operations on this resource require explicit confirmation before execution.
-
 Creates a new payment method with a specific role.
 
 ## Tools
@@ -29,19 +23,6 @@ Creates a new payment method with a specific role.
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
 | `name` | Name | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- payment-method
-
-**Deletes:**
-
-- payment-method
-- contained_resources
 
 ## Example Usage
 

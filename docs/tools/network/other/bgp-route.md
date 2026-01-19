@@ -6,9 +6,6 @@ description: Show BGP Routes.
 
 # Bgp Route
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Show routes exported / imported via BGP.
 
 ## Tools

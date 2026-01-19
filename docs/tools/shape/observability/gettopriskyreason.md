@@ -6,9 +6,6 @@ description: GetTopRiskyReasons.
 
 # Gettopriskyreason
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET top risky reasons data request for a time range.
 
 ## Tools
@@ -16,14 +13,6 @@ GET top risky reasons data request for a time range.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-shape-gettopriskyreason-create` | GetTopRiskyReasons. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- gettopriskyreason
 
 ## Example Usage
 

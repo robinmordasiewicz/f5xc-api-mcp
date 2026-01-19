@@ -6,12 +6,6 @@ description: Create NAT Policy.
 
 # Nat Policy
 
-!!! danger "High Risk Operation"
-    This resource includes operations that may cause significant changes. Review carefully before executing.
-
-!!! note "Confirmation Required"
-    Some operations on this resource require explicit confirmation before execution.
-
 NAT Policy replaces specification condigures NAT Policy with multiple Rules,
 corresponding Match
 Criteria to apply on the packet content and Action to be
@@ -46,23 +40,6 @@ applied ifthe MatchCriteria matches.
 | `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
 | `report_fields` | The report_fields parameter | `-` |
 | `report_status_fields` | The report_status_fields parameter | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- nat-policy
-
-**Modifies:**
-
-- nat-policy
-
-**Deletes:**
-
-- nat-policy
-- contained_resources
 
 ## Example Usage
 

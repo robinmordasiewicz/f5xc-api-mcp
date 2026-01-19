@@ -6,9 +6,6 @@ description: Security Event Scroll Query.
 
 # Scroll
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Scroll request is used to fetch large number of security events in multiple batches with each
 SecurityEventResponse
 containing no more than 500 messages. To scroll through more than 500 or all
@@ -38,14 +35,6 @@ till the scroll_id returned is "" which indicates no more events to scroll.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `scroll_id` | Long Base-64 encoded string which can be used to retrieve next batch of security events. | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- scroll
 
 ## Example Usage
 

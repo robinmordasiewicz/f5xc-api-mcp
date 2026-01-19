@@ -434,7 +434,22 @@ export const certificatesTools: ParsedOperation[] = [
         resourceType: "certificate-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "ocsp_stapling_choice",
+        fieldPath: "spec.ocsp_stapling_choice",
+        options: [
+          "spec.custom_hash_algorithms",
+          "spec.disable_ocsp_stapling",
+          "spec.use_system_defaults",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.private_key.secret_info_oneof",
+        options: ["spec.private_key.blindfold_secret_info", "spec.private_key.clear_secret_info"],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -729,7 +744,22 @@ export const certificatesTools: ParsedOperation[] = [
         resourceType: "certificate-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "ocsp_stapling_choice",
+        fieldPath: "spec.ocsp_stapling_choice",
+        options: [
+          "spec.custom_hash_algorithms",
+          "spec.disable_ocsp_stapling",
+          "spec.use_system_defaults",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.private_key.secret_info_oneof",
+        options: ["spec.private_key.blindfold_secret_info", "spec.private_key.clear_secret_info"],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -797,7 +827,13 @@ export const certificatesTools: ParsedOperation[] = [
         resourceType: "crl-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "access_info_choice",
+        fieldPath: "spec.access_info_choice",
+        options: ["spec.http_access"],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -1092,7 +1128,13 @@ export const certificatesTools: ParsedOperation[] = [
         resourceType: "crl-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "access_info_choice",
+        fieldPath: "spec.access_info_choice",
+        options: ["spec.http_access"],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {

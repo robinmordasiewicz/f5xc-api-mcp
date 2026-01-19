@@ -6,9 +6,6 @@ description: All Application Objects Inventory with WAF Filters.
 
 # All Application Inventory WAF Filter
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 AllApplicationInventoryWaf returns inventory of configured application related objects for all
 namespaces with WAF Filters.
 
@@ -18,13 +15,16 @@ namespaces with WAF Filters.
 |------|-------------|
 | `f5xc-api-tenantandidentity-all-application-inventory-waf-filter-create` | All Application Objects Inventory with WAF Filters. |
 
-## Side Effects
+## Configuration Choices
 
-Operations on this resource may have the following effects:
+This resource includes mutually exclusive configuration options:
 
-**Creates:**
+### waf_filter_choice
 
-- all-application-inventory-waf-filter
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `exclusion_signature_id` | - |  |
+| `exclusion_violation_type` | - |  |
 
 ## Example Usage
 

@@ -6,9 +6,6 @@ description: GET Certificate Report Detail.
 
 # Certificate Report Detail
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Returns the certificate report detail.
 
 ## Tools

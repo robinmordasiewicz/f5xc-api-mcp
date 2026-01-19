@@ -6,9 +6,6 @@ description: Mark As Non-API.
 
 # Mark As Non API
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Update the API Definition's non-API list with the provided API endpoints.
 
 ## Tools
@@ -25,14 +22,6 @@ Update the API Definition's non-API list with the provided API endpoints.
 |-----------|-------------|--------|
 | `name` | Name | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- mark-as-non-api
 
 ## Example Usage
 

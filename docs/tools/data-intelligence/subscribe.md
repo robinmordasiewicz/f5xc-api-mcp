@@ -6,9 +6,6 @@ description: Subscribe to Data Intelligence.
 
 # Subscribe
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Subscribe to Data Intelligence.
 
 ## Tools
@@ -16,14 +13,6 @@ Subscribe to Data Intelligence.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-dataintelligence-subscribe-create` | Subscribe to Data Intelligence. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- subscribe
 
 ## Example Usage
 

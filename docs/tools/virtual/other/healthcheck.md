@@ -6,12 +6,6 @@ description: Create Health Check.
 
 # Healthcheck
 
-!!! danger "High Risk Operation"
-    This resource includes operations that may cause significant changes. Review carefully before executing.
-
-!!! note "Confirmation Required"
-    Some operations on this resource require explicit confirmation before execution.
-
 Healthcheck object defines method to determine if the given Endpoint is healthy.
 Single Healthcheck
 object can be referred to by one or many Cluster objects.
@@ -45,23 +39,6 @@ object can be referred to by one or many Cluster objects.
 | `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
 | `report_fields` | The report_fields parameter | `-` |
 | `report_status_fields` | The report_status_fields parameter | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- healthcheck
-
-**Modifies:**
-
-- healthcheck
-
-**Deletes:**
-
-- healthcheck
-- contained_resources
 
 ## Example Usage
 

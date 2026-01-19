@@ -6,9 +6,6 @@ description: Top Talkers.
 
 # Top Talker
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Request to GET top talkers from the flow records.
 
 ## Tools
@@ -16,14 +13,6 @@ Request to GET top talkers from the flow records.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-telemetryandinsights-top-talker-create` | Top Talkers. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- top-talker
 
 ## Example Usage
 

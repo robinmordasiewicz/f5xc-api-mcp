@@ -6,9 +6,6 @@ description: Revoke Global Kubeconfig.
 
 # Global Kubeconfig
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Returns list of all global active kubeconfig minted for this site.
 
 ## Tools
@@ -25,14 +22,6 @@ Returns list of all global active kubeconfig minted for this site.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `site` | Site | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- global-kubeconfig
 
 ## Example Usage
 

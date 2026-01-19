@@ -6,9 +6,6 @@ description: Verify DNS Domain.
 
 # Verify
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Verify DNS Domain for a given dns_domain object.
 
 ## Tools
@@ -25,14 +22,6 @@ Verify DNS Domain for a given dns_domain object.
 |-----------|-------------|--------|
 | `name` | Name | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- verify
 
 ## Example Usage
 

@@ -6,9 +6,6 @@ description: Remove user from groups.
 
 # Group Remove
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Remove existing user from specific groups.
 
 ## Tools
@@ -16,14 +13,6 @@ Remove existing user from specific groups.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-tenantandidentity-group-remove-update` | Remove user from groups. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Modifies:**
-
-- group-remove
 
 ## Example Usage
 

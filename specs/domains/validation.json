@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "version": "2.1.0",
   "description": "Centralized validation specification for F5 XC API",
-  "generated_at": "2026-01-18T06:23:45.765630+00:00",
+  "generated_at": "2026-01-19T05:53:57.627362+00:00",
   "source": "f5xc-api-enriched",
   "required_fields": {
     "common": {
@@ -847,6 +847,19 @@
           "unhealthy_threshold": 1,
           "healthy_threshold": 3,
           "jitter_percent": 30
+        },
+        "oneof_recommended": {
+          "health_check": "http_health_check"
+        },
+        "nested_recommended": {
+          "http_health_check": {
+            "path": "/",
+            "use_http2": false,
+            "expected_status_codes": [
+              "200"
+            ],
+            "use_origin_server_name": {}
+          }
         }
       },
       "origin_pool": {
@@ -861,19 +874,7 @@
           "connection_timeout": 2000,
           "http_idle_timeout": 300000
         },
-        "advanced_options": {
-          "connection_timeout": 2000,
-          "http_idle_timeout": 300000,
-          "same_as_endpoint_port": {},
-          "default_circuit_breaker": {},
-          "disable_outlier_detection": {},
-          "no_panic_threshold": {},
-          "disable_subsets": {},
-          "auto_http_config": {},
-          "disable_proxy_protocol": {},
-          "disable_lb_source_ip_persistance": {}
-        },
-        "oneof_choices": {
+        "oneof_recommended": {
           "port_choice": "port",
           "upstream_conn_pool_reuse": "enable_conn_pool_reuse",
           "health_check_port_choice": "same_as_endpoint_port",
@@ -885,6 +886,12 @@
           "http_protocol_type": "auto_http_config",
           "proxy_protocol_choice": "disable_proxy_protocol",
           "lb_source_ip_persistence_choice": "disable_lb_source_ip_persistance"
+        },
+        "nested_recommended": {
+          "advanced_options": {
+            "connection_timeout": 2000,
+            "http_idle_timeout": 300000
+          }
         },
         "ui_vs_server": {
           "loadbalancer_algorithm": {
@@ -931,14 +938,16 @@
     "constraints_exported": 14,
     "server_defaults_exported": 5,
     "recommended_values_exported": 8,
-    "advanced_options_exported": 1,
+    "nested_recommended_exported": 6,
+    "oneof_recommended_exported": 12,
+    "advanced_options_exported": 0,
     "conditional_requirements_exported": 18,
     "minimum_configs_exported": 6,
-    "oneof_defaults_exported": 11,
+    "oneof_defaults_exported": 0,
     "ui_vs_server_defaults_exported": 1,
     "warnings": []
   },
   "info": {
-    "version": "2.0.34"
+    "version": "2.0.39"
   }
 }

@@ -6,9 +6,6 @@ description: Check Peer Status.
 
 # Check
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Check if the tenant has the peer or not.
 
 ## Tools
@@ -16,14 +13,6 @@ Check if the tenant has the peer or not.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-shape-check-create` | Check Peer Status. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- check
 
 ## Example Usage
 

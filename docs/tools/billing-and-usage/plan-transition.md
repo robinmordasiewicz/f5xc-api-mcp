@@ -6,9 +6,6 @@ description: InitiatePlanTransition.
 
 # Plan Transition
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 API to GET plan transition details by a plan transition request uid returned from
 InitiatePlanTransition.
 For now this one returns only current State.
@@ -33,14 +30,6 @@ For now this one returns only current State.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `id` | ID of the plan transition request. | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- plan-transition
 
 ## Example Usage
 

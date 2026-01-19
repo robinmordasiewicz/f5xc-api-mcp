@@ -6,9 +6,6 @@ description: Enable feature.
 
 # Enable Feature
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Enable service by returning service account details.
 
 ## Tools
@@ -16,14 +13,6 @@ Enable service by returning service account details.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-aiservices-enable-feature-create` | Enable feature. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- enable-feature
 
 ## Example Usage
 

@@ -6,9 +6,6 @@ description: List networks.
 
 # Network
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Returns a list available reports to be downloaded. Reports summarise an event or a mitigation in a
 single PDF document.
 

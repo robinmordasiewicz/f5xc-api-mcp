@@ -6,9 +6,6 @@ description: Change priority of a ticket.
 
 # Priority
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Changes priority of a selected ticket. Not possible if ticket's already closed.
 
 ## Tools
@@ -25,14 +22,6 @@ Changes priority of a selected ticket. Not possible if ticket's already closed.
 |-----------|-------------|--------|
 | `name` | Name | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- priority
 
 ## Example Usage
 

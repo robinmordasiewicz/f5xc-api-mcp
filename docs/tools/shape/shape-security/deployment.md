@@ -6,9 +6,6 @@ description: GET list of bot detection rule deployments.
 
 # Deployment
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Getbotdetectionrulesdeployments CustomAPI.
 
 ## Tools

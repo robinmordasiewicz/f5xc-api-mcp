@@ -6,9 +6,6 @@ description: DNS Load Balancer Health Status.
 
 # Health Statu
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET Health Status of all DNS Load Balancers in a namespace.
 
 ## Tools

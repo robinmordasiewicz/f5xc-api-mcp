@@ -124,7 +124,382 @@ export const sitesTools: ParsedOperation[] = [
         resourceType: "viewsaws-tgw-site-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "blocked_services_choice",
+        fieldPath: "spec.blocked_services_choice",
+        options: [
+          "spec.block_all_services",
+          "spec.blocked_services",
+          "spec.default_blocked_services",
+        ],
+      },
+      {
+        choiceField: "direct_connect_choice",
+        fieldPath: "spec.direct_connect_choice",
+        options: [
+          "spec.direct_connect_disabled",
+          "spec.direct_connect_enabled",
+          "spec.private_connectivity",
+        ],
+      },
+      {
+        choiceField: "logs_receiver_choice",
+        fieldPath: "spec.logs_receiver_choice",
+        options: ["spec.log_receiver", "spec.logs_streaming_disabled"],
+      },
+      {
+        choiceField: "deployment",
+        fieldPath: "spec.aws_parameters.deployment",
+        options: ["spec.aws_parameters.aws_cred"],
+      },
+      {
+        choiceField: "internet_vip_choice",
+        fieldPath: "spec.aws_parameters.internet_vip_choice",
+        options: [
+          "spec.aws_parameters.disable_internet_vip",
+          "spec.aws_parameters.enable_internet_vip",
+        ],
+      },
+      {
+        choiceField: "security_group_choice",
+        fieldPath: "spec.aws_parameters.security_group_choice",
+        options: [
+          "spec.aws_parameters.custom_security_group",
+          "spec.aws_parameters.f5xc_security_group",
+        ],
+      },
+      {
+        choiceField: "service_vpc_choice",
+        fieldPath: "spec.aws_parameters.service_vpc_choice",
+        options: ["spec.aws_parameters.new_vpc", "spec.aws_parameters.vpc_id"],
+      },
+      {
+        choiceField: "tgw_choice",
+        fieldPath: "spec.aws_parameters.tgw_choice",
+        options: ["spec.aws_parameters.existing_tgw", "spec.aws_parameters.new_tgw"],
+      },
+      {
+        choiceField: "tgw_cidr_choice",
+        fieldPath: "spec.aws_parameters.tgw_cidr_choice",
+        options: ["spec.aws_parameters.reserved_tgw_cidr", "spec.aws_parameters.tgw_cidr"],
+      },
+      {
+        choiceField: "worker_nodes",
+        fieldPath: "spec.aws_parameters.worker_nodes",
+        options: [
+          "spec.aws_parameters.no_worker_nodes",
+          "spec.aws_parameters.nodes_per_az",
+          "spec.aws_parameters.total_nodes",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.aws_parameters.admin_password.secret_info_oneof",
+        options: [
+          "spec.aws_parameters.admin_password.blindfold_secret_info",
+          "spec.aws_parameters.admin_password.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.aws_parameters.az_nodes[].choice",
+        options: [
+          "spec.aws_parameters.az_nodes[].inside_subnet",
+          "spec.aws_parameters.az_nodes[].reserved_inside_subnet",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.aws_parameters.az_nodes[].inside_subnet.choice",
+        options: [
+          "spec.aws_parameters.az_nodes[].inside_subnet.existing_subnet_id",
+          "spec.aws_parameters.az_nodes[].inside_subnet.subnet_param",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.aws_parameters.az_nodes[].outside_subnet.choice",
+        options: [
+          "spec.aws_parameters.az_nodes[].outside_subnet.existing_subnet_id",
+          "spec.aws_parameters.az_nodes[].outside_subnet.subnet_param",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.aws_parameters.az_nodes[].workload_subnet.choice",
+        options: [
+          "spec.aws_parameters.az_nodes[].workload_subnet.existing_subnet_id",
+          "spec.aws_parameters.az_nodes[].workload_subnet.subnet_param",
+        ],
+      },
+      {
+        choiceField: "asn_choice",
+        fieldPath: "spec.aws_parameters.new_tgw.asn_choice",
+        options: [
+          "spec.aws_parameters.new_tgw.system_generated",
+          "spec.aws_parameters.new_tgw.user_assigned",
+        ],
+      },
+      {
+        choiceField: "name_choice",
+        fieldPath: "spec.aws_parameters.new_vpc.name_choice",
+        options: [
+          "spec.aws_parameters.new_vpc.autogenerate",
+          "spec.aws_parameters.new_vpc.name_tag",
+        ],
+      },
+      {
+        choiceField: "blocked_services_value_type_choice",
+        fieldPath: "spec.blocked_services.blocked_sevice[].blocked_services_value_type_choice",
+        options: [
+          "spec.blocked_services.blocked_sevice[].dns",
+          "spec.blocked_services.blocked_sevice[].ssh",
+          "spec.blocked_services.blocked_sevice[].web_user_interface",
+        ],
+      },
+      {
+        choiceField: "asn_choice",
+        fieldPath: "spec.direct_connect_enabled.asn_choice",
+        options: ["spec.direct_connect_enabled.auto_asn", "spec.direct_connect_enabled.custom_asn"],
+      },
+      {
+        choiceField: "vif_choice",
+        fieldPath: "spec.direct_connect_enabled.vif_choice",
+        options: [
+          "spec.direct_connect_enabled.hosted_vifs",
+          "spec.direct_connect_enabled.standard_vifs",
+        ],
+      },
+      {
+        choiceField: "connectivity_options",
+        fieldPath: "spec.direct_connect_enabled.hosted_vifs.connectivity_options",
+        options: [
+          "spec.direct_connect_enabled.hosted_vifs.site_registration_over_direct_connect",
+          "spec.direct_connect_enabled.hosted_vifs.site_registration_over_internet",
+        ],
+      },
+      {
+        choiceField: "vif_region_choice",
+        fieldPath: "spec.direct_connect_enabled.hosted_vifs.vif_list[].vif_region_choice",
+        options: [
+          "spec.direct_connect_enabled.hosted_vifs.vif_list[].other_region",
+          "spec.direct_connect_enabled.hosted_vifs.vif_list[].same_as_site_region",
+        ],
+      },
+      {
+        choiceField: "kubernetes_upgrade_drain_enable_choice",
+        fieldPath: "spec.kubernetes_upgrade_drain.kubernetes_upgrade_drain_enable_choice",
+        options: [
+          "spec.kubernetes_upgrade_drain.disable_upgrade_drain",
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain",
+        ],
+      },
+      {
+        choiceField: "drain_max_unavailable_choice",
+        fieldPath:
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.drain_max_unavailable_choice",
+        options: [
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.drain_max_unavailable_node_count",
+        ],
+      },
+      {
+        choiceField: "vega_upgrade_mode_toggle_choice",
+        fieldPath:
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.vega_upgrade_mode_toggle_choice",
+        options: [
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.disable_vega_upgrade_mode",
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.enable_vega_upgrade_mode",
+        ],
+      },
+      {
+        choiceField: "offline_survivability_mode_choice",
+        fieldPath: "spec.offline_survivability_mode.offline_survivability_mode_choice",
+        options: [
+          "spec.offline_survivability_mode.enable_offline_survivability_mode",
+          "spec.offline_survivability_mode.no_offline_survivability_mode",
+        ],
+      },
+      {
+        choiceField: "operating_system_version_choice",
+        fieldPath: "spec.os.operating_system_version_choice",
+        options: ["spec.os.default_os_version", "spec.os.operating_system_version"],
+      },
+      {
+        choiceField: "perf_mode_choice",
+        fieldPath: "spec.performance_enhancement_mode.perf_mode_choice",
+        options: [
+          "spec.performance_enhancement_mode.perf_mode_l3_enhanced",
+          "spec.performance_enhancement_mode.perf_mode_l7_enhanced",
+        ],
+      },
+      {
+        choiceField: "perf_mode_choice",
+        fieldPath: "spec.performance_enhancement_mode.perf_mode_l3_enhanced.perf_mode_choice",
+        options: [
+          "spec.performance_enhancement_mode.perf_mode_l3_enhanced.jumbo",
+          "spec.performance_enhancement_mode.perf_mode_l3_enhanced.no_jumbo",
+        ],
+      },
+      {
+        choiceField: "network_options",
+        fieldPath: "spec.private_connectivity.network_options",
+        options: ["spec.private_connectivity.inside", "spec.private_connectivity.outside"],
+      },
+      {
+        choiceField: "volterra_sw_version_choice",
+        fieldPath: "spec.sw.volterra_sw_version_choice",
+        options: ["spec.sw.default_sw_version", "spec.sw.volterra_software_version"],
+      },
+      {
+        choiceField: "east_west_service_policy_choice",
+        fieldPath: "spec.tgw_security.east_west_service_policy_choice",
+        options: [
+          "spec.tgw_security.active_east_west_service_policies",
+          "spec.tgw_security.east_west_service_policy_allow_all",
+          "spec.tgw_security.no_east_west_policy",
+        ],
+      },
+      {
+        choiceField: "forward_proxy_choice",
+        fieldPath: "spec.tgw_security.forward_proxy_choice",
+        options: [
+          "spec.tgw_security.active_forward_proxy_policies",
+          "spec.tgw_security.forward_proxy_allow_all",
+          "spec.tgw_security.no_forward_proxy",
+        ],
+      },
+      {
+        choiceField: "network_policy_choice",
+        fieldPath: "spec.tgw_security.network_policy_choice",
+        options: [
+          "spec.tgw_security.active_enhanced_firewall_policies",
+          "spec.tgw_security.active_network_policies",
+          "spec.tgw_security.no_network_policy",
+        ],
+      },
+      {
+        choiceField: "dc_cluster_group_choice",
+        fieldPath: "spec.vn_config.dc_cluster_group_choice",
+        options: [
+          "spec.vn_config.dc_cluster_group_inside_vn",
+          "spec.vn_config.dc_cluster_group_outside_vn",
+          "spec.vn_config.no_dc_cluster_group",
+        ],
+      },
+      {
+        choiceField: "global_network_choice",
+        fieldPath: "spec.vn_config.global_network_choice",
+        options: ["spec.vn_config.global_network_list", "spec.vn_config.no_global_network"],
+      },
+      {
+        choiceField: "inside_static_route_choice",
+        fieldPath: "spec.vn_config.inside_static_route_choice",
+        options: ["spec.vn_config.inside_static_routes", "spec.vn_config.no_inside_static_routes"],
+      },
+      {
+        choiceField: "outside_static_route_choice",
+        fieldPath: "spec.vn_config.outside_static_route_choice",
+        options: [
+          "spec.vn_config.no_outside_static_routes",
+          "spec.vn_config.outside_static_routes",
+        ],
+      },
+      {
+        choiceField: "site_mesh_group_choice",
+        fieldPath: "spec.vn_config.site_mesh_group_choice",
+        options: ["spec.vn_config.sm_connection_public_ip", "spec.vn_config.sm_connection_pvt_ip"],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.vn_config.allowed_vip_port.port_choice",
+        options: [
+          "spec.vn_config.allowed_vip_port.custom_ports",
+          "spec.vn_config.allowed_vip_port.disable_allowed_vip_port",
+          "spec.vn_config.allowed_vip_port.use_http_https_port",
+          "spec.vn_config.allowed_vip_port.use_http_port",
+          "spec.vn_config.allowed_vip_port.use_https_port",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.vn_config.allowed_vip_port_sli.port_choice",
+        options: [
+          "spec.vn_config.allowed_vip_port_sli.custom_ports",
+          "spec.vn_config.allowed_vip_port_sli.disable_allowed_vip_port",
+          "spec.vn_config.allowed_vip_port_sli.use_http_https_port",
+          "spec.vn_config.allowed_vip_port_sli.use_http_port",
+          "spec.vn_config.allowed_vip_port_sli.use_https_port",
+        ],
+      },
+      {
+        choiceField: "connection_choice",
+        fieldPath:
+          "spec.vn_config.global_network_list.global_network_connections[].connection_choice",
+        options: [
+          "spec.vn_config.global_network_list.global_network_connections[].sli_to_global_dr",
+          "spec.vn_config.global_network_list.global_network_connections[].slo_to_global_dr",
+        ],
+      },
+      {
+        choiceField: "forward_proxy_choice",
+        fieldPath:
+          "spec.vn_config.global_network_list.global_network_connections[].forward_proxy_choice",
+        options: [],
+      },
+      {
+        choiceField: "config_mode_choice",
+        fieldPath: "spec.vn_config.inside_static_routes.static_route_list[].config_mode_choice",
+        options: [
+          "spec.vn_config.inside_static_routes.static_route_list[].custom_static_route",
+          "spec.vn_config.inside_static_routes.static_route_list[].simple_static_route",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.vn_config.inside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ver",
+        options: [
+          "spec.vn_config.inside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv4",
+          "spec.vn_config.inside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv6",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.vn_config.inside_static_routes.static_route_list[].custom_static_route.subnets[].ver",
+        options: [
+          "spec.vn_config.inside_static_routes.static_route_list[].custom_static_route.subnets[].ipv4",
+          "spec.vn_config.inside_static_routes.static_route_list[].custom_static_route.subnets[].ipv6",
+        ],
+      },
+      {
+        choiceField: "config_mode_choice",
+        fieldPath: "spec.vn_config.outside_static_routes.static_route_list[].config_mode_choice",
+        options: [
+          "spec.vn_config.outside_static_routes.static_route_list[].custom_static_route",
+          "spec.vn_config.outside_static_routes.static_route_list[].simple_static_route",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.vn_config.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ver",
+        options: [
+          "spec.vn_config.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv4",
+          "spec.vn_config.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv6",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.vn_config.outside_static_routes.static_route_list[].custom_static_route.subnets[].ver",
+        options: [
+          "spec.vn_config.outside_static_routes.static_route_list[].custom_static_route.subnets[].ipv4",
+          "spec.vn_config.outside_static_routes.static_route_list[].custom_static_route.subnets[].ipv6",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_site_management_standard",
@@ -447,7 +822,359 @@ export const sitesTools: ParsedOperation[] = [
         resourceType: "viewsaws-tgw-site-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "blocked_services_choice",
+        fieldPath: "spec.blocked_services_choice",
+        options: [
+          "spec.block_all_services",
+          "spec.blocked_services",
+          "spec.default_blocked_services",
+        ],
+      },
+      {
+        choiceField: "direct_connect_choice",
+        fieldPath: "spec.direct_connect_choice",
+        options: [
+          "spec.direct_connect_disabled",
+          "spec.direct_connect_enabled",
+          "spec.private_connectivity",
+        ],
+      },
+      {
+        choiceField: "logs_receiver_choice",
+        fieldPath: "spec.logs_receiver_choice",
+        options: ["spec.log_receiver", "spec.logs_streaming_disabled"],
+      },
+      {
+        choiceField: "deployment",
+        fieldPath: "spec.aws_parameters.deployment",
+        options: ["spec.aws_parameters.aws_cred"],
+      },
+      {
+        choiceField: "internet_vip_choice",
+        fieldPath: "spec.aws_parameters.internet_vip_choice",
+        options: [
+          "spec.aws_parameters.disable_internet_vip",
+          "spec.aws_parameters.enable_internet_vip",
+        ],
+      },
+      {
+        choiceField: "security_group_choice",
+        fieldPath: "spec.aws_parameters.security_group_choice",
+        options: [
+          "spec.aws_parameters.custom_security_group",
+          "spec.aws_parameters.f5xc_security_group",
+        ],
+      },
+      {
+        choiceField: "service_vpc_choice",
+        fieldPath: "spec.aws_parameters.service_vpc_choice",
+        options: ["spec.aws_parameters.new_vpc", "spec.aws_parameters.vpc_id"],
+      },
+      {
+        choiceField: "tgw_choice",
+        fieldPath: "spec.aws_parameters.tgw_choice",
+        options: ["spec.aws_parameters.existing_tgw", "spec.aws_parameters.new_tgw"],
+      },
+      {
+        choiceField: "worker_nodes",
+        fieldPath: "spec.aws_parameters.worker_nodes",
+        options: [
+          "spec.aws_parameters.no_worker_nodes",
+          "spec.aws_parameters.nodes_per_az",
+          "spec.aws_parameters.total_nodes",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.aws_parameters.az_nodes[].choice",
+        options: [
+          "spec.aws_parameters.az_nodes[].inside_subnet",
+          "spec.aws_parameters.az_nodes[].reserved_inside_subnet",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.aws_parameters.az_nodes[].inside_subnet.choice",
+        options: [
+          "spec.aws_parameters.az_nodes[].inside_subnet.existing_subnet_id",
+          "spec.aws_parameters.az_nodes[].inside_subnet.subnet_param",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.aws_parameters.az_nodes[].outside_subnet.choice",
+        options: [
+          "spec.aws_parameters.az_nodes[].outside_subnet.existing_subnet_id",
+          "spec.aws_parameters.az_nodes[].outside_subnet.subnet_param",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.aws_parameters.az_nodes[].workload_subnet.choice",
+        options: [
+          "spec.aws_parameters.az_nodes[].workload_subnet.existing_subnet_id",
+          "spec.aws_parameters.az_nodes[].workload_subnet.subnet_param",
+        ],
+      },
+      {
+        choiceField: "asn_choice",
+        fieldPath: "spec.aws_parameters.new_tgw.asn_choice",
+        options: [
+          "spec.aws_parameters.new_tgw.system_generated",
+          "spec.aws_parameters.new_tgw.user_assigned",
+        ],
+      },
+      {
+        choiceField: "name_choice",
+        fieldPath: "spec.aws_parameters.new_vpc.name_choice",
+        options: [
+          "spec.aws_parameters.new_vpc.autogenerate",
+          "spec.aws_parameters.new_vpc.name_tag",
+        ],
+      },
+      {
+        choiceField: "blocked_services_value_type_choice",
+        fieldPath: "spec.blocked_services.blocked_sevice[].blocked_services_value_type_choice",
+        options: [
+          "spec.blocked_services.blocked_sevice[].dns",
+          "spec.blocked_services.blocked_sevice[].ssh",
+          "spec.blocked_services.blocked_sevice[].web_user_interface",
+        ],
+      },
+      {
+        choiceField: "asn_choice",
+        fieldPath: "spec.direct_connect_enabled.asn_choice",
+        options: ["spec.direct_connect_enabled.auto_asn", "spec.direct_connect_enabled.custom_asn"],
+      },
+      {
+        choiceField: "vif_choice",
+        fieldPath: "spec.direct_connect_enabled.vif_choice",
+        options: [
+          "spec.direct_connect_enabled.hosted_vifs",
+          "spec.direct_connect_enabled.standard_vifs",
+        ],
+      },
+      {
+        choiceField: "connectivity_options",
+        fieldPath: "spec.direct_connect_enabled.hosted_vifs.connectivity_options",
+        options: [
+          "spec.direct_connect_enabled.hosted_vifs.site_registration_over_direct_connect",
+          "spec.direct_connect_enabled.hosted_vifs.site_registration_over_internet",
+        ],
+      },
+      {
+        choiceField: "vif_region_choice",
+        fieldPath: "spec.direct_connect_enabled.hosted_vifs.vif_list[].vif_region_choice",
+        options: [
+          "spec.direct_connect_enabled.hosted_vifs.vif_list[].other_region",
+          "spec.direct_connect_enabled.hosted_vifs.vif_list[].same_as_site_region",
+        ],
+      },
+      {
+        choiceField: "kubernetes_upgrade_drain_enable_choice",
+        fieldPath: "spec.kubernetes_upgrade_drain.kubernetes_upgrade_drain_enable_choice",
+        options: [
+          "spec.kubernetes_upgrade_drain.disable_upgrade_drain",
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain",
+        ],
+      },
+      {
+        choiceField: "drain_max_unavailable_choice",
+        fieldPath:
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.drain_max_unavailable_choice",
+        options: [
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.drain_max_unavailable_node_count",
+        ],
+      },
+      {
+        choiceField: "vega_upgrade_mode_toggle_choice",
+        fieldPath:
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.vega_upgrade_mode_toggle_choice",
+        options: [
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.disable_vega_upgrade_mode",
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.enable_vega_upgrade_mode",
+        ],
+      },
+      {
+        choiceField: "offline_survivability_mode_choice",
+        fieldPath: "spec.offline_survivability_mode.offline_survivability_mode_choice",
+        options: [
+          "spec.offline_survivability_mode.enable_offline_survivability_mode",
+          "spec.offline_survivability_mode.no_offline_survivability_mode",
+        ],
+      },
+      {
+        choiceField: "perf_mode_choice",
+        fieldPath: "spec.performance_enhancement_mode.perf_mode_choice",
+        options: [
+          "spec.performance_enhancement_mode.perf_mode_l3_enhanced",
+          "spec.performance_enhancement_mode.perf_mode_l7_enhanced",
+        ],
+      },
+      {
+        choiceField: "perf_mode_choice",
+        fieldPath: "spec.performance_enhancement_mode.perf_mode_l3_enhanced.perf_mode_choice",
+        options: [
+          "spec.performance_enhancement_mode.perf_mode_l3_enhanced.jumbo",
+          "spec.performance_enhancement_mode.perf_mode_l3_enhanced.no_jumbo",
+        ],
+      },
+      {
+        choiceField: "network_options",
+        fieldPath: "spec.private_connectivity.network_options",
+        options: ["spec.private_connectivity.inside", "spec.private_connectivity.outside"],
+      },
+      {
+        choiceField: "east_west_service_policy_choice",
+        fieldPath: "spec.tgw_security.east_west_service_policy_choice",
+        options: [
+          "spec.tgw_security.active_east_west_service_policies",
+          "spec.tgw_security.east_west_service_policy_allow_all",
+          "spec.tgw_security.no_east_west_policy",
+        ],
+      },
+      {
+        choiceField: "forward_proxy_choice",
+        fieldPath: "spec.tgw_security.forward_proxy_choice",
+        options: [
+          "spec.tgw_security.active_forward_proxy_policies",
+          "spec.tgw_security.forward_proxy_allow_all",
+          "spec.tgw_security.no_forward_proxy",
+        ],
+      },
+      {
+        choiceField: "network_policy_choice",
+        fieldPath: "spec.tgw_security.network_policy_choice",
+        options: [
+          "spec.tgw_security.active_enhanced_firewall_policies",
+          "spec.tgw_security.active_network_policies",
+          "spec.tgw_security.no_network_policy",
+        ],
+      },
+      {
+        choiceField: "dc_cluster_group_choice",
+        fieldPath: "spec.vn_config.dc_cluster_group_choice",
+        options: [
+          "spec.vn_config.dc_cluster_group_inside_vn",
+          "spec.vn_config.dc_cluster_group_outside_vn",
+          "spec.vn_config.no_dc_cluster_group",
+        ],
+      },
+      {
+        choiceField: "global_network_choice",
+        fieldPath: "spec.vn_config.global_network_choice",
+        options: ["spec.vn_config.global_network_list", "spec.vn_config.no_global_network"],
+      },
+      {
+        choiceField: "inside_static_route_choice",
+        fieldPath: "spec.vn_config.inside_static_route_choice",
+        options: ["spec.vn_config.inside_static_routes", "spec.vn_config.no_inside_static_routes"],
+      },
+      {
+        choiceField: "outside_static_route_choice",
+        fieldPath: "spec.vn_config.outside_static_route_choice",
+        options: [
+          "spec.vn_config.no_outside_static_routes",
+          "spec.vn_config.outside_static_routes",
+        ],
+      },
+      {
+        choiceField: "site_mesh_group_choice",
+        fieldPath: "spec.vn_config.site_mesh_group_choice",
+        options: ["spec.vn_config.sm_connection_public_ip", "spec.vn_config.sm_connection_pvt_ip"],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.vn_config.allowed_vip_port.port_choice",
+        options: [
+          "spec.vn_config.allowed_vip_port.custom_ports",
+          "spec.vn_config.allowed_vip_port.disable_allowed_vip_port",
+          "spec.vn_config.allowed_vip_port.use_http_https_port",
+          "spec.vn_config.allowed_vip_port.use_http_port",
+          "spec.vn_config.allowed_vip_port.use_https_port",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.vn_config.allowed_vip_port_sli.port_choice",
+        options: [
+          "spec.vn_config.allowed_vip_port_sli.custom_ports",
+          "spec.vn_config.allowed_vip_port_sli.disable_allowed_vip_port",
+          "spec.vn_config.allowed_vip_port_sli.use_http_https_port",
+          "spec.vn_config.allowed_vip_port_sli.use_http_port",
+          "spec.vn_config.allowed_vip_port_sli.use_https_port",
+        ],
+      },
+      {
+        choiceField: "connection_choice",
+        fieldPath:
+          "spec.vn_config.global_network_list.global_network_connections[].connection_choice",
+        options: [
+          "spec.vn_config.global_network_list.global_network_connections[].sli_to_global_dr",
+          "spec.vn_config.global_network_list.global_network_connections[].slo_to_global_dr",
+        ],
+      },
+      {
+        choiceField: "forward_proxy_choice",
+        fieldPath:
+          "spec.vn_config.global_network_list.global_network_connections[].forward_proxy_choice",
+        options: [],
+      },
+      {
+        choiceField: "config_mode_choice",
+        fieldPath: "spec.vn_config.inside_static_routes.static_route_list[].config_mode_choice",
+        options: [
+          "spec.vn_config.inside_static_routes.static_route_list[].custom_static_route",
+          "spec.vn_config.inside_static_routes.static_route_list[].simple_static_route",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.vn_config.inside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ver",
+        options: [
+          "spec.vn_config.inside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv4",
+          "spec.vn_config.inside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv6",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.vn_config.inside_static_routes.static_route_list[].custom_static_route.subnets[].ver",
+        options: [
+          "spec.vn_config.inside_static_routes.static_route_list[].custom_static_route.subnets[].ipv4",
+          "spec.vn_config.inside_static_routes.static_route_list[].custom_static_route.subnets[].ipv6",
+        ],
+      },
+      {
+        choiceField: "config_mode_choice",
+        fieldPath: "spec.vn_config.outside_static_routes.static_route_list[].config_mode_choice",
+        options: [
+          "spec.vn_config.outside_static_routes.static_route_list[].custom_static_route",
+          "spec.vn_config.outside_static_routes.static_route_list[].simple_static_route",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.vn_config.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ver",
+        options: [
+          "spec.vn_config.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv4",
+          "spec.vn_config.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv6",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.vn_config.outside_static_routes.static_route_list[].custom_static_route.subnets[].ver",
+        options: [
+          "spec.vn_config.outside_static_routes.static_route_list[].custom_static_route.subnets[].ipv4",
+          "spec.vn_config.outside_static_routes.static_route_list[].custom_static_route.subnets[].ipv6",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_site_management_standard",
@@ -522,7 +1249,543 @@ export const sitesTools: ParsedOperation[] = [
         resourceType: "viewsaws-vpc-site-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "blocked_services_choice",
+        fieldPath: "spec.blocked_services_choice",
+        options: [
+          "spec.block_all_services",
+          "spec.blocked_services",
+          "spec.default_blocked_services",
+        ],
+      },
+      {
+        choiceField: "deployment",
+        fieldPath: "spec.deployment",
+        options: ["spec.aws_cred"],
+      },
+      {
+        choiceField: "direct_connect_choice",
+        fieldPath: "spec.direct_connect_choice",
+        options: [
+          "spec.direct_connect_disabled",
+          "spec.direct_connect_enabled",
+          "spec.private_connectivity",
+        ],
+      },
+      {
+        choiceField: "egress_gateway_choice",
+        fieldPath: "spec.egress_gateway_choice",
+        options: [
+          "spec.egress_gateway_default",
+          "spec.egress_nat_gw",
+          "spec.egress_virtual_private_gateway",
+        ],
+      },
+      {
+        choiceField: "internet_vip_choice",
+        fieldPath: "spec.internet_vip_choice",
+        options: ["spec.disable_internet_vip", "spec.enable_internet_vip"],
+      },
+      {
+        choiceField: "logs_receiver_choice",
+        fieldPath: "spec.logs_receiver_choice",
+        options: ["spec.log_receiver", "spec.logs_streaming_disabled"],
+      },
+      {
+        choiceField: "routing_type",
+        fieldPath: "spec.routing_type",
+        options: ["spec.f5_orchestrated_routing", "spec.manual_routing"],
+      },
+      {
+        choiceField: "security_group_choice",
+        fieldPath: "spec.security_group_choice",
+        options: ["spec.custom_security_group", "spec.f5xc_security_group"],
+      },
+      {
+        choiceField: "site_type",
+        fieldPath: "spec.site_type",
+        options: ["spec.ingress_egress_gw", "spec.ingress_gw", "spec.voltstack_cluster"],
+      },
+      {
+        choiceField: "worker_nodes",
+        fieldPath: "spec.worker_nodes",
+        options: ["spec.no_worker_nodes", "spec.nodes_per_az", "spec.total_nodes"],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.admin_password.secret_info_oneof",
+        options: [
+          "spec.admin_password.blindfold_secret_info",
+          "spec.admin_password.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "blocked_services_value_type_choice",
+        fieldPath: "spec.blocked_services.blocked_sevice[].blocked_services_value_type_choice",
+        options: [
+          "spec.blocked_services.blocked_sevice[].dns",
+          "spec.blocked_services.blocked_sevice[].ssh",
+          "spec.blocked_services.blocked_sevice[].web_user_interface",
+        ],
+      },
+      {
+        choiceField: "asn_choice",
+        fieldPath: "spec.direct_connect_enabled.asn_choice",
+        options: ["spec.direct_connect_enabled.auto_asn", "spec.direct_connect_enabled.custom_asn"],
+      },
+      {
+        choiceField: "vif_choice",
+        fieldPath: "spec.direct_connect_enabled.vif_choice",
+        options: [
+          "spec.direct_connect_enabled.hosted_vifs",
+          "spec.direct_connect_enabled.standard_vifs",
+        ],
+      },
+      {
+        choiceField: "connectivity_options",
+        fieldPath: "spec.direct_connect_enabled.hosted_vifs.connectivity_options",
+        options: [
+          "spec.direct_connect_enabled.hosted_vifs.site_registration_over_direct_connect",
+          "spec.direct_connect_enabled.hosted_vifs.site_registration_over_internet",
+        ],
+      },
+      {
+        choiceField: "vif_region_choice",
+        fieldPath: "spec.direct_connect_enabled.hosted_vifs.vif_list[].vif_region_choice",
+        options: [
+          "spec.direct_connect_enabled.hosted_vifs.vif_list[].other_region",
+          "spec.direct_connect_enabled.hosted_vifs.vif_list[].same_as_site_region",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.egress_nat_gw.choice",
+        options: ["spec.egress_nat_gw.nat_gw_id"],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.egress_virtual_private_gateway.choice",
+        options: ["spec.egress_virtual_private_gateway.vgw_id"],
+      },
+      {
+        choiceField: "dc_cluster_group_choice",
+        fieldPath: "spec.ingress_egress_gw.dc_cluster_group_choice",
+        options: [
+          "spec.ingress_egress_gw.dc_cluster_group_inside_vn",
+          "spec.ingress_egress_gw.dc_cluster_group_outside_vn",
+          "spec.ingress_egress_gw.no_dc_cluster_group",
+        ],
+      },
+      {
+        choiceField: "forward_proxy_choice",
+        fieldPath: "spec.ingress_egress_gw.forward_proxy_choice",
+        options: [
+          "spec.ingress_egress_gw.active_forward_proxy_policies",
+          "spec.ingress_egress_gw.forward_proxy_allow_all",
+          "spec.ingress_egress_gw.no_forward_proxy",
+        ],
+      },
+      {
+        choiceField: "global_network_choice",
+        fieldPath: "spec.ingress_egress_gw.global_network_choice",
+        options: [
+          "spec.ingress_egress_gw.global_network_list",
+          "spec.ingress_egress_gw.no_global_network",
+        ],
+      },
+      {
+        choiceField: "inside_static_route_choice",
+        fieldPath: "spec.ingress_egress_gw.inside_static_route_choice",
+        options: [
+          "spec.ingress_egress_gw.inside_static_routes",
+          "spec.ingress_egress_gw.no_inside_static_routes",
+        ],
+      },
+      {
+        choiceField: "network_policy_choice",
+        fieldPath: "spec.ingress_egress_gw.network_policy_choice",
+        options: [
+          "spec.ingress_egress_gw.active_enhanced_firewall_policies",
+          "spec.ingress_egress_gw.active_network_policies",
+          "spec.ingress_egress_gw.no_network_policy",
+        ],
+      },
+      {
+        choiceField: "outside_static_route_choice",
+        fieldPath: "spec.ingress_egress_gw.outside_static_route_choice",
+        options: [
+          "spec.ingress_egress_gw.no_outside_static_routes",
+          "spec.ingress_egress_gw.outside_static_routes",
+        ],
+      },
+      {
+        choiceField: "site_mesh_group_choice",
+        fieldPath: "spec.ingress_egress_gw.site_mesh_group_choice",
+        options: [
+          "spec.ingress_egress_gw.sm_connection_public_ip",
+          "spec.ingress_egress_gw.sm_connection_pvt_ip",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.ingress_egress_gw.allowed_vip_port.port_choice",
+        options: [
+          "spec.ingress_egress_gw.allowed_vip_port.custom_ports",
+          "spec.ingress_egress_gw.allowed_vip_port.disable_allowed_vip_port",
+          "spec.ingress_egress_gw.allowed_vip_port.use_http_https_port",
+          "spec.ingress_egress_gw.allowed_vip_port.use_http_port",
+          "spec.ingress_egress_gw.allowed_vip_port.use_https_port",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.ingress_egress_gw.allowed_vip_port_sli.port_choice",
+        options: [
+          "spec.ingress_egress_gw.allowed_vip_port_sli.custom_ports",
+          "spec.ingress_egress_gw.allowed_vip_port_sli.disable_allowed_vip_port",
+          "spec.ingress_egress_gw.allowed_vip_port_sli.use_http_https_port",
+          "spec.ingress_egress_gw.allowed_vip_port_sli.use_http_port",
+          "spec.ingress_egress_gw.allowed_vip_port_sli.use_https_port",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.ingress_egress_gw.az_nodes[].choice",
+        options: [
+          "spec.ingress_egress_gw.az_nodes[].inside_subnet",
+          "spec.ingress_egress_gw.az_nodes[].reserved_inside_subnet",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.ingress_egress_gw.az_nodes[].inside_subnet.choice",
+        options: [
+          "spec.ingress_egress_gw.az_nodes[].inside_subnet.existing_subnet_id",
+          "spec.ingress_egress_gw.az_nodes[].inside_subnet.subnet_param",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.ingress_egress_gw.az_nodes[].outside_subnet.choice",
+        options: [
+          "spec.ingress_egress_gw.az_nodes[].outside_subnet.existing_subnet_id",
+          "spec.ingress_egress_gw.az_nodes[].outside_subnet.subnet_param",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.ingress_egress_gw.az_nodes[].workload_subnet.choice",
+        options: [
+          "spec.ingress_egress_gw.az_nodes[].workload_subnet.existing_subnet_id",
+          "spec.ingress_egress_gw.az_nodes[].workload_subnet.subnet_param",
+        ],
+      },
+      {
+        choiceField: "connection_choice",
+        fieldPath:
+          "spec.ingress_egress_gw.global_network_list.global_network_connections[].connection_choice",
+        options: [
+          "spec.ingress_egress_gw.global_network_list.global_network_connections[].sli_to_global_dr",
+          "spec.ingress_egress_gw.global_network_list.global_network_connections[].slo_to_global_dr",
+        ],
+      },
+      {
+        choiceField: "forward_proxy_choice",
+        fieldPath:
+          "spec.ingress_egress_gw.global_network_list.global_network_connections[].forward_proxy_choice",
+        options: [],
+      },
+      {
+        choiceField: "config_mode_choice",
+        fieldPath:
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].config_mode_choice",
+        options: [
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].custom_static_route",
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].simple_static_route",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ver",
+        options: [
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv4",
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv6",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].custom_static_route.subnets[].ver",
+        options: [
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].custom_static_route.subnets[].ipv4",
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].custom_static_route.subnets[].ipv6",
+        ],
+      },
+      {
+        choiceField: "config_mode_choice",
+        fieldPath:
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].config_mode_choice",
+        options: [
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].custom_static_route",
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].simple_static_route",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ver",
+        options: [
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv4",
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv6",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].custom_static_route.subnets[].ver",
+        options: [
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].custom_static_route.subnets[].ipv4",
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].custom_static_route.subnets[].ipv6",
+        ],
+      },
+      {
+        choiceField: "perf_mode_choice",
+        fieldPath: "spec.ingress_egress_gw.performance_enhancement_mode.perf_mode_choice",
+        options: [
+          "spec.ingress_egress_gw.performance_enhancement_mode.perf_mode_l3_enhanced",
+          "spec.ingress_egress_gw.performance_enhancement_mode.perf_mode_l7_enhanced",
+        ],
+      },
+      {
+        choiceField: "perf_mode_choice",
+        fieldPath:
+          "spec.ingress_egress_gw.performance_enhancement_mode.perf_mode_l3_enhanced.perf_mode_choice",
+        options: [
+          "spec.ingress_egress_gw.performance_enhancement_mode.perf_mode_l3_enhanced.jumbo",
+          "spec.ingress_egress_gw.performance_enhancement_mode.perf_mode_l3_enhanced.no_jumbo",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.ingress_gw.allowed_vip_port.port_choice",
+        options: [
+          "spec.ingress_gw.allowed_vip_port.custom_ports",
+          "spec.ingress_gw.allowed_vip_port.disable_allowed_vip_port",
+          "spec.ingress_gw.allowed_vip_port.use_http_https_port",
+          "spec.ingress_gw.allowed_vip_port.use_http_port",
+          "spec.ingress_gw.allowed_vip_port.use_https_port",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.ingress_gw.az_nodes[].local_subnet.choice",
+        options: [
+          "spec.ingress_gw.az_nodes[].local_subnet.existing_subnet_id",
+          "spec.ingress_gw.az_nodes[].local_subnet.subnet_param",
+        ],
+      },
+      {
+        choiceField: "perf_mode_choice",
+        fieldPath: "spec.ingress_gw.performance_enhancement_mode.perf_mode_choice",
+        options: [
+          "spec.ingress_gw.performance_enhancement_mode.perf_mode_l3_enhanced",
+          "spec.ingress_gw.performance_enhancement_mode.perf_mode_l7_enhanced",
+        ],
+      },
+      {
+        choiceField: "perf_mode_choice",
+        fieldPath:
+          "spec.ingress_gw.performance_enhancement_mode.perf_mode_l3_enhanced.perf_mode_choice",
+        options: [
+          "spec.ingress_gw.performance_enhancement_mode.perf_mode_l3_enhanced.jumbo",
+          "spec.ingress_gw.performance_enhancement_mode.perf_mode_l3_enhanced.no_jumbo",
+        ],
+      },
+      {
+        choiceField: "kubernetes_upgrade_drain_enable_choice",
+        fieldPath: "spec.kubernetes_upgrade_drain.kubernetes_upgrade_drain_enable_choice",
+        options: [
+          "spec.kubernetes_upgrade_drain.disable_upgrade_drain",
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain",
+        ],
+      },
+      {
+        choiceField: "drain_max_unavailable_choice",
+        fieldPath:
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.drain_max_unavailable_choice",
+        options: [
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.drain_max_unavailable_node_count",
+        ],
+      },
+      {
+        choiceField: "vega_upgrade_mode_toggle_choice",
+        fieldPath:
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.vega_upgrade_mode_toggle_choice",
+        options: [
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.disable_vega_upgrade_mode",
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.enable_vega_upgrade_mode",
+        ],
+      },
+      {
+        choiceField: "offline_survivability_mode_choice",
+        fieldPath: "spec.offline_survivability_mode.offline_survivability_mode_choice",
+        options: [
+          "spec.offline_survivability_mode.enable_offline_survivability_mode",
+          "spec.offline_survivability_mode.no_offline_survivability_mode",
+        ],
+      },
+      {
+        choiceField: "operating_system_version_choice",
+        fieldPath: "spec.os.operating_system_version_choice",
+        options: ["spec.os.default_os_version", "spec.os.operating_system_version"],
+      },
+      {
+        choiceField: "network_options",
+        fieldPath: "spec.private_connectivity.network_options",
+        options: ["spec.private_connectivity.inside", "spec.private_connectivity.outside"],
+      },
+      {
+        choiceField: "volterra_sw_version_choice",
+        fieldPath: "spec.sw.volterra_sw_version_choice",
+        options: ["spec.sw.default_sw_version", "spec.sw.volterra_software_version"],
+      },
+      {
+        choiceField: "dc_cluster_group_choice",
+        fieldPath: "spec.voltstack_cluster.dc_cluster_group_choice",
+        options: [
+          "spec.voltstack_cluster.dc_cluster_group",
+          "spec.voltstack_cluster.no_dc_cluster_group",
+        ],
+      },
+      {
+        choiceField: "forward_proxy_choice",
+        fieldPath: "spec.voltstack_cluster.forward_proxy_choice",
+        options: [
+          "spec.voltstack_cluster.active_forward_proxy_policies",
+          "spec.voltstack_cluster.forward_proxy_allow_all",
+          "spec.voltstack_cluster.no_forward_proxy",
+        ],
+      },
+      {
+        choiceField: "global_network_choice",
+        fieldPath: "spec.voltstack_cluster.global_network_choice",
+        options: [
+          "spec.voltstack_cluster.global_network_list",
+          "spec.voltstack_cluster.no_global_network",
+        ],
+      },
+      {
+        choiceField: "k8s_cluster_choice",
+        fieldPath: "spec.voltstack_cluster.k8s_cluster_choice",
+        options: ["spec.voltstack_cluster.k8s_cluster", "spec.voltstack_cluster.no_k8s_cluster"],
+      },
+      {
+        choiceField: "network_policy_choice",
+        fieldPath: "spec.voltstack_cluster.network_policy_choice",
+        options: [
+          "spec.voltstack_cluster.active_enhanced_firewall_policies",
+          "spec.voltstack_cluster.active_network_policies",
+          "spec.voltstack_cluster.no_network_policy",
+        ],
+      },
+      {
+        choiceField: "outside_static_route_choice",
+        fieldPath: "spec.voltstack_cluster.outside_static_route_choice",
+        options: [
+          "spec.voltstack_cluster.no_outside_static_routes",
+          "spec.voltstack_cluster.outside_static_routes",
+        ],
+      },
+      {
+        choiceField: "site_mesh_group_choice",
+        fieldPath: "spec.voltstack_cluster.site_mesh_group_choice",
+        options: [
+          "spec.voltstack_cluster.sm_connection_public_ip",
+          "spec.voltstack_cluster.sm_connection_pvt_ip",
+        ],
+      },
+      {
+        choiceField: "storage_class_choice",
+        fieldPath: "spec.voltstack_cluster.storage_class_choice",
+        options: [
+          "spec.voltstack_cluster.default_storage",
+          "spec.voltstack_cluster.storage_class_list",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.voltstack_cluster.allowed_vip_port.port_choice",
+        options: [
+          "spec.voltstack_cluster.allowed_vip_port.custom_ports",
+          "spec.voltstack_cluster.allowed_vip_port.disable_allowed_vip_port",
+          "spec.voltstack_cluster.allowed_vip_port.use_http_https_port",
+          "spec.voltstack_cluster.allowed_vip_port.use_http_port",
+          "spec.voltstack_cluster.allowed_vip_port.use_https_port",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.voltstack_cluster.az_nodes[].local_subnet.choice",
+        options: [
+          "spec.voltstack_cluster.az_nodes[].local_subnet.existing_subnet_id",
+          "spec.voltstack_cluster.az_nodes[].local_subnet.subnet_param",
+        ],
+      },
+      {
+        choiceField: "connection_choice",
+        fieldPath:
+          "spec.voltstack_cluster.global_network_list.global_network_connections[].connection_choice",
+        options: [
+          "spec.voltstack_cluster.global_network_list.global_network_connections[].sli_to_global_dr",
+          "spec.voltstack_cluster.global_network_list.global_network_connections[].slo_to_global_dr",
+        ],
+      },
+      {
+        choiceField: "forward_proxy_choice",
+        fieldPath:
+          "spec.voltstack_cluster.global_network_list.global_network_connections[].forward_proxy_choice",
+        options: [],
+      },
+      {
+        choiceField: "config_mode_choice",
+        fieldPath:
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].config_mode_choice",
+        options: [
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].custom_static_route",
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].simple_static_route",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ver",
+        options: [
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv4",
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv6",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].custom_static_route.subnets[].ver",
+        options: [
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].custom_static_route.subnets[].ipv4",
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].custom_static_route.subnets[].ipv6",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.vpc.choice",
+        options: ["spec.vpc.new_vpc", "spec.vpc.vpc_id"],
+      },
+      {
+        choiceField: "name_choice",
+        fieldPath: "spec.vpc.new_vpc.name_choice",
+        options: ["spec.vpc.new_vpc.autogenerate", "spec.vpc.new_vpc.name_tag"],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_site_management_standard",
@@ -845,7 +2108,512 @@ export const sitesTools: ParsedOperation[] = [
         resourceType: "viewsaws-vpc-site-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "blocked_services_choice",
+        fieldPath: "spec.blocked_services_choice",
+        options: [
+          "spec.block_all_services",
+          "spec.blocked_services",
+          "spec.default_blocked_services",
+        ],
+      },
+      {
+        choiceField: "deployment",
+        fieldPath: "spec.deployment",
+        options: ["spec.aws_cred"],
+      },
+      {
+        choiceField: "direct_connect_choice",
+        fieldPath: "spec.direct_connect_choice",
+        options: [
+          "spec.direct_connect_disabled",
+          "spec.direct_connect_enabled",
+          "spec.private_connectivity",
+        ],
+      },
+      {
+        choiceField: "egress_gateway_choice",
+        fieldPath: "spec.egress_gateway_choice",
+        options: [
+          "spec.egress_gateway_default",
+          "spec.egress_nat_gw",
+          "spec.egress_virtual_private_gateway",
+        ],
+      },
+      {
+        choiceField: "internet_vip_choice",
+        fieldPath: "spec.internet_vip_choice",
+        options: ["spec.disable_internet_vip", "spec.enable_internet_vip"],
+      },
+      {
+        choiceField: "logs_receiver_choice",
+        fieldPath: "spec.logs_receiver_choice",
+        options: ["spec.log_receiver", "spec.logs_streaming_disabled"],
+      },
+      {
+        choiceField: "security_group_choice",
+        fieldPath: "spec.security_group_choice",
+        options: ["spec.custom_security_group", "spec.f5xc_security_group"],
+      },
+      {
+        choiceField: "site_type",
+        fieldPath: "spec.site_type",
+        options: ["spec.ingress_egress_gw", "spec.ingress_gw", "spec.voltstack_cluster"],
+      },
+      {
+        choiceField: "worker_nodes",
+        fieldPath: "spec.worker_nodes",
+        options: ["spec.no_worker_nodes", "spec.nodes_per_az", "spec.total_nodes"],
+      },
+      {
+        choiceField: "blocked_services_value_type_choice",
+        fieldPath: "spec.blocked_services.blocked_sevice[].blocked_services_value_type_choice",
+        options: [
+          "spec.blocked_services.blocked_sevice[].dns",
+          "spec.blocked_services.blocked_sevice[].ssh",
+          "spec.blocked_services.blocked_sevice[].web_user_interface",
+        ],
+      },
+      {
+        choiceField: "asn_choice",
+        fieldPath: "spec.direct_connect_enabled.asn_choice",
+        options: ["spec.direct_connect_enabled.auto_asn", "spec.direct_connect_enabled.custom_asn"],
+      },
+      {
+        choiceField: "vif_choice",
+        fieldPath: "spec.direct_connect_enabled.vif_choice",
+        options: [
+          "spec.direct_connect_enabled.hosted_vifs",
+          "spec.direct_connect_enabled.standard_vifs",
+        ],
+      },
+      {
+        choiceField: "connectivity_options",
+        fieldPath: "spec.direct_connect_enabled.hosted_vifs.connectivity_options",
+        options: [
+          "spec.direct_connect_enabled.hosted_vifs.site_registration_over_direct_connect",
+          "spec.direct_connect_enabled.hosted_vifs.site_registration_over_internet",
+        ],
+      },
+      {
+        choiceField: "vif_region_choice",
+        fieldPath: "spec.direct_connect_enabled.hosted_vifs.vif_list[].vif_region_choice",
+        options: [
+          "spec.direct_connect_enabled.hosted_vifs.vif_list[].other_region",
+          "spec.direct_connect_enabled.hosted_vifs.vif_list[].same_as_site_region",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.egress_nat_gw.choice",
+        options: ["spec.egress_nat_gw.nat_gw_id"],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.egress_virtual_private_gateway.choice",
+        options: ["spec.egress_virtual_private_gateway.vgw_id"],
+      },
+      {
+        choiceField: "dc_cluster_group_choice",
+        fieldPath: "spec.ingress_egress_gw.dc_cluster_group_choice",
+        options: [
+          "spec.ingress_egress_gw.dc_cluster_group_inside_vn",
+          "spec.ingress_egress_gw.dc_cluster_group_outside_vn",
+          "spec.ingress_egress_gw.no_dc_cluster_group",
+        ],
+      },
+      {
+        choiceField: "forward_proxy_choice",
+        fieldPath: "spec.ingress_egress_gw.forward_proxy_choice",
+        options: [
+          "spec.ingress_egress_gw.active_forward_proxy_policies",
+          "spec.ingress_egress_gw.forward_proxy_allow_all",
+          "spec.ingress_egress_gw.no_forward_proxy",
+        ],
+      },
+      {
+        choiceField: "global_network_choice",
+        fieldPath: "spec.ingress_egress_gw.global_network_choice",
+        options: [
+          "spec.ingress_egress_gw.global_network_list",
+          "spec.ingress_egress_gw.no_global_network",
+        ],
+      },
+      {
+        choiceField: "inside_static_route_choice",
+        fieldPath: "spec.ingress_egress_gw.inside_static_route_choice",
+        options: [
+          "spec.ingress_egress_gw.inside_static_routes",
+          "spec.ingress_egress_gw.no_inside_static_routes",
+        ],
+      },
+      {
+        choiceField: "network_policy_choice",
+        fieldPath: "spec.ingress_egress_gw.network_policy_choice",
+        options: [
+          "spec.ingress_egress_gw.active_enhanced_firewall_policies",
+          "spec.ingress_egress_gw.active_network_policies",
+          "spec.ingress_egress_gw.no_network_policy",
+        ],
+      },
+      {
+        choiceField: "outside_static_route_choice",
+        fieldPath: "spec.ingress_egress_gw.outside_static_route_choice",
+        options: [
+          "spec.ingress_egress_gw.no_outside_static_routes",
+          "spec.ingress_egress_gw.outside_static_routes",
+        ],
+      },
+      {
+        choiceField: "site_mesh_group_choice",
+        fieldPath: "spec.ingress_egress_gw.site_mesh_group_choice",
+        options: [
+          "spec.ingress_egress_gw.sm_connection_public_ip",
+          "spec.ingress_egress_gw.sm_connection_pvt_ip",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.ingress_egress_gw.allowed_vip_port.port_choice",
+        options: [
+          "spec.ingress_egress_gw.allowed_vip_port.custom_ports",
+          "spec.ingress_egress_gw.allowed_vip_port.disable_allowed_vip_port",
+          "spec.ingress_egress_gw.allowed_vip_port.use_http_https_port",
+          "spec.ingress_egress_gw.allowed_vip_port.use_http_port",
+          "spec.ingress_egress_gw.allowed_vip_port.use_https_port",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.ingress_egress_gw.allowed_vip_port_sli.port_choice",
+        options: [
+          "spec.ingress_egress_gw.allowed_vip_port_sli.custom_ports",
+          "spec.ingress_egress_gw.allowed_vip_port_sli.disable_allowed_vip_port",
+          "spec.ingress_egress_gw.allowed_vip_port_sli.use_http_https_port",
+          "spec.ingress_egress_gw.allowed_vip_port_sli.use_http_port",
+          "spec.ingress_egress_gw.allowed_vip_port_sli.use_https_port",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.ingress_egress_gw.az_nodes[].choice",
+        options: [
+          "spec.ingress_egress_gw.az_nodes[].inside_subnet",
+          "spec.ingress_egress_gw.az_nodes[].reserved_inside_subnet",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.ingress_egress_gw.az_nodes[].inside_subnet.choice",
+        options: [
+          "spec.ingress_egress_gw.az_nodes[].inside_subnet.existing_subnet_id",
+          "spec.ingress_egress_gw.az_nodes[].inside_subnet.subnet_param",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.ingress_egress_gw.az_nodes[].outside_subnet.choice",
+        options: [
+          "spec.ingress_egress_gw.az_nodes[].outside_subnet.existing_subnet_id",
+          "spec.ingress_egress_gw.az_nodes[].outside_subnet.subnet_param",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.ingress_egress_gw.az_nodes[].workload_subnet.choice",
+        options: [
+          "spec.ingress_egress_gw.az_nodes[].workload_subnet.existing_subnet_id",
+          "spec.ingress_egress_gw.az_nodes[].workload_subnet.subnet_param",
+        ],
+      },
+      {
+        choiceField: "connection_choice",
+        fieldPath:
+          "spec.ingress_egress_gw.global_network_list.global_network_connections[].connection_choice",
+        options: [
+          "spec.ingress_egress_gw.global_network_list.global_network_connections[].sli_to_global_dr",
+          "spec.ingress_egress_gw.global_network_list.global_network_connections[].slo_to_global_dr",
+        ],
+      },
+      {
+        choiceField: "forward_proxy_choice",
+        fieldPath:
+          "spec.ingress_egress_gw.global_network_list.global_network_connections[].forward_proxy_choice",
+        options: [],
+      },
+      {
+        choiceField: "config_mode_choice",
+        fieldPath:
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].config_mode_choice",
+        options: [
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].custom_static_route",
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].simple_static_route",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ver",
+        options: [
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv4",
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv6",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].custom_static_route.subnets[].ver",
+        options: [
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].custom_static_route.subnets[].ipv4",
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].custom_static_route.subnets[].ipv6",
+        ],
+      },
+      {
+        choiceField: "config_mode_choice",
+        fieldPath:
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].config_mode_choice",
+        options: [
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].custom_static_route",
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].simple_static_route",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ver",
+        options: [
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv4",
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv6",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].custom_static_route.subnets[].ver",
+        options: [
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].custom_static_route.subnets[].ipv4",
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].custom_static_route.subnets[].ipv6",
+        ],
+      },
+      {
+        choiceField: "perf_mode_choice",
+        fieldPath: "spec.ingress_egress_gw.performance_enhancement_mode.perf_mode_choice",
+        options: [
+          "spec.ingress_egress_gw.performance_enhancement_mode.perf_mode_l3_enhanced",
+          "spec.ingress_egress_gw.performance_enhancement_mode.perf_mode_l7_enhanced",
+        ],
+      },
+      {
+        choiceField: "perf_mode_choice",
+        fieldPath:
+          "spec.ingress_egress_gw.performance_enhancement_mode.perf_mode_l3_enhanced.perf_mode_choice",
+        options: [
+          "spec.ingress_egress_gw.performance_enhancement_mode.perf_mode_l3_enhanced.jumbo",
+          "spec.ingress_egress_gw.performance_enhancement_mode.perf_mode_l3_enhanced.no_jumbo",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.ingress_gw.allowed_vip_port.port_choice",
+        options: [
+          "spec.ingress_gw.allowed_vip_port.custom_ports",
+          "spec.ingress_gw.allowed_vip_port.disable_allowed_vip_port",
+          "spec.ingress_gw.allowed_vip_port.use_http_https_port",
+          "spec.ingress_gw.allowed_vip_port.use_http_port",
+          "spec.ingress_gw.allowed_vip_port.use_https_port",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.ingress_gw.az_nodes[].local_subnet.choice",
+        options: [
+          "spec.ingress_gw.az_nodes[].local_subnet.existing_subnet_id",
+          "spec.ingress_gw.az_nodes[].local_subnet.subnet_param",
+        ],
+      },
+      {
+        choiceField: "perf_mode_choice",
+        fieldPath: "spec.ingress_gw.performance_enhancement_mode.perf_mode_choice",
+        options: [
+          "spec.ingress_gw.performance_enhancement_mode.perf_mode_l3_enhanced",
+          "spec.ingress_gw.performance_enhancement_mode.perf_mode_l7_enhanced",
+        ],
+      },
+      {
+        choiceField: "perf_mode_choice",
+        fieldPath:
+          "spec.ingress_gw.performance_enhancement_mode.perf_mode_l3_enhanced.perf_mode_choice",
+        options: [
+          "spec.ingress_gw.performance_enhancement_mode.perf_mode_l3_enhanced.jumbo",
+          "spec.ingress_gw.performance_enhancement_mode.perf_mode_l3_enhanced.no_jumbo",
+        ],
+      },
+      {
+        choiceField: "kubernetes_upgrade_drain_enable_choice",
+        fieldPath: "spec.kubernetes_upgrade_drain.kubernetes_upgrade_drain_enable_choice",
+        options: [
+          "spec.kubernetes_upgrade_drain.disable_upgrade_drain",
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain",
+        ],
+      },
+      {
+        choiceField: "drain_max_unavailable_choice",
+        fieldPath:
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.drain_max_unavailable_choice",
+        options: [
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.drain_max_unavailable_node_count",
+        ],
+      },
+      {
+        choiceField: "vega_upgrade_mode_toggle_choice",
+        fieldPath:
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.vega_upgrade_mode_toggle_choice",
+        options: [
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.disable_vega_upgrade_mode",
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.enable_vega_upgrade_mode",
+        ],
+      },
+      {
+        choiceField: "offline_survivability_mode_choice",
+        fieldPath: "spec.offline_survivability_mode.offline_survivability_mode_choice",
+        options: [
+          "spec.offline_survivability_mode.enable_offline_survivability_mode",
+          "spec.offline_survivability_mode.no_offline_survivability_mode",
+        ],
+      },
+      {
+        choiceField: "network_options",
+        fieldPath: "spec.private_connectivity.network_options",
+        options: ["spec.private_connectivity.inside", "spec.private_connectivity.outside"],
+      },
+      {
+        choiceField: "dc_cluster_group_choice",
+        fieldPath: "spec.voltstack_cluster.dc_cluster_group_choice",
+        options: [
+          "spec.voltstack_cluster.dc_cluster_group",
+          "spec.voltstack_cluster.no_dc_cluster_group",
+        ],
+      },
+      {
+        choiceField: "forward_proxy_choice",
+        fieldPath: "spec.voltstack_cluster.forward_proxy_choice",
+        options: [
+          "spec.voltstack_cluster.active_forward_proxy_policies",
+          "spec.voltstack_cluster.forward_proxy_allow_all",
+          "spec.voltstack_cluster.no_forward_proxy",
+        ],
+      },
+      {
+        choiceField: "global_network_choice",
+        fieldPath: "spec.voltstack_cluster.global_network_choice",
+        options: [
+          "spec.voltstack_cluster.global_network_list",
+          "spec.voltstack_cluster.no_global_network",
+        ],
+      },
+      {
+        choiceField: "k8s_cluster_choice",
+        fieldPath: "spec.voltstack_cluster.k8s_cluster_choice",
+        options: ["spec.voltstack_cluster.k8s_cluster", "spec.voltstack_cluster.no_k8s_cluster"],
+      },
+      {
+        choiceField: "network_policy_choice",
+        fieldPath: "spec.voltstack_cluster.network_policy_choice",
+        options: [
+          "spec.voltstack_cluster.active_enhanced_firewall_policies",
+          "spec.voltstack_cluster.active_network_policies",
+          "spec.voltstack_cluster.no_network_policy",
+        ],
+      },
+      {
+        choiceField: "outside_static_route_choice",
+        fieldPath: "spec.voltstack_cluster.outside_static_route_choice",
+        options: [
+          "spec.voltstack_cluster.no_outside_static_routes",
+          "spec.voltstack_cluster.outside_static_routes",
+        ],
+      },
+      {
+        choiceField: "site_mesh_group_choice",
+        fieldPath: "spec.voltstack_cluster.site_mesh_group_choice",
+        options: [
+          "spec.voltstack_cluster.sm_connection_public_ip",
+          "spec.voltstack_cluster.sm_connection_pvt_ip",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.voltstack_cluster.allowed_vip_port.port_choice",
+        options: [
+          "spec.voltstack_cluster.allowed_vip_port.custom_ports",
+          "spec.voltstack_cluster.allowed_vip_port.disable_allowed_vip_port",
+          "spec.voltstack_cluster.allowed_vip_port.use_http_https_port",
+          "spec.voltstack_cluster.allowed_vip_port.use_http_port",
+          "spec.voltstack_cluster.allowed_vip_port.use_https_port",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.voltstack_cluster.az_nodes[].local_subnet.choice",
+        options: [
+          "spec.voltstack_cluster.az_nodes[].local_subnet.existing_subnet_id",
+          "spec.voltstack_cluster.az_nodes[].local_subnet.subnet_param",
+        ],
+      },
+      {
+        choiceField: "connection_choice",
+        fieldPath:
+          "spec.voltstack_cluster.global_network_list.global_network_connections[].connection_choice",
+        options: [
+          "spec.voltstack_cluster.global_network_list.global_network_connections[].sli_to_global_dr",
+          "spec.voltstack_cluster.global_network_list.global_network_connections[].slo_to_global_dr",
+        ],
+      },
+      {
+        choiceField: "forward_proxy_choice",
+        fieldPath:
+          "spec.voltstack_cluster.global_network_list.global_network_connections[].forward_proxy_choice",
+        options: [],
+      },
+      {
+        choiceField: "config_mode_choice",
+        fieldPath:
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].config_mode_choice",
+        options: [
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].custom_static_route",
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].simple_static_route",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ver",
+        options: [
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv4",
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv6",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].custom_static_route.subnets[].ver",
+        options: [
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].custom_static_route.subnets[].ipv4",
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].custom_static_route.subnets[].ipv6",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.vpc.choice",
+        options: ["spec.vpc.new_vpc", "spec.vpc.vpc_id"],
+      },
+      {
+        choiceField: "name_choice",
+        fieldPath: "spec.vpc.new_vpc.name_choice",
+        options: ["spec.vpc.new_vpc.autogenerate", "spec.vpc.new_vpc.name_tag"],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_site_management_standard",
@@ -920,7 +2688,1074 @@ export const sitesTools: ParsedOperation[] = [
         resourceType: "viewsazure-vnet-site-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "blocked_services_choice",
+        fieldPath: "spec.blocked_services_choice",
+        options: [
+          "spec.block_all_services",
+          "spec.blocked_services",
+          "spec.default_blocked_services",
+        ],
+      },
+      {
+        choiceField: "deployment",
+        fieldPath: "spec.deployment",
+        options: ["spec.azure_cred"],
+      },
+      {
+        choiceField: "logs_receiver_choice",
+        fieldPath: "spec.logs_receiver_choice",
+        options: ["spec.log_receiver", "spec.logs_streaming_disabled"],
+      },
+      {
+        choiceField: "region_choice",
+        fieldPath: "spec.region_choice",
+        options: ["spec.alternate_region", "spec.azure_region"],
+      },
+      {
+        choiceField: "site_type",
+        fieldPath: "spec.site_type",
+        options: [
+          "spec.ingress_egress_gw",
+          "spec.ingress_egress_gw_ar",
+          "spec.ingress_gw",
+          "spec.ingress_gw_ar",
+          "spec.voltstack_cluster",
+          "spec.voltstack_cluster_ar",
+        ],
+      },
+      {
+        choiceField: "worker_nodes",
+        fieldPath: "spec.worker_nodes",
+        options: ["spec.no_worker_nodes", "spec.nodes_per_az", "spec.total_nodes"],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.admin_password.secret_info_oneof",
+        options: [
+          "spec.admin_password.blindfold_secret_info",
+          "spec.admin_password.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "blocked_services_value_type_choice",
+        fieldPath: "spec.blocked_services.blocked_sevice[].blocked_services_value_type_choice",
+        options: [
+          "spec.blocked_services.blocked_sevice[].dns",
+          "spec.blocked_services.blocked_sevice[].ssh",
+          "spec.blocked_services.blocked_sevice[].web_user_interface",
+        ],
+      },
+      {
+        choiceField: "dc_cluster_group_choice",
+        fieldPath: "spec.ingress_egress_gw.dc_cluster_group_choice",
+        options: [
+          "spec.ingress_egress_gw.dc_cluster_group_inside_vn",
+          "spec.ingress_egress_gw.dc_cluster_group_outside_vn",
+          "spec.ingress_egress_gw.no_dc_cluster_group",
+        ],
+      },
+      {
+        choiceField: "forward_proxy_choice",
+        fieldPath: "spec.ingress_egress_gw.forward_proxy_choice",
+        options: [
+          "spec.ingress_egress_gw.active_forward_proxy_policies",
+          "spec.ingress_egress_gw.forward_proxy_allow_all",
+          "spec.ingress_egress_gw.no_forward_proxy",
+        ],
+      },
+      {
+        choiceField: "global_network_choice",
+        fieldPath: "spec.ingress_egress_gw.global_network_choice",
+        options: [
+          "spec.ingress_egress_gw.global_network_list",
+          "spec.ingress_egress_gw.no_global_network",
+        ],
+      },
+      {
+        choiceField: "hub_choice",
+        fieldPath: "spec.ingress_egress_gw.hub_choice",
+        options: ["spec.ingress_egress_gw.hub", "spec.ingress_egress_gw.not_hub"],
+      },
+      {
+        choiceField: "inside_static_route_choice",
+        fieldPath: "spec.ingress_egress_gw.inside_static_route_choice",
+        options: [
+          "spec.ingress_egress_gw.inside_static_routes",
+          "spec.ingress_egress_gw.no_inside_static_routes",
+        ],
+      },
+      {
+        choiceField: "network_policy_choice",
+        fieldPath: "spec.ingress_egress_gw.network_policy_choice",
+        options: [
+          "spec.ingress_egress_gw.active_enhanced_firewall_policies",
+          "spec.ingress_egress_gw.active_network_policies",
+          "spec.ingress_egress_gw.no_network_policy",
+        ],
+      },
+      {
+        choiceField: "outside_static_route_choice",
+        fieldPath: "spec.ingress_egress_gw.outside_static_route_choice",
+        options: [
+          "spec.ingress_egress_gw.no_outside_static_routes",
+          "spec.ingress_egress_gw.outside_static_routes",
+        ],
+      },
+      {
+        choiceField: "site_mesh_group_choice",
+        fieldPath: "spec.ingress_egress_gw.site_mesh_group_choice",
+        options: [
+          "spec.ingress_egress_gw.sm_connection_public_ip",
+          "spec.ingress_egress_gw.sm_connection_pvt_ip",
+        ],
+      },
+      {
+        choiceField: "accelerated_networking",
+        fieldPath: "spec.ingress_egress_gw.accelerated_networking.accelerated_networking",
+        options: [
+          "spec.ingress_egress_gw.accelerated_networking.disable",
+          "spec.ingress_egress_gw.accelerated_networking.enable",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.ingress_egress_gw.az_nodes[].inside_subnet.choice",
+        options: [
+          "spec.ingress_egress_gw.az_nodes[].inside_subnet.subnet",
+          "spec.ingress_egress_gw.az_nodes[].inside_subnet.subnet_param",
+        ],
+      },
+      {
+        choiceField: "resource_group_choice",
+        fieldPath: "spec.ingress_egress_gw.az_nodes[].inside_subnet.subnet.resource_group_choice",
+        options: [
+          "spec.ingress_egress_gw.az_nodes[].inside_subnet.subnet.subnet_resource_grp",
+          "spec.ingress_egress_gw.az_nodes[].inside_subnet.subnet.vnet_resource_group",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.ingress_egress_gw.az_nodes[].outside_subnet.choice",
+        options: [
+          "spec.ingress_egress_gw.az_nodes[].outside_subnet.subnet",
+          "spec.ingress_egress_gw.az_nodes[].outside_subnet.subnet_param",
+        ],
+      },
+      {
+        choiceField: "resource_group_choice",
+        fieldPath: "spec.ingress_egress_gw.az_nodes[].outside_subnet.subnet.resource_group_choice",
+        options: [
+          "spec.ingress_egress_gw.az_nodes[].outside_subnet.subnet.subnet_resource_grp",
+          "spec.ingress_egress_gw.az_nodes[].outside_subnet.subnet.vnet_resource_group",
+        ],
+      },
+      {
+        choiceField: "connection_choice",
+        fieldPath:
+          "spec.ingress_egress_gw.global_network_list.global_network_connections[].connection_choice",
+        options: [
+          "spec.ingress_egress_gw.global_network_list.global_network_connections[].sli_to_global_dr",
+          "spec.ingress_egress_gw.global_network_list.global_network_connections[].slo_to_global_dr",
+        ],
+      },
+      {
+        choiceField: "forward_proxy_choice",
+        fieldPath:
+          "spec.ingress_egress_gw.global_network_list.global_network_connections[].forward_proxy_choice",
+        options: [],
+      },
+      {
+        choiceField: "express_route_choice",
+        fieldPath: "spec.ingress_egress_gw.hub.express_route_choice",
+        options: [
+          "spec.ingress_egress_gw.hub.express_route_disabled",
+          "spec.ingress_egress_gw.hub.express_route_enabled",
+        ],
+      },
+      {
+        choiceField: "asn_choice",
+        fieldPath: "spec.ingress_egress_gw.hub.express_route_enabled.asn_choice",
+        options: [
+          "spec.ingress_egress_gw.hub.express_route_enabled.auto_asn",
+          "spec.ingress_egress_gw.hub.express_route_enabled.custom_asn",
+        ],
+      },
+      {
+        choiceField: "connectivity_options",
+        fieldPath: "spec.ingress_egress_gw.hub.express_route_enabled.connectivity_options",
+        options: [
+          "spec.ingress_egress_gw.hub.express_route_enabled.site_registration_over_express_route",
+          "spec.ingress_egress_gw.hub.express_route_enabled.site_registration_over_internet",
+        ],
+      },
+      {
+        choiceField: "sku_choice",
+        fieldPath: "spec.ingress_egress_gw.hub.express_route_enabled.sku_choice",
+        options: [
+          "spec.ingress_egress_gw.hub.express_route_enabled.sku_ergw1az",
+          "spec.ingress_egress_gw.hub.express_route_enabled.sku_ergw2az",
+          "spec.ingress_egress_gw.hub.express_route_enabled.sku_high_perf",
+          "spec.ingress_egress_gw.hub.express_route_enabled.sku_standard",
+        ],
+      },
+      {
+        choiceField: "spoke_vnet_routes",
+        fieldPath: "spec.ingress_egress_gw.hub.express_route_enabled.spoke_vnet_routes",
+        options: [
+          "spec.ingress_egress_gw.hub.express_route_enabled.advertise_to_route_server",
+          "spec.ingress_egress_gw.hub.express_route_enabled.do_not_advertise_to_route_server",
+        ],
+      },
+      {
+        choiceField: "subscription_choice",
+        fieldPath:
+          "spec.ingress_egress_gw.hub.express_route_enabled.connections[].subscription_choice",
+        options: [
+          "spec.ingress_egress_gw.hub.express_route_enabled.connections[].circuit_id",
+          "spec.ingress_egress_gw.hub.express_route_enabled.connections[].other_subscription",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.ingress_egress_gw.hub.express_route_enabled.connections[].other_subscription.authorized_key.secret_info_oneof",
+        options: [
+          "spec.ingress_egress_gw.hub.express_route_enabled.connections[].other_subscription.authorized_key.blindfold_secret_info",
+          "spec.ingress_egress_gw.hub.express_route_enabled.connections[].other_subscription.authorized_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.ingress_egress_gw.hub.express_route_enabled.gateway_subnet.choice",
+        options: [
+          "spec.ingress_egress_gw.hub.express_route_enabled.gateway_subnet.auto",
+          "spec.ingress_egress_gw.hub.express_route_enabled.gateway_subnet.subnet",
+          "spec.ingress_egress_gw.hub.express_route_enabled.gateway_subnet.subnet_param",
+        ],
+      },
+      {
+        choiceField: "resource_group_choice",
+        fieldPath:
+          "spec.ingress_egress_gw.hub.express_route_enabled.gateway_subnet.subnet.resource_group_choice",
+        options: [
+          "spec.ingress_egress_gw.hub.express_route_enabled.gateway_subnet.subnet.subnet_resource_grp",
+          "spec.ingress_egress_gw.hub.express_route_enabled.gateway_subnet.subnet.vnet_resource_group",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.ingress_egress_gw.hub.express_route_enabled.route_server_subnet.choice",
+        options: [
+          "spec.ingress_egress_gw.hub.express_route_enabled.route_server_subnet.auto",
+          "spec.ingress_egress_gw.hub.express_route_enabled.route_server_subnet.subnet",
+          "spec.ingress_egress_gw.hub.express_route_enabled.route_server_subnet.subnet_param",
+        ],
+      },
+      {
+        choiceField: "resource_group_choice",
+        fieldPath:
+          "spec.ingress_egress_gw.hub.express_route_enabled.route_server_subnet.subnet.resource_group_choice",
+        options: [
+          "spec.ingress_egress_gw.hub.express_route_enabled.route_server_subnet.subnet.subnet_resource_grp",
+          "spec.ingress_egress_gw.hub.express_route_enabled.route_server_subnet.subnet.vnet_resource_group",
+        ],
+      },
+      {
+        choiceField: "routing_choice",
+        fieldPath: "spec.ingress_egress_gw.hub.spoke_vnets[].routing_choice",
+        options: [
+          "spec.ingress_egress_gw.hub.spoke_vnets[].auto",
+          "spec.ingress_egress_gw.hub.spoke_vnets[].manual",
+        ],
+      },
+      {
+        choiceField: "routing_type",
+        fieldPath: "spec.ingress_egress_gw.hub.spoke_vnets[].vnet.routing_type",
+        options: [
+          "spec.ingress_egress_gw.hub.spoke_vnets[].vnet.f5_orchestrated_routing",
+          "spec.ingress_egress_gw.hub.spoke_vnets[].vnet.manual_routing",
+        ],
+      },
+      {
+        choiceField: "config_mode_choice",
+        fieldPath:
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].config_mode_choice",
+        options: [
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].custom_static_route",
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].simple_static_route",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ver",
+        options: [
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv4",
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv6",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].custom_static_route.subnets[].ver",
+        options: [
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].custom_static_route.subnets[].ipv4",
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].custom_static_route.subnets[].ipv6",
+        ],
+      },
+      {
+        choiceField: "config_mode_choice",
+        fieldPath:
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].config_mode_choice",
+        options: [
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].custom_static_route",
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].simple_static_route",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ver",
+        options: [
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv4",
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv6",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].custom_static_route.subnets[].ver",
+        options: [
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].custom_static_route.subnets[].ipv4",
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].custom_static_route.subnets[].ipv6",
+        ],
+      },
+      {
+        choiceField: "perf_mode_choice",
+        fieldPath: "spec.ingress_egress_gw.performance_enhancement_mode.perf_mode_choice",
+        options: [
+          "spec.ingress_egress_gw.performance_enhancement_mode.perf_mode_l3_enhanced",
+          "spec.ingress_egress_gw.performance_enhancement_mode.perf_mode_l7_enhanced",
+        ],
+      },
+      {
+        choiceField: "perf_mode_choice",
+        fieldPath:
+          "spec.ingress_egress_gw.performance_enhancement_mode.perf_mode_l3_enhanced.perf_mode_choice",
+        options: [
+          "spec.ingress_egress_gw.performance_enhancement_mode.perf_mode_l3_enhanced.jumbo",
+          "spec.ingress_egress_gw.performance_enhancement_mode.perf_mode_l3_enhanced.no_jumbo",
+        ],
+      },
+      {
+        choiceField: "dc_cluster_group_choice",
+        fieldPath: "spec.ingress_egress_gw_ar.dc_cluster_group_choice",
+        options: [
+          "spec.ingress_egress_gw_ar.dc_cluster_group_inside_vn",
+          "spec.ingress_egress_gw_ar.dc_cluster_group_outside_vn",
+          "spec.ingress_egress_gw_ar.no_dc_cluster_group",
+        ],
+      },
+      {
+        choiceField: "forward_proxy_choice",
+        fieldPath: "spec.ingress_egress_gw_ar.forward_proxy_choice",
+        options: [
+          "spec.ingress_egress_gw_ar.active_forward_proxy_policies",
+          "spec.ingress_egress_gw_ar.forward_proxy_allow_all",
+          "spec.ingress_egress_gw_ar.no_forward_proxy",
+        ],
+      },
+      {
+        choiceField: "global_network_choice",
+        fieldPath: "spec.ingress_egress_gw_ar.global_network_choice",
+        options: [
+          "spec.ingress_egress_gw_ar.global_network_list",
+          "spec.ingress_egress_gw_ar.no_global_network",
+        ],
+      },
+      {
+        choiceField: "hub_choice",
+        fieldPath: "spec.ingress_egress_gw_ar.hub_choice",
+        options: ["spec.ingress_egress_gw_ar.hub", "spec.ingress_egress_gw_ar.not_hub"],
+      },
+      {
+        choiceField: "inside_static_route_choice",
+        fieldPath: "spec.ingress_egress_gw_ar.inside_static_route_choice",
+        options: [
+          "spec.ingress_egress_gw_ar.inside_static_routes",
+          "spec.ingress_egress_gw_ar.no_inside_static_routes",
+        ],
+      },
+      {
+        choiceField: "network_policy_choice",
+        fieldPath: "spec.ingress_egress_gw_ar.network_policy_choice",
+        options: [
+          "spec.ingress_egress_gw_ar.active_enhanced_firewall_policies",
+          "spec.ingress_egress_gw_ar.active_network_policies",
+          "spec.ingress_egress_gw_ar.no_network_policy",
+        ],
+      },
+      {
+        choiceField: "outside_static_route_choice",
+        fieldPath: "spec.ingress_egress_gw_ar.outside_static_route_choice",
+        options: [
+          "spec.ingress_egress_gw_ar.no_outside_static_routes",
+          "spec.ingress_egress_gw_ar.outside_static_routes",
+        ],
+      },
+      {
+        choiceField: "site_mesh_group_choice",
+        fieldPath: "spec.ingress_egress_gw_ar.site_mesh_group_choice",
+        options: [
+          "spec.ingress_egress_gw_ar.sm_connection_public_ip",
+          "spec.ingress_egress_gw_ar.sm_connection_pvt_ip",
+        ],
+      },
+      {
+        choiceField: "accelerated_networking",
+        fieldPath: "spec.ingress_egress_gw_ar.accelerated_networking.accelerated_networking",
+        options: [
+          "spec.ingress_egress_gw_ar.accelerated_networking.disable",
+          "spec.ingress_egress_gw_ar.accelerated_networking.enable",
+        ],
+      },
+      {
+        choiceField: "connection_choice",
+        fieldPath:
+          "spec.ingress_egress_gw_ar.global_network_list.global_network_connections[].connection_choice",
+        options: [
+          "spec.ingress_egress_gw_ar.global_network_list.global_network_connections[].sli_to_global_dr",
+          "spec.ingress_egress_gw_ar.global_network_list.global_network_connections[].slo_to_global_dr",
+        ],
+      },
+      {
+        choiceField: "forward_proxy_choice",
+        fieldPath:
+          "spec.ingress_egress_gw_ar.global_network_list.global_network_connections[].forward_proxy_choice",
+        options: [],
+      },
+      {
+        choiceField: "express_route_choice",
+        fieldPath: "spec.ingress_egress_gw_ar.hub.express_route_choice",
+        options: [
+          "spec.ingress_egress_gw_ar.hub.express_route_disabled",
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled",
+        ],
+      },
+      {
+        choiceField: "asn_choice",
+        fieldPath: "spec.ingress_egress_gw_ar.hub.express_route_enabled.asn_choice",
+        options: [
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.auto_asn",
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.custom_asn",
+        ],
+      },
+      {
+        choiceField: "connectivity_options",
+        fieldPath: "spec.ingress_egress_gw_ar.hub.express_route_enabled.connectivity_options",
+        options: [
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.site_registration_over_express_route",
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.site_registration_over_internet",
+        ],
+      },
+      {
+        choiceField: "sku_choice",
+        fieldPath: "spec.ingress_egress_gw_ar.hub.express_route_enabled.sku_choice",
+        options: [
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.sku_ergw1az",
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.sku_ergw2az",
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.sku_high_perf",
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.sku_standard",
+        ],
+      },
+      {
+        choiceField: "spoke_vnet_routes",
+        fieldPath: "spec.ingress_egress_gw_ar.hub.express_route_enabled.spoke_vnet_routes",
+        options: [
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.advertise_to_route_server",
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.do_not_advertise_to_route_server",
+        ],
+      },
+      {
+        choiceField: "subscription_choice",
+        fieldPath:
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.connections[].subscription_choice",
+        options: [
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.connections[].circuit_id",
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.connections[].other_subscription",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.connections[].other_subscription.authorized_key.secret_info_oneof",
+        options: [
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.connections[].other_subscription.authorized_key.blindfold_secret_info",
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.connections[].other_subscription.authorized_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.ingress_egress_gw_ar.hub.express_route_enabled.gateway_subnet.choice",
+        options: [
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.gateway_subnet.auto",
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.gateway_subnet.subnet",
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.gateway_subnet.subnet_param",
+        ],
+      },
+      {
+        choiceField: "resource_group_choice",
+        fieldPath:
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.gateway_subnet.subnet.resource_group_choice",
+        options: [
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.gateway_subnet.subnet.subnet_resource_grp",
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.gateway_subnet.subnet.vnet_resource_group",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.ingress_egress_gw_ar.hub.express_route_enabled.route_server_subnet.choice",
+        options: [
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.route_server_subnet.auto",
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.route_server_subnet.subnet",
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.route_server_subnet.subnet_param",
+        ],
+      },
+      {
+        choiceField: "resource_group_choice",
+        fieldPath:
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.route_server_subnet.subnet.resource_group_choice",
+        options: [
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.route_server_subnet.subnet.subnet_resource_grp",
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.route_server_subnet.subnet.vnet_resource_group",
+        ],
+      },
+      {
+        choiceField: "routing_choice",
+        fieldPath: "spec.ingress_egress_gw_ar.hub.spoke_vnets[].routing_choice",
+        options: [
+          "spec.ingress_egress_gw_ar.hub.spoke_vnets[].auto",
+          "spec.ingress_egress_gw_ar.hub.spoke_vnets[].manual",
+        ],
+      },
+      {
+        choiceField: "routing_type",
+        fieldPath: "spec.ingress_egress_gw_ar.hub.spoke_vnets[].vnet.routing_type",
+        options: [
+          "spec.ingress_egress_gw_ar.hub.spoke_vnets[].vnet.f5_orchestrated_routing",
+          "spec.ingress_egress_gw_ar.hub.spoke_vnets[].vnet.manual_routing",
+        ],
+      },
+      {
+        choiceField: "config_mode_choice",
+        fieldPath:
+          "spec.ingress_egress_gw_ar.inside_static_routes.static_route_list[].config_mode_choice",
+        options: [
+          "spec.ingress_egress_gw_ar.inside_static_routes.static_route_list[].custom_static_route",
+          "spec.ingress_egress_gw_ar.inside_static_routes.static_route_list[].simple_static_route",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.ingress_egress_gw_ar.inside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ver",
+        options: [
+          "spec.ingress_egress_gw_ar.inside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv4",
+          "spec.ingress_egress_gw_ar.inside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv6",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.ingress_egress_gw_ar.inside_static_routes.static_route_list[].custom_static_route.subnets[].ver",
+        options: [
+          "spec.ingress_egress_gw_ar.inside_static_routes.static_route_list[].custom_static_route.subnets[].ipv4",
+          "spec.ingress_egress_gw_ar.inside_static_routes.static_route_list[].custom_static_route.subnets[].ipv6",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.ingress_egress_gw_ar.node.inside_subnet.choice",
+        options: [
+          "spec.ingress_egress_gw_ar.node.inside_subnet.subnet",
+          "spec.ingress_egress_gw_ar.node.inside_subnet.subnet_param",
+        ],
+      },
+      {
+        choiceField: "resource_group_choice",
+        fieldPath: "spec.ingress_egress_gw_ar.node.inside_subnet.subnet.resource_group_choice",
+        options: [
+          "spec.ingress_egress_gw_ar.node.inside_subnet.subnet.subnet_resource_grp",
+          "spec.ingress_egress_gw_ar.node.inside_subnet.subnet.vnet_resource_group",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.ingress_egress_gw_ar.node.outside_subnet.choice",
+        options: [
+          "spec.ingress_egress_gw_ar.node.outside_subnet.subnet",
+          "spec.ingress_egress_gw_ar.node.outside_subnet.subnet_param",
+        ],
+      },
+      {
+        choiceField: "resource_group_choice",
+        fieldPath: "spec.ingress_egress_gw_ar.node.outside_subnet.subnet.resource_group_choice",
+        options: [
+          "spec.ingress_egress_gw_ar.node.outside_subnet.subnet.subnet_resource_grp",
+          "spec.ingress_egress_gw_ar.node.outside_subnet.subnet.vnet_resource_group",
+        ],
+      },
+      {
+        choiceField: "config_mode_choice",
+        fieldPath:
+          "spec.ingress_egress_gw_ar.outside_static_routes.static_route_list[].config_mode_choice",
+        options: [
+          "spec.ingress_egress_gw_ar.outside_static_routes.static_route_list[].custom_static_route",
+          "spec.ingress_egress_gw_ar.outside_static_routes.static_route_list[].simple_static_route",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.ingress_egress_gw_ar.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ver",
+        options: [
+          "spec.ingress_egress_gw_ar.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv4",
+          "spec.ingress_egress_gw_ar.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv6",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.ingress_egress_gw_ar.outside_static_routes.static_route_list[].custom_static_route.subnets[].ver",
+        options: [
+          "spec.ingress_egress_gw_ar.outside_static_routes.static_route_list[].custom_static_route.subnets[].ipv4",
+          "spec.ingress_egress_gw_ar.outside_static_routes.static_route_list[].custom_static_route.subnets[].ipv6",
+        ],
+      },
+      {
+        choiceField: "perf_mode_choice",
+        fieldPath: "spec.ingress_egress_gw_ar.performance_enhancement_mode.perf_mode_choice",
+        options: [
+          "spec.ingress_egress_gw_ar.performance_enhancement_mode.perf_mode_l3_enhanced",
+          "spec.ingress_egress_gw_ar.performance_enhancement_mode.perf_mode_l7_enhanced",
+        ],
+      },
+      {
+        choiceField: "perf_mode_choice",
+        fieldPath:
+          "spec.ingress_egress_gw_ar.performance_enhancement_mode.perf_mode_l3_enhanced.perf_mode_choice",
+        options: [
+          "spec.ingress_egress_gw_ar.performance_enhancement_mode.perf_mode_l3_enhanced.jumbo",
+          "spec.ingress_egress_gw_ar.performance_enhancement_mode.perf_mode_l3_enhanced.no_jumbo",
+        ],
+      },
+      {
+        choiceField: "accelerated_networking",
+        fieldPath: "spec.ingress_gw.accelerated_networking.accelerated_networking",
+        options: [
+          "spec.ingress_gw.accelerated_networking.disable",
+          "spec.ingress_gw.accelerated_networking.enable",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.ingress_gw.az_nodes[].local_subnet.choice",
+        options: [
+          "spec.ingress_gw.az_nodes[].local_subnet.subnet",
+          "spec.ingress_gw.az_nodes[].local_subnet.subnet_param",
+        ],
+      },
+      {
+        choiceField: "resource_group_choice",
+        fieldPath: "spec.ingress_gw.az_nodes[].local_subnet.subnet.resource_group_choice",
+        options: [
+          "spec.ingress_gw.az_nodes[].local_subnet.subnet.subnet_resource_grp",
+          "spec.ingress_gw.az_nodes[].local_subnet.subnet.vnet_resource_group",
+        ],
+      },
+      {
+        choiceField: "perf_mode_choice",
+        fieldPath: "spec.ingress_gw.performance_enhancement_mode.perf_mode_choice",
+        options: [
+          "spec.ingress_gw.performance_enhancement_mode.perf_mode_l3_enhanced",
+          "spec.ingress_gw.performance_enhancement_mode.perf_mode_l7_enhanced",
+        ],
+      },
+      {
+        choiceField: "perf_mode_choice",
+        fieldPath:
+          "spec.ingress_gw.performance_enhancement_mode.perf_mode_l3_enhanced.perf_mode_choice",
+        options: [
+          "spec.ingress_gw.performance_enhancement_mode.perf_mode_l3_enhanced.jumbo",
+          "spec.ingress_gw.performance_enhancement_mode.perf_mode_l3_enhanced.no_jumbo",
+        ],
+      },
+      {
+        choiceField: "accelerated_networking",
+        fieldPath: "spec.ingress_gw_ar.accelerated_networking.accelerated_networking",
+        options: [
+          "spec.ingress_gw_ar.accelerated_networking.disable",
+          "spec.ingress_gw_ar.accelerated_networking.enable",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.ingress_gw_ar.node.local_subnet.choice",
+        options: [
+          "spec.ingress_gw_ar.node.local_subnet.subnet",
+          "spec.ingress_gw_ar.node.local_subnet.subnet_param",
+        ],
+      },
+      {
+        choiceField: "resource_group_choice",
+        fieldPath: "spec.ingress_gw_ar.node.local_subnet.subnet.resource_group_choice",
+        options: [
+          "spec.ingress_gw_ar.node.local_subnet.subnet.subnet_resource_grp",
+          "spec.ingress_gw_ar.node.local_subnet.subnet.vnet_resource_group",
+        ],
+      },
+      {
+        choiceField: "perf_mode_choice",
+        fieldPath: "spec.ingress_gw_ar.performance_enhancement_mode.perf_mode_choice",
+        options: [
+          "spec.ingress_gw_ar.performance_enhancement_mode.perf_mode_l3_enhanced",
+          "spec.ingress_gw_ar.performance_enhancement_mode.perf_mode_l7_enhanced",
+        ],
+      },
+      {
+        choiceField: "perf_mode_choice",
+        fieldPath:
+          "spec.ingress_gw_ar.performance_enhancement_mode.perf_mode_l3_enhanced.perf_mode_choice",
+        options: [
+          "spec.ingress_gw_ar.performance_enhancement_mode.perf_mode_l3_enhanced.jumbo",
+          "spec.ingress_gw_ar.performance_enhancement_mode.perf_mode_l3_enhanced.no_jumbo",
+        ],
+      },
+      {
+        choiceField: "kubernetes_upgrade_drain_enable_choice",
+        fieldPath: "spec.kubernetes_upgrade_drain.kubernetes_upgrade_drain_enable_choice",
+        options: [
+          "spec.kubernetes_upgrade_drain.disable_upgrade_drain",
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain",
+        ],
+      },
+      {
+        choiceField: "drain_max_unavailable_choice",
+        fieldPath:
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.drain_max_unavailable_choice",
+        options: [
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.drain_max_unavailable_node_count",
+        ],
+      },
+      {
+        choiceField: "vega_upgrade_mode_toggle_choice",
+        fieldPath:
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.vega_upgrade_mode_toggle_choice",
+        options: [
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.disable_vega_upgrade_mode",
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.enable_vega_upgrade_mode",
+        ],
+      },
+      {
+        choiceField: "offline_survivability_mode_choice",
+        fieldPath: "spec.offline_survivability_mode.offline_survivability_mode_choice",
+        options: [
+          "spec.offline_survivability_mode.enable_offline_survivability_mode",
+          "spec.offline_survivability_mode.no_offline_survivability_mode",
+        ],
+      },
+      {
+        choiceField: "operating_system_version_choice",
+        fieldPath: "spec.os.operating_system_version_choice",
+        options: ["spec.os.default_os_version", "spec.os.operating_system_version"],
+      },
+      {
+        choiceField: "volterra_sw_version_choice",
+        fieldPath: "spec.sw.volterra_sw_version_choice",
+        options: ["spec.sw.default_sw_version", "spec.sw.volterra_software_version"],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.vnet.choice",
+        options: ["spec.vnet.existing_vnet", "spec.vnet.new_vnet"],
+      },
+      {
+        choiceField: "routing_type",
+        fieldPath: "spec.vnet.existing_vnet.routing_type",
+        options: [
+          "spec.vnet.existing_vnet.f5_orchestrated_routing",
+          "spec.vnet.existing_vnet.manual_routing",
+        ],
+      },
+      {
+        choiceField: "name_choice",
+        fieldPath: "spec.vnet.new_vnet.name_choice",
+        options: ["spec.vnet.new_vnet.autogenerate", "spec.vnet.new_vnet.name"],
+      },
+      {
+        choiceField: "dc_cluster_group_choice",
+        fieldPath: "spec.voltstack_cluster.dc_cluster_group_choice",
+        options: [
+          "spec.voltstack_cluster.dc_cluster_group",
+          "spec.voltstack_cluster.no_dc_cluster_group",
+        ],
+      },
+      {
+        choiceField: "forward_proxy_choice",
+        fieldPath: "spec.voltstack_cluster.forward_proxy_choice",
+        options: [
+          "spec.voltstack_cluster.active_forward_proxy_policies",
+          "spec.voltstack_cluster.forward_proxy_allow_all",
+          "spec.voltstack_cluster.no_forward_proxy",
+        ],
+      },
+      {
+        choiceField: "global_network_choice",
+        fieldPath: "spec.voltstack_cluster.global_network_choice",
+        options: [
+          "spec.voltstack_cluster.global_network_list",
+          "spec.voltstack_cluster.no_global_network",
+        ],
+      },
+      {
+        choiceField: "k8s_cluster_choice",
+        fieldPath: "spec.voltstack_cluster.k8s_cluster_choice",
+        options: ["spec.voltstack_cluster.k8s_cluster", "spec.voltstack_cluster.no_k8s_cluster"],
+      },
+      {
+        choiceField: "network_policy_choice",
+        fieldPath: "spec.voltstack_cluster.network_policy_choice",
+        options: [
+          "spec.voltstack_cluster.active_enhanced_firewall_policies",
+          "spec.voltstack_cluster.active_network_policies",
+          "spec.voltstack_cluster.no_network_policy",
+        ],
+      },
+      {
+        choiceField: "outside_static_route_choice",
+        fieldPath: "spec.voltstack_cluster.outside_static_route_choice",
+        options: [
+          "spec.voltstack_cluster.no_outside_static_routes",
+          "spec.voltstack_cluster.outside_static_routes",
+        ],
+      },
+      {
+        choiceField: "site_mesh_group_choice",
+        fieldPath: "spec.voltstack_cluster.site_mesh_group_choice",
+        options: [
+          "spec.voltstack_cluster.sm_connection_public_ip",
+          "spec.voltstack_cluster.sm_connection_pvt_ip",
+        ],
+      },
+      {
+        choiceField: "storage_class_choice",
+        fieldPath: "spec.voltstack_cluster.storage_class_choice",
+        options: [
+          "spec.voltstack_cluster.default_storage",
+          "spec.voltstack_cluster.storage_class_list",
+        ],
+      },
+      {
+        choiceField: "accelerated_networking",
+        fieldPath: "spec.voltstack_cluster.accelerated_networking.accelerated_networking",
+        options: [
+          "spec.voltstack_cluster.accelerated_networking.disable",
+          "spec.voltstack_cluster.accelerated_networking.enable",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.voltstack_cluster.az_nodes[].local_subnet.choice",
+        options: [
+          "spec.voltstack_cluster.az_nodes[].local_subnet.subnet",
+          "spec.voltstack_cluster.az_nodes[].local_subnet.subnet_param",
+        ],
+      },
+      {
+        choiceField: "resource_group_choice",
+        fieldPath: "spec.voltstack_cluster.az_nodes[].local_subnet.subnet.resource_group_choice",
+        options: [
+          "spec.voltstack_cluster.az_nodes[].local_subnet.subnet.subnet_resource_grp",
+          "spec.voltstack_cluster.az_nodes[].local_subnet.subnet.vnet_resource_group",
+        ],
+      },
+      {
+        choiceField: "connection_choice",
+        fieldPath:
+          "spec.voltstack_cluster.global_network_list.global_network_connections[].connection_choice",
+        options: [
+          "spec.voltstack_cluster.global_network_list.global_network_connections[].sli_to_global_dr",
+          "spec.voltstack_cluster.global_network_list.global_network_connections[].slo_to_global_dr",
+        ],
+      },
+      {
+        choiceField: "forward_proxy_choice",
+        fieldPath:
+          "spec.voltstack_cluster.global_network_list.global_network_connections[].forward_proxy_choice",
+        options: [],
+      },
+      {
+        choiceField: "config_mode_choice",
+        fieldPath:
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].config_mode_choice",
+        options: [
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].custom_static_route",
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].simple_static_route",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ver",
+        options: [
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv4",
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv6",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].custom_static_route.subnets[].ver",
+        options: [
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].custom_static_route.subnets[].ipv4",
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].custom_static_route.subnets[].ipv6",
+        ],
+      },
+      {
+        choiceField: "dc_cluster_group_choice",
+        fieldPath: "spec.voltstack_cluster_ar.dc_cluster_group_choice",
+        options: [
+          "spec.voltstack_cluster_ar.dc_cluster_group",
+          "spec.voltstack_cluster_ar.no_dc_cluster_group",
+        ],
+      },
+      {
+        choiceField: "forward_proxy_choice",
+        fieldPath: "spec.voltstack_cluster_ar.forward_proxy_choice",
+        options: [
+          "spec.voltstack_cluster_ar.active_forward_proxy_policies",
+          "spec.voltstack_cluster_ar.forward_proxy_allow_all",
+          "spec.voltstack_cluster_ar.no_forward_proxy",
+        ],
+      },
+      {
+        choiceField: "global_network_choice",
+        fieldPath: "spec.voltstack_cluster_ar.global_network_choice",
+        options: [
+          "spec.voltstack_cluster_ar.global_network_list",
+          "spec.voltstack_cluster_ar.no_global_network",
+        ],
+      },
+      {
+        choiceField: "k8s_cluster_choice",
+        fieldPath: "spec.voltstack_cluster_ar.k8s_cluster_choice",
+        options: [
+          "spec.voltstack_cluster_ar.k8s_cluster",
+          "spec.voltstack_cluster_ar.no_k8s_cluster",
+        ],
+      },
+      {
+        choiceField: "network_policy_choice",
+        fieldPath: "spec.voltstack_cluster_ar.network_policy_choice",
+        options: [
+          "spec.voltstack_cluster_ar.active_enhanced_firewall_policies",
+          "spec.voltstack_cluster_ar.active_network_policies",
+          "spec.voltstack_cluster_ar.no_network_policy",
+        ],
+      },
+      {
+        choiceField: "outside_static_route_choice",
+        fieldPath: "spec.voltstack_cluster_ar.outside_static_route_choice",
+        options: [
+          "spec.voltstack_cluster_ar.no_outside_static_routes",
+          "spec.voltstack_cluster_ar.outside_static_routes",
+        ],
+      },
+      {
+        choiceField: "site_mesh_group_choice",
+        fieldPath: "spec.voltstack_cluster_ar.site_mesh_group_choice",
+        options: [
+          "spec.voltstack_cluster_ar.sm_connection_public_ip",
+          "spec.voltstack_cluster_ar.sm_connection_pvt_ip",
+        ],
+      },
+      {
+        choiceField: "storage_class_choice",
+        fieldPath: "spec.voltstack_cluster_ar.storage_class_choice",
+        options: [
+          "spec.voltstack_cluster_ar.default_storage",
+          "spec.voltstack_cluster_ar.storage_class_list",
+        ],
+      },
+      {
+        choiceField: "accelerated_networking",
+        fieldPath: "spec.voltstack_cluster_ar.accelerated_networking.accelerated_networking",
+        options: [
+          "spec.voltstack_cluster_ar.accelerated_networking.disable",
+          "spec.voltstack_cluster_ar.accelerated_networking.enable",
+        ],
+      },
+      {
+        choiceField: "connection_choice",
+        fieldPath:
+          "spec.voltstack_cluster_ar.global_network_list.global_network_connections[].connection_choice",
+        options: [
+          "spec.voltstack_cluster_ar.global_network_list.global_network_connections[].sli_to_global_dr",
+          "spec.voltstack_cluster_ar.global_network_list.global_network_connections[].slo_to_global_dr",
+        ],
+      },
+      {
+        choiceField: "forward_proxy_choice",
+        fieldPath:
+          "spec.voltstack_cluster_ar.global_network_list.global_network_connections[].forward_proxy_choice",
+        options: [],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.voltstack_cluster_ar.node.local_subnet.choice",
+        options: [
+          "spec.voltstack_cluster_ar.node.local_subnet.subnet",
+          "spec.voltstack_cluster_ar.node.local_subnet.subnet_param",
+        ],
+      },
+      {
+        choiceField: "resource_group_choice",
+        fieldPath: "spec.voltstack_cluster_ar.node.local_subnet.subnet.resource_group_choice",
+        options: [
+          "spec.voltstack_cluster_ar.node.local_subnet.subnet.subnet_resource_grp",
+          "spec.voltstack_cluster_ar.node.local_subnet.subnet.vnet_resource_group",
+        ],
+      },
+      {
+        choiceField: "config_mode_choice",
+        fieldPath:
+          "spec.voltstack_cluster_ar.outside_static_routes.static_route_list[].config_mode_choice",
+        options: [
+          "spec.voltstack_cluster_ar.outside_static_routes.static_route_list[].custom_static_route",
+          "spec.voltstack_cluster_ar.outside_static_routes.static_route_list[].simple_static_route",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.voltstack_cluster_ar.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ver",
+        options: [
+          "spec.voltstack_cluster_ar.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv4",
+          "spec.voltstack_cluster_ar.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv6",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.voltstack_cluster_ar.outside_static_routes.static_route_list[].custom_static_route.subnets[].ver",
+        options: [
+          "spec.voltstack_cluster_ar.outside_static_routes.static_route_list[].custom_static_route.subnets[].ipv4",
+          "spec.voltstack_cluster_ar.outside_static_routes.static_route_list[].custom_static_route.subnets[].ipv6",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_site_management_standard",
@@ -1243,7 +4078,958 @@ export const sitesTools: ParsedOperation[] = [
         resourceType: "viewsazure-vnet-site-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "blocked_services_choice",
+        fieldPath: "spec.blocked_services_choice",
+        options: [
+          "spec.block_all_services",
+          "spec.blocked_services",
+          "spec.default_blocked_services",
+        ],
+      },
+      {
+        choiceField: "deployment",
+        fieldPath: "spec.deployment",
+        options: ["spec.azure_cred"],
+      },
+      {
+        choiceField: "logs_receiver_choice",
+        fieldPath: "spec.logs_receiver_choice",
+        options: ["spec.log_receiver", "spec.logs_streaming_disabled"],
+      },
+      {
+        choiceField: "region_choice",
+        fieldPath: "spec.region_choice",
+        options: ["spec.alternate_region", "spec.azure_region"],
+      },
+      {
+        choiceField: "site_type",
+        fieldPath: "spec.site_type",
+        options: [
+          "spec.ingress_egress_gw",
+          "spec.ingress_egress_gw_ar",
+          "spec.ingress_gw",
+          "spec.ingress_gw_ar",
+          "spec.voltstack_cluster",
+          "spec.voltstack_cluster_ar",
+        ],
+      },
+      {
+        choiceField: "worker_nodes",
+        fieldPath: "spec.worker_nodes",
+        options: ["spec.no_worker_nodes", "spec.nodes_per_az", "spec.total_nodes"],
+      },
+      {
+        choiceField: "blocked_services_value_type_choice",
+        fieldPath: "spec.blocked_services.blocked_sevice[].blocked_services_value_type_choice",
+        options: [
+          "spec.blocked_services.blocked_sevice[].dns",
+          "spec.blocked_services.blocked_sevice[].ssh",
+          "spec.blocked_services.blocked_sevice[].web_user_interface",
+        ],
+      },
+      {
+        choiceField: "dc_cluster_group_choice",
+        fieldPath: "spec.ingress_egress_gw.dc_cluster_group_choice",
+        options: [
+          "spec.ingress_egress_gw.dc_cluster_group_inside_vn",
+          "spec.ingress_egress_gw.dc_cluster_group_outside_vn",
+          "spec.ingress_egress_gw.no_dc_cluster_group",
+        ],
+      },
+      {
+        choiceField: "forward_proxy_choice",
+        fieldPath: "spec.ingress_egress_gw.forward_proxy_choice",
+        options: [
+          "spec.ingress_egress_gw.active_forward_proxy_policies",
+          "spec.ingress_egress_gw.forward_proxy_allow_all",
+          "spec.ingress_egress_gw.no_forward_proxy",
+        ],
+      },
+      {
+        choiceField: "global_network_choice",
+        fieldPath: "spec.ingress_egress_gw.global_network_choice",
+        options: [
+          "spec.ingress_egress_gw.global_network_list",
+          "spec.ingress_egress_gw.no_global_network",
+        ],
+      },
+      {
+        choiceField: "hub_choice",
+        fieldPath: "spec.ingress_egress_gw.hub_choice",
+        options: ["spec.ingress_egress_gw.hub", "spec.ingress_egress_gw.not_hub"],
+      },
+      {
+        choiceField: "inside_static_route_choice",
+        fieldPath: "spec.ingress_egress_gw.inside_static_route_choice",
+        options: [
+          "spec.ingress_egress_gw.inside_static_routes",
+          "spec.ingress_egress_gw.no_inside_static_routes",
+        ],
+      },
+      {
+        choiceField: "network_policy_choice",
+        fieldPath: "spec.ingress_egress_gw.network_policy_choice",
+        options: [
+          "spec.ingress_egress_gw.active_enhanced_firewall_policies",
+          "spec.ingress_egress_gw.active_network_policies",
+          "spec.ingress_egress_gw.no_network_policy",
+        ],
+      },
+      {
+        choiceField: "outside_static_route_choice",
+        fieldPath: "spec.ingress_egress_gw.outside_static_route_choice",
+        options: [
+          "spec.ingress_egress_gw.no_outside_static_routes",
+          "spec.ingress_egress_gw.outside_static_routes",
+        ],
+      },
+      {
+        choiceField: "site_mesh_group_choice",
+        fieldPath: "spec.ingress_egress_gw.site_mesh_group_choice",
+        options: [
+          "spec.ingress_egress_gw.sm_connection_public_ip",
+          "spec.ingress_egress_gw.sm_connection_pvt_ip",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.ingress_egress_gw.az_nodes[].inside_subnet.choice",
+        options: [
+          "spec.ingress_egress_gw.az_nodes[].inside_subnet.subnet",
+          "spec.ingress_egress_gw.az_nodes[].inside_subnet.subnet_param",
+        ],
+      },
+      {
+        choiceField: "resource_group_choice",
+        fieldPath: "spec.ingress_egress_gw.az_nodes[].inside_subnet.subnet.resource_group_choice",
+        options: [
+          "spec.ingress_egress_gw.az_nodes[].inside_subnet.subnet.subnet_resource_grp",
+          "spec.ingress_egress_gw.az_nodes[].inside_subnet.subnet.vnet_resource_group",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.ingress_egress_gw.az_nodes[].outside_subnet.choice",
+        options: [
+          "spec.ingress_egress_gw.az_nodes[].outside_subnet.subnet",
+          "spec.ingress_egress_gw.az_nodes[].outside_subnet.subnet_param",
+        ],
+      },
+      {
+        choiceField: "resource_group_choice",
+        fieldPath: "spec.ingress_egress_gw.az_nodes[].outside_subnet.subnet.resource_group_choice",
+        options: [
+          "spec.ingress_egress_gw.az_nodes[].outside_subnet.subnet.subnet_resource_grp",
+          "spec.ingress_egress_gw.az_nodes[].outside_subnet.subnet.vnet_resource_group",
+        ],
+      },
+      {
+        choiceField: "connection_choice",
+        fieldPath:
+          "spec.ingress_egress_gw.global_network_list.global_network_connections[].connection_choice",
+        options: [
+          "spec.ingress_egress_gw.global_network_list.global_network_connections[].sli_to_global_dr",
+          "spec.ingress_egress_gw.global_network_list.global_network_connections[].slo_to_global_dr",
+        ],
+      },
+      {
+        choiceField: "forward_proxy_choice",
+        fieldPath:
+          "spec.ingress_egress_gw.global_network_list.global_network_connections[].forward_proxy_choice",
+        options: [],
+      },
+      {
+        choiceField: "express_route_choice",
+        fieldPath: "spec.ingress_egress_gw.hub.express_route_choice",
+        options: [
+          "spec.ingress_egress_gw.hub.express_route_disabled",
+          "spec.ingress_egress_gw.hub.express_route_enabled",
+        ],
+      },
+      {
+        choiceField: "asn_choice",
+        fieldPath: "spec.ingress_egress_gw.hub.express_route_enabled.asn_choice",
+        options: [
+          "spec.ingress_egress_gw.hub.express_route_enabled.auto_asn",
+          "spec.ingress_egress_gw.hub.express_route_enabled.custom_asn",
+        ],
+      },
+      {
+        choiceField: "connectivity_options",
+        fieldPath: "spec.ingress_egress_gw.hub.express_route_enabled.connectivity_options",
+        options: [
+          "spec.ingress_egress_gw.hub.express_route_enabled.site_registration_over_express_route",
+          "spec.ingress_egress_gw.hub.express_route_enabled.site_registration_over_internet",
+        ],
+      },
+      {
+        choiceField: "sku_choice",
+        fieldPath: "spec.ingress_egress_gw.hub.express_route_enabled.sku_choice",
+        options: [
+          "spec.ingress_egress_gw.hub.express_route_enabled.sku_ergw1az",
+          "spec.ingress_egress_gw.hub.express_route_enabled.sku_ergw2az",
+          "spec.ingress_egress_gw.hub.express_route_enabled.sku_high_perf",
+          "spec.ingress_egress_gw.hub.express_route_enabled.sku_standard",
+        ],
+      },
+      {
+        choiceField: "spoke_vnet_routes",
+        fieldPath: "spec.ingress_egress_gw.hub.express_route_enabled.spoke_vnet_routes",
+        options: [
+          "spec.ingress_egress_gw.hub.express_route_enabled.advertise_to_route_server",
+          "spec.ingress_egress_gw.hub.express_route_enabled.do_not_advertise_to_route_server",
+        ],
+      },
+      {
+        choiceField: "subscription_choice",
+        fieldPath:
+          "spec.ingress_egress_gw.hub.express_route_enabled.connections[].subscription_choice",
+        options: [
+          "spec.ingress_egress_gw.hub.express_route_enabled.connections[].circuit_id",
+          "spec.ingress_egress_gw.hub.express_route_enabled.connections[].other_subscription",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.ingress_egress_gw.hub.express_route_enabled.connections[].other_subscription.authorized_key.secret_info_oneof",
+        options: [
+          "spec.ingress_egress_gw.hub.express_route_enabled.connections[].other_subscription.authorized_key.blindfold_secret_info",
+          "spec.ingress_egress_gw.hub.express_route_enabled.connections[].other_subscription.authorized_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.ingress_egress_gw.hub.express_route_enabled.gateway_subnet.choice",
+        options: [
+          "spec.ingress_egress_gw.hub.express_route_enabled.gateway_subnet.auto",
+          "spec.ingress_egress_gw.hub.express_route_enabled.gateway_subnet.subnet",
+          "spec.ingress_egress_gw.hub.express_route_enabled.gateway_subnet.subnet_param",
+        ],
+      },
+      {
+        choiceField: "resource_group_choice",
+        fieldPath:
+          "spec.ingress_egress_gw.hub.express_route_enabled.gateway_subnet.subnet.resource_group_choice",
+        options: [
+          "spec.ingress_egress_gw.hub.express_route_enabled.gateway_subnet.subnet.subnet_resource_grp",
+          "spec.ingress_egress_gw.hub.express_route_enabled.gateway_subnet.subnet.vnet_resource_group",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.ingress_egress_gw.hub.express_route_enabled.route_server_subnet.choice",
+        options: [
+          "spec.ingress_egress_gw.hub.express_route_enabled.route_server_subnet.auto",
+          "spec.ingress_egress_gw.hub.express_route_enabled.route_server_subnet.subnet",
+          "spec.ingress_egress_gw.hub.express_route_enabled.route_server_subnet.subnet_param",
+        ],
+      },
+      {
+        choiceField: "resource_group_choice",
+        fieldPath:
+          "spec.ingress_egress_gw.hub.express_route_enabled.route_server_subnet.subnet.resource_group_choice",
+        options: [
+          "spec.ingress_egress_gw.hub.express_route_enabled.route_server_subnet.subnet.subnet_resource_grp",
+          "spec.ingress_egress_gw.hub.express_route_enabled.route_server_subnet.subnet.vnet_resource_group",
+        ],
+      },
+      {
+        choiceField: "routing_choice",
+        fieldPath: "spec.ingress_egress_gw.hub.spoke_vnets[].routing_choice",
+        options: [
+          "spec.ingress_egress_gw.hub.spoke_vnets[].auto",
+          "spec.ingress_egress_gw.hub.spoke_vnets[].manual",
+        ],
+      },
+      {
+        choiceField: "routing_type",
+        fieldPath: "spec.ingress_egress_gw.hub.spoke_vnets[].vnet.routing_type",
+        options: [
+          "spec.ingress_egress_gw.hub.spoke_vnets[].vnet.f5_orchestrated_routing",
+          "spec.ingress_egress_gw.hub.spoke_vnets[].vnet.manual_routing",
+        ],
+      },
+      {
+        choiceField: "config_mode_choice",
+        fieldPath:
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].config_mode_choice",
+        options: [
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].custom_static_route",
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].simple_static_route",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ver",
+        options: [
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv4",
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv6",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].custom_static_route.subnets[].ver",
+        options: [
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].custom_static_route.subnets[].ipv4",
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].custom_static_route.subnets[].ipv6",
+        ],
+      },
+      {
+        choiceField: "config_mode_choice",
+        fieldPath:
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].config_mode_choice",
+        options: [
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].custom_static_route",
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].simple_static_route",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ver",
+        options: [
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv4",
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv6",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].custom_static_route.subnets[].ver",
+        options: [
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].custom_static_route.subnets[].ipv4",
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].custom_static_route.subnets[].ipv6",
+        ],
+      },
+      {
+        choiceField: "perf_mode_choice",
+        fieldPath: "spec.ingress_egress_gw.performance_enhancement_mode.perf_mode_choice",
+        options: [
+          "spec.ingress_egress_gw.performance_enhancement_mode.perf_mode_l3_enhanced",
+          "spec.ingress_egress_gw.performance_enhancement_mode.perf_mode_l7_enhanced",
+        ],
+      },
+      {
+        choiceField: "perf_mode_choice",
+        fieldPath:
+          "spec.ingress_egress_gw.performance_enhancement_mode.perf_mode_l3_enhanced.perf_mode_choice",
+        options: [
+          "spec.ingress_egress_gw.performance_enhancement_mode.perf_mode_l3_enhanced.jumbo",
+          "spec.ingress_egress_gw.performance_enhancement_mode.perf_mode_l3_enhanced.no_jumbo",
+        ],
+      },
+      {
+        choiceField: "dc_cluster_group_choice",
+        fieldPath: "spec.ingress_egress_gw_ar.dc_cluster_group_choice",
+        options: [
+          "spec.ingress_egress_gw_ar.dc_cluster_group_inside_vn",
+          "spec.ingress_egress_gw_ar.dc_cluster_group_outside_vn",
+          "spec.ingress_egress_gw_ar.no_dc_cluster_group",
+        ],
+      },
+      {
+        choiceField: "forward_proxy_choice",
+        fieldPath: "spec.ingress_egress_gw_ar.forward_proxy_choice",
+        options: [
+          "spec.ingress_egress_gw_ar.active_forward_proxy_policies",
+          "spec.ingress_egress_gw_ar.forward_proxy_allow_all",
+          "spec.ingress_egress_gw_ar.no_forward_proxy",
+        ],
+      },
+      {
+        choiceField: "global_network_choice",
+        fieldPath: "spec.ingress_egress_gw_ar.global_network_choice",
+        options: [
+          "spec.ingress_egress_gw_ar.global_network_list",
+          "spec.ingress_egress_gw_ar.no_global_network",
+        ],
+      },
+      {
+        choiceField: "hub_choice",
+        fieldPath: "spec.ingress_egress_gw_ar.hub_choice",
+        options: ["spec.ingress_egress_gw_ar.hub", "spec.ingress_egress_gw_ar.not_hub"],
+      },
+      {
+        choiceField: "inside_static_route_choice",
+        fieldPath: "spec.ingress_egress_gw_ar.inside_static_route_choice",
+        options: [
+          "spec.ingress_egress_gw_ar.inside_static_routes",
+          "spec.ingress_egress_gw_ar.no_inside_static_routes",
+        ],
+      },
+      {
+        choiceField: "network_policy_choice",
+        fieldPath: "spec.ingress_egress_gw_ar.network_policy_choice",
+        options: [
+          "spec.ingress_egress_gw_ar.active_enhanced_firewall_policies",
+          "spec.ingress_egress_gw_ar.active_network_policies",
+          "spec.ingress_egress_gw_ar.no_network_policy",
+        ],
+      },
+      {
+        choiceField: "outside_static_route_choice",
+        fieldPath: "spec.ingress_egress_gw_ar.outside_static_route_choice",
+        options: [
+          "spec.ingress_egress_gw_ar.no_outside_static_routes",
+          "spec.ingress_egress_gw_ar.outside_static_routes",
+        ],
+      },
+      {
+        choiceField: "site_mesh_group_choice",
+        fieldPath: "spec.ingress_egress_gw_ar.site_mesh_group_choice",
+        options: [
+          "spec.ingress_egress_gw_ar.sm_connection_public_ip",
+          "spec.ingress_egress_gw_ar.sm_connection_pvt_ip",
+        ],
+      },
+      {
+        choiceField: "connection_choice",
+        fieldPath:
+          "spec.ingress_egress_gw_ar.global_network_list.global_network_connections[].connection_choice",
+        options: [
+          "spec.ingress_egress_gw_ar.global_network_list.global_network_connections[].sli_to_global_dr",
+          "spec.ingress_egress_gw_ar.global_network_list.global_network_connections[].slo_to_global_dr",
+        ],
+      },
+      {
+        choiceField: "forward_proxy_choice",
+        fieldPath:
+          "spec.ingress_egress_gw_ar.global_network_list.global_network_connections[].forward_proxy_choice",
+        options: [],
+      },
+      {
+        choiceField: "express_route_choice",
+        fieldPath: "spec.ingress_egress_gw_ar.hub.express_route_choice",
+        options: [
+          "spec.ingress_egress_gw_ar.hub.express_route_disabled",
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled",
+        ],
+      },
+      {
+        choiceField: "asn_choice",
+        fieldPath: "spec.ingress_egress_gw_ar.hub.express_route_enabled.asn_choice",
+        options: [
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.auto_asn",
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.custom_asn",
+        ],
+      },
+      {
+        choiceField: "connectivity_options",
+        fieldPath: "spec.ingress_egress_gw_ar.hub.express_route_enabled.connectivity_options",
+        options: [
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.site_registration_over_express_route",
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.site_registration_over_internet",
+        ],
+      },
+      {
+        choiceField: "sku_choice",
+        fieldPath: "spec.ingress_egress_gw_ar.hub.express_route_enabled.sku_choice",
+        options: [
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.sku_ergw1az",
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.sku_ergw2az",
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.sku_high_perf",
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.sku_standard",
+        ],
+      },
+      {
+        choiceField: "spoke_vnet_routes",
+        fieldPath: "spec.ingress_egress_gw_ar.hub.express_route_enabled.spoke_vnet_routes",
+        options: [
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.advertise_to_route_server",
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.do_not_advertise_to_route_server",
+        ],
+      },
+      {
+        choiceField: "subscription_choice",
+        fieldPath:
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.connections[].subscription_choice",
+        options: [
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.connections[].circuit_id",
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.connections[].other_subscription",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.connections[].other_subscription.authorized_key.secret_info_oneof",
+        options: [
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.connections[].other_subscription.authorized_key.blindfold_secret_info",
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.connections[].other_subscription.authorized_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.ingress_egress_gw_ar.hub.express_route_enabled.gateway_subnet.choice",
+        options: [
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.gateway_subnet.auto",
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.gateway_subnet.subnet",
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.gateway_subnet.subnet_param",
+        ],
+      },
+      {
+        choiceField: "resource_group_choice",
+        fieldPath:
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.gateway_subnet.subnet.resource_group_choice",
+        options: [
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.gateway_subnet.subnet.subnet_resource_grp",
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.gateway_subnet.subnet.vnet_resource_group",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.ingress_egress_gw_ar.hub.express_route_enabled.route_server_subnet.choice",
+        options: [
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.route_server_subnet.auto",
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.route_server_subnet.subnet",
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.route_server_subnet.subnet_param",
+        ],
+      },
+      {
+        choiceField: "resource_group_choice",
+        fieldPath:
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.route_server_subnet.subnet.resource_group_choice",
+        options: [
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.route_server_subnet.subnet.subnet_resource_grp",
+          "spec.ingress_egress_gw_ar.hub.express_route_enabled.route_server_subnet.subnet.vnet_resource_group",
+        ],
+      },
+      {
+        choiceField: "routing_choice",
+        fieldPath: "spec.ingress_egress_gw_ar.hub.spoke_vnets[].routing_choice",
+        options: [
+          "spec.ingress_egress_gw_ar.hub.spoke_vnets[].auto",
+          "spec.ingress_egress_gw_ar.hub.spoke_vnets[].manual",
+        ],
+      },
+      {
+        choiceField: "routing_type",
+        fieldPath: "spec.ingress_egress_gw_ar.hub.spoke_vnets[].vnet.routing_type",
+        options: [
+          "spec.ingress_egress_gw_ar.hub.spoke_vnets[].vnet.f5_orchestrated_routing",
+          "spec.ingress_egress_gw_ar.hub.spoke_vnets[].vnet.manual_routing",
+        ],
+      },
+      {
+        choiceField: "config_mode_choice",
+        fieldPath:
+          "spec.ingress_egress_gw_ar.inside_static_routes.static_route_list[].config_mode_choice",
+        options: [
+          "spec.ingress_egress_gw_ar.inside_static_routes.static_route_list[].custom_static_route",
+          "spec.ingress_egress_gw_ar.inside_static_routes.static_route_list[].simple_static_route",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.ingress_egress_gw_ar.inside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ver",
+        options: [
+          "spec.ingress_egress_gw_ar.inside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv4",
+          "spec.ingress_egress_gw_ar.inside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv6",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.ingress_egress_gw_ar.inside_static_routes.static_route_list[].custom_static_route.subnets[].ver",
+        options: [
+          "spec.ingress_egress_gw_ar.inside_static_routes.static_route_list[].custom_static_route.subnets[].ipv4",
+          "spec.ingress_egress_gw_ar.inside_static_routes.static_route_list[].custom_static_route.subnets[].ipv6",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.ingress_egress_gw_ar.node.inside_subnet.choice",
+        options: [
+          "spec.ingress_egress_gw_ar.node.inside_subnet.subnet",
+          "spec.ingress_egress_gw_ar.node.inside_subnet.subnet_param",
+        ],
+      },
+      {
+        choiceField: "resource_group_choice",
+        fieldPath: "spec.ingress_egress_gw_ar.node.inside_subnet.subnet.resource_group_choice",
+        options: [
+          "spec.ingress_egress_gw_ar.node.inside_subnet.subnet.subnet_resource_grp",
+          "spec.ingress_egress_gw_ar.node.inside_subnet.subnet.vnet_resource_group",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.ingress_egress_gw_ar.node.outside_subnet.choice",
+        options: [
+          "spec.ingress_egress_gw_ar.node.outside_subnet.subnet",
+          "spec.ingress_egress_gw_ar.node.outside_subnet.subnet_param",
+        ],
+      },
+      {
+        choiceField: "resource_group_choice",
+        fieldPath: "spec.ingress_egress_gw_ar.node.outside_subnet.subnet.resource_group_choice",
+        options: [
+          "spec.ingress_egress_gw_ar.node.outside_subnet.subnet.subnet_resource_grp",
+          "spec.ingress_egress_gw_ar.node.outside_subnet.subnet.vnet_resource_group",
+        ],
+      },
+      {
+        choiceField: "config_mode_choice",
+        fieldPath:
+          "spec.ingress_egress_gw_ar.outside_static_routes.static_route_list[].config_mode_choice",
+        options: [
+          "spec.ingress_egress_gw_ar.outside_static_routes.static_route_list[].custom_static_route",
+          "spec.ingress_egress_gw_ar.outside_static_routes.static_route_list[].simple_static_route",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.ingress_egress_gw_ar.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ver",
+        options: [
+          "spec.ingress_egress_gw_ar.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv4",
+          "spec.ingress_egress_gw_ar.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv6",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.ingress_egress_gw_ar.outside_static_routes.static_route_list[].custom_static_route.subnets[].ver",
+        options: [
+          "spec.ingress_egress_gw_ar.outside_static_routes.static_route_list[].custom_static_route.subnets[].ipv4",
+          "spec.ingress_egress_gw_ar.outside_static_routes.static_route_list[].custom_static_route.subnets[].ipv6",
+        ],
+      },
+      {
+        choiceField: "perf_mode_choice",
+        fieldPath: "spec.ingress_egress_gw_ar.performance_enhancement_mode.perf_mode_choice",
+        options: [
+          "spec.ingress_egress_gw_ar.performance_enhancement_mode.perf_mode_l3_enhanced",
+          "spec.ingress_egress_gw_ar.performance_enhancement_mode.perf_mode_l7_enhanced",
+        ],
+      },
+      {
+        choiceField: "perf_mode_choice",
+        fieldPath:
+          "spec.ingress_egress_gw_ar.performance_enhancement_mode.perf_mode_l3_enhanced.perf_mode_choice",
+        options: [
+          "spec.ingress_egress_gw_ar.performance_enhancement_mode.perf_mode_l3_enhanced.jumbo",
+          "spec.ingress_egress_gw_ar.performance_enhancement_mode.perf_mode_l3_enhanced.no_jumbo",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.ingress_gw.az_nodes[].local_subnet.choice",
+        options: [
+          "spec.ingress_gw.az_nodes[].local_subnet.subnet",
+          "spec.ingress_gw.az_nodes[].local_subnet.subnet_param",
+        ],
+      },
+      {
+        choiceField: "resource_group_choice",
+        fieldPath: "spec.ingress_gw.az_nodes[].local_subnet.subnet.resource_group_choice",
+        options: [
+          "spec.ingress_gw.az_nodes[].local_subnet.subnet.subnet_resource_grp",
+          "spec.ingress_gw.az_nodes[].local_subnet.subnet.vnet_resource_group",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.ingress_gw_ar.node.local_subnet.choice",
+        options: [
+          "spec.ingress_gw_ar.node.local_subnet.subnet",
+          "spec.ingress_gw_ar.node.local_subnet.subnet_param",
+        ],
+      },
+      {
+        choiceField: "resource_group_choice",
+        fieldPath: "spec.ingress_gw_ar.node.local_subnet.subnet.resource_group_choice",
+        options: [
+          "spec.ingress_gw_ar.node.local_subnet.subnet.subnet_resource_grp",
+          "spec.ingress_gw_ar.node.local_subnet.subnet.vnet_resource_group",
+        ],
+      },
+      {
+        choiceField: "kubernetes_upgrade_drain_enable_choice",
+        fieldPath: "spec.kubernetes_upgrade_drain.kubernetes_upgrade_drain_enable_choice",
+        options: [
+          "spec.kubernetes_upgrade_drain.disable_upgrade_drain",
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain",
+        ],
+      },
+      {
+        choiceField: "drain_max_unavailable_choice",
+        fieldPath:
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.drain_max_unavailable_choice",
+        options: [
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.drain_max_unavailable_node_count",
+        ],
+      },
+      {
+        choiceField: "vega_upgrade_mode_toggle_choice",
+        fieldPath:
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.vega_upgrade_mode_toggle_choice",
+        options: [
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.disable_vega_upgrade_mode",
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.enable_vega_upgrade_mode",
+        ],
+      },
+      {
+        choiceField: "offline_survivability_mode_choice",
+        fieldPath: "spec.offline_survivability_mode.offline_survivability_mode_choice",
+        options: [
+          "spec.offline_survivability_mode.enable_offline_survivability_mode",
+          "spec.offline_survivability_mode.no_offline_survivability_mode",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.vnet.choice",
+        options: ["spec.vnet.existing_vnet", "spec.vnet.new_vnet"],
+      },
+      {
+        choiceField: "routing_type",
+        fieldPath: "spec.vnet.existing_vnet.routing_type",
+        options: [
+          "spec.vnet.existing_vnet.f5_orchestrated_routing",
+          "spec.vnet.existing_vnet.manual_routing",
+        ],
+      },
+      {
+        choiceField: "name_choice",
+        fieldPath: "spec.vnet.new_vnet.name_choice",
+        options: ["spec.vnet.new_vnet.autogenerate", "spec.vnet.new_vnet.name"],
+      },
+      {
+        choiceField: "dc_cluster_group_choice",
+        fieldPath: "spec.voltstack_cluster.dc_cluster_group_choice",
+        options: [
+          "spec.voltstack_cluster.dc_cluster_group",
+          "spec.voltstack_cluster.no_dc_cluster_group",
+        ],
+      },
+      {
+        choiceField: "forward_proxy_choice",
+        fieldPath: "spec.voltstack_cluster.forward_proxy_choice",
+        options: [
+          "spec.voltstack_cluster.active_forward_proxy_policies",
+          "spec.voltstack_cluster.forward_proxy_allow_all",
+          "spec.voltstack_cluster.no_forward_proxy",
+        ],
+      },
+      {
+        choiceField: "global_network_choice",
+        fieldPath: "spec.voltstack_cluster.global_network_choice",
+        options: [
+          "spec.voltstack_cluster.global_network_list",
+          "spec.voltstack_cluster.no_global_network",
+        ],
+      },
+      {
+        choiceField: "k8s_cluster_choice",
+        fieldPath: "spec.voltstack_cluster.k8s_cluster_choice",
+        options: ["spec.voltstack_cluster.k8s_cluster", "spec.voltstack_cluster.no_k8s_cluster"],
+      },
+      {
+        choiceField: "network_policy_choice",
+        fieldPath: "spec.voltstack_cluster.network_policy_choice",
+        options: [
+          "spec.voltstack_cluster.active_enhanced_firewall_policies",
+          "spec.voltstack_cluster.active_network_policies",
+          "spec.voltstack_cluster.no_network_policy",
+        ],
+      },
+      {
+        choiceField: "outside_static_route_choice",
+        fieldPath: "spec.voltstack_cluster.outside_static_route_choice",
+        options: [
+          "spec.voltstack_cluster.no_outside_static_routes",
+          "spec.voltstack_cluster.outside_static_routes",
+        ],
+      },
+      {
+        choiceField: "site_mesh_group_choice",
+        fieldPath: "spec.voltstack_cluster.site_mesh_group_choice",
+        options: [
+          "spec.voltstack_cluster.sm_connection_public_ip",
+          "spec.voltstack_cluster.sm_connection_pvt_ip",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.voltstack_cluster.az_nodes[].local_subnet.choice",
+        options: [
+          "spec.voltstack_cluster.az_nodes[].local_subnet.subnet",
+          "spec.voltstack_cluster.az_nodes[].local_subnet.subnet_param",
+        ],
+      },
+      {
+        choiceField: "resource_group_choice",
+        fieldPath: "spec.voltstack_cluster.az_nodes[].local_subnet.subnet.resource_group_choice",
+        options: [
+          "spec.voltstack_cluster.az_nodes[].local_subnet.subnet.subnet_resource_grp",
+          "spec.voltstack_cluster.az_nodes[].local_subnet.subnet.vnet_resource_group",
+        ],
+      },
+      {
+        choiceField: "connection_choice",
+        fieldPath:
+          "spec.voltstack_cluster.global_network_list.global_network_connections[].connection_choice",
+        options: [
+          "spec.voltstack_cluster.global_network_list.global_network_connections[].sli_to_global_dr",
+          "spec.voltstack_cluster.global_network_list.global_network_connections[].slo_to_global_dr",
+        ],
+      },
+      {
+        choiceField: "forward_proxy_choice",
+        fieldPath:
+          "spec.voltstack_cluster.global_network_list.global_network_connections[].forward_proxy_choice",
+        options: [],
+      },
+      {
+        choiceField: "config_mode_choice",
+        fieldPath:
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].config_mode_choice",
+        options: [
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].custom_static_route",
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].simple_static_route",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ver",
+        options: [
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv4",
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv6",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].custom_static_route.subnets[].ver",
+        options: [
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].custom_static_route.subnets[].ipv4",
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].custom_static_route.subnets[].ipv6",
+        ],
+      },
+      {
+        choiceField: "dc_cluster_group_choice",
+        fieldPath: "spec.voltstack_cluster_ar.dc_cluster_group_choice",
+        options: [
+          "spec.voltstack_cluster_ar.dc_cluster_group",
+          "spec.voltstack_cluster_ar.no_dc_cluster_group",
+        ],
+      },
+      {
+        choiceField: "forward_proxy_choice",
+        fieldPath: "spec.voltstack_cluster_ar.forward_proxy_choice",
+        options: [
+          "spec.voltstack_cluster_ar.active_forward_proxy_policies",
+          "spec.voltstack_cluster_ar.forward_proxy_allow_all",
+          "spec.voltstack_cluster_ar.no_forward_proxy",
+        ],
+      },
+      {
+        choiceField: "global_network_choice",
+        fieldPath: "spec.voltstack_cluster_ar.global_network_choice",
+        options: [
+          "spec.voltstack_cluster_ar.global_network_list",
+          "spec.voltstack_cluster_ar.no_global_network",
+        ],
+      },
+      {
+        choiceField: "k8s_cluster_choice",
+        fieldPath: "spec.voltstack_cluster_ar.k8s_cluster_choice",
+        options: [
+          "spec.voltstack_cluster_ar.k8s_cluster",
+          "spec.voltstack_cluster_ar.no_k8s_cluster",
+        ],
+      },
+      {
+        choiceField: "network_policy_choice",
+        fieldPath: "spec.voltstack_cluster_ar.network_policy_choice",
+        options: [
+          "spec.voltstack_cluster_ar.active_enhanced_firewall_policies",
+          "spec.voltstack_cluster_ar.active_network_policies",
+          "spec.voltstack_cluster_ar.no_network_policy",
+        ],
+      },
+      {
+        choiceField: "outside_static_route_choice",
+        fieldPath: "spec.voltstack_cluster_ar.outside_static_route_choice",
+        options: [
+          "spec.voltstack_cluster_ar.no_outside_static_routes",
+          "spec.voltstack_cluster_ar.outside_static_routes",
+        ],
+      },
+      {
+        choiceField: "site_mesh_group_choice",
+        fieldPath: "spec.voltstack_cluster_ar.site_mesh_group_choice",
+        options: [
+          "spec.voltstack_cluster_ar.sm_connection_public_ip",
+          "spec.voltstack_cluster_ar.sm_connection_pvt_ip",
+        ],
+      },
+      {
+        choiceField: "connection_choice",
+        fieldPath:
+          "spec.voltstack_cluster_ar.global_network_list.global_network_connections[].connection_choice",
+        options: [
+          "spec.voltstack_cluster_ar.global_network_list.global_network_connections[].sli_to_global_dr",
+          "spec.voltstack_cluster_ar.global_network_list.global_network_connections[].slo_to_global_dr",
+        ],
+      },
+      {
+        choiceField: "forward_proxy_choice",
+        fieldPath:
+          "spec.voltstack_cluster_ar.global_network_list.global_network_connections[].forward_proxy_choice",
+        options: [],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.voltstack_cluster_ar.node.local_subnet.choice",
+        options: [
+          "spec.voltstack_cluster_ar.node.local_subnet.subnet",
+          "spec.voltstack_cluster_ar.node.local_subnet.subnet_param",
+        ],
+      },
+      {
+        choiceField: "resource_group_choice",
+        fieldPath: "spec.voltstack_cluster_ar.node.local_subnet.subnet.resource_group_choice",
+        options: [
+          "spec.voltstack_cluster_ar.node.local_subnet.subnet.subnet_resource_grp",
+          "spec.voltstack_cluster_ar.node.local_subnet.subnet.vnet_resource_group",
+        ],
+      },
+      {
+        choiceField: "config_mode_choice",
+        fieldPath:
+          "spec.voltstack_cluster_ar.outside_static_routes.static_route_list[].config_mode_choice",
+        options: [
+          "spec.voltstack_cluster_ar.outside_static_routes.static_route_list[].custom_static_route",
+          "spec.voltstack_cluster_ar.outside_static_routes.static_route_list[].simple_static_route",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.voltstack_cluster_ar.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ver",
+        options: [
+          "spec.voltstack_cluster_ar.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv4",
+          "spec.voltstack_cluster_ar.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv6",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.voltstack_cluster_ar.outside_static_routes.static_route_list[].custom_static_route.subnets[].ver",
+        options: [
+          "spec.voltstack_cluster_ar.outside_static_routes.static_route_list[].custom_static_route.subnets[].ipv4",
+          "spec.voltstack_cluster_ar.outside_static_routes.static_route_list[].custom_static_route.subnets[].ipv6",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_site_management_standard",
@@ -1820,7 +5606,457 @@ export const sitesTools: ParsedOperation[] = [
         resourceType: "viewsgcp-vpc-site-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "blocked_services_choice",
+        fieldPath: "spec.blocked_services_choice",
+        options: [
+          "spec.block_all_services",
+          "spec.blocked_services",
+          "spec.default_blocked_services",
+        ],
+      },
+      {
+        choiceField: "deployment",
+        fieldPath: "spec.deployment",
+        options: ["spec.cloud_credentials"],
+      },
+      {
+        choiceField: "logs_receiver_choice",
+        fieldPath: "spec.logs_receiver_choice",
+        options: ["spec.log_receiver", "spec.logs_streaming_disabled"],
+      },
+      {
+        choiceField: "private_connectivity_choice",
+        fieldPath: "spec.private_connectivity_choice",
+        options: ["spec.private_connect_disabled", "spec.private_connectivity"],
+      },
+      {
+        choiceField: "site_type",
+        fieldPath: "spec.site_type",
+        options: ["spec.ingress_egress_gw", "spec.ingress_gw", "spec.voltstack_cluster"],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.admin_password.secret_info_oneof",
+        options: [
+          "spec.admin_password.blindfold_secret_info",
+          "spec.admin_password.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "blocked_services_value_type_choice",
+        fieldPath: "spec.blocked_services.blocked_sevice[].blocked_services_value_type_choice",
+        options: [
+          "spec.blocked_services.blocked_sevice[].dns",
+          "spec.blocked_services.blocked_sevice[].ssh",
+          "spec.blocked_services.blocked_sevice[].web_user_interface",
+        ],
+      },
+      {
+        choiceField: "dc_cluster_group_choice",
+        fieldPath: "spec.ingress_egress_gw.dc_cluster_group_choice",
+        options: [
+          "spec.ingress_egress_gw.dc_cluster_group_inside_vn",
+          "spec.ingress_egress_gw.dc_cluster_group_outside_vn",
+          "spec.ingress_egress_gw.no_dc_cluster_group",
+        ],
+      },
+      {
+        choiceField: "forward_proxy_choice",
+        fieldPath: "spec.ingress_egress_gw.forward_proxy_choice",
+        options: [
+          "spec.ingress_egress_gw.active_forward_proxy_policies",
+          "spec.ingress_egress_gw.forward_proxy_allow_all",
+          "spec.ingress_egress_gw.no_forward_proxy",
+        ],
+      },
+      {
+        choiceField: "global_network_choice",
+        fieldPath: "spec.ingress_egress_gw.global_network_choice",
+        options: [
+          "spec.ingress_egress_gw.global_network_list",
+          "spec.ingress_egress_gw.no_global_network",
+        ],
+      },
+      {
+        choiceField: "inside_static_route_choice",
+        fieldPath: "spec.ingress_egress_gw.inside_static_route_choice",
+        options: [
+          "spec.ingress_egress_gw.inside_static_routes",
+          "spec.ingress_egress_gw.no_inside_static_routes",
+        ],
+      },
+      {
+        choiceField: "network_policy_choice",
+        fieldPath: "spec.ingress_egress_gw.network_policy_choice",
+        options: [
+          "spec.ingress_egress_gw.active_enhanced_firewall_policies",
+          "spec.ingress_egress_gw.active_network_policies",
+          "spec.ingress_egress_gw.no_network_policy",
+        ],
+      },
+      {
+        choiceField: "outside_static_route_choice",
+        fieldPath: "spec.ingress_egress_gw.outside_static_route_choice",
+        options: [
+          "spec.ingress_egress_gw.no_outside_static_routes",
+          "spec.ingress_egress_gw.outside_static_routes",
+        ],
+      },
+      {
+        choiceField: "site_mesh_group_choice",
+        fieldPath: "spec.ingress_egress_gw.site_mesh_group_choice",
+        options: [
+          "spec.ingress_egress_gw.sm_connection_public_ip",
+          "spec.ingress_egress_gw.sm_connection_pvt_ip",
+        ],
+      },
+      {
+        choiceField: "connection_choice",
+        fieldPath:
+          "spec.ingress_egress_gw.global_network_list.global_network_connections[].connection_choice",
+        options: [
+          "spec.ingress_egress_gw.global_network_list.global_network_connections[].sli_to_global_dr",
+          "spec.ingress_egress_gw.global_network_list.global_network_connections[].slo_to_global_dr",
+        ],
+      },
+      {
+        choiceField: "forward_proxy_choice",
+        fieldPath:
+          "spec.ingress_egress_gw.global_network_list.global_network_connections[].forward_proxy_choice",
+        options: [],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.ingress_egress_gw.inside_network.choice",
+        options: [
+          "spec.ingress_egress_gw.inside_network.existing_network",
+          "spec.ingress_egress_gw.inside_network.new_network",
+          "spec.ingress_egress_gw.inside_network.new_network_autogenerate",
+        ],
+      },
+      {
+        choiceField: "routing_type",
+        fieldPath: "spec.ingress_egress_gw.inside_network.existing_network.routing_type",
+        options: [],
+      },
+      {
+        choiceField: "config_mode_choice",
+        fieldPath:
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].config_mode_choice",
+        options: [
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].custom_static_route",
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].simple_static_route",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ver",
+        options: [
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv4",
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv6",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].custom_static_route.subnets[].ver",
+        options: [
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].custom_static_route.subnets[].ipv4",
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].custom_static_route.subnets[].ipv6",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.ingress_egress_gw.inside_subnet.choice",
+        options: [
+          "spec.ingress_egress_gw.inside_subnet.existing_subnet",
+          "spec.ingress_egress_gw.inside_subnet.new_subnet",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.ingress_egress_gw.outside_network.choice",
+        options: [
+          "spec.ingress_egress_gw.outside_network.existing_network",
+          "spec.ingress_egress_gw.outside_network.new_network",
+          "spec.ingress_egress_gw.outside_network.new_network_autogenerate",
+        ],
+      },
+      {
+        choiceField: "routing_type",
+        fieldPath: "spec.ingress_egress_gw.outside_network.existing_network.routing_type",
+        options: [],
+      },
+      {
+        choiceField: "config_mode_choice",
+        fieldPath:
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].config_mode_choice",
+        options: [
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].custom_static_route",
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].simple_static_route",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ver",
+        options: [
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv4",
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv6",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].custom_static_route.subnets[].ver",
+        options: [
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].custom_static_route.subnets[].ipv4",
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].custom_static_route.subnets[].ipv6",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.ingress_egress_gw.outside_subnet.choice",
+        options: [
+          "spec.ingress_egress_gw.outside_subnet.existing_subnet",
+          "spec.ingress_egress_gw.outside_subnet.new_subnet",
+        ],
+      },
+      {
+        choiceField: "perf_mode_choice",
+        fieldPath: "spec.ingress_egress_gw.performance_enhancement_mode.perf_mode_choice",
+        options: [
+          "spec.ingress_egress_gw.performance_enhancement_mode.perf_mode_l3_enhanced",
+          "spec.ingress_egress_gw.performance_enhancement_mode.perf_mode_l7_enhanced",
+        ],
+      },
+      {
+        choiceField: "perf_mode_choice",
+        fieldPath:
+          "spec.ingress_egress_gw.performance_enhancement_mode.perf_mode_l3_enhanced.perf_mode_choice",
+        options: [
+          "spec.ingress_egress_gw.performance_enhancement_mode.perf_mode_l3_enhanced.jumbo",
+          "spec.ingress_egress_gw.performance_enhancement_mode.perf_mode_l3_enhanced.no_jumbo",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.ingress_gw.local_network.choice",
+        options: [
+          "spec.ingress_gw.local_network.existing_network",
+          "spec.ingress_gw.local_network.new_network",
+          "spec.ingress_gw.local_network.new_network_autogenerate",
+        ],
+      },
+      {
+        choiceField: "routing_type",
+        fieldPath: "spec.ingress_gw.local_network.existing_network.routing_type",
+        options: [],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.ingress_gw.local_subnet.choice",
+        options: [
+          "spec.ingress_gw.local_subnet.existing_subnet",
+          "spec.ingress_gw.local_subnet.new_subnet",
+        ],
+      },
+      {
+        choiceField: "perf_mode_choice",
+        fieldPath: "spec.ingress_gw.performance_enhancement_mode.perf_mode_choice",
+        options: [
+          "spec.ingress_gw.performance_enhancement_mode.perf_mode_l3_enhanced",
+          "spec.ingress_gw.performance_enhancement_mode.perf_mode_l7_enhanced",
+        ],
+      },
+      {
+        choiceField: "perf_mode_choice",
+        fieldPath:
+          "spec.ingress_gw.performance_enhancement_mode.perf_mode_l3_enhanced.perf_mode_choice",
+        options: [
+          "spec.ingress_gw.performance_enhancement_mode.perf_mode_l3_enhanced.jumbo",
+          "spec.ingress_gw.performance_enhancement_mode.perf_mode_l3_enhanced.no_jumbo",
+        ],
+      },
+      {
+        choiceField: "kubernetes_upgrade_drain_enable_choice",
+        fieldPath: "spec.kubernetes_upgrade_drain.kubernetes_upgrade_drain_enable_choice",
+        options: [
+          "spec.kubernetes_upgrade_drain.disable_upgrade_drain",
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain",
+        ],
+      },
+      {
+        choiceField: "drain_max_unavailable_choice",
+        fieldPath:
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.drain_max_unavailable_choice",
+        options: [
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.drain_max_unavailable_node_count",
+        ],
+      },
+      {
+        choiceField: "vega_upgrade_mode_toggle_choice",
+        fieldPath:
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.vega_upgrade_mode_toggle_choice",
+        options: [
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.disable_vega_upgrade_mode",
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.enable_vega_upgrade_mode",
+        ],
+      },
+      {
+        choiceField: "offline_survivability_mode_choice",
+        fieldPath: "spec.offline_survivability_mode.offline_survivability_mode_choice",
+        options: [
+          "spec.offline_survivability_mode.enable_offline_survivability_mode",
+          "spec.offline_survivability_mode.no_offline_survivability_mode",
+        ],
+      },
+      {
+        choiceField: "operating_system_version_choice",
+        fieldPath: "spec.os.operating_system_version_choice",
+        options: ["spec.os.default_os_version", "spec.os.operating_system_version"],
+      },
+      {
+        choiceField: "network_options",
+        fieldPath: "spec.private_connectivity.network_options",
+        options: ["spec.private_connectivity.inside", "spec.private_connectivity.outside"],
+      },
+      {
+        choiceField: "volterra_sw_version_choice",
+        fieldPath: "spec.sw.volterra_sw_version_choice",
+        options: ["spec.sw.default_sw_version", "spec.sw.volterra_software_version"],
+      },
+      {
+        choiceField: "dc_cluster_group_choice",
+        fieldPath: "spec.voltstack_cluster.dc_cluster_group_choice",
+        options: [
+          "spec.voltstack_cluster.dc_cluster_group",
+          "spec.voltstack_cluster.no_dc_cluster_group",
+        ],
+      },
+      {
+        choiceField: "forward_proxy_choice",
+        fieldPath: "spec.voltstack_cluster.forward_proxy_choice",
+        options: [
+          "spec.voltstack_cluster.active_forward_proxy_policies",
+          "spec.voltstack_cluster.forward_proxy_allow_all",
+          "spec.voltstack_cluster.no_forward_proxy",
+        ],
+      },
+      {
+        choiceField: "global_network_choice",
+        fieldPath: "spec.voltstack_cluster.global_network_choice",
+        options: [
+          "spec.voltstack_cluster.global_network_list",
+          "spec.voltstack_cluster.no_global_network",
+        ],
+      },
+      {
+        choiceField: "k8s_cluster_choice",
+        fieldPath: "spec.voltstack_cluster.k8s_cluster_choice",
+        options: ["spec.voltstack_cluster.k8s_cluster", "spec.voltstack_cluster.no_k8s_cluster"],
+      },
+      {
+        choiceField: "network_policy_choice",
+        fieldPath: "spec.voltstack_cluster.network_policy_choice",
+        options: [
+          "spec.voltstack_cluster.active_enhanced_firewall_policies",
+          "spec.voltstack_cluster.active_network_policies",
+          "spec.voltstack_cluster.no_network_policy",
+        ],
+      },
+      {
+        choiceField: "outside_static_route_choice",
+        fieldPath: "spec.voltstack_cluster.outside_static_route_choice",
+        options: [
+          "spec.voltstack_cluster.no_outside_static_routes",
+          "spec.voltstack_cluster.outside_static_routes",
+        ],
+      },
+      {
+        choiceField: "site_mesh_group_choice",
+        fieldPath: "spec.voltstack_cluster.site_mesh_group_choice",
+        options: [
+          "spec.voltstack_cluster.sm_connection_public_ip",
+          "spec.voltstack_cluster.sm_connection_pvt_ip",
+        ],
+      },
+      {
+        choiceField: "storage_class_choice",
+        fieldPath: "spec.voltstack_cluster.storage_class_choice",
+        options: [
+          "spec.voltstack_cluster.default_storage",
+          "spec.voltstack_cluster.storage_class_list",
+        ],
+      },
+      {
+        choiceField: "connection_choice",
+        fieldPath:
+          "spec.voltstack_cluster.global_network_list.global_network_connections[].connection_choice",
+        options: [
+          "spec.voltstack_cluster.global_network_list.global_network_connections[].sli_to_global_dr",
+          "spec.voltstack_cluster.global_network_list.global_network_connections[].slo_to_global_dr",
+        ],
+      },
+      {
+        choiceField: "forward_proxy_choice",
+        fieldPath:
+          "spec.voltstack_cluster.global_network_list.global_network_connections[].forward_proxy_choice",
+        options: [],
+      },
+      {
+        choiceField: "config_mode_choice",
+        fieldPath:
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].config_mode_choice",
+        options: [
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].custom_static_route",
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].simple_static_route",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ver",
+        options: [
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv4",
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv6",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].custom_static_route.subnets[].ver",
+        options: [
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].custom_static_route.subnets[].ipv4",
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].custom_static_route.subnets[].ipv6",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.voltstack_cluster.site_local_network.choice",
+        options: [
+          "spec.voltstack_cluster.site_local_network.existing_network",
+          "spec.voltstack_cluster.site_local_network.new_network",
+          "spec.voltstack_cluster.site_local_network.new_network_autogenerate",
+        ],
+      },
+      {
+        choiceField: "routing_type",
+        fieldPath: "spec.voltstack_cluster.site_local_network.existing_network.routing_type",
+        options: [],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.voltstack_cluster.site_local_subnet.choice",
+        options: [
+          "spec.voltstack_cluster.site_local_subnet.existing_subnet",
+          "spec.voltstack_cluster.site_local_subnet.new_subnet",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_site_management_standard",
@@ -2143,7 +6379,431 @@ export const sitesTools: ParsedOperation[] = [
         resourceType: "viewsgcp-vpc-site-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "blocked_services_choice",
+        fieldPath: "spec.blocked_services_choice",
+        options: [
+          "spec.block_all_services",
+          "spec.blocked_services",
+          "spec.default_blocked_services",
+        ],
+      },
+      {
+        choiceField: "deployment",
+        fieldPath: "spec.deployment",
+        options: ["spec.cloud_credentials"],
+      },
+      {
+        choiceField: "logs_receiver_choice",
+        fieldPath: "spec.logs_receiver_choice",
+        options: ["spec.log_receiver", "spec.logs_streaming_disabled"],
+      },
+      {
+        choiceField: "private_connectivity_choice",
+        fieldPath: "spec.private_connectivity_choice",
+        options: ["spec.private_connect_disabled", "spec.private_connectivity"],
+      },
+      {
+        choiceField: "site_type",
+        fieldPath: "spec.site_type",
+        options: ["spec.ingress_egress_gw", "spec.ingress_gw", "spec.voltstack_cluster"],
+      },
+      {
+        choiceField: "blocked_services_value_type_choice",
+        fieldPath: "spec.blocked_services.blocked_sevice[].blocked_services_value_type_choice",
+        options: [
+          "spec.blocked_services.blocked_sevice[].dns",
+          "spec.blocked_services.blocked_sevice[].ssh",
+          "spec.blocked_services.blocked_sevice[].web_user_interface",
+        ],
+      },
+      {
+        choiceField: "dc_cluster_group_choice",
+        fieldPath: "spec.ingress_egress_gw.dc_cluster_group_choice",
+        options: [
+          "spec.ingress_egress_gw.dc_cluster_group_inside_vn",
+          "spec.ingress_egress_gw.dc_cluster_group_outside_vn",
+          "spec.ingress_egress_gw.no_dc_cluster_group",
+        ],
+      },
+      {
+        choiceField: "forward_proxy_choice",
+        fieldPath: "spec.ingress_egress_gw.forward_proxy_choice",
+        options: [
+          "spec.ingress_egress_gw.active_forward_proxy_policies",
+          "spec.ingress_egress_gw.forward_proxy_allow_all",
+          "spec.ingress_egress_gw.no_forward_proxy",
+        ],
+      },
+      {
+        choiceField: "global_network_choice",
+        fieldPath: "spec.ingress_egress_gw.global_network_choice",
+        options: [
+          "spec.ingress_egress_gw.global_network_list",
+          "spec.ingress_egress_gw.no_global_network",
+        ],
+      },
+      {
+        choiceField: "inside_static_route_choice",
+        fieldPath: "spec.ingress_egress_gw.inside_static_route_choice",
+        options: [
+          "spec.ingress_egress_gw.inside_static_routes",
+          "spec.ingress_egress_gw.no_inside_static_routes",
+        ],
+      },
+      {
+        choiceField: "network_policy_choice",
+        fieldPath: "spec.ingress_egress_gw.network_policy_choice",
+        options: [
+          "spec.ingress_egress_gw.active_enhanced_firewall_policies",
+          "spec.ingress_egress_gw.active_network_policies",
+          "spec.ingress_egress_gw.no_network_policy",
+        ],
+      },
+      {
+        choiceField: "outside_static_route_choice",
+        fieldPath: "spec.ingress_egress_gw.outside_static_route_choice",
+        options: [
+          "spec.ingress_egress_gw.no_outside_static_routes",
+          "spec.ingress_egress_gw.outside_static_routes",
+        ],
+      },
+      {
+        choiceField: "site_mesh_group_choice",
+        fieldPath: "spec.ingress_egress_gw.site_mesh_group_choice",
+        options: [
+          "spec.ingress_egress_gw.sm_connection_public_ip",
+          "spec.ingress_egress_gw.sm_connection_pvt_ip",
+        ],
+      },
+      {
+        choiceField: "connection_choice",
+        fieldPath:
+          "spec.ingress_egress_gw.global_network_list.global_network_connections[].connection_choice",
+        options: [
+          "spec.ingress_egress_gw.global_network_list.global_network_connections[].sli_to_global_dr",
+          "spec.ingress_egress_gw.global_network_list.global_network_connections[].slo_to_global_dr",
+        ],
+      },
+      {
+        choiceField: "forward_proxy_choice",
+        fieldPath:
+          "spec.ingress_egress_gw.global_network_list.global_network_connections[].forward_proxy_choice",
+        options: [],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.ingress_egress_gw.inside_network.choice",
+        options: [
+          "spec.ingress_egress_gw.inside_network.existing_network",
+          "spec.ingress_egress_gw.inside_network.new_network",
+          "spec.ingress_egress_gw.inside_network.new_network_autogenerate",
+        ],
+      },
+      {
+        choiceField: "routing_type",
+        fieldPath: "spec.ingress_egress_gw.inside_network.existing_network.routing_type",
+        options: [],
+      },
+      {
+        choiceField: "config_mode_choice",
+        fieldPath:
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].config_mode_choice",
+        options: [
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].custom_static_route",
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].simple_static_route",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ver",
+        options: [
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv4",
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv6",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].custom_static_route.subnets[].ver",
+        options: [
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].custom_static_route.subnets[].ipv4",
+          "spec.ingress_egress_gw.inside_static_routes.static_route_list[].custom_static_route.subnets[].ipv6",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.ingress_egress_gw.inside_subnet.choice",
+        options: [
+          "spec.ingress_egress_gw.inside_subnet.existing_subnet",
+          "spec.ingress_egress_gw.inside_subnet.new_subnet",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.ingress_egress_gw.outside_network.choice",
+        options: [
+          "spec.ingress_egress_gw.outside_network.existing_network",
+          "spec.ingress_egress_gw.outside_network.new_network",
+          "spec.ingress_egress_gw.outside_network.new_network_autogenerate",
+        ],
+      },
+      {
+        choiceField: "routing_type",
+        fieldPath: "spec.ingress_egress_gw.outside_network.existing_network.routing_type",
+        options: [],
+      },
+      {
+        choiceField: "config_mode_choice",
+        fieldPath:
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].config_mode_choice",
+        options: [
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].custom_static_route",
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].simple_static_route",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ver",
+        options: [
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv4",
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv6",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].custom_static_route.subnets[].ver",
+        options: [
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].custom_static_route.subnets[].ipv4",
+          "spec.ingress_egress_gw.outside_static_routes.static_route_list[].custom_static_route.subnets[].ipv6",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.ingress_egress_gw.outside_subnet.choice",
+        options: [
+          "spec.ingress_egress_gw.outside_subnet.existing_subnet",
+          "spec.ingress_egress_gw.outside_subnet.new_subnet",
+        ],
+      },
+      {
+        choiceField: "perf_mode_choice",
+        fieldPath: "spec.ingress_egress_gw.performance_enhancement_mode.perf_mode_choice",
+        options: [
+          "spec.ingress_egress_gw.performance_enhancement_mode.perf_mode_l3_enhanced",
+          "spec.ingress_egress_gw.performance_enhancement_mode.perf_mode_l7_enhanced",
+        ],
+      },
+      {
+        choiceField: "perf_mode_choice",
+        fieldPath:
+          "spec.ingress_egress_gw.performance_enhancement_mode.perf_mode_l3_enhanced.perf_mode_choice",
+        options: [
+          "spec.ingress_egress_gw.performance_enhancement_mode.perf_mode_l3_enhanced.jumbo",
+          "spec.ingress_egress_gw.performance_enhancement_mode.perf_mode_l3_enhanced.no_jumbo",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.ingress_gw.local_network.choice",
+        options: [
+          "spec.ingress_gw.local_network.existing_network",
+          "spec.ingress_gw.local_network.new_network",
+          "spec.ingress_gw.local_network.new_network_autogenerate",
+        ],
+      },
+      {
+        choiceField: "routing_type",
+        fieldPath: "spec.ingress_gw.local_network.existing_network.routing_type",
+        options: [],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.ingress_gw.local_subnet.choice",
+        options: [
+          "spec.ingress_gw.local_subnet.existing_subnet",
+          "spec.ingress_gw.local_subnet.new_subnet",
+        ],
+      },
+      {
+        choiceField: "perf_mode_choice",
+        fieldPath: "spec.ingress_gw.performance_enhancement_mode.perf_mode_choice",
+        options: [
+          "spec.ingress_gw.performance_enhancement_mode.perf_mode_l3_enhanced",
+          "spec.ingress_gw.performance_enhancement_mode.perf_mode_l7_enhanced",
+        ],
+      },
+      {
+        choiceField: "perf_mode_choice",
+        fieldPath:
+          "spec.ingress_gw.performance_enhancement_mode.perf_mode_l3_enhanced.perf_mode_choice",
+        options: [
+          "spec.ingress_gw.performance_enhancement_mode.perf_mode_l3_enhanced.jumbo",
+          "spec.ingress_gw.performance_enhancement_mode.perf_mode_l3_enhanced.no_jumbo",
+        ],
+      },
+      {
+        choiceField: "kubernetes_upgrade_drain_enable_choice",
+        fieldPath: "spec.kubernetes_upgrade_drain.kubernetes_upgrade_drain_enable_choice",
+        options: [
+          "spec.kubernetes_upgrade_drain.disable_upgrade_drain",
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain",
+        ],
+      },
+      {
+        choiceField: "drain_max_unavailable_choice",
+        fieldPath:
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.drain_max_unavailable_choice",
+        options: [
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.drain_max_unavailable_node_count",
+        ],
+      },
+      {
+        choiceField: "vega_upgrade_mode_toggle_choice",
+        fieldPath:
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.vega_upgrade_mode_toggle_choice",
+        options: [
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.disable_vega_upgrade_mode",
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.enable_vega_upgrade_mode",
+        ],
+      },
+      {
+        choiceField: "offline_survivability_mode_choice",
+        fieldPath: "spec.offline_survivability_mode.offline_survivability_mode_choice",
+        options: [
+          "spec.offline_survivability_mode.enable_offline_survivability_mode",
+          "spec.offline_survivability_mode.no_offline_survivability_mode",
+        ],
+      },
+      {
+        choiceField: "network_options",
+        fieldPath: "spec.private_connectivity.network_options",
+        options: ["spec.private_connectivity.inside", "spec.private_connectivity.outside"],
+      },
+      {
+        choiceField: "dc_cluster_group_choice",
+        fieldPath: "spec.voltstack_cluster.dc_cluster_group_choice",
+        options: [
+          "spec.voltstack_cluster.dc_cluster_group",
+          "spec.voltstack_cluster.no_dc_cluster_group",
+        ],
+      },
+      {
+        choiceField: "forward_proxy_choice",
+        fieldPath: "spec.voltstack_cluster.forward_proxy_choice",
+        options: [
+          "spec.voltstack_cluster.active_forward_proxy_policies",
+          "spec.voltstack_cluster.forward_proxy_allow_all",
+          "spec.voltstack_cluster.no_forward_proxy",
+        ],
+      },
+      {
+        choiceField: "global_network_choice",
+        fieldPath: "spec.voltstack_cluster.global_network_choice",
+        options: [
+          "spec.voltstack_cluster.global_network_list",
+          "spec.voltstack_cluster.no_global_network",
+        ],
+      },
+      {
+        choiceField: "k8s_cluster_choice",
+        fieldPath: "spec.voltstack_cluster.k8s_cluster_choice",
+        options: ["spec.voltstack_cluster.k8s_cluster", "spec.voltstack_cluster.no_k8s_cluster"],
+      },
+      {
+        choiceField: "network_policy_choice",
+        fieldPath: "spec.voltstack_cluster.network_policy_choice",
+        options: [
+          "spec.voltstack_cluster.active_enhanced_firewall_policies",
+          "spec.voltstack_cluster.active_network_policies",
+          "spec.voltstack_cluster.no_network_policy",
+        ],
+      },
+      {
+        choiceField: "outside_static_route_choice",
+        fieldPath: "spec.voltstack_cluster.outside_static_route_choice",
+        options: [
+          "spec.voltstack_cluster.no_outside_static_routes",
+          "spec.voltstack_cluster.outside_static_routes",
+        ],
+      },
+      {
+        choiceField: "site_mesh_group_choice",
+        fieldPath: "spec.voltstack_cluster.site_mesh_group_choice",
+        options: [
+          "spec.voltstack_cluster.sm_connection_public_ip",
+          "spec.voltstack_cluster.sm_connection_pvt_ip",
+        ],
+      },
+      {
+        choiceField: "connection_choice",
+        fieldPath:
+          "spec.voltstack_cluster.global_network_list.global_network_connections[].connection_choice",
+        options: [
+          "spec.voltstack_cluster.global_network_list.global_network_connections[].sli_to_global_dr",
+          "spec.voltstack_cluster.global_network_list.global_network_connections[].slo_to_global_dr",
+        ],
+      },
+      {
+        choiceField: "forward_proxy_choice",
+        fieldPath:
+          "spec.voltstack_cluster.global_network_list.global_network_connections[].forward_proxy_choice",
+        options: [],
+      },
+      {
+        choiceField: "config_mode_choice",
+        fieldPath:
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].config_mode_choice",
+        options: [
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].custom_static_route",
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].simple_static_route",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ver",
+        options: [
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv4",
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv6",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath:
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].custom_static_route.subnets[].ver",
+        options: [
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].custom_static_route.subnets[].ipv4",
+          "spec.voltstack_cluster.outside_static_routes.static_route_list[].custom_static_route.subnets[].ipv6",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.voltstack_cluster.site_local_network.choice",
+        options: [
+          "spec.voltstack_cluster.site_local_network.existing_network",
+          "spec.voltstack_cluster.site_local_network.new_network",
+          "spec.voltstack_cluster.site_local_network.new_network_autogenerate",
+        ],
+      },
+      {
+        choiceField: "routing_type",
+        fieldPath: "spec.voltstack_cluster.site_local_network.existing_network.routing_type",
+        options: [],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.voltstack_cluster.site_local_subnet.choice",
+        options: [
+          "spec.voltstack_cluster.site_local_subnet.existing_subnet",
+          "spec.voltstack_cluster.site_local_subnet.new_subnet",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_site_management_standard",
@@ -2507,7 +7167,97 @@ export const sitesTools: ParsedOperation[] = [
         resourceType: "k8s-cluster-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "apps_choice",
+        fieldPath: "spec.apps_choice",
+        options: ["spec.cluster_wide_app_list", "spec.no_cluster_wide_apps"],
+      },
+      {
+        choiceField: "cluster_role_bindings_choice",
+        fieldPath: "spec.cluster_role_bindings_choice",
+        options: [
+          "spec.use_custom_cluster_role_bindings",
+          "spec.use_default_cluster_role_bindings",
+        ],
+      },
+      {
+        choiceField: "cluster_role_choice",
+        fieldPath: "spec.cluster_role_choice",
+        options: ["spec.use_custom_cluster_role_list", "spec.use_default_cluster_roles"],
+      },
+      {
+        choiceField: "cluster_scoped_resource_access_choice",
+        fieldPath: "spec.cluster_scoped_resource_access_choice",
+        options: ["spec.cluster_scoped_access_deny", "spec.cluster_scoped_access_permit"],
+      },
+      {
+        choiceField: "global_access_choice",
+        fieldPath: "spec.global_access_choice",
+        options: ["spec.global_access_enable", "spec.no_global_access"],
+      },
+      {
+        choiceField: "insecure_registries_choice",
+        fieldPath: "spec.insecure_registries_choice",
+        options: ["spec.insecure_registry_list", "spec.no_insecure_registries"],
+      },
+      {
+        choiceField: "local_access_choice",
+        fieldPath: "spec.local_access_choice",
+        options: ["spec.local_access_config", "spec.no_local_access"],
+      },
+      {
+        choiceField: "pod_security_admission_choice",
+        fieldPath: "spec.pod_security_admission_choice",
+        options: [
+          "spec.use_custom_pod_security_admission",
+          "spec.use_default_pod_security_admission",
+        ],
+      },
+      {
+        choiceField: "pod_security_policy_choice",
+        fieldPath: "spec.pod_security_policy_choice",
+        options: ["spec.use_custom_psp_list", "spec.use_default_psp"],
+      },
+      {
+        choiceField: "vk8s_namespace_access_choice",
+        fieldPath: "spec.vk8s_namespace_access_choice",
+        options: ["spec.vk8s_namespace_access_deny", "spec.vk8s_namespace_access_permit"],
+      },
+      {
+        choiceField: "app_choice",
+        fieldPath: "spec.cluster_wide_app_list.cluster_wide_apps[].app_choice",
+        options: [
+          "spec.cluster_wide_app_list.cluster_wide_apps[].argo_cd",
+          "spec.cluster_wide_app_list.cluster_wide_apps[].dashboard",
+          "spec.cluster_wide_app_list.cluster_wide_apps[].metrics_server",
+          "spec.cluster_wide_app_list.cluster_wide_apps[].prometheus",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.cluster_wide_app_list.cluster_wide_apps[].argo_cd.local_domain.port_choice",
+        options: [
+          "spec.cluster_wide_app_list.cluster_wide_apps[].argo_cd.local_domain.default_port",
+          "spec.cluster_wide_app_list.cluster_wide_apps[].argo_cd.local_domain.port",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.cluster_wide_app_list.cluster_wide_apps[].argo_cd.local_domain.password.secret_info_oneof",
+        options: [
+          "spec.cluster_wide_app_list.cluster_wide_apps[].argo_cd.local_domain.password.blindfold_secret_info",
+          "spec.cluster_wide_app_list.cluster_wide_apps[].argo_cd.local_domain.password.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.local_access_config.port_choice",
+        options: ["spec.local_access_config.default_port", "spec.local_access_config.port"],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_site_management_standard",
@@ -2832,7 +7582,97 @@ export const sitesTools: ParsedOperation[] = [
         resourceType: "k8s-cluster-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "apps_choice",
+        fieldPath: "spec.apps_choice",
+        options: ["spec.cluster_wide_app_list", "spec.no_cluster_wide_apps"],
+      },
+      {
+        choiceField: "cluster_role_bindings_choice",
+        fieldPath: "spec.cluster_role_bindings_choice",
+        options: [
+          "spec.use_custom_cluster_role_bindings",
+          "spec.use_default_cluster_role_bindings",
+        ],
+      },
+      {
+        choiceField: "cluster_role_choice",
+        fieldPath: "spec.cluster_role_choice",
+        options: ["spec.use_custom_cluster_role_list", "spec.use_default_cluster_roles"],
+      },
+      {
+        choiceField: "cluster_scoped_resource_access_choice",
+        fieldPath: "spec.cluster_scoped_resource_access_choice",
+        options: ["spec.cluster_scoped_access_deny", "spec.cluster_scoped_access_permit"],
+      },
+      {
+        choiceField: "global_access_choice",
+        fieldPath: "spec.global_access_choice",
+        options: ["spec.global_access_enable", "spec.no_global_access"],
+      },
+      {
+        choiceField: "insecure_registries_choice",
+        fieldPath: "spec.insecure_registries_choice",
+        options: ["spec.insecure_registry_list", "spec.no_insecure_registries"],
+      },
+      {
+        choiceField: "local_access_choice",
+        fieldPath: "spec.local_access_choice",
+        options: ["spec.local_access_config", "spec.no_local_access"],
+      },
+      {
+        choiceField: "pod_security_admission_choice",
+        fieldPath: "spec.pod_security_admission_choice",
+        options: [
+          "spec.use_custom_pod_security_admission",
+          "spec.use_default_pod_security_admission",
+        ],
+      },
+      {
+        choiceField: "pod_security_policy_choice",
+        fieldPath: "spec.pod_security_policy_choice",
+        options: ["spec.use_custom_psp_list", "spec.use_default_psp"],
+      },
+      {
+        choiceField: "vk8s_namespace_access_choice",
+        fieldPath: "spec.vk8s_namespace_access_choice",
+        options: ["spec.vk8s_namespace_access_deny", "spec.vk8s_namespace_access_permit"],
+      },
+      {
+        choiceField: "app_choice",
+        fieldPath: "spec.cluster_wide_app_list.cluster_wide_apps[].app_choice",
+        options: [
+          "spec.cluster_wide_app_list.cluster_wide_apps[].argo_cd",
+          "spec.cluster_wide_app_list.cluster_wide_apps[].dashboard",
+          "spec.cluster_wide_app_list.cluster_wide_apps[].metrics_server",
+          "spec.cluster_wide_app_list.cluster_wide_apps[].prometheus",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.cluster_wide_app_list.cluster_wide_apps[].argo_cd.local_domain.port_choice",
+        options: [
+          "spec.cluster_wide_app_list.cluster_wide_apps[].argo_cd.local_domain.default_port",
+          "spec.cluster_wide_app_list.cluster_wide_apps[].argo_cd.local_domain.port",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.cluster_wide_app_list.cluster_wide_apps[].argo_cd.local_domain.password.secret_info_oneof",
+        options: [
+          "spec.cluster_wide_app_list.cluster_wide_apps[].argo_cd.local_domain.password.blindfold_secret_info",
+          "spec.cluster_wide_app_list.cluster_wide_apps[].argo_cd.local_domain.password.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.local_access_config.port_choice",
+        options: ["spec.local_access_config.default_port", "spec.local_access_config.port"],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_site_management_standard",
@@ -3999,7 +8839,496 @@ export const sitesTools: ParsedOperation[] = [
         resourceType: "viewssecuremesh-site-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "blocked_services_choice",
+        fieldPath: "spec.blocked_services_choice",
+        options: ["spec.blocked_services", "spec.default_blocked_services"],
+      },
+      {
+        choiceField: "bond_choice",
+        fieldPath: "spec.bond_choice",
+        options: ["spec.bond_device_list", "spec.no_bond_devices"],
+      },
+      {
+        choiceField: "logs_receiver_choice",
+        fieldPath: "spec.logs_receiver_choice",
+        options: ["spec.log_receiver", "spec.logs_streaming_disabled"],
+      },
+      {
+        choiceField: "network_cfg_choice",
+        fieldPath: "spec.network_cfg_choice",
+        options: ["spec.custom_network_config", "spec.default_network_config"],
+      },
+      {
+        choiceField: "blocked_services_value_type_choice",
+        fieldPath: "spec.blocked_services.blocked_sevice[].blocked_services_value_type_choice",
+        options: [
+          "spec.blocked_services.blocked_sevice[].dns",
+          "spec.blocked_services.blocked_sevice[].ssh",
+          "spec.blocked_services.blocked_sevice[].web_user_interface",
+        ],
+      },
+      {
+        choiceField: "lacp_choice",
+        fieldPath: "spec.bond_device_list.bond_devices[].lacp_choice",
+        options: [
+          "spec.bond_device_list.bond_devices[].active_backup",
+          "spec.bond_device_list.bond_devices[].lacp",
+        ],
+      },
+      {
+        choiceField: "forward_proxy_choice",
+        fieldPath: "spec.custom_network_config.forward_proxy_choice",
+        options: [
+          "spec.custom_network_config.active_forward_proxy_policies",
+          "spec.custom_network_config.forward_proxy_allow_all",
+          "spec.custom_network_config.no_forward_proxy",
+        ],
+      },
+      {
+        choiceField: "global_network_choice",
+        fieldPath: "spec.custom_network_config.global_network_choice",
+        options: [
+          "spec.custom_network_config.global_network_list",
+          "spec.custom_network_config.no_global_network",
+        ],
+      },
+      {
+        choiceField: "interface_choice",
+        fieldPath: "spec.custom_network_config.interface_choice",
+        options: [
+          "spec.custom_network_config.default_interface_config",
+          "spec.custom_network_config.interface_list",
+        ],
+      },
+      {
+        choiceField: "network_policy_choice",
+        fieldPath: "spec.custom_network_config.network_policy_choice",
+        options: [
+          "spec.custom_network_config.active_enhanced_firewall_policies",
+          "spec.custom_network_config.active_network_policies",
+          "spec.custom_network_config.no_network_policy",
+        ],
+      },
+      {
+        choiceField: "site_mesh_group_choice",
+        fieldPath: "spec.custom_network_config.site_mesh_group_choice",
+        options: [
+          "spec.custom_network_config.sm_connection_public_ip",
+          "spec.custom_network_config.sm_connection_pvt_ip",
+        ],
+      },
+      {
+        choiceField: "sli_choice",
+        fieldPath: "spec.custom_network_config.sli_choice",
+        options: [
+          "spec.custom_network_config.default_sli_config",
+          "spec.custom_network_config.sli_config",
+        ],
+      },
+      {
+        choiceField: "slo_choice",
+        fieldPath: "spec.custom_network_config.slo_choice",
+        options: [
+          "spec.custom_network_config.default_config",
+          "spec.custom_network_config.slo_config",
+        ],
+      },
+      {
+        choiceField: "connection_choice",
+        fieldPath:
+          "spec.custom_network_config.global_network_list.global_network_connections[].connection_choice",
+        options: [
+          "spec.custom_network_config.global_network_list.global_network_connections[].sli_to_global_dr",
+          "spec.custom_network_config.global_network_list.global_network_connections[].slo_to_global_dr",
+        ],
+      },
+      {
+        choiceField: "forward_proxy_choice",
+        fieldPath:
+          "spec.custom_network_config.global_network_list.global_network_connections[].forward_proxy_choice",
+        options: [],
+      },
+      {
+        choiceField: "dc_cluster_group_connectivity_interface_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].dc_cluster_group_connectivity_interface_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].dc_cluster_group_connectivity_interface_disabled",
+          "spec.custom_network_config.interface_list.interfaces[].dc_cluster_group_connectivity_interface_enabled",
+        ],
+      },
+      {
+        choiceField: "interface_choice",
+        fieldPath: "spec.custom_network_config.interface_list.interfaces[].interface_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_interface",
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_management_interface",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface",
+        ],
+      },
+      {
+        choiceField: "monitoring_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_interface.monitoring_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_interface.monitor",
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_interface.monitor_disabled",
+        ],
+      },
+      {
+        choiceField: "node_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_interface.node_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_interface.cluster",
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_interface.node",
+        ],
+      },
+      {
+        choiceField: "primary_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_interface.primary_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_interface.is_primary",
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_interface.not_primary",
+        ],
+      },
+      {
+        choiceField: "node_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_management_interface.node_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_management_interface.cluster",
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_management_interface.node",
+        ],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.address_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_client",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.static_ip",
+        ],
+      },
+      {
+        choiceField: "ipv6_address_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_address_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.no_ipv6_address",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.static_ipv6_address",
+        ],
+      },
+      {
+        choiceField: "monitoring_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.monitoring_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.monitor",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.monitor_disabled",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.network_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.segment_network",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.site_local_inside_network",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.site_local_network",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.storage_network",
+        ],
+      },
+      {
+        choiceField: "node_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.node_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.cluster",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.node",
+        ],
+      },
+      {
+        choiceField: "primary_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.primary_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.is_primary",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.not_primary",
+        ],
+      },
+      {
+        choiceField: "vlan_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.vlan_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.untagged",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.vlan_id",
+        ],
+      },
+      {
+        choiceField: "interfaces_addressing_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.interfaces_addressing_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.automatic_from_end",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.automatic_from_start",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.interface_ip_map",
+        ],
+      },
+      {
+        choiceField: "dns_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.dhcp_networks[].dns_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.dhcp_networks[].dns_address",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.dhcp_networks[].same_as_dgw",
+        ],
+      },
+      {
+        choiceField: "gateway_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.dhcp_networks[].gateway_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.dhcp_networks[].dgw_address",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.dhcp_networks[].first_address",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.dhcp_networks[].last_address",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.dhcp_networks[].network_prefix_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.dhcp_networks[].network_prefix",
+        ],
+      },
+      {
+        choiceField: "autoconfig_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.autoconfig_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.host",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router",
+        ],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.address_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.network_prefix",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.stateful",
+        ],
+      },
+      {
+        choiceField: "dns_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.dns_config.dns_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.dns_config.configured_list",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.dns_config.local_dns",
+        ],
+      },
+      {
+        choiceField: "local_dns_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.dns_config.local_dns.local_dns_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.dns_config.local_dns.configured_address",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.dns_config.local_dns.first_address",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.dns_config.local_dns.last_address",
+        ],
+      },
+      {
+        choiceField: "interfaces_addressing_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.stateful.interfaces_addressing_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.stateful.automatic_from_end",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.stateful.automatic_from_start",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.stateful.interface_ip_map",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.static_ip.network_prefix_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.static_ip.cluster_static_ip",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.static_ip.node_static_ip",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.static_ipv6_address.network_prefix_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.static_ipv6_address.cluster_static_ip",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.static_ipv6_address.node_static_ip",
+        ],
+      },
+      {
+        choiceField: "dc_cluster_group_choice",
+        fieldPath: "spec.custom_network_config.sli_config.dc_cluster_group_choice",
+        options: [
+          "spec.custom_network_config.sli_config.dc_cluster_group",
+          "spec.custom_network_config.sli_config.no_dc_cluster_group",
+        ],
+      },
+      {
+        choiceField: "static_route_choice",
+        fieldPath: "spec.custom_network_config.sli_config.static_route_choice",
+        options: [
+          "spec.custom_network_config.sli_config.no_static_routes",
+          "spec.custom_network_config.sli_config.static_routes",
+        ],
+      },
+      {
+        choiceField: "static_v6_route_choice",
+        fieldPath: "spec.custom_network_config.sli_config.static_v6_route_choice",
+        options: [
+          "spec.custom_network_config.sli_config.no_v6_static_routes",
+          "spec.custom_network_config.sli_config.static_v6_routes",
+        ],
+      },
+      {
+        choiceField: "next_hop_choice",
+        fieldPath:
+          "spec.custom_network_config.sli_config.static_routes.static_routes[].next_hop_choice",
+        options: [
+          "spec.custom_network_config.sli_config.static_routes.static_routes[].default_gateway",
+          "spec.custom_network_config.sli_config.static_routes.static_routes[].ip_address",
+          "spec.custom_network_config.sli_config.static_routes.static_routes[].node_interface",
+        ],
+      },
+      {
+        choiceField: "next_hop_choice",
+        fieldPath:
+          "spec.custom_network_config.sli_config.static_v6_routes.static_routes[].next_hop_choice",
+        options: [
+          "spec.custom_network_config.sli_config.static_v6_routes.static_routes[].default_gateway",
+          "spec.custom_network_config.sli_config.static_v6_routes.static_routes[].ip_address",
+          "spec.custom_network_config.sli_config.static_v6_routes.static_routes[].node_interface",
+        ],
+      },
+      {
+        choiceField: "dc_cluster_group_choice",
+        fieldPath: "spec.custom_network_config.slo_config.dc_cluster_group_choice",
+        options: [
+          "spec.custom_network_config.slo_config.dc_cluster_group",
+          "spec.custom_network_config.slo_config.no_dc_cluster_group",
+        ],
+      },
+      {
+        choiceField: "static_route_choice",
+        fieldPath: "spec.custom_network_config.slo_config.static_route_choice",
+        options: [
+          "spec.custom_network_config.slo_config.no_static_routes",
+          "spec.custom_network_config.slo_config.static_routes",
+        ],
+      },
+      {
+        choiceField: "static_v6_route_choice",
+        fieldPath: "spec.custom_network_config.slo_config.static_v6_route_choice",
+        options: [
+          "spec.custom_network_config.slo_config.no_v6_static_routes",
+          "spec.custom_network_config.slo_config.static_v6_routes",
+        ],
+      },
+      {
+        choiceField: "next_hop_choice",
+        fieldPath:
+          "spec.custom_network_config.slo_config.static_routes.static_routes[].next_hop_choice",
+        options: [
+          "spec.custom_network_config.slo_config.static_routes.static_routes[].default_gateway",
+          "spec.custom_network_config.slo_config.static_routes.static_routes[].ip_address",
+          "spec.custom_network_config.slo_config.static_routes.static_routes[].node_interface",
+        ],
+      },
+      {
+        choiceField: "next_hop_choice",
+        fieldPath:
+          "spec.custom_network_config.slo_config.static_v6_routes.static_routes[].next_hop_choice",
+        options: [
+          "spec.custom_network_config.slo_config.static_v6_routes.static_routes[].default_gateway",
+          "spec.custom_network_config.slo_config.static_v6_routes.static_routes[].ip_address",
+          "spec.custom_network_config.slo_config.static_v6_routes.static_routes[].node_interface",
+        ],
+      },
+      {
+        choiceField: "kubernetes_upgrade_drain_enable_choice",
+        fieldPath: "spec.kubernetes_upgrade_drain.kubernetes_upgrade_drain_enable_choice",
+        options: [
+          "spec.kubernetes_upgrade_drain.disable_upgrade_drain",
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain",
+        ],
+      },
+      {
+        choiceField: "drain_max_unavailable_choice",
+        fieldPath:
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.drain_max_unavailable_choice",
+        options: [
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.drain_max_unavailable_node_count",
+        ],
+      },
+      {
+        choiceField: "vega_upgrade_mode_toggle_choice",
+        fieldPath:
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.vega_upgrade_mode_toggle_choice",
+        options: [
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.disable_vega_upgrade_mode",
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.enable_vega_upgrade_mode",
+        ],
+      },
+      {
+        choiceField: "offline_survivability_mode_choice",
+        fieldPath: "spec.offline_survivability_mode.offline_survivability_mode_choice",
+        options: [
+          "spec.offline_survivability_mode.enable_offline_survivability_mode",
+          "spec.offline_survivability_mode.no_offline_survivability_mode",
+        ],
+      },
+      {
+        choiceField: "operating_system_version_choice",
+        fieldPath: "spec.os.operating_system_version_choice",
+        options: ["spec.os.default_os_version", "spec.os.operating_system_version"],
+      },
+      {
+        choiceField: "perf_mode_choice",
+        fieldPath: "spec.performance_enhancement_mode.perf_mode_choice",
+        options: [
+          "spec.performance_enhancement_mode.perf_mode_l3_enhanced",
+          "spec.performance_enhancement_mode.perf_mode_l7_enhanced",
+        ],
+      },
+      {
+        choiceField: "perf_mode_choice",
+        fieldPath: "spec.performance_enhancement_mode.perf_mode_l3_enhanced.perf_mode_choice",
+        options: [
+          "spec.performance_enhancement_mode.perf_mode_l3_enhanced.jumbo",
+          "spec.performance_enhancement_mode.perf_mode_l3_enhanced.no_jumbo",
+        ],
+      },
+      {
+        choiceField: "volterra_sw_version_choice",
+        fieldPath: "spec.sw.volterra_sw_version_choice",
+        options: ["spec.sw.default_sw_version", "spec.sw.volterra_software_version"],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_site_management_standard",
@@ -4322,7 +9651,496 @@ export const sitesTools: ParsedOperation[] = [
         resourceType: "viewssecuremesh-site-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "blocked_services_choice",
+        fieldPath: "spec.blocked_services_choice",
+        options: ["spec.blocked_services", "spec.default_blocked_services"],
+      },
+      {
+        choiceField: "bond_choice",
+        fieldPath: "spec.bond_choice",
+        options: ["spec.bond_device_list", "spec.no_bond_devices"],
+      },
+      {
+        choiceField: "logs_receiver_choice",
+        fieldPath: "spec.logs_receiver_choice",
+        options: ["spec.log_receiver", "spec.logs_streaming_disabled"],
+      },
+      {
+        choiceField: "network_cfg_choice",
+        fieldPath: "spec.network_cfg_choice",
+        options: ["spec.custom_network_config", "spec.default_network_config"],
+      },
+      {
+        choiceField: "blocked_services_value_type_choice",
+        fieldPath: "spec.blocked_services.blocked_sevice[].blocked_services_value_type_choice",
+        options: [
+          "spec.blocked_services.blocked_sevice[].dns",
+          "spec.blocked_services.blocked_sevice[].ssh",
+          "spec.blocked_services.blocked_sevice[].web_user_interface",
+        ],
+      },
+      {
+        choiceField: "lacp_choice",
+        fieldPath: "spec.bond_device_list.bond_devices[].lacp_choice",
+        options: [
+          "spec.bond_device_list.bond_devices[].active_backup",
+          "spec.bond_device_list.bond_devices[].lacp",
+        ],
+      },
+      {
+        choiceField: "forward_proxy_choice",
+        fieldPath: "spec.custom_network_config.forward_proxy_choice",
+        options: [
+          "spec.custom_network_config.active_forward_proxy_policies",
+          "spec.custom_network_config.forward_proxy_allow_all",
+          "spec.custom_network_config.no_forward_proxy",
+        ],
+      },
+      {
+        choiceField: "global_network_choice",
+        fieldPath: "spec.custom_network_config.global_network_choice",
+        options: [
+          "spec.custom_network_config.global_network_list",
+          "spec.custom_network_config.no_global_network",
+        ],
+      },
+      {
+        choiceField: "interface_choice",
+        fieldPath: "spec.custom_network_config.interface_choice",
+        options: [
+          "spec.custom_network_config.default_interface_config",
+          "spec.custom_network_config.interface_list",
+        ],
+      },
+      {
+        choiceField: "network_policy_choice",
+        fieldPath: "spec.custom_network_config.network_policy_choice",
+        options: [
+          "spec.custom_network_config.active_enhanced_firewall_policies",
+          "spec.custom_network_config.active_network_policies",
+          "spec.custom_network_config.no_network_policy",
+        ],
+      },
+      {
+        choiceField: "site_mesh_group_choice",
+        fieldPath: "spec.custom_network_config.site_mesh_group_choice",
+        options: [
+          "spec.custom_network_config.sm_connection_public_ip",
+          "spec.custom_network_config.sm_connection_pvt_ip",
+        ],
+      },
+      {
+        choiceField: "sli_choice",
+        fieldPath: "spec.custom_network_config.sli_choice",
+        options: [
+          "spec.custom_network_config.default_sli_config",
+          "spec.custom_network_config.sli_config",
+        ],
+      },
+      {
+        choiceField: "slo_choice",
+        fieldPath: "spec.custom_network_config.slo_choice",
+        options: [
+          "spec.custom_network_config.default_config",
+          "spec.custom_network_config.slo_config",
+        ],
+      },
+      {
+        choiceField: "connection_choice",
+        fieldPath:
+          "spec.custom_network_config.global_network_list.global_network_connections[].connection_choice",
+        options: [
+          "spec.custom_network_config.global_network_list.global_network_connections[].sli_to_global_dr",
+          "spec.custom_network_config.global_network_list.global_network_connections[].slo_to_global_dr",
+        ],
+      },
+      {
+        choiceField: "forward_proxy_choice",
+        fieldPath:
+          "spec.custom_network_config.global_network_list.global_network_connections[].forward_proxy_choice",
+        options: [],
+      },
+      {
+        choiceField: "dc_cluster_group_connectivity_interface_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].dc_cluster_group_connectivity_interface_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].dc_cluster_group_connectivity_interface_disabled",
+          "spec.custom_network_config.interface_list.interfaces[].dc_cluster_group_connectivity_interface_enabled",
+        ],
+      },
+      {
+        choiceField: "interface_choice",
+        fieldPath: "spec.custom_network_config.interface_list.interfaces[].interface_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_interface",
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_management_interface",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface",
+        ],
+      },
+      {
+        choiceField: "monitoring_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_interface.monitoring_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_interface.monitor",
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_interface.monitor_disabled",
+        ],
+      },
+      {
+        choiceField: "node_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_interface.node_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_interface.cluster",
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_interface.node",
+        ],
+      },
+      {
+        choiceField: "primary_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_interface.primary_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_interface.is_primary",
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_interface.not_primary",
+        ],
+      },
+      {
+        choiceField: "node_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_management_interface.node_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_management_interface.cluster",
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_management_interface.node",
+        ],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.address_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_client",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.static_ip",
+        ],
+      },
+      {
+        choiceField: "ipv6_address_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_address_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.no_ipv6_address",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.static_ipv6_address",
+        ],
+      },
+      {
+        choiceField: "monitoring_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.monitoring_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.monitor",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.monitor_disabled",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.network_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.segment_network",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.site_local_inside_network",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.site_local_network",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.storage_network",
+        ],
+      },
+      {
+        choiceField: "node_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.node_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.cluster",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.node",
+        ],
+      },
+      {
+        choiceField: "primary_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.primary_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.is_primary",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.not_primary",
+        ],
+      },
+      {
+        choiceField: "vlan_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.vlan_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.untagged",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.vlan_id",
+        ],
+      },
+      {
+        choiceField: "interfaces_addressing_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.interfaces_addressing_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.automatic_from_end",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.automatic_from_start",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.interface_ip_map",
+        ],
+      },
+      {
+        choiceField: "dns_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.dhcp_networks[].dns_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.dhcp_networks[].dns_address",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.dhcp_networks[].same_as_dgw",
+        ],
+      },
+      {
+        choiceField: "gateway_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.dhcp_networks[].gateway_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.dhcp_networks[].dgw_address",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.dhcp_networks[].first_address",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.dhcp_networks[].last_address",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.dhcp_networks[].network_prefix_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.dhcp_networks[].network_prefix",
+        ],
+      },
+      {
+        choiceField: "autoconfig_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.autoconfig_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.host",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router",
+        ],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.address_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.network_prefix",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.stateful",
+        ],
+      },
+      {
+        choiceField: "dns_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.dns_config.dns_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.dns_config.configured_list",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.dns_config.local_dns",
+        ],
+      },
+      {
+        choiceField: "local_dns_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.dns_config.local_dns.local_dns_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.dns_config.local_dns.configured_address",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.dns_config.local_dns.first_address",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.dns_config.local_dns.last_address",
+        ],
+      },
+      {
+        choiceField: "interfaces_addressing_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.stateful.interfaces_addressing_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.stateful.automatic_from_end",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.stateful.automatic_from_start",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.stateful.interface_ip_map",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.static_ip.network_prefix_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.static_ip.cluster_static_ip",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.static_ip.node_static_ip",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.static_ipv6_address.network_prefix_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.static_ipv6_address.cluster_static_ip",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.static_ipv6_address.node_static_ip",
+        ],
+      },
+      {
+        choiceField: "dc_cluster_group_choice",
+        fieldPath: "spec.custom_network_config.sli_config.dc_cluster_group_choice",
+        options: [
+          "spec.custom_network_config.sli_config.dc_cluster_group",
+          "spec.custom_network_config.sli_config.no_dc_cluster_group",
+        ],
+      },
+      {
+        choiceField: "static_route_choice",
+        fieldPath: "spec.custom_network_config.sli_config.static_route_choice",
+        options: [
+          "spec.custom_network_config.sli_config.no_static_routes",
+          "spec.custom_network_config.sli_config.static_routes",
+        ],
+      },
+      {
+        choiceField: "static_v6_route_choice",
+        fieldPath: "spec.custom_network_config.sli_config.static_v6_route_choice",
+        options: [
+          "spec.custom_network_config.sli_config.no_v6_static_routes",
+          "spec.custom_network_config.sli_config.static_v6_routes",
+        ],
+      },
+      {
+        choiceField: "next_hop_choice",
+        fieldPath:
+          "spec.custom_network_config.sli_config.static_routes.static_routes[].next_hop_choice",
+        options: [
+          "spec.custom_network_config.sli_config.static_routes.static_routes[].default_gateway",
+          "spec.custom_network_config.sli_config.static_routes.static_routes[].ip_address",
+          "spec.custom_network_config.sli_config.static_routes.static_routes[].node_interface",
+        ],
+      },
+      {
+        choiceField: "next_hop_choice",
+        fieldPath:
+          "spec.custom_network_config.sli_config.static_v6_routes.static_routes[].next_hop_choice",
+        options: [
+          "spec.custom_network_config.sli_config.static_v6_routes.static_routes[].default_gateway",
+          "spec.custom_network_config.sli_config.static_v6_routes.static_routes[].ip_address",
+          "spec.custom_network_config.sli_config.static_v6_routes.static_routes[].node_interface",
+        ],
+      },
+      {
+        choiceField: "dc_cluster_group_choice",
+        fieldPath: "spec.custom_network_config.slo_config.dc_cluster_group_choice",
+        options: [
+          "spec.custom_network_config.slo_config.dc_cluster_group",
+          "spec.custom_network_config.slo_config.no_dc_cluster_group",
+        ],
+      },
+      {
+        choiceField: "static_route_choice",
+        fieldPath: "spec.custom_network_config.slo_config.static_route_choice",
+        options: [
+          "spec.custom_network_config.slo_config.no_static_routes",
+          "spec.custom_network_config.slo_config.static_routes",
+        ],
+      },
+      {
+        choiceField: "static_v6_route_choice",
+        fieldPath: "spec.custom_network_config.slo_config.static_v6_route_choice",
+        options: [
+          "spec.custom_network_config.slo_config.no_v6_static_routes",
+          "spec.custom_network_config.slo_config.static_v6_routes",
+        ],
+      },
+      {
+        choiceField: "next_hop_choice",
+        fieldPath:
+          "spec.custom_network_config.slo_config.static_routes.static_routes[].next_hop_choice",
+        options: [
+          "spec.custom_network_config.slo_config.static_routes.static_routes[].default_gateway",
+          "spec.custom_network_config.slo_config.static_routes.static_routes[].ip_address",
+          "spec.custom_network_config.slo_config.static_routes.static_routes[].node_interface",
+        ],
+      },
+      {
+        choiceField: "next_hop_choice",
+        fieldPath:
+          "spec.custom_network_config.slo_config.static_v6_routes.static_routes[].next_hop_choice",
+        options: [
+          "spec.custom_network_config.slo_config.static_v6_routes.static_routes[].default_gateway",
+          "spec.custom_network_config.slo_config.static_v6_routes.static_routes[].ip_address",
+          "spec.custom_network_config.slo_config.static_v6_routes.static_routes[].node_interface",
+        ],
+      },
+      {
+        choiceField: "kubernetes_upgrade_drain_enable_choice",
+        fieldPath: "spec.kubernetes_upgrade_drain.kubernetes_upgrade_drain_enable_choice",
+        options: [
+          "spec.kubernetes_upgrade_drain.disable_upgrade_drain",
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain",
+        ],
+      },
+      {
+        choiceField: "drain_max_unavailable_choice",
+        fieldPath:
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.drain_max_unavailable_choice",
+        options: [
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.drain_max_unavailable_node_count",
+        ],
+      },
+      {
+        choiceField: "vega_upgrade_mode_toggle_choice",
+        fieldPath:
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.vega_upgrade_mode_toggle_choice",
+        options: [
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.disable_vega_upgrade_mode",
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.enable_vega_upgrade_mode",
+        ],
+      },
+      {
+        choiceField: "offline_survivability_mode_choice",
+        fieldPath: "spec.offline_survivability_mode.offline_survivability_mode_choice",
+        options: [
+          "spec.offline_survivability_mode.enable_offline_survivability_mode",
+          "spec.offline_survivability_mode.no_offline_survivability_mode",
+        ],
+      },
+      {
+        choiceField: "operating_system_version_choice",
+        fieldPath: "spec.os.operating_system_version_choice",
+        options: ["spec.os.default_os_version", "spec.os.operating_system_version"],
+      },
+      {
+        choiceField: "perf_mode_choice",
+        fieldPath: "spec.performance_enhancement_mode.perf_mode_choice",
+        options: [
+          "spec.performance_enhancement_mode.perf_mode_l3_enhanced",
+          "spec.performance_enhancement_mode.perf_mode_l7_enhanced",
+        ],
+      },
+      {
+        choiceField: "perf_mode_choice",
+        fieldPath: "spec.performance_enhancement_mode.perf_mode_l3_enhanced.perf_mode_choice",
+        options: [
+          "spec.performance_enhancement_mode.perf_mode_l3_enhanced.jumbo",
+          "spec.performance_enhancement_mode.perf_mode_l3_enhanced.no_jumbo",
+        ],
+      },
+      {
+        choiceField: "volterra_sw_version_choice",
+        fieldPath: "spec.sw.volterra_sw_version_choice",
+        options: ["spec.sw.default_sw_version", "spec.sw.volterra_software_version"],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_site_management_standard",
@@ -4397,7 +10215,1598 @@ export const sitesTools: ParsedOperation[] = [
         resourceType: "viewssecuremesh-site-v2create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "blocked_services_choice",
+        fieldPath: "spec.blocked_services_choice",
+        options: ["spec.block_all_services", "spec.blocked_services"],
+      },
+      {
+        choiceField: "enterprise_proxy_choice",
+        fieldPath: "spec.enterprise_proxy_choice",
+        options: ["spec.custom_proxy", "spec.f5_proxy"],
+      },
+      {
+        choiceField: "forward_proxy_choice",
+        fieldPath: "spec.forward_proxy_choice",
+        options: ["spec.active_forward_proxy_policies", "spec.no_forward_proxy"],
+      },
+      {
+        choiceField: "logs_receiver_choice",
+        fieldPath: "spec.logs_receiver_choice",
+        options: ["spec.log_receiver", "spec.logs_streaming_disabled"],
+      },
+      {
+        choiceField: "network_policy_choice",
+        fieldPath: "spec.network_policy_choice",
+        options: ["spec.active_enhanced_firewall_policies", "spec.no_network_policy"],
+      },
+      {
+        choiceField: "node_ha_choice",
+        fieldPath: "spec.node_ha_choice",
+        options: ["spec.disable_ha", "spec.enable_ha"],
+      },
+      {
+        choiceField: "provider_choice",
+        fieldPath: "spec.provider_choice",
+        options: [
+          "spec.aws",
+          "spec.azure",
+          "spec.baremetal",
+          "spec.equinix",
+          "spec.gcp",
+          "spec.kvm",
+          "spec.nutanix",
+          "spec.oci",
+          "spec.openstack",
+          "spec.vmware",
+        ],
+      },
+      {
+        choiceField: "proxy_bypass_choice",
+        fieldPath: "spec.proxy_bypass_choice",
+        options: ["spec.custom_proxy_bypass", "spec.no_proxy_bypass"],
+      },
+      {
+        choiceField: "s2s_connectivity_sli_choice",
+        fieldPath: "spec.s2s_connectivity_sli_choice",
+        options: ["spec.dc_cluster_group_sli", "spec.no_s2s_connectivity_sli"],
+      },
+      {
+        choiceField: "s2s_connectivity_slo_choice",
+        fieldPath: "spec.s2s_connectivity_slo_choice",
+        options: [
+          "spec.dc_cluster_group_slo",
+          "spec.no_s2s_connectivity_slo",
+          "spec.site_mesh_group_on_slo",
+        ],
+      },
+      {
+        choiceField: "url_categorization_choice",
+        fieldPath: "spec.url_categorization_choice",
+        options: ["spec.disable_url_categorization", "spec.enable_url_categorization"],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.admin_user_credentials.admin_password.secret_info_oneof",
+        options: [
+          "spec.admin_user_credentials.admin_password.blindfold_secret_info",
+          "spec.admin_user_credentials.admin_password.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "orchestration_choice",
+        fieldPath: "spec.aws.orchestration_choice",
+        options: ["spec.aws.not_managed"],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath: "spec.aws.not_managed.node_list[].interface_list[].address_choice",
+        options: [
+          "spec.aws.not_managed.node_list[].interface_list[].dhcp_client",
+          "spec.aws.not_managed.node_list[].interface_list[].no_ipv4_address",
+          "spec.aws.not_managed.node_list[].interface_list[].static_ip",
+        ],
+      },
+      {
+        choiceField: "interface_choice",
+        fieldPath: "spec.aws.not_managed.node_list[].interface_list[].interface_choice",
+        options: [
+          "spec.aws.not_managed.node_list[].interface_list[].bond_interface",
+          "spec.aws.not_managed.node_list[].interface_list[].ethernet_interface",
+          "spec.aws.not_managed.node_list[].interface_list[].vlan_interface",
+        ],
+      },
+      {
+        choiceField: "ipv6_address_choice",
+        fieldPath: "spec.aws.not_managed.node_list[].interface_list[].ipv6_address_choice",
+        options: [
+          "spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config",
+          "spec.aws.not_managed.node_list[].interface_list[].no_ipv6_address",
+          "spec.aws.not_managed.node_list[].interface_list[].static_ipv6_address",
+        ],
+      },
+      {
+        choiceField: "monitoring_choice",
+        fieldPath: "spec.aws.not_managed.node_list[].interface_list[].monitoring_choice",
+        options: [
+          "spec.aws.not_managed.node_list[].interface_list[].monitor",
+          "spec.aws.not_managed.node_list[].interface_list[].monitor_disabled",
+        ],
+      },
+      {
+        choiceField: "site_to_site_connectivity_interface_choice",
+        fieldPath:
+          "spec.aws.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_choice",
+        options: [
+          "spec.aws.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_disabled",
+          "spec.aws.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_enabled",
+        ],
+      },
+      {
+        choiceField: "lacp_choice",
+        fieldPath: "spec.aws.not_managed.node_list[].interface_list[].bond_interface.lacp_choice",
+        options: [
+          "spec.aws.not_managed.node_list[].interface_list[].bond_interface.active_backup",
+          "spec.aws.not_managed.node_list[].interface_list[].bond_interface.lacp",
+        ],
+      },
+      {
+        choiceField: "autoconfig_choice",
+        fieldPath:
+          "spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config.autoconfig_choice",
+        options: [
+          "spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config.host",
+          "spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config.router",
+        ],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath:
+          "spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config.router.address_choice",
+        options: [
+          "spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config.router.network_prefix",
+          "spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful",
+        ],
+      },
+      {
+        choiceField: "dns_choice",
+        fieldPath:
+          "spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.dns_choice",
+        options: [
+          "spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.configured_list",
+          "spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns",
+        ],
+      },
+      {
+        choiceField: "local_dns_choice",
+        fieldPath:
+          "spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.local_dns_choice",
+        options: [
+          "spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.configured_address",
+          "spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.first_address",
+          "spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.last_address",
+        ],
+      },
+      {
+        choiceField: "interfaces_addressing_choice",
+        fieldPath:
+          "spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.interfaces_addressing_choice",
+        options: [
+          "spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.automatic_from_end",
+          "spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.automatic_from_start",
+          "spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.interface_ip_map",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix_choice",
+        options: [
+          "spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath:
+          "spec.aws.not_managed.node_list[].interface_list[].network_option.network_choice",
+        options: [
+          "spec.aws.not_managed.node_list[].interface_list[].network_option.segment_network",
+          "spec.aws.not_managed.node_list[].interface_list[].network_option.site_local_inside_network",
+          "spec.aws.not_managed.node_list[].interface_list[].network_option.site_local_network",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.aws.not_managed.node_list[].interface_list[].static_ipv6_address.network_prefix_choice",
+        options: [
+          "spec.aws.not_managed.node_list[].interface_list[].static_ipv6_address.cluster_static_ip",
+          "spec.aws.not_managed.node_list[].interface_list[].static_ipv6_address.node_static_ip",
+        ],
+      },
+      {
+        choiceField: "orchestration_choice",
+        fieldPath: "spec.azure.orchestration_choice",
+        options: ["spec.azure.not_managed"],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath: "spec.azure.not_managed.node_list[].interface_list[].address_choice",
+        options: [
+          "spec.azure.not_managed.node_list[].interface_list[].dhcp_client",
+          "spec.azure.not_managed.node_list[].interface_list[].no_ipv4_address",
+          "spec.azure.not_managed.node_list[].interface_list[].static_ip",
+        ],
+      },
+      {
+        choiceField: "interface_choice",
+        fieldPath: "spec.azure.not_managed.node_list[].interface_list[].interface_choice",
+        options: [
+          "spec.azure.not_managed.node_list[].interface_list[].bond_interface",
+          "spec.azure.not_managed.node_list[].interface_list[].ethernet_interface",
+          "spec.azure.not_managed.node_list[].interface_list[].vlan_interface",
+        ],
+      },
+      {
+        choiceField: "ipv6_address_choice",
+        fieldPath: "spec.azure.not_managed.node_list[].interface_list[].ipv6_address_choice",
+        options: [
+          "spec.azure.not_managed.node_list[].interface_list[].ipv6_auto_config",
+          "spec.azure.not_managed.node_list[].interface_list[].no_ipv6_address",
+          "spec.azure.not_managed.node_list[].interface_list[].static_ipv6_address",
+        ],
+      },
+      {
+        choiceField: "monitoring_choice",
+        fieldPath: "spec.azure.not_managed.node_list[].interface_list[].monitoring_choice",
+        options: [
+          "spec.azure.not_managed.node_list[].interface_list[].monitor",
+          "spec.azure.not_managed.node_list[].interface_list[].monitor_disabled",
+        ],
+      },
+      {
+        choiceField: "site_to_site_connectivity_interface_choice",
+        fieldPath:
+          "spec.azure.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_choice",
+        options: [
+          "spec.azure.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_disabled",
+          "spec.azure.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_enabled",
+        ],
+      },
+      {
+        choiceField: "lacp_choice",
+        fieldPath: "spec.azure.not_managed.node_list[].interface_list[].bond_interface.lacp_choice",
+        options: [
+          "spec.azure.not_managed.node_list[].interface_list[].bond_interface.active_backup",
+          "spec.azure.not_managed.node_list[].interface_list[].bond_interface.lacp",
+        ],
+      },
+      {
+        choiceField: "autoconfig_choice",
+        fieldPath:
+          "spec.azure.not_managed.node_list[].interface_list[].ipv6_auto_config.autoconfig_choice",
+        options: [
+          "spec.azure.not_managed.node_list[].interface_list[].ipv6_auto_config.host",
+          "spec.azure.not_managed.node_list[].interface_list[].ipv6_auto_config.router",
+        ],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath:
+          "spec.azure.not_managed.node_list[].interface_list[].ipv6_auto_config.router.address_choice",
+        options: [
+          "spec.azure.not_managed.node_list[].interface_list[].ipv6_auto_config.router.network_prefix",
+          "spec.azure.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful",
+        ],
+      },
+      {
+        choiceField: "dns_choice",
+        fieldPath:
+          "spec.azure.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.dns_choice",
+        options: [
+          "spec.azure.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.configured_list",
+          "spec.azure.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns",
+        ],
+      },
+      {
+        choiceField: "local_dns_choice",
+        fieldPath:
+          "spec.azure.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.local_dns_choice",
+        options: [
+          "spec.azure.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.configured_address",
+          "spec.azure.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.first_address",
+          "spec.azure.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.last_address",
+        ],
+      },
+      {
+        choiceField: "interfaces_addressing_choice",
+        fieldPath:
+          "spec.azure.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.interfaces_addressing_choice",
+        options: [
+          "spec.azure.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.automatic_from_end",
+          "spec.azure.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.automatic_from_start",
+          "spec.azure.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.interface_ip_map",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.azure.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix_choice",
+        options: [
+          "spec.azure.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath:
+          "spec.azure.not_managed.node_list[].interface_list[].network_option.network_choice",
+        options: [
+          "spec.azure.not_managed.node_list[].interface_list[].network_option.segment_network",
+          "spec.azure.not_managed.node_list[].interface_list[].network_option.site_local_inside_network",
+          "spec.azure.not_managed.node_list[].interface_list[].network_option.site_local_network",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.azure.not_managed.node_list[].interface_list[].static_ipv6_address.network_prefix_choice",
+        options: [
+          "spec.azure.not_managed.node_list[].interface_list[].static_ipv6_address.cluster_static_ip",
+          "spec.azure.not_managed.node_list[].interface_list[].static_ipv6_address.node_static_ip",
+        ],
+      },
+      {
+        choiceField: "orchestration_choice",
+        fieldPath: "spec.baremetal.orchestration_choice",
+        options: ["spec.baremetal.not_managed"],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath: "spec.baremetal.not_managed.node_list[].interface_list[].address_choice",
+        options: [
+          "spec.baremetal.not_managed.node_list[].interface_list[].dhcp_client",
+          "spec.baremetal.not_managed.node_list[].interface_list[].no_ipv4_address",
+          "spec.baremetal.not_managed.node_list[].interface_list[].static_ip",
+        ],
+      },
+      {
+        choiceField: "interface_choice",
+        fieldPath: "spec.baremetal.not_managed.node_list[].interface_list[].interface_choice",
+        options: [
+          "spec.baremetal.not_managed.node_list[].interface_list[].bond_interface",
+          "spec.baremetal.not_managed.node_list[].interface_list[].ethernet_interface",
+          "spec.baremetal.not_managed.node_list[].interface_list[].vlan_interface",
+        ],
+      },
+      {
+        choiceField: "ipv6_address_choice",
+        fieldPath: "spec.baremetal.not_managed.node_list[].interface_list[].ipv6_address_choice",
+        options: [
+          "spec.baremetal.not_managed.node_list[].interface_list[].ipv6_auto_config",
+          "spec.baremetal.not_managed.node_list[].interface_list[].no_ipv6_address",
+          "spec.baremetal.not_managed.node_list[].interface_list[].static_ipv6_address",
+        ],
+      },
+      {
+        choiceField: "monitoring_choice",
+        fieldPath: "spec.baremetal.not_managed.node_list[].interface_list[].monitoring_choice",
+        options: [
+          "spec.baremetal.not_managed.node_list[].interface_list[].monitor",
+          "spec.baremetal.not_managed.node_list[].interface_list[].monitor_disabled",
+        ],
+      },
+      {
+        choiceField: "site_to_site_connectivity_interface_choice",
+        fieldPath:
+          "spec.baremetal.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_choice",
+        options: [
+          "spec.baremetal.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_disabled",
+          "spec.baremetal.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_enabled",
+        ],
+      },
+      {
+        choiceField: "lacp_choice",
+        fieldPath:
+          "spec.baremetal.not_managed.node_list[].interface_list[].bond_interface.lacp_choice",
+        options: [
+          "spec.baremetal.not_managed.node_list[].interface_list[].bond_interface.active_backup",
+          "spec.baremetal.not_managed.node_list[].interface_list[].bond_interface.lacp",
+        ],
+      },
+      {
+        choiceField: "autoconfig_choice",
+        fieldPath:
+          "spec.baremetal.not_managed.node_list[].interface_list[].ipv6_auto_config.autoconfig_choice",
+        options: [
+          "spec.baremetal.not_managed.node_list[].interface_list[].ipv6_auto_config.host",
+          "spec.baremetal.not_managed.node_list[].interface_list[].ipv6_auto_config.router",
+        ],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath:
+          "spec.baremetal.not_managed.node_list[].interface_list[].ipv6_auto_config.router.address_choice",
+        options: [
+          "spec.baremetal.not_managed.node_list[].interface_list[].ipv6_auto_config.router.network_prefix",
+          "spec.baremetal.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful",
+        ],
+      },
+      {
+        choiceField: "dns_choice",
+        fieldPath:
+          "spec.baremetal.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.dns_choice",
+        options: [
+          "spec.baremetal.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.configured_list",
+          "spec.baremetal.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns",
+        ],
+      },
+      {
+        choiceField: "local_dns_choice",
+        fieldPath:
+          "spec.baremetal.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.local_dns_choice",
+        options: [
+          "spec.baremetal.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.configured_address",
+          "spec.baremetal.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.first_address",
+          "spec.baremetal.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.last_address",
+        ],
+      },
+      {
+        choiceField: "interfaces_addressing_choice",
+        fieldPath:
+          "spec.baremetal.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.interfaces_addressing_choice",
+        options: [
+          "spec.baremetal.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.automatic_from_end",
+          "spec.baremetal.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.automatic_from_start",
+          "spec.baremetal.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.interface_ip_map",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.baremetal.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix_choice",
+        options: [
+          "spec.baremetal.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath:
+          "spec.baremetal.not_managed.node_list[].interface_list[].network_option.network_choice",
+        options: [
+          "spec.baremetal.not_managed.node_list[].interface_list[].network_option.segment_network",
+          "spec.baremetal.not_managed.node_list[].interface_list[].network_option.site_local_inside_network",
+          "spec.baremetal.not_managed.node_list[].interface_list[].network_option.site_local_network",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.baremetal.not_managed.node_list[].interface_list[].static_ipv6_address.network_prefix_choice",
+        options: [
+          "spec.baremetal.not_managed.node_list[].interface_list[].static_ipv6_address.cluster_static_ip",
+          "spec.baremetal.not_managed.node_list[].interface_list[].static_ipv6_address.node_static_ip",
+        ],
+      },
+      {
+        choiceField: "blocked_services_value_type_choice",
+        fieldPath: "spec.blocked_services.blocked_sevice[].blocked_services_value_type_choice",
+        options: [
+          "spec.blocked_services.blocked_sevice[].dns",
+          "spec.blocked_services.blocked_sevice[].ssh",
+          "spec.blocked_services.blocked_sevice[].web_user_interface",
+        ],
+      },
+      {
+        choiceField: "use_for_re_tunnel_choice",
+        fieldPath: "spec.custom_proxy.use_for_re_tunnel_choice",
+        options: ["spec.custom_proxy.disable_re_tunnel", "spec.custom_proxy.enable_re_tunnel"],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.custom_proxy.password.secret_info_oneof",
+        options: [
+          "spec.custom_proxy.password.blindfold_secret_info",
+          "spec.custom_proxy.password.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "dns_server_choice",
+        fieldPath: "spec.dns_ntp_config.dns_server_choice",
+        options: ["spec.dns_ntp_config.custom_dns", "spec.dns_ntp_config.f5_dns_default"],
+      },
+      {
+        choiceField: "ntp_server_choice",
+        fieldPath: "spec.dns_ntp_config.ntp_server_choice",
+        options: ["spec.dns_ntp_config.custom_ntp", "spec.dns_ntp_config.f5_ntp_default"],
+      },
+      {
+        choiceField: "orchestration_choice",
+        fieldPath: "spec.equinix.orchestration_choice",
+        options: ["spec.equinix.not_managed"],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath: "spec.equinix.not_managed.node_list[].interface_list[].address_choice",
+        options: [
+          "spec.equinix.not_managed.node_list[].interface_list[].dhcp_client",
+          "spec.equinix.not_managed.node_list[].interface_list[].no_ipv4_address",
+          "spec.equinix.not_managed.node_list[].interface_list[].static_ip",
+        ],
+      },
+      {
+        choiceField: "interface_choice",
+        fieldPath: "spec.equinix.not_managed.node_list[].interface_list[].interface_choice",
+        options: [
+          "spec.equinix.not_managed.node_list[].interface_list[].bond_interface",
+          "spec.equinix.not_managed.node_list[].interface_list[].ethernet_interface",
+          "spec.equinix.not_managed.node_list[].interface_list[].vlan_interface",
+        ],
+      },
+      {
+        choiceField: "ipv6_address_choice",
+        fieldPath: "spec.equinix.not_managed.node_list[].interface_list[].ipv6_address_choice",
+        options: [
+          "spec.equinix.not_managed.node_list[].interface_list[].ipv6_auto_config",
+          "spec.equinix.not_managed.node_list[].interface_list[].no_ipv6_address",
+          "spec.equinix.not_managed.node_list[].interface_list[].static_ipv6_address",
+        ],
+      },
+      {
+        choiceField: "monitoring_choice",
+        fieldPath: "spec.equinix.not_managed.node_list[].interface_list[].monitoring_choice",
+        options: [
+          "spec.equinix.not_managed.node_list[].interface_list[].monitor",
+          "spec.equinix.not_managed.node_list[].interface_list[].monitor_disabled",
+        ],
+      },
+      {
+        choiceField: "site_to_site_connectivity_interface_choice",
+        fieldPath:
+          "spec.equinix.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_choice",
+        options: [
+          "spec.equinix.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_disabled",
+          "spec.equinix.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_enabled",
+        ],
+      },
+      {
+        choiceField: "lacp_choice",
+        fieldPath:
+          "spec.equinix.not_managed.node_list[].interface_list[].bond_interface.lacp_choice",
+        options: [
+          "spec.equinix.not_managed.node_list[].interface_list[].bond_interface.active_backup",
+          "spec.equinix.not_managed.node_list[].interface_list[].bond_interface.lacp",
+        ],
+      },
+      {
+        choiceField: "autoconfig_choice",
+        fieldPath:
+          "spec.equinix.not_managed.node_list[].interface_list[].ipv6_auto_config.autoconfig_choice",
+        options: [
+          "spec.equinix.not_managed.node_list[].interface_list[].ipv6_auto_config.host",
+          "spec.equinix.not_managed.node_list[].interface_list[].ipv6_auto_config.router",
+        ],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath:
+          "spec.equinix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.address_choice",
+        options: [
+          "spec.equinix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.network_prefix",
+          "spec.equinix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful",
+        ],
+      },
+      {
+        choiceField: "dns_choice",
+        fieldPath:
+          "spec.equinix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.dns_choice",
+        options: [
+          "spec.equinix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.configured_list",
+          "spec.equinix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns",
+        ],
+      },
+      {
+        choiceField: "local_dns_choice",
+        fieldPath:
+          "spec.equinix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.local_dns_choice",
+        options: [
+          "spec.equinix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.configured_address",
+          "spec.equinix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.first_address",
+          "spec.equinix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.last_address",
+        ],
+      },
+      {
+        choiceField: "interfaces_addressing_choice",
+        fieldPath:
+          "spec.equinix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.interfaces_addressing_choice",
+        options: [
+          "spec.equinix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.automatic_from_end",
+          "spec.equinix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.automatic_from_start",
+          "spec.equinix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.interface_ip_map",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.equinix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix_choice",
+        options: [
+          "spec.equinix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath:
+          "spec.equinix.not_managed.node_list[].interface_list[].network_option.network_choice",
+        options: [
+          "spec.equinix.not_managed.node_list[].interface_list[].network_option.segment_network",
+          "spec.equinix.not_managed.node_list[].interface_list[].network_option.site_local_inside_network",
+          "spec.equinix.not_managed.node_list[].interface_list[].network_option.site_local_network",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.equinix.not_managed.node_list[].interface_list[].static_ipv6_address.network_prefix_choice",
+        options: [
+          "spec.equinix.not_managed.node_list[].interface_list[].static_ipv6_address.cluster_static_ip",
+          "spec.equinix.not_managed.node_list[].interface_list[].static_ipv6_address.node_static_ip",
+        ],
+      },
+      {
+        choiceField: "orchestration_choice",
+        fieldPath: "spec.gcp.orchestration_choice",
+        options: ["spec.gcp.not_managed"],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath: "spec.gcp.not_managed.node_list[].interface_list[].address_choice",
+        options: [
+          "spec.gcp.not_managed.node_list[].interface_list[].dhcp_client",
+          "spec.gcp.not_managed.node_list[].interface_list[].no_ipv4_address",
+          "spec.gcp.not_managed.node_list[].interface_list[].static_ip",
+        ],
+      },
+      {
+        choiceField: "interface_choice",
+        fieldPath: "spec.gcp.not_managed.node_list[].interface_list[].interface_choice",
+        options: [
+          "spec.gcp.not_managed.node_list[].interface_list[].bond_interface",
+          "spec.gcp.not_managed.node_list[].interface_list[].ethernet_interface",
+          "spec.gcp.not_managed.node_list[].interface_list[].vlan_interface",
+        ],
+      },
+      {
+        choiceField: "ipv6_address_choice",
+        fieldPath: "spec.gcp.not_managed.node_list[].interface_list[].ipv6_address_choice",
+        options: [
+          "spec.gcp.not_managed.node_list[].interface_list[].ipv6_auto_config",
+          "spec.gcp.not_managed.node_list[].interface_list[].no_ipv6_address",
+          "spec.gcp.not_managed.node_list[].interface_list[].static_ipv6_address",
+        ],
+      },
+      {
+        choiceField: "monitoring_choice",
+        fieldPath: "spec.gcp.not_managed.node_list[].interface_list[].monitoring_choice",
+        options: [
+          "spec.gcp.not_managed.node_list[].interface_list[].monitor",
+          "spec.gcp.not_managed.node_list[].interface_list[].monitor_disabled",
+        ],
+      },
+      {
+        choiceField: "site_to_site_connectivity_interface_choice",
+        fieldPath:
+          "spec.gcp.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_choice",
+        options: [
+          "spec.gcp.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_disabled",
+          "spec.gcp.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_enabled",
+        ],
+      },
+      {
+        choiceField: "lacp_choice",
+        fieldPath: "spec.gcp.not_managed.node_list[].interface_list[].bond_interface.lacp_choice",
+        options: [
+          "spec.gcp.not_managed.node_list[].interface_list[].bond_interface.active_backup",
+          "spec.gcp.not_managed.node_list[].interface_list[].bond_interface.lacp",
+        ],
+      },
+      {
+        choiceField: "autoconfig_choice",
+        fieldPath:
+          "spec.gcp.not_managed.node_list[].interface_list[].ipv6_auto_config.autoconfig_choice",
+        options: [
+          "spec.gcp.not_managed.node_list[].interface_list[].ipv6_auto_config.host",
+          "spec.gcp.not_managed.node_list[].interface_list[].ipv6_auto_config.router",
+        ],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath:
+          "spec.gcp.not_managed.node_list[].interface_list[].ipv6_auto_config.router.address_choice",
+        options: [
+          "spec.gcp.not_managed.node_list[].interface_list[].ipv6_auto_config.router.network_prefix",
+          "spec.gcp.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful",
+        ],
+      },
+      {
+        choiceField: "dns_choice",
+        fieldPath:
+          "spec.gcp.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.dns_choice",
+        options: [
+          "spec.gcp.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.configured_list",
+          "spec.gcp.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns",
+        ],
+      },
+      {
+        choiceField: "local_dns_choice",
+        fieldPath:
+          "spec.gcp.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.local_dns_choice",
+        options: [
+          "spec.gcp.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.configured_address",
+          "spec.gcp.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.first_address",
+          "spec.gcp.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.last_address",
+        ],
+      },
+      {
+        choiceField: "interfaces_addressing_choice",
+        fieldPath:
+          "spec.gcp.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.interfaces_addressing_choice",
+        options: [
+          "spec.gcp.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.automatic_from_end",
+          "spec.gcp.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.automatic_from_start",
+          "spec.gcp.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.interface_ip_map",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.gcp.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix_choice",
+        options: [
+          "spec.gcp.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath:
+          "spec.gcp.not_managed.node_list[].interface_list[].network_option.network_choice",
+        options: [
+          "spec.gcp.not_managed.node_list[].interface_list[].network_option.segment_network",
+          "spec.gcp.not_managed.node_list[].interface_list[].network_option.site_local_inside_network",
+          "spec.gcp.not_managed.node_list[].interface_list[].network_option.site_local_network",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.gcp.not_managed.node_list[].interface_list[].static_ipv6_address.network_prefix_choice",
+        options: [
+          "spec.gcp.not_managed.node_list[].interface_list[].static_ipv6_address.cluster_static_ip",
+          "spec.gcp.not_managed.node_list[].interface_list[].static_ipv6_address.node_static_ip",
+        ],
+      },
+      {
+        choiceField: "orchestration_choice",
+        fieldPath: "spec.kvm.orchestration_choice",
+        options: ["spec.kvm.not_managed"],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath: "spec.kvm.not_managed.node_list[].interface_list[].address_choice",
+        options: [
+          "spec.kvm.not_managed.node_list[].interface_list[].dhcp_client",
+          "spec.kvm.not_managed.node_list[].interface_list[].no_ipv4_address",
+          "spec.kvm.not_managed.node_list[].interface_list[].static_ip",
+        ],
+      },
+      {
+        choiceField: "interface_choice",
+        fieldPath: "spec.kvm.not_managed.node_list[].interface_list[].interface_choice",
+        options: [
+          "spec.kvm.not_managed.node_list[].interface_list[].bond_interface",
+          "spec.kvm.not_managed.node_list[].interface_list[].ethernet_interface",
+          "spec.kvm.not_managed.node_list[].interface_list[].vlan_interface",
+        ],
+      },
+      {
+        choiceField: "ipv6_address_choice",
+        fieldPath: "spec.kvm.not_managed.node_list[].interface_list[].ipv6_address_choice",
+        options: [
+          "spec.kvm.not_managed.node_list[].interface_list[].ipv6_auto_config",
+          "spec.kvm.not_managed.node_list[].interface_list[].no_ipv6_address",
+          "spec.kvm.not_managed.node_list[].interface_list[].static_ipv6_address",
+        ],
+      },
+      {
+        choiceField: "monitoring_choice",
+        fieldPath: "spec.kvm.not_managed.node_list[].interface_list[].monitoring_choice",
+        options: [
+          "spec.kvm.not_managed.node_list[].interface_list[].monitor",
+          "spec.kvm.not_managed.node_list[].interface_list[].monitor_disabled",
+        ],
+      },
+      {
+        choiceField: "site_to_site_connectivity_interface_choice",
+        fieldPath:
+          "spec.kvm.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_choice",
+        options: [
+          "spec.kvm.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_disabled",
+          "spec.kvm.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_enabled",
+        ],
+      },
+      {
+        choiceField: "lacp_choice",
+        fieldPath: "spec.kvm.not_managed.node_list[].interface_list[].bond_interface.lacp_choice",
+        options: [
+          "spec.kvm.not_managed.node_list[].interface_list[].bond_interface.active_backup",
+          "spec.kvm.not_managed.node_list[].interface_list[].bond_interface.lacp",
+        ],
+      },
+      {
+        choiceField: "autoconfig_choice",
+        fieldPath:
+          "spec.kvm.not_managed.node_list[].interface_list[].ipv6_auto_config.autoconfig_choice",
+        options: [
+          "spec.kvm.not_managed.node_list[].interface_list[].ipv6_auto_config.host",
+          "spec.kvm.not_managed.node_list[].interface_list[].ipv6_auto_config.router",
+        ],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath:
+          "spec.kvm.not_managed.node_list[].interface_list[].ipv6_auto_config.router.address_choice",
+        options: [
+          "spec.kvm.not_managed.node_list[].interface_list[].ipv6_auto_config.router.network_prefix",
+          "spec.kvm.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful",
+        ],
+      },
+      {
+        choiceField: "dns_choice",
+        fieldPath:
+          "spec.kvm.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.dns_choice",
+        options: [
+          "spec.kvm.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.configured_list",
+          "spec.kvm.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns",
+        ],
+      },
+      {
+        choiceField: "local_dns_choice",
+        fieldPath:
+          "spec.kvm.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.local_dns_choice",
+        options: [
+          "spec.kvm.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.configured_address",
+          "spec.kvm.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.first_address",
+          "spec.kvm.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.last_address",
+        ],
+      },
+      {
+        choiceField: "interfaces_addressing_choice",
+        fieldPath:
+          "spec.kvm.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.interfaces_addressing_choice",
+        options: [
+          "spec.kvm.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.automatic_from_end",
+          "spec.kvm.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.automatic_from_start",
+          "spec.kvm.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.interface_ip_map",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.kvm.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix_choice",
+        options: [
+          "spec.kvm.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath:
+          "spec.kvm.not_managed.node_list[].interface_list[].network_option.network_choice",
+        options: [
+          "spec.kvm.not_managed.node_list[].interface_list[].network_option.segment_network",
+          "spec.kvm.not_managed.node_list[].interface_list[].network_option.site_local_inside_network",
+          "spec.kvm.not_managed.node_list[].interface_list[].network_option.site_local_network",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.kvm.not_managed.node_list[].interface_list[].static_ipv6_address.network_prefix_choice",
+        options: [
+          "spec.kvm.not_managed.node_list[].interface_list[].static_ipv6_address.cluster_static_ip",
+          "spec.kvm.not_managed.node_list[].interface_list[].static_ipv6_address.node_static_ip",
+        ],
+      },
+      {
+        choiceField: "sli_choice",
+        fieldPath: "spec.local_vrf.sli_choice",
+        options: ["spec.local_vrf.default_sli_config", "spec.local_vrf.sli_config"],
+      },
+      {
+        choiceField: "slo_choice",
+        fieldPath: "spec.local_vrf.slo_choice",
+        options: ["spec.local_vrf.default_config", "spec.local_vrf.slo_config"],
+      },
+      {
+        choiceField: "static_route_choice",
+        fieldPath: "spec.local_vrf.sli_config.static_route_choice",
+        options: [
+          "spec.local_vrf.sli_config.no_static_routes",
+          "spec.local_vrf.sli_config.static_routes",
+        ],
+      },
+      {
+        choiceField: "static_v6_route_choice",
+        fieldPath: "spec.local_vrf.sli_config.static_v6_route_choice",
+        options: [
+          "spec.local_vrf.sli_config.no_v6_static_routes",
+          "spec.local_vrf.sli_config.static_v6_routes",
+        ],
+      },
+      {
+        choiceField: "next_hop_choice",
+        fieldPath: "spec.local_vrf.sli_config.static_routes.static_routes[].next_hop_choice",
+        options: [
+          "spec.local_vrf.sli_config.static_routes.static_routes[].default_gateway",
+          "spec.local_vrf.sli_config.static_routes.static_routes[].ip_address",
+          "spec.local_vrf.sli_config.static_routes.static_routes[].node_interface",
+        ],
+      },
+      {
+        choiceField: "next_hop_choice",
+        fieldPath: "spec.local_vrf.sli_config.static_v6_routes.static_routes[].next_hop_choice",
+        options: [
+          "spec.local_vrf.sli_config.static_v6_routes.static_routes[].default_gateway",
+          "spec.local_vrf.sli_config.static_v6_routes.static_routes[].ip_address",
+          "spec.local_vrf.sli_config.static_v6_routes.static_routes[].node_interface",
+        ],
+      },
+      {
+        choiceField: "static_route_choice",
+        fieldPath: "spec.local_vrf.slo_config.static_route_choice",
+        options: [
+          "spec.local_vrf.slo_config.no_static_routes",
+          "spec.local_vrf.slo_config.static_routes",
+        ],
+      },
+      {
+        choiceField: "static_v6_route_choice",
+        fieldPath: "spec.local_vrf.slo_config.static_v6_route_choice",
+        options: [
+          "spec.local_vrf.slo_config.no_v6_static_routes",
+          "spec.local_vrf.slo_config.static_v6_routes",
+        ],
+      },
+      {
+        choiceField: "next_hop_choice",
+        fieldPath: "spec.local_vrf.slo_config.static_routes.static_routes[].next_hop_choice",
+        options: [
+          "spec.local_vrf.slo_config.static_routes.static_routes[].default_gateway",
+          "spec.local_vrf.slo_config.static_routes.static_routes[].ip_address",
+          "spec.local_vrf.slo_config.static_routes.static_routes[].node_interface",
+        ],
+      },
+      {
+        choiceField: "next_hop_choice",
+        fieldPath: "spec.local_vrf.slo_config.static_v6_routes.static_routes[].next_hop_choice",
+        options: [
+          "spec.local_vrf.slo_config.static_v6_routes.static_routes[].default_gateway",
+          "spec.local_vrf.slo_config.static_v6_routes.static_routes[].ip_address",
+          "spec.local_vrf.slo_config.static_v6_routes.static_routes[].node_interface",
+        ],
+      },
+      {
+        choiceField: "orchestration_choice",
+        fieldPath: "spec.nutanix.orchestration_choice",
+        options: ["spec.nutanix.not_managed"],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath: "spec.nutanix.not_managed.node_list[].interface_list[].address_choice",
+        options: [
+          "spec.nutanix.not_managed.node_list[].interface_list[].dhcp_client",
+          "spec.nutanix.not_managed.node_list[].interface_list[].no_ipv4_address",
+          "spec.nutanix.not_managed.node_list[].interface_list[].static_ip",
+        ],
+      },
+      {
+        choiceField: "interface_choice",
+        fieldPath: "spec.nutanix.not_managed.node_list[].interface_list[].interface_choice",
+        options: [
+          "spec.nutanix.not_managed.node_list[].interface_list[].bond_interface",
+          "spec.nutanix.not_managed.node_list[].interface_list[].ethernet_interface",
+          "spec.nutanix.not_managed.node_list[].interface_list[].vlan_interface",
+        ],
+      },
+      {
+        choiceField: "ipv6_address_choice",
+        fieldPath: "spec.nutanix.not_managed.node_list[].interface_list[].ipv6_address_choice",
+        options: [
+          "spec.nutanix.not_managed.node_list[].interface_list[].ipv6_auto_config",
+          "spec.nutanix.not_managed.node_list[].interface_list[].no_ipv6_address",
+          "spec.nutanix.not_managed.node_list[].interface_list[].static_ipv6_address",
+        ],
+      },
+      {
+        choiceField: "monitoring_choice",
+        fieldPath: "spec.nutanix.not_managed.node_list[].interface_list[].monitoring_choice",
+        options: [
+          "spec.nutanix.not_managed.node_list[].interface_list[].monitor",
+          "spec.nutanix.not_managed.node_list[].interface_list[].monitor_disabled",
+        ],
+      },
+      {
+        choiceField: "site_to_site_connectivity_interface_choice",
+        fieldPath:
+          "spec.nutanix.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_choice",
+        options: [
+          "spec.nutanix.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_disabled",
+          "spec.nutanix.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_enabled",
+        ],
+      },
+      {
+        choiceField: "lacp_choice",
+        fieldPath:
+          "spec.nutanix.not_managed.node_list[].interface_list[].bond_interface.lacp_choice",
+        options: [
+          "spec.nutanix.not_managed.node_list[].interface_list[].bond_interface.active_backup",
+          "spec.nutanix.not_managed.node_list[].interface_list[].bond_interface.lacp",
+        ],
+      },
+      {
+        choiceField: "autoconfig_choice",
+        fieldPath:
+          "spec.nutanix.not_managed.node_list[].interface_list[].ipv6_auto_config.autoconfig_choice",
+        options: [
+          "spec.nutanix.not_managed.node_list[].interface_list[].ipv6_auto_config.host",
+          "spec.nutanix.not_managed.node_list[].interface_list[].ipv6_auto_config.router",
+        ],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath:
+          "spec.nutanix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.address_choice",
+        options: [
+          "spec.nutanix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.network_prefix",
+          "spec.nutanix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful",
+        ],
+      },
+      {
+        choiceField: "dns_choice",
+        fieldPath:
+          "spec.nutanix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.dns_choice",
+        options: [
+          "spec.nutanix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.configured_list",
+          "spec.nutanix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns",
+        ],
+      },
+      {
+        choiceField: "local_dns_choice",
+        fieldPath:
+          "spec.nutanix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.local_dns_choice",
+        options: [
+          "spec.nutanix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.configured_address",
+          "spec.nutanix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.first_address",
+          "spec.nutanix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.last_address",
+        ],
+      },
+      {
+        choiceField: "interfaces_addressing_choice",
+        fieldPath:
+          "spec.nutanix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.interfaces_addressing_choice",
+        options: [
+          "spec.nutanix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.automatic_from_end",
+          "spec.nutanix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.automatic_from_start",
+          "spec.nutanix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.interface_ip_map",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.nutanix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix_choice",
+        options: [
+          "spec.nutanix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath:
+          "spec.nutanix.not_managed.node_list[].interface_list[].network_option.network_choice",
+        options: [
+          "spec.nutanix.not_managed.node_list[].interface_list[].network_option.segment_network",
+          "spec.nutanix.not_managed.node_list[].interface_list[].network_option.site_local_inside_network",
+          "spec.nutanix.not_managed.node_list[].interface_list[].network_option.site_local_network",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.nutanix.not_managed.node_list[].interface_list[].static_ipv6_address.network_prefix_choice",
+        options: [
+          "spec.nutanix.not_managed.node_list[].interface_list[].static_ipv6_address.cluster_static_ip",
+          "spec.nutanix.not_managed.node_list[].interface_list[].static_ipv6_address.node_static_ip",
+        ],
+      },
+      {
+        choiceField: "orchestration_choice",
+        fieldPath: "spec.oci.orchestration_choice",
+        options: ["spec.oci.not_managed"],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath: "spec.oci.not_managed.node_list[].interface_list[].address_choice",
+        options: [
+          "spec.oci.not_managed.node_list[].interface_list[].dhcp_client",
+          "spec.oci.not_managed.node_list[].interface_list[].no_ipv4_address",
+          "spec.oci.not_managed.node_list[].interface_list[].static_ip",
+        ],
+      },
+      {
+        choiceField: "interface_choice",
+        fieldPath: "spec.oci.not_managed.node_list[].interface_list[].interface_choice",
+        options: [
+          "spec.oci.not_managed.node_list[].interface_list[].bond_interface",
+          "spec.oci.not_managed.node_list[].interface_list[].ethernet_interface",
+          "spec.oci.not_managed.node_list[].interface_list[].vlan_interface",
+        ],
+      },
+      {
+        choiceField: "ipv6_address_choice",
+        fieldPath: "spec.oci.not_managed.node_list[].interface_list[].ipv6_address_choice",
+        options: [
+          "spec.oci.not_managed.node_list[].interface_list[].ipv6_auto_config",
+          "spec.oci.not_managed.node_list[].interface_list[].no_ipv6_address",
+          "spec.oci.not_managed.node_list[].interface_list[].static_ipv6_address",
+        ],
+      },
+      {
+        choiceField: "monitoring_choice",
+        fieldPath: "spec.oci.not_managed.node_list[].interface_list[].monitoring_choice",
+        options: [
+          "spec.oci.not_managed.node_list[].interface_list[].monitor",
+          "spec.oci.not_managed.node_list[].interface_list[].monitor_disabled",
+        ],
+      },
+      {
+        choiceField: "site_to_site_connectivity_interface_choice",
+        fieldPath:
+          "spec.oci.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_choice",
+        options: [
+          "spec.oci.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_disabled",
+          "spec.oci.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_enabled",
+        ],
+      },
+      {
+        choiceField: "lacp_choice",
+        fieldPath: "spec.oci.not_managed.node_list[].interface_list[].bond_interface.lacp_choice",
+        options: [
+          "spec.oci.not_managed.node_list[].interface_list[].bond_interface.active_backup",
+          "spec.oci.not_managed.node_list[].interface_list[].bond_interface.lacp",
+        ],
+      },
+      {
+        choiceField: "autoconfig_choice",
+        fieldPath:
+          "spec.oci.not_managed.node_list[].interface_list[].ipv6_auto_config.autoconfig_choice",
+        options: [
+          "spec.oci.not_managed.node_list[].interface_list[].ipv6_auto_config.host",
+          "spec.oci.not_managed.node_list[].interface_list[].ipv6_auto_config.router",
+        ],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath:
+          "spec.oci.not_managed.node_list[].interface_list[].ipv6_auto_config.router.address_choice",
+        options: [
+          "spec.oci.not_managed.node_list[].interface_list[].ipv6_auto_config.router.network_prefix",
+          "spec.oci.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful",
+        ],
+      },
+      {
+        choiceField: "dns_choice",
+        fieldPath:
+          "spec.oci.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.dns_choice",
+        options: [
+          "spec.oci.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.configured_list",
+          "spec.oci.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns",
+        ],
+      },
+      {
+        choiceField: "local_dns_choice",
+        fieldPath:
+          "spec.oci.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.local_dns_choice",
+        options: [
+          "spec.oci.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.configured_address",
+          "spec.oci.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.first_address",
+          "spec.oci.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.last_address",
+        ],
+      },
+      {
+        choiceField: "interfaces_addressing_choice",
+        fieldPath:
+          "spec.oci.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.interfaces_addressing_choice",
+        options: [
+          "spec.oci.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.automatic_from_end",
+          "spec.oci.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.automatic_from_start",
+          "spec.oci.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.interface_ip_map",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.oci.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix_choice",
+        options: [
+          "spec.oci.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath:
+          "spec.oci.not_managed.node_list[].interface_list[].network_option.network_choice",
+        options: [
+          "spec.oci.not_managed.node_list[].interface_list[].network_option.segment_network",
+          "spec.oci.not_managed.node_list[].interface_list[].network_option.site_local_inside_network",
+          "spec.oci.not_managed.node_list[].interface_list[].network_option.site_local_network",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.oci.not_managed.node_list[].interface_list[].static_ipv6_address.network_prefix_choice",
+        options: [
+          "spec.oci.not_managed.node_list[].interface_list[].static_ipv6_address.cluster_static_ip",
+          "spec.oci.not_managed.node_list[].interface_list[].static_ipv6_address.node_static_ip",
+        ],
+      },
+      {
+        choiceField: "offline_survivability_mode_choice",
+        fieldPath: "spec.offline_survivability_mode.offline_survivability_mode_choice",
+        options: [
+          "spec.offline_survivability_mode.enable_offline_survivability_mode",
+          "spec.offline_survivability_mode.no_offline_survivability_mode",
+        ],
+      },
+      {
+        choiceField: "orchestration_choice",
+        fieldPath: "spec.openstack.orchestration_choice",
+        options: ["spec.openstack.not_managed"],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath: "spec.openstack.not_managed.node_list[].interface_list[].address_choice",
+        options: [
+          "spec.openstack.not_managed.node_list[].interface_list[].dhcp_client",
+          "spec.openstack.not_managed.node_list[].interface_list[].no_ipv4_address",
+          "spec.openstack.not_managed.node_list[].interface_list[].static_ip",
+        ],
+      },
+      {
+        choiceField: "interface_choice",
+        fieldPath: "spec.openstack.not_managed.node_list[].interface_list[].interface_choice",
+        options: [
+          "spec.openstack.not_managed.node_list[].interface_list[].bond_interface",
+          "spec.openstack.not_managed.node_list[].interface_list[].ethernet_interface",
+          "spec.openstack.not_managed.node_list[].interface_list[].vlan_interface",
+        ],
+      },
+      {
+        choiceField: "ipv6_address_choice",
+        fieldPath: "spec.openstack.not_managed.node_list[].interface_list[].ipv6_address_choice",
+        options: [
+          "spec.openstack.not_managed.node_list[].interface_list[].ipv6_auto_config",
+          "spec.openstack.not_managed.node_list[].interface_list[].no_ipv6_address",
+          "spec.openstack.not_managed.node_list[].interface_list[].static_ipv6_address",
+        ],
+      },
+      {
+        choiceField: "monitoring_choice",
+        fieldPath: "spec.openstack.not_managed.node_list[].interface_list[].monitoring_choice",
+        options: [
+          "spec.openstack.not_managed.node_list[].interface_list[].monitor",
+          "spec.openstack.not_managed.node_list[].interface_list[].monitor_disabled",
+        ],
+      },
+      {
+        choiceField: "site_to_site_connectivity_interface_choice",
+        fieldPath:
+          "spec.openstack.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_choice",
+        options: [
+          "spec.openstack.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_disabled",
+          "spec.openstack.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_enabled",
+        ],
+      },
+      {
+        choiceField: "lacp_choice",
+        fieldPath:
+          "spec.openstack.not_managed.node_list[].interface_list[].bond_interface.lacp_choice",
+        options: [
+          "spec.openstack.not_managed.node_list[].interface_list[].bond_interface.active_backup",
+          "spec.openstack.not_managed.node_list[].interface_list[].bond_interface.lacp",
+        ],
+      },
+      {
+        choiceField: "autoconfig_choice",
+        fieldPath:
+          "spec.openstack.not_managed.node_list[].interface_list[].ipv6_auto_config.autoconfig_choice",
+        options: [
+          "spec.openstack.not_managed.node_list[].interface_list[].ipv6_auto_config.host",
+          "spec.openstack.not_managed.node_list[].interface_list[].ipv6_auto_config.router",
+        ],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath:
+          "spec.openstack.not_managed.node_list[].interface_list[].ipv6_auto_config.router.address_choice",
+        options: [
+          "spec.openstack.not_managed.node_list[].interface_list[].ipv6_auto_config.router.network_prefix",
+          "spec.openstack.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful",
+        ],
+      },
+      {
+        choiceField: "dns_choice",
+        fieldPath:
+          "spec.openstack.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.dns_choice",
+        options: [
+          "spec.openstack.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.configured_list",
+          "spec.openstack.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns",
+        ],
+      },
+      {
+        choiceField: "local_dns_choice",
+        fieldPath:
+          "spec.openstack.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.local_dns_choice",
+        options: [
+          "spec.openstack.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.configured_address",
+          "spec.openstack.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.first_address",
+          "spec.openstack.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.last_address",
+        ],
+      },
+      {
+        choiceField: "interfaces_addressing_choice",
+        fieldPath:
+          "spec.openstack.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.interfaces_addressing_choice",
+        options: [
+          "spec.openstack.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.automatic_from_end",
+          "spec.openstack.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.automatic_from_start",
+          "spec.openstack.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.interface_ip_map",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.openstack.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix_choice",
+        options: [
+          "spec.openstack.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath:
+          "spec.openstack.not_managed.node_list[].interface_list[].network_option.network_choice",
+        options: [
+          "spec.openstack.not_managed.node_list[].interface_list[].network_option.segment_network",
+          "spec.openstack.not_managed.node_list[].interface_list[].network_option.site_local_inside_network",
+          "spec.openstack.not_managed.node_list[].interface_list[].network_option.site_local_network",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.openstack.not_managed.node_list[].interface_list[].static_ipv6_address.network_prefix_choice",
+        options: [
+          "spec.openstack.not_managed.node_list[].interface_list[].static_ipv6_address.cluster_static_ip",
+          "spec.openstack.not_managed.node_list[].interface_list[].static_ipv6_address.node_static_ip",
+        ],
+      },
+      {
+        choiceField: "perf_mode_choice",
+        fieldPath: "spec.performance_enhancement_mode.perf_mode_choice",
+        options: [
+          "spec.performance_enhancement_mode.perf_mode_l3_enhanced",
+          "spec.performance_enhancement_mode.perf_mode_l7_enhanced",
+        ],
+      },
+      {
+        choiceField: "perf_mode_choice",
+        fieldPath: "spec.performance_enhancement_mode.perf_mode_l3_enhanced.perf_mode_choice",
+        options: [
+          "spec.performance_enhancement_mode.perf_mode_l3_enhanced.jumbo",
+          "spec.performance_enhancement_mode.perf_mode_l3_enhanced.no_jumbo",
+        ],
+      },
+      {
+        choiceField: "re_selection_choice",
+        fieldPath: "spec.re_select.re_selection_choice",
+        options: ["spec.re_select.geo_proximity", "spec.re_select.specific_re"],
+      },
+      {
+        choiceField: "site_mesh_group_choice",
+        fieldPath: "spec.site_mesh_group_on_slo.site_mesh_group_choice",
+        options: [
+          "spec.site_mesh_group_on_slo.no_site_mesh_group",
+          "spec.site_mesh_group_on_slo.site_mesh_group",
+        ],
+      },
+      {
+        choiceField: "site_mesh_group_ip_choice",
+        fieldPath: "spec.site_mesh_group_on_slo.site_mesh_group_ip_choice",
+        options: [
+          "spec.site_mesh_group_on_slo.sm_connection_public_ip",
+          "spec.site_mesh_group_on_slo.sm_connection_pvt_ip",
+        ],
+      },
+      {
+        choiceField: "operating_system_version_choice",
+        fieldPath: "spec.software_settings.os.operating_system_version_choice",
+        options: [
+          "spec.software_settings.os.default_os_version",
+          "spec.software_settings.os.operating_system_version",
+        ],
+      },
+      {
+        choiceField: "volterra_sw_version_choice",
+        fieldPath: "spec.software_settings.sw.volterra_sw_version_choice",
+        options: [
+          "spec.software_settings.sw.default_sw_version",
+          "spec.software_settings.sw.volterra_software_version",
+        ],
+      },
+      {
+        choiceField: "kubernetes_upgrade_drain_enable_choice",
+        fieldPath:
+          "spec.upgrade_settings.kubernetes_upgrade_drain.kubernetes_upgrade_drain_enable_choice",
+        options: [
+          "spec.upgrade_settings.kubernetes_upgrade_drain.disable_upgrade_drain",
+          "spec.upgrade_settings.kubernetes_upgrade_drain.enable_upgrade_drain",
+        ],
+      },
+      {
+        choiceField: "drain_max_unavailable_choice",
+        fieldPath:
+          "spec.upgrade_settings.kubernetes_upgrade_drain.enable_upgrade_drain.drain_max_unavailable_choice",
+        options: [
+          "spec.upgrade_settings.kubernetes_upgrade_drain.enable_upgrade_drain.drain_max_unavailable_node_count",
+        ],
+      },
+      {
+        choiceField: "vega_upgrade_mode_toggle_choice",
+        fieldPath:
+          "spec.upgrade_settings.kubernetes_upgrade_drain.enable_upgrade_drain.vega_upgrade_mode_toggle_choice",
+        options: [
+          "spec.upgrade_settings.kubernetes_upgrade_drain.enable_upgrade_drain.disable_vega_upgrade_mode",
+          "spec.upgrade_settings.kubernetes_upgrade_drain.enable_upgrade_drain.enable_vega_upgrade_mode",
+        ],
+      },
+      {
+        choiceField: "orchestration_choice",
+        fieldPath: "spec.vmware.orchestration_choice",
+        options: ["spec.vmware.not_managed"],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath: "spec.vmware.not_managed.node_list[].interface_list[].address_choice",
+        options: [
+          "spec.vmware.not_managed.node_list[].interface_list[].dhcp_client",
+          "spec.vmware.not_managed.node_list[].interface_list[].no_ipv4_address",
+          "spec.vmware.not_managed.node_list[].interface_list[].static_ip",
+        ],
+      },
+      {
+        choiceField: "interface_choice",
+        fieldPath: "spec.vmware.not_managed.node_list[].interface_list[].interface_choice",
+        options: [
+          "spec.vmware.not_managed.node_list[].interface_list[].bond_interface",
+          "spec.vmware.not_managed.node_list[].interface_list[].ethernet_interface",
+          "spec.vmware.not_managed.node_list[].interface_list[].vlan_interface",
+        ],
+      },
+      {
+        choiceField: "ipv6_address_choice",
+        fieldPath: "spec.vmware.not_managed.node_list[].interface_list[].ipv6_address_choice",
+        options: [
+          "spec.vmware.not_managed.node_list[].interface_list[].ipv6_auto_config",
+          "spec.vmware.not_managed.node_list[].interface_list[].no_ipv6_address",
+          "spec.vmware.not_managed.node_list[].interface_list[].static_ipv6_address",
+        ],
+      },
+      {
+        choiceField: "monitoring_choice",
+        fieldPath: "spec.vmware.not_managed.node_list[].interface_list[].monitoring_choice",
+        options: [
+          "spec.vmware.not_managed.node_list[].interface_list[].monitor",
+          "spec.vmware.not_managed.node_list[].interface_list[].monitor_disabled",
+        ],
+      },
+      {
+        choiceField: "site_to_site_connectivity_interface_choice",
+        fieldPath:
+          "spec.vmware.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_choice",
+        options: [
+          "spec.vmware.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_disabled",
+          "spec.vmware.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_enabled",
+        ],
+      },
+      {
+        choiceField: "lacp_choice",
+        fieldPath:
+          "spec.vmware.not_managed.node_list[].interface_list[].bond_interface.lacp_choice",
+        options: [
+          "spec.vmware.not_managed.node_list[].interface_list[].bond_interface.active_backup",
+          "spec.vmware.not_managed.node_list[].interface_list[].bond_interface.lacp",
+        ],
+      },
+      {
+        choiceField: "autoconfig_choice",
+        fieldPath:
+          "spec.vmware.not_managed.node_list[].interface_list[].ipv6_auto_config.autoconfig_choice",
+        options: [
+          "spec.vmware.not_managed.node_list[].interface_list[].ipv6_auto_config.host",
+          "spec.vmware.not_managed.node_list[].interface_list[].ipv6_auto_config.router",
+        ],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath:
+          "spec.vmware.not_managed.node_list[].interface_list[].ipv6_auto_config.router.address_choice",
+        options: [
+          "spec.vmware.not_managed.node_list[].interface_list[].ipv6_auto_config.router.network_prefix",
+          "spec.vmware.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful",
+        ],
+      },
+      {
+        choiceField: "dns_choice",
+        fieldPath:
+          "spec.vmware.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.dns_choice",
+        options: [
+          "spec.vmware.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.configured_list",
+          "spec.vmware.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns",
+        ],
+      },
+      {
+        choiceField: "local_dns_choice",
+        fieldPath:
+          "spec.vmware.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.local_dns_choice",
+        options: [
+          "spec.vmware.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.configured_address",
+          "spec.vmware.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.first_address",
+          "spec.vmware.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.last_address",
+        ],
+      },
+      {
+        choiceField: "interfaces_addressing_choice",
+        fieldPath:
+          "spec.vmware.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.interfaces_addressing_choice",
+        options: [
+          "spec.vmware.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.automatic_from_end",
+          "spec.vmware.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.automatic_from_start",
+          "spec.vmware.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.interface_ip_map",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.vmware.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix_choice",
+        options: [
+          "spec.vmware.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath:
+          "spec.vmware.not_managed.node_list[].interface_list[].network_option.network_choice",
+        options: [
+          "spec.vmware.not_managed.node_list[].interface_list[].network_option.segment_network",
+          "spec.vmware.not_managed.node_list[].interface_list[].network_option.site_local_inside_network",
+          "spec.vmware.not_managed.node_list[].interface_list[].network_option.site_local_network",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.vmware.not_managed.node_list[].interface_list[].static_ipv6_address.network_prefix_choice",
+        options: [
+          "spec.vmware.not_managed.node_list[].interface_list[].static_ipv6_address.cluster_static_ip",
+          "spec.vmware.not_managed.node_list[].interface_list[].static_ipv6_address.node_static_ip",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_site_management_standard",
@@ -4720,7 +12129,1598 @@ export const sitesTools: ParsedOperation[] = [
         resourceType: "viewssecuremesh-site-v2replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "blocked_services_choice",
+        fieldPath: "spec.blocked_services_choice",
+        options: ["spec.block_all_services", "spec.blocked_services"],
+      },
+      {
+        choiceField: "enterprise_proxy_choice",
+        fieldPath: "spec.enterprise_proxy_choice",
+        options: ["spec.custom_proxy", "spec.f5_proxy"],
+      },
+      {
+        choiceField: "forward_proxy_choice",
+        fieldPath: "spec.forward_proxy_choice",
+        options: ["spec.active_forward_proxy_policies", "spec.no_forward_proxy"],
+      },
+      {
+        choiceField: "logs_receiver_choice",
+        fieldPath: "spec.logs_receiver_choice",
+        options: ["spec.log_receiver", "spec.logs_streaming_disabled"],
+      },
+      {
+        choiceField: "network_policy_choice",
+        fieldPath: "spec.network_policy_choice",
+        options: ["spec.active_enhanced_firewall_policies", "spec.no_network_policy"],
+      },
+      {
+        choiceField: "node_ha_choice",
+        fieldPath: "spec.node_ha_choice",
+        options: ["spec.disable_ha", "spec.enable_ha"],
+      },
+      {
+        choiceField: "provider_choice",
+        fieldPath: "spec.provider_choice",
+        options: [
+          "spec.aws",
+          "spec.azure",
+          "spec.baremetal",
+          "spec.equinix",
+          "spec.gcp",
+          "spec.kvm",
+          "spec.nutanix",
+          "spec.oci",
+          "spec.openstack",
+          "spec.vmware",
+        ],
+      },
+      {
+        choiceField: "proxy_bypass_choice",
+        fieldPath: "spec.proxy_bypass_choice",
+        options: ["spec.custom_proxy_bypass", "spec.no_proxy_bypass"],
+      },
+      {
+        choiceField: "s2s_connectivity_sli_choice",
+        fieldPath: "spec.s2s_connectivity_sli_choice",
+        options: ["spec.dc_cluster_group_sli", "spec.no_s2s_connectivity_sli"],
+      },
+      {
+        choiceField: "s2s_connectivity_slo_choice",
+        fieldPath: "spec.s2s_connectivity_slo_choice",
+        options: [
+          "spec.dc_cluster_group_slo",
+          "spec.no_s2s_connectivity_slo",
+          "spec.site_mesh_group_on_slo",
+        ],
+      },
+      {
+        choiceField: "url_categorization_choice",
+        fieldPath: "spec.url_categorization_choice",
+        options: ["spec.disable_url_categorization", "spec.enable_url_categorization"],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.admin_user_credentials.admin_password.secret_info_oneof",
+        options: [
+          "spec.admin_user_credentials.admin_password.blindfold_secret_info",
+          "spec.admin_user_credentials.admin_password.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "orchestration_choice",
+        fieldPath: "spec.aws.orchestration_choice",
+        options: ["spec.aws.not_managed"],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath: "spec.aws.not_managed.node_list[].interface_list[].address_choice",
+        options: [
+          "spec.aws.not_managed.node_list[].interface_list[].dhcp_client",
+          "spec.aws.not_managed.node_list[].interface_list[].no_ipv4_address",
+          "spec.aws.not_managed.node_list[].interface_list[].static_ip",
+        ],
+      },
+      {
+        choiceField: "interface_choice",
+        fieldPath: "spec.aws.not_managed.node_list[].interface_list[].interface_choice",
+        options: [
+          "spec.aws.not_managed.node_list[].interface_list[].bond_interface",
+          "spec.aws.not_managed.node_list[].interface_list[].ethernet_interface",
+          "spec.aws.not_managed.node_list[].interface_list[].vlan_interface",
+        ],
+      },
+      {
+        choiceField: "ipv6_address_choice",
+        fieldPath: "spec.aws.not_managed.node_list[].interface_list[].ipv6_address_choice",
+        options: [
+          "spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config",
+          "spec.aws.not_managed.node_list[].interface_list[].no_ipv6_address",
+          "spec.aws.not_managed.node_list[].interface_list[].static_ipv6_address",
+        ],
+      },
+      {
+        choiceField: "monitoring_choice",
+        fieldPath: "spec.aws.not_managed.node_list[].interface_list[].monitoring_choice",
+        options: [
+          "spec.aws.not_managed.node_list[].interface_list[].monitor",
+          "spec.aws.not_managed.node_list[].interface_list[].monitor_disabled",
+        ],
+      },
+      {
+        choiceField: "site_to_site_connectivity_interface_choice",
+        fieldPath:
+          "spec.aws.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_choice",
+        options: [
+          "spec.aws.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_disabled",
+          "spec.aws.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_enabled",
+        ],
+      },
+      {
+        choiceField: "lacp_choice",
+        fieldPath: "spec.aws.not_managed.node_list[].interface_list[].bond_interface.lacp_choice",
+        options: [
+          "spec.aws.not_managed.node_list[].interface_list[].bond_interface.active_backup",
+          "spec.aws.not_managed.node_list[].interface_list[].bond_interface.lacp",
+        ],
+      },
+      {
+        choiceField: "autoconfig_choice",
+        fieldPath:
+          "spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config.autoconfig_choice",
+        options: [
+          "spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config.host",
+          "spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config.router",
+        ],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath:
+          "spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config.router.address_choice",
+        options: [
+          "spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config.router.network_prefix",
+          "spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful",
+        ],
+      },
+      {
+        choiceField: "dns_choice",
+        fieldPath:
+          "spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.dns_choice",
+        options: [
+          "spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.configured_list",
+          "spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns",
+        ],
+      },
+      {
+        choiceField: "local_dns_choice",
+        fieldPath:
+          "spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.local_dns_choice",
+        options: [
+          "spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.configured_address",
+          "spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.first_address",
+          "spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.last_address",
+        ],
+      },
+      {
+        choiceField: "interfaces_addressing_choice",
+        fieldPath:
+          "spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.interfaces_addressing_choice",
+        options: [
+          "spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.automatic_from_end",
+          "spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.automatic_from_start",
+          "spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.interface_ip_map",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix_choice",
+        options: [
+          "spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath:
+          "spec.aws.not_managed.node_list[].interface_list[].network_option.network_choice",
+        options: [
+          "spec.aws.not_managed.node_list[].interface_list[].network_option.segment_network",
+          "spec.aws.not_managed.node_list[].interface_list[].network_option.site_local_inside_network",
+          "spec.aws.not_managed.node_list[].interface_list[].network_option.site_local_network",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.aws.not_managed.node_list[].interface_list[].static_ipv6_address.network_prefix_choice",
+        options: [
+          "spec.aws.not_managed.node_list[].interface_list[].static_ipv6_address.cluster_static_ip",
+          "spec.aws.not_managed.node_list[].interface_list[].static_ipv6_address.node_static_ip",
+        ],
+      },
+      {
+        choiceField: "orchestration_choice",
+        fieldPath: "spec.azure.orchestration_choice",
+        options: ["spec.azure.not_managed"],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath: "spec.azure.not_managed.node_list[].interface_list[].address_choice",
+        options: [
+          "spec.azure.not_managed.node_list[].interface_list[].dhcp_client",
+          "spec.azure.not_managed.node_list[].interface_list[].no_ipv4_address",
+          "spec.azure.not_managed.node_list[].interface_list[].static_ip",
+        ],
+      },
+      {
+        choiceField: "interface_choice",
+        fieldPath: "spec.azure.not_managed.node_list[].interface_list[].interface_choice",
+        options: [
+          "spec.azure.not_managed.node_list[].interface_list[].bond_interface",
+          "spec.azure.not_managed.node_list[].interface_list[].ethernet_interface",
+          "spec.azure.not_managed.node_list[].interface_list[].vlan_interface",
+        ],
+      },
+      {
+        choiceField: "ipv6_address_choice",
+        fieldPath: "spec.azure.not_managed.node_list[].interface_list[].ipv6_address_choice",
+        options: [
+          "spec.azure.not_managed.node_list[].interface_list[].ipv6_auto_config",
+          "spec.azure.not_managed.node_list[].interface_list[].no_ipv6_address",
+          "spec.azure.not_managed.node_list[].interface_list[].static_ipv6_address",
+        ],
+      },
+      {
+        choiceField: "monitoring_choice",
+        fieldPath: "spec.azure.not_managed.node_list[].interface_list[].monitoring_choice",
+        options: [
+          "spec.azure.not_managed.node_list[].interface_list[].monitor",
+          "spec.azure.not_managed.node_list[].interface_list[].monitor_disabled",
+        ],
+      },
+      {
+        choiceField: "site_to_site_connectivity_interface_choice",
+        fieldPath:
+          "spec.azure.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_choice",
+        options: [
+          "spec.azure.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_disabled",
+          "spec.azure.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_enabled",
+        ],
+      },
+      {
+        choiceField: "lacp_choice",
+        fieldPath: "spec.azure.not_managed.node_list[].interface_list[].bond_interface.lacp_choice",
+        options: [
+          "spec.azure.not_managed.node_list[].interface_list[].bond_interface.active_backup",
+          "spec.azure.not_managed.node_list[].interface_list[].bond_interface.lacp",
+        ],
+      },
+      {
+        choiceField: "autoconfig_choice",
+        fieldPath:
+          "spec.azure.not_managed.node_list[].interface_list[].ipv6_auto_config.autoconfig_choice",
+        options: [
+          "spec.azure.not_managed.node_list[].interface_list[].ipv6_auto_config.host",
+          "spec.azure.not_managed.node_list[].interface_list[].ipv6_auto_config.router",
+        ],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath:
+          "spec.azure.not_managed.node_list[].interface_list[].ipv6_auto_config.router.address_choice",
+        options: [
+          "spec.azure.not_managed.node_list[].interface_list[].ipv6_auto_config.router.network_prefix",
+          "spec.azure.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful",
+        ],
+      },
+      {
+        choiceField: "dns_choice",
+        fieldPath:
+          "spec.azure.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.dns_choice",
+        options: [
+          "spec.azure.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.configured_list",
+          "spec.azure.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns",
+        ],
+      },
+      {
+        choiceField: "local_dns_choice",
+        fieldPath:
+          "spec.azure.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.local_dns_choice",
+        options: [
+          "spec.azure.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.configured_address",
+          "spec.azure.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.first_address",
+          "spec.azure.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.last_address",
+        ],
+      },
+      {
+        choiceField: "interfaces_addressing_choice",
+        fieldPath:
+          "spec.azure.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.interfaces_addressing_choice",
+        options: [
+          "spec.azure.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.automatic_from_end",
+          "spec.azure.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.automatic_from_start",
+          "spec.azure.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.interface_ip_map",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.azure.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix_choice",
+        options: [
+          "spec.azure.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath:
+          "spec.azure.not_managed.node_list[].interface_list[].network_option.network_choice",
+        options: [
+          "spec.azure.not_managed.node_list[].interface_list[].network_option.segment_network",
+          "spec.azure.not_managed.node_list[].interface_list[].network_option.site_local_inside_network",
+          "spec.azure.not_managed.node_list[].interface_list[].network_option.site_local_network",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.azure.not_managed.node_list[].interface_list[].static_ipv6_address.network_prefix_choice",
+        options: [
+          "spec.azure.not_managed.node_list[].interface_list[].static_ipv6_address.cluster_static_ip",
+          "spec.azure.not_managed.node_list[].interface_list[].static_ipv6_address.node_static_ip",
+        ],
+      },
+      {
+        choiceField: "orchestration_choice",
+        fieldPath: "spec.baremetal.orchestration_choice",
+        options: ["spec.baremetal.not_managed"],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath: "spec.baremetal.not_managed.node_list[].interface_list[].address_choice",
+        options: [
+          "spec.baremetal.not_managed.node_list[].interface_list[].dhcp_client",
+          "spec.baremetal.not_managed.node_list[].interface_list[].no_ipv4_address",
+          "spec.baremetal.not_managed.node_list[].interface_list[].static_ip",
+        ],
+      },
+      {
+        choiceField: "interface_choice",
+        fieldPath: "spec.baremetal.not_managed.node_list[].interface_list[].interface_choice",
+        options: [
+          "spec.baremetal.not_managed.node_list[].interface_list[].bond_interface",
+          "spec.baremetal.not_managed.node_list[].interface_list[].ethernet_interface",
+          "spec.baremetal.not_managed.node_list[].interface_list[].vlan_interface",
+        ],
+      },
+      {
+        choiceField: "ipv6_address_choice",
+        fieldPath: "spec.baremetal.not_managed.node_list[].interface_list[].ipv6_address_choice",
+        options: [
+          "spec.baremetal.not_managed.node_list[].interface_list[].ipv6_auto_config",
+          "spec.baremetal.not_managed.node_list[].interface_list[].no_ipv6_address",
+          "spec.baremetal.not_managed.node_list[].interface_list[].static_ipv6_address",
+        ],
+      },
+      {
+        choiceField: "monitoring_choice",
+        fieldPath: "spec.baremetal.not_managed.node_list[].interface_list[].monitoring_choice",
+        options: [
+          "spec.baremetal.not_managed.node_list[].interface_list[].monitor",
+          "spec.baremetal.not_managed.node_list[].interface_list[].monitor_disabled",
+        ],
+      },
+      {
+        choiceField: "site_to_site_connectivity_interface_choice",
+        fieldPath:
+          "spec.baremetal.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_choice",
+        options: [
+          "spec.baremetal.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_disabled",
+          "spec.baremetal.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_enabled",
+        ],
+      },
+      {
+        choiceField: "lacp_choice",
+        fieldPath:
+          "spec.baremetal.not_managed.node_list[].interface_list[].bond_interface.lacp_choice",
+        options: [
+          "spec.baremetal.not_managed.node_list[].interface_list[].bond_interface.active_backup",
+          "spec.baremetal.not_managed.node_list[].interface_list[].bond_interface.lacp",
+        ],
+      },
+      {
+        choiceField: "autoconfig_choice",
+        fieldPath:
+          "spec.baremetal.not_managed.node_list[].interface_list[].ipv6_auto_config.autoconfig_choice",
+        options: [
+          "spec.baremetal.not_managed.node_list[].interface_list[].ipv6_auto_config.host",
+          "spec.baremetal.not_managed.node_list[].interface_list[].ipv6_auto_config.router",
+        ],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath:
+          "spec.baremetal.not_managed.node_list[].interface_list[].ipv6_auto_config.router.address_choice",
+        options: [
+          "spec.baremetal.not_managed.node_list[].interface_list[].ipv6_auto_config.router.network_prefix",
+          "spec.baremetal.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful",
+        ],
+      },
+      {
+        choiceField: "dns_choice",
+        fieldPath:
+          "spec.baremetal.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.dns_choice",
+        options: [
+          "spec.baremetal.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.configured_list",
+          "spec.baremetal.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns",
+        ],
+      },
+      {
+        choiceField: "local_dns_choice",
+        fieldPath:
+          "spec.baremetal.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.local_dns_choice",
+        options: [
+          "spec.baremetal.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.configured_address",
+          "spec.baremetal.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.first_address",
+          "spec.baremetal.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.last_address",
+        ],
+      },
+      {
+        choiceField: "interfaces_addressing_choice",
+        fieldPath:
+          "spec.baremetal.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.interfaces_addressing_choice",
+        options: [
+          "spec.baremetal.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.automatic_from_end",
+          "spec.baremetal.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.automatic_from_start",
+          "spec.baremetal.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.interface_ip_map",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.baremetal.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix_choice",
+        options: [
+          "spec.baremetal.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath:
+          "spec.baremetal.not_managed.node_list[].interface_list[].network_option.network_choice",
+        options: [
+          "spec.baremetal.not_managed.node_list[].interface_list[].network_option.segment_network",
+          "spec.baremetal.not_managed.node_list[].interface_list[].network_option.site_local_inside_network",
+          "spec.baremetal.not_managed.node_list[].interface_list[].network_option.site_local_network",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.baremetal.not_managed.node_list[].interface_list[].static_ipv6_address.network_prefix_choice",
+        options: [
+          "spec.baremetal.not_managed.node_list[].interface_list[].static_ipv6_address.cluster_static_ip",
+          "spec.baremetal.not_managed.node_list[].interface_list[].static_ipv6_address.node_static_ip",
+        ],
+      },
+      {
+        choiceField: "blocked_services_value_type_choice",
+        fieldPath: "spec.blocked_services.blocked_sevice[].blocked_services_value_type_choice",
+        options: [
+          "spec.blocked_services.blocked_sevice[].dns",
+          "spec.blocked_services.blocked_sevice[].ssh",
+          "spec.blocked_services.blocked_sevice[].web_user_interface",
+        ],
+      },
+      {
+        choiceField: "use_for_re_tunnel_choice",
+        fieldPath: "spec.custom_proxy.use_for_re_tunnel_choice",
+        options: ["spec.custom_proxy.disable_re_tunnel", "spec.custom_proxy.enable_re_tunnel"],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.custom_proxy.password.secret_info_oneof",
+        options: [
+          "spec.custom_proxy.password.blindfold_secret_info",
+          "spec.custom_proxy.password.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "dns_server_choice",
+        fieldPath: "spec.dns_ntp_config.dns_server_choice",
+        options: ["spec.dns_ntp_config.custom_dns", "spec.dns_ntp_config.f5_dns_default"],
+      },
+      {
+        choiceField: "ntp_server_choice",
+        fieldPath: "spec.dns_ntp_config.ntp_server_choice",
+        options: ["spec.dns_ntp_config.custom_ntp", "spec.dns_ntp_config.f5_ntp_default"],
+      },
+      {
+        choiceField: "orchestration_choice",
+        fieldPath: "spec.equinix.orchestration_choice",
+        options: ["spec.equinix.not_managed"],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath: "spec.equinix.not_managed.node_list[].interface_list[].address_choice",
+        options: [
+          "spec.equinix.not_managed.node_list[].interface_list[].dhcp_client",
+          "spec.equinix.not_managed.node_list[].interface_list[].no_ipv4_address",
+          "spec.equinix.not_managed.node_list[].interface_list[].static_ip",
+        ],
+      },
+      {
+        choiceField: "interface_choice",
+        fieldPath: "spec.equinix.not_managed.node_list[].interface_list[].interface_choice",
+        options: [
+          "spec.equinix.not_managed.node_list[].interface_list[].bond_interface",
+          "spec.equinix.not_managed.node_list[].interface_list[].ethernet_interface",
+          "spec.equinix.not_managed.node_list[].interface_list[].vlan_interface",
+        ],
+      },
+      {
+        choiceField: "ipv6_address_choice",
+        fieldPath: "spec.equinix.not_managed.node_list[].interface_list[].ipv6_address_choice",
+        options: [
+          "spec.equinix.not_managed.node_list[].interface_list[].ipv6_auto_config",
+          "spec.equinix.not_managed.node_list[].interface_list[].no_ipv6_address",
+          "spec.equinix.not_managed.node_list[].interface_list[].static_ipv6_address",
+        ],
+      },
+      {
+        choiceField: "monitoring_choice",
+        fieldPath: "spec.equinix.not_managed.node_list[].interface_list[].monitoring_choice",
+        options: [
+          "spec.equinix.not_managed.node_list[].interface_list[].monitor",
+          "spec.equinix.not_managed.node_list[].interface_list[].monitor_disabled",
+        ],
+      },
+      {
+        choiceField: "site_to_site_connectivity_interface_choice",
+        fieldPath:
+          "spec.equinix.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_choice",
+        options: [
+          "spec.equinix.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_disabled",
+          "spec.equinix.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_enabled",
+        ],
+      },
+      {
+        choiceField: "lacp_choice",
+        fieldPath:
+          "spec.equinix.not_managed.node_list[].interface_list[].bond_interface.lacp_choice",
+        options: [
+          "spec.equinix.not_managed.node_list[].interface_list[].bond_interface.active_backup",
+          "spec.equinix.not_managed.node_list[].interface_list[].bond_interface.lacp",
+        ],
+      },
+      {
+        choiceField: "autoconfig_choice",
+        fieldPath:
+          "spec.equinix.not_managed.node_list[].interface_list[].ipv6_auto_config.autoconfig_choice",
+        options: [
+          "spec.equinix.not_managed.node_list[].interface_list[].ipv6_auto_config.host",
+          "spec.equinix.not_managed.node_list[].interface_list[].ipv6_auto_config.router",
+        ],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath:
+          "spec.equinix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.address_choice",
+        options: [
+          "spec.equinix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.network_prefix",
+          "spec.equinix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful",
+        ],
+      },
+      {
+        choiceField: "dns_choice",
+        fieldPath:
+          "spec.equinix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.dns_choice",
+        options: [
+          "spec.equinix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.configured_list",
+          "spec.equinix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns",
+        ],
+      },
+      {
+        choiceField: "local_dns_choice",
+        fieldPath:
+          "spec.equinix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.local_dns_choice",
+        options: [
+          "spec.equinix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.configured_address",
+          "spec.equinix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.first_address",
+          "spec.equinix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.last_address",
+        ],
+      },
+      {
+        choiceField: "interfaces_addressing_choice",
+        fieldPath:
+          "spec.equinix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.interfaces_addressing_choice",
+        options: [
+          "spec.equinix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.automatic_from_end",
+          "spec.equinix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.automatic_from_start",
+          "spec.equinix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.interface_ip_map",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.equinix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix_choice",
+        options: [
+          "spec.equinix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath:
+          "spec.equinix.not_managed.node_list[].interface_list[].network_option.network_choice",
+        options: [
+          "spec.equinix.not_managed.node_list[].interface_list[].network_option.segment_network",
+          "spec.equinix.not_managed.node_list[].interface_list[].network_option.site_local_inside_network",
+          "spec.equinix.not_managed.node_list[].interface_list[].network_option.site_local_network",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.equinix.not_managed.node_list[].interface_list[].static_ipv6_address.network_prefix_choice",
+        options: [
+          "spec.equinix.not_managed.node_list[].interface_list[].static_ipv6_address.cluster_static_ip",
+          "spec.equinix.not_managed.node_list[].interface_list[].static_ipv6_address.node_static_ip",
+        ],
+      },
+      {
+        choiceField: "orchestration_choice",
+        fieldPath: "spec.gcp.orchestration_choice",
+        options: ["spec.gcp.not_managed"],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath: "spec.gcp.not_managed.node_list[].interface_list[].address_choice",
+        options: [
+          "spec.gcp.not_managed.node_list[].interface_list[].dhcp_client",
+          "spec.gcp.not_managed.node_list[].interface_list[].no_ipv4_address",
+          "spec.gcp.not_managed.node_list[].interface_list[].static_ip",
+        ],
+      },
+      {
+        choiceField: "interface_choice",
+        fieldPath: "spec.gcp.not_managed.node_list[].interface_list[].interface_choice",
+        options: [
+          "spec.gcp.not_managed.node_list[].interface_list[].bond_interface",
+          "spec.gcp.not_managed.node_list[].interface_list[].ethernet_interface",
+          "spec.gcp.not_managed.node_list[].interface_list[].vlan_interface",
+        ],
+      },
+      {
+        choiceField: "ipv6_address_choice",
+        fieldPath: "spec.gcp.not_managed.node_list[].interface_list[].ipv6_address_choice",
+        options: [
+          "spec.gcp.not_managed.node_list[].interface_list[].ipv6_auto_config",
+          "spec.gcp.not_managed.node_list[].interface_list[].no_ipv6_address",
+          "spec.gcp.not_managed.node_list[].interface_list[].static_ipv6_address",
+        ],
+      },
+      {
+        choiceField: "monitoring_choice",
+        fieldPath: "spec.gcp.not_managed.node_list[].interface_list[].monitoring_choice",
+        options: [
+          "spec.gcp.not_managed.node_list[].interface_list[].monitor",
+          "spec.gcp.not_managed.node_list[].interface_list[].monitor_disabled",
+        ],
+      },
+      {
+        choiceField: "site_to_site_connectivity_interface_choice",
+        fieldPath:
+          "spec.gcp.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_choice",
+        options: [
+          "spec.gcp.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_disabled",
+          "spec.gcp.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_enabled",
+        ],
+      },
+      {
+        choiceField: "lacp_choice",
+        fieldPath: "spec.gcp.not_managed.node_list[].interface_list[].bond_interface.lacp_choice",
+        options: [
+          "spec.gcp.not_managed.node_list[].interface_list[].bond_interface.active_backup",
+          "spec.gcp.not_managed.node_list[].interface_list[].bond_interface.lacp",
+        ],
+      },
+      {
+        choiceField: "autoconfig_choice",
+        fieldPath:
+          "spec.gcp.not_managed.node_list[].interface_list[].ipv6_auto_config.autoconfig_choice",
+        options: [
+          "spec.gcp.not_managed.node_list[].interface_list[].ipv6_auto_config.host",
+          "spec.gcp.not_managed.node_list[].interface_list[].ipv6_auto_config.router",
+        ],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath:
+          "spec.gcp.not_managed.node_list[].interface_list[].ipv6_auto_config.router.address_choice",
+        options: [
+          "spec.gcp.not_managed.node_list[].interface_list[].ipv6_auto_config.router.network_prefix",
+          "spec.gcp.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful",
+        ],
+      },
+      {
+        choiceField: "dns_choice",
+        fieldPath:
+          "spec.gcp.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.dns_choice",
+        options: [
+          "spec.gcp.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.configured_list",
+          "spec.gcp.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns",
+        ],
+      },
+      {
+        choiceField: "local_dns_choice",
+        fieldPath:
+          "spec.gcp.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.local_dns_choice",
+        options: [
+          "spec.gcp.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.configured_address",
+          "spec.gcp.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.first_address",
+          "spec.gcp.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.last_address",
+        ],
+      },
+      {
+        choiceField: "interfaces_addressing_choice",
+        fieldPath:
+          "spec.gcp.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.interfaces_addressing_choice",
+        options: [
+          "spec.gcp.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.automatic_from_end",
+          "spec.gcp.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.automatic_from_start",
+          "spec.gcp.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.interface_ip_map",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.gcp.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix_choice",
+        options: [
+          "spec.gcp.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath:
+          "spec.gcp.not_managed.node_list[].interface_list[].network_option.network_choice",
+        options: [
+          "spec.gcp.not_managed.node_list[].interface_list[].network_option.segment_network",
+          "spec.gcp.not_managed.node_list[].interface_list[].network_option.site_local_inside_network",
+          "spec.gcp.not_managed.node_list[].interface_list[].network_option.site_local_network",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.gcp.not_managed.node_list[].interface_list[].static_ipv6_address.network_prefix_choice",
+        options: [
+          "spec.gcp.not_managed.node_list[].interface_list[].static_ipv6_address.cluster_static_ip",
+          "spec.gcp.not_managed.node_list[].interface_list[].static_ipv6_address.node_static_ip",
+        ],
+      },
+      {
+        choiceField: "orchestration_choice",
+        fieldPath: "spec.kvm.orchestration_choice",
+        options: ["spec.kvm.not_managed"],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath: "spec.kvm.not_managed.node_list[].interface_list[].address_choice",
+        options: [
+          "spec.kvm.not_managed.node_list[].interface_list[].dhcp_client",
+          "spec.kvm.not_managed.node_list[].interface_list[].no_ipv4_address",
+          "spec.kvm.not_managed.node_list[].interface_list[].static_ip",
+        ],
+      },
+      {
+        choiceField: "interface_choice",
+        fieldPath: "spec.kvm.not_managed.node_list[].interface_list[].interface_choice",
+        options: [
+          "spec.kvm.not_managed.node_list[].interface_list[].bond_interface",
+          "spec.kvm.not_managed.node_list[].interface_list[].ethernet_interface",
+          "spec.kvm.not_managed.node_list[].interface_list[].vlan_interface",
+        ],
+      },
+      {
+        choiceField: "ipv6_address_choice",
+        fieldPath: "spec.kvm.not_managed.node_list[].interface_list[].ipv6_address_choice",
+        options: [
+          "spec.kvm.not_managed.node_list[].interface_list[].ipv6_auto_config",
+          "spec.kvm.not_managed.node_list[].interface_list[].no_ipv6_address",
+          "spec.kvm.not_managed.node_list[].interface_list[].static_ipv6_address",
+        ],
+      },
+      {
+        choiceField: "monitoring_choice",
+        fieldPath: "spec.kvm.not_managed.node_list[].interface_list[].monitoring_choice",
+        options: [
+          "spec.kvm.not_managed.node_list[].interface_list[].monitor",
+          "spec.kvm.not_managed.node_list[].interface_list[].monitor_disabled",
+        ],
+      },
+      {
+        choiceField: "site_to_site_connectivity_interface_choice",
+        fieldPath:
+          "spec.kvm.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_choice",
+        options: [
+          "spec.kvm.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_disabled",
+          "spec.kvm.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_enabled",
+        ],
+      },
+      {
+        choiceField: "lacp_choice",
+        fieldPath: "spec.kvm.not_managed.node_list[].interface_list[].bond_interface.lacp_choice",
+        options: [
+          "spec.kvm.not_managed.node_list[].interface_list[].bond_interface.active_backup",
+          "spec.kvm.not_managed.node_list[].interface_list[].bond_interface.lacp",
+        ],
+      },
+      {
+        choiceField: "autoconfig_choice",
+        fieldPath:
+          "spec.kvm.not_managed.node_list[].interface_list[].ipv6_auto_config.autoconfig_choice",
+        options: [
+          "spec.kvm.not_managed.node_list[].interface_list[].ipv6_auto_config.host",
+          "spec.kvm.not_managed.node_list[].interface_list[].ipv6_auto_config.router",
+        ],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath:
+          "spec.kvm.not_managed.node_list[].interface_list[].ipv6_auto_config.router.address_choice",
+        options: [
+          "spec.kvm.not_managed.node_list[].interface_list[].ipv6_auto_config.router.network_prefix",
+          "spec.kvm.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful",
+        ],
+      },
+      {
+        choiceField: "dns_choice",
+        fieldPath:
+          "spec.kvm.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.dns_choice",
+        options: [
+          "spec.kvm.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.configured_list",
+          "spec.kvm.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns",
+        ],
+      },
+      {
+        choiceField: "local_dns_choice",
+        fieldPath:
+          "spec.kvm.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.local_dns_choice",
+        options: [
+          "spec.kvm.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.configured_address",
+          "spec.kvm.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.first_address",
+          "spec.kvm.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.last_address",
+        ],
+      },
+      {
+        choiceField: "interfaces_addressing_choice",
+        fieldPath:
+          "spec.kvm.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.interfaces_addressing_choice",
+        options: [
+          "spec.kvm.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.automatic_from_end",
+          "spec.kvm.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.automatic_from_start",
+          "spec.kvm.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.interface_ip_map",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.kvm.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix_choice",
+        options: [
+          "spec.kvm.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath:
+          "spec.kvm.not_managed.node_list[].interface_list[].network_option.network_choice",
+        options: [
+          "spec.kvm.not_managed.node_list[].interface_list[].network_option.segment_network",
+          "spec.kvm.not_managed.node_list[].interface_list[].network_option.site_local_inside_network",
+          "spec.kvm.not_managed.node_list[].interface_list[].network_option.site_local_network",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.kvm.not_managed.node_list[].interface_list[].static_ipv6_address.network_prefix_choice",
+        options: [
+          "spec.kvm.not_managed.node_list[].interface_list[].static_ipv6_address.cluster_static_ip",
+          "spec.kvm.not_managed.node_list[].interface_list[].static_ipv6_address.node_static_ip",
+        ],
+      },
+      {
+        choiceField: "sli_choice",
+        fieldPath: "spec.local_vrf.sli_choice",
+        options: ["spec.local_vrf.default_sli_config", "spec.local_vrf.sli_config"],
+      },
+      {
+        choiceField: "slo_choice",
+        fieldPath: "spec.local_vrf.slo_choice",
+        options: ["spec.local_vrf.default_config", "spec.local_vrf.slo_config"],
+      },
+      {
+        choiceField: "static_route_choice",
+        fieldPath: "spec.local_vrf.sli_config.static_route_choice",
+        options: [
+          "spec.local_vrf.sli_config.no_static_routes",
+          "spec.local_vrf.sli_config.static_routes",
+        ],
+      },
+      {
+        choiceField: "static_v6_route_choice",
+        fieldPath: "spec.local_vrf.sli_config.static_v6_route_choice",
+        options: [
+          "spec.local_vrf.sli_config.no_v6_static_routes",
+          "spec.local_vrf.sli_config.static_v6_routes",
+        ],
+      },
+      {
+        choiceField: "next_hop_choice",
+        fieldPath: "spec.local_vrf.sli_config.static_routes.static_routes[].next_hop_choice",
+        options: [
+          "spec.local_vrf.sli_config.static_routes.static_routes[].default_gateway",
+          "spec.local_vrf.sli_config.static_routes.static_routes[].ip_address",
+          "spec.local_vrf.sli_config.static_routes.static_routes[].node_interface",
+        ],
+      },
+      {
+        choiceField: "next_hop_choice",
+        fieldPath: "spec.local_vrf.sli_config.static_v6_routes.static_routes[].next_hop_choice",
+        options: [
+          "spec.local_vrf.sli_config.static_v6_routes.static_routes[].default_gateway",
+          "spec.local_vrf.sli_config.static_v6_routes.static_routes[].ip_address",
+          "spec.local_vrf.sli_config.static_v6_routes.static_routes[].node_interface",
+        ],
+      },
+      {
+        choiceField: "static_route_choice",
+        fieldPath: "spec.local_vrf.slo_config.static_route_choice",
+        options: [
+          "spec.local_vrf.slo_config.no_static_routes",
+          "spec.local_vrf.slo_config.static_routes",
+        ],
+      },
+      {
+        choiceField: "static_v6_route_choice",
+        fieldPath: "spec.local_vrf.slo_config.static_v6_route_choice",
+        options: [
+          "spec.local_vrf.slo_config.no_v6_static_routes",
+          "spec.local_vrf.slo_config.static_v6_routes",
+        ],
+      },
+      {
+        choiceField: "next_hop_choice",
+        fieldPath: "spec.local_vrf.slo_config.static_routes.static_routes[].next_hop_choice",
+        options: [
+          "spec.local_vrf.slo_config.static_routes.static_routes[].default_gateway",
+          "spec.local_vrf.slo_config.static_routes.static_routes[].ip_address",
+          "spec.local_vrf.slo_config.static_routes.static_routes[].node_interface",
+        ],
+      },
+      {
+        choiceField: "next_hop_choice",
+        fieldPath: "spec.local_vrf.slo_config.static_v6_routes.static_routes[].next_hop_choice",
+        options: [
+          "spec.local_vrf.slo_config.static_v6_routes.static_routes[].default_gateway",
+          "spec.local_vrf.slo_config.static_v6_routes.static_routes[].ip_address",
+          "spec.local_vrf.slo_config.static_v6_routes.static_routes[].node_interface",
+        ],
+      },
+      {
+        choiceField: "orchestration_choice",
+        fieldPath: "spec.nutanix.orchestration_choice",
+        options: ["spec.nutanix.not_managed"],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath: "spec.nutanix.not_managed.node_list[].interface_list[].address_choice",
+        options: [
+          "spec.nutanix.not_managed.node_list[].interface_list[].dhcp_client",
+          "spec.nutanix.not_managed.node_list[].interface_list[].no_ipv4_address",
+          "spec.nutanix.not_managed.node_list[].interface_list[].static_ip",
+        ],
+      },
+      {
+        choiceField: "interface_choice",
+        fieldPath: "spec.nutanix.not_managed.node_list[].interface_list[].interface_choice",
+        options: [
+          "spec.nutanix.not_managed.node_list[].interface_list[].bond_interface",
+          "spec.nutanix.not_managed.node_list[].interface_list[].ethernet_interface",
+          "spec.nutanix.not_managed.node_list[].interface_list[].vlan_interface",
+        ],
+      },
+      {
+        choiceField: "ipv6_address_choice",
+        fieldPath: "spec.nutanix.not_managed.node_list[].interface_list[].ipv6_address_choice",
+        options: [
+          "spec.nutanix.not_managed.node_list[].interface_list[].ipv6_auto_config",
+          "spec.nutanix.not_managed.node_list[].interface_list[].no_ipv6_address",
+          "spec.nutanix.not_managed.node_list[].interface_list[].static_ipv6_address",
+        ],
+      },
+      {
+        choiceField: "monitoring_choice",
+        fieldPath: "spec.nutanix.not_managed.node_list[].interface_list[].monitoring_choice",
+        options: [
+          "spec.nutanix.not_managed.node_list[].interface_list[].monitor",
+          "spec.nutanix.not_managed.node_list[].interface_list[].monitor_disabled",
+        ],
+      },
+      {
+        choiceField: "site_to_site_connectivity_interface_choice",
+        fieldPath:
+          "spec.nutanix.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_choice",
+        options: [
+          "spec.nutanix.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_disabled",
+          "spec.nutanix.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_enabled",
+        ],
+      },
+      {
+        choiceField: "lacp_choice",
+        fieldPath:
+          "spec.nutanix.not_managed.node_list[].interface_list[].bond_interface.lacp_choice",
+        options: [
+          "spec.nutanix.not_managed.node_list[].interface_list[].bond_interface.active_backup",
+          "spec.nutanix.not_managed.node_list[].interface_list[].bond_interface.lacp",
+        ],
+      },
+      {
+        choiceField: "autoconfig_choice",
+        fieldPath:
+          "spec.nutanix.not_managed.node_list[].interface_list[].ipv6_auto_config.autoconfig_choice",
+        options: [
+          "spec.nutanix.not_managed.node_list[].interface_list[].ipv6_auto_config.host",
+          "spec.nutanix.not_managed.node_list[].interface_list[].ipv6_auto_config.router",
+        ],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath:
+          "spec.nutanix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.address_choice",
+        options: [
+          "spec.nutanix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.network_prefix",
+          "spec.nutanix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful",
+        ],
+      },
+      {
+        choiceField: "dns_choice",
+        fieldPath:
+          "spec.nutanix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.dns_choice",
+        options: [
+          "spec.nutanix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.configured_list",
+          "spec.nutanix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns",
+        ],
+      },
+      {
+        choiceField: "local_dns_choice",
+        fieldPath:
+          "spec.nutanix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.local_dns_choice",
+        options: [
+          "spec.nutanix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.configured_address",
+          "spec.nutanix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.first_address",
+          "spec.nutanix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.last_address",
+        ],
+      },
+      {
+        choiceField: "interfaces_addressing_choice",
+        fieldPath:
+          "spec.nutanix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.interfaces_addressing_choice",
+        options: [
+          "spec.nutanix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.automatic_from_end",
+          "spec.nutanix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.automatic_from_start",
+          "spec.nutanix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.interface_ip_map",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.nutanix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix_choice",
+        options: [
+          "spec.nutanix.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath:
+          "spec.nutanix.not_managed.node_list[].interface_list[].network_option.network_choice",
+        options: [
+          "spec.nutanix.not_managed.node_list[].interface_list[].network_option.segment_network",
+          "spec.nutanix.not_managed.node_list[].interface_list[].network_option.site_local_inside_network",
+          "spec.nutanix.not_managed.node_list[].interface_list[].network_option.site_local_network",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.nutanix.not_managed.node_list[].interface_list[].static_ipv6_address.network_prefix_choice",
+        options: [
+          "spec.nutanix.not_managed.node_list[].interface_list[].static_ipv6_address.cluster_static_ip",
+          "spec.nutanix.not_managed.node_list[].interface_list[].static_ipv6_address.node_static_ip",
+        ],
+      },
+      {
+        choiceField: "orchestration_choice",
+        fieldPath: "spec.oci.orchestration_choice",
+        options: ["spec.oci.not_managed"],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath: "spec.oci.not_managed.node_list[].interface_list[].address_choice",
+        options: [
+          "spec.oci.not_managed.node_list[].interface_list[].dhcp_client",
+          "spec.oci.not_managed.node_list[].interface_list[].no_ipv4_address",
+          "spec.oci.not_managed.node_list[].interface_list[].static_ip",
+        ],
+      },
+      {
+        choiceField: "interface_choice",
+        fieldPath: "spec.oci.not_managed.node_list[].interface_list[].interface_choice",
+        options: [
+          "spec.oci.not_managed.node_list[].interface_list[].bond_interface",
+          "spec.oci.not_managed.node_list[].interface_list[].ethernet_interface",
+          "spec.oci.not_managed.node_list[].interface_list[].vlan_interface",
+        ],
+      },
+      {
+        choiceField: "ipv6_address_choice",
+        fieldPath: "spec.oci.not_managed.node_list[].interface_list[].ipv6_address_choice",
+        options: [
+          "spec.oci.not_managed.node_list[].interface_list[].ipv6_auto_config",
+          "spec.oci.not_managed.node_list[].interface_list[].no_ipv6_address",
+          "spec.oci.not_managed.node_list[].interface_list[].static_ipv6_address",
+        ],
+      },
+      {
+        choiceField: "monitoring_choice",
+        fieldPath: "spec.oci.not_managed.node_list[].interface_list[].monitoring_choice",
+        options: [
+          "spec.oci.not_managed.node_list[].interface_list[].monitor",
+          "spec.oci.not_managed.node_list[].interface_list[].monitor_disabled",
+        ],
+      },
+      {
+        choiceField: "site_to_site_connectivity_interface_choice",
+        fieldPath:
+          "spec.oci.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_choice",
+        options: [
+          "spec.oci.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_disabled",
+          "spec.oci.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_enabled",
+        ],
+      },
+      {
+        choiceField: "lacp_choice",
+        fieldPath: "spec.oci.not_managed.node_list[].interface_list[].bond_interface.lacp_choice",
+        options: [
+          "spec.oci.not_managed.node_list[].interface_list[].bond_interface.active_backup",
+          "spec.oci.not_managed.node_list[].interface_list[].bond_interface.lacp",
+        ],
+      },
+      {
+        choiceField: "autoconfig_choice",
+        fieldPath:
+          "spec.oci.not_managed.node_list[].interface_list[].ipv6_auto_config.autoconfig_choice",
+        options: [
+          "spec.oci.not_managed.node_list[].interface_list[].ipv6_auto_config.host",
+          "spec.oci.not_managed.node_list[].interface_list[].ipv6_auto_config.router",
+        ],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath:
+          "spec.oci.not_managed.node_list[].interface_list[].ipv6_auto_config.router.address_choice",
+        options: [
+          "spec.oci.not_managed.node_list[].interface_list[].ipv6_auto_config.router.network_prefix",
+          "spec.oci.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful",
+        ],
+      },
+      {
+        choiceField: "dns_choice",
+        fieldPath:
+          "spec.oci.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.dns_choice",
+        options: [
+          "spec.oci.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.configured_list",
+          "spec.oci.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns",
+        ],
+      },
+      {
+        choiceField: "local_dns_choice",
+        fieldPath:
+          "spec.oci.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.local_dns_choice",
+        options: [
+          "spec.oci.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.configured_address",
+          "spec.oci.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.first_address",
+          "spec.oci.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.last_address",
+        ],
+      },
+      {
+        choiceField: "interfaces_addressing_choice",
+        fieldPath:
+          "spec.oci.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.interfaces_addressing_choice",
+        options: [
+          "spec.oci.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.automatic_from_end",
+          "spec.oci.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.automatic_from_start",
+          "spec.oci.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.interface_ip_map",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.oci.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix_choice",
+        options: [
+          "spec.oci.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath:
+          "spec.oci.not_managed.node_list[].interface_list[].network_option.network_choice",
+        options: [
+          "spec.oci.not_managed.node_list[].interface_list[].network_option.segment_network",
+          "spec.oci.not_managed.node_list[].interface_list[].network_option.site_local_inside_network",
+          "spec.oci.not_managed.node_list[].interface_list[].network_option.site_local_network",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.oci.not_managed.node_list[].interface_list[].static_ipv6_address.network_prefix_choice",
+        options: [
+          "spec.oci.not_managed.node_list[].interface_list[].static_ipv6_address.cluster_static_ip",
+          "spec.oci.not_managed.node_list[].interface_list[].static_ipv6_address.node_static_ip",
+        ],
+      },
+      {
+        choiceField: "offline_survivability_mode_choice",
+        fieldPath: "spec.offline_survivability_mode.offline_survivability_mode_choice",
+        options: [
+          "spec.offline_survivability_mode.enable_offline_survivability_mode",
+          "spec.offline_survivability_mode.no_offline_survivability_mode",
+        ],
+      },
+      {
+        choiceField: "orchestration_choice",
+        fieldPath: "spec.openstack.orchestration_choice",
+        options: ["spec.openstack.not_managed"],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath: "spec.openstack.not_managed.node_list[].interface_list[].address_choice",
+        options: [
+          "spec.openstack.not_managed.node_list[].interface_list[].dhcp_client",
+          "spec.openstack.not_managed.node_list[].interface_list[].no_ipv4_address",
+          "spec.openstack.not_managed.node_list[].interface_list[].static_ip",
+        ],
+      },
+      {
+        choiceField: "interface_choice",
+        fieldPath: "spec.openstack.not_managed.node_list[].interface_list[].interface_choice",
+        options: [
+          "spec.openstack.not_managed.node_list[].interface_list[].bond_interface",
+          "spec.openstack.not_managed.node_list[].interface_list[].ethernet_interface",
+          "spec.openstack.not_managed.node_list[].interface_list[].vlan_interface",
+        ],
+      },
+      {
+        choiceField: "ipv6_address_choice",
+        fieldPath: "spec.openstack.not_managed.node_list[].interface_list[].ipv6_address_choice",
+        options: [
+          "spec.openstack.not_managed.node_list[].interface_list[].ipv6_auto_config",
+          "spec.openstack.not_managed.node_list[].interface_list[].no_ipv6_address",
+          "spec.openstack.not_managed.node_list[].interface_list[].static_ipv6_address",
+        ],
+      },
+      {
+        choiceField: "monitoring_choice",
+        fieldPath: "spec.openstack.not_managed.node_list[].interface_list[].monitoring_choice",
+        options: [
+          "spec.openstack.not_managed.node_list[].interface_list[].monitor",
+          "spec.openstack.not_managed.node_list[].interface_list[].monitor_disabled",
+        ],
+      },
+      {
+        choiceField: "site_to_site_connectivity_interface_choice",
+        fieldPath:
+          "spec.openstack.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_choice",
+        options: [
+          "spec.openstack.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_disabled",
+          "spec.openstack.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_enabled",
+        ],
+      },
+      {
+        choiceField: "lacp_choice",
+        fieldPath:
+          "spec.openstack.not_managed.node_list[].interface_list[].bond_interface.lacp_choice",
+        options: [
+          "spec.openstack.not_managed.node_list[].interface_list[].bond_interface.active_backup",
+          "spec.openstack.not_managed.node_list[].interface_list[].bond_interface.lacp",
+        ],
+      },
+      {
+        choiceField: "autoconfig_choice",
+        fieldPath:
+          "spec.openstack.not_managed.node_list[].interface_list[].ipv6_auto_config.autoconfig_choice",
+        options: [
+          "spec.openstack.not_managed.node_list[].interface_list[].ipv6_auto_config.host",
+          "spec.openstack.not_managed.node_list[].interface_list[].ipv6_auto_config.router",
+        ],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath:
+          "spec.openstack.not_managed.node_list[].interface_list[].ipv6_auto_config.router.address_choice",
+        options: [
+          "spec.openstack.not_managed.node_list[].interface_list[].ipv6_auto_config.router.network_prefix",
+          "spec.openstack.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful",
+        ],
+      },
+      {
+        choiceField: "dns_choice",
+        fieldPath:
+          "spec.openstack.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.dns_choice",
+        options: [
+          "spec.openstack.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.configured_list",
+          "spec.openstack.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns",
+        ],
+      },
+      {
+        choiceField: "local_dns_choice",
+        fieldPath:
+          "spec.openstack.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.local_dns_choice",
+        options: [
+          "spec.openstack.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.configured_address",
+          "spec.openstack.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.first_address",
+          "spec.openstack.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.last_address",
+        ],
+      },
+      {
+        choiceField: "interfaces_addressing_choice",
+        fieldPath:
+          "spec.openstack.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.interfaces_addressing_choice",
+        options: [
+          "spec.openstack.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.automatic_from_end",
+          "spec.openstack.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.automatic_from_start",
+          "spec.openstack.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.interface_ip_map",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.openstack.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix_choice",
+        options: [
+          "spec.openstack.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath:
+          "spec.openstack.not_managed.node_list[].interface_list[].network_option.network_choice",
+        options: [
+          "spec.openstack.not_managed.node_list[].interface_list[].network_option.segment_network",
+          "spec.openstack.not_managed.node_list[].interface_list[].network_option.site_local_inside_network",
+          "spec.openstack.not_managed.node_list[].interface_list[].network_option.site_local_network",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.openstack.not_managed.node_list[].interface_list[].static_ipv6_address.network_prefix_choice",
+        options: [
+          "spec.openstack.not_managed.node_list[].interface_list[].static_ipv6_address.cluster_static_ip",
+          "spec.openstack.not_managed.node_list[].interface_list[].static_ipv6_address.node_static_ip",
+        ],
+      },
+      {
+        choiceField: "perf_mode_choice",
+        fieldPath: "spec.performance_enhancement_mode.perf_mode_choice",
+        options: [
+          "spec.performance_enhancement_mode.perf_mode_l3_enhanced",
+          "spec.performance_enhancement_mode.perf_mode_l7_enhanced",
+        ],
+      },
+      {
+        choiceField: "perf_mode_choice",
+        fieldPath: "spec.performance_enhancement_mode.perf_mode_l3_enhanced.perf_mode_choice",
+        options: [
+          "spec.performance_enhancement_mode.perf_mode_l3_enhanced.jumbo",
+          "spec.performance_enhancement_mode.perf_mode_l3_enhanced.no_jumbo",
+        ],
+      },
+      {
+        choiceField: "re_selection_choice",
+        fieldPath: "spec.re_select.re_selection_choice",
+        options: ["spec.re_select.geo_proximity", "spec.re_select.specific_re"],
+      },
+      {
+        choiceField: "site_mesh_group_choice",
+        fieldPath: "spec.site_mesh_group_on_slo.site_mesh_group_choice",
+        options: [
+          "spec.site_mesh_group_on_slo.no_site_mesh_group",
+          "spec.site_mesh_group_on_slo.site_mesh_group",
+        ],
+      },
+      {
+        choiceField: "site_mesh_group_ip_choice",
+        fieldPath: "spec.site_mesh_group_on_slo.site_mesh_group_ip_choice",
+        options: [
+          "spec.site_mesh_group_on_slo.sm_connection_public_ip",
+          "spec.site_mesh_group_on_slo.sm_connection_pvt_ip",
+        ],
+      },
+      {
+        choiceField: "operating_system_version_choice",
+        fieldPath: "spec.software_settings.os.operating_system_version_choice",
+        options: [
+          "spec.software_settings.os.default_os_version",
+          "spec.software_settings.os.operating_system_version",
+        ],
+      },
+      {
+        choiceField: "volterra_sw_version_choice",
+        fieldPath: "spec.software_settings.sw.volterra_sw_version_choice",
+        options: [
+          "spec.software_settings.sw.default_sw_version",
+          "spec.software_settings.sw.volterra_software_version",
+        ],
+      },
+      {
+        choiceField: "kubernetes_upgrade_drain_enable_choice",
+        fieldPath:
+          "spec.upgrade_settings.kubernetes_upgrade_drain.kubernetes_upgrade_drain_enable_choice",
+        options: [
+          "spec.upgrade_settings.kubernetes_upgrade_drain.disable_upgrade_drain",
+          "spec.upgrade_settings.kubernetes_upgrade_drain.enable_upgrade_drain",
+        ],
+      },
+      {
+        choiceField: "drain_max_unavailable_choice",
+        fieldPath:
+          "spec.upgrade_settings.kubernetes_upgrade_drain.enable_upgrade_drain.drain_max_unavailable_choice",
+        options: [
+          "spec.upgrade_settings.kubernetes_upgrade_drain.enable_upgrade_drain.drain_max_unavailable_node_count",
+        ],
+      },
+      {
+        choiceField: "vega_upgrade_mode_toggle_choice",
+        fieldPath:
+          "spec.upgrade_settings.kubernetes_upgrade_drain.enable_upgrade_drain.vega_upgrade_mode_toggle_choice",
+        options: [
+          "spec.upgrade_settings.kubernetes_upgrade_drain.enable_upgrade_drain.disable_vega_upgrade_mode",
+          "spec.upgrade_settings.kubernetes_upgrade_drain.enable_upgrade_drain.enable_vega_upgrade_mode",
+        ],
+      },
+      {
+        choiceField: "orchestration_choice",
+        fieldPath: "spec.vmware.orchestration_choice",
+        options: ["spec.vmware.not_managed"],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath: "spec.vmware.not_managed.node_list[].interface_list[].address_choice",
+        options: [
+          "spec.vmware.not_managed.node_list[].interface_list[].dhcp_client",
+          "spec.vmware.not_managed.node_list[].interface_list[].no_ipv4_address",
+          "spec.vmware.not_managed.node_list[].interface_list[].static_ip",
+        ],
+      },
+      {
+        choiceField: "interface_choice",
+        fieldPath: "spec.vmware.not_managed.node_list[].interface_list[].interface_choice",
+        options: [
+          "spec.vmware.not_managed.node_list[].interface_list[].bond_interface",
+          "spec.vmware.not_managed.node_list[].interface_list[].ethernet_interface",
+          "spec.vmware.not_managed.node_list[].interface_list[].vlan_interface",
+        ],
+      },
+      {
+        choiceField: "ipv6_address_choice",
+        fieldPath: "spec.vmware.not_managed.node_list[].interface_list[].ipv6_address_choice",
+        options: [
+          "spec.vmware.not_managed.node_list[].interface_list[].ipv6_auto_config",
+          "spec.vmware.not_managed.node_list[].interface_list[].no_ipv6_address",
+          "spec.vmware.not_managed.node_list[].interface_list[].static_ipv6_address",
+        ],
+      },
+      {
+        choiceField: "monitoring_choice",
+        fieldPath: "spec.vmware.not_managed.node_list[].interface_list[].monitoring_choice",
+        options: [
+          "spec.vmware.not_managed.node_list[].interface_list[].monitor",
+          "spec.vmware.not_managed.node_list[].interface_list[].monitor_disabled",
+        ],
+      },
+      {
+        choiceField: "site_to_site_connectivity_interface_choice",
+        fieldPath:
+          "spec.vmware.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_choice",
+        options: [
+          "spec.vmware.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_disabled",
+          "spec.vmware.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_enabled",
+        ],
+      },
+      {
+        choiceField: "lacp_choice",
+        fieldPath:
+          "spec.vmware.not_managed.node_list[].interface_list[].bond_interface.lacp_choice",
+        options: [
+          "spec.vmware.not_managed.node_list[].interface_list[].bond_interface.active_backup",
+          "spec.vmware.not_managed.node_list[].interface_list[].bond_interface.lacp",
+        ],
+      },
+      {
+        choiceField: "autoconfig_choice",
+        fieldPath:
+          "spec.vmware.not_managed.node_list[].interface_list[].ipv6_auto_config.autoconfig_choice",
+        options: [
+          "spec.vmware.not_managed.node_list[].interface_list[].ipv6_auto_config.host",
+          "spec.vmware.not_managed.node_list[].interface_list[].ipv6_auto_config.router",
+        ],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath:
+          "spec.vmware.not_managed.node_list[].interface_list[].ipv6_auto_config.router.address_choice",
+        options: [
+          "spec.vmware.not_managed.node_list[].interface_list[].ipv6_auto_config.router.network_prefix",
+          "spec.vmware.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful",
+        ],
+      },
+      {
+        choiceField: "dns_choice",
+        fieldPath:
+          "spec.vmware.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.dns_choice",
+        options: [
+          "spec.vmware.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.configured_list",
+          "spec.vmware.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns",
+        ],
+      },
+      {
+        choiceField: "local_dns_choice",
+        fieldPath:
+          "spec.vmware.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.local_dns_choice",
+        options: [
+          "spec.vmware.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.configured_address",
+          "spec.vmware.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.first_address",
+          "spec.vmware.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.last_address",
+        ],
+      },
+      {
+        choiceField: "interfaces_addressing_choice",
+        fieldPath:
+          "spec.vmware.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.interfaces_addressing_choice",
+        options: [
+          "spec.vmware.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.automatic_from_end",
+          "spec.vmware.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.automatic_from_start",
+          "spec.vmware.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.interface_ip_map",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.vmware.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix_choice",
+        options: [
+          "spec.vmware.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath:
+          "spec.vmware.not_managed.node_list[].interface_list[].network_option.network_choice",
+        options: [
+          "spec.vmware.not_managed.node_list[].interface_list[].network_option.segment_network",
+          "spec.vmware.not_managed.node_list[].interface_list[].network_option.site_local_inside_network",
+          "spec.vmware.not_managed.node_list[].interface_list[].network_option.site_local_network",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.vmware.not_managed.node_list[].interface_list[].static_ipv6_address.network_prefix_choice",
+        options: [
+          "spec.vmware.not_managed.node_list[].interface_list[].static_ipv6_address.cluster_static_ip",
+          "spec.vmware.not_managed.node_list[].interface_list[].static_ipv6_address.node_static_ip",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_site_management_standard",
@@ -5689,7 +14689,41 @@ export const sitesTools: ParsedOperation[] = [
         resourceType: "schemasite-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "private_access_choice",
+        fieldPath: "spec.default_underlay_network.private_access_choice",
+        options: [
+          "spec.default_underlay_network.site_local_inside",
+          "spec.default_underlay_network.site_local_outside",
+        ],
+      },
+      {
+        choiceField: "kubernetes_upgrade_drain_enable_choice",
+        fieldPath: "spec.kubernetes_upgrade_drain.kubernetes_upgrade_drain_enable_choice",
+        options: [
+          "spec.kubernetes_upgrade_drain.disable_upgrade_drain",
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain",
+        ],
+      },
+      {
+        choiceField: "drain_max_unavailable_choice",
+        fieldPath:
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.drain_max_unavailable_choice",
+        options: [
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.drain_max_unavailable_node_count",
+        ],
+      },
+      {
+        choiceField: "vega_upgrade_mode_toggle_choice",
+        fieldPath:
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.vega_upgrade_mode_toggle_choice",
+        options: [
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.disable_vega_upgrade_mode",
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.enable_vega_upgrade_mode",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_site_management_standard",
@@ -6126,7 +15160,13 @@ export const sitesTools: ParsedOperation[] = [
         resourceType: "virtual-k8s-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "service_isolation_choice",
+        fieldPath: "spec.service_isolation_choice",
+        options: ["spec.disabled", "spec.isolated"],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_site_management_standard",
@@ -6451,7 +15491,13 @@ export const sitesTools: ParsedOperation[] = [
         resourceType: "virtual-k8s-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "service_isolation_choice",
+        fieldPath: "spec.service_isolation_choice",
+        options: ["spec.disabled", "spec.isolated"],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_site_management_standard",
@@ -7042,7 +16088,1083 @@ export const sitesTools: ParsedOperation[] = [
         resourceType: "viewsvoltstack-site-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "blocked_services_choice",
+        fieldPath: "spec.blocked_services_choice",
+        options: ["spec.blocked_services", "spec.default_blocked_services"],
+      },
+      {
+        choiceField: "bond_choice",
+        fieldPath: "spec.bond_choice",
+        options: ["spec.bond_device_list", "spec.no_bond_devices"],
+      },
+      {
+        choiceField: "gpu_choice",
+        fieldPath: "spec.gpu_choice",
+        options: ["spec.disable_gpu", "spec.enable_gpu", "spec.enable_vgpu"],
+      },
+      {
+        choiceField: "k8s_cluster_choice",
+        fieldPath: "spec.k8s_cluster_choice",
+        options: ["spec.k8s_cluster", "spec.no_k8s_cluster"],
+      },
+      {
+        choiceField: "local_control_plane_choice",
+        fieldPath: "spec.local_control_plane_choice",
+        options: ["spec.local_control_plane", "spec.no_local_control_plane"],
+      },
+      {
+        choiceField: "logs_receiver_choice",
+        fieldPath: "spec.logs_receiver_choice",
+        options: ["spec.log_receiver", "spec.logs_streaming_disabled"],
+      },
+      {
+        choiceField: "network_cfg_choice",
+        fieldPath: "spec.network_cfg_choice",
+        options: ["spec.custom_network_config", "spec.default_network_config"],
+      },
+      {
+        choiceField: "sriov_interface_choice",
+        fieldPath: "spec.sriov_interface_choice",
+        options: ["spec.default_sriov_interface", "spec.sriov_interfaces"],
+      },
+      {
+        choiceField: "storage_cfg_choice",
+        fieldPath: "spec.storage_cfg_choice",
+        options: ["spec.custom_storage_config", "spec.default_storage_config"],
+      },
+      {
+        choiceField: "usb_policy_choice",
+        fieldPath: "spec.usb_policy_choice",
+        options: ["spec.allow_all_usb", "spec.deny_all_usb", "spec.usb_policy"],
+      },
+      {
+        choiceField: "vm_choice",
+        fieldPath: "spec.vm_choice",
+        options: ["spec.disable_vm", "spec.enable_vm"],
+      },
+      {
+        choiceField: "blocked_services_value_type_choice",
+        fieldPath: "spec.blocked_services.blocked_sevice[].blocked_services_value_type_choice",
+        options: [
+          "spec.blocked_services.blocked_sevice[].dns",
+          "spec.blocked_services.blocked_sevice[].ssh",
+          "spec.blocked_services.blocked_sevice[].web_user_interface",
+        ],
+      },
+      {
+        choiceField: "lacp_choice",
+        fieldPath: "spec.bond_device_list.bond_devices[].lacp_choice",
+        options: [
+          "spec.bond_device_list.bond_devices[].active_backup",
+          "spec.bond_device_list.bond_devices[].lacp",
+        ],
+      },
+      {
+        choiceField: "forward_proxy_choice",
+        fieldPath: "spec.custom_network_config.forward_proxy_choice",
+        options: [
+          "spec.custom_network_config.active_forward_proxy_policies",
+          "spec.custom_network_config.forward_proxy_allow_all",
+          "spec.custom_network_config.no_forward_proxy",
+        ],
+      },
+      {
+        choiceField: "global_network_choice",
+        fieldPath: "spec.custom_network_config.global_network_choice",
+        options: [
+          "spec.custom_network_config.global_network_list",
+          "spec.custom_network_config.no_global_network",
+        ],
+      },
+      {
+        choiceField: "interface_choice",
+        fieldPath: "spec.custom_network_config.interface_choice",
+        options: [
+          "spec.custom_network_config.default_interface_config",
+          "spec.custom_network_config.interface_list",
+        ],
+      },
+      {
+        choiceField: "network_policy_choice",
+        fieldPath: "spec.custom_network_config.network_policy_choice",
+        options: [
+          "spec.custom_network_config.active_enhanced_firewall_policies",
+          "spec.custom_network_config.active_network_policies",
+          "spec.custom_network_config.no_network_policy",
+        ],
+      },
+      {
+        choiceField: "site_mesh_group_choice",
+        fieldPath: "spec.custom_network_config.site_mesh_group_choice",
+        options: [
+          "spec.custom_network_config.site_to_site_tunnel_ip",
+          "spec.custom_network_config.sm_connection_public_ip",
+          "spec.custom_network_config.sm_connection_pvt_ip",
+        ],
+      },
+      {
+        choiceField: "sli_choice",
+        fieldPath: "spec.custom_network_config.sli_choice",
+        options: [
+          "spec.custom_network_config.default_sli_config",
+          "spec.custom_network_config.sli_config",
+        ],
+      },
+      {
+        choiceField: "slo_choice",
+        fieldPath: "spec.custom_network_config.slo_choice",
+        options: [
+          "spec.custom_network_config.default_config",
+          "spec.custom_network_config.slo_config",
+        ],
+      },
+      {
+        choiceField: "connection_choice",
+        fieldPath:
+          "spec.custom_network_config.global_network_list.global_network_connections[].connection_choice",
+        options: [
+          "spec.custom_network_config.global_network_list.global_network_connections[].sli_to_global_dr",
+          "spec.custom_network_config.global_network_list.global_network_connections[].slo_to_global_dr",
+        ],
+      },
+      {
+        choiceField: "forward_proxy_choice",
+        fieldPath:
+          "spec.custom_network_config.global_network_list.global_network_connections[].forward_proxy_choice",
+        options: [],
+      },
+      {
+        choiceField: "dc_cluster_group_connectivity_interface_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].dc_cluster_group_connectivity_interface_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].dc_cluster_group_connectivity_interface_disabled",
+          "spec.custom_network_config.interface_list.interfaces[].dc_cluster_group_connectivity_interface_enabled",
+        ],
+      },
+      {
+        choiceField: "interface_choice",
+        fieldPath: "spec.custom_network_config.interface_list.interfaces[].interface_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_interface",
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_management_interface",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface",
+          "spec.custom_network_config.interface_list.interfaces[].tunnel_interface",
+        ],
+      },
+      {
+        choiceField: "monitoring_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_interface.monitoring_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_interface.monitor",
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_interface.monitor_disabled",
+        ],
+      },
+      {
+        choiceField: "node_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_interface.node_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_interface.cluster",
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_interface.node",
+        ],
+      },
+      {
+        choiceField: "primary_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_interface.primary_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_interface.is_primary",
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_interface.not_primary",
+        ],
+      },
+      {
+        choiceField: "node_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_management_interface.node_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_management_interface.cluster",
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_management_interface.node",
+        ],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.address_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_client",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.static_ip",
+        ],
+      },
+      {
+        choiceField: "ipv6_address_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_address_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.no_ipv6_address",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.static_ipv6_address",
+        ],
+      },
+      {
+        choiceField: "monitoring_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.monitoring_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.monitor",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.monitor_disabled",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.network_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.segment_network",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.site_local_inside_network",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.site_local_network",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.storage_network",
+        ],
+      },
+      {
+        choiceField: "node_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.node_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.cluster",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.node",
+        ],
+      },
+      {
+        choiceField: "primary_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.primary_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.is_primary",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.not_primary",
+        ],
+      },
+      {
+        choiceField: "vlan_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.vlan_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.untagged",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.vlan_id",
+        ],
+      },
+      {
+        choiceField: "interfaces_addressing_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.interfaces_addressing_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.automatic_from_end",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.automatic_from_start",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.interface_ip_map",
+        ],
+      },
+      {
+        choiceField: "dns_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.dhcp_networks[].dns_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.dhcp_networks[].dns_address",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.dhcp_networks[].same_as_dgw",
+        ],
+      },
+      {
+        choiceField: "gateway_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.dhcp_networks[].gateway_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.dhcp_networks[].dgw_address",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.dhcp_networks[].first_address",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.dhcp_networks[].last_address",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.dhcp_networks[].network_prefix_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.dhcp_networks[].network_prefix",
+        ],
+      },
+      {
+        choiceField: "autoconfig_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.autoconfig_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.host",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router",
+        ],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.address_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.network_prefix",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.stateful",
+        ],
+      },
+      {
+        choiceField: "dns_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.dns_config.dns_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.dns_config.configured_list",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.dns_config.local_dns",
+        ],
+      },
+      {
+        choiceField: "local_dns_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.dns_config.local_dns.local_dns_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.dns_config.local_dns.configured_address",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.dns_config.local_dns.first_address",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.dns_config.local_dns.last_address",
+        ],
+      },
+      {
+        choiceField: "interfaces_addressing_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.stateful.interfaces_addressing_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.stateful.automatic_from_end",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.stateful.automatic_from_start",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.stateful.interface_ip_map",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.static_ip.network_prefix_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.static_ip.cluster_static_ip",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.static_ip.node_static_ip",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.static_ipv6_address.network_prefix_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.static_ipv6_address.cluster_static_ip",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.static_ipv6_address.node_static_ip",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].tunnel_interface.network_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].tunnel_interface.site_local_inside_network",
+          "spec.custom_network_config.interface_list.interfaces[].tunnel_interface.site_local_network",
+        ],
+      },
+      {
+        choiceField: "node_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].tunnel_interface.node_choice",
+        options: ["spec.custom_network_config.interface_list.interfaces[].tunnel_interface.node"],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].tunnel_interface.static_ip.network_prefix_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].tunnel_interface.static_ip.cluster_static_ip",
+          "spec.custom_network_config.interface_list.interfaces[].tunnel_interface.static_ip.node_static_ip",
+        ],
+      },
+      {
+        choiceField: "static_route_choice",
+        fieldPath: "spec.custom_network_config.sli_config.static_route_choice",
+        options: [
+          "spec.custom_network_config.sli_config.no_static_routes",
+          "spec.custom_network_config.sli_config.static_routes",
+        ],
+      },
+      {
+        choiceField: "static_v6_route_choice",
+        fieldPath: "spec.custom_network_config.sli_config.static_v6_route_choice",
+        options: [
+          "spec.custom_network_config.sli_config.no_v6_static_routes",
+          "spec.custom_network_config.sli_config.static_v6_routes",
+        ],
+      },
+      {
+        choiceField: "next_hop_choice",
+        fieldPath:
+          "spec.custom_network_config.sli_config.static_routes.static_routes[].next_hop_choice",
+        options: [
+          "spec.custom_network_config.sli_config.static_routes.static_routes[].default_gateway",
+          "spec.custom_network_config.sli_config.static_routes.static_routes[].ip_address",
+          "spec.custom_network_config.sli_config.static_routes.static_routes[].node_interface",
+        ],
+      },
+      {
+        choiceField: "next_hop_choice",
+        fieldPath:
+          "spec.custom_network_config.sli_config.static_v6_routes.static_routes[].next_hop_choice",
+        options: [
+          "spec.custom_network_config.sli_config.static_v6_routes.static_routes[].default_gateway",
+          "spec.custom_network_config.sli_config.static_v6_routes.static_routes[].ip_address",
+          "spec.custom_network_config.sli_config.static_v6_routes.static_routes[].node_interface",
+        ],
+      },
+      {
+        choiceField: "dc_cluster_group_choice",
+        fieldPath: "spec.custom_network_config.slo_config.dc_cluster_group_choice",
+        options: [
+          "spec.custom_network_config.slo_config.dc_cluster_group",
+          "spec.custom_network_config.slo_config.no_dc_cluster_group",
+        ],
+      },
+      {
+        choiceField: "static_route_choice",
+        fieldPath: "spec.custom_network_config.slo_config.static_route_choice",
+        options: [
+          "spec.custom_network_config.slo_config.no_static_routes",
+          "spec.custom_network_config.slo_config.static_routes",
+        ],
+      },
+      {
+        choiceField: "static_v6_route_choice",
+        fieldPath: "spec.custom_network_config.slo_config.static_v6_route_choice",
+        options: [
+          "spec.custom_network_config.slo_config.no_static_v6_routes",
+          "spec.custom_network_config.slo_config.static_v6_routes",
+        ],
+      },
+      {
+        choiceField: "next_hop_choice",
+        fieldPath:
+          "spec.custom_network_config.slo_config.static_routes.static_routes[].next_hop_choice",
+        options: [
+          "spec.custom_network_config.slo_config.static_routes.static_routes[].default_gateway",
+          "spec.custom_network_config.slo_config.static_routes.static_routes[].ip_address",
+          "spec.custom_network_config.slo_config.static_routes.static_routes[].node_interface",
+        ],
+      },
+      {
+        choiceField: "next_hop_choice",
+        fieldPath:
+          "spec.custom_network_config.slo_config.static_v6_routes.static_routes[].next_hop_choice",
+        options: [
+          "spec.custom_network_config.slo_config.static_v6_routes.static_routes[].default_gateway",
+          "spec.custom_network_config.slo_config.static_v6_routes.static_routes[].ip_address",
+          "spec.custom_network_config.slo_config.static_v6_routes.static_routes[].node_interface",
+        ],
+      },
+      {
+        choiceField: "static_route_choice",
+        fieldPath: "spec.custom_storage_config.static_route_choice",
+        options: [
+          "spec.custom_storage_config.no_static_routes",
+          "spec.custom_storage_config.static_routes",
+        ],
+      },
+      {
+        choiceField: "storage_class_choice",
+        fieldPath: "spec.custom_storage_config.storage_class_choice",
+        options: [
+          "spec.custom_storage_config.default_storage_class",
+          "spec.custom_storage_config.storage_class_list",
+        ],
+      },
+      {
+        choiceField: "storage_device_choice",
+        fieldPath: "spec.custom_storage_config.storage_device_choice",
+        options: [
+          "spec.custom_storage_config.no_storage_device",
+          "spec.custom_storage_config.storage_device_list",
+        ],
+      },
+      {
+        choiceField: "storage_interface_choice",
+        fieldPath: "spec.custom_storage_config.storage_interface_choice",
+        options: [
+          "spec.custom_storage_config.no_storage_interfaces",
+          "spec.custom_storage_config.storage_interface_list",
+        ],
+      },
+      {
+        choiceField: "next_hop_choice",
+        fieldPath: "spec.custom_storage_config.static_routes.static_routes[].next_hop_choice",
+        options: [
+          "spec.custom_storage_config.static_routes.static_routes[].default_gateway",
+          "spec.custom_storage_config.static_routes.static_routes[].ip_address",
+          "spec.custom_storage_config.static_routes.static_routes[].node_interface",
+        ],
+      },
+      {
+        choiceField: "device_choice",
+        fieldPath: "spec.custom_storage_config.storage_class_list.storage_classes[].device_choice",
+        options: [
+          "spec.custom_storage_config.storage_class_list.storage_classes[].custom_storage",
+          "spec.custom_storage_config.storage_class_list.storage_classes[].hpe_storage",
+          "spec.custom_storage_config.storage_class_list.storage_classes[].netapp_trident",
+          "spec.custom_storage_config.storage_class_list.storage_classes[].pure_service_orchestrator",
+        ],
+      },
+      {
+        choiceField: "device_choice",
+        fieldPath: "spec.custom_storage_config.storage_device_list.storage_devices[].device_choice",
+        options: [
+          "spec.custom_storage_config.storage_device_list.storage_devices[].custom_storage",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].hpe_storage",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].pure_service_orchestrator",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.custom_storage_config.storage_device_list.storage_devices[].hpe_storage.iscsi_chap_password.secret_info_oneof",
+        options: [
+          "spec.custom_storage_config.storage_device_list.storage_devices[].hpe_storage.iscsi_chap_password.blindfold_secret_info",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].hpe_storage.iscsi_chap_password.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.custom_storage_config.storage_device_list.storage_devices[].hpe_storage.password.secret_info_oneof",
+        options: [
+          "spec.custom_storage_config.storage_device_list.storage_devices[].hpe_storage.password.blindfold_secret_info",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].hpe_storage.password.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "backend_choice",
+        fieldPath:
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.backend_choice",
+        options: [
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san",
+        ],
+      },
+      {
+        choiceField: "data_lif",
+        fieldPath:
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.data_lif",
+        options: [
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.data_lif_dns_name",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.data_lif_ip",
+        ],
+      },
+      {
+        choiceField: "management_lif",
+        fieldPath:
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.management_lif",
+        options: [
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.management_lif_dns_name",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.management_lif_ip",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.client_private_key.secret_info_oneof",
+        options: [
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.client_private_key.blindfold_secret_info",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.client_private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.password.secret_info_oneof",
+        options: [
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.password.blindfold_secret_info",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.password.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "qos_policy_choice",
+        fieldPath:
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.storage[].volume_defaults.qos_policy_choice",
+        options: [
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.storage[].volume_defaults.adaptive_qos_policy",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.storage[].volume_defaults.no_qos",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.storage[].volume_defaults.qos_policy",
+        ],
+      },
+      {
+        choiceField: "qos_policy_choice",
+        fieldPath:
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.volume_defaults.qos_policy_choice",
+        options: [
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.volume_defaults.adaptive_qos_policy",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.volume_defaults.no_qos",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.volume_defaults.qos_policy",
+        ],
+      },
+      {
+        choiceField: "chap_choice",
+        fieldPath:
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.chap_choice",
+        options: [
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.no_chap",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.use_chap",
+        ],
+      },
+      {
+        choiceField: "data_lif",
+        fieldPath:
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.data_lif",
+        options: [
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.data_lif_dns_name",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.data_lif_ip",
+        ],
+      },
+      {
+        choiceField: "management_lif",
+        fieldPath:
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.management_lif",
+        options: [
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.management_lif_dns_name",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.management_lif_ip",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.client_private_key.secret_info_oneof",
+        options: [
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.client_private_key.blindfold_secret_info",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.client_private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.password.secret_info_oneof",
+        options: [
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.password.blindfold_secret_info",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.password.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "qos_policy_choice",
+        fieldPath:
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.storage[].volume_defaults.qos_policy_choice",
+        options: [
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.storage[].volume_defaults.adaptive_qos_policy",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.storage[].volume_defaults.no_qos",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.storage[].volume_defaults.qos_policy",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.use_chap.chap_initiator_secret.secret_info_oneof",
+        options: [
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.use_chap.chap_initiator_secret.blindfold_secret_info",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.use_chap.chap_initiator_secret.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.use_chap.chap_target_initiator_secret.secret_info_oneof",
+        options: [
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.use_chap.chap_target_initiator_secret.blindfold_secret_info",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.use_chap.chap_target_initiator_secret.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "qos_policy_choice",
+        fieldPath:
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.volume_defaults.qos_policy_choice",
+        options: [
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.volume_defaults.adaptive_qos_policy",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.volume_defaults.no_qos",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.volume_defaults.qos_policy",
+        ],
+      },
+      {
+        choiceField: "mgmt_endpoint",
+        fieldPath:
+          "spec.custom_storage_config.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_array.flash_arrays[].mgmt_endpoint",
+        options: [
+          "spec.custom_storage_config.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_array.flash_arrays[].mgmt_dns_name",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_array.flash_arrays[].mgmt_ip",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.custom_storage_config.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_array.flash_arrays[].api_token.secret_info_oneof",
+        options: [
+          "spec.custom_storage_config.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_array.flash_arrays[].api_token.blindfold_secret_info",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_array.flash_arrays[].api_token.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "mgmt_endpoint",
+        fieldPath:
+          "spec.custom_storage_config.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_blade.flash_blades[].mgmt_endpoint",
+        options: [
+          "spec.custom_storage_config.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_blade.flash_blades[].mgmt_dns_name",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_blade.flash_blades[].mgmt_ip",
+        ],
+      },
+      {
+        choiceField: "nfs_endpoint",
+        fieldPath:
+          "spec.custom_storage_config.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_blade.flash_blades[].nfs_endpoint",
+        options: [
+          "spec.custom_storage_config.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_blade.flash_blades[].nfs_endpoint_dns_name",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_blade.flash_blades[].nfs_endpoint_ip",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.custom_storage_config.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_blade.flash_blades[].api_token.secret_info_oneof",
+        options: [
+          "spec.custom_storage_config.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_blade.flash_blades[].api_token.blindfold_secret_info",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_blade.flash_blades[].api_token.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath:
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.address_choice",
+        options: [
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.dhcp_client",
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.dhcp_server",
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.static_ip",
+        ],
+      },
+      {
+        choiceField: "ipv6_address_choice",
+        fieldPath:
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.ipv6_address_choice",
+        options: [
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.ipv6_auto_config",
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.no_ipv6_address",
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.static_ipv6_address",
+        ],
+      },
+      {
+        choiceField: "monitoring_choice",
+        fieldPath:
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.monitoring_choice",
+        options: [
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.monitor",
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.monitor_disabled",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath:
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.network_choice",
+        options: [
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.segment_network",
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.site_local_inside_network",
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.site_local_network",
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.storage_network",
+        ],
+      },
+      {
+        choiceField: "node_choice",
+        fieldPath:
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.node_choice",
+        options: [
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.cluster",
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.node",
+        ],
+      },
+      {
+        choiceField: "primary_choice",
+        fieldPath:
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.primary_choice",
+        options: [
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.is_primary",
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.not_primary",
+        ],
+      },
+      {
+        choiceField: "vlan_choice",
+        fieldPath:
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.vlan_choice",
+        options: [
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.untagged",
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.vlan_id",
+        ],
+      },
+      {
+        choiceField: "interfaces_addressing_choice",
+        fieldPath:
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.dhcp_server.interfaces_addressing_choice",
+        options: [
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.dhcp_server.automatic_from_end",
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.dhcp_server.automatic_from_start",
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.dhcp_server.interface_ip_map",
+        ],
+      },
+      {
+        choiceField: "dns_choice",
+        fieldPath:
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.dhcp_server.dhcp_networks[].dns_choice",
+        options: [
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.dhcp_server.dhcp_networks[].dns_address",
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.dhcp_server.dhcp_networks[].same_as_dgw",
+        ],
+      },
+      {
+        choiceField: "gateway_choice",
+        fieldPath:
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.dhcp_server.dhcp_networks[].gateway_choice",
+        options: [
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.dhcp_server.dhcp_networks[].dgw_address",
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.dhcp_server.dhcp_networks[].first_address",
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.dhcp_server.dhcp_networks[].last_address",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.dhcp_server.dhcp_networks[].network_prefix_choice",
+        options: [
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.dhcp_server.dhcp_networks[].network_prefix",
+        ],
+      },
+      {
+        choiceField: "autoconfig_choice",
+        fieldPath:
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.ipv6_auto_config.autoconfig_choice",
+        options: [
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.ipv6_auto_config.host",
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.ipv6_auto_config.router",
+        ],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath:
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.ipv6_auto_config.router.address_choice",
+        options: [
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.ipv6_auto_config.router.network_prefix",
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.ipv6_auto_config.router.stateful",
+        ],
+      },
+      {
+        choiceField: "dns_choice",
+        fieldPath:
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.ipv6_auto_config.router.dns_config.dns_choice",
+        options: [
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.ipv6_auto_config.router.dns_config.configured_list",
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.ipv6_auto_config.router.dns_config.local_dns",
+        ],
+      },
+      {
+        choiceField: "local_dns_choice",
+        fieldPath:
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.ipv6_auto_config.router.dns_config.local_dns.local_dns_choice",
+        options: [
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.ipv6_auto_config.router.dns_config.local_dns.configured_address",
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.ipv6_auto_config.router.dns_config.local_dns.first_address",
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.ipv6_auto_config.router.dns_config.local_dns.last_address",
+        ],
+      },
+      {
+        choiceField: "interfaces_addressing_choice",
+        fieldPath:
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.ipv6_auto_config.router.stateful.interfaces_addressing_choice",
+        options: [
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.ipv6_auto_config.router.stateful.automatic_from_end",
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.ipv6_auto_config.router.stateful.automatic_from_start",
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.ipv6_auto_config.router.stateful.interface_ip_map",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix_choice",
+        options: [
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.static_ip.network_prefix_choice",
+        options: [
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.static_ip.cluster_static_ip",
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.static_ip.node_static_ip",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.static_ipv6_address.network_prefix_choice",
+        options: [
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.static_ipv6_address.cluster_static_ip",
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.static_ipv6_address.node_static_ip",
+        ],
+      },
+      {
+        choiceField: "kubernetes_upgrade_drain_enable_choice",
+        fieldPath: "spec.kubernetes_upgrade_drain.kubernetes_upgrade_drain_enable_choice",
+        options: [
+          "spec.kubernetes_upgrade_drain.disable_upgrade_drain",
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain",
+        ],
+      },
+      {
+        choiceField: "drain_max_unavailable_choice",
+        fieldPath:
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.drain_max_unavailable_choice",
+        options: [
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.drain_max_unavailable_node_count",
+        ],
+      },
+      {
+        choiceField: "vega_upgrade_mode_toggle_choice",
+        fieldPath:
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.vega_upgrade_mode_toggle_choice",
+        options: [
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.disable_vega_upgrade_mode",
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.enable_vega_upgrade_mode",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath: "spec.local_control_plane.network_choice",
+        options: ["spec.local_control_plane.inside_vn", "spec.local_control_plane.outside_vn"],
+      },
+      {
+        choiceField: "bfd_choice",
+        fieldPath: "spec.local_control_plane.bgp_config.peers[].bfd_choice",
+        options: [
+          "spec.local_control_plane.bgp_config.peers[].bfd_disabled",
+          "spec.local_control_plane.bgp_config.peers[].bfd_enabled",
+        ],
+      },
+      {
+        choiceField: "enable_choice",
+        fieldPath: "spec.local_control_plane.bgp_config.peers[].enable_choice",
+        options: [
+          "spec.local_control_plane.bgp_config.peers[].disable",
+          "spec.local_control_plane.bgp_config.peers[].routing_policies",
+        ],
+      },
+      {
+        choiceField: "passive_choice",
+        fieldPath: "spec.local_control_plane.bgp_config.peers[].passive_choice",
+        options: [
+          "spec.local_control_plane.bgp_config.peers[].passive_mode_disabled",
+          "spec.local_control_plane.bgp_config.peers[].passive_mode_enabled",
+        ],
+      },
+      {
+        choiceField: "type_choice",
+        fieldPath: "spec.local_control_plane.bgp_config.peers[].type_choice",
+        options: ["spec.local_control_plane.bgp_config.peers[].external"],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath: "spec.local_control_plane.bgp_config.peers[].external.address_choice",
+        options: [
+          "spec.local_control_plane.bgp_config.peers[].external.address",
+          "spec.local_control_plane.bgp_config.peers[].external.default_gateway",
+          "spec.local_control_plane.bgp_config.peers[].external.disable",
+          "spec.local_control_plane.bgp_config.peers[].external.external_connector",
+          "spec.local_control_plane.bgp_config.peers[].external.from_site",
+          "spec.local_control_plane.bgp_config.peers[].external.subnet_begin_offset",
+          "spec.local_control_plane.bgp_config.peers[].external.subnet_end_offset",
+        ],
+      },
+      {
+        choiceField: "address_choice_v6",
+        fieldPath: "spec.local_control_plane.bgp_config.peers[].external.address_choice_v6",
+        options: [
+          "spec.local_control_plane.bgp_config.peers[].external.address_ipv6",
+          "spec.local_control_plane.bgp_config.peers[].external.default_gateway_v6",
+          "spec.local_control_plane.bgp_config.peers[].external.disable_v6",
+          "spec.local_control_plane.bgp_config.peers[].external.from_site_v6",
+          "spec.local_control_plane.bgp_config.peers[].external.subnet_begin_offset_v6",
+          "spec.local_control_plane.bgp_config.peers[].external.subnet_end_offset_v6",
+        ],
+      },
+      {
+        choiceField: "auth_choice",
+        fieldPath: "spec.local_control_plane.bgp_config.peers[].external.auth_choice",
+        options: [
+          "spec.local_control_plane.bgp_config.peers[].external.md5_auth_key",
+          "spec.local_control_plane.bgp_config.peers[].external.no_authentication",
+        ],
+      },
+      {
+        choiceField: "interface_choice",
+        fieldPath: "spec.local_control_plane.bgp_config.peers[].external.interface_choice",
+        options: [
+          "spec.local_control_plane.bgp_config.peers[].external.interface",
+          "spec.local_control_plane.bgp_config.peers[].external.interface_list",
+        ],
+      },
+      {
+        choiceField: "enable_choice",
+        fieldPath: "spec.local_control_plane.bgp_config.peers[].external.family_inet.enable_choice",
+        options: [
+          "spec.local_control_plane.bgp_config.peers[].external.family_inet.disable",
+          "spec.local_control_plane.bgp_config.peers[].external.family_inet.enable",
+        ],
+      },
+      {
+        choiceField: "direction",
+        fieldPath:
+          "spec.local_control_plane.bgp_config.peers[].routing_policies.route_policy[].direction",
+        options: [
+          "spec.local_control_plane.bgp_config.peers[].routing_policies.route_policy[].inbound",
+          "spec.local_control_plane.bgp_config.peers[].routing_policies.route_policy[].outbound",
+        ],
+      },
+      {
+        choiceField: "node_choice",
+        fieldPath:
+          "spec.local_control_plane.bgp_config.peers[].routing_policies.route_policy[].node_choice",
+        options: [
+          "spec.local_control_plane.bgp_config.peers[].routing_policies.route_policy[].all_nodes",
+          "spec.local_control_plane.bgp_config.peers[].routing_policies.route_policy[].node_name",
+        ],
+      },
+      {
+        choiceField: "offline_survivability_mode_choice",
+        fieldPath: "spec.offline_survivability_mode.offline_survivability_mode_choice",
+        options: [
+          "spec.offline_survivability_mode.enable_offline_survivability_mode",
+          "spec.offline_survivability_mode.no_offline_survivability_mode",
+        ],
+      },
+      {
+        choiceField: "operating_system_version_choice",
+        fieldPath: "spec.os.operating_system_version_choice",
+        options: ["spec.os.default_os_version", "spec.os.operating_system_version"],
+      },
+      {
+        choiceField: "volterra_sw_version_choice",
+        fieldPath: "spec.sw.volterra_sw_version_choice",
+        options: ["spec.sw.default_sw_version", "spec.sw.volterra_software_version"],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_site_management_standard",
@@ -7365,7 +17487,1083 @@ export const sitesTools: ParsedOperation[] = [
         resourceType: "viewsvoltstack-site-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "blocked_services_choice",
+        fieldPath: "spec.blocked_services_choice",
+        options: ["spec.blocked_services", "spec.default_blocked_services"],
+      },
+      {
+        choiceField: "bond_choice",
+        fieldPath: "spec.bond_choice",
+        options: ["spec.bond_device_list", "spec.no_bond_devices"],
+      },
+      {
+        choiceField: "gpu_choice",
+        fieldPath: "spec.gpu_choice",
+        options: ["spec.disable_gpu", "spec.enable_gpu", "spec.enable_vgpu"],
+      },
+      {
+        choiceField: "k8s_cluster_choice",
+        fieldPath: "spec.k8s_cluster_choice",
+        options: ["spec.k8s_cluster", "spec.no_k8s_cluster"],
+      },
+      {
+        choiceField: "local_control_plane_choice",
+        fieldPath: "spec.local_control_plane_choice",
+        options: ["spec.local_control_plane", "spec.no_local_control_plane"],
+      },
+      {
+        choiceField: "logs_receiver_choice",
+        fieldPath: "spec.logs_receiver_choice",
+        options: ["spec.log_receiver", "spec.logs_streaming_disabled"],
+      },
+      {
+        choiceField: "network_cfg_choice",
+        fieldPath: "spec.network_cfg_choice",
+        options: ["spec.custom_network_config", "spec.default_network_config"],
+      },
+      {
+        choiceField: "sriov_interface_choice",
+        fieldPath: "spec.sriov_interface_choice",
+        options: ["spec.default_sriov_interface", "spec.sriov_interfaces"],
+      },
+      {
+        choiceField: "storage_cfg_choice",
+        fieldPath: "spec.storage_cfg_choice",
+        options: ["spec.custom_storage_config", "spec.default_storage_config"],
+      },
+      {
+        choiceField: "usb_policy_choice",
+        fieldPath: "spec.usb_policy_choice",
+        options: ["spec.allow_all_usb", "spec.deny_all_usb", "spec.usb_policy"],
+      },
+      {
+        choiceField: "vm_choice",
+        fieldPath: "spec.vm_choice",
+        options: ["spec.disable_vm", "spec.enable_vm"],
+      },
+      {
+        choiceField: "blocked_services_value_type_choice",
+        fieldPath: "spec.blocked_services.blocked_sevice[].blocked_services_value_type_choice",
+        options: [
+          "spec.blocked_services.blocked_sevice[].dns",
+          "spec.blocked_services.blocked_sevice[].ssh",
+          "spec.blocked_services.blocked_sevice[].web_user_interface",
+        ],
+      },
+      {
+        choiceField: "lacp_choice",
+        fieldPath: "spec.bond_device_list.bond_devices[].lacp_choice",
+        options: [
+          "spec.bond_device_list.bond_devices[].active_backup",
+          "spec.bond_device_list.bond_devices[].lacp",
+        ],
+      },
+      {
+        choiceField: "forward_proxy_choice",
+        fieldPath: "spec.custom_network_config.forward_proxy_choice",
+        options: [
+          "spec.custom_network_config.active_forward_proxy_policies",
+          "spec.custom_network_config.forward_proxy_allow_all",
+          "spec.custom_network_config.no_forward_proxy",
+        ],
+      },
+      {
+        choiceField: "global_network_choice",
+        fieldPath: "spec.custom_network_config.global_network_choice",
+        options: [
+          "spec.custom_network_config.global_network_list",
+          "spec.custom_network_config.no_global_network",
+        ],
+      },
+      {
+        choiceField: "interface_choice",
+        fieldPath: "spec.custom_network_config.interface_choice",
+        options: [
+          "spec.custom_network_config.default_interface_config",
+          "spec.custom_network_config.interface_list",
+        ],
+      },
+      {
+        choiceField: "network_policy_choice",
+        fieldPath: "spec.custom_network_config.network_policy_choice",
+        options: [
+          "spec.custom_network_config.active_enhanced_firewall_policies",
+          "spec.custom_network_config.active_network_policies",
+          "spec.custom_network_config.no_network_policy",
+        ],
+      },
+      {
+        choiceField: "site_mesh_group_choice",
+        fieldPath: "spec.custom_network_config.site_mesh_group_choice",
+        options: [
+          "spec.custom_network_config.site_to_site_tunnel_ip",
+          "spec.custom_network_config.sm_connection_public_ip",
+          "spec.custom_network_config.sm_connection_pvt_ip",
+        ],
+      },
+      {
+        choiceField: "sli_choice",
+        fieldPath: "spec.custom_network_config.sli_choice",
+        options: [
+          "spec.custom_network_config.default_sli_config",
+          "spec.custom_network_config.sli_config",
+        ],
+      },
+      {
+        choiceField: "slo_choice",
+        fieldPath: "spec.custom_network_config.slo_choice",
+        options: [
+          "spec.custom_network_config.default_config",
+          "spec.custom_network_config.slo_config",
+        ],
+      },
+      {
+        choiceField: "connection_choice",
+        fieldPath:
+          "spec.custom_network_config.global_network_list.global_network_connections[].connection_choice",
+        options: [
+          "spec.custom_network_config.global_network_list.global_network_connections[].sli_to_global_dr",
+          "spec.custom_network_config.global_network_list.global_network_connections[].slo_to_global_dr",
+        ],
+      },
+      {
+        choiceField: "forward_proxy_choice",
+        fieldPath:
+          "spec.custom_network_config.global_network_list.global_network_connections[].forward_proxy_choice",
+        options: [],
+      },
+      {
+        choiceField: "dc_cluster_group_connectivity_interface_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].dc_cluster_group_connectivity_interface_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].dc_cluster_group_connectivity_interface_disabled",
+          "spec.custom_network_config.interface_list.interfaces[].dc_cluster_group_connectivity_interface_enabled",
+        ],
+      },
+      {
+        choiceField: "interface_choice",
+        fieldPath: "spec.custom_network_config.interface_list.interfaces[].interface_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_interface",
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_management_interface",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface",
+          "spec.custom_network_config.interface_list.interfaces[].tunnel_interface",
+        ],
+      },
+      {
+        choiceField: "monitoring_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_interface.monitoring_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_interface.monitor",
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_interface.monitor_disabled",
+        ],
+      },
+      {
+        choiceField: "node_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_interface.node_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_interface.cluster",
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_interface.node",
+        ],
+      },
+      {
+        choiceField: "primary_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_interface.primary_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_interface.is_primary",
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_interface.not_primary",
+        ],
+      },
+      {
+        choiceField: "node_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_management_interface.node_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_management_interface.cluster",
+          "spec.custom_network_config.interface_list.interfaces[].dedicated_management_interface.node",
+        ],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.address_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_client",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.static_ip",
+        ],
+      },
+      {
+        choiceField: "ipv6_address_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_address_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.no_ipv6_address",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.static_ipv6_address",
+        ],
+      },
+      {
+        choiceField: "monitoring_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.monitoring_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.monitor",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.monitor_disabled",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.network_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.segment_network",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.site_local_inside_network",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.site_local_network",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.storage_network",
+        ],
+      },
+      {
+        choiceField: "node_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.node_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.cluster",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.node",
+        ],
+      },
+      {
+        choiceField: "primary_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.primary_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.is_primary",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.not_primary",
+        ],
+      },
+      {
+        choiceField: "vlan_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.vlan_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.untagged",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.vlan_id",
+        ],
+      },
+      {
+        choiceField: "interfaces_addressing_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.interfaces_addressing_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.automatic_from_end",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.automatic_from_start",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.interface_ip_map",
+        ],
+      },
+      {
+        choiceField: "dns_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.dhcp_networks[].dns_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.dhcp_networks[].dns_address",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.dhcp_networks[].same_as_dgw",
+        ],
+      },
+      {
+        choiceField: "gateway_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.dhcp_networks[].gateway_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.dhcp_networks[].dgw_address",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.dhcp_networks[].first_address",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.dhcp_networks[].last_address",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.dhcp_networks[].network_prefix_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.dhcp_networks[].network_prefix",
+        ],
+      },
+      {
+        choiceField: "autoconfig_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.autoconfig_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.host",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router",
+        ],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.address_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.network_prefix",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.stateful",
+        ],
+      },
+      {
+        choiceField: "dns_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.dns_config.dns_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.dns_config.configured_list",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.dns_config.local_dns",
+        ],
+      },
+      {
+        choiceField: "local_dns_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.dns_config.local_dns.local_dns_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.dns_config.local_dns.configured_address",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.dns_config.local_dns.first_address",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.dns_config.local_dns.last_address",
+        ],
+      },
+      {
+        choiceField: "interfaces_addressing_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.stateful.interfaces_addressing_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.stateful.automatic_from_end",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.stateful.automatic_from_start",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.stateful.interface_ip_map",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.static_ip.network_prefix_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.static_ip.cluster_static_ip",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.static_ip.node_static_ip",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.static_ipv6_address.network_prefix_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.static_ipv6_address.cluster_static_ip",
+          "spec.custom_network_config.interface_list.interfaces[].ethernet_interface.static_ipv6_address.node_static_ip",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].tunnel_interface.network_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].tunnel_interface.site_local_inside_network",
+          "spec.custom_network_config.interface_list.interfaces[].tunnel_interface.site_local_network",
+        ],
+      },
+      {
+        choiceField: "node_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].tunnel_interface.node_choice",
+        options: ["spec.custom_network_config.interface_list.interfaces[].tunnel_interface.node"],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.custom_network_config.interface_list.interfaces[].tunnel_interface.static_ip.network_prefix_choice",
+        options: [
+          "spec.custom_network_config.interface_list.interfaces[].tunnel_interface.static_ip.cluster_static_ip",
+          "spec.custom_network_config.interface_list.interfaces[].tunnel_interface.static_ip.node_static_ip",
+        ],
+      },
+      {
+        choiceField: "static_route_choice",
+        fieldPath: "spec.custom_network_config.sli_config.static_route_choice",
+        options: [
+          "spec.custom_network_config.sli_config.no_static_routes",
+          "spec.custom_network_config.sli_config.static_routes",
+        ],
+      },
+      {
+        choiceField: "static_v6_route_choice",
+        fieldPath: "spec.custom_network_config.sli_config.static_v6_route_choice",
+        options: [
+          "spec.custom_network_config.sli_config.no_v6_static_routes",
+          "spec.custom_network_config.sli_config.static_v6_routes",
+        ],
+      },
+      {
+        choiceField: "next_hop_choice",
+        fieldPath:
+          "spec.custom_network_config.sli_config.static_routes.static_routes[].next_hop_choice",
+        options: [
+          "spec.custom_network_config.sli_config.static_routes.static_routes[].default_gateway",
+          "spec.custom_network_config.sli_config.static_routes.static_routes[].ip_address",
+          "spec.custom_network_config.sli_config.static_routes.static_routes[].node_interface",
+        ],
+      },
+      {
+        choiceField: "next_hop_choice",
+        fieldPath:
+          "spec.custom_network_config.sli_config.static_v6_routes.static_routes[].next_hop_choice",
+        options: [
+          "spec.custom_network_config.sli_config.static_v6_routes.static_routes[].default_gateway",
+          "spec.custom_network_config.sli_config.static_v6_routes.static_routes[].ip_address",
+          "spec.custom_network_config.sli_config.static_v6_routes.static_routes[].node_interface",
+        ],
+      },
+      {
+        choiceField: "dc_cluster_group_choice",
+        fieldPath: "spec.custom_network_config.slo_config.dc_cluster_group_choice",
+        options: [
+          "spec.custom_network_config.slo_config.dc_cluster_group",
+          "spec.custom_network_config.slo_config.no_dc_cluster_group",
+        ],
+      },
+      {
+        choiceField: "static_route_choice",
+        fieldPath: "spec.custom_network_config.slo_config.static_route_choice",
+        options: [
+          "spec.custom_network_config.slo_config.no_static_routes",
+          "spec.custom_network_config.slo_config.static_routes",
+        ],
+      },
+      {
+        choiceField: "static_v6_route_choice",
+        fieldPath: "spec.custom_network_config.slo_config.static_v6_route_choice",
+        options: [
+          "spec.custom_network_config.slo_config.no_static_v6_routes",
+          "spec.custom_network_config.slo_config.static_v6_routes",
+        ],
+      },
+      {
+        choiceField: "next_hop_choice",
+        fieldPath:
+          "spec.custom_network_config.slo_config.static_routes.static_routes[].next_hop_choice",
+        options: [
+          "spec.custom_network_config.slo_config.static_routes.static_routes[].default_gateway",
+          "spec.custom_network_config.slo_config.static_routes.static_routes[].ip_address",
+          "spec.custom_network_config.slo_config.static_routes.static_routes[].node_interface",
+        ],
+      },
+      {
+        choiceField: "next_hop_choice",
+        fieldPath:
+          "spec.custom_network_config.slo_config.static_v6_routes.static_routes[].next_hop_choice",
+        options: [
+          "spec.custom_network_config.slo_config.static_v6_routes.static_routes[].default_gateway",
+          "spec.custom_network_config.slo_config.static_v6_routes.static_routes[].ip_address",
+          "spec.custom_network_config.slo_config.static_v6_routes.static_routes[].node_interface",
+        ],
+      },
+      {
+        choiceField: "static_route_choice",
+        fieldPath: "spec.custom_storage_config.static_route_choice",
+        options: [
+          "spec.custom_storage_config.no_static_routes",
+          "spec.custom_storage_config.static_routes",
+        ],
+      },
+      {
+        choiceField: "storage_class_choice",
+        fieldPath: "spec.custom_storage_config.storage_class_choice",
+        options: [
+          "spec.custom_storage_config.default_storage_class",
+          "spec.custom_storage_config.storage_class_list",
+        ],
+      },
+      {
+        choiceField: "storage_device_choice",
+        fieldPath: "spec.custom_storage_config.storage_device_choice",
+        options: [
+          "spec.custom_storage_config.no_storage_device",
+          "spec.custom_storage_config.storage_device_list",
+        ],
+      },
+      {
+        choiceField: "storage_interface_choice",
+        fieldPath: "spec.custom_storage_config.storage_interface_choice",
+        options: [
+          "spec.custom_storage_config.no_storage_interfaces",
+          "spec.custom_storage_config.storage_interface_list",
+        ],
+      },
+      {
+        choiceField: "next_hop_choice",
+        fieldPath: "spec.custom_storage_config.static_routes.static_routes[].next_hop_choice",
+        options: [
+          "spec.custom_storage_config.static_routes.static_routes[].default_gateway",
+          "spec.custom_storage_config.static_routes.static_routes[].ip_address",
+          "spec.custom_storage_config.static_routes.static_routes[].node_interface",
+        ],
+      },
+      {
+        choiceField: "device_choice",
+        fieldPath: "spec.custom_storage_config.storage_class_list.storage_classes[].device_choice",
+        options: [
+          "spec.custom_storage_config.storage_class_list.storage_classes[].custom_storage",
+          "spec.custom_storage_config.storage_class_list.storage_classes[].hpe_storage",
+          "spec.custom_storage_config.storage_class_list.storage_classes[].netapp_trident",
+          "spec.custom_storage_config.storage_class_list.storage_classes[].pure_service_orchestrator",
+        ],
+      },
+      {
+        choiceField: "device_choice",
+        fieldPath: "spec.custom_storage_config.storage_device_list.storage_devices[].device_choice",
+        options: [
+          "spec.custom_storage_config.storage_device_list.storage_devices[].custom_storage",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].hpe_storage",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].pure_service_orchestrator",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.custom_storage_config.storage_device_list.storage_devices[].hpe_storage.iscsi_chap_password.secret_info_oneof",
+        options: [
+          "spec.custom_storage_config.storage_device_list.storage_devices[].hpe_storage.iscsi_chap_password.blindfold_secret_info",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].hpe_storage.iscsi_chap_password.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.custom_storage_config.storage_device_list.storage_devices[].hpe_storage.password.secret_info_oneof",
+        options: [
+          "spec.custom_storage_config.storage_device_list.storage_devices[].hpe_storage.password.blindfold_secret_info",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].hpe_storage.password.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "backend_choice",
+        fieldPath:
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.backend_choice",
+        options: [
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san",
+        ],
+      },
+      {
+        choiceField: "data_lif",
+        fieldPath:
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.data_lif",
+        options: [
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.data_lif_dns_name",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.data_lif_ip",
+        ],
+      },
+      {
+        choiceField: "management_lif",
+        fieldPath:
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.management_lif",
+        options: [
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.management_lif_dns_name",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.management_lif_ip",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.client_private_key.secret_info_oneof",
+        options: [
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.client_private_key.blindfold_secret_info",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.client_private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.password.secret_info_oneof",
+        options: [
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.password.blindfold_secret_info",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.password.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "qos_policy_choice",
+        fieldPath:
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.storage[].volume_defaults.qos_policy_choice",
+        options: [
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.storage[].volume_defaults.adaptive_qos_policy",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.storage[].volume_defaults.no_qos",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.storage[].volume_defaults.qos_policy",
+        ],
+      },
+      {
+        choiceField: "qos_policy_choice",
+        fieldPath:
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.volume_defaults.qos_policy_choice",
+        options: [
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.volume_defaults.adaptive_qos_policy",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.volume_defaults.no_qos",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.volume_defaults.qos_policy",
+        ],
+      },
+      {
+        choiceField: "chap_choice",
+        fieldPath:
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.chap_choice",
+        options: [
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.no_chap",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.use_chap",
+        ],
+      },
+      {
+        choiceField: "data_lif",
+        fieldPath:
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.data_lif",
+        options: [
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.data_lif_dns_name",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.data_lif_ip",
+        ],
+      },
+      {
+        choiceField: "management_lif",
+        fieldPath:
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.management_lif",
+        options: [
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.management_lif_dns_name",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.management_lif_ip",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.client_private_key.secret_info_oneof",
+        options: [
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.client_private_key.blindfold_secret_info",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.client_private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.password.secret_info_oneof",
+        options: [
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.password.blindfold_secret_info",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.password.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "qos_policy_choice",
+        fieldPath:
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.storage[].volume_defaults.qos_policy_choice",
+        options: [
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.storage[].volume_defaults.adaptive_qos_policy",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.storage[].volume_defaults.no_qos",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.storage[].volume_defaults.qos_policy",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.use_chap.chap_initiator_secret.secret_info_oneof",
+        options: [
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.use_chap.chap_initiator_secret.blindfold_secret_info",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.use_chap.chap_initiator_secret.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.use_chap.chap_target_initiator_secret.secret_info_oneof",
+        options: [
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.use_chap.chap_target_initiator_secret.blindfold_secret_info",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.use_chap.chap_target_initiator_secret.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "qos_policy_choice",
+        fieldPath:
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.volume_defaults.qos_policy_choice",
+        options: [
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.volume_defaults.adaptive_qos_policy",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.volume_defaults.no_qos",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.volume_defaults.qos_policy",
+        ],
+      },
+      {
+        choiceField: "mgmt_endpoint",
+        fieldPath:
+          "spec.custom_storage_config.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_array.flash_arrays[].mgmt_endpoint",
+        options: [
+          "spec.custom_storage_config.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_array.flash_arrays[].mgmt_dns_name",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_array.flash_arrays[].mgmt_ip",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.custom_storage_config.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_array.flash_arrays[].api_token.secret_info_oneof",
+        options: [
+          "spec.custom_storage_config.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_array.flash_arrays[].api_token.blindfold_secret_info",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_array.flash_arrays[].api_token.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "mgmt_endpoint",
+        fieldPath:
+          "spec.custom_storage_config.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_blade.flash_blades[].mgmt_endpoint",
+        options: [
+          "spec.custom_storage_config.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_blade.flash_blades[].mgmt_dns_name",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_blade.flash_blades[].mgmt_ip",
+        ],
+      },
+      {
+        choiceField: "nfs_endpoint",
+        fieldPath:
+          "spec.custom_storage_config.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_blade.flash_blades[].nfs_endpoint",
+        options: [
+          "spec.custom_storage_config.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_blade.flash_blades[].nfs_endpoint_dns_name",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_blade.flash_blades[].nfs_endpoint_ip",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.custom_storage_config.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_blade.flash_blades[].api_token.secret_info_oneof",
+        options: [
+          "spec.custom_storage_config.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_blade.flash_blades[].api_token.blindfold_secret_info",
+          "spec.custom_storage_config.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_blade.flash_blades[].api_token.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath:
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.address_choice",
+        options: [
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.dhcp_client",
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.dhcp_server",
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.static_ip",
+        ],
+      },
+      {
+        choiceField: "ipv6_address_choice",
+        fieldPath:
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.ipv6_address_choice",
+        options: [
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.ipv6_auto_config",
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.no_ipv6_address",
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.static_ipv6_address",
+        ],
+      },
+      {
+        choiceField: "monitoring_choice",
+        fieldPath:
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.monitoring_choice",
+        options: [
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.monitor",
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.monitor_disabled",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath:
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.network_choice",
+        options: [
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.segment_network",
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.site_local_inside_network",
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.site_local_network",
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.storage_network",
+        ],
+      },
+      {
+        choiceField: "node_choice",
+        fieldPath:
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.node_choice",
+        options: [
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.cluster",
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.node",
+        ],
+      },
+      {
+        choiceField: "primary_choice",
+        fieldPath:
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.primary_choice",
+        options: [
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.is_primary",
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.not_primary",
+        ],
+      },
+      {
+        choiceField: "vlan_choice",
+        fieldPath:
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.vlan_choice",
+        options: [
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.untagged",
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.vlan_id",
+        ],
+      },
+      {
+        choiceField: "interfaces_addressing_choice",
+        fieldPath:
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.dhcp_server.interfaces_addressing_choice",
+        options: [
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.dhcp_server.automatic_from_end",
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.dhcp_server.automatic_from_start",
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.dhcp_server.interface_ip_map",
+        ],
+      },
+      {
+        choiceField: "dns_choice",
+        fieldPath:
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.dhcp_server.dhcp_networks[].dns_choice",
+        options: [
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.dhcp_server.dhcp_networks[].dns_address",
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.dhcp_server.dhcp_networks[].same_as_dgw",
+        ],
+      },
+      {
+        choiceField: "gateway_choice",
+        fieldPath:
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.dhcp_server.dhcp_networks[].gateway_choice",
+        options: [
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.dhcp_server.dhcp_networks[].dgw_address",
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.dhcp_server.dhcp_networks[].first_address",
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.dhcp_server.dhcp_networks[].last_address",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.dhcp_server.dhcp_networks[].network_prefix_choice",
+        options: [
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.dhcp_server.dhcp_networks[].network_prefix",
+        ],
+      },
+      {
+        choiceField: "autoconfig_choice",
+        fieldPath:
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.ipv6_auto_config.autoconfig_choice",
+        options: [
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.ipv6_auto_config.host",
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.ipv6_auto_config.router",
+        ],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath:
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.ipv6_auto_config.router.address_choice",
+        options: [
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.ipv6_auto_config.router.network_prefix",
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.ipv6_auto_config.router.stateful",
+        ],
+      },
+      {
+        choiceField: "dns_choice",
+        fieldPath:
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.ipv6_auto_config.router.dns_config.dns_choice",
+        options: [
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.ipv6_auto_config.router.dns_config.configured_list",
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.ipv6_auto_config.router.dns_config.local_dns",
+        ],
+      },
+      {
+        choiceField: "local_dns_choice",
+        fieldPath:
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.ipv6_auto_config.router.dns_config.local_dns.local_dns_choice",
+        options: [
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.ipv6_auto_config.router.dns_config.local_dns.configured_address",
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.ipv6_auto_config.router.dns_config.local_dns.first_address",
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.ipv6_auto_config.router.dns_config.local_dns.last_address",
+        ],
+      },
+      {
+        choiceField: "interfaces_addressing_choice",
+        fieldPath:
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.ipv6_auto_config.router.stateful.interfaces_addressing_choice",
+        options: [
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.ipv6_auto_config.router.stateful.automatic_from_end",
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.ipv6_auto_config.router.stateful.automatic_from_start",
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.ipv6_auto_config.router.stateful.interface_ip_map",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix_choice",
+        options: [
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.static_ip.network_prefix_choice",
+        options: [
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.static_ip.cluster_static_ip",
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.static_ip.node_static_ip",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.static_ipv6_address.network_prefix_choice",
+        options: [
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.static_ipv6_address.cluster_static_ip",
+          "spec.custom_storage_config.storage_interface_list.storage_interfaces[].storage_interface.static_ipv6_address.node_static_ip",
+        ],
+      },
+      {
+        choiceField: "kubernetes_upgrade_drain_enable_choice",
+        fieldPath: "spec.kubernetes_upgrade_drain.kubernetes_upgrade_drain_enable_choice",
+        options: [
+          "spec.kubernetes_upgrade_drain.disable_upgrade_drain",
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain",
+        ],
+      },
+      {
+        choiceField: "drain_max_unavailable_choice",
+        fieldPath:
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.drain_max_unavailable_choice",
+        options: [
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.drain_max_unavailable_node_count",
+        ],
+      },
+      {
+        choiceField: "vega_upgrade_mode_toggle_choice",
+        fieldPath:
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.vega_upgrade_mode_toggle_choice",
+        options: [
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.disable_vega_upgrade_mode",
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.enable_vega_upgrade_mode",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath: "spec.local_control_plane.network_choice",
+        options: ["spec.local_control_plane.inside_vn", "spec.local_control_plane.outside_vn"],
+      },
+      {
+        choiceField: "bfd_choice",
+        fieldPath: "spec.local_control_plane.bgp_config.peers[].bfd_choice",
+        options: [
+          "spec.local_control_plane.bgp_config.peers[].bfd_disabled",
+          "spec.local_control_plane.bgp_config.peers[].bfd_enabled",
+        ],
+      },
+      {
+        choiceField: "enable_choice",
+        fieldPath: "spec.local_control_plane.bgp_config.peers[].enable_choice",
+        options: [
+          "spec.local_control_plane.bgp_config.peers[].disable",
+          "spec.local_control_plane.bgp_config.peers[].routing_policies",
+        ],
+      },
+      {
+        choiceField: "passive_choice",
+        fieldPath: "spec.local_control_plane.bgp_config.peers[].passive_choice",
+        options: [
+          "spec.local_control_plane.bgp_config.peers[].passive_mode_disabled",
+          "spec.local_control_plane.bgp_config.peers[].passive_mode_enabled",
+        ],
+      },
+      {
+        choiceField: "type_choice",
+        fieldPath: "spec.local_control_plane.bgp_config.peers[].type_choice",
+        options: ["spec.local_control_plane.bgp_config.peers[].external"],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath: "spec.local_control_plane.bgp_config.peers[].external.address_choice",
+        options: [
+          "spec.local_control_plane.bgp_config.peers[].external.address",
+          "spec.local_control_plane.bgp_config.peers[].external.default_gateway",
+          "spec.local_control_plane.bgp_config.peers[].external.disable",
+          "spec.local_control_plane.bgp_config.peers[].external.external_connector",
+          "spec.local_control_plane.bgp_config.peers[].external.from_site",
+          "spec.local_control_plane.bgp_config.peers[].external.subnet_begin_offset",
+          "spec.local_control_plane.bgp_config.peers[].external.subnet_end_offset",
+        ],
+      },
+      {
+        choiceField: "address_choice_v6",
+        fieldPath: "spec.local_control_plane.bgp_config.peers[].external.address_choice_v6",
+        options: [
+          "spec.local_control_plane.bgp_config.peers[].external.address_ipv6",
+          "spec.local_control_plane.bgp_config.peers[].external.default_gateway_v6",
+          "spec.local_control_plane.bgp_config.peers[].external.disable_v6",
+          "spec.local_control_plane.bgp_config.peers[].external.from_site_v6",
+          "spec.local_control_plane.bgp_config.peers[].external.subnet_begin_offset_v6",
+          "spec.local_control_plane.bgp_config.peers[].external.subnet_end_offset_v6",
+        ],
+      },
+      {
+        choiceField: "auth_choice",
+        fieldPath: "spec.local_control_plane.bgp_config.peers[].external.auth_choice",
+        options: [
+          "spec.local_control_plane.bgp_config.peers[].external.md5_auth_key",
+          "spec.local_control_plane.bgp_config.peers[].external.no_authentication",
+        ],
+      },
+      {
+        choiceField: "interface_choice",
+        fieldPath: "spec.local_control_plane.bgp_config.peers[].external.interface_choice",
+        options: [
+          "spec.local_control_plane.bgp_config.peers[].external.interface",
+          "spec.local_control_plane.bgp_config.peers[].external.interface_list",
+        ],
+      },
+      {
+        choiceField: "enable_choice",
+        fieldPath: "spec.local_control_plane.bgp_config.peers[].external.family_inet.enable_choice",
+        options: [
+          "spec.local_control_plane.bgp_config.peers[].external.family_inet.disable",
+          "spec.local_control_plane.bgp_config.peers[].external.family_inet.enable",
+        ],
+      },
+      {
+        choiceField: "direction",
+        fieldPath:
+          "spec.local_control_plane.bgp_config.peers[].routing_policies.route_policy[].direction",
+        options: [
+          "spec.local_control_plane.bgp_config.peers[].routing_policies.route_policy[].inbound",
+          "spec.local_control_plane.bgp_config.peers[].routing_policies.route_policy[].outbound",
+        ],
+      },
+      {
+        choiceField: "node_choice",
+        fieldPath:
+          "spec.local_control_plane.bgp_config.peers[].routing_policies.route_policy[].node_choice",
+        options: [
+          "spec.local_control_plane.bgp_config.peers[].routing_policies.route_policy[].all_nodes",
+          "spec.local_control_plane.bgp_config.peers[].routing_policies.route_policy[].node_name",
+        ],
+      },
+      {
+        choiceField: "offline_survivability_mode_choice",
+        fieldPath: "spec.offline_survivability_mode.offline_survivability_mode_choice",
+        options: [
+          "spec.offline_survivability_mode.enable_offline_survivability_mode",
+          "spec.offline_survivability_mode.no_offline_survivability_mode",
+        ],
+      },
+      {
+        choiceField: "operating_system_version_choice",
+        fieldPath: "spec.os.operating_system_version_choice",
+        options: ["spec.os.default_os_version", "spec.os.operating_system_version"],
+      },
+      {
+        choiceField: "volterra_sw_version_choice",
+        fieldPath: "spec.sw.volterra_sw_version_choice",
+        options: ["spec.sw.default_sw_version", "spec.sw.volterra_software_version"],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_site_management_standard",

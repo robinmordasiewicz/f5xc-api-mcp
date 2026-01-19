@@ -6,9 +6,6 @@ description: Conversion Dashboard.
 
 # Conversion
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET conversion chart data from shape recognize API.
 
 ## Tools
@@ -16,14 +13,6 @@ GET conversion chart data from shape recognize API.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-shape-conversion-create` | Conversion Dashboard. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- conversion
 
 ## Example Usage
 

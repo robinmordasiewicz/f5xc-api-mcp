@@ -6,9 +6,6 @@ description: Friction Aggregation Dashboard.
 
 # Friction Aggregation
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET Friction Aggregation chart data from shape recognize API.
 
 ## Tools
@@ -16,14 +13,6 @@ GET Friction Aggregation chart data from shape recognize API.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-shape-friction-aggregation-create` | Friction Aggregation Dashboard. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- friction-aggregation
 
 ## Example Usage
 

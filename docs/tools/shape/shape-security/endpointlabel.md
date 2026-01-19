@@ -6,9 +6,6 @@ description: Top Endpoint Labels.
 
 # Endpointlabel
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET top Endpoint labels.
 
 ## Tools
@@ -24,14 +21,6 @@ GET top Endpoint labels.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- endpointlabel
 
 ## Example Usage
 

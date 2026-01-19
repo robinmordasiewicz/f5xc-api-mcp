@@ -6,9 +6,6 @@ description: GetInvoicePdf.
 
 # Invoice Pdf
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Retrieve pdf for a paid invoice by its name.
 
 ## Tools

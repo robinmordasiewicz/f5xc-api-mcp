@@ -6,9 +6,6 @@ description: DELETE
 
 # Delete
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 DELETE deletes OIDC provider by name. This would also disable SCIM integration for the tenant, if at
 all, it was enabled.
 Returns OIDC provider object that gets deleted. Query will look into current
@@ -28,14 +25,6 @@ tenants `system` namespace for OIDC provider by name.
 |-----------|-------------|--------|
 | `name` | Name | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- delete
 
 ## Example Usage
 

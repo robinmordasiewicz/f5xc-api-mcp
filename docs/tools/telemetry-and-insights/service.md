@@ -6,9 +6,6 @@ description: Service Graph Query.
 
 # Service
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Request to GET monitoring data for a service mesh of a given application.
 
 ## Tools
@@ -24,14 +21,6 @@ Request to GET monitoring data for a service mesh of a given application.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- service
 
 ## Example Usage
 

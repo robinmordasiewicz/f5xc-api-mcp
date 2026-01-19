@@ -6,9 +6,6 @@ description: Export Zone File.
 
 # Export
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Export Zone File.
 
 ## Tools

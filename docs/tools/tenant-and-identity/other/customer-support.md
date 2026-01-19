@@ -6,9 +6,6 @@ description: Create customer support ticket in managed tenant.
 
 # Customer Support
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Creates a new customer support ticket in our customer support provider system.
 
 ## Tools
@@ -17,14 +14,6 @@ Creates a new customer support ticket in our customer support provider system.
 |------|-------------|
 | `f5xc-api-tenantandidentity-customer-support-create` | Create customer support ticket in managed tenant. |
 | `f5xc-api-tenantandidentity-customer-support-list` | List tickets of managed tenant. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- customer-support
 
 ## Example Usage
 

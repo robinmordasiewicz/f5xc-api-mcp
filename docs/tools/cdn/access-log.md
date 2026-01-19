@@ -6,9 +6,6 @@ description: GET CDN Access Logs.
 
 # Access Log
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Retrieve CDN Load-Balancer Access logs.
 
 ## Tools
@@ -24,14 +21,6 @@ Retrieve CDN Load-Balancer Access logs.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- access-log
 
 ## Example Usage
 

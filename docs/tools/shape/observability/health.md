@@ -6,9 +6,6 @@ description: Health Check.
 
 # Health
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Health Check.
 
 ## Tools

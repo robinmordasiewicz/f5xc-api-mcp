@@ -6,9 +6,6 @@ description: "Insight Event: Credential Stuffing Attack."
 
 # Credential Stuffing Attack
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET Insight Credential Stuffing Attack.
 
 ## Tools
@@ -24,14 +21,6 @@ GET Insight Credential Stuffing Attack.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- credential-stuffing-attack
 
 ## Example Usage
 

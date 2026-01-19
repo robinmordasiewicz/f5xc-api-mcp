@@ -6,9 +6,6 @@ description: Analyze For Deletion.
 
 # Analyze For Deletion
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 AnalyzeForDeletion checks the references of the object to make sure it is deletable.
 
 ## Tools
@@ -17,13 +14,16 @@ AnalyzeForDeletion checks the references of the object to make sure it is deleta
 |------|-------------|
 | `f5xc-api-tenantandidentity-analyze-for-deletion-create` | Analyze For Deletion. |
 
-## Side Effects
+## Configuration Choices
 
-Operations on this resource may have the following effects:
+This resource includes mutually exclusive configuration options:
 
-**Creates:**
+### object_identifier
 
-- analyze-for-deletion
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `namespace_name_identifier` | - |  |
+| `object_uid` | - |  |
 
 ## Example Usage
 

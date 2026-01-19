@@ -6,9 +6,6 @@ description: Released Signatures.
 
 # Released Signature
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 API to GET Released Signatures.
 
 ## Tools

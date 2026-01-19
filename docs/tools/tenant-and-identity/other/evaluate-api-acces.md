@@ -6,9 +6,6 @@ description: Evaluate API Access.
 
 # Evaluate API Acces
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 EvaluateAPIAccess can evaluate multiple lists of API URL, method under a namespace for a given user
 of a tenant.
 
@@ -17,14 +14,6 @@ of a tenant.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-tenantandidentity-evaluate-api-acces-create` | Evaluate API Access. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- evaluate-api-acces
 
 ## Example Usage
 

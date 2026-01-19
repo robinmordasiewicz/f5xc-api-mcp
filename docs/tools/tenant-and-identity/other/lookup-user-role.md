@@ -6,9 +6,6 @@ description: Lookup User Roles.
 
 # Lookup User Role
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 LookupUserRoles returns roles for the the given user, namespace.
 
 ## Tools
@@ -16,14 +13,6 @@ LookupUserRoles returns roles for the the given user, namespace.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-tenantandidentity-lookup-user-role-create` | Lookup User Roles. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- lookup-user-role
 
 ## Example Usage
 

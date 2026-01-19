@@ -6,9 +6,6 @@ description: Insight Bad Bot Reduction.
 
 # Bad Bot Reduction
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Insight Bad Bot Reduction.
 
 ## Tools
@@ -24,14 +21,6 @@ Insight Bad Bot Reduction.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- bad-bot-reduction
 
 ## Example Usage
 

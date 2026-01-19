@@ -6,9 +6,6 @@ description: Disable visibility in all workspaces.
 
 # Disable Visibility
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Disable Visibility of the service in all workspaces. This will remove the discovered service
 from
 being visible in other wokspaces like WAAP.
@@ -27,14 +24,6 @@ being visible in other wokspaces like WAAP.
 |-----------|-------------|--------|
 | `name` | Service Name | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- disable-visibility
 
 ## Example Usage
 

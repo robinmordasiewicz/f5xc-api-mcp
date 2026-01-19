@@ -6,9 +6,6 @@ description: Assign role to User Group.
 
 # Assign Namespace Role
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 AssignRole allows customers to assign a namespace/role pair to user group.
 
 ## Tools
@@ -24,14 +21,6 @@ AssignRole allows customers to assign a namespace/role pair to user group.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `name` | Name of the user group | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Modifies:**
-
-- assign-namespace-role
 
 ## Example Usage
 

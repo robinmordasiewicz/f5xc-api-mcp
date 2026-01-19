@@ -6,9 +6,6 @@ description: Pod List
 
 # Pod
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 API to GET list of pods in a site for a given namespace.
 
 ## Tools

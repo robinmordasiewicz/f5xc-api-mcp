@@ -71,7 +71,381 @@ export const ce_managementTools: ParsedOperation[] = [
         resourceType: "schemafleet-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "bond_choice",
+        fieldPath: "spec.bond_choice",
+        options: ["spec.bond_device_list", "spec.no_bond_devices"],
+      },
+      {
+        choiceField: "dc_cluster_group_choice",
+        fieldPath: "spec.dc_cluster_group_choice",
+        options: [
+          "spec.dc_cluster_group",
+          "spec.dc_cluster_group_inside",
+          "spec.no_dc_cluster_group",
+        ],
+      },
+      {
+        choiceField: "gpu_choice",
+        fieldPath: "spec.gpu_choice",
+        options: ["spec.disable_gpu", "spec.enable_gpu", "spec.enable_vgpu"],
+      },
+      {
+        choiceField: "interface_choice",
+        fieldPath: "spec.interface_choice",
+        options: ["spec.default_config", "spec.device_list", "spec.interface_list"],
+      },
+      {
+        choiceField: "logs_receiver_choice",
+        fieldPath: "spec.logs_receiver_choice",
+        options: ["spec.log_receiver", "spec.logs_streaming_disabled"],
+      },
+      {
+        choiceField: "sriov_interface_choice",
+        fieldPath: "spec.sriov_interface_choice",
+        options: ["spec.default_sriov_interface", "spec.sriov_interfaces"],
+      },
+      {
+        choiceField: "storage_class_choice",
+        fieldPath: "spec.storage_class_choice",
+        options: ["spec.default_storage_class", "spec.storage_class_list"],
+      },
+      {
+        choiceField: "storage_device_choice",
+        fieldPath: "spec.storage_device_choice",
+        options: ["spec.no_storage_device", "spec.storage_device_list"],
+      },
+      {
+        choiceField: "storage_interface_choice",
+        fieldPath: "spec.storage_interface_choice",
+        options: ["spec.no_storage_interfaces", "spec.storage_interface_list"],
+      },
+      {
+        choiceField: "storage_static_routes_choice",
+        fieldPath: "spec.storage_static_routes_choice",
+        options: ["spec.no_storage_static_routes", "spec.storage_static_routes"],
+      },
+      {
+        choiceField: "usb_policy_choice",
+        fieldPath: "spec.usb_policy_choice",
+        options: ["spec.allow_all_usb", "spec.deny_all_usb", "spec.usb_policy"],
+      },
+      {
+        choiceField: "vm_choice",
+        fieldPath: "spec.vm_choice",
+        options: ["spec.disable_vm", "spec.enable_vm"],
+      },
+      {
+        choiceField: "blocked_services_value_type_choice",
+        fieldPath: "spec.blocked_services[].blocked_services_value_type_choice",
+        options: [
+          "spec.blocked_services[].dns",
+          "spec.blocked_services[].ssh",
+          "spec.blocked_services[].web_user_interface",
+        ],
+      },
+      {
+        choiceField: "lacp_choice",
+        fieldPath: "spec.bond_device_list.bond_devices[].lacp_choice",
+        options: [
+          "spec.bond_device_list.bond_devices[].active_backup",
+          "spec.bond_device_list.bond_devices[].lacp",
+        ],
+      },
+      {
+        choiceField: "device_instance",
+        fieldPath: "spec.device_list.devices[].device_instance",
+        options: ["spec.device_list.devices[].network_device"],
+      },
+      {
+        choiceField: "kubernetes_upgrade_drain_enable_choice",
+        fieldPath: "spec.kubernetes_upgrade_drain.kubernetes_upgrade_drain_enable_choice",
+        options: [
+          "spec.kubernetes_upgrade_drain.disable_upgrade_drain",
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain",
+        ],
+      },
+      {
+        choiceField: "drain_max_unavailable_choice",
+        fieldPath:
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.drain_max_unavailable_choice",
+        options: [
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.drain_max_unavailable_node_count",
+        ],
+      },
+      {
+        choiceField: "vega_upgrade_mode_toggle_choice",
+        fieldPath:
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.vega_upgrade_mode_toggle_choice",
+        options: [
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.disable_vega_upgrade_mode",
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.enable_vega_upgrade_mode",
+        ],
+      },
+      {
+        choiceField: "perf_mode_choice",
+        fieldPath: "spec.performance_enhancement_mode.perf_mode_choice",
+        options: [
+          "spec.performance_enhancement_mode.perf_mode_l3_enhanced",
+          "spec.performance_enhancement_mode.perf_mode_l7_enhanced",
+        ],
+      },
+      {
+        choiceField: "perf_mode_choice",
+        fieldPath: "spec.performance_enhancement_mode.perf_mode_l3_enhanced.perf_mode_choice",
+        options: [
+          "spec.performance_enhancement_mode.perf_mode_l3_enhanced.jumbo",
+          "spec.performance_enhancement_mode.perf_mode_l3_enhanced.no_jumbo",
+        ],
+      },
+      {
+        choiceField: "device_choice",
+        fieldPath: "spec.storage_class_list.storage_classes[].device_choice",
+        options: [
+          "spec.storage_class_list.storage_classes[].custom_storage",
+          "spec.storage_class_list.storage_classes[].hpe_storage",
+          "spec.storage_class_list.storage_classes[].netapp_trident",
+          "spec.storage_class_list.storage_classes[].pure_service_orchestrator",
+        ],
+      },
+      {
+        choiceField: "device_choice",
+        fieldPath: "spec.storage_device_list.storage_devices[].device_choice",
+        options: [
+          "spec.storage_device_list.storage_devices[].custom_storage",
+          "spec.storage_device_list.storage_devices[].hpe_storage",
+          "spec.storage_device_list.storage_devices[].netapp_trident",
+          "spec.storage_device_list.storage_devices[].pure_service_orchestrator",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.storage_device_list.storage_devices[].hpe_storage.iscsi_chap_password.secret_info_oneof",
+        options: [
+          "spec.storage_device_list.storage_devices[].hpe_storage.iscsi_chap_password.blindfold_secret_info",
+          "spec.storage_device_list.storage_devices[].hpe_storage.iscsi_chap_password.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.storage_device_list.storage_devices[].hpe_storage.password.secret_info_oneof",
+        options: [
+          "spec.storage_device_list.storage_devices[].hpe_storage.password.blindfold_secret_info",
+          "spec.storage_device_list.storage_devices[].hpe_storage.password.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "backend_choice",
+        fieldPath: "spec.storage_device_list.storage_devices[].netapp_trident.backend_choice",
+        options: [
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas",
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san",
+        ],
+      },
+      {
+        choiceField: "data_lif",
+        fieldPath:
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.data_lif",
+        options: [
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.data_lif_dns_name",
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.data_lif_ip",
+        ],
+      },
+      {
+        choiceField: "management_lif",
+        fieldPath:
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.management_lif",
+        options: [
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.management_lif_dns_name",
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.management_lif_ip",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.client_private_key.secret_info_oneof",
+        options: [
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.client_private_key.blindfold_secret_info",
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.client_private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.password.secret_info_oneof",
+        options: [
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.password.blindfold_secret_info",
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.password.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "qos_policy_choice",
+        fieldPath:
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.storage[].volume_defaults.qos_policy_choice",
+        options: [
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.storage[].volume_defaults.adaptive_qos_policy",
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.storage[].volume_defaults.no_qos",
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.storage[].volume_defaults.qos_policy",
+        ],
+      },
+      {
+        choiceField: "qos_policy_choice",
+        fieldPath:
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.volume_defaults.qos_policy_choice",
+        options: [
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.volume_defaults.adaptive_qos_policy",
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.volume_defaults.no_qos",
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.volume_defaults.qos_policy",
+        ],
+      },
+      {
+        choiceField: "chap_choice",
+        fieldPath:
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.chap_choice",
+        options: [
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.no_chap",
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.use_chap",
+        ],
+      },
+      {
+        choiceField: "data_lif",
+        fieldPath:
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.data_lif",
+        options: [
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.data_lif_dns_name",
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.data_lif_ip",
+        ],
+      },
+      {
+        choiceField: "management_lif",
+        fieldPath:
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.management_lif",
+        options: [
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.management_lif_dns_name",
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.management_lif_ip",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.client_private_key.secret_info_oneof",
+        options: [
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.client_private_key.blindfold_secret_info",
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.client_private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.password.secret_info_oneof",
+        options: [
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.password.blindfold_secret_info",
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.password.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "qos_policy_choice",
+        fieldPath:
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.storage[].volume_defaults.qos_policy_choice",
+        options: [
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.storage[].volume_defaults.adaptive_qos_policy",
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.storage[].volume_defaults.no_qos",
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.storage[].volume_defaults.qos_policy",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.use_chap.chap_initiator_secret.secret_info_oneof",
+        options: [
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.use_chap.chap_initiator_secret.blindfold_secret_info",
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.use_chap.chap_initiator_secret.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.use_chap.chap_target_initiator_secret.secret_info_oneof",
+        options: [
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.use_chap.chap_target_initiator_secret.blindfold_secret_info",
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.use_chap.chap_target_initiator_secret.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "qos_policy_choice",
+        fieldPath:
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.volume_defaults.qos_policy_choice",
+        options: [
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.volume_defaults.adaptive_qos_policy",
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.volume_defaults.no_qos",
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.volume_defaults.qos_policy",
+        ],
+      },
+      {
+        choiceField: "mgmt_endpoint",
+        fieldPath:
+          "spec.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_array.flash_arrays[].mgmt_endpoint",
+        options: [
+          "spec.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_array.flash_arrays[].mgmt_dns_name",
+          "spec.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_array.flash_arrays[].mgmt_ip",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_array.flash_arrays[].api_token.secret_info_oneof",
+        options: [
+          "spec.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_array.flash_arrays[].api_token.blindfold_secret_info",
+          "spec.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_array.flash_arrays[].api_token.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "mgmt_endpoint",
+        fieldPath:
+          "spec.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_blade.flash_blades[].mgmt_endpoint",
+        options: [
+          "spec.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_blade.flash_blades[].mgmt_dns_name",
+          "spec.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_blade.flash_blades[].mgmt_ip",
+        ],
+      },
+      {
+        choiceField: "nfs_endpoint",
+        fieldPath:
+          "spec.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_blade.flash_blades[].nfs_endpoint",
+        options: [
+          "spec.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_blade.flash_blades[].nfs_endpoint_dns_name",
+          "spec.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_blade.flash_blades[].nfs_endpoint_ip",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_blade.flash_blades[].api_token.secret_info_oneof",
+        options: [
+          "spec.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_blade.flash_blades[].api_token.blindfold_secret_info",
+          "spec.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_blade.flash_blades[].api_token.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath: "spec.storage_static_routes.storage_routes[].nexthop.nexthop_address.ver",
+        options: [
+          "spec.storage_static_routes.storage_routes[].nexthop.nexthop_address.ipv4",
+          "spec.storage_static_routes.storage_routes[].nexthop.nexthop_address.ipv6",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath: "spec.storage_static_routes.storage_routes[].subnets[].ver",
+        options: [
+          "spec.storage_static_routes.storage_routes[].subnets[].ipv4",
+          "spec.storage_static_routes.storage_routes[].subnets[].ipv6",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_site_management_standard",
@@ -394,7 +768,381 @@ export const ce_managementTools: ParsedOperation[] = [
         resourceType: "schemafleet-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "bond_choice",
+        fieldPath: "spec.bond_choice",
+        options: ["spec.bond_device_list", "spec.no_bond_devices"],
+      },
+      {
+        choiceField: "dc_cluster_group_choice",
+        fieldPath: "spec.dc_cluster_group_choice",
+        options: [
+          "spec.dc_cluster_group",
+          "spec.dc_cluster_group_inside",
+          "spec.no_dc_cluster_group",
+        ],
+      },
+      {
+        choiceField: "gpu_choice",
+        fieldPath: "spec.gpu_choice",
+        options: ["spec.disable_gpu", "spec.enable_gpu", "spec.enable_vgpu"],
+      },
+      {
+        choiceField: "interface_choice",
+        fieldPath: "spec.interface_choice",
+        options: ["spec.default_config", "spec.device_list", "spec.interface_list"],
+      },
+      {
+        choiceField: "logs_receiver_choice",
+        fieldPath: "spec.logs_receiver_choice",
+        options: ["spec.log_receiver", "spec.logs_streaming_disabled"],
+      },
+      {
+        choiceField: "sriov_interface_choice",
+        fieldPath: "spec.sriov_interface_choice",
+        options: ["spec.default_sriov_interface", "spec.sriov_interfaces"],
+      },
+      {
+        choiceField: "storage_class_choice",
+        fieldPath: "spec.storage_class_choice",
+        options: ["spec.default_storage_class", "spec.storage_class_list"],
+      },
+      {
+        choiceField: "storage_device_choice",
+        fieldPath: "spec.storage_device_choice",
+        options: ["spec.no_storage_device", "spec.storage_device_list"],
+      },
+      {
+        choiceField: "storage_interface_choice",
+        fieldPath: "spec.storage_interface_choice",
+        options: ["spec.no_storage_interfaces", "spec.storage_interface_list"],
+      },
+      {
+        choiceField: "storage_static_routes_choice",
+        fieldPath: "spec.storage_static_routes_choice",
+        options: ["spec.no_storage_static_routes", "spec.storage_static_routes"],
+      },
+      {
+        choiceField: "usb_policy_choice",
+        fieldPath: "spec.usb_policy_choice",
+        options: ["spec.allow_all_usb", "spec.deny_all_usb", "spec.usb_policy"],
+      },
+      {
+        choiceField: "vm_choice",
+        fieldPath: "spec.vm_choice",
+        options: ["spec.disable_vm", "spec.enable_vm"],
+      },
+      {
+        choiceField: "blocked_services_value_type_choice",
+        fieldPath: "spec.blocked_services[].blocked_services_value_type_choice",
+        options: [
+          "spec.blocked_services[].dns",
+          "spec.blocked_services[].ssh",
+          "spec.blocked_services[].web_user_interface",
+        ],
+      },
+      {
+        choiceField: "lacp_choice",
+        fieldPath: "spec.bond_device_list.bond_devices[].lacp_choice",
+        options: [
+          "spec.bond_device_list.bond_devices[].active_backup",
+          "spec.bond_device_list.bond_devices[].lacp",
+        ],
+      },
+      {
+        choiceField: "device_instance",
+        fieldPath: "spec.device_list.devices[].device_instance",
+        options: ["spec.device_list.devices[].network_device"],
+      },
+      {
+        choiceField: "kubernetes_upgrade_drain_enable_choice",
+        fieldPath: "spec.kubernetes_upgrade_drain.kubernetes_upgrade_drain_enable_choice",
+        options: [
+          "spec.kubernetes_upgrade_drain.disable_upgrade_drain",
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain",
+        ],
+      },
+      {
+        choiceField: "drain_max_unavailable_choice",
+        fieldPath:
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.drain_max_unavailable_choice",
+        options: [
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.drain_max_unavailable_node_count",
+        ],
+      },
+      {
+        choiceField: "vega_upgrade_mode_toggle_choice",
+        fieldPath:
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.vega_upgrade_mode_toggle_choice",
+        options: [
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.disable_vega_upgrade_mode",
+          "spec.kubernetes_upgrade_drain.enable_upgrade_drain.enable_vega_upgrade_mode",
+        ],
+      },
+      {
+        choiceField: "perf_mode_choice",
+        fieldPath: "spec.performance_enhancement_mode.perf_mode_choice",
+        options: [
+          "spec.performance_enhancement_mode.perf_mode_l3_enhanced",
+          "spec.performance_enhancement_mode.perf_mode_l7_enhanced",
+        ],
+      },
+      {
+        choiceField: "perf_mode_choice",
+        fieldPath: "spec.performance_enhancement_mode.perf_mode_l3_enhanced.perf_mode_choice",
+        options: [
+          "spec.performance_enhancement_mode.perf_mode_l3_enhanced.jumbo",
+          "spec.performance_enhancement_mode.perf_mode_l3_enhanced.no_jumbo",
+        ],
+      },
+      {
+        choiceField: "device_choice",
+        fieldPath: "spec.storage_class_list.storage_classes[].device_choice",
+        options: [
+          "spec.storage_class_list.storage_classes[].custom_storage",
+          "spec.storage_class_list.storage_classes[].hpe_storage",
+          "spec.storage_class_list.storage_classes[].netapp_trident",
+          "spec.storage_class_list.storage_classes[].pure_service_orchestrator",
+        ],
+      },
+      {
+        choiceField: "device_choice",
+        fieldPath: "spec.storage_device_list.storage_devices[].device_choice",
+        options: [
+          "spec.storage_device_list.storage_devices[].custom_storage",
+          "spec.storage_device_list.storage_devices[].hpe_storage",
+          "spec.storage_device_list.storage_devices[].netapp_trident",
+          "spec.storage_device_list.storage_devices[].pure_service_orchestrator",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.storage_device_list.storage_devices[].hpe_storage.iscsi_chap_password.secret_info_oneof",
+        options: [
+          "spec.storage_device_list.storage_devices[].hpe_storage.iscsi_chap_password.blindfold_secret_info",
+          "spec.storage_device_list.storage_devices[].hpe_storage.iscsi_chap_password.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.storage_device_list.storage_devices[].hpe_storage.password.secret_info_oneof",
+        options: [
+          "spec.storage_device_list.storage_devices[].hpe_storage.password.blindfold_secret_info",
+          "spec.storage_device_list.storage_devices[].hpe_storage.password.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "backend_choice",
+        fieldPath: "spec.storage_device_list.storage_devices[].netapp_trident.backend_choice",
+        options: [
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas",
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san",
+        ],
+      },
+      {
+        choiceField: "data_lif",
+        fieldPath:
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.data_lif",
+        options: [
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.data_lif_dns_name",
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.data_lif_ip",
+        ],
+      },
+      {
+        choiceField: "management_lif",
+        fieldPath:
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.management_lif",
+        options: [
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.management_lif_dns_name",
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.management_lif_ip",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.client_private_key.secret_info_oneof",
+        options: [
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.client_private_key.blindfold_secret_info",
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.client_private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.password.secret_info_oneof",
+        options: [
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.password.blindfold_secret_info",
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.password.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "qos_policy_choice",
+        fieldPath:
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.storage[].volume_defaults.qos_policy_choice",
+        options: [
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.storage[].volume_defaults.adaptive_qos_policy",
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.storage[].volume_defaults.no_qos",
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.storage[].volume_defaults.qos_policy",
+        ],
+      },
+      {
+        choiceField: "qos_policy_choice",
+        fieldPath:
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.volume_defaults.qos_policy_choice",
+        options: [
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.volume_defaults.adaptive_qos_policy",
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.volume_defaults.no_qos",
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.volume_defaults.qos_policy",
+        ],
+      },
+      {
+        choiceField: "chap_choice",
+        fieldPath:
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.chap_choice",
+        options: [
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.no_chap",
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.use_chap",
+        ],
+      },
+      {
+        choiceField: "data_lif",
+        fieldPath:
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.data_lif",
+        options: [
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.data_lif_dns_name",
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.data_lif_ip",
+        ],
+      },
+      {
+        choiceField: "management_lif",
+        fieldPath:
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.management_lif",
+        options: [
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.management_lif_dns_name",
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.management_lif_ip",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.client_private_key.secret_info_oneof",
+        options: [
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.client_private_key.blindfold_secret_info",
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.client_private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.password.secret_info_oneof",
+        options: [
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.password.blindfold_secret_info",
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.password.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "qos_policy_choice",
+        fieldPath:
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.storage[].volume_defaults.qos_policy_choice",
+        options: [
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.storage[].volume_defaults.adaptive_qos_policy",
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.storage[].volume_defaults.no_qos",
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.storage[].volume_defaults.qos_policy",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.use_chap.chap_initiator_secret.secret_info_oneof",
+        options: [
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.use_chap.chap_initiator_secret.blindfold_secret_info",
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.use_chap.chap_initiator_secret.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.use_chap.chap_target_initiator_secret.secret_info_oneof",
+        options: [
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.use_chap.chap_target_initiator_secret.blindfold_secret_info",
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.use_chap.chap_target_initiator_secret.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "qos_policy_choice",
+        fieldPath:
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.volume_defaults.qos_policy_choice",
+        options: [
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.volume_defaults.adaptive_qos_policy",
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.volume_defaults.no_qos",
+          "spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.volume_defaults.qos_policy",
+        ],
+      },
+      {
+        choiceField: "mgmt_endpoint",
+        fieldPath:
+          "spec.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_array.flash_arrays[].mgmt_endpoint",
+        options: [
+          "spec.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_array.flash_arrays[].mgmt_dns_name",
+          "spec.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_array.flash_arrays[].mgmt_ip",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_array.flash_arrays[].api_token.secret_info_oneof",
+        options: [
+          "spec.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_array.flash_arrays[].api_token.blindfold_secret_info",
+          "spec.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_array.flash_arrays[].api_token.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "mgmt_endpoint",
+        fieldPath:
+          "spec.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_blade.flash_blades[].mgmt_endpoint",
+        options: [
+          "spec.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_blade.flash_blades[].mgmt_dns_name",
+          "spec.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_blade.flash_blades[].mgmt_ip",
+        ],
+      },
+      {
+        choiceField: "nfs_endpoint",
+        fieldPath:
+          "spec.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_blade.flash_blades[].nfs_endpoint",
+        options: [
+          "spec.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_blade.flash_blades[].nfs_endpoint_dns_name",
+          "spec.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_blade.flash_blades[].nfs_endpoint_ip",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_blade.flash_blades[].api_token.secret_info_oneof",
+        options: [
+          "spec.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_blade.flash_blades[].api_token.blindfold_secret_info",
+          "spec.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_blade.flash_blades[].api_token.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath: "spec.storage_static_routes.storage_routes[].nexthop.nexthop_address.ver",
+        options: [
+          "spec.storage_static_routes.storage_routes[].nexthop.nexthop_address.ipv4",
+          "spec.storage_static_routes.storage_routes[].nexthop.nexthop_address.ipv6",
+        ],
+      },
+      {
+        choiceField: "ver",
+        fieldPath: "spec.storage_static_routes.storage_routes[].subnets[].ver",
+        options: [
+          "spec.storage_static_routes.storage_routes[].subnets[].ipv4",
+          "spec.storage_static_routes.storage_routes[].subnets[].ipv6",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_site_management_standard",
@@ -470,7 +1218,227 @@ export const ce_managementTools: ParsedOperation[] = [
         resourceType: "network-interface-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "interface_choice",
+        fieldPath: "spec.interface_choice",
+        options: [
+          "spec.dedicated_interface",
+          "spec.dedicated_management_interface",
+          "spec.ethernet_interface",
+          "spec.layer2_interface",
+          "spec.tunnel_interface",
+        ],
+      },
+      {
+        choiceField: "monitoring_choice",
+        fieldPath: "spec.dedicated_interface.monitoring_choice",
+        options: ["spec.dedicated_interface.monitor", "spec.dedicated_interface.monitor_disabled"],
+      },
+      {
+        choiceField: "node_choice",
+        fieldPath: "spec.dedicated_interface.node_choice",
+        options: ["spec.dedicated_interface.cluster", "spec.dedicated_interface.node"],
+      },
+      {
+        choiceField: "primary_choice",
+        fieldPath: "spec.dedicated_interface.primary_choice",
+        options: ["spec.dedicated_interface.is_primary", "spec.dedicated_interface.not_primary"],
+      },
+      {
+        choiceField: "node_choice",
+        fieldPath: "spec.dedicated_management_interface.node_choice",
+        options: [
+          "spec.dedicated_management_interface.cluster",
+          "spec.dedicated_management_interface.node",
+        ],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath: "spec.ethernet_interface.address_choice",
+        options: [
+          "spec.ethernet_interface.dhcp_client",
+          "spec.ethernet_interface.dhcp_server",
+          "spec.ethernet_interface.static_ip",
+        ],
+      },
+      {
+        choiceField: "ipv6_address_choice",
+        fieldPath: "spec.ethernet_interface.ipv6_address_choice",
+        options: [
+          "spec.ethernet_interface.ipv6_auto_config",
+          "spec.ethernet_interface.no_ipv6_address",
+          "spec.ethernet_interface.static_ipv6_address",
+        ],
+      },
+      {
+        choiceField: "monitoring_choice",
+        fieldPath: "spec.ethernet_interface.monitoring_choice",
+        options: ["spec.ethernet_interface.monitor", "spec.ethernet_interface.monitor_disabled"],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath: "spec.ethernet_interface.network_choice",
+        options: [
+          "spec.ethernet_interface.segment_network",
+          "spec.ethernet_interface.site_local_inside_network",
+          "spec.ethernet_interface.site_local_network",
+          "spec.ethernet_interface.storage_network",
+        ],
+      },
+      {
+        choiceField: "node_choice",
+        fieldPath: "spec.ethernet_interface.node_choice",
+        options: ["spec.ethernet_interface.cluster", "spec.ethernet_interface.node"],
+      },
+      {
+        choiceField: "primary_choice",
+        fieldPath: "spec.ethernet_interface.primary_choice",
+        options: ["spec.ethernet_interface.is_primary", "spec.ethernet_interface.not_primary"],
+      },
+      {
+        choiceField: "vlan_choice",
+        fieldPath: "spec.ethernet_interface.vlan_choice",
+        options: ["spec.ethernet_interface.untagged", "spec.ethernet_interface.vlan_id"],
+      },
+      {
+        choiceField: "interfaces_addressing_choice",
+        fieldPath: "spec.ethernet_interface.dhcp_server.interfaces_addressing_choice",
+        options: [
+          "spec.ethernet_interface.dhcp_server.automatic_from_end",
+          "spec.ethernet_interface.dhcp_server.automatic_from_start",
+          "spec.ethernet_interface.dhcp_server.interface_ip_map",
+        ],
+      },
+      {
+        choiceField: "dns_choice",
+        fieldPath: "spec.ethernet_interface.dhcp_server.dhcp_networks[].dns_choice",
+        options: [
+          "spec.ethernet_interface.dhcp_server.dhcp_networks[].dns_address",
+          "spec.ethernet_interface.dhcp_server.dhcp_networks[].same_as_dgw",
+        ],
+      },
+      {
+        choiceField: "gateway_choice",
+        fieldPath: "spec.ethernet_interface.dhcp_server.dhcp_networks[].gateway_choice",
+        options: [
+          "spec.ethernet_interface.dhcp_server.dhcp_networks[].dgw_address",
+          "spec.ethernet_interface.dhcp_server.dhcp_networks[].first_address",
+          "spec.ethernet_interface.dhcp_server.dhcp_networks[].last_address",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath: "spec.ethernet_interface.dhcp_server.dhcp_networks[].network_prefix_choice",
+        options: ["spec.ethernet_interface.dhcp_server.dhcp_networks[].network_prefix"],
+      },
+      {
+        choiceField: "autoconfig_choice",
+        fieldPath: "spec.ethernet_interface.ipv6_auto_config.autoconfig_choice",
+        options: [
+          "spec.ethernet_interface.ipv6_auto_config.host",
+          "spec.ethernet_interface.ipv6_auto_config.router",
+        ],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath: "spec.ethernet_interface.ipv6_auto_config.router.address_choice",
+        options: [
+          "spec.ethernet_interface.ipv6_auto_config.router.network_prefix",
+          "spec.ethernet_interface.ipv6_auto_config.router.stateful",
+        ],
+      },
+      {
+        choiceField: "dns_choice",
+        fieldPath: "spec.ethernet_interface.ipv6_auto_config.router.dns_config.dns_choice",
+        options: [
+          "spec.ethernet_interface.ipv6_auto_config.router.dns_config.configured_list",
+          "spec.ethernet_interface.ipv6_auto_config.router.dns_config.local_dns",
+        ],
+      },
+      {
+        choiceField: "local_dns_choice",
+        fieldPath:
+          "spec.ethernet_interface.ipv6_auto_config.router.dns_config.local_dns.local_dns_choice",
+        options: [
+          "spec.ethernet_interface.ipv6_auto_config.router.dns_config.local_dns.configured_address",
+          "spec.ethernet_interface.ipv6_auto_config.router.dns_config.local_dns.first_address",
+          "spec.ethernet_interface.ipv6_auto_config.router.dns_config.local_dns.last_address",
+        ],
+      },
+      {
+        choiceField: "interfaces_addressing_choice",
+        fieldPath:
+          "spec.ethernet_interface.ipv6_auto_config.router.stateful.interfaces_addressing_choice",
+        options: [
+          "spec.ethernet_interface.ipv6_auto_config.router.stateful.automatic_from_end",
+          "spec.ethernet_interface.ipv6_auto_config.router.stateful.automatic_from_start",
+          "spec.ethernet_interface.ipv6_auto_config.router.stateful.interface_ip_map",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.ethernet_interface.ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix_choice",
+        options: [
+          "spec.ethernet_interface.ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath: "spec.ethernet_interface.static_ip.network_prefix_choice",
+        options: [
+          "spec.ethernet_interface.static_ip.cluster_static_ip",
+          "spec.ethernet_interface.static_ip.node_static_ip",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath: "spec.ethernet_interface.static_ipv6_address.network_prefix_choice",
+        options: [
+          "spec.ethernet_interface.static_ipv6_address.cluster_static_ip",
+          "spec.ethernet_interface.static_ipv6_address.node_static_ip",
+        ],
+      },
+      {
+        choiceField: "layer2_interface_choice",
+        fieldPath: "spec.layer2_interface.layer2_interface_choice",
+        options: [
+          "spec.layer2_interface.l2sriov_interface",
+          "spec.layer2_interface.l2vlan_interface",
+          "spec.layer2_interface.l2vlan_slo_interface",
+        ],
+      },
+      {
+        choiceField: "vlan_choice",
+        fieldPath: "spec.layer2_interface.l2sriov_interface.vlan_choice",
+        options: [
+          "spec.layer2_interface.l2sriov_interface.untagged",
+          "spec.layer2_interface.l2sriov_interface.vlan_id",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath: "spec.tunnel_interface.network_choice",
+        options: [
+          "spec.tunnel_interface.site_local_inside_network",
+          "spec.tunnel_interface.site_local_network",
+        ],
+      },
+      {
+        choiceField: "node_choice",
+        fieldPath: "spec.tunnel_interface.node_choice",
+        options: ["spec.tunnel_interface.node"],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath: "spec.tunnel_interface.static_ip.network_prefix_choice",
+        options: [
+          "spec.tunnel_interface.static_ip.cluster_static_ip",
+          "spec.tunnel_interface.static_ip.node_static_ip",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -766,7 +1734,233 @@ export const ce_managementTools: ParsedOperation[] = [
         resourceType: "network-interface-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "interface_choice",
+        fieldPath: "spec.interface_choice",
+        options: [
+          "spec.dedicated_interface",
+          "spec.dedicated_management_interface",
+          "spec.ethernet_interface",
+          "spec.layer2_interface",
+          "spec.legacy_interface",
+          "spec.tunnel_interface",
+        ],
+      },
+      {
+        choiceField: "monitoring_choice",
+        fieldPath: "spec.dedicated_interface.monitoring_choice",
+        options: ["spec.dedicated_interface.monitor", "spec.dedicated_interface.monitor_disabled"],
+      },
+      {
+        choiceField: "node_choice",
+        fieldPath: "spec.dedicated_interface.node_choice",
+        options: ["spec.dedicated_interface.cluster", "spec.dedicated_interface.node"],
+      },
+      {
+        choiceField: "primary_choice",
+        fieldPath: "spec.dedicated_interface.primary_choice",
+        options: ["spec.dedicated_interface.is_primary", "spec.dedicated_interface.not_primary"],
+      },
+      {
+        choiceField: "node_choice",
+        fieldPath: "spec.dedicated_management_interface.node_choice",
+        options: [
+          "spec.dedicated_management_interface.cluster",
+          "spec.dedicated_management_interface.node",
+        ],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath: "spec.ethernet_interface.address_choice",
+        options: [
+          "spec.ethernet_interface.dhcp_client",
+          "spec.ethernet_interface.dhcp_server",
+          "spec.ethernet_interface.static_ip",
+        ],
+      },
+      {
+        choiceField: "ipv6_address_choice",
+        fieldPath: "spec.ethernet_interface.ipv6_address_choice",
+        options: [
+          "spec.ethernet_interface.ipv6_auto_config",
+          "spec.ethernet_interface.no_ipv6_address",
+          "spec.ethernet_interface.static_ipv6_address",
+        ],
+      },
+      {
+        choiceField: "monitoring_choice",
+        fieldPath: "spec.ethernet_interface.monitoring_choice",
+        options: ["spec.ethernet_interface.monitor", "spec.ethernet_interface.monitor_disabled"],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath: "spec.ethernet_interface.network_choice",
+        options: [
+          "spec.ethernet_interface.segment_network",
+          "spec.ethernet_interface.site_local_inside_network",
+          "spec.ethernet_interface.site_local_network",
+          "spec.ethernet_interface.storage_network",
+        ],
+      },
+      {
+        choiceField: "node_choice",
+        fieldPath: "spec.ethernet_interface.node_choice",
+        options: ["spec.ethernet_interface.cluster", "spec.ethernet_interface.node"],
+      },
+      {
+        choiceField: "primary_choice",
+        fieldPath: "spec.ethernet_interface.primary_choice",
+        options: ["spec.ethernet_interface.is_primary", "spec.ethernet_interface.not_primary"],
+      },
+      {
+        choiceField: "vlan_choice",
+        fieldPath: "spec.ethernet_interface.vlan_choice",
+        options: ["spec.ethernet_interface.untagged", "spec.ethernet_interface.vlan_id"],
+      },
+      {
+        choiceField: "interfaces_addressing_choice",
+        fieldPath: "spec.ethernet_interface.dhcp_server.interfaces_addressing_choice",
+        options: [
+          "spec.ethernet_interface.dhcp_server.automatic_from_end",
+          "spec.ethernet_interface.dhcp_server.automatic_from_start",
+          "spec.ethernet_interface.dhcp_server.interface_ip_map",
+        ],
+      },
+      {
+        choiceField: "dns_choice",
+        fieldPath: "spec.ethernet_interface.dhcp_server.dhcp_networks[].dns_choice",
+        options: [
+          "spec.ethernet_interface.dhcp_server.dhcp_networks[].dns_address",
+          "spec.ethernet_interface.dhcp_server.dhcp_networks[].same_as_dgw",
+        ],
+      },
+      {
+        choiceField: "gateway_choice",
+        fieldPath: "spec.ethernet_interface.dhcp_server.dhcp_networks[].gateway_choice",
+        options: [
+          "spec.ethernet_interface.dhcp_server.dhcp_networks[].dgw_address",
+          "spec.ethernet_interface.dhcp_server.dhcp_networks[].first_address",
+          "spec.ethernet_interface.dhcp_server.dhcp_networks[].last_address",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath: "spec.ethernet_interface.dhcp_server.dhcp_networks[].network_prefix_choice",
+        options: ["spec.ethernet_interface.dhcp_server.dhcp_networks[].network_prefix"],
+      },
+      {
+        choiceField: "autoconfig_choice",
+        fieldPath: "spec.ethernet_interface.ipv6_auto_config.autoconfig_choice",
+        options: [
+          "spec.ethernet_interface.ipv6_auto_config.host",
+          "spec.ethernet_interface.ipv6_auto_config.router",
+        ],
+      },
+      {
+        choiceField: "address_choice",
+        fieldPath: "spec.ethernet_interface.ipv6_auto_config.router.address_choice",
+        options: [
+          "spec.ethernet_interface.ipv6_auto_config.router.network_prefix",
+          "spec.ethernet_interface.ipv6_auto_config.router.stateful",
+        ],
+      },
+      {
+        choiceField: "dns_choice",
+        fieldPath: "spec.ethernet_interface.ipv6_auto_config.router.dns_config.dns_choice",
+        options: [
+          "spec.ethernet_interface.ipv6_auto_config.router.dns_config.configured_list",
+          "spec.ethernet_interface.ipv6_auto_config.router.dns_config.local_dns",
+        ],
+      },
+      {
+        choiceField: "local_dns_choice",
+        fieldPath:
+          "spec.ethernet_interface.ipv6_auto_config.router.dns_config.local_dns.local_dns_choice",
+        options: [
+          "spec.ethernet_interface.ipv6_auto_config.router.dns_config.local_dns.configured_address",
+          "spec.ethernet_interface.ipv6_auto_config.router.dns_config.local_dns.first_address",
+          "spec.ethernet_interface.ipv6_auto_config.router.dns_config.local_dns.last_address",
+        ],
+      },
+      {
+        choiceField: "interfaces_addressing_choice",
+        fieldPath:
+          "spec.ethernet_interface.ipv6_auto_config.router.stateful.interfaces_addressing_choice",
+        options: [
+          "spec.ethernet_interface.ipv6_auto_config.router.stateful.automatic_from_end",
+          "spec.ethernet_interface.ipv6_auto_config.router.stateful.automatic_from_start",
+          "spec.ethernet_interface.ipv6_auto_config.router.stateful.interface_ip_map",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath:
+          "spec.ethernet_interface.ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix_choice",
+        options: [
+          "spec.ethernet_interface.ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath: "spec.ethernet_interface.static_ip.network_prefix_choice",
+        options: [
+          "spec.ethernet_interface.static_ip.cluster_static_ip",
+          "spec.ethernet_interface.static_ip.node_static_ip",
+        ],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath: "spec.ethernet_interface.static_ipv6_address.network_prefix_choice",
+        options: [
+          "spec.ethernet_interface.static_ipv6_address.cluster_static_ip",
+          "spec.ethernet_interface.static_ipv6_address.node_static_ip",
+        ],
+      },
+      {
+        choiceField: "layer2_interface_choice",
+        fieldPath: "spec.layer2_interface.layer2_interface_choice",
+        options: [
+          "spec.layer2_interface.l2sriov_interface",
+          "spec.layer2_interface.l2vlan_interface",
+          "spec.layer2_interface.l2vlan_slo_interface",
+        ],
+      },
+      {
+        choiceField: "vlan_choice",
+        fieldPath: "spec.layer2_interface.l2sriov_interface.vlan_choice",
+        options: [
+          "spec.layer2_interface.l2sriov_interface.untagged",
+          "spec.layer2_interface.l2sriov_interface.vlan_id",
+        ],
+      },
+      {
+        choiceField: "monitoring_choice",
+        fieldPath: "spec.legacy_interface.monitoring_choice",
+        options: ["spec.legacy_interface.monitor", "spec.legacy_interface.monitor_disabled"],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath: "spec.tunnel_interface.network_choice",
+        options: [
+          "spec.tunnel_interface.site_local_inside_network",
+          "spec.tunnel_interface.site_local_network",
+        ],
+      },
+      {
+        choiceField: "node_choice",
+        fieldPath: "spec.tunnel_interface.node_choice",
+        options: ["spec.tunnel_interface.node"],
+      },
+      {
+        choiceField: "network_prefix_choice",
+        fieldPath: "spec.tunnel_interface.static_ip.network_prefix_choice",
+        options: [
+          "spec.tunnel_interface.static_ip.cluster_static_ip",
+          "spec.tunnel_interface.static_ip.node_static_ip",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {

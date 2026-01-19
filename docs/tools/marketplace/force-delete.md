@@ -6,9 +6,6 @@ description: Force DELETE view.
 
 # Force Delete
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Force DELETE view object. This can result in staled objects in cloud provider.
 
 ## Tools
@@ -26,14 +23,6 @@ Force DELETE view object. This can result in staled objects in cloud provider.
 | `namespace` | Namespace | `-` |
 | `view_kind` | Kind of View | `-` |
 | `view_name` | Name of view | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- force-delete
 
 ## Example Usage
 

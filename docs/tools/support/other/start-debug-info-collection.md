@@ -6,9 +6,6 @@ description: Start Debug Info Collection.
 
 # Start Debug Info Collection
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Start collecting a zip file of debug info from node.
 
 ## Tools

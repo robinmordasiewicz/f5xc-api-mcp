@@ -6,9 +6,6 @@ description: Friction Histogram Dashboard.
 
 # Friction Histogram
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET Histogram Aggregation chart data from shape recognize API.
 
 ## Tools
@@ -16,14 +13,6 @@ GET Histogram Aggregation chart data from shape recognize API.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-shape-friction-histogram-create` | Friction Histogram Dashboard. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- friction-histogram
 
 ## Example Usage
 

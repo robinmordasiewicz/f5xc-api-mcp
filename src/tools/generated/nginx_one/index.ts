@@ -201,7 +201,13 @@ export const nginx_oneTools: ParsedOperation[] = [
     operationMetadata: null,
     curlExample: null,
     dependencies: [],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "dataplane_ref",
+        fieldPath: "dataplane_ref.dataplane_ref",
+        options: ["dataplane_ref.nginx_csg", "dataplane_ref.nginx_instance"],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -577,7 +583,16 @@ export const nginx_oneTools: ParsedOperation[] = [
         resourceType: "nginx-service-discovery-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "target",
+        fieldPath: "spec.discovery_target.target",
+        options: [
+          "spec.discovery_target.config_sync_group",
+          "spec.discovery_target.nginx_instance",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -874,7 +889,16 @@ export const nginx_oneTools: ParsedOperation[] = [
         resourceType: "nginx-service-discovery-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "target",
+        fieldPath: "spec.discovery_target.target",
+        options: [
+          "spec.discovery_target.config_sync_group",
+          "spec.discovery_target.nginx_instance",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {

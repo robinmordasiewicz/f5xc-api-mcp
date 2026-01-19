@@ -6,9 +6,6 @@ description: Subscribe to BFDP pipeline.
 
 # Gettoken
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Subscribe to BFDP pipeline.
 
 ## Tools
@@ -16,14 +13,6 @@ Subscribe to BFDP pipeline.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-aiservices-gettoken-create` | Subscribe to BFDP pipeline. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- gettoken
 
 ## Example Usage
 

@@ -6,9 +6,6 @@ description: Event attachments.
 
 # Attachment
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Returns any attachments associated with an event. This could be Pcap files or any other
 document.
 Obsolete - use `GetEvent` to list out attachments.

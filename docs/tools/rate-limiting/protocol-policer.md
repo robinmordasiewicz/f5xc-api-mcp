@@ -6,12 +6,6 @@ description: Create Protocol Policer.
 
 # Protocol Policer
 
-!!! danger "High Risk Operation"
-    This resource includes operations that may cause significant changes. Review carefully before executing.
-
-!!! note "Confirmation Required"
-    Some operations on this resource require explicit confirmation before execution.
-
 Create a protocol_policer object, protocol_policer object contains list
 of L4 protocol match
 condition and corresponding traffic rate limits.
@@ -45,23 +39,6 @@ condition and corresponding traffic rate limits.
 | `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
 | `report_fields` | The report_fields parameter | `-` |
 | `report_status_fields` | The report_status_fields parameter | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- protocol-policer
-
-**Modifies:**
-
-- protocol-policer
-
-**Deletes:**
-
-- protocol-policer
-- contained_resources
 
 ## Example Usage
 

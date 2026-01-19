@@ -6,9 +6,6 @@ description: Evaluate API Group.
 
 # Evaluate
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Evaluate API Group Builder against all API endpoints associated with the referenced object and
 return the resulting API Group.
 For example, if the referenced object is an HTTP LB then all
@@ -27,14 +24,6 @@ discovered and imported endpoints are associated with it.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- evaluate
 
 ## Example Usage
 

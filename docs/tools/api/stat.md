@@ -6,9 +6,6 @@ description: Evaluate API Group.
 
 # Stat
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Check if there are any changes happened to the API Groups, and return number of API Endpoints
 updated for each API Group.
 
@@ -25,14 +22,6 @@ updated for each API Group.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- stat
 
 ## Example Usage
 

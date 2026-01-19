@@ -6,9 +6,6 @@ description: Upgrade OS.
 
 # Upgrade O
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Upgrade Site OS version.
 
 ## Tools
@@ -25,14 +22,6 @@ Upgrade Site OS version.
 |-----------|-------------|--------|
 | `name` | Name | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- upgrade-o
 
 ## Example Usage
 

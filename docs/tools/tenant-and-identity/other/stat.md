@@ -6,9 +6,6 @@ description: GET API Endpoints Stats for Namespace.
 
 # Stat
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET API endpoints stats for the given Namespace.
 
 ## Tools
@@ -24,14 +21,6 @@ GET API endpoints stats for the given Namespace.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- stat
 
 ## Example Usage
 

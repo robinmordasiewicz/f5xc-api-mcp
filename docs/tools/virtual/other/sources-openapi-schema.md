@@ -6,9 +6,6 @@ description: GET relevant source OpenApi schema per API endpoint.
 
 # Sources Openapi Schema
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET openapi schema per API endpoint for a given source types and Virtual Host.
 
 ## Tools

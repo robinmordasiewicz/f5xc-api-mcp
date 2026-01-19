@@ -6,9 +6,6 @@ description: Set site state.
 
 # State
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Request changing site state but this request goes through validation as some
 trainsitions are not
 allowed.
@@ -30,14 +27,6 @@ state is PROVISIONING and UPGRADING.
 |-----------|-------------|--------|
 | `name` | Name | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- state
 
 ## Example Usage
 

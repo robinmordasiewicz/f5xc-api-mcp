@@ -6,9 +6,6 @@ description: GET TLS Summary.
 
 # TLS Summary
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Returns TLS summary of all HTTPS monitors running in namespace.
 
 ## Tools

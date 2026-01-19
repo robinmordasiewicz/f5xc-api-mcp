@@ -6,9 +6,6 @@ description: PostSafeEp.
 
 # Ep
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 POST Safe Analyst Station ep request.
 
 ## Tools
@@ -24,14 +21,6 @@ POST Safe Analyst Station ep request.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- ep
 
 ## Example Usage
 

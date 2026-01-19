@@ -6,9 +6,6 @@ description: Service Graph Query All Namespaces.
 
 # All Ns Service
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Request to GET monitoring data for a service mesh of a given application.
 
 ## Tools
@@ -16,14 +13,6 @@ Request to GET monitoring data for a service mesh of a given application.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-statistics-all-ns-service-create` | Service Graph Query All Namespaces. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- all-ns-service
 
 ## Example Usage
 

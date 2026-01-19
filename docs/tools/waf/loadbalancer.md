@@ -6,9 +6,6 @@ description: Search load balancers All Namespaces.
 
 # Loadbalancer
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET list of virtual hosts matching label filter.
 
 ## Tools
@@ -16,14 +13,6 @@ GET list of virtual hosts matching label filter.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-waf-loadbalancer-create` | Search load balancers All Namespaces. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- loadbalancer
 
 ## Example Usage
 

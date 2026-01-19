@@ -6,9 +6,6 @@ description: List All Form Fields.
 
 # FormField
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 List form fields for all the scripts depending on start time and end time with GET method.
 
 ## Tools
@@ -34,14 +31,6 @@ List form fields for all the scripts depending on start time and end time with G
 |-----------|-------------|--------|
 | `end_time` | X-required | `-` |
 | `start_time` | X-required | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- formField
 
 ## Example Usage
 

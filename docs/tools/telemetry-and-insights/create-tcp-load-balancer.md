@@ -6,9 +6,6 @@ description: Create TCP load balancer.
 
 # Create TCP Load Balancer
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Create TCP load balancer using the discovered virtual server as an origin server.
 
 ## Tools
@@ -25,14 +22,6 @@ Create TCP load balancer using the discovered virtual server as an origin server
 |-----------|-------------|--------|
 | `name` | Service Name | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- create-tcp-load-balancer
 
 ## Example Usage
 

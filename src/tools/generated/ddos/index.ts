@@ -984,7 +984,13 @@ export const ddosTools: ParsedOperation[] = [
         resourceType: "infraprotect-asn-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "bgp_session",
+        fieldPath: "spec.bgp_session",
+        options: ["spec.bgp_session_disabled", "spec.bgp_session_enabled"],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -1840,7 +1846,20 @@ export const ddosTools: ParsedOperation[] = [
         resourceType: "infraprotect-deny-list-rule-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "expiration",
+        fieldPath: "spec.expiration",
+        options: [
+          "spec.expiration_never",
+          "spec.expiration_timestamp",
+          "spec.one_day",
+          "spec.one_hour",
+          "spec.one_month",
+          "spec.one_year",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -2187,7 +2206,20 @@ export const ddosTools: ParsedOperation[] = [
         resourceType: "infraprotect-deny-list-rule-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "expiration",
+        fieldPath: "spec.expiration",
+        options: [
+          "spec.expiration_never",
+          "spec.expiration_timestamp",
+          "spec.one_day",
+          "spec.one_hour",
+          "spec.one_month",
+          "spec.one_year",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -2268,7 +2300,79 @@ export const ddosTools: ParsedOperation[] = [
         resourceType: "infraprotect-firewall-rule-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "action",
+        fieldPath: "spec.action",
+        options: ["spec.action_allow", "spec.action_deny"],
+      },
+      {
+        choiceField: "destination_prefix",
+        fieldPath: "spec.destination_prefix",
+        options: ["spec.destination_prefix_all", "spec.destination_prefix_single"],
+      },
+      {
+        choiceField: "fragments",
+        fieldPath: "spec.fragments",
+        options: ["spec.fragments_allow", "spec.fragments_deny"],
+      },
+      {
+        choiceField: "protocol",
+        fieldPath: "spec.protocol",
+        options: [
+          "spec.protocol_ah",
+          "spec.protocol_all",
+          "spec.protocol_esp",
+          "spec.protocol_gre",
+          "spec.protocol_icmp",
+          "spec.protocol_icmp6",
+          "spec.protocol_ipv6",
+          "spec.protocol_tcp",
+          "spec.protocol_udp",
+        ],
+      },
+      {
+        choiceField: "source_prefix",
+        fieldPath: "spec.source_prefix",
+        options: ["spec.source_prefix_all", "spec.source_prefix_single"],
+      },
+      {
+        choiceField: "state",
+        fieldPath: "spec.state",
+        options: ["spec.state_off", "spec.state_on"],
+      },
+      {
+        choiceField: "version",
+        fieldPath: "spec.version",
+        options: ["spec.version_ipv4", "spec.version_ipv6"],
+      },
+      {
+        choiceField: "destination_port",
+        fieldPath: "spec.protocol_tcp.destination_port",
+        options: [
+          "spec.protocol_tcp.destination_port_all",
+          "spec.protocol_tcp.destination_port_range",
+        ],
+      },
+      {
+        choiceField: "source_port",
+        fieldPath: "spec.protocol_tcp.source_port",
+        options: ["spec.protocol_tcp.source_port_all", "spec.protocol_tcp.source_port_range"],
+      },
+      {
+        choiceField: "destination_port",
+        fieldPath: "spec.protocol_udp.destination_port",
+        options: [
+          "spec.protocol_udp.destination_port_all",
+          "spec.protocol_udp.destination_port_range",
+        ],
+      },
+      {
+        choiceField: "source_port",
+        fieldPath: "spec.protocol_udp.source_port",
+        options: ["spec.protocol_udp.source_port_all", "spec.protocol_udp.source_port_range"],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -3044,7 +3148,79 @@ export const ddosTools: ParsedOperation[] = [
         resourceType: "infraprotect-firewall-rule-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "action",
+        fieldPath: "spec.action",
+        options: ["spec.action_allow", "spec.action_deny"],
+      },
+      {
+        choiceField: "destination_prefix",
+        fieldPath: "spec.destination_prefix",
+        options: ["spec.destination_prefix_all", "spec.destination_prefix_single"],
+      },
+      {
+        choiceField: "fragments",
+        fieldPath: "spec.fragments",
+        options: ["spec.fragments_allow", "spec.fragments_deny"],
+      },
+      {
+        choiceField: "protocol",
+        fieldPath: "spec.protocol",
+        options: [
+          "spec.protocol_ah",
+          "spec.protocol_all",
+          "spec.protocol_esp",
+          "spec.protocol_gre",
+          "spec.protocol_icmp",
+          "spec.protocol_icmp6",
+          "spec.protocol_ipv6",
+          "spec.protocol_tcp",
+          "spec.protocol_udp",
+        ],
+      },
+      {
+        choiceField: "source_prefix",
+        fieldPath: "spec.source_prefix",
+        options: ["spec.source_prefix_all", "spec.source_prefix_single"],
+      },
+      {
+        choiceField: "state",
+        fieldPath: "spec.state",
+        options: ["spec.state_off", "spec.state_on"],
+      },
+      {
+        choiceField: "version",
+        fieldPath: "spec.version",
+        options: ["spec.version_ipv4", "spec.version_ipv6"],
+      },
+      {
+        choiceField: "destination_port",
+        fieldPath: "spec.protocol_tcp.destination_port",
+        options: [
+          "spec.protocol_tcp.destination_port_all",
+          "spec.protocol_tcp.destination_port_range",
+        ],
+      },
+      {
+        choiceField: "source_port",
+        fieldPath: "spec.protocol_tcp.source_port",
+        options: ["spec.protocol_tcp.source_port_all", "spec.protocol_tcp.source_port_range"],
+      },
+      {
+        choiceField: "destination_port",
+        fieldPath: "spec.protocol_udp.destination_port",
+        options: [
+          "spec.protocol_udp.destination_port_all",
+          "spec.protocol_udp.destination_port_range",
+        ],
+      },
+      {
+        choiceField: "source_port",
+        fieldPath: "spec.protocol_udp.source_port",
+        options: ["spec.protocol_udp.source_port_all", "spec.protocol_udp.source_port_range"],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -3483,7 +3659,18 @@ export const ddosTools: ParsedOperation[] = [
         resourceType: "infraprotect-internet-prefix-advertisement-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "activation_selection",
+        fieldPath: "spec.activation_selection",
+        options: ["spec.activation_announce", "spec.activation_withdraw"],
+      },
+      {
+        choiceField: "expiration",
+        fieldPath: "spec.expiration",
+        options: ["spec.expiration_never", "spec.expiration_timestamp"],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -3831,7 +4018,18 @@ export const ddosTools: ParsedOperation[] = [
         resourceType: "infraprotect-internet-prefix-advertisement-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "activation_selection",
+        fieldPath: "spec.activation_selection",
+        options: ["spec.activation_announce", "spec.activation_withdraw"],
+      },
+      {
+        choiceField: "expiration",
+        fieldPath: "spec.expiration",
+        options: ["spec.expiration_never", "spec.expiration_timestamp"],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -3912,7 +4110,61 @@ export const ddosTools: ParsedOperation[] = [
         resourceType: "infraprotect-tunnel-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "tunnel_type",
+        fieldPath: "spec.tunnel_type",
+        options: ["spec.gre_ipv4", "spec.gre_ipv6", "spec.ip_in_ip", "spec.ipv6_to_ipv6"],
+      },
+      {
+        choiceField: "peer_secret_choice",
+        fieldPath: "spec.bgp_information.peer_secret_choice",
+        options: [
+          "spec.bgp_information.no_secret",
+          "spec.bgp_information.peer_secret_override",
+          "spec.bgp_information.use_default_secret",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.bgp_information.peer_secret_override.secret_info_oneof",
+        options: [
+          "spec.bgp_information.peer_secret_override.blindfold_secret_info",
+          "spec.bgp_information.peer_secret_override.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "fragmentation_choice",
+        fieldPath: "spec.gre_ipv4.fragmentation_choice",
+        options: ["spec.gre_ipv4.fragmentation_disabled", "spec.gre_ipv4.fragmentation_enabled"],
+      },
+      {
+        choiceField: "ipv6_interconnect_choice",
+        fieldPath: "spec.gre_ipv4.ipv6_interconnect_choice",
+        options: [
+          "spec.gre_ipv4.ipv6_interconnect_disabled",
+          "spec.gre_ipv4.ipv6_interconnect_enabled",
+        ],
+      },
+      {
+        choiceField: "keepalive_choice",
+        fieldPath: "spec.gre_ipv4.keepalive_choice",
+        options: ["spec.gre_ipv4.keepalive_disabled", "spec.gre_ipv4.keepalive_enabled"],
+      },
+      {
+        choiceField: "ipv4_interconnect_choice",
+        fieldPath: "spec.gre_ipv6.ipv4_interconnect_choice",
+        options: [
+          "spec.gre_ipv6.ipv4_interconnect_disabled",
+          "spec.gre_ipv6.ipv4_interconnect_enabled",
+        ],
+      },
+      {
+        choiceField: "zone",
+        fieldPath: "spec.tunnel_location.zone",
+        options: ["spec.tunnel_location.zone1", "spec.tunnel_location.zone2"],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -4259,7 +4511,39 @@ export const ddosTools: ParsedOperation[] = [
         resourceType: "infraprotect-tunnel-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "tunnel_type",
+        fieldPath: "spec.tunnel_type",
+        options: ["spec.gre_ipv4", "spec.gre_ipv6", "spec.ip_in_ip", "spec.ipv6_to_ipv6"],
+      },
+      {
+        choiceField: "fragmentation_choice",
+        fieldPath: "spec.gre_ipv4.fragmentation_choice",
+        options: ["spec.gre_ipv4.fragmentation_disabled", "spec.gre_ipv4.fragmentation_enabled"],
+      },
+      {
+        choiceField: "ipv6_interconnect_choice",
+        fieldPath: "spec.gre_ipv4.ipv6_interconnect_choice",
+        options: [
+          "spec.gre_ipv4.ipv6_interconnect_disabled",
+          "spec.gre_ipv4.ipv6_interconnect_enabled",
+        ],
+      },
+      {
+        choiceField: "keepalive_choice",
+        fieldPath: "spec.gre_ipv4.keepalive_choice",
+        options: ["spec.gre_ipv4.keepalive_disabled", "spec.gre_ipv4.keepalive_enabled"],
+      },
+      {
+        choiceField: "ipv4_interconnect_choice",
+        fieldPath: "spec.gre_ipv6.ipv4_interconnect_choice",
+        options: [
+          "spec.gre_ipv6.ipv4_interconnect_disabled",
+          "spec.gre_ipv6.ipv4_interconnect_enabled",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",

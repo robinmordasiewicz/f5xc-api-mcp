@@ -6,9 +6,6 @@ description: Suggest rate limit rule.
 
 # Rate Limit
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Suggest rate limit rule for a given path.
 
 ## Tools
@@ -24,14 +21,6 @@ Suggest rate limit rule for a given path.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- rate-limit
 
 ## Example Usage
 

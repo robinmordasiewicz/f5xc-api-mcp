@@ -6,9 +6,6 @@ description: Malicious Traffic Overview in actions.
 
 # Action
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET Malicious Traffic Overview in Actions.
 
 ## Tools
@@ -24,14 +21,6 @@ GET Malicious Traffic Overview in Actions.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- action
 
 ## Example Usage
 

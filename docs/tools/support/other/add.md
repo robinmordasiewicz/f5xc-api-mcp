@@ -6,9 +6,6 @@ description: Add USB Enablement Rules.
 
 # Add
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Add USB Enablement Rules.
 
 ## Tools
@@ -26,14 +23,6 @@ Add USB Enablement Rules.
 | `namespace` | Namespace | `-` |
 | `node` | Node Name | `-` |
 | `site` | Site Name | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- add
 
 ## Example Usage
 

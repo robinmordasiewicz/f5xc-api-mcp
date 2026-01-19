@@ -6,9 +6,6 @@ description: Test Receiver.
 
 # Test
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 API to test receiver destination sink connection.
 
 ## Tools
@@ -25,14 +22,6 @@ API to test receiver destination sink connection.
 |-----------|-------------|--------|
 | `id` | ID | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- test
 
 ## Example Usage
 

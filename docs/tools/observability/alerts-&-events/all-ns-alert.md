@@ -6,9 +6,6 @@ description: GET Alerts.
 
 # All Ns Alert
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 For system namespace, all the alerts for the tenant matching the filter specified in the
 request
 will be returned in the response.

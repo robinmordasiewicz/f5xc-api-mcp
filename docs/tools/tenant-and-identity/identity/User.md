@@ -6,12 +6,6 @@ description: Create User with Role Assignment.
 
 # User
 
-!!! danger "High Risk Operation"
-    This resource includes operations that may cause significant changes. Review carefully before executing.
-
-!!! note "Confirmation Required"
-    Some operations on this resource require explicit confirmation before execution.
-
 Create creates a user and namespace roles binding for this user.
 
 ## Tools
@@ -41,23 +35,6 @@ Create creates a user and namespace roles binding for this user.
 | `count` | The number of entries after filter. | `-` |
 | `filter` | Filter to be used for filtering objects. | `-` |
 | `page` | Start offset. | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- User
-
-**Modifies:**
-
-- User
-
-**Deletes:**
-
-- User
-- contained_resources
 
 ## Example Usage
 

@@ -6,9 +6,6 @@ description: Top Latency Overview Apps.
 
 # App
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET top latency overview apps.
 
 ## Tools
@@ -24,14 +21,6 @@ GET top latency overview apps.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- app
 
 ## Example Usage
 

@@ -6,9 +6,6 @@ description: Enjoy Dashboard.
 
 # Enjoy
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET enjoy chart data from shape recognize API.
 
 ## Tools
@@ -16,14 +13,6 @@ GET enjoy chart data from shape recognize API.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-shape-enjoy-create` | Enjoy Dashboard. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- enjoy
 
 ## Example Usage
 

@@ -6,9 +6,6 @@ description: Update ASN Prefix IRR Override.
 
 # Update Asn Prefix Irr Override
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Update Infraprotect ASN Prefix IRR Override.
 
 ## Tools
@@ -25,13 +22,14 @@ Update Infraprotect ASN Prefix IRR Override.
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
 
-## Side Effects
+## Configuration Choices
 
-Operations on this resource may have the following effects:
+This resource includes mutually exclusive configuration options:
 
-**Creates:**
+### irr_override
 
-- update-asn-prefix-irr-override
+| Option | Description | Recommended |
+|--------|-------------|-------------|
 
 ## Example Usage
 

@@ -6,9 +6,6 @@ description: GetLastLoginMap.
 
 # Last Login
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GetLastLoginMap returns last login timestamp for each user within a tenant.
 
 ## Tools

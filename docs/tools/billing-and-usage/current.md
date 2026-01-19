@@ -6,9 +6,6 @@ description: GET current usage plan.
 
 # Current
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Endpoint to GET current usage plan.
 
 ## Tools

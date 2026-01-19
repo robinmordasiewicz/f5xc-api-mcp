@@ -6,9 +6,6 @@ description: Set L7 DDoS RPS Threshold.
 
 # L7ddos Rps Threshold
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Sets the L7 DDoS RPS threshold for HTTP load balancer.
 
 ## Tools
@@ -25,14 +22,6 @@ Sets the L7 DDoS RPS threshold for HTTP load balancer.
 |-----------|-------------|--------|
 | `name` | Name | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- l7ddos-rps-threshold
 
 ## Example Usage
 

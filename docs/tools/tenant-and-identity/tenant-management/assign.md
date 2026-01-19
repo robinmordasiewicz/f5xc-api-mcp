@@ -6,9 +6,6 @@ description: Assign domain owner.
 
 # Assign
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Assign domain owner tries to assign domain owner to user in the request. It checks that requester is
 domain owner as well.
 It implies such steps:
@@ -32,14 +29,6 @@ deleted.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-tenantandidentity-assign-create` | Assign domain owner. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- assign
 
 ## Example Usage
 

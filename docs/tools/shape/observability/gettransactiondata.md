@@ -6,9 +6,6 @@ description: GetTransactionData.
 
 # Gettransactiondata
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET Transaction data request for a time range.
 
 ## Tools
@@ -16,14 +13,6 @@ GET Transaction data request for a time range.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-shape-gettransactiondata-create` | GetTransactionData. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- gettransactiondata
 
 ## Example Usage
 

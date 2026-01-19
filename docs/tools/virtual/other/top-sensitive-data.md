@@ -6,9 +6,6 @@ description: GET Sensitive Data Summary for Virtual Host.
 
 # Top Sensitive Data
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET sensitive data summary for the given Virtual Host.
 For each sensitive data type (e.g. SSN, CC,
 Email) we count the number of APIEPs having the respective
@@ -29,14 +26,6 @@ sensitive data type and return top k (max
 |-----------|-------------|--------|
 | `name` | Virtual Host Name | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- top-sensitive-data
 
 ## Example Usage
 

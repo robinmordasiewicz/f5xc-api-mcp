@@ -6,9 +6,6 @@ description: Deployment Status.
 
 # Deployment Statu
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET deployment status.
 
 ## Tools

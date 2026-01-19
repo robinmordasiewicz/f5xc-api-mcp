@@ -6,9 +6,6 @@ description: GET Devices By Country.
 
 # Country
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET devices country information.
 
 ## Tools
@@ -16,14 +13,6 @@ GET devices country information.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-shape-country-create` | GET Devices By Country. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- country
 
 ## Example Usage
 

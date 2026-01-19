@@ -6,9 +6,6 @@ description: Health
 
 # Health
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET VPM health information.
 
 ## Tools

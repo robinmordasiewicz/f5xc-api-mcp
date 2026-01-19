@@ -6,12 +6,6 @@ description: Create DDoS transit Deny List Rule.
 
 # Infraprotect Deny List Rule
 
-!!! danger "High Risk Operation"
-    This resource includes operations that may cause significant changes. Review carefully before executing.
-
-!!! note "Confirmation Required"
-    Some operations on this resource require explicit confirmation before execution.
-
 List the set of infraprotect_deny_list_rule in a namespace.
 
 ## Tools
@@ -43,23 +37,6 @@ List the set of infraprotect_deny_list_rule in a namespace.
 | `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
 | `report_fields` | The report_fields parameter | `-` |
 | `report_status_fields` | The report_status_fields parameter | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- infraprotect-deny-list-rule
-
-**Modifies:**
-
-- infraprotect-deny-list-rule
-
-**Deletes:**
-
-- infraprotect-deny-list-rule
-- contained_resources
 
 ## Example Usage
 

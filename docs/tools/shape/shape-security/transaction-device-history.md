@@ -6,9 +6,6 @@ description: PostSafeTransactionDeviceHistory.
 
 # Transaction Device History
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 POST Safe Analyst Station specific transaction device history.
 
 ## Tools
@@ -24,14 +21,6 @@ POST Safe Analyst Station specific transaction device history.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- transaction-device-history
 
 ## Example Usage
 

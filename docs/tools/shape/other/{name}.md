@@ -6,9 +6,6 @@ description: GET Mobile SDK.
 
 # {name}
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GetMobileSDK is an API to download particular version of SDK.
 
 ## Tools

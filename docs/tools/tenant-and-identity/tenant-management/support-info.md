@@ -6,9 +6,6 @@ description: Support Info.
 
 # Support Info
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Receive support information for tenant.
 
 ## Tools

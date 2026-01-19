@@ -6,9 +6,6 @@ description: PostSafeTransactionTimeline.
 
 # Transaction Timeline
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 POST Safe Analyst Station specific transaction timeline.
 
 ## Tools
@@ -24,14 +21,6 @@ POST Safe Analyst Station specific transaction timeline.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- transaction-timeline
 
 ## Example Usage
 

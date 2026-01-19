@@ -6,9 +6,6 @@ description: GET Certified Hardware.
 
 # Certified Hardware
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 List the set of certified_hardware in a namespace.
 
 ## Tools

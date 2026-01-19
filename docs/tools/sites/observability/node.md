@@ -6,9 +6,6 @@ description: Site Node Query.
 
 # Node
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Request to GET time-series data for a site returned in the site traffic graph.
 
 ## Tools
@@ -26,14 +23,6 @@ Request to GET time-series data for a site returned in the site traffic graph.
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
 | `site` | Site | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- node
 
 ## Example Usage
 

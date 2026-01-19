@@ -6,9 +6,6 @@ description: Fast ACL Hits.
 
 # Hit
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET the counter for Fast ACL hits for a given namespace.
 
 ## Tools
@@ -24,14 +21,6 @@ GET the counter for Fast ACL hits for a given namespace.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- hit
 
 ## Example Usage
 

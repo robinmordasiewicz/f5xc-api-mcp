@@ -6,9 +6,6 @@ description: GET
 
 # Known Label
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET is generic label query. Two types of queries are supported
 Return label with exact matching
 entry label key = label value.

@@ -6,9 +6,6 @@ description: Purge CDN Cache.
 
 # Cache Purge
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Initiate Purge for Edge CDN Cache.
 
 ## Tools
@@ -26,13 +23,25 @@ Initiate Purge for Edge CDN Cache.
 | `name` | CDN Distribution Name | `-` |
 | `namespace` | Namespace | `-` |
 
-## Side Effects
+## Configuration Choices
 
-Operations on this resource may have the following effects:
+This resource includes mutually exclusive configuration options:
 
-**Creates:**
+### pattern_type
 
-- cache-purge
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `hostname` | - |  |
+| `pattern` | - |  |
+| `purge_all` | - |  |
+| `url` | - |  |
+
+### purge_type
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `hard_purge` | - |  |
+| `soft_purge` | - |  |
 
 ## Example Usage
 

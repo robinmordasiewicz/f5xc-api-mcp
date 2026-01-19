@@ -6,9 +6,6 @@ description: Audit Log Query.
 
 # Audit Log
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Request to GET voltshare audit logs that matches the criteria in request.
 If no match conditions are
 specified in the request, then the response contains all
@@ -27,14 +24,6 @@ CRUD operations performed.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- audit-log
 
 ## Example Usage
 

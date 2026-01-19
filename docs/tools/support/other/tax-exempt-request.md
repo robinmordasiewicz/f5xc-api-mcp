@@ -6,9 +6,6 @@ description: Tax exemption verification request.
 
 # Tax Exempt Request
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Raises a tax exemption verification request. This will ultimately create a support ticket and assign
 it to our billing department.
 If verified and approved then the customer will not be levied sale
@@ -19,14 +16,6 @@ taxes.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-support-tax-exempt-request-create` | Tax exemption verification request. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- tax-exempt-request
 
 ## Example Usage
 

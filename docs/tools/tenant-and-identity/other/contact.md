@@ -6,12 +6,6 @@ description: Create Contact.
 
 # Contact
 
-!!! danger "High Risk Operation"
-    This resource includes operations that may cause significant changes. Review carefully before executing.
-
-!!! note "Confirmation Required"
-    Some operations on this resource require explicit confirmation before execution.
-
 Creates a new customer's contact detail record with us, including address and phone number.
 
 ## Tools
@@ -43,23 +37,6 @@ Creates a new customer's contact detail record with us, including address and ph
 | `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
 | `report_fields` | The report_fields parameter | `-` |
 | `report_status_fields` | The report_status_fields parameter | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- contact
-
-**Modifies:**
-
-- contact
-
-**Deletes:**
-
-- contact
-- contained_resources
 
 ## Example Usage
 

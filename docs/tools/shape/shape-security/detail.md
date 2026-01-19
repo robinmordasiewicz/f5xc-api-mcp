@@ -6,9 +6,6 @@ description: GET SAFE Block Details.
 
 # Detail
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET SAFE block details.
 
 ## Tools

@@ -6,9 +6,6 @@ description: Platform event Query.
 
 # Platform Event
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Request to GET platform event that matches the criteria in request for a given namespace.
 If no
 match conditions are specified in the request, then the response contains all
@@ -30,14 +27,6 @@ across all namespaces for a given tenant.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- platform-event
 
 ## Example Usage
 

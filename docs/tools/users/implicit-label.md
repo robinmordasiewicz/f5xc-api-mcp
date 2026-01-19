@@ -6,9 +6,6 @@ description: GET Implicit Labels.
 
 # Implicit Label
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET is generic label query. Two types of queries are supported
 
 * Return label with exact matching
