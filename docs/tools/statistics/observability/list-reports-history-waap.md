@@ -6,9 +6,6 @@ description: List Reports History Waap.
 
 # List Reports History Waap
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 List Reports history waap for the list of report configurations in the given namespace.
 
 ## Tools
@@ -24,14 +21,6 @@ List Reports history waap for the list of report configurations in the given nam
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- list-reports-history-waap
 
 ## Example Usage
 

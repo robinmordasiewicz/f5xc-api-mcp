@@ -6,9 +6,6 @@ description: List countries.
 
 # Countrie
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Returns a list of supported countries along with with additional information such as address
 validation rules.
 

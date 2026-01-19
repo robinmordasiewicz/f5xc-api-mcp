@@ -6,9 +6,6 @@ description: Upgrade Status.
 
 # Upgrade Statu
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Request to GET the upgrade status.
 
 ## Tools

@@ -6,9 +6,6 @@ description: GET Global Summary.
 
 # Global Summary
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Returns a healthy and critical count of all monitors in namespace, based on monitor type.
 
 ## Tools

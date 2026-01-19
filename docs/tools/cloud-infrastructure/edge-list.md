@@ -6,9 +6,6 @@ description: Edge List
 
 # Edge List
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Returns the online edge sites (Both Customer Edge and Cloud Edge)
 
 ## Tools

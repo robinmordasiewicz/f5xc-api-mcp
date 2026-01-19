@@ -133,7 +133,13 @@ export const container_servicesTools: ParsedOperation[] = [
         resourceType: "virtual-k8s-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "service_isolation_choice",
+        fieldPath: "spec.service_isolation_choice",
+        options: ["spec.disabled", "spec.isolated"],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_site_management_standard",
@@ -458,7 +464,13 @@ export const container_servicesTools: ParsedOperation[] = [
         resourceType: "virtual-k8s-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "service_isolation_choice",
+        fieldPath: "spec.service_isolation_choice",
+        options: ["spec.disabled", "spec.isolated"],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_site_management_standard",
@@ -533,7 +545,3384 @@ export const container_servicesTools: ParsedOperation[] = [
         resourceType: "viewsworkload-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "workload_choice",
+        fieldPath: "spec.workload_choice",
+        options: ["spec.job", "spec.service", "spec.simple_service", "spec.stateful_service"],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.job.configuration.parameters[].choice",
+        options: [
+          "spec.job.configuration.parameters[].env_var",
+          "spec.job.configuration.parameters[].file",
+        ],
+      },
+      {
+        choiceField: "flavor_choice",
+        fieldPath: "spec.job.containers[].flavor_choice",
+        options: [
+          "spec.job.containers[].custom_flavor",
+          "spec.job.containers[].default_flavor",
+          "spec.job.containers[].flavor",
+        ],
+      },
+      {
+        choiceField: "registry_choice",
+        fieldPath: "spec.job.containers[].image.registry_choice",
+        options: [
+          "spec.job.containers[].image.container_registry",
+          "spec.job.containers[].image.public",
+        ],
+      },
+      {
+        choiceField: "health_check_choice",
+        fieldPath: "spec.job.containers[].liveness_check.health_check_choice",
+        options: [
+          "spec.job.containers[].liveness_check.exec_health_check",
+          "spec.job.containers[].liveness_check.http_health_check",
+          "spec.job.containers[].liveness_check.tcp_health_check",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.job.containers[].liveness_check.http_health_check.port.port_choice",
+        options: [
+          "spec.job.containers[].liveness_check.http_health_check.port.name",
+          "spec.job.containers[].liveness_check.http_health_check.port.num",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.job.containers[].liveness_check.tcp_health_check.port.port_choice",
+        options: [
+          "spec.job.containers[].liveness_check.tcp_health_check.port.name",
+          "spec.job.containers[].liveness_check.tcp_health_check.port.num",
+        ],
+      },
+      {
+        choiceField: "health_check_choice",
+        fieldPath: "spec.job.containers[].readiness_check.health_check_choice",
+        options: [
+          "spec.job.containers[].readiness_check.exec_health_check",
+          "spec.job.containers[].readiness_check.http_health_check",
+          "spec.job.containers[].readiness_check.tcp_health_check",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.job.containers[].readiness_check.http_health_check.port.port_choice",
+        options: [
+          "spec.job.containers[].readiness_check.http_health_check.port.name",
+          "spec.job.containers[].readiness_check.http_health_check.port.num",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.job.containers[].readiness_check.tcp_health_check.port.port_choice",
+        options: [
+          "spec.job.containers[].readiness_check.tcp_health_check.port.name",
+          "spec.job.containers[].readiness_check.tcp_health_check.port.num",
+        ],
+      },
+      {
+        choiceField: "deploy_choice",
+        fieldPath: "spec.job.deploy_options.deploy_choice",
+        options: [
+          "spec.job.deploy_options.all_res",
+          "spec.job.deploy_options.default_virtual_sites",
+          "spec.job.deploy_options.deploy_ce_sites",
+          "spec.job.deploy_options.deploy_ce_virtual_sites",
+          "spec.job.deploy_options.deploy_re_sites",
+          "spec.job.deploy_options.deploy_re_virtual_sites",
+        ],
+      },
+      {
+        choiceField: "volume_choice",
+        fieldPath: "spec.job.volumes[].volume_choice",
+        options: [
+          "spec.job.volumes[].empty_dir",
+          "spec.job.volumes[].host_path",
+          "spec.job.volumes[].persistent_volume",
+        ],
+      },
+      {
+        choiceField: "class_name_choice",
+        fieldPath: "spec.job.volumes[].persistent_volume.storage.class_name_choice",
+        options: [
+          "spec.job.volumes[].persistent_volume.storage.class_name",
+          "spec.job.volumes[].persistent_volume.storage.default",
+        ],
+      },
+      {
+        choiceField: "scaling_choice",
+        fieldPath: "spec.service.scaling_choice",
+        options: ["spec.service.num_replicas", "spec.service.scale_to_zero"],
+      },
+      {
+        choiceField: "advertise_choice",
+        fieldPath: "spec.service.advertise_options.advertise_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom",
+          "spec.service.advertise_options.advertise_in_cluster",
+          "spec.service.advertise_options.advertise_on_public",
+          "spec.service.advertise_options.do_not_advertise",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.service.advertise_options.advertise_custom.advertise_where[].choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.advertise_where[].site",
+          "spec.service.advertise_options.advertise_custom.advertise_where[].virtual_site",
+          "spec.service.advertise_options.advertise_custom.advertise_where[].vk8s_service",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.advertise_where[].vk8s_service.choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.advertise_where[].vk8s_service.site",
+          "spec.service.advertise_options.advertise_custom.advertise_where[].vk8s_service.virtual_site",
+        ],
+      },
+      {
+        choiceField: "advertise_choice",
+        fieldPath: "spec.service.advertise_options.advertise_custom.ports[].advertise_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer",
+          "spec.service.advertise_options.advertise_custom.ports[].tcp_loadbalancer",
+        ],
+      },
+      {
+        choiceField: "loadbalancer_type",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.loadbalancer_type",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.http",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert",
+        ],
+      },
+      {
+        choiceField: "route_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.route_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.default_route",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes",
+        ],
+      },
+      {
+        choiceField: "host_rewrite_params",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.default_route.host_rewrite_params",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.default_route.auto_host_rewrite",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.default_route.disable_host_rewrite",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.default_route.host_rewrite",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.http.port_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.http.port",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.http.port_ranges",
+        ],
+      },
+      {
+        choiceField: "default_lb_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.default_lb_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.default_loadbalancer",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.non_default_loadbalancer",
+        ],
+      },
+      {
+        choiceField: "path_normalize_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.path_normalize_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.disable_path_normalize",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.enable_path_normalize",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.port_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.port",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.port_ranges",
+        ],
+      },
+      {
+        choiceField: "server_header_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.server_header_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.append_server_name",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.default_header",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.pass_through",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.server_name",
+        ],
+      },
+      {
+        choiceField: "tls_certificates_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_certificates_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters",
+        ],
+      },
+      {
+        choiceField: "coalescing_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.coalescing_options.coalescing_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.coalescing_options.default_coalescing",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.coalescing_options.strict_coalescing",
+        ],
+      },
+      {
+        choiceField: "http_protocol_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_v2",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v2_only",
+        ],
+      },
+      {
+        choiceField: "header_transformation_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.header_transformation_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.default_header_transformation",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.legacy_header_transformation",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.preserve_case_header_transformation",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.proper_case_header_transformation",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.mtls_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.no_mtls",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.use_mtls",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.tls_config.choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.tls_config.custom_security",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.tls_config.default_security",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.tls_config.low_security",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.crl_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.crl",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.trusted_ca",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.xfcc_header",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.xfcc_disabled",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.mtls_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.no_mtls",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.use_mtls",
+        ],
+      },
+      {
+        choiceField: "ocsp_stapling_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].ocsp_stapling_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].custom_hash_algorithms",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].disable_ocsp_stapling",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].use_system_defaults",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].private_key.secret_info_oneof",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].private_key.blindfold_secret_info",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_config.choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_config.custom_security",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_config.default_security",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_config.low_security",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.use_mtls.crl_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.use_mtls.crl",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.use_mtls.trusted_ca",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.use_mtls.xfcc_header",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.use_mtls.xfcc_disabled",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "default_lb_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.default_lb_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.default_loadbalancer",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.non_default_loadbalancer",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.mtls_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.no_mtls",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.use_mtls",
+        ],
+      },
+      {
+        choiceField: "path_normalize_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.path_normalize_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.disable_path_normalize",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.enable_path_normalize",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.port_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.port",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.port_ranges",
+        ],
+      },
+      {
+        choiceField: "server_header_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.server_header_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.append_server_name",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.default_header",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.pass_through",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.server_name",
+        ],
+      },
+      {
+        choiceField: "coalescing_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.coalescing_options.coalescing_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.coalescing_options.default_coalescing",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.coalescing_options.strict_coalescing",
+        ],
+      },
+      {
+        choiceField: "http_protocol_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_v2",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v2_only",
+        ],
+      },
+      {
+        choiceField: "header_transformation_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.header_transformation_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.default_header_transformation",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.legacy_header_transformation",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.preserve_case_header_transformation",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.proper_case_header_transformation",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.tls_config.choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.tls_config.custom_security",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.tls_config.default_security",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.tls_config.low_security",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.use_mtls.crl_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.use_mtls.crl",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.use_mtls.trusted_ca",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.use_mtls.xfcc_header",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.use_mtls.xfcc_disabled",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].custom_route_object",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].simple_route",
+        ],
+      },
+      {
+        choiceField: "value_match",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].value_match",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].exact",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].presence",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].regex",
+        ],
+      },
+      {
+        choiceField: "port_match",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.port_match",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.no_port_match",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.port",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.port_ranges",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.path.path_match",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.path.path",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.path.prefix",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.path.regex",
+        ],
+      },
+      {
+        choiceField: "value_match",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.headers[].value_match",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.headers[].exact",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.headers[].presence",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.headers[].regex",
+        ],
+      },
+      {
+        choiceField: "port_match",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.incoming_port.port_match",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.incoming_port.no_port_match",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.incoming_port.port",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.incoming_port.port_ranges",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.path.path_match",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.path.path",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.path.prefix",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.path.regex",
+        ],
+      },
+      {
+        choiceField: "query_params",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.query_params",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.remove_all_params",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.replace_params",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.retain_all_params",
+        ],
+      },
+      {
+        choiceField: "redirect_path_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.redirect_path_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.path_redirect",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.prefix_rewrite",
+        ],
+      },
+      {
+        choiceField: "host_rewrite_params",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].simple_route.host_rewrite_params",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].simple_route.auto_host_rewrite",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].simple_route.disable_host_rewrite",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].simple_route.host_rewrite",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].simple_route.path.path_match",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].simple_route.path.path",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].simple_route.path.prefix",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].simple_route.path.regex",
+        ],
+      },
+      {
+        choiceField: "target_port_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].port.info.target_port_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].port.info.same_as_port",
+          "spec.service.advertise_options.advertise_custom.ports[].port.info.target_port",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.service.advertise_options.advertise_in_cluster.port_choice",
+        options: [
+          "spec.service.advertise_options.advertise_in_cluster.multi_ports",
+          "spec.service.advertise_options.advertise_in_cluster.port",
+        ],
+      },
+      {
+        choiceField: "target_port_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_in_cluster.multi_ports.ports[].info.target_port_choice",
+        options: [
+          "spec.service.advertise_options.advertise_in_cluster.multi_ports.ports[].info.same_as_port",
+          "spec.service.advertise_options.advertise_in_cluster.multi_ports.ports[].info.target_port",
+        ],
+      },
+      {
+        choiceField: "target_port_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_in_cluster.port.info.target_port_choice",
+        options: [
+          "spec.service.advertise_options.advertise_in_cluster.port.info.same_as_port",
+          "spec.service.advertise_options.advertise_in_cluster.port.info.target_port",
+        ],
+      },
+      {
+        choiceField: "advertise_choice",
+        fieldPath: "spec.service.advertise_options.advertise_on_public.advertise_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports",
+          "spec.service.advertise_options.advertise_on_public.port",
+        ],
+      },
+      {
+        choiceField: "advertise_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].advertise_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].tcp_loadbalancer",
+        ],
+      },
+      {
+        choiceField: "loadbalancer_type",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.loadbalancer_type",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.http",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert",
+        ],
+      },
+      {
+        choiceField: "route_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.route_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.default_route",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes",
+        ],
+      },
+      {
+        choiceField: "host_rewrite_params",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.default_route.host_rewrite_params",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.default_route.auto_host_rewrite",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.default_route.disable_host_rewrite",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.default_route.host_rewrite",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.http.port_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.http.port",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.http.port_ranges",
+        ],
+      },
+      {
+        choiceField: "default_lb_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.default_lb_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.default_loadbalancer",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.non_default_loadbalancer",
+        ],
+      },
+      {
+        choiceField: "path_normalize_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.path_normalize_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.disable_path_normalize",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.enable_path_normalize",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.port_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.port",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.port_ranges",
+        ],
+      },
+      {
+        choiceField: "server_header_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.server_header_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.append_server_name",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.default_header",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.pass_through",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.server_name",
+        ],
+      },
+      {
+        choiceField: "tls_certificates_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_certificates_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters",
+        ],
+      },
+      {
+        choiceField: "coalescing_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.coalescing_options.coalescing_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.coalescing_options.default_coalescing",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.coalescing_options.strict_coalescing",
+        ],
+      },
+      {
+        choiceField: "http_protocol_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_v2",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v2_only",
+        ],
+      },
+      {
+        choiceField: "header_transformation_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.header_transformation_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.default_header_transformation",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.legacy_header_transformation",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.preserve_case_header_transformation",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.proper_case_header_transformation",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.mtls_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.no_mtls",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.use_mtls",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.tls_config.choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.tls_config.custom_security",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.tls_config.default_security",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.tls_config.low_security",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.crl_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.crl",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.trusted_ca",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.xfcc_header",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.xfcc_disabled",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.mtls_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.no_mtls",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.use_mtls",
+        ],
+      },
+      {
+        choiceField: "ocsp_stapling_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].ocsp_stapling_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].custom_hash_algorithms",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].disable_ocsp_stapling",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].use_system_defaults",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].private_key.secret_info_oneof",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].private_key.blindfold_secret_info",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.tls_config.choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.tls_config.custom_security",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.tls_config.default_security",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.tls_config.low_security",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.use_mtls.crl_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.use_mtls.crl",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.use_mtls.trusted_ca",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.use_mtls.xfcc_header",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.use_mtls.xfcc_disabled",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "default_lb_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.default_lb_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.default_loadbalancer",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.non_default_loadbalancer",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.mtls_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.no_mtls",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.use_mtls",
+        ],
+      },
+      {
+        choiceField: "path_normalize_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.path_normalize_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.disable_path_normalize",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.enable_path_normalize",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.port_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.port",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.port_ranges",
+        ],
+      },
+      {
+        choiceField: "server_header_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.server_header_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.append_server_name",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.default_header",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.pass_through",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.server_name",
+        ],
+      },
+      {
+        choiceField: "coalescing_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.coalescing_options.coalescing_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.coalescing_options.default_coalescing",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.coalescing_options.strict_coalescing",
+        ],
+      },
+      {
+        choiceField: "http_protocol_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_v2",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v2_only",
+        ],
+      },
+      {
+        choiceField: "header_transformation_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.header_transformation_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.default_header_transformation",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.legacy_header_transformation",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.preserve_case_header_transformation",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.proper_case_header_transformation",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.tls_config.choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.tls_config.custom_security",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.tls_config.default_security",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.tls_config.low_security",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.use_mtls.crl_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.use_mtls.crl",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.use_mtls.trusted_ca",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.use_mtls.xfcc_header",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.use_mtls.xfcc_disabled",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].custom_route_object",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].simple_route",
+        ],
+      },
+      {
+        choiceField: "value_match",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].value_match",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].exact",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].presence",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].regex",
+        ],
+      },
+      {
+        choiceField: "port_match",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.port_match",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.no_port_match",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.port",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.port_ranges",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.path.path_match",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.path.path",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.path.prefix",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.path.regex",
+        ],
+      },
+      {
+        choiceField: "value_match",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.headers[].value_match",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.headers[].exact",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.headers[].presence",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.headers[].regex",
+        ],
+      },
+      {
+        choiceField: "port_match",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.incoming_port.port_match",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.incoming_port.no_port_match",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.incoming_port.port",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.incoming_port.port_ranges",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.path.path_match",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.path.path",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.path.prefix",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.path.regex",
+        ],
+      },
+      {
+        choiceField: "query_params",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.query_params",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.remove_all_params",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.replace_params",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.retain_all_params",
+        ],
+      },
+      {
+        choiceField: "redirect_path_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.redirect_path_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.path_redirect",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.prefix_rewrite",
+        ],
+      },
+      {
+        choiceField: "host_rewrite_params",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].simple_route.host_rewrite_params",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].simple_route.auto_host_rewrite",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].simple_route.disable_host_rewrite",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].simple_route.host_rewrite",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].simple_route.path.path_match",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].simple_route.path.path",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].simple_route.path.prefix",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].simple_route.path.regex",
+        ],
+      },
+      {
+        choiceField: "target_port_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].port.info.target_port_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].port.info.same_as_port",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].port.info.target_port",
+        ],
+      },
+      {
+        choiceField: "advertise_choice",
+        fieldPath: "spec.service.advertise_options.advertise_on_public.port.advertise_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer",
+          "spec.service.advertise_options.advertise_on_public.port.tcp_loadbalancer",
+        ],
+      },
+      {
+        choiceField: "loadbalancer_type",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.loadbalancer_type",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.http",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert",
+        ],
+      },
+      {
+        choiceField: "route_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.route_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.default_route",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes",
+        ],
+      },
+      {
+        choiceField: "host_rewrite_params",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.default_route.host_rewrite_params",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.default_route.auto_host_rewrite",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.default_route.disable_host_rewrite",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.default_route.host_rewrite",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.http.port_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.http.port",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.http.port_ranges",
+        ],
+      },
+      {
+        choiceField: "default_lb_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.default_lb_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.default_loadbalancer",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.non_default_loadbalancer",
+        ],
+      },
+      {
+        choiceField: "path_normalize_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.path_normalize_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.disable_path_normalize",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.enable_path_normalize",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.port_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.port",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.port_ranges",
+        ],
+      },
+      {
+        choiceField: "server_header_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.server_header_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.append_server_name",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.default_header",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.pass_through",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.server_name",
+        ],
+      },
+      {
+        choiceField: "tls_certificates_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_certificates_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters",
+        ],
+      },
+      {
+        choiceField: "coalescing_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.coalescing_options.coalescing_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.coalescing_options.default_coalescing",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.coalescing_options.strict_coalescing",
+        ],
+      },
+      {
+        choiceField: "http_protocol_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.http_protocol_options.http_protocol_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_v2",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.http_protocol_options.http_protocol_enable_v2_only",
+        ],
+      },
+      {
+        choiceField: "header_transformation_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.header_transformation_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.default_header_transformation",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.legacy_header_transformation",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.preserve_case_header_transformation",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.proper_case_header_transformation",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.mtls_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.no_mtls",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.use_mtls",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.tls_config.choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.tls_config.custom_security",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.tls_config.default_security",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.tls_config.low_security",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.use_mtls.crl_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.use_mtls.crl",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.use_mtls.trusted_ca",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.use_mtls.xfcc_header",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.use_mtls.xfcc_disabled",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.mtls_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.no_mtls",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.use_mtls",
+        ],
+      },
+      {
+        choiceField: "ocsp_stapling_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.tls_certificates[].ocsp_stapling_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.tls_certificates[].custom_hash_algorithms",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.tls_certificates[].disable_ocsp_stapling",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.tls_certificates[].use_system_defaults",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.tls_certificates[].private_key.secret_info_oneof",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.tls_certificates[].private_key.blindfold_secret_info",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.tls_certificates[].private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.tls_config.choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.tls_config.custom_security",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.tls_config.default_security",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.tls_config.low_security",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.use_mtls.crl_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.use_mtls.crl",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.use_mtls.trusted_ca",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.use_mtls.xfcc_header",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.use_mtls.xfcc_disabled",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "default_lb_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.default_lb_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.default_loadbalancer",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.non_default_loadbalancer",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.mtls_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.no_mtls",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.use_mtls",
+        ],
+      },
+      {
+        choiceField: "path_normalize_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.path_normalize_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.disable_path_normalize",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.enable_path_normalize",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.port_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.port",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.port_ranges",
+        ],
+      },
+      {
+        choiceField: "server_header_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.server_header_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.append_server_name",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.default_header",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.pass_through",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.server_name",
+        ],
+      },
+      {
+        choiceField: "coalescing_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.coalescing_options.coalescing_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.coalescing_options.default_coalescing",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.coalescing_options.strict_coalescing",
+        ],
+      },
+      {
+        choiceField: "http_protocol_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_v2",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v2_only",
+        ],
+      },
+      {
+        choiceField: "header_transformation_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.header_transformation_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.default_header_transformation",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.legacy_header_transformation",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.preserve_case_header_transformation",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.proper_case_header_transformation",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.tls_config.choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.tls_config.custom_security",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.tls_config.default_security",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.tls_config.low_security",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.use_mtls.crl_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.use_mtls.crl",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.use_mtls.trusted_ca",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.use_mtls.xfcc_header",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.use_mtls.xfcc_disabled",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].custom_route_object",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].simple_route",
+        ],
+      },
+      {
+        choiceField: "value_match",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].value_match",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].exact",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].presence",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].regex",
+        ],
+      },
+      {
+        choiceField: "port_match",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.port_match",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.no_port_match",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.port",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.port_ranges",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route.path.path_match",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route.path.path",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route.path.prefix",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route.path.regex",
+        ],
+      },
+      {
+        choiceField: "value_match",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.headers[].value_match",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.headers[].exact",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.headers[].presence",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.headers[].regex",
+        ],
+      },
+      {
+        choiceField: "port_match",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.incoming_port.port_match",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.incoming_port.no_port_match",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.incoming_port.port",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.incoming_port.port_ranges",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.path.path_match",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.path.path",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.path.prefix",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.path.regex",
+        ],
+      },
+      {
+        choiceField: "query_params",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.query_params",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.remove_all_params",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.replace_params",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.retain_all_params",
+        ],
+      },
+      {
+        choiceField: "redirect_path_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.redirect_path_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.path_redirect",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.prefix_rewrite",
+        ],
+      },
+      {
+        choiceField: "host_rewrite_params",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].simple_route.host_rewrite_params",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].simple_route.auto_host_rewrite",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].simple_route.disable_host_rewrite",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].simple_route.host_rewrite",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].simple_route.path.path_match",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].simple_route.path.path",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].simple_route.path.prefix",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].simple_route.path.regex",
+        ],
+      },
+      {
+        choiceField: "target_port_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.port.info.target_port_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.port.info.same_as_port",
+          "spec.service.advertise_options.advertise_on_public.port.port.info.target_port",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.service.configuration.parameters[].choice",
+        options: [
+          "spec.service.configuration.parameters[].env_var",
+          "spec.service.configuration.parameters[].file",
+        ],
+      },
+      {
+        choiceField: "flavor_choice",
+        fieldPath: "spec.service.containers[].flavor_choice",
+        options: [
+          "spec.service.containers[].custom_flavor",
+          "spec.service.containers[].default_flavor",
+          "spec.service.containers[].flavor",
+        ],
+      },
+      {
+        choiceField: "registry_choice",
+        fieldPath: "spec.service.containers[].image.registry_choice",
+        options: [
+          "spec.service.containers[].image.container_registry",
+          "spec.service.containers[].image.public",
+        ],
+      },
+      {
+        choiceField: "health_check_choice",
+        fieldPath: "spec.service.containers[].liveness_check.health_check_choice",
+        options: [
+          "spec.service.containers[].liveness_check.exec_health_check",
+          "spec.service.containers[].liveness_check.http_health_check",
+          "spec.service.containers[].liveness_check.tcp_health_check",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.service.containers[].liveness_check.http_health_check.port.port_choice",
+        options: [
+          "spec.service.containers[].liveness_check.http_health_check.port.name",
+          "spec.service.containers[].liveness_check.http_health_check.port.num",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.service.containers[].liveness_check.tcp_health_check.port.port_choice",
+        options: [
+          "spec.service.containers[].liveness_check.tcp_health_check.port.name",
+          "spec.service.containers[].liveness_check.tcp_health_check.port.num",
+        ],
+      },
+      {
+        choiceField: "health_check_choice",
+        fieldPath: "spec.service.containers[].readiness_check.health_check_choice",
+        options: [
+          "spec.service.containers[].readiness_check.exec_health_check",
+          "spec.service.containers[].readiness_check.http_health_check",
+          "spec.service.containers[].readiness_check.tcp_health_check",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.service.containers[].readiness_check.http_health_check.port.port_choice",
+        options: [
+          "spec.service.containers[].readiness_check.http_health_check.port.name",
+          "spec.service.containers[].readiness_check.http_health_check.port.num",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.service.containers[].readiness_check.tcp_health_check.port.port_choice",
+        options: [
+          "spec.service.containers[].readiness_check.tcp_health_check.port.name",
+          "spec.service.containers[].readiness_check.tcp_health_check.port.num",
+        ],
+      },
+      {
+        choiceField: "deploy_choice",
+        fieldPath: "spec.service.deploy_options.deploy_choice",
+        options: [
+          "spec.service.deploy_options.all_res",
+          "spec.service.deploy_options.default_virtual_sites",
+          "spec.service.deploy_options.deploy_ce_sites",
+          "spec.service.deploy_options.deploy_ce_virtual_sites",
+          "spec.service.deploy_options.deploy_re_sites",
+          "spec.service.deploy_options.deploy_re_virtual_sites",
+        ],
+      },
+      {
+        choiceField: "volume_choice",
+        fieldPath: "spec.service.volumes[].volume_choice",
+        options: [
+          "spec.service.volumes[].empty_dir",
+          "spec.service.volumes[].host_path",
+          "spec.service.volumes[].persistent_volume",
+        ],
+      },
+      {
+        choiceField: "class_name_choice",
+        fieldPath: "spec.service.volumes[].persistent_volume.storage.class_name_choice",
+        options: [
+          "spec.service.volumes[].persistent_volume.storage.class_name",
+          "spec.service.volumes[].persistent_volume.storage.default",
+        ],
+      },
+      {
+        choiceField: "advertise_choice",
+        fieldPath: "spec.simple_service.advertise_choice",
+        options: ["spec.simple_service.do_not_advertise", "spec.simple_service.simple_advertise"],
+      },
+      {
+        choiceField: "persistence_choice",
+        fieldPath: "spec.simple_service.persistence_choice",
+        options: ["spec.simple_service.disabled", "spec.simple_service.enabled"],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.simple_service.configuration.parameters[].choice",
+        options: [
+          "spec.simple_service.configuration.parameters[].env_var",
+          "spec.simple_service.configuration.parameters[].file",
+        ],
+      },
+      {
+        choiceField: "flavor_choice",
+        fieldPath: "spec.simple_service.container.flavor_choice",
+        options: [
+          "spec.simple_service.container.custom_flavor",
+          "spec.simple_service.container.default_flavor",
+          "spec.simple_service.container.flavor",
+        ],
+      },
+      {
+        choiceField: "registry_choice",
+        fieldPath: "spec.simple_service.container.image.registry_choice",
+        options: [
+          "spec.simple_service.container.image.container_registry",
+          "spec.simple_service.container.image.public",
+        ],
+      },
+      {
+        choiceField: "health_check_choice",
+        fieldPath: "spec.simple_service.container.liveness_check.health_check_choice",
+        options: [
+          "spec.simple_service.container.liveness_check.exec_health_check",
+          "spec.simple_service.container.liveness_check.http_health_check",
+          "spec.simple_service.container.liveness_check.tcp_health_check",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.simple_service.container.liveness_check.http_health_check.port.port_choice",
+        options: [
+          "spec.simple_service.container.liveness_check.http_health_check.port.name",
+          "spec.simple_service.container.liveness_check.http_health_check.port.num",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.simple_service.container.liveness_check.tcp_health_check.port.port_choice",
+        options: [
+          "spec.simple_service.container.liveness_check.tcp_health_check.port.name",
+          "spec.simple_service.container.liveness_check.tcp_health_check.port.num",
+        ],
+      },
+      {
+        choiceField: "health_check_choice",
+        fieldPath: "spec.simple_service.container.readiness_check.health_check_choice",
+        options: [
+          "spec.simple_service.container.readiness_check.exec_health_check",
+          "spec.simple_service.container.readiness_check.http_health_check",
+          "spec.simple_service.container.readiness_check.tcp_health_check",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.simple_service.container.readiness_check.http_health_check.port.port_choice",
+        options: [
+          "spec.simple_service.container.readiness_check.http_health_check.port.name",
+          "spec.simple_service.container.readiness_check.http_health_check.port.num",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.simple_service.container.readiness_check.tcp_health_check.port.port_choice",
+        options: [
+          "spec.simple_service.container.readiness_check.tcp_health_check.port.name",
+          "spec.simple_service.container.readiness_check.tcp_health_check.port.num",
+        ],
+      },
+      {
+        choiceField: "class_name_choice",
+        fieldPath: "spec.simple_service.enabled.persistent_volume.storage.class_name_choice",
+        options: [
+          "spec.simple_service.enabled.persistent_volume.storage.class_name",
+          "spec.simple_service.enabled.persistent_volume.storage.default",
+        ],
+      },
+      {
+        choiceField: "scaling_choice",
+        fieldPath: "spec.stateful_service.scaling_choice",
+        options: ["spec.stateful_service.num_replicas", "spec.stateful_service.scale_to_zero"],
+      },
+      {
+        choiceField: "advertise_choice",
+        fieldPath: "spec.stateful_service.advertise_options.advertise_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom",
+          "spec.stateful_service.advertise_options.advertise_in_cluster",
+          "spec.stateful_service.advertise_options.advertise_on_public",
+          "spec.stateful_service.advertise_options.do_not_advertise",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.advertise_where[].choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.advertise_where[].site",
+          "spec.stateful_service.advertise_options.advertise_custom.advertise_where[].virtual_site",
+          "spec.stateful_service.advertise_options.advertise_custom.advertise_where[].vk8s_service",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.advertise_where[].vk8s_service.choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.advertise_where[].vk8s_service.site",
+          "spec.stateful_service.advertise_options.advertise_custom.advertise_where[].vk8s_service.virtual_site",
+        ],
+      },
+      {
+        choiceField: "advertise_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].advertise_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].tcp_loadbalancer",
+        ],
+      },
+      {
+        choiceField: "loadbalancer_type",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.loadbalancer_type",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.http",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert",
+        ],
+      },
+      {
+        choiceField: "route_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.route_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.default_route",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes",
+        ],
+      },
+      {
+        choiceField: "host_rewrite_params",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.default_route.host_rewrite_params",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.default_route.auto_host_rewrite",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.default_route.disable_host_rewrite",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.default_route.host_rewrite",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.http.port_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.http.port",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.http.port_ranges",
+        ],
+      },
+      {
+        choiceField: "default_lb_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.default_lb_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.default_loadbalancer",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.non_default_loadbalancer",
+        ],
+      },
+      {
+        choiceField: "path_normalize_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.path_normalize_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.disable_path_normalize",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.enable_path_normalize",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.port_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.port",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.port_ranges",
+        ],
+      },
+      {
+        choiceField: "server_header_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.server_header_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.append_server_name",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.default_header",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.pass_through",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.server_name",
+        ],
+      },
+      {
+        choiceField: "tls_certificates_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_certificates_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters",
+        ],
+      },
+      {
+        choiceField: "coalescing_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.coalescing_options.coalescing_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.coalescing_options.default_coalescing",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.coalescing_options.strict_coalescing",
+        ],
+      },
+      {
+        choiceField: "http_protocol_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_v2",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v2_only",
+        ],
+      },
+      {
+        choiceField: "header_transformation_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.header_transformation_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.default_header_transformation",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.legacy_header_transformation",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.preserve_case_header_transformation",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.proper_case_header_transformation",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.mtls_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.no_mtls",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.use_mtls",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.tls_config.choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.tls_config.custom_security",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.tls_config.default_security",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.tls_config.low_security",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.crl_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.crl",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.trusted_ca",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.xfcc_header",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.xfcc_disabled",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.mtls_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.no_mtls",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.use_mtls",
+        ],
+      },
+      {
+        choiceField: "ocsp_stapling_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].ocsp_stapling_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].custom_hash_algorithms",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].disable_ocsp_stapling",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].use_system_defaults",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].private_key.secret_info_oneof",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].private_key.blindfold_secret_info",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_config.choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_config.custom_security",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_config.default_security",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_config.low_security",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.use_mtls.crl_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.use_mtls.crl",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.use_mtls.trusted_ca",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.use_mtls.xfcc_header",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.use_mtls.xfcc_disabled",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "default_lb_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.default_lb_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.default_loadbalancer",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.non_default_loadbalancer",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.mtls_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.no_mtls",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.use_mtls",
+        ],
+      },
+      {
+        choiceField: "path_normalize_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.path_normalize_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.disable_path_normalize",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.enable_path_normalize",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.port_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.port",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.port_ranges",
+        ],
+      },
+      {
+        choiceField: "server_header_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.server_header_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.append_server_name",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.default_header",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.pass_through",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.server_name",
+        ],
+      },
+      {
+        choiceField: "coalescing_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.coalescing_options.coalescing_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.coalescing_options.default_coalescing",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.coalescing_options.strict_coalescing",
+        ],
+      },
+      {
+        choiceField: "http_protocol_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_v2",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v2_only",
+        ],
+      },
+      {
+        choiceField: "header_transformation_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.header_transformation_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.default_header_transformation",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.legacy_header_transformation",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.preserve_case_header_transformation",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.proper_case_header_transformation",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.tls_config.choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.tls_config.custom_security",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.tls_config.default_security",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.tls_config.low_security",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.use_mtls.crl_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.use_mtls.crl",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.use_mtls.trusted_ca",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.use_mtls.xfcc_header",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.use_mtls.xfcc_disabled",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].custom_route_object",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].simple_route",
+        ],
+      },
+      {
+        choiceField: "value_match",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].value_match",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].exact",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].presence",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].regex",
+        ],
+      },
+      {
+        choiceField: "port_match",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.port_match",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.no_port_match",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.port",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.port_ranges",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.path.path_match",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.path.path",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.path.prefix",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.path.regex",
+        ],
+      },
+      {
+        choiceField: "value_match",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.headers[].value_match",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.headers[].exact",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.headers[].presence",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.headers[].regex",
+        ],
+      },
+      {
+        choiceField: "port_match",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.incoming_port.port_match",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.incoming_port.no_port_match",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.incoming_port.port",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.incoming_port.port_ranges",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.path.path_match",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.path.path",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.path.prefix",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.path.regex",
+        ],
+      },
+      {
+        choiceField: "query_params",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.query_params",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.remove_all_params",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.replace_params",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.retain_all_params",
+        ],
+      },
+      {
+        choiceField: "redirect_path_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.redirect_path_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.path_redirect",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.prefix_rewrite",
+        ],
+      },
+      {
+        choiceField: "host_rewrite_params",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].simple_route.host_rewrite_params",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].simple_route.auto_host_rewrite",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].simple_route.disable_host_rewrite",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].simple_route.host_rewrite",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].simple_route.path.path_match",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].simple_route.path.path",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].simple_route.path.prefix",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].simple_route.path.regex",
+        ],
+      },
+      {
+        choiceField: "target_port_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].port.info.target_port_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].port.info.same_as_port",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].port.info.target_port",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.stateful_service.advertise_options.advertise_in_cluster.port_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_in_cluster.multi_ports",
+          "spec.stateful_service.advertise_options.advertise_in_cluster.port",
+        ],
+      },
+      {
+        choiceField: "target_port_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_in_cluster.multi_ports.ports[].info.target_port_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_in_cluster.multi_ports.ports[].info.same_as_port",
+          "spec.stateful_service.advertise_options.advertise_in_cluster.multi_ports.ports[].info.target_port",
+        ],
+      },
+      {
+        choiceField: "target_port_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_in_cluster.port.info.target_port_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_in_cluster.port.info.same_as_port",
+          "spec.stateful_service.advertise_options.advertise_in_cluster.port.info.target_port",
+        ],
+      },
+      {
+        choiceField: "advertise_choice",
+        fieldPath: "spec.stateful_service.advertise_options.advertise_on_public.advertise_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports",
+          "spec.stateful_service.advertise_options.advertise_on_public.port",
+        ],
+      },
+      {
+        choiceField: "advertise_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].advertise_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].tcp_loadbalancer",
+        ],
+      },
+      {
+        choiceField: "loadbalancer_type",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.loadbalancer_type",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.http",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert",
+        ],
+      },
+      {
+        choiceField: "route_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.route_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.default_route",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes",
+        ],
+      },
+      {
+        choiceField: "host_rewrite_params",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.default_route.host_rewrite_params",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.default_route.auto_host_rewrite",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.default_route.disable_host_rewrite",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.default_route.host_rewrite",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.http.port_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.http.port",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.http.port_ranges",
+        ],
+      },
+      {
+        choiceField: "default_lb_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.default_lb_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.default_loadbalancer",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.non_default_loadbalancer",
+        ],
+      },
+      {
+        choiceField: "path_normalize_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.path_normalize_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.disable_path_normalize",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.enable_path_normalize",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.port_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.port",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.port_ranges",
+        ],
+      },
+      {
+        choiceField: "server_header_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.server_header_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.append_server_name",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.default_header",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.pass_through",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.server_name",
+        ],
+      },
+      {
+        choiceField: "tls_certificates_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_certificates_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters",
+        ],
+      },
+      {
+        choiceField: "coalescing_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.coalescing_options.coalescing_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.coalescing_options.default_coalescing",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.coalescing_options.strict_coalescing",
+        ],
+      },
+      {
+        choiceField: "http_protocol_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_v2",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v2_only",
+        ],
+      },
+      {
+        choiceField: "header_transformation_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.header_transformation_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.default_header_transformation",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.legacy_header_transformation",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.preserve_case_header_transformation",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.proper_case_header_transformation",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.mtls_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.no_mtls",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.use_mtls",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.tls_config.choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.tls_config.custom_security",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.tls_config.default_security",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.tls_config.low_security",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.crl_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.crl",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.trusted_ca",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.xfcc_header",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.xfcc_disabled",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.mtls_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.no_mtls",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.use_mtls",
+        ],
+      },
+      {
+        choiceField: "ocsp_stapling_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].ocsp_stapling_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].custom_hash_algorithms",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].disable_ocsp_stapling",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].use_system_defaults",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].private_key.secret_info_oneof",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].private_key.blindfold_secret_info",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.tls_config.choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.tls_config.custom_security",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.tls_config.default_security",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.tls_config.low_security",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.use_mtls.crl_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.use_mtls.crl",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.use_mtls.trusted_ca",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.use_mtls.xfcc_header",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.use_mtls.xfcc_disabled",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "default_lb_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.default_lb_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.default_loadbalancer",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.non_default_loadbalancer",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.mtls_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.no_mtls",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.use_mtls",
+        ],
+      },
+      {
+        choiceField: "path_normalize_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.path_normalize_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.disable_path_normalize",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.enable_path_normalize",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.port_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.port",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.port_ranges",
+        ],
+      },
+      {
+        choiceField: "server_header_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.server_header_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.append_server_name",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.default_header",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.pass_through",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.server_name",
+        ],
+      },
+      {
+        choiceField: "coalescing_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.coalescing_options.coalescing_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.coalescing_options.default_coalescing",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.coalescing_options.strict_coalescing",
+        ],
+      },
+      {
+        choiceField: "http_protocol_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_v2",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v2_only",
+        ],
+      },
+      {
+        choiceField: "header_transformation_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.header_transformation_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.default_header_transformation",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.legacy_header_transformation",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.preserve_case_header_transformation",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.proper_case_header_transformation",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.tls_config.choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.tls_config.custom_security",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.tls_config.default_security",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.tls_config.low_security",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.use_mtls.crl_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.use_mtls.crl",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.use_mtls.trusted_ca",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.use_mtls.xfcc_header",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.use_mtls.xfcc_disabled",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].custom_route_object",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].simple_route",
+        ],
+      },
+      {
+        choiceField: "value_match",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].value_match",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].exact",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].presence",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].regex",
+        ],
+      },
+      {
+        choiceField: "port_match",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.port_match",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.no_port_match",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.port",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.port_ranges",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.path.path_match",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.path.path",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.path.prefix",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.path.regex",
+        ],
+      },
+      {
+        choiceField: "value_match",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.headers[].value_match",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.headers[].exact",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.headers[].presence",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.headers[].regex",
+        ],
+      },
+      {
+        choiceField: "port_match",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.incoming_port.port_match",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.incoming_port.no_port_match",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.incoming_port.port",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.incoming_port.port_ranges",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.path.path_match",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.path.path",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.path.prefix",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.path.regex",
+        ],
+      },
+      {
+        choiceField: "query_params",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.query_params",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.remove_all_params",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.replace_params",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.retain_all_params",
+        ],
+      },
+      {
+        choiceField: "redirect_path_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.redirect_path_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.path_redirect",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.prefix_rewrite",
+        ],
+      },
+      {
+        choiceField: "host_rewrite_params",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].simple_route.host_rewrite_params",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].simple_route.auto_host_rewrite",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].simple_route.disable_host_rewrite",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].simple_route.host_rewrite",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].simple_route.path.path_match",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].simple_route.path.path",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].simple_route.path.prefix",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].simple_route.path.regex",
+        ],
+      },
+      {
+        choiceField: "target_port_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].port.info.target_port_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].port.info.same_as_port",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].port.info.target_port",
+        ],
+      },
+      {
+        choiceField: "advertise_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.advertise_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.tcp_loadbalancer",
+        ],
+      },
+      {
+        choiceField: "loadbalancer_type",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.loadbalancer_type",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.http",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert",
+        ],
+      },
+      {
+        choiceField: "route_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.route_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.default_route",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes",
+        ],
+      },
+      {
+        choiceField: "host_rewrite_params",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.default_route.host_rewrite_params",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.default_route.auto_host_rewrite",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.default_route.disable_host_rewrite",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.default_route.host_rewrite",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.http.port_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.http.port",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.http.port_ranges",
+        ],
+      },
+      {
+        choiceField: "default_lb_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.default_lb_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.default_loadbalancer",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.non_default_loadbalancer",
+        ],
+      },
+      {
+        choiceField: "path_normalize_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.path_normalize_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.disable_path_normalize",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.enable_path_normalize",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.port_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.port",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.port_ranges",
+        ],
+      },
+      {
+        choiceField: "server_header_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.server_header_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.append_server_name",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.default_header",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.pass_through",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.server_name",
+        ],
+      },
+      {
+        choiceField: "tls_certificates_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_certificates_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters",
+        ],
+      },
+      {
+        choiceField: "coalescing_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.coalescing_options.coalescing_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.coalescing_options.default_coalescing",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.coalescing_options.strict_coalescing",
+        ],
+      },
+      {
+        choiceField: "http_protocol_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.http_protocol_options.http_protocol_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_v2",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.http_protocol_options.http_protocol_enable_v2_only",
+        ],
+      },
+      {
+        choiceField: "header_transformation_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.header_transformation_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.default_header_transformation",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.legacy_header_transformation",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.preserve_case_header_transformation",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.proper_case_header_transformation",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.mtls_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.no_mtls",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.use_mtls",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.tls_config.choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.tls_config.custom_security",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.tls_config.default_security",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.tls_config.low_security",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.use_mtls.crl_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.use_mtls.crl",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.use_mtls.trusted_ca",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.use_mtls.xfcc_header",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.use_mtls.xfcc_disabled",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.mtls_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.no_mtls",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.use_mtls",
+        ],
+      },
+      {
+        choiceField: "ocsp_stapling_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.tls_certificates[].ocsp_stapling_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.tls_certificates[].custom_hash_algorithms",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.tls_certificates[].disable_ocsp_stapling",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.tls_certificates[].use_system_defaults",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.tls_certificates[].private_key.secret_info_oneof",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.tls_certificates[].private_key.blindfold_secret_info",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.tls_certificates[].private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.tls_config.choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.tls_config.custom_security",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.tls_config.default_security",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.tls_config.low_security",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.use_mtls.crl_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.use_mtls.crl",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.use_mtls.trusted_ca",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.use_mtls.xfcc_header",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.use_mtls.xfcc_disabled",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "default_lb_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.default_lb_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.default_loadbalancer",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.non_default_loadbalancer",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.mtls_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.no_mtls",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.use_mtls",
+        ],
+      },
+      {
+        choiceField: "path_normalize_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.path_normalize_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.disable_path_normalize",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.enable_path_normalize",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.port_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.port",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.port_ranges",
+        ],
+      },
+      {
+        choiceField: "server_header_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.server_header_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.append_server_name",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.default_header",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.pass_through",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.server_name",
+        ],
+      },
+      {
+        choiceField: "coalescing_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.coalescing_options.coalescing_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.coalescing_options.default_coalescing",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.coalescing_options.strict_coalescing",
+        ],
+      },
+      {
+        choiceField: "http_protocol_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_v2",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v2_only",
+        ],
+      },
+      {
+        choiceField: "header_transformation_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.header_transformation_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.default_header_transformation",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.legacy_header_transformation",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.preserve_case_header_transformation",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.proper_case_header_transformation",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.tls_config.choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.tls_config.custom_security",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.tls_config.default_security",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.tls_config.low_security",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.use_mtls.crl_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.use_mtls.crl",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.use_mtls.trusted_ca",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.use_mtls.xfcc_header",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.use_mtls.xfcc_disabled",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].custom_route_object",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].simple_route",
+        ],
+      },
+      {
+        choiceField: "value_match",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].value_match",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].exact",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].presence",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].regex",
+        ],
+      },
+      {
+        choiceField: "port_match",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.port_match",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.no_port_match",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.port",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.port_ranges",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route.path.path_match",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route.path.path",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route.path.prefix",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route.path.regex",
+        ],
+      },
+      {
+        choiceField: "value_match",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.headers[].value_match",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.headers[].exact",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.headers[].presence",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.headers[].regex",
+        ],
+      },
+      {
+        choiceField: "port_match",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.incoming_port.port_match",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.incoming_port.no_port_match",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.incoming_port.port",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.incoming_port.port_ranges",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.path.path_match",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.path.path",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.path.prefix",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.path.regex",
+        ],
+      },
+      {
+        choiceField: "query_params",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.query_params",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.remove_all_params",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.replace_params",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.retain_all_params",
+        ],
+      },
+      {
+        choiceField: "redirect_path_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.redirect_path_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.path_redirect",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.prefix_rewrite",
+        ],
+      },
+      {
+        choiceField: "host_rewrite_params",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].simple_route.host_rewrite_params",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].simple_route.auto_host_rewrite",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].simple_route.disable_host_rewrite",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].simple_route.host_rewrite",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].simple_route.path.path_match",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].simple_route.path.path",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].simple_route.path.prefix",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].simple_route.path.regex",
+        ],
+      },
+      {
+        choiceField: "target_port_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.port.info.target_port_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.port.info.same_as_port",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.port.info.target_port",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.stateful_service.configuration.parameters[].choice",
+        options: [
+          "spec.stateful_service.configuration.parameters[].env_var",
+          "spec.stateful_service.configuration.parameters[].file",
+        ],
+      },
+      {
+        choiceField: "flavor_choice",
+        fieldPath: "spec.stateful_service.containers[].flavor_choice",
+        options: [
+          "spec.stateful_service.containers[].custom_flavor",
+          "spec.stateful_service.containers[].default_flavor",
+          "spec.stateful_service.containers[].flavor",
+        ],
+      },
+      {
+        choiceField: "registry_choice",
+        fieldPath: "spec.stateful_service.containers[].image.registry_choice",
+        options: [
+          "spec.stateful_service.containers[].image.container_registry",
+          "spec.stateful_service.containers[].image.public",
+        ],
+      },
+      {
+        choiceField: "health_check_choice",
+        fieldPath: "spec.stateful_service.containers[].liveness_check.health_check_choice",
+        options: [
+          "spec.stateful_service.containers[].liveness_check.exec_health_check",
+          "spec.stateful_service.containers[].liveness_check.http_health_check",
+          "spec.stateful_service.containers[].liveness_check.tcp_health_check",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.stateful_service.containers[].liveness_check.http_health_check.port.port_choice",
+        options: [
+          "spec.stateful_service.containers[].liveness_check.http_health_check.port.name",
+          "spec.stateful_service.containers[].liveness_check.http_health_check.port.num",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.stateful_service.containers[].liveness_check.tcp_health_check.port.port_choice",
+        options: [
+          "spec.stateful_service.containers[].liveness_check.tcp_health_check.port.name",
+          "spec.stateful_service.containers[].liveness_check.tcp_health_check.port.num",
+        ],
+      },
+      {
+        choiceField: "health_check_choice",
+        fieldPath: "spec.stateful_service.containers[].readiness_check.health_check_choice",
+        options: [
+          "spec.stateful_service.containers[].readiness_check.exec_health_check",
+          "spec.stateful_service.containers[].readiness_check.http_health_check",
+          "spec.stateful_service.containers[].readiness_check.tcp_health_check",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.stateful_service.containers[].readiness_check.http_health_check.port.port_choice",
+        options: [
+          "spec.stateful_service.containers[].readiness_check.http_health_check.port.name",
+          "spec.stateful_service.containers[].readiness_check.http_health_check.port.num",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.stateful_service.containers[].readiness_check.tcp_health_check.port.port_choice",
+        options: [
+          "spec.stateful_service.containers[].readiness_check.tcp_health_check.port.name",
+          "spec.stateful_service.containers[].readiness_check.tcp_health_check.port.num",
+        ],
+      },
+      {
+        choiceField: "deploy_choice",
+        fieldPath: "spec.stateful_service.deploy_options.deploy_choice",
+        options: [
+          "spec.stateful_service.deploy_options.all_res",
+          "spec.stateful_service.deploy_options.default_virtual_sites",
+          "spec.stateful_service.deploy_options.deploy_ce_sites",
+          "spec.stateful_service.deploy_options.deploy_ce_virtual_sites",
+          "spec.stateful_service.deploy_options.deploy_re_sites",
+          "spec.stateful_service.deploy_options.deploy_re_virtual_sites",
+        ],
+      },
+      {
+        choiceField: "class_name_choice",
+        fieldPath:
+          "spec.stateful_service.persistent_volumes[].persistent_volume.storage.class_name_choice",
+        options: [
+          "spec.stateful_service.persistent_volumes[].persistent_volume.storage.class_name",
+          "spec.stateful_service.persistent_volumes[].persistent_volume.storage.default",
+        ],
+      },
+      {
+        choiceField: "volume_choice",
+        fieldPath: "spec.stateful_service.volumes[].volume_choice",
+        options: [
+          "spec.stateful_service.volumes[].empty_dir",
+          "spec.stateful_service.volumes[].host_path",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_site_management_standard",
@@ -1254,7 +4643,3384 @@ export const container_servicesTools: ParsedOperation[] = [
         resourceType: "viewsworkload-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "workload_choice",
+        fieldPath: "spec.workload_choice",
+        options: ["spec.job", "spec.service", "spec.simple_service", "spec.stateful_service"],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.job.configuration.parameters[].choice",
+        options: [
+          "spec.job.configuration.parameters[].env_var",
+          "spec.job.configuration.parameters[].file",
+        ],
+      },
+      {
+        choiceField: "flavor_choice",
+        fieldPath: "spec.job.containers[].flavor_choice",
+        options: [
+          "spec.job.containers[].custom_flavor",
+          "spec.job.containers[].default_flavor",
+          "spec.job.containers[].flavor",
+        ],
+      },
+      {
+        choiceField: "registry_choice",
+        fieldPath: "spec.job.containers[].image.registry_choice",
+        options: [
+          "spec.job.containers[].image.container_registry",
+          "spec.job.containers[].image.public",
+        ],
+      },
+      {
+        choiceField: "health_check_choice",
+        fieldPath: "spec.job.containers[].liveness_check.health_check_choice",
+        options: [
+          "spec.job.containers[].liveness_check.exec_health_check",
+          "spec.job.containers[].liveness_check.http_health_check",
+          "spec.job.containers[].liveness_check.tcp_health_check",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.job.containers[].liveness_check.http_health_check.port.port_choice",
+        options: [
+          "spec.job.containers[].liveness_check.http_health_check.port.name",
+          "spec.job.containers[].liveness_check.http_health_check.port.num",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.job.containers[].liveness_check.tcp_health_check.port.port_choice",
+        options: [
+          "spec.job.containers[].liveness_check.tcp_health_check.port.name",
+          "spec.job.containers[].liveness_check.tcp_health_check.port.num",
+        ],
+      },
+      {
+        choiceField: "health_check_choice",
+        fieldPath: "spec.job.containers[].readiness_check.health_check_choice",
+        options: [
+          "spec.job.containers[].readiness_check.exec_health_check",
+          "spec.job.containers[].readiness_check.http_health_check",
+          "spec.job.containers[].readiness_check.tcp_health_check",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.job.containers[].readiness_check.http_health_check.port.port_choice",
+        options: [
+          "spec.job.containers[].readiness_check.http_health_check.port.name",
+          "spec.job.containers[].readiness_check.http_health_check.port.num",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.job.containers[].readiness_check.tcp_health_check.port.port_choice",
+        options: [
+          "spec.job.containers[].readiness_check.tcp_health_check.port.name",
+          "spec.job.containers[].readiness_check.tcp_health_check.port.num",
+        ],
+      },
+      {
+        choiceField: "deploy_choice",
+        fieldPath: "spec.job.deploy_options.deploy_choice",
+        options: [
+          "spec.job.deploy_options.all_res",
+          "spec.job.deploy_options.default_virtual_sites",
+          "spec.job.deploy_options.deploy_ce_sites",
+          "spec.job.deploy_options.deploy_ce_virtual_sites",
+          "spec.job.deploy_options.deploy_re_sites",
+          "spec.job.deploy_options.deploy_re_virtual_sites",
+        ],
+      },
+      {
+        choiceField: "volume_choice",
+        fieldPath: "spec.job.volumes[].volume_choice",
+        options: [
+          "spec.job.volumes[].empty_dir",
+          "spec.job.volumes[].host_path",
+          "spec.job.volumes[].persistent_volume",
+        ],
+      },
+      {
+        choiceField: "class_name_choice",
+        fieldPath: "spec.job.volumes[].persistent_volume.storage.class_name_choice",
+        options: [
+          "spec.job.volumes[].persistent_volume.storage.class_name",
+          "spec.job.volumes[].persistent_volume.storage.default",
+        ],
+      },
+      {
+        choiceField: "scaling_choice",
+        fieldPath: "spec.service.scaling_choice",
+        options: ["spec.service.num_replicas", "spec.service.scale_to_zero"],
+      },
+      {
+        choiceField: "advertise_choice",
+        fieldPath: "spec.service.advertise_options.advertise_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom",
+          "spec.service.advertise_options.advertise_in_cluster",
+          "spec.service.advertise_options.advertise_on_public",
+          "spec.service.advertise_options.do_not_advertise",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.service.advertise_options.advertise_custom.advertise_where[].choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.advertise_where[].site",
+          "spec.service.advertise_options.advertise_custom.advertise_where[].virtual_site",
+          "spec.service.advertise_options.advertise_custom.advertise_where[].vk8s_service",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.advertise_where[].vk8s_service.choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.advertise_where[].vk8s_service.site",
+          "spec.service.advertise_options.advertise_custom.advertise_where[].vk8s_service.virtual_site",
+        ],
+      },
+      {
+        choiceField: "advertise_choice",
+        fieldPath: "spec.service.advertise_options.advertise_custom.ports[].advertise_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer",
+          "spec.service.advertise_options.advertise_custom.ports[].tcp_loadbalancer",
+        ],
+      },
+      {
+        choiceField: "loadbalancer_type",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.loadbalancer_type",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.http",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert",
+        ],
+      },
+      {
+        choiceField: "route_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.route_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.default_route",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes",
+        ],
+      },
+      {
+        choiceField: "host_rewrite_params",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.default_route.host_rewrite_params",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.default_route.auto_host_rewrite",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.default_route.disable_host_rewrite",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.default_route.host_rewrite",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.http.port_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.http.port",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.http.port_ranges",
+        ],
+      },
+      {
+        choiceField: "default_lb_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.default_lb_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.default_loadbalancer",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.non_default_loadbalancer",
+        ],
+      },
+      {
+        choiceField: "path_normalize_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.path_normalize_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.disable_path_normalize",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.enable_path_normalize",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.port_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.port",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.port_ranges",
+        ],
+      },
+      {
+        choiceField: "server_header_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.server_header_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.append_server_name",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.default_header",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.pass_through",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.server_name",
+        ],
+      },
+      {
+        choiceField: "tls_certificates_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_certificates_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters",
+        ],
+      },
+      {
+        choiceField: "coalescing_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.coalescing_options.coalescing_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.coalescing_options.default_coalescing",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.coalescing_options.strict_coalescing",
+        ],
+      },
+      {
+        choiceField: "http_protocol_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_v2",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v2_only",
+        ],
+      },
+      {
+        choiceField: "header_transformation_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.header_transformation_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.default_header_transformation",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.legacy_header_transformation",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.preserve_case_header_transformation",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.proper_case_header_transformation",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.mtls_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.no_mtls",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.use_mtls",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.tls_config.choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.tls_config.custom_security",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.tls_config.default_security",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.tls_config.low_security",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.crl_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.crl",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.trusted_ca",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.xfcc_header",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.xfcc_disabled",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.mtls_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.no_mtls",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.use_mtls",
+        ],
+      },
+      {
+        choiceField: "ocsp_stapling_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].ocsp_stapling_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].custom_hash_algorithms",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].disable_ocsp_stapling",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].use_system_defaults",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].private_key.secret_info_oneof",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].private_key.blindfold_secret_info",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_config.choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_config.custom_security",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_config.default_security",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_config.low_security",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.use_mtls.crl_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.use_mtls.crl",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.use_mtls.trusted_ca",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.use_mtls.xfcc_header",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.use_mtls.xfcc_disabled",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "default_lb_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.default_lb_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.default_loadbalancer",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.non_default_loadbalancer",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.mtls_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.no_mtls",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.use_mtls",
+        ],
+      },
+      {
+        choiceField: "path_normalize_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.path_normalize_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.disable_path_normalize",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.enable_path_normalize",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.port_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.port",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.port_ranges",
+        ],
+      },
+      {
+        choiceField: "server_header_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.server_header_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.append_server_name",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.default_header",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.pass_through",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.server_name",
+        ],
+      },
+      {
+        choiceField: "coalescing_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.coalescing_options.coalescing_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.coalescing_options.default_coalescing",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.coalescing_options.strict_coalescing",
+        ],
+      },
+      {
+        choiceField: "http_protocol_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_v2",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v2_only",
+        ],
+      },
+      {
+        choiceField: "header_transformation_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.header_transformation_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.default_header_transformation",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.legacy_header_transformation",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.preserve_case_header_transformation",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.proper_case_header_transformation",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.tls_config.choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.tls_config.custom_security",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.tls_config.default_security",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.tls_config.low_security",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.use_mtls.crl_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.use_mtls.crl",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.use_mtls.trusted_ca",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.use_mtls.xfcc_header",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.use_mtls.xfcc_disabled",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].custom_route_object",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].simple_route",
+        ],
+      },
+      {
+        choiceField: "value_match",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].value_match",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].exact",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].presence",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].regex",
+        ],
+      },
+      {
+        choiceField: "port_match",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.port_match",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.no_port_match",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.port",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.port_ranges",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.path.path_match",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.path.path",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.path.prefix",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.path.regex",
+        ],
+      },
+      {
+        choiceField: "value_match",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.headers[].value_match",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.headers[].exact",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.headers[].presence",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.headers[].regex",
+        ],
+      },
+      {
+        choiceField: "port_match",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.incoming_port.port_match",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.incoming_port.no_port_match",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.incoming_port.port",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.incoming_port.port_ranges",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.path.path_match",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.path.path",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.path.prefix",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.path.regex",
+        ],
+      },
+      {
+        choiceField: "query_params",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.query_params",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.remove_all_params",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.replace_params",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.retain_all_params",
+        ],
+      },
+      {
+        choiceField: "redirect_path_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.redirect_path_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.path_redirect",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.prefix_rewrite",
+        ],
+      },
+      {
+        choiceField: "host_rewrite_params",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].simple_route.host_rewrite_params",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].simple_route.auto_host_rewrite",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].simple_route.disable_host_rewrite",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].simple_route.host_rewrite",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].simple_route.path.path_match",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].simple_route.path.path",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].simple_route.path.prefix",
+          "spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].simple_route.path.regex",
+        ],
+      },
+      {
+        choiceField: "target_port_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_custom.ports[].port.info.target_port_choice",
+        options: [
+          "spec.service.advertise_options.advertise_custom.ports[].port.info.same_as_port",
+          "spec.service.advertise_options.advertise_custom.ports[].port.info.target_port",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.service.advertise_options.advertise_in_cluster.port_choice",
+        options: [
+          "spec.service.advertise_options.advertise_in_cluster.multi_ports",
+          "spec.service.advertise_options.advertise_in_cluster.port",
+        ],
+      },
+      {
+        choiceField: "target_port_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_in_cluster.multi_ports.ports[].info.target_port_choice",
+        options: [
+          "spec.service.advertise_options.advertise_in_cluster.multi_ports.ports[].info.same_as_port",
+          "spec.service.advertise_options.advertise_in_cluster.multi_ports.ports[].info.target_port",
+        ],
+      },
+      {
+        choiceField: "target_port_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_in_cluster.port.info.target_port_choice",
+        options: [
+          "spec.service.advertise_options.advertise_in_cluster.port.info.same_as_port",
+          "spec.service.advertise_options.advertise_in_cluster.port.info.target_port",
+        ],
+      },
+      {
+        choiceField: "advertise_choice",
+        fieldPath: "spec.service.advertise_options.advertise_on_public.advertise_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports",
+          "spec.service.advertise_options.advertise_on_public.port",
+        ],
+      },
+      {
+        choiceField: "advertise_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].advertise_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].tcp_loadbalancer",
+        ],
+      },
+      {
+        choiceField: "loadbalancer_type",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.loadbalancer_type",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.http",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert",
+        ],
+      },
+      {
+        choiceField: "route_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.route_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.default_route",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes",
+        ],
+      },
+      {
+        choiceField: "host_rewrite_params",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.default_route.host_rewrite_params",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.default_route.auto_host_rewrite",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.default_route.disable_host_rewrite",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.default_route.host_rewrite",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.http.port_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.http.port",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.http.port_ranges",
+        ],
+      },
+      {
+        choiceField: "default_lb_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.default_lb_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.default_loadbalancer",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.non_default_loadbalancer",
+        ],
+      },
+      {
+        choiceField: "path_normalize_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.path_normalize_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.disable_path_normalize",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.enable_path_normalize",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.port_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.port",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.port_ranges",
+        ],
+      },
+      {
+        choiceField: "server_header_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.server_header_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.append_server_name",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.default_header",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.pass_through",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.server_name",
+        ],
+      },
+      {
+        choiceField: "tls_certificates_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_certificates_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters",
+        ],
+      },
+      {
+        choiceField: "coalescing_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.coalescing_options.coalescing_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.coalescing_options.default_coalescing",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.coalescing_options.strict_coalescing",
+        ],
+      },
+      {
+        choiceField: "http_protocol_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_v2",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v2_only",
+        ],
+      },
+      {
+        choiceField: "header_transformation_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.header_transformation_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.default_header_transformation",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.legacy_header_transformation",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.preserve_case_header_transformation",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.proper_case_header_transformation",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.mtls_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.no_mtls",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.use_mtls",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.tls_config.choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.tls_config.custom_security",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.tls_config.default_security",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.tls_config.low_security",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.crl_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.crl",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.trusted_ca",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.xfcc_header",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.xfcc_disabled",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.mtls_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.no_mtls",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.use_mtls",
+        ],
+      },
+      {
+        choiceField: "ocsp_stapling_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].ocsp_stapling_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].custom_hash_algorithms",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].disable_ocsp_stapling",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].use_system_defaults",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].private_key.secret_info_oneof",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].private_key.blindfold_secret_info",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.tls_config.choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.tls_config.custom_security",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.tls_config.default_security",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.tls_config.low_security",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.use_mtls.crl_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.use_mtls.crl",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.use_mtls.trusted_ca",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.use_mtls.xfcc_header",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.use_mtls.xfcc_disabled",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "default_lb_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.default_lb_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.default_loadbalancer",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.non_default_loadbalancer",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.mtls_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.no_mtls",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.use_mtls",
+        ],
+      },
+      {
+        choiceField: "path_normalize_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.path_normalize_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.disable_path_normalize",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.enable_path_normalize",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.port_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.port",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.port_ranges",
+        ],
+      },
+      {
+        choiceField: "server_header_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.server_header_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.append_server_name",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.default_header",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.pass_through",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.server_name",
+        ],
+      },
+      {
+        choiceField: "coalescing_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.coalescing_options.coalescing_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.coalescing_options.default_coalescing",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.coalescing_options.strict_coalescing",
+        ],
+      },
+      {
+        choiceField: "http_protocol_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_v2",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v2_only",
+        ],
+      },
+      {
+        choiceField: "header_transformation_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.header_transformation_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.default_header_transformation",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.legacy_header_transformation",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.preserve_case_header_transformation",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.proper_case_header_transformation",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.tls_config.choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.tls_config.custom_security",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.tls_config.default_security",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.tls_config.low_security",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.use_mtls.crl_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.use_mtls.crl",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.use_mtls.trusted_ca",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.use_mtls.xfcc_header",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.use_mtls.xfcc_disabled",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].custom_route_object",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].simple_route",
+        ],
+      },
+      {
+        choiceField: "value_match",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].value_match",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].exact",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].presence",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].regex",
+        ],
+      },
+      {
+        choiceField: "port_match",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.port_match",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.no_port_match",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.port",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.port_ranges",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.path.path_match",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.path.path",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.path.prefix",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.path.regex",
+        ],
+      },
+      {
+        choiceField: "value_match",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.headers[].value_match",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.headers[].exact",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.headers[].presence",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.headers[].regex",
+        ],
+      },
+      {
+        choiceField: "port_match",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.incoming_port.port_match",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.incoming_port.no_port_match",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.incoming_port.port",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.incoming_port.port_ranges",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.path.path_match",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.path.path",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.path.prefix",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.path.regex",
+        ],
+      },
+      {
+        choiceField: "query_params",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.query_params",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.remove_all_params",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.replace_params",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.retain_all_params",
+        ],
+      },
+      {
+        choiceField: "redirect_path_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.redirect_path_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.path_redirect",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.prefix_rewrite",
+        ],
+      },
+      {
+        choiceField: "host_rewrite_params",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].simple_route.host_rewrite_params",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].simple_route.auto_host_rewrite",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].simple_route.disable_host_rewrite",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].simple_route.host_rewrite",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].simple_route.path.path_match",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].simple_route.path.path",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].simple_route.path.prefix",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].simple_route.path.regex",
+        ],
+      },
+      {
+        choiceField: "target_port_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].port.info.target_port_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].port.info.same_as_port",
+          "spec.service.advertise_options.advertise_on_public.multi_ports.ports[].port.info.target_port",
+        ],
+      },
+      {
+        choiceField: "advertise_choice",
+        fieldPath: "spec.service.advertise_options.advertise_on_public.port.advertise_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer",
+          "spec.service.advertise_options.advertise_on_public.port.tcp_loadbalancer",
+        ],
+      },
+      {
+        choiceField: "loadbalancer_type",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.loadbalancer_type",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.http",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert",
+        ],
+      },
+      {
+        choiceField: "route_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.route_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.default_route",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes",
+        ],
+      },
+      {
+        choiceField: "host_rewrite_params",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.default_route.host_rewrite_params",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.default_route.auto_host_rewrite",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.default_route.disable_host_rewrite",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.default_route.host_rewrite",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.http.port_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.http.port",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.http.port_ranges",
+        ],
+      },
+      {
+        choiceField: "default_lb_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.default_lb_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.default_loadbalancer",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.non_default_loadbalancer",
+        ],
+      },
+      {
+        choiceField: "path_normalize_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.path_normalize_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.disable_path_normalize",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.enable_path_normalize",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.port_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.port",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.port_ranges",
+        ],
+      },
+      {
+        choiceField: "server_header_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.server_header_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.append_server_name",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.default_header",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.pass_through",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.server_name",
+        ],
+      },
+      {
+        choiceField: "tls_certificates_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_certificates_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters",
+        ],
+      },
+      {
+        choiceField: "coalescing_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.coalescing_options.coalescing_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.coalescing_options.default_coalescing",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.coalescing_options.strict_coalescing",
+        ],
+      },
+      {
+        choiceField: "http_protocol_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.http_protocol_options.http_protocol_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_v2",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.http_protocol_options.http_protocol_enable_v2_only",
+        ],
+      },
+      {
+        choiceField: "header_transformation_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.header_transformation_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.default_header_transformation",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.legacy_header_transformation",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.preserve_case_header_transformation",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.proper_case_header_transformation",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.mtls_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.no_mtls",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.use_mtls",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.tls_config.choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.tls_config.custom_security",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.tls_config.default_security",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.tls_config.low_security",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.use_mtls.crl_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.use_mtls.crl",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.use_mtls.trusted_ca",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.use_mtls.xfcc_header",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.use_mtls.xfcc_disabled",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.mtls_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.no_mtls",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.use_mtls",
+        ],
+      },
+      {
+        choiceField: "ocsp_stapling_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.tls_certificates[].ocsp_stapling_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.tls_certificates[].custom_hash_algorithms",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.tls_certificates[].disable_ocsp_stapling",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.tls_certificates[].use_system_defaults",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.tls_certificates[].private_key.secret_info_oneof",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.tls_certificates[].private_key.blindfold_secret_info",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.tls_certificates[].private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.tls_config.choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.tls_config.custom_security",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.tls_config.default_security",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.tls_config.low_security",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.use_mtls.crl_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.use_mtls.crl",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.use_mtls.trusted_ca",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.use_mtls.xfcc_header",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.use_mtls.xfcc_disabled",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "default_lb_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.default_lb_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.default_loadbalancer",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.non_default_loadbalancer",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.mtls_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.no_mtls",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.use_mtls",
+        ],
+      },
+      {
+        choiceField: "path_normalize_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.path_normalize_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.disable_path_normalize",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.enable_path_normalize",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.port_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.port",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.port_ranges",
+        ],
+      },
+      {
+        choiceField: "server_header_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.server_header_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.append_server_name",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.default_header",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.pass_through",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.server_name",
+        ],
+      },
+      {
+        choiceField: "coalescing_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.coalescing_options.coalescing_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.coalescing_options.default_coalescing",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.coalescing_options.strict_coalescing",
+        ],
+      },
+      {
+        choiceField: "http_protocol_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_v2",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v2_only",
+        ],
+      },
+      {
+        choiceField: "header_transformation_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.header_transformation_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.default_header_transformation",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.legacy_header_transformation",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.preserve_case_header_transformation",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.proper_case_header_transformation",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.tls_config.choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.tls_config.custom_security",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.tls_config.default_security",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.tls_config.low_security",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.use_mtls.crl_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.use_mtls.crl",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.use_mtls.trusted_ca",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.use_mtls.xfcc_header",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.use_mtls.xfcc_disabled",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].custom_route_object",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].simple_route",
+        ],
+      },
+      {
+        choiceField: "value_match",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].value_match",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].exact",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].presence",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].regex",
+        ],
+      },
+      {
+        choiceField: "port_match",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.port_match",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.no_port_match",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.port",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.port_ranges",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route.path.path_match",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route.path.path",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route.path.prefix",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route.path.regex",
+        ],
+      },
+      {
+        choiceField: "value_match",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.headers[].value_match",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.headers[].exact",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.headers[].presence",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.headers[].regex",
+        ],
+      },
+      {
+        choiceField: "port_match",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.incoming_port.port_match",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.incoming_port.no_port_match",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.incoming_port.port",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.incoming_port.port_ranges",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.path.path_match",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.path.path",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.path.prefix",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.path.regex",
+        ],
+      },
+      {
+        choiceField: "query_params",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.query_params",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.remove_all_params",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.replace_params",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.retain_all_params",
+        ],
+      },
+      {
+        choiceField: "redirect_path_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.redirect_path_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.path_redirect",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.prefix_rewrite",
+        ],
+      },
+      {
+        choiceField: "host_rewrite_params",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].simple_route.host_rewrite_params",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].simple_route.auto_host_rewrite",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].simple_route.disable_host_rewrite",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].simple_route.host_rewrite",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].simple_route.path.path_match",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].simple_route.path.path",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].simple_route.path.prefix",
+          "spec.service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].simple_route.path.regex",
+        ],
+      },
+      {
+        choiceField: "target_port_choice",
+        fieldPath:
+          "spec.service.advertise_options.advertise_on_public.port.port.info.target_port_choice",
+        options: [
+          "spec.service.advertise_options.advertise_on_public.port.port.info.same_as_port",
+          "spec.service.advertise_options.advertise_on_public.port.port.info.target_port",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.service.configuration.parameters[].choice",
+        options: [
+          "spec.service.configuration.parameters[].env_var",
+          "spec.service.configuration.parameters[].file",
+        ],
+      },
+      {
+        choiceField: "flavor_choice",
+        fieldPath: "spec.service.containers[].flavor_choice",
+        options: [
+          "spec.service.containers[].custom_flavor",
+          "spec.service.containers[].default_flavor",
+          "spec.service.containers[].flavor",
+        ],
+      },
+      {
+        choiceField: "registry_choice",
+        fieldPath: "spec.service.containers[].image.registry_choice",
+        options: [
+          "spec.service.containers[].image.container_registry",
+          "spec.service.containers[].image.public",
+        ],
+      },
+      {
+        choiceField: "health_check_choice",
+        fieldPath: "spec.service.containers[].liveness_check.health_check_choice",
+        options: [
+          "spec.service.containers[].liveness_check.exec_health_check",
+          "spec.service.containers[].liveness_check.http_health_check",
+          "spec.service.containers[].liveness_check.tcp_health_check",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.service.containers[].liveness_check.http_health_check.port.port_choice",
+        options: [
+          "spec.service.containers[].liveness_check.http_health_check.port.name",
+          "spec.service.containers[].liveness_check.http_health_check.port.num",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.service.containers[].liveness_check.tcp_health_check.port.port_choice",
+        options: [
+          "spec.service.containers[].liveness_check.tcp_health_check.port.name",
+          "spec.service.containers[].liveness_check.tcp_health_check.port.num",
+        ],
+      },
+      {
+        choiceField: "health_check_choice",
+        fieldPath: "spec.service.containers[].readiness_check.health_check_choice",
+        options: [
+          "spec.service.containers[].readiness_check.exec_health_check",
+          "spec.service.containers[].readiness_check.http_health_check",
+          "spec.service.containers[].readiness_check.tcp_health_check",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.service.containers[].readiness_check.http_health_check.port.port_choice",
+        options: [
+          "spec.service.containers[].readiness_check.http_health_check.port.name",
+          "spec.service.containers[].readiness_check.http_health_check.port.num",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.service.containers[].readiness_check.tcp_health_check.port.port_choice",
+        options: [
+          "spec.service.containers[].readiness_check.tcp_health_check.port.name",
+          "spec.service.containers[].readiness_check.tcp_health_check.port.num",
+        ],
+      },
+      {
+        choiceField: "deploy_choice",
+        fieldPath: "spec.service.deploy_options.deploy_choice",
+        options: [
+          "spec.service.deploy_options.all_res",
+          "spec.service.deploy_options.default_virtual_sites",
+          "spec.service.deploy_options.deploy_ce_sites",
+          "spec.service.deploy_options.deploy_ce_virtual_sites",
+          "spec.service.deploy_options.deploy_re_sites",
+          "spec.service.deploy_options.deploy_re_virtual_sites",
+        ],
+      },
+      {
+        choiceField: "volume_choice",
+        fieldPath: "spec.service.volumes[].volume_choice",
+        options: [
+          "spec.service.volumes[].empty_dir",
+          "spec.service.volumes[].host_path",
+          "spec.service.volumes[].persistent_volume",
+        ],
+      },
+      {
+        choiceField: "class_name_choice",
+        fieldPath: "spec.service.volumes[].persistent_volume.storage.class_name_choice",
+        options: [
+          "spec.service.volumes[].persistent_volume.storage.class_name",
+          "spec.service.volumes[].persistent_volume.storage.default",
+        ],
+      },
+      {
+        choiceField: "advertise_choice",
+        fieldPath: "spec.simple_service.advertise_choice",
+        options: ["spec.simple_service.do_not_advertise", "spec.simple_service.simple_advertise"],
+      },
+      {
+        choiceField: "persistence_choice",
+        fieldPath: "spec.simple_service.persistence_choice",
+        options: ["spec.simple_service.disabled", "spec.simple_service.enabled"],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.simple_service.configuration.parameters[].choice",
+        options: [
+          "spec.simple_service.configuration.parameters[].env_var",
+          "spec.simple_service.configuration.parameters[].file",
+        ],
+      },
+      {
+        choiceField: "flavor_choice",
+        fieldPath: "spec.simple_service.container.flavor_choice",
+        options: [
+          "spec.simple_service.container.custom_flavor",
+          "spec.simple_service.container.default_flavor",
+          "spec.simple_service.container.flavor",
+        ],
+      },
+      {
+        choiceField: "registry_choice",
+        fieldPath: "spec.simple_service.container.image.registry_choice",
+        options: [
+          "spec.simple_service.container.image.container_registry",
+          "spec.simple_service.container.image.public",
+        ],
+      },
+      {
+        choiceField: "health_check_choice",
+        fieldPath: "spec.simple_service.container.liveness_check.health_check_choice",
+        options: [
+          "spec.simple_service.container.liveness_check.exec_health_check",
+          "spec.simple_service.container.liveness_check.http_health_check",
+          "spec.simple_service.container.liveness_check.tcp_health_check",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.simple_service.container.liveness_check.http_health_check.port.port_choice",
+        options: [
+          "spec.simple_service.container.liveness_check.http_health_check.port.name",
+          "spec.simple_service.container.liveness_check.http_health_check.port.num",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.simple_service.container.liveness_check.tcp_health_check.port.port_choice",
+        options: [
+          "spec.simple_service.container.liveness_check.tcp_health_check.port.name",
+          "spec.simple_service.container.liveness_check.tcp_health_check.port.num",
+        ],
+      },
+      {
+        choiceField: "health_check_choice",
+        fieldPath: "spec.simple_service.container.readiness_check.health_check_choice",
+        options: [
+          "spec.simple_service.container.readiness_check.exec_health_check",
+          "spec.simple_service.container.readiness_check.http_health_check",
+          "spec.simple_service.container.readiness_check.tcp_health_check",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.simple_service.container.readiness_check.http_health_check.port.port_choice",
+        options: [
+          "spec.simple_service.container.readiness_check.http_health_check.port.name",
+          "spec.simple_service.container.readiness_check.http_health_check.port.num",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.simple_service.container.readiness_check.tcp_health_check.port.port_choice",
+        options: [
+          "spec.simple_service.container.readiness_check.tcp_health_check.port.name",
+          "spec.simple_service.container.readiness_check.tcp_health_check.port.num",
+        ],
+      },
+      {
+        choiceField: "class_name_choice",
+        fieldPath: "spec.simple_service.enabled.persistent_volume.storage.class_name_choice",
+        options: [
+          "spec.simple_service.enabled.persistent_volume.storage.class_name",
+          "spec.simple_service.enabled.persistent_volume.storage.default",
+        ],
+      },
+      {
+        choiceField: "scaling_choice",
+        fieldPath: "spec.stateful_service.scaling_choice",
+        options: ["spec.stateful_service.num_replicas", "spec.stateful_service.scale_to_zero"],
+      },
+      {
+        choiceField: "advertise_choice",
+        fieldPath: "spec.stateful_service.advertise_options.advertise_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom",
+          "spec.stateful_service.advertise_options.advertise_in_cluster",
+          "spec.stateful_service.advertise_options.advertise_on_public",
+          "spec.stateful_service.advertise_options.do_not_advertise",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.advertise_where[].choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.advertise_where[].site",
+          "spec.stateful_service.advertise_options.advertise_custom.advertise_where[].virtual_site",
+          "spec.stateful_service.advertise_options.advertise_custom.advertise_where[].vk8s_service",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.advertise_where[].vk8s_service.choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.advertise_where[].vk8s_service.site",
+          "spec.stateful_service.advertise_options.advertise_custom.advertise_where[].vk8s_service.virtual_site",
+        ],
+      },
+      {
+        choiceField: "advertise_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].advertise_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].tcp_loadbalancer",
+        ],
+      },
+      {
+        choiceField: "loadbalancer_type",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.loadbalancer_type",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.http",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert",
+        ],
+      },
+      {
+        choiceField: "route_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.route_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.default_route",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes",
+        ],
+      },
+      {
+        choiceField: "host_rewrite_params",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.default_route.host_rewrite_params",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.default_route.auto_host_rewrite",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.default_route.disable_host_rewrite",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.default_route.host_rewrite",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.http.port_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.http.port",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.http.port_ranges",
+        ],
+      },
+      {
+        choiceField: "default_lb_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.default_lb_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.default_loadbalancer",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.non_default_loadbalancer",
+        ],
+      },
+      {
+        choiceField: "path_normalize_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.path_normalize_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.disable_path_normalize",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.enable_path_normalize",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.port_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.port",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.port_ranges",
+        ],
+      },
+      {
+        choiceField: "server_header_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.server_header_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.append_server_name",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.default_header",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.pass_through",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.server_name",
+        ],
+      },
+      {
+        choiceField: "tls_certificates_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_certificates_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters",
+        ],
+      },
+      {
+        choiceField: "coalescing_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.coalescing_options.coalescing_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.coalescing_options.default_coalescing",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.coalescing_options.strict_coalescing",
+        ],
+      },
+      {
+        choiceField: "http_protocol_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_v2",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v2_only",
+        ],
+      },
+      {
+        choiceField: "header_transformation_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.header_transformation_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.default_header_transformation",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.legacy_header_transformation",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.preserve_case_header_transformation",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.proper_case_header_transformation",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.mtls_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.no_mtls",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.use_mtls",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.tls_config.choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.tls_config.custom_security",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.tls_config.default_security",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.tls_config.low_security",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.crl_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.crl",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.trusted_ca",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.xfcc_header",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.xfcc_disabled",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.mtls_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.no_mtls",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.use_mtls",
+        ],
+      },
+      {
+        choiceField: "ocsp_stapling_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].ocsp_stapling_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].custom_hash_algorithms",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].disable_ocsp_stapling",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].use_system_defaults",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].private_key.secret_info_oneof",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].private_key.blindfold_secret_info",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_config.choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_config.custom_security",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_config.default_security",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_config.low_security",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.use_mtls.crl_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.use_mtls.crl",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.use_mtls.trusted_ca",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.use_mtls.xfcc_header",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.use_mtls.xfcc_disabled",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "default_lb_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.default_lb_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.default_loadbalancer",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.non_default_loadbalancer",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.mtls_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.no_mtls",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.use_mtls",
+        ],
+      },
+      {
+        choiceField: "path_normalize_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.path_normalize_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.disable_path_normalize",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.enable_path_normalize",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.port_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.port",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.port_ranges",
+        ],
+      },
+      {
+        choiceField: "server_header_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.server_header_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.append_server_name",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.default_header",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.pass_through",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.server_name",
+        ],
+      },
+      {
+        choiceField: "coalescing_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.coalescing_options.coalescing_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.coalescing_options.default_coalescing",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.coalescing_options.strict_coalescing",
+        ],
+      },
+      {
+        choiceField: "http_protocol_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_v2",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v2_only",
+        ],
+      },
+      {
+        choiceField: "header_transformation_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.header_transformation_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.default_header_transformation",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.legacy_header_transformation",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.preserve_case_header_transformation",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.proper_case_header_transformation",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.tls_config.choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.tls_config.custom_security",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.tls_config.default_security",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.tls_config.low_security",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.use_mtls.crl_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.use_mtls.crl",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.use_mtls.trusted_ca",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.use_mtls.xfcc_header",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.use_mtls.xfcc_disabled",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].custom_route_object",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].simple_route",
+        ],
+      },
+      {
+        choiceField: "value_match",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].value_match",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].exact",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].presence",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].regex",
+        ],
+      },
+      {
+        choiceField: "port_match",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.port_match",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.no_port_match",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.port",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.port_ranges",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.path.path_match",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.path.path",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.path.prefix",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.path.regex",
+        ],
+      },
+      {
+        choiceField: "value_match",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.headers[].value_match",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.headers[].exact",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.headers[].presence",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.headers[].regex",
+        ],
+      },
+      {
+        choiceField: "port_match",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.incoming_port.port_match",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.incoming_port.no_port_match",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.incoming_port.port",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.incoming_port.port_ranges",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.path.path_match",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.path.path",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.path.prefix",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.path.regex",
+        ],
+      },
+      {
+        choiceField: "query_params",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.query_params",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.remove_all_params",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.replace_params",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.retain_all_params",
+        ],
+      },
+      {
+        choiceField: "redirect_path_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.redirect_path_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.path_redirect",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.prefix_rewrite",
+        ],
+      },
+      {
+        choiceField: "host_rewrite_params",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].simple_route.host_rewrite_params",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].simple_route.auto_host_rewrite",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].simple_route.disable_host_rewrite",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].simple_route.host_rewrite",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].simple_route.path.path_match",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].simple_route.path.path",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].simple_route.path.prefix",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].simple_route.path.regex",
+        ],
+      },
+      {
+        choiceField: "target_port_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].port.info.target_port_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].port.info.same_as_port",
+          "spec.stateful_service.advertise_options.advertise_custom.ports[].port.info.target_port",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.stateful_service.advertise_options.advertise_in_cluster.port_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_in_cluster.multi_ports",
+          "spec.stateful_service.advertise_options.advertise_in_cluster.port",
+        ],
+      },
+      {
+        choiceField: "target_port_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_in_cluster.multi_ports.ports[].info.target_port_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_in_cluster.multi_ports.ports[].info.same_as_port",
+          "spec.stateful_service.advertise_options.advertise_in_cluster.multi_ports.ports[].info.target_port",
+        ],
+      },
+      {
+        choiceField: "target_port_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_in_cluster.port.info.target_port_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_in_cluster.port.info.same_as_port",
+          "spec.stateful_service.advertise_options.advertise_in_cluster.port.info.target_port",
+        ],
+      },
+      {
+        choiceField: "advertise_choice",
+        fieldPath: "spec.stateful_service.advertise_options.advertise_on_public.advertise_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports",
+          "spec.stateful_service.advertise_options.advertise_on_public.port",
+        ],
+      },
+      {
+        choiceField: "advertise_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].advertise_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].tcp_loadbalancer",
+        ],
+      },
+      {
+        choiceField: "loadbalancer_type",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.loadbalancer_type",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.http",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert",
+        ],
+      },
+      {
+        choiceField: "route_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.route_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.default_route",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes",
+        ],
+      },
+      {
+        choiceField: "host_rewrite_params",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.default_route.host_rewrite_params",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.default_route.auto_host_rewrite",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.default_route.disable_host_rewrite",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.default_route.host_rewrite",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.http.port_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.http.port",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.http.port_ranges",
+        ],
+      },
+      {
+        choiceField: "default_lb_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.default_lb_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.default_loadbalancer",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.non_default_loadbalancer",
+        ],
+      },
+      {
+        choiceField: "path_normalize_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.path_normalize_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.disable_path_normalize",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.enable_path_normalize",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.port_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.port",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.port_ranges",
+        ],
+      },
+      {
+        choiceField: "server_header_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.server_header_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.append_server_name",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.default_header",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.pass_through",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.server_name",
+        ],
+      },
+      {
+        choiceField: "tls_certificates_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_certificates_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters",
+        ],
+      },
+      {
+        choiceField: "coalescing_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.coalescing_options.coalescing_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.coalescing_options.default_coalescing",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.coalescing_options.strict_coalescing",
+        ],
+      },
+      {
+        choiceField: "http_protocol_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_v2",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v2_only",
+        ],
+      },
+      {
+        choiceField: "header_transformation_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.header_transformation_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.default_header_transformation",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.legacy_header_transformation",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.preserve_case_header_transformation",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.proper_case_header_transformation",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.mtls_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.no_mtls",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.use_mtls",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.tls_config.choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.tls_config.custom_security",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.tls_config.default_security",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.tls_config.low_security",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.crl_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.crl",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.trusted_ca",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.xfcc_header",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.xfcc_disabled",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.mtls_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.no_mtls",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.use_mtls",
+        ],
+      },
+      {
+        choiceField: "ocsp_stapling_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].ocsp_stapling_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].custom_hash_algorithms",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].disable_ocsp_stapling",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].use_system_defaults",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].private_key.secret_info_oneof",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].private_key.blindfold_secret_info",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.tls_config.choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.tls_config.custom_security",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.tls_config.default_security",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.tls_config.low_security",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.use_mtls.crl_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.use_mtls.crl",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.use_mtls.trusted_ca",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.use_mtls.xfcc_header",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.use_mtls.xfcc_disabled",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https.tls_parameters.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "default_lb_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.default_lb_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.default_loadbalancer",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.non_default_loadbalancer",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.mtls_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.no_mtls",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.use_mtls",
+        ],
+      },
+      {
+        choiceField: "path_normalize_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.path_normalize_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.disable_path_normalize",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.enable_path_normalize",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.port_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.port",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.port_ranges",
+        ],
+      },
+      {
+        choiceField: "server_header_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.server_header_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.append_server_name",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.default_header",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.pass_through",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.server_name",
+        ],
+      },
+      {
+        choiceField: "coalescing_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.coalescing_options.coalescing_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.coalescing_options.default_coalescing",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.coalescing_options.strict_coalescing",
+        ],
+      },
+      {
+        choiceField: "http_protocol_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_v2",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v2_only",
+        ],
+      },
+      {
+        choiceField: "header_transformation_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.header_transformation_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.default_header_transformation",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.legacy_header_transformation",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.preserve_case_header_transformation",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.proper_case_header_transformation",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.tls_config.choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.tls_config.custom_security",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.tls_config.default_security",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.tls_config.low_security",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.use_mtls.crl_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.use_mtls.crl",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.use_mtls.trusted_ca",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.use_mtls.xfcc_header",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.use_mtls.xfcc_disabled",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.https_auto_cert.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].custom_route_object",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].simple_route",
+        ],
+      },
+      {
+        choiceField: "value_match",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].value_match",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].exact",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].presence",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].regex",
+        ],
+      },
+      {
+        choiceField: "port_match",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.port_match",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.no_port_match",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.port",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.port_ranges",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.path.path_match",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.path.path",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.path.prefix",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.path.regex",
+        ],
+      },
+      {
+        choiceField: "value_match",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.headers[].value_match",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.headers[].exact",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.headers[].presence",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.headers[].regex",
+        ],
+      },
+      {
+        choiceField: "port_match",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.incoming_port.port_match",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.incoming_port.no_port_match",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.incoming_port.port",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.incoming_port.port_ranges",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.path.path_match",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.path.path",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.path.prefix",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.path.regex",
+        ],
+      },
+      {
+        choiceField: "query_params",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.query_params",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.remove_all_params",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.replace_params",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.retain_all_params",
+        ],
+      },
+      {
+        choiceField: "redirect_path_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.redirect_path_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.path_redirect",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.prefix_rewrite",
+        ],
+      },
+      {
+        choiceField: "host_rewrite_params",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].simple_route.host_rewrite_params",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].simple_route.auto_host_rewrite",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].simple_route.disable_host_rewrite",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].simple_route.host_rewrite",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].simple_route.path.path_match",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].simple_route.path.path",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].simple_route.path.prefix",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].http_loadbalancer.specific_routes.routes[].simple_route.path.regex",
+        ],
+      },
+      {
+        choiceField: "target_port_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].port.info.target_port_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].port.info.same_as_port",
+          "spec.stateful_service.advertise_options.advertise_on_public.multi_ports.ports[].port.info.target_port",
+        ],
+      },
+      {
+        choiceField: "advertise_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.advertise_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.tcp_loadbalancer",
+        ],
+      },
+      {
+        choiceField: "loadbalancer_type",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.loadbalancer_type",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.http",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert",
+        ],
+      },
+      {
+        choiceField: "route_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.route_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.default_route",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes",
+        ],
+      },
+      {
+        choiceField: "host_rewrite_params",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.default_route.host_rewrite_params",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.default_route.auto_host_rewrite",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.default_route.disable_host_rewrite",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.default_route.host_rewrite",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.http.port_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.http.port",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.http.port_ranges",
+        ],
+      },
+      {
+        choiceField: "default_lb_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.default_lb_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.default_loadbalancer",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.non_default_loadbalancer",
+        ],
+      },
+      {
+        choiceField: "path_normalize_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.path_normalize_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.disable_path_normalize",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.enable_path_normalize",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.port_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.port",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.port_ranges",
+        ],
+      },
+      {
+        choiceField: "server_header_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.server_header_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.append_server_name",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.default_header",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.pass_through",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.server_name",
+        ],
+      },
+      {
+        choiceField: "tls_certificates_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_certificates_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters",
+        ],
+      },
+      {
+        choiceField: "coalescing_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.coalescing_options.coalescing_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.coalescing_options.default_coalescing",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.coalescing_options.strict_coalescing",
+        ],
+      },
+      {
+        choiceField: "http_protocol_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.http_protocol_options.http_protocol_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_v2",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.http_protocol_options.http_protocol_enable_v2_only",
+        ],
+      },
+      {
+        choiceField: "header_transformation_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.header_transformation_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.default_header_transformation",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.legacy_header_transformation",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.preserve_case_header_transformation",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.proper_case_header_transformation",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.mtls_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.no_mtls",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.use_mtls",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.tls_config.choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.tls_config.custom_security",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.tls_config.default_security",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.tls_config.low_security",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.use_mtls.crl_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.use_mtls.crl",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.use_mtls.trusted_ca",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.use_mtls.xfcc_header",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.use_mtls.xfcc_disabled",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_cert_params.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.mtls_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.no_mtls",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.use_mtls",
+        ],
+      },
+      {
+        choiceField: "ocsp_stapling_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.tls_certificates[].ocsp_stapling_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.tls_certificates[].custom_hash_algorithms",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.tls_certificates[].disable_ocsp_stapling",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.tls_certificates[].use_system_defaults",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.tls_certificates[].private_key.secret_info_oneof",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.tls_certificates[].private_key.blindfold_secret_info",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.tls_certificates[].private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.tls_config.choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.tls_config.custom_security",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.tls_config.default_security",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.tls_config.low_security",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.use_mtls.crl_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.use_mtls.crl",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.use_mtls.trusted_ca",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.use_mtls.xfcc_header",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.use_mtls.xfcc_disabled",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https.tls_parameters.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "default_lb_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.default_lb_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.default_loadbalancer",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.non_default_loadbalancer",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.mtls_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.no_mtls",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.use_mtls",
+        ],
+      },
+      {
+        choiceField: "path_normalize_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.path_normalize_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.disable_path_normalize",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.enable_path_normalize",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.port_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.port",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.port_ranges",
+        ],
+      },
+      {
+        choiceField: "server_header_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.server_header_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.append_server_name",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.default_header",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.pass_through",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.server_name",
+        ],
+      },
+      {
+        choiceField: "coalescing_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.coalescing_options.coalescing_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.coalescing_options.default_coalescing",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.coalescing_options.strict_coalescing",
+        ],
+      },
+      {
+        choiceField: "http_protocol_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_v2",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v2_only",
+        ],
+      },
+      {
+        choiceField: "header_transformation_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.header_transformation_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.default_header_transformation",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.legacy_header_transformation",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.preserve_case_header_transformation",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.proper_case_header_transformation",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.tls_config.choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.tls_config.custom_security",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.tls_config.default_security",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.tls_config.low_security",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.use_mtls.crl_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.use_mtls.crl",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.use_mtls.trusted_ca",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.use_mtls.xfcc_header",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.use_mtls.xfcc_disabled",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.https_auto_cert.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].custom_route_object",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].simple_route",
+        ],
+      },
+      {
+        choiceField: "value_match",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].value_match",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].exact",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].presence",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].regex",
+        ],
+      },
+      {
+        choiceField: "port_match",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.port_match",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.no_port_match",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.port",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.port_ranges",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route.path.path_match",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route.path.path",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route.path.prefix",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].direct_response_route.path.regex",
+        ],
+      },
+      {
+        choiceField: "value_match",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.headers[].value_match",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.headers[].exact",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.headers[].presence",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.headers[].regex",
+        ],
+      },
+      {
+        choiceField: "port_match",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.incoming_port.port_match",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.incoming_port.no_port_match",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.incoming_port.port",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.incoming_port.port_ranges",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.path.path_match",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.path.path",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.path.prefix",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.path.regex",
+        ],
+      },
+      {
+        choiceField: "query_params",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.query_params",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.remove_all_params",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.replace_params",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.retain_all_params",
+        ],
+      },
+      {
+        choiceField: "redirect_path_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.redirect_path_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.path_redirect",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.prefix_rewrite",
+        ],
+      },
+      {
+        choiceField: "host_rewrite_params",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].simple_route.host_rewrite_params",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].simple_route.auto_host_rewrite",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].simple_route.disable_host_rewrite",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].simple_route.host_rewrite",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].simple_route.path.path_match",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].simple_route.path.path",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].simple_route.path.prefix",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.http_loadbalancer.specific_routes.routes[].simple_route.path.regex",
+        ],
+      },
+      {
+        choiceField: "target_port_choice",
+        fieldPath:
+          "spec.stateful_service.advertise_options.advertise_on_public.port.port.info.target_port_choice",
+        options: [
+          "spec.stateful_service.advertise_options.advertise_on_public.port.port.info.same_as_port",
+          "spec.stateful_service.advertise_options.advertise_on_public.port.port.info.target_port",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.stateful_service.configuration.parameters[].choice",
+        options: [
+          "spec.stateful_service.configuration.parameters[].env_var",
+          "spec.stateful_service.configuration.parameters[].file",
+        ],
+      },
+      {
+        choiceField: "flavor_choice",
+        fieldPath: "spec.stateful_service.containers[].flavor_choice",
+        options: [
+          "spec.stateful_service.containers[].custom_flavor",
+          "spec.stateful_service.containers[].default_flavor",
+          "spec.stateful_service.containers[].flavor",
+        ],
+      },
+      {
+        choiceField: "registry_choice",
+        fieldPath: "spec.stateful_service.containers[].image.registry_choice",
+        options: [
+          "spec.stateful_service.containers[].image.container_registry",
+          "spec.stateful_service.containers[].image.public",
+        ],
+      },
+      {
+        choiceField: "health_check_choice",
+        fieldPath: "spec.stateful_service.containers[].liveness_check.health_check_choice",
+        options: [
+          "spec.stateful_service.containers[].liveness_check.exec_health_check",
+          "spec.stateful_service.containers[].liveness_check.http_health_check",
+          "spec.stateful_service.containers[].liveness_check.tcp_health_check",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.stateful_service.containers[].liveness_check.http_health_check.port.port_choice",
+        options: [
+          "spec.stateful_service.containers[].liveness_check.http_health_check.port.name",
+          "spec.stateful_service.containers[].liveness_check.http_health_check.port.num",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.stateful_service.containers[].liveness_check.tcp_health_check.port.port_choice",
+        options: [
+          "spec.stateful_service.containers[].liveness_check.tcp_health_check.port.name",
+          "spec.stateful_service.containers[].liveness_check.tcp_health_check.port.num",
+        ],
+      },
+      {
+        choiceField: "health_check_choice",
+        fieldPath: "spec.stateful_service.containers[].readiness_check.health_check_choice",
+        options: [
+          "spec.stateful_service.containers[].readiness_check.exec_health_check",
+          "spec.stateful_service.containers[].readiness_check.http_health_check",
+          "spec.stateful_service.containers[].readiness_check.tcp_health_check",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.stateful_service.containers[].readiness_check.http_health_check.port.port_choice",
+        options: [
+          "spec.stateful_service.containers[].readiness_check.http_health_check.port.name",
+          "spec.stateful_service.containers[].readiness_check.http_health_check.port.num",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath:
+          "spec.stateful_service.containers[].readiness_check.tcp_health_check.port.port_choice",
+        options: [
+          "spec.stateful_service.containers[].readiness_check.tcp_health_check.port.name",
+          "spec.stateful_service.containers[].readiness_check.tcp_health_check.port.num",
+        ],
+      },
+      {
+        choiceField: "deploy_choice",
+        fieldPath: "spec.stateful_service.deploy_options.deploy_choice",
+        options: [
+          "spec.stateful_service.deploy_options.all_res",
+          "spec.stateful_service.deploy_options.default_virtual_sites",
+          "spec.stateful_service.deploy_options.deploy_ce_sites",
+          "spec.stateful_service.deploy_options.deploy_ce_virtual_sites",
+          "spec.stateful_service.deploy_options.deploy_re_sites",
+          "spec.stateful_service.deploy_options.deploy_re_virtual_sites",
+        ],
+      },
+      {
+        choiceField: "class_name_choice",
+        fieldPath:
+          "spec.stateful_service.persistent_volumes[].persistent_volume.storage.class_name_choice",
+        options: [
+          "spec.stateful_service.persistent_volumes[].persistent_volume.storage.class_name",
+          "spec.stateful_service.persistent_volumes[].persistent_volume.storage.default",
+        ],
+      },
+      {
+        choiceField: "volume_choice",
+        fieldPath: "spec.stateful_service.volumes[].volume_choice",
+        options: [
+          "spec.stateful_service.volumes[].empty_dir",
+          "spec.stateful_service.volumes[].host_path",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_site_management_standard",

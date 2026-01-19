@@ -6,9 +6,6 @@ description: Subscribe to Mobile App Shield.
 
 # Subscribe
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Subscribe to Mobile App Shield.
 
 ## Tools
@@ -16,14 +13,6 @@ Subscribe to Mobile App Shield.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-shape-subscribe-create` | Subscribe to Mobile App Shield. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- subscribe
 
 ## Example Usage
 

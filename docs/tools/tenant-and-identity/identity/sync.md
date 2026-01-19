@@ -6,9 +6,6 @@ description: Sync user
 
 # Sync
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 In case when user created initially from identity provider we need to sync the user data.
 
 ## Tools
@@ -16,14 +13,6 @@ In case when user created initially from identity provider we need to sync the u
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-tenantandidentity-sync-create` | Sync user |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- sync
 
 ## Example Usage
 

@@ -6,9 +6,6 @@ description: GET ntfn preferences.
 
 # Notification
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET ntfn preferences gets current notification preferences for user.
 It combines information from
 two sources:
@@ -24,14 +21,6 @@ from uam config (for those notifications which not explicitly set)
 |------|-------------|
 | `f5xc-api-tenantandidentity-notification-list` | GET ntfn preferences. |
 | `f5xc-api-tenantandidentity-notification-update` | Update ntfn preferences. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Modifies:**
-
-- notification
 
 ## Example Usage
 

@@ -6,9 +6,6 @@ description: GET Total API Calls for Virtual Host.
 
 # Calls By Response Code
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET total API calls for the given Virtual Host.
 
 ## Tools
@@ -25,14 +22,6 @@ GET total API calls for the given Virtual Host.
 |-----------|-------------|--------|
 | `name` | Virtual Host Name | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- calls-by-response-code
 
 ## Example Usage
 

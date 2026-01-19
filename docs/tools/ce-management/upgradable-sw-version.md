@@ -6,9 +6,6 @@ description: GET Upgradable SW Versions.
 
 # Upgradable Sw Version
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 API to GET list of sw versions that can be upgraded to.
 
 ## Tools

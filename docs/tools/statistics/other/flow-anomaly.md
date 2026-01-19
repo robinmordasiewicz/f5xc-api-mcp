@@ -6,9 +6,6 @@ description: GET Flow Anomaly.
 
 # Flow Anomaly
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 List the set of flow_anomaly in a namespace.
 
 ## Tools

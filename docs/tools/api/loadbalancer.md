@@ -6,9 +6,6 @@ description: GET Referencing Loadbalancers.
 
 # Loadbalancer
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 List Loadbalancers referenced by the API Definition (backrefrences).
 
 ## Tools

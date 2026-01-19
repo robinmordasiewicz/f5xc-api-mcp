@@ -6,9 +6,6 @@ description: GET Bot Assessment by Top URLs.
 
 # Url
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET Bot Top URL Information.
 
 ## Tools
@@ -16,14 +13,6 @@ GET Bot Top URL Information.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-shape-url-create` | GET Bot Assessment by Top URLs. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- url
 
 ## Example Usage
 

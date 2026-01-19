@@ -6,9 +6,6 @@ description: Configure TGW Information.
 
 # Set Tgw Info
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Configure TGW Information like tgw-ID, F5 Distributed Cloud site's VPC-ID.
 
 ## Tools
@@ -25,14 +22,6 @@ Configure TGW Information like tgw-ID, F5 Distributed Cloud site's VPC-ID.
 |-----------|-------------|--------|
 | `name` | Name | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- set-tgw-info
 
 ## Example Usage
 

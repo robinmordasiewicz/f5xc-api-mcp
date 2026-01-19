@@ -6,9 +6,6 @@ description: GetTopRiskyDevices.
 
 # Gettopriskydevice
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET top risky devices data request in a time range.
 
 ## Tools
@@ -16,14 +13,6 @@ GET top risky devices data request in a time range.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-shape-gettopriskydevice-create` | GetTopRiskyDevices. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- gettopriskydevice
 
 ## Example Usage
 

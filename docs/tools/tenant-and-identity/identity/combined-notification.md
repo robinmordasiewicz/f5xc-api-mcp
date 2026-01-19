@@ -6,9 +6,6 @@ description: GET combined ntfn preferences.
 
 # Combined Notification
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET combined ntfn preferences gets user-ntfn-preferences and admin-ntfn-preferences and returns
 combined result.
 
@@ -18,14 +15,6 @@ combined result.
 |------|-------------|
 | `f5xc-api-tenantandidentity-combined-notification-list` | GET combined ntfn preferences. |
 | `f5xc-api-tenantandidentity-combined-notification-update` | Update combined ntfn preferences. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Modifies:**
-
-- combined-notification
 
 ## Example Usage
 

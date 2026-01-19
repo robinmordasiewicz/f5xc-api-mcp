@@ -6,9 +6,6 @@ description: Download Debug Info Collection.
 
 # Download Debug Info Collection
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Download the zip file of debug info from node if available.
 
 ## Tools

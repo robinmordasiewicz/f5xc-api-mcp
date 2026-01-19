@@ -6,12 +6,6 @@ description: Create group with users.
 
 # Group
 
-!!! danger "High Risk Operation"
-    This resource includes operations that may cause significant changes. Review carefully before executing.
-
-!!! note "Confirmation Required"
-    Some operations on this resource require explicit confirmation before execution.
-
 List groups based on the given filter.
 
 ## Tools
@@ -41,23 +35,6 @@ List groups based on the given filter.
 | `count` | The number of entries after filter. | `-` |
 | `filter` | Filter to be used for filtering objects. | `-` |
 | `page` | Start offset. | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- Group
-
-**Modifies:**
-
-- Group
-
-**Deletes:**
-
-- Group
-- contained_resources
 
 ## Example Usage
 

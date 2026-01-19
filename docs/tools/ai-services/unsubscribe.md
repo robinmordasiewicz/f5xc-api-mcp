@@ -6,9 +6,6 @@ description: Unsubscribe to BFDP pipeline.
 
 # Unsubscribe
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Unsubscribe to BFDP pipeline.
 
 ## Tools
@@ -16,14 +13,6 @@ Unsubscribe to BFDP pipeline.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-aiservices-unsubscribe-create` | Unsubscribe to BFDP pipeline. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- unsubscribe
 
 ## Example Usage
 

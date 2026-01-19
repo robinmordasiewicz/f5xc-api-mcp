@@ -6,9 +6,6 @@ description: Metrics
 
 # Metric
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 App Firewall metrics.
 
 ## Tools
@@ -24,14 +21,6 @@ App Firewall metrics.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- metric
 
 ## Example Usage
 

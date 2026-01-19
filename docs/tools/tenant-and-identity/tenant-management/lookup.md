@@ -6,9 +6,6 @@ description: Lookup cname.
 
 # Lookup
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Checks if a cname is available.
 
 ## Tools

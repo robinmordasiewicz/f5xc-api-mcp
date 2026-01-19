@@ -6,9 +6,6 @@ description: GetTopRiskyAccounts.
 
 # Gettopriskyaccount
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET top risky accounts data request in a time range.
 
 ## Tools
@@ -16,14 +13,6 @@ GET top risky accounts data request in a time range.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-shape-gettopriskyaccount-create` | GetTopRiskyAccounts. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- gettopriskyaccount
 
 ## Example Usage
 

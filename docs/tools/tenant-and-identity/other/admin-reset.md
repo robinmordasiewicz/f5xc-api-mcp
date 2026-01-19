@@ -6,9 +6,6 @@ description: Reset password by admin.
 
 # Admin Reset
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Reset password by admin resets password for a user specified in request payload.
 This request is
 meant to be executed by the tenant's admin.
@@ -19,18 +16,6 @@ meant to be executed by the tenant's admin.
 |------|-------------|
 | `f5xc-api-tenantandidentity-admin-reset-create` | Reset password by admin. |
 | `f5xc-api-tenantandidentity-admin-reset-update` | ResetOtpDeviceByAdmin. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- admin-reset
-
-**Modifies:**
-
-- admin-reset
 
 ## Example Usage
 

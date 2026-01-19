@@ -6,9 +6,6 @@ description: Peergroup By Threat Types.
 
 # Threat Type
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GetThreat Types traffic count for Peergroup Benchmarking.
 
 ## Tools
@@ -16,14 +13,6 @@ GetThreat Types traffic count for Peergroup Benchmarking.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-shape-threat-type-create` | Peergroup By Threat Types. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- threat-type
 
 ## Example Usage
 

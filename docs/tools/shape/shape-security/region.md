@@ -6,9 +6,6 @@ description: Regions
 
 # Region
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET protected apps regions list.
 
 ## Tools

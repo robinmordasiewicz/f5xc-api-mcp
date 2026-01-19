@@ -6,9 +6,6 @@ description: Assign role to User.
 
 # Role User
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 AssignRole allows customers to assign a namespace/role pair to multiple users.
 
 ## Tools
@@ -24,14 +21,6 @@ AssignRole allows customers to assign a namespace/role pair to multiple users.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- role-user
 
 ## Example Usage
 

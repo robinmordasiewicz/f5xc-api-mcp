@@ -6,9 +6,6 @@ description: Malicious Traffic Overview Metrics.
 
 # Metric
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Malicious Traffic Overview Metrics.
 
 ## Tools
@@ -24,14 +21,6 @@ Malicious Traffic Overview Metrics.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- metric
 
 ## Example Usage
 

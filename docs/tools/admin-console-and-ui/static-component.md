@@ -6,9 +6,6 @@ description: GET UI static component.
 
 # Static Component
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 List the set of static_component in a namespace.
 
 ## Tools

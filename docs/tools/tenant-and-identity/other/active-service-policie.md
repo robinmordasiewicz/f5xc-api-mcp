@@ -6,9 +6,6 @@ description: Set Active Service Policies.
 
 # Active Service Policie
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 SetActiveServicePolicies sets the active service policies for the namespace
 An emtpy list in the
 request will clear the active service policies for the namespace.
@@ -27,14 +24,6 @@ request will clear the active service policies for the namespace.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- active-service-policie
 
 ## Example Usage
 

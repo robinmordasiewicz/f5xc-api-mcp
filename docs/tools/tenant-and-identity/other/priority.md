@@ -6,9 +6,6 @@ description: Priority of a ticket in managed tenant.
 
 # Priority
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Priority of a selected ticket. Not possible if ticket's already closed.
 
 ## Tools
@@ -24,14 +21,6 @@ Priority of a selected ticket. Not possible if ticket's already closed.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `tp_id` | Third party ID | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- priority
 
 ## Example Usage
 

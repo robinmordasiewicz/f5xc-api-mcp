@@ -6,9 +6,6 @@ description: Top Latency Overview.
 
 # Overview
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET SAFE Analyst Station Dashboard Transaction Breakdown request.
 
 ## Tools
@@ -33,14 +30,6 @@ GET SAFE Analyst Station Dashboard Transaction Breakdown request.
 | `from` | Timestamp representing start date of the requested period in millieseconds. | `-` |
 | `to` | Timestamp representing end date of the requested period in millieseconds. | `-` |
 | `version` | The API version to use. | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- overview
 
 ## Example Usage
 

@@ -6,9 +6,6 @@ description: Peer Group Top Good Bots.
 
 # Top Good Bot
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET Peer Group Top Good Bots.
 
 ## Tools
@@ -16,14 +13,6 @@ GET Peer Group Top Good Bots.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-shape-top-good-bot-create` | Peer Group Top Good Bots. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- top-good-bot
 
 ## Example Usage
 

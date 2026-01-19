@@ -6,9 +6,6 @@ description: GET RBAC Policy.
 
 # Rbac Policy
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET rbac_policy reads a given object from storage backend for metadata.namespace.
 
 ## Tools

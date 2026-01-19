@@ -2075,7 +2075,57 @@ export const observabilityTools: ParsedOperation[] = [
         resourceType: "v1-dns-monitor-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "interval_choice",
+        fieldPath: "spec.interval_choice",
+        options: [
+          "spec.interval_12_hours",
+          "spec.interval_15_mins",
+          "spec.interval_1_day",
+          "spec.interval_1_hour",
+          "spec.interval_1_min",
+          "spec.interval_30_mins",
+          "spec.interval_30_secs",
+          "spec.interval_5_mins",
+          "spec.interval_6_hours",
+        ],
+      },
+      {
+        choiceField: "on_failure_to_choice",
+        fieldPath: "spec.on_failure_to_choice",
+        options: ["spec.on_failure_to_all", "spec.on_failure_to_any"],
+      },
+      {
+        choiceField: "source_choice",
+        fieldPath: "spec.external_sources[].source_choice",
+        options: ["spec.external_sources[].aws", "spec.external_sources[].f5xc"],
+      },
+      {
+        choiceField: "dynamic_threshold_policy",
+        fieldPath: "spec.health_policy.dynamic_threshold_policy",
+        options: [
+          "spec.health_policy.dynamic_threshold",
+          "spec.health_policy.dynamic_threshold_disabled",
+        ],
+      },
+      {
+        choiceField: "static_max_threshold_policy",
+        fieldPath: "spec.health_policy.static_max_threshold_policy",
+        options: [
+          "spec.health_policy.static_max_threshold",
+          "spec.health_policy.static_max_threshold_disabled",
+        ],
+      },
+      {
+        choiceField: "static_min_threshold_policy",
+        fieldPath: "spec.health_policy.static_min_threshold_policy",
+        options: [
+          "spec.health_policy.static_min_threshold",
+          "spec.health_policy.static_min_threshold_disabled",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -2370,7 +2420,57 @@ export const observabilityTools: ParsedOperation[] = [
         resourceType: "v1-dns-monitor-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "interval_choice",
+        fieldPath: "spec.interval_choice",
+        options: [
+          "spec.interval_12_hours",
+          "spec.interval_15_mins",
+          "spec.interval_1_day",
+          "spec.interval_1_hour",
+          "spec.interval_1_min",
+          "spec.interval_30_mins",
+          "spec.interval_30_secs",
+          "spec.interval_5_mins",
+          "spec.interval_6_hours",
+        ],
+      },
+      {
+        choiceField: "on_failure_to_choice",
+        fieldPath: "spec.on_failure_to_choice",
+        options: ["spec.on_failure_to_all", "spec.on_failure_to_any"],
+      },
+      {
+        choiceField: "source_choice",
+        fieldPath: "spec.external_sources[].source_choice",
+        options: ["spec.external_sources[].aws", "spec.external_sources[].f5xc"],
+      },
+      {
+        choiceField: "dynamic_threshold_policy",
+        fieldPath: "spec.health_policy.dynamic_threshold_policy",
+        options: [
+          "spec.health_policy.dynamic_threshold",
+          "spec.health_policy.dynamic_threshold_disabled",
+        ],
+      },
+      {
+        choiceField: "static_max_threshold_policy",
+        fieldPath: "spec.health_policy.static_max_threshold_policy",
+        options: [
+          "spec.health_policy.static_max_threshold",
+          "spec.health_policy.static_max_threshold_disabled",
+        ],
+      },
+      {
+        choiceField: "static_min_threshold_policy",
+        fieldPath: "spec.health_policy.static_min_threshold_policy",
+        options: [
+          "spec.health_policy.static_min_threshold",
+          "spec.health_policy.static_min_threshold_disabled",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -2438,7 +2538,65 @@ export const observabilityTools: ParsedOperation[] = [
         resourceType: "v1-http-monitor-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "interval_choice",
+        fieldPath: "spec.interval_choice",
+        options: [
+          "spec.interval_12_hours",
+          "spec.interval_15_mins",
+          "spec.interval_1_day",
+          "spec.interval_1_hour",
+          "spec.interval_1_min",
+          "spec.interval_30_mins",
+          "spec.interval_30_secs",
+          "spec.interval_5_mins",
+          "spec.interval_6_hours",
+        ],
+      },
+      {
+        choiceField: "method",
+        fieldPath: "spec.method",
+        options: [
+          "spec.delete",
+          "spec.get",
+          "spec.head",
+          "spec.options",
+          "spec.patch",
+          "spec.post",
+          "spec.put",
+        ],
+      },
+      {
+        choiceField: "source_choice",
+        fieldPath: "spec.external_sources[].source_choice",
+        options: ["spec.external_sources[].aws", "spec.external_sources[].f5xc"],
+      },
+      {
+        choiceField: "dynamic_threshold_policy",
+        fieldPath: "spec.health_policy.dynamic_threshold_policy",
+        options: [
+          "spec.health_policy.dynamic_threshold",
+          "spec.health_policy.dynamic_threshold_disabled",
+        ],
+      },
+      {
+        choiceField: "static_max_threshold_policy",
+        fieldPath: "spec.health_policy.static_max_threshold_policy",
+        options: [
+          "spec.health_policy.static_max_threshold",
+          "spec.health_policy.static_max_threshold_disabled",
+        ],
+      },
+      {
+        choiceField: "static_min_threshold_policy",
+        fieldPath: "spec.health_policy.static_min_threshold_policy",
+        options: [
+          "spec.health_policy.static_min_threshold",
+          "spec.health_policy.static_min_threshold_disabled",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -2733,7 +2891,65 @@ export const observabilityTools: ParsedOperation[] = [
         resourceType: "v1-http-monitor-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "interval_choice",
+        fieldPath: "spec.interval_choice",
+        options: [
+          "spec.interval_12_hours",
+          "spec.interval_15_mins",
+          "spec.interval_1_day",
+          "spec.interval_1_hour",
+          "spec.interval_1_min",
+          "spec.interval_30_mins",
+          "spec.interval_30_secs",
+          "spec.interval_5_mins",
+          "spec.interval_6_hours",
+        ],
+      },
+      {
+        choiceField: "method",
+        fieldPath: "spec.method",
+        options: [
+          "spec.delete",
+          "spec.get",
+          "spec.head",
+          "spec.options",
+          "spec.patch",
+          "spec.post",
+          "spec.put",
+        ],
+      },
+      {
+        choiceField: "source_choice",
+        fieldPath: "spec.external_sources[].source_choice",
+        options: ["spec.external_sources[].aws", "spec.external_sources[].f5xc"],
+      },
+      {
+        choiceField: "dynamic_threshold_policy",
+        fieldPath: "spec.health_policy.dynamic_threshold_policy",
+        options: [
+          "spec.health_policy.dynamic_threshold",
+          "spec.health_policy.dynamic_threshold_disabled",
+        ],
+      },
+      {
+        choiceField: "static_max_threshold_policy",
+        fieldPath: "spec.health_policy.static_max_threshold_policy",
+        options: [
+          "spec.health_policy.static_max_threshold",
+          "spec.health_policy.static_max_threshold_disabled",
+        ],
+      },
+      {
+        choiceField: "static_min_threshold_policy",
+        fieldPath: "spec.health_policy.static_min_threshold_policy",
+        options: [
+          "spec.health_policy.static_min_threshold",
+          "spec.health_policy.static_min_threshold_disabled",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {

@@ -6,9 +6,6 @@ description: Clone Alert Template.
 
 # Clone
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Clone the BRM Alert Template.
 
 ## Tools
@@ -25,14 +22,6 @@ Clone the BRM Alert Template.
 |-----------|-------------|--------|
 | `name` | Name | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- clone
 
 ## Example Usage
 

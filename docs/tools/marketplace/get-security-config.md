@@ -6,9 +6,6 @@ description: GET Security Config for Third Party Application.
 
 # Get Security Config
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Fetch the corresponding Security Config for the given Third Party Application.
 
 ## Tools
@@ -25,13 +22,16 @@ Fetch the corresponding Security Config for the given Third Party Application.
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
 
-## Side Effects
+## Configuration Choices
 
-Operations on this resource may have the following effects:
+This resource includes mutually exclusive configuration options:
 
-**Creates:**
+### third_party_choice
 
-- get-security-config
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `all_third_party_applications` | - |  |
+| `third_party_applications_list` | - |  |
 
 ## Example Usage
 

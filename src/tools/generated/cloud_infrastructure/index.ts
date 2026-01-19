@@ -225,7 +225,49 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
         resourceType: "schemacloud-connect-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "cloud",
+        fieldPath: "spec.cloud",
+        options: ["spec.aws_tgw_site", "spec.azure_vnet_site"],
+      },
+      {
+        choiceField: "routing_choice",
+        fieldPath: "spec.aws_tgw_site.vpc_attachments.vpc_list[].routing_choice",
+        options: [
+          "spec.aws_tgw_site.vpc_attachments.vpc_list[].custom_routing",
+          "spec.aws_tgw_site.vpc_attachments.vpc_list[].default_route",
+          "spec.aws_tgw_site.vpc_attachments.vpc_list[].manual_routing",
+        ],
+      },
+      {
+        choiceField: "default_route_choice",
+        fieldPath:
+          "spec.aws_tgw_site.vpc_attachments.vpc_list[].default_route.default_route_choice",
+        options: [
+          "spec.aws_tgw_site.vpc_attachments.vpc_list[].default_route.all_route_tables",
+          "spec.aws_tgw_site.vpc_attachments.vpc_list[].default_route.selective_route_tables",
+        ],
+      },
+      {
+        choiceField: "routing_choice",
+        fieldPath: "spec.azure_vnet_site.vnet_attachments.vnet_list[].routing_choice",
+        options: [
+          "spec.azure_vnet_site.vnet_attachments.vnet_list[].custom_routing",
+          "spec.azure_vnet_site.vnet_attachments.vnet_list[].default_route",
+          "spec.azure_vnet_site.vnet_attachments.vnet_list[].manual_routing",
+        ],
+      },
+      {
+        choiceField: "default_route_choice",
+        fieldPath:
+          "spec.azure_vnet_site.vnet_attachments.vnet_list[].default_route.default_route_choice",
+        options: [
+          "spec.azure_vnet_site.vnet_attachments.vnet_list[].default_route.all_route_tables",
+          "spec.azure_vnet_site.vnet_attachments.vnet_list[].default_route.selective_route_tables",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -569,7 +611,49 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
         resourceType: "schemacloud-connect-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "cloud",
+        fieldPath: "spec.cloud",
+        options: ["spec.aws_tgw_site", "spec.azure_vnet_site"],
+      },
+      {
+        choiceField: "routing_choice",
+        fieldPath: "spec.aws_tgw_site.vpc_attachments.vpc_list[].routing_choice",
+        options: [
+          "spec.aws_tgw_site.vpc_attachments.vpc_list[].custom_routing",
+          "spec.aws_tgw_site.vpc_attachments.vpc_list[].default_route",
+          "spec.aws_tgw_site.vpc_attachments.vpc_list[].manual_routing",
+        ],
+      },
+      {
+        choiceField: "default_route_choice",
+        fieldPath:
+          "spec.aws_tgw_site.vpc_attachments.vpc_list[].default_route.default_route_choice",
+        options: [
+          "spec.aws_tgw_site.vpc_attachments.vpc_list[].default_route.all_route_tables",
+          "spec.aws_tgw_site.vpc_attachments.vpc_list[].default_route.selective_route_tables",
+        ],
+      },
+      {
+        choiceField: "routing_choice",
+        fieldPath: "spec.azure_vnet_site.vnet_attachments.vnet_list[].routing_choice",
+        options: [
+          "spec.azure_vnet_site.vnet_attachments.vnet_list[].custom_routing",
+          "spec.azure_vnet_site.vnet_attachments.vnet_list[].default_route",
+          "spec.azure_vnet_site.vnet_attachments.vnet_list[].manual_routing",
+        ],
+      },
+      {
+        choiceField: "default_route_choice",
+        fieldPath:
+          "spec.azure_vnet_site.vnet_attachments.vnet_list[].default_route.default_route_choice",
+        options: [
+          "spec.azure_vnet_site.vnet_attachments.vnet_list[].default_route.all_route_tables",
+          "spec.azure_vnet_site.vnet_attachments.vnet_list[].default_route.selective_route_tables",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -637,7 +721,60 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
         resourceType: "cloud-credentials-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "cloud",
+        fieldPath: "spec.cloud",
+        options: [
+          "spec.aws_assume_role",
+          "spec.aws_secret_key",
+          "spec.azure_client_secret",
+          "spec.azure_pfx_certificate",
+          "spec.gcp_cred_file",
+        ],
+      },
+      {
+        choiceField: "external_id",
+        fieldPath: "spec.aws_assume_role.external_id",
+        options: [
+          "spec.aws_assume_role.custom_external_id",
+          "spec.aws_assume_role.external_id_is_optional",
+          "spec.aws_assume_role.external_id_is_tenant_id",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.aws_secret_key.secret_key.secret_info_oneof",
+        options: [
+          "spec.aws_secret_key.secret_key.blindfold_secret_info",
+          "spec.aws_secret_key.secret_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.azure_client_secret.client_secret.secret_info_oneof",
+        options: [
+          "spec.azure_client_secret.client_secret.blindfold_secret_info",
+          "spec.azure_client_secret.client_secret.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.azure_pfx_certificate.password.secret_info_oneof",
+        options: [
+          "spec.azure_pfx_certificate.password.blindfold_secret_info",
+          "spec.azure_pfx_certificate.password.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.gcp_cred_file.credential_file.secret_info_oneof",
+        options: [
+          "spec.gcp_cred_file.credential_file.blindfold_secret_info",
+          "spec.gcp_cred_file.credential_file.clear_secret_info",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -932,7 +1069,60 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
         resourceType: "cloud-credentials-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "cloud",
+        fieldPath: "spec.cloud",
+        options: [
+          "spec.aws_assume_role",
+          "spec.aws_secret_key",
+          "spec.azure_client_secret",
+          "spec.azure_pfx_certificate",
+          "spec.gcp_cred_file",
+        ],
+      },
+      {
+        choiceField: "external_id",
+        fieldPath: "spec.aws_assume_role.external_id",
+        options: [
+          "spec.aws_assume_role.custom_external_id",
+          "spec.aws_assume_role.external_id_is_optional",
+          "spec.aws_assume_role.external_id_is_tenant_id",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.aws_secret_key.secret_key.secret_info_oneof",
+        options: [
+          "spec.aws_secret_key.secret_key.blindfold_secret_info",
+          "spec.aws_secret_key.secret_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.azure_client_secret.client_secret.secret_info_oneof",
+        options: [
+          "spec.azure_client_secret.client_secret.blindfold_secret_info",
+          "spec.azure_client_secret.client_secret.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.azure_pfx_certificate.password.secret_info_oneof",
+        options: [
+          "spec.azure_pfx_certificate.password.blindfold_secret_info",
+          "spec.azure_pfx_certificate.password.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.gcp_cred_file.credential_file.secret_info_oneof",
+        options: [
+          "spec.gcp_cred_file.credential_file.blindfold_secret_info",
+          "spec.gcp_cred_file.credential_file.clear_secret_info",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -1365,7 +1555,62 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
         resourceType: "schemacloud-link-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "cloud_provider",
+        fieldPath: "spec.cloud_provider",
+        options: ["spec.aws", "spec.gcp"],
+      },
+      {
+        choiceField: "enable_connection_to_re_choice",
+        fieldPath: "spec.enable_connection_to_re_choice",
+        options: ["spec.disabled", "spec.enabled"],
+      },
+      {
+        choiceField: "cloud_link_type",
+        fieldPath: "spec.aws.cloud_link_type",
+        options: ["spec.aws.byoc"],
+      },
+      {
+        choiceField: "direct_connect_gateway_asn_choice",
+        fieldPath: "spec.aws.direct_connect_gateway_asn_choice",
+        options: ["spec.aws.custom_asn"],
+      },
+      {
+        choiceField: "ip_type",
+        fieldPath: "spec.aws.byoc.connections[].ip_type",
+        options: ["spec.aws.byoc.connections[].ipv4"],
+      },
+      {
+        choiceField: "resource_name_choice",
+        fieldPath: "spec.aws.byoc.connections[].resource_name_choice",
+        options: [
+          "spec.aws.byoc.connections[].system_generated_name",
+          "spec.aws.byoc.connections[].user_assigned_name",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.aws.byoc.connections[].auth_key.secret_info_oneof",
+        options: [
+          "spec.aws.byoc.connections[].auth_key.blindfold_secret_info",
+          "spec.aws.byoc.connections[].auth_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "cloud_link_type",
+        fieldPath: "spec.gcp.cloud_link_type",
+        options: ["spec.gcp.byoc"],
+      },
+      {
+        choiceField: "project_choice",
+        fieldPath: "spec.gcp.byoc.connections[].project_choice",
+        options: [
+          "spec.gcp.byoc.connections[].project",
+          "spec.gcp.byoc.connections[].same_as_credential",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -1660,7 +1905,62 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
         resourceType: "schemacloud-link-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "cloud_provider",
+        fieldPath: "spec.cloud_provider",
+        options: ["spec.aws", "spec.gcp"],
+      },
+      {
+        choiceField: "enable_connection_to_re_choice",
+        fieldPath: "spec.enable_connection_to_re_choice",
+        options: ["spec.disabled", "spec.enabled"],
+      },
+      {
+        choiceField: "cloud_link_type",
+        fieldPath: "spec.aws.cloud_link_type",
+        options: ["spec.aws.byoc"],
+      },
+      {
+        choiceField: "direct_connect_gateway_asn_choice",
+        fieldPath: "spec.aws.direct_connect_gateway_asn_choice",
+        options: ["spec.aws.custom_asn"],
+      },
+      {
+        choiceField: "ip_type",
+        fieldPath: "spec.aws.byoc.connections[].ip_type",
+        options: ["spec.aws.byoc.connections[].ipv4"],
+      },
+      {
+        choiceField: "resource_name_choice",
+        fieldPath: "spec.aws.byoc.connections[].resource_name_choice",
+        options: [
+          "spec.aws.byoc.connections[].system_generated_name",
+          "spec.aws.byoc.connections[].user_assigned_name",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.aws.byoc.connections[].auth_key.secret_info_oneof",
+        options: [
+          "spec.aws.byoc.connections[].auth_key.blindfold_secret_info",
+          "spec.aws.byoc.connections[].auth_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "cloud_link_type",
+        fieldPath: "spec.gcp.cloud_link_type",
+        options: ["spec.gcp.byoc"],
+      },
+      {
+        choiceField: "project_choice",
+        fieldPath: "spec.gcp.byoc.connections[].project_choice",
+        options: [
+          "spec.gcp.byoc.connections[].project",
+          "spec.gcp.byoc.connections[].same_as_credential",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -1893,7 +2193,13 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
         resourceType: "cloud-region-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "policy_group_choice",
+        fieldPath: "spec.policy_group_choice",
+        options: ["spec.default_policy_group", "spec.policy_group"],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {

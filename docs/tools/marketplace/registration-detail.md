@@ -6,9 +6,6 @@ description: GET Registration Details.
 
 # Registration Detail
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Use this API to to GET registration details (currently limited to email address and domain)
 associated with a specific asb_message object.
 

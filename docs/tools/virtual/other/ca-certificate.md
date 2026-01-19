@@ -6,9 +6,6 @@ description: GET proxy Server CA Certificate.
 
 # Ca Certificate
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GetProxyServerCACert returns PEM encoded proxy server CA certificate.
 
 ## Tools

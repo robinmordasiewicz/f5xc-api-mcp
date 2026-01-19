@@ -6,9 +6,6 @@ description: Enable Data Intelligence.
 
 # Init Request
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Request to enable Data Intelligence for the tenant.
 
 ## Tools
@@ -16,14 +13,6 @@ Request to enable Data Intelligence for the tenant.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-dataintelligence-init-request-create` | Enable Data Intelligence. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- init-request
 
 ## Example Usage
 

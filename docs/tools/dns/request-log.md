@@ -6,9 +6,6 @@ description: GET DNS Zone Request Logs.
 
 # Request Log
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Retrieve DNS Zone Request Logs.
 
 ## Tools
@@ -24,14 +21,6 @@ Retrieve DNS Zone Request Logs.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- request-log
 
 ## Example Usage
 

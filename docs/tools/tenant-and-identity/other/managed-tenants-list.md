@@ -6,9 +6,6 @@ description: GET List of Managed Tenant.
 
 # Managed Tenants List
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET full list of managed tenants access details.
 This response will contain full list of managed
 tenant based on the configuration

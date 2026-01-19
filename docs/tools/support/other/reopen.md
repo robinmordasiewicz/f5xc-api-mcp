@@ -6,9 +6,6 @@ description: Reopen a closed customer support ticket.
 
 # Reopen
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Reopens a selected closed customer support ticket.
 
 ## Tools
@@ -25,14 +22,6 @@ Reopens a selected closed customer support ticket.
 |-----------|-------------|--------|
 | `name` | Name | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- reopen
 
 ## Example Usage
 

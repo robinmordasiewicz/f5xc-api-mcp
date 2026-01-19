@@ -6,9 +6,6 @@ description: VoltShare Access Count Query.
 
 # Access Count
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Request to GET number of VoltShare API calls aggregated across multiple dimensions like OPERATION,
 COUNTRY, RESULT, USER_TENANT.
 
@@ -25,14 +22,6 @@ COUNTRY, RESULT, USER_TENANT.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- access-count
 
 ## Example Usage
 

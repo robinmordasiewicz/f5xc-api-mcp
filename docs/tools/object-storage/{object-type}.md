@@ -6,12 +6,6 @@ description: DELETE Stored Object(s)
 
 # {object Type}
 
-!!! danger "High Risk Operation"
-    This resource includes operations that may cause significant changes. Review carefully before executing.
-
-!!! note "Confirmation Required"
-    Some operations on this resource require explicit confirmation before execution.
-
 CreateObject is an API to upload an object to generic object store. Objects are immutable, a new
 version is created when the content is updated.
 
@@ -39,18 +33,25 @@ version is created when the content is updated.
 | `force_delete` | Optional query parameter. If provided will DELETE all the versions of the specified object. | `-` |
 | `version` | Version of the stored_object in "v{n}-{YY}-{MM}-{DD}" formatted string, where n is version number and YY/MM/DD is year, month and date. | `-` |
 
-## Side Effects
+## Configuration Choices
 
-Operations on this resource may have the following effects:
+This resource includes mutually exclusive configuration options:
 
-**Modifies:**
+### contents
 
-- stored-object
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `bytes_value` | - |  |
+| `string_value` | - |  |
 
-**Deletes:**
+### object_attributes
 
-- stored-object
-- contained_resources
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `mobile_app_shield` | - |  |
+| `mobile_integrator` | - |  |
+| `mobile_sdk` | - |  |
+| `no_attributes` | - |  |
 
 ## Example Usage
 

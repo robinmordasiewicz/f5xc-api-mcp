@@ -6,12 +6,6 @@ description: Create Cloud Elastic IP.
 
 # Cloud Elastic IP
 
-!!! danger "High Risk Operation"
-    This resource includes operations that may cause significant changes. Review carefully before executing.
-
-!!! note "Confirmation Required"
-    Some operations on this resource require explicit confirmation before execution.
-
 GET cloud elastic IP will GET the object from the storage backend for namespace metadata.namespace.
 
 ## Tools
@@ -43,23 +37,6 @@ GET cloud elastic IP will GET the object from the storage backend for namespace 
 | `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
 | `report_fields` | The report_fields parameter | `-` |
 | `report_status_fields` | The report_status_fields parameter | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- cloud-elastic-ip
-
-**Modifies:**
-
-- cloud-elastic-ip
-
-**Deletes:**
-
-- cloud-elastic-ip
-- contained_resources
 
 ## Example Usage
 

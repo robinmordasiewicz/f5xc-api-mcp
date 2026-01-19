@@ -6,9 +6,6 @@ description: Create TPM Manager.
 
 # Tpm Manager
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 List the set of tpm_manager in a namespace.
 
 ## Tools
@@ -37,14 +34,6 @@ List the set of tpm_manager in a namespace.
 | `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
 | `report_fields` | The report_fields parameter | `-` |
 | `report_status_fields` | The report_status_fields parameter | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- tpm-manager
 
 ## Example Usage
 

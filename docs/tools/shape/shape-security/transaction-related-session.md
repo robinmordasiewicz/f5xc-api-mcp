@@ -6,9 +6,6 @@ description: PostSafeTransactionRelatedSessions.
 
 # Transaction Related Session
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 POST Safe Analyst Station specific transaction related sessions.
 
 ## Tools
@@ -24,14 +21,6 @@ POST Safe Analyst Station specific transaction related sessions.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- transaction-related-session
 
 ## Example Usage
 

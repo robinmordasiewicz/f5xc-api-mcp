@@ -6,9 +6,6 @@ description: Flow Collection.
 
 # Flow Collection
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Request to GET flow collection from the flow records.
 
 ## Tools
@@ -16,14 +13,6 @@ Request to GET flow collection from the flow records.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-telemetryandinsights-flow-collection-create` | Flow Collection. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- flow-collection
 
 ## Example Usage
 

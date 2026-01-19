@@ -6,9 +6,6 @@ description: DELETE
 
 # Delete
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 DELETE will DELETE a given label label key = label value from current tenants shared namespace.
 
 ## Tools
@@ -24,14 +21,6 @@ DELETE will DELETE a given label label key = label value from current tenants sh
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- delete
 
 ## Example Usage
 

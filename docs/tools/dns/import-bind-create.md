@@ -6,9 +6,6 @@ description: Import BIND Files.
 
 # Import Bind Create
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Import BIND Files to Create DNS Zones.
 
 ## Tools
@@ -16,14 +13,6 @@ Import BIND Files to Create DNS Zones.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-dns-import-bind-create-create` | Import BIND Files. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- import-bind-create
 
 ## Example Usage
 

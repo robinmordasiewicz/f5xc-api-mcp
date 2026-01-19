@@ -6,9 +6,6 @@ description: Expanded Traffic Overview.
 
 # Expanded
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET expanded traffic overview.
 
 ## Tools
@@ -24,14 +21,6 @@ GET expanded traffic overview.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- expanded
 
 ## Example Usage
 

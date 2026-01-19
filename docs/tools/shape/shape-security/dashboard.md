@@ -6,9 +6,6 @@ description: GET Script Overview.
 
 # Dashboard
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET script overview data for a script depending on start time and end time.
 
 ## Tools

@@ -6,9 +6,6 @@ description: Update Script FormFields ReadStatus.
 
 # ReadStatu
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Allow / block script from reading form fields.
 
 ## Tools
@@ -25,14 +22,6 @@ Allow / block script from reading form fields.
 |-----------|-------------|--------|
 | `id` | ID | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- readStatu
 
 ## Example Usage
 

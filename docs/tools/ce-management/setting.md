@@ -6,9 +6,6 @@ description: Module Management Settings.
 
 # Setting
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Receive the module settings.
 
 ## Tools

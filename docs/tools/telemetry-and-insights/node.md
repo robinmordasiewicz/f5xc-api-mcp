@@ -6,9 +6,6 @@ description: Connectivity Node Query.
 
 # Node
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Request to GET Connectivity data for a site.
 This query is used to GET time-series data for a given
 site.
@@ -26,14 +23,6 @@ site.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- node
 
 ## Example Usage
 

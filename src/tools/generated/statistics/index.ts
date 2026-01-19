@@ -117,7 +117,69 @@ export const statisticsTools: ParsedOperation[] = [
         resourceType: "alert-policy-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "group_by",
+        fieldPath: "spec.notification_parameters.group_by",
+        options: [
+          "spec.notification_parameters.custom",
+          "spec.notification_parameters.default",
+          "spec.notification_parameters.individual",
+          "spec.notification_parameters.ves_io_group",
+        ],
+      },
+      {
+        choiceField: "action",
+        fieldPath: "spec.routes[].action",
+        options: ["spec.routes[].dont_send", "spec.routes[].send"],
+      },
+      {
+        choiceField: "matcher",
+        fieldPath: "spec.routes[].matcher",
+        options: [
+          "spec.routes[].alertname",
+          "spec.routes[].alertname_regex",
+          "spec.routes[].any",
+          "spec.routes[].custom",
+          "spec.routes[].group",
+          "spec.routes[].severity",
+        ],
+      },
+      {
+        choiceField: "matcher_type",
+        fieldPath: "spec.routes[].custom.alertname.matcher_type",
+        options: [
+          "spec.routes[].custom.alertname.exact_match",
+          "spec.routes[].custom.alertname.regex_match",
+        ],
+      },
+      {
+        choiceField: "matcher_type",
+        fieldPath: "spec.routes[].custom.group.matcher_type",
+        options: [
+          "spec.routes[].custom.group.exact_match",
+          "spec.routes[].custom.group.regex_match",
+        ],
+      },
+      {
+        choiceField: "matcher_type",
+        fieldPath: "spec.routes[].custom.severity.matcher_type",
+        options: [
+          "spec.routes[].custom.severity.exact_match",
+          "spec.routes[].custom.severity.regex_match",
+        ],
+      },
+      {
+        choiceField: "group_by",
+        fieldPath: "spec.routes[].notification_parameters.group_by",
+        options: [
+          "spec.routes[].notification_parameters.custom",
+          "spec.routes[].notification_parameters.default",
+          "spec.routes[].notification_parameters.individual",
+          "spec.routes[].notification_parameters.ves_io_group",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -412,7 +474,69 @@ export const statisticsTools: ParsedOperation[] = [
         resourceType: "alert-policy-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "group_by",
+        fieldPath: "spec.notification_parameters.group_by",
+        options: [
+          "spec.notification_parameters.custom",
+          "spec.notification_parameters.default",
+          "spec.notification_parameters.individual",
+          "spec.notification_parameters.ves_io_group",
+        ],
+      },
+      {
+        choiceField: "action",
+        fieldPath: "spec.routes[].action",
+        options: ["spec.routes[].dont_send", "spec.routes[].send"],
+      },
+      {
+        choiceField: "matcher",
+        fieldPath: "spec.routes[].matcher",
+        options: [
+          "spec.routes[].alertname",
+          "spec.routes[].alertname_regex",
+          "spec.routes[].any",
+          "spec.routes[].custom",
+          "spec.routes[].group",
+          "spec.routes[].severity",
+        ],
+      },
+      {
+        choiceField: "matcher_type",
+        fieldPath: "spec.routes[].custom.alertname.matcher_type",
+        options: [
+          "spec.routes[].custom.alertname.exact_match",
+          "spec.routes[].custom.alertname.regex_match",
+        ],
+      },
+      {
+        choiceField: "matcher_type",
+        fieldPath: "spec.routes[].custom.group.matcher_type",
+        options: [
+          "spec.routes[].custom.group.exact_match",
+          "spec.routes[].custom.group.regex_match",
+        ],
+      },
+      {
+        choiceField: "matcher_type",
+        fieldPath: "spec.routes[].custom.severity.matcher_type",
+        options: [
+          "spec.routes[].custom.severity.exact_match",
+          "spec.routes[].custom.severity.regex_match",
+        ],
+      },
+      {
+        choiceField: "group_by",
+        fieldPath: "spec.routes[].notification_parameters.group_by",
+        options: [
+          "spec.routes[].notification_parameters.custom",
+          "spec.routes[].notification_parameters.default",
+          "spec.routes[].notification_parameters.individual",
+          "spec.routes[].notification_parameters.ves_io_group",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -480,7 +604,93 @@ export const statisticsTools: ParsedOperation[] = [
         resourceType: "alert-receiver-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "receiver",
+        fieldPath: "spec.receiver",
+        options: [
+          "spec.email",
+          "spec.opsgenie",
+          "spec.pagerduty",
+          "spec.slack",
+          "spec.sms",
+          "spec.webhook",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.opsgenie.api_key.secret_info_oneof",
+        options: [
+          "spec.opsgenie.api_key.blindfold_secret_info",
+          "spec.opsgenie.api_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.pagerduty.routing_key.secret_info_oneof",
+        options: [
+          "spec.pagerduty.routing_key.blindfold_secret_info",
+          "spec.pagerduty.routing_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.slack.url.secret_info_oneof",
+        options: ["spec.slack.url.blindfold_secret_info", "spec.slack.url.clear_secret_info"],
+      },
+      {
+        choiceField: "auth_choice",
+        fieldPath: "spec.webhook.http_config.auth_choice",
+        options: [
+          "spec.webhook.http_config.auth_token",
+          "spec.webhook.http_config.basic_auth",
+          "spec.webhook.http_config.client_cert_obj",
+          "spec.webhook.http_config.no_authorization",
+        ],
+      },
+      {
+        choiceField: "tls_choice",
+        fieldPath: "spec.webhook.http_config.tls_choice",
+        options: ["spec.webhook.http_config.no_tls", "spec.webhook.http_config.use_tls"],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.webhook.http_config.auth_token.token.secret_info_oneof",
+        options: [
+          "spec.webhook.http_config.auth_token.token.blindfold_secret_info",
+          "spec.webhook.http_config.auth_token.token.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.webhook.http_config.basic_auth.password.secret_info_oneof",
+        options: [
+          "spec.webhook.http_config.basic_auth.password.blindfold_secret_info",
+          "spec.webhook.http_config.basic_auth.password.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "server_validation_choice",
+        fieldPath: "spec.webhook.http_config.use_tls.server_validation_choice",
+        options: [
+          "spec.webhook.http_config.use_tls.use_server_verification",
+          "spec.webhook.http_config.use_tls.volterra_trusted_ca",
+        ],
+      },
+      {
+        choiceField: "sni_choice",
+        fieldPath: "spec.webhook.http_config.use_tls.sni_choice",
+        options: [
+          "spec.webhook.http_config.use_tls.disable_sni",
+          "spec.webhook.http_config.use_tls.sni",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.webhook.url.secret_info_oneof",
+        options: ["spec.webhook.url.blindfold_secret_info", "spec.webhook.url.clear_secret_info"],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -775,7 +985,93 @@ export const statisticsTools: ParsedOperation[] = [
         resourceType: "alert-receiver-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "receiver",
+        fieldPath: "spec.receiver",
+        options: [
+          "spec.email",
+          "spec.opsgenie",
+          "spec.pagerduty",
+          "spec.slack",
+          "spec.sms",
+          "spec.webhook",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.opsgenie.api_key.secret_info_oneof",
+        options: [
+          "spec.opsgenie.api_key.blindfold_secret_info",
+          "spec.opsgenie.api_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.pagerduty.routing_key.secret_info_oneof",
+        options: [
+          "spec.pagerduty.routing_key.blindfold_secret_info",
+          "spec.pagerduty.routing_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.slack.url.secret_info_oneof",
+        options: ["spec.slack.url.blindfold_secret_info", "spec.slack.url.clear_secret_info"],
+      },
+      {
+        choiceField: "auth_choice",
+        fieldPath: "spec.webhook.http_config.auth_choice",
+        options: [
+          "spec.webhook.http_config.auth_token",
+          "spec.webhook.http_config.basic_auth",
+          "spec.webhook.http_config.client_cert_obj",
+          "spec.webhook.http_config.no_authorization",
+        ],
+      },
+      {
+        choiceField: "tls_choice",
+        fieldPath: "spec.webhook.http_config.tls_choice",
+        options: ["spec.webhook.http_config.no_tls", "spec.webhook.http_config.use_tls"],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.webhook.http_config.auth_token.token.secret_info_oneof",
+        options: [
+          "spec.webhook.http_config.auth_token.token.blindfold_secret_info",
+          "spec.webhook.http_config.auth_token.token.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.webhook.http_config.basic_auth.password.secret_info_oneof",
+        options: [
+          "spec.webhook.http_config.basic_auth.password.blindfold_secret_info",
+          "spec.webhook.http_config.basic_auth.password.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "server_validation_choice",
+        fieldPath: "spec.webhook.http_config.use_tls.server_validation_choice",
+        options: [
+          "spec.webhook.http_config.use_tls.use_server_verification",
+          "spec.webhook.http_config.use_tls.volterra_trusted_ca",
+        ],
+      },
+      {
+        choiceField: "sni_choice",
+        fieldPath: "spec.webhook.http_config.use_tls.sni_choice",
+        options: [
+          "spec.webhook.http_config.use_tls.disable_sni",
+          "spec.webhook.http_config.use_tls.sni",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.webhook.url.secret_info_oneof",
+        options: ["spec.webhook.url.blindfold_secret_info", "spec.webhook.url.clear_secret_info"],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -1290,7 +1586,45 @@ export const statisticsTools: ParsedOperation[] = [
     operationMetadata: null,
     curlExample: null,
     dependencies: [],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "advertise_choice",
+        fieldPath: "http_lb_request.advertise_choice",
+        options: [],
+      },
+      {
+        choiceField: "loadbalancer_type",
+        fieldPath: "http_lb_request.loadbalancer_type",
+        options: [
+          "http_lb_request.http",
+          "http_lb_request.https",
+          "http_lb_request.https_auto_cert",
+        ],
+      },
+      {
+        choiceField: "server_validation_choice",
+        fieldPath: "http_lb_request.server_validation_choice",
+        options: ["http_lb_request.skip_server_verification", "http_lb_request.trusted_ca"],
+      },
+      {
+        choiceField: "advertise_choice",
+        fieldPath: "http_lb_request.http.advertise_choice",
+        options: [
+          "http_lb_request.http.advertise_on_public_default_vip",
+          "http_lb_request.http.site",
+          "http_lb_request.http.virtual_site",
+        ],
+      },
+      {
+        choiceField: "advertise_choice",
+        fieldPath: "http_lb_request.https.advertise_choice",
+        options: [
+          "http_lb_request.https.advertise_on_public_default_vip",
+          "http_lb_request.https.site",
+          "http_lb_request.https.virtual_site",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -1347,7 +1681,76 @@ export const statisticsTools: ParsedOperation[] = [
     operationMetadata: null,
     curlExample: null,
     dependencies: [],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "advertise_choice",
+        fieldPath: "tcp_lb_request.advertise_choice",
+        options: [
+          "tcp_lb_request.advertise_custom",
+          "tcp_lb_request.advertise_on_public_default_vip",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "tcp_lb_request.port_choice",
+        options: ["tcp_lb_request.listen_port", "tcp_lb_request.port_ranges"],
+      },
+      {
+        choiceField: "sni_default_lb_choice",
+        fieldPath: "tcp_lb_request.sni_default_lb_choice",
+        options: ["tcp_lb_request.no_sni", "tcp_lb_request.sni"],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "tcp_lb_request.advertise_custom.advertise_where[].choice",
+        options: [
+          "tcp_lb_request.advertise_custom.advertise_where[].advertise_on_public",
+          "tcp_lb_request.advertise_custom.advertise_where[].cloud_edge_segment",
+          "tcp_lb_request.advertise_custom.advertise_where[].segment",
+          "tcp_lb_request.advertise_custom.advertise_where[].site",
+          "tcp_lb_request.advertise_custom.advertise_where[].site_segment",
+          "tcp_lb_request.advertise_custom.advertise_where[].virtual_network",
+          "tcp_lb_request.advertise_custom.advertise_where[].virtual_site",
+          "tcp_lb_request.advertise_custom.advertise_where[].virtual_site_segment",
+          "tcp_lb_request.advertise_custom.advertise_where[].virtual_site_with_vip",
+          "tcp_lb_request.advertise_custom.advertise_where[].vk8s_service",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "tcp_lb_request.advertise_custom.advertise_where[].port_choice",
+        options: [
+          "tcp_lb_request.advertise_custom.advertise_where[].port",
+          "tcp_lb_request.advertise_custom.advertise_where[].port_ranges",
+          "tcp_lb_request.advertise_custom.advertise_where[].use_default_port",
+        ],
+      },
+      {
+        choiceField: "v6_vip_choice",
+        fieldPath:
+          "tcp_lb_request.advertise_custom.advertise_where[].virtual_network.v6_vip_choice",
+        options: [
+          "tcp_lb_request.advertise_custom.advertise_where[].virtual_network.default_v6_vip",
+          "tcp_lb_request.advertise_custom.advertise_where[].virtual_network.specific_v6_vip",
+        ],
+      },
+      {
+        choiceField: "vip_choice",
+        fieldPath: "tcp_lb_request.advertise_custom.advertise_where[].virtual_network.vip_choice",
+        options: [
+          "tcp_lb_request.advertise_custom.advertise_where[].virtual_network.default_vip",
+          "tcp_lb_request.advertise_custom.advertise_where[].virtual_network.specific_vip",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "tcp_lb_request.advertise_custom.advertise_where[].vk8s_service.choice",
+        options: [
+          "tcp_lb_request.advertise_custom.advertise_where[].vk8s_service.site",
+          "tcp_lb_request.advertise_custom.advertise_where[].vk8s_service.virtual_site",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -2109,7 +2512,662 @@ export const statisticsTools: ParsedOperation[] = [
         resourceType: "global-log-receiver-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "filter_choice",
+        fieldPath: "spec.filter_choice",
+        options: ["spec.ns_all", "spec.ns_current", "spec.ns_list"],
+      },
+      {
+        choiceField: "log_type",
+        fieldPath: "spec.log_type",
+        options: ["spec.audit_logs", "spec.dns_logs", "spec.request_logs", "spec.security_events"],
+      },
+      {
+        choiceField: "receiver",
+        fieldPath: "spec.receiver",
+        options: [
+          "spec.aws_cloud_watch_receiver",
+          "spec.azure_event_hubs_receiver",
+          "spec.azure_receiver",
+          "spec.datadog_receiver",
+          "spec.gcp_bucket_receiver",
+          "spec.http_receiver",
+          "spec.kafka_receiver",
+          "spec.new_relic_receiver",
+          "spec.qradar_receiver",
+          "spec.s3_receiver",
+          "spec.splunk_receiver",
+          "spec.sumo_logic_receiver",
+        ],
+      },
+      {
+        choiceField: "batch_bytes",
+        fieldPath: "spec.aws_cloud_watch_receiver.batch.batch_bytes",
+        options: [
+          "spec.aws_cloud_watch_receiver.batch.max_bytes",
+          "spec.aws_cloud_watch_receiver.batch.max_bytes_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_events",
+        fieldPath: "spec.aws_cloud_watch_receiver.batch.batch_events",
+        options: [
+          "spec.aws_cloud_watch_receiver.batch.max_events",
+          "spec.aws_cloud_watch_receiver.batch.max_events_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_timeout",
+        fieldPath: "spec.aws_cloud_watch_receiver.batch.batch_timeout",
+        options: [
+          "spec.aws_cloud_watch_receiver.batch.timeout_seconds",
+          "spec.aws_cloud_watch_receiver.batch.timeout_seconds_default",
+        ],
+      },
+      {
+        choiceField: "compression_choice",
+        fieldPath: "spec.aws_cloud_watch_receiver.compression.compression_choice",
+        options: [
+          "spec.aws_cloud_watch_receiver.compression.compression_default",
+          "spec.aws_cloud_watch_receiver.compression.compression_gzip",
+          "spec.aws_cloud_watch_receiver.compression.compression_none",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.azure_event_hubs_receiver.connection_string.secret_info_oneof",
+        options: [
+          "spec.azure_event_hubs_receiver.connection_string.blindfold_secret_info",
+          "spec.azure_event_hubs_receiver.connection_string.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "batch_bytes",
+        fieldPath: "spec.azure_receiver.batch.batch_bytes",
+        options: [
+          "spec.azure_receiver.batch.max_bytes",
+          "spec.azure_receiver.batch.max_bytes_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_events",
+        fieldPath: "spec.azure_receiver.batch.batch_events",
+        options: [
+          "spec.azure_receiver.batch.max_events",
+          "spec.azure_receiver.batch.max_events_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_timeout",
+        fieldPath: "spec.azure_receiver.batch.batch_timeout",
+        options: [
+          "spec.azure_receiver.batch.timeout_seconds",
+          "spec.azure_receiver.batch.timeout_seconds_default",
+        ],
+      },
+      {
+        choiceField: "compression_choice",
+        fieldPath: "spec.azure_receiver.compression.compression_choice",
+        options: [
+          "spec.azure_receiver.compression.compression_default",
+          "spec.azure_receiver.compression.compression_gzip",
+          "spec.azure_receiver.compression.compression_none",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.azure_receiver.connection_string.secret_info_oneof",
+        options: [
+          "spec.azure_receiver.connection_string.blindfold_secret_info",
+          "spec.azure_receiver.connection_string.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "folder",
+        fieldPath: "spec.azure_receiver.filename_options.folder",
+        options: [
+          "spec.azure_receiver.filename_options.custom_folder",
+          "spec.azure_receiver.filename_options.log_type_folder",
+          "spec.azure_receiver.filename_options.no_folder",
+        ],
+      },
+      {
+        choiceField: "endpoint_choice",
+        fieldPath: "spec.datadog_receiver.endpoint_choice",
+        options: ["spec.datadog_receiver.endpoint", "spec.datadog_receiver.site"],
+      },
+      {
+        choiceField: "tls_choice",
+        fieldPath: "spec.datadog_receiver.tls_choice",
+        options: ["spec.datadog_receiver.no_tls", "spec.datadog_receiver.use_tls"],
+      },
+      {
+        choiceField: "batch_bytes",
+        fieldPath: "spec.datadog_receiver.batch.batch_bytes",
+        options: [
+          "spec.datadog_receiver.batch.max_bytes",
+          "spec.datadog_receiver.batch.max_bytes_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_events",
+        fieldPath: "spec.datadog_receiver.batch.batch_events",
+        options: [
+          "spec.datadog_receiver.batch.max_events",
+          "spec.datadog_receiver.batch.max_events_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_timeout",
+        fieldPath: "spec.datadog_receiver.batch.batch_timeout",
+        options: [
+          "spec.datadog_receiver.batch.timeout_seconds",
+          "spec.datadog_receiver.batch.timeout_seconds_default",
+        ],
+      },
+      {
+        choiceField: "compression_choice",
+        fieldPath: "spec.datadog_receiver.compression.compression_choice",
+        options: [
+          "spec.datadog_receiver.compression.compression_default",
+          "spec.datadog_receiver.compression.compression_gzip",
+          "spec.datadog_receiver.compression.compression_none",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.datadog_receiver.datadog_api_key.secret_info_oneof",
+        options: [
+          "spec.datadog_receiver.datadog_api_key.blindfold_secret_info",
+          "spec.datadog_receiver.datadog_api_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "ca_choice",
+        fieldPath: "spec.datadog_receiver.use_tls.ca_choice",
+        options: [
+          "spec.datadog_receiver.use_tls.no_ca",
+          "spec.datadog_receiver.use_tls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath: "spec.datadog_receiver.use_tls.mtls_choice",
+        options: [
+          "spec.datadog_receiver.use_tls.mtls_disabled",
+          "spec.datadog_receiver.use_tls.mtls_enable",
+        ],
+      },
+      {
+        choiceField: "verify_certificate",
+        fieldPath: "spec.datadog_receiver.use_tls.verify_certificate",
+        options: [
+          "spec.datadog_receiver.use_tls.disable_verify_certificate",
+          "spec.datadog_receiver.use_tls.enable_verify_certificate",
+        ],
+      },
+      {
+        choiceField: "verify_hostname",
+        fieldPath: "spec.datadog_receiver.use_tls.verify_hostname",
+        options: [
+          "spec.datadog_receiver.use_tls.disable_verify_hostname",
+          "spec.datadog_receiver.use_tls.enable_verify_hostname",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.datadog_receiver.use_tls.mtls_enable.key_url.secret_info_oneof",
+        options: [
+          "spec.datadog_receiver.use_tls.mtls_enable.key_url.blindfold_secret_info",
+          "spec.datadog_receiver.use_tls.mtls_enable.key_url.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "batch_bytes",
+        fieldPath: "spec.gcp_bucket_receiver.batch.batch_bytes",
+        options: [
+          "spec.gcp_bucket_receiver.batch.max_bytes",
+          "spec.gcp_bucket_receiver.batch.max_bytes_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_events",
+        fieldPath: "spec.gcp_bucket_receiver.batch.batch_events",
+        options: [
+          "spec.gcp_bucket_receiver.batch.max_events",
+          "spec.gcp_bucket_receiver.batch.max_events_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_timeout",
+        fieldPath: "spec.gcp_bucket_receiver.batch.batch_timeout",
+        options: [
+          "spec.gcp_bucket_receiver.batch.timeout_seconds",
+          "spec.gcp_bucket_receiver.batch.timeout_seconds_default",
+        ],
+      },
+      {
+        choiceField: "compression_choice",
+        fieldPath: "spec.gcp_bucket_receiver.compression.compression_choice",
+        options: [
+          "spec.gcp_bucket_receiver.compression.compression_default",
+          "spec.gcp_bucket_receiver.compression.compression_gzip",
+          "spec.gcp_bucket_receiver.compression.compression_none",
+        ],
+      },
+      {
+        choiceField: "folder",
+        fieldPath: "spec.gcp_bucket_receiver.filename_options.folder",
+        options: [
+          "spec.gcp_bucket_receiver.filename_options.custom_folder",
+          "spec.gcp_bucket_receiver.filename_options.log_type_folder",
+          "spec.gcp_bucket_receiver.filename_options.no_folder",
+        ],
+      },
+      {
+        choiceField: "auth_choice",
+        fieldPath: "spec.http_receiver.auth_choice",
+        options: [
+          "spec.http_receiver.auth_basic",
+          "spec.http_receiver.auth_none",
+          "spec.http_receiver.auth_token",
+        ],
+      },
+      {
+        choiceField: "tls_choice",
+        fieldPath: "spec.http_receiver.tls_choice",
+        options: ["spec.http_receiver.no_tls", "spec.http_receiver.use_tls"],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.http_receiver.auth_basic.password.secret_info_oneof",
+        options: [
+          "spec.http_receiver.auth_basic.password.blindfold_secret_info",
+          "spec.http_receiver.auth_basic.password.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.http_receiver.auth_token.token.secret_info_oneof",
+        options: [
+          "spec.http_receiver.auth_token.token.blindfold_secret_info",
+          "spec.http_receiver.auth_token.token.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "batch_bytes",
+        fieldPath: "spec.http_receiver.batch.batch_bytes",
+        options: [
+          "spec.http_receiver.batch.max_bytes",
+          "spec.http_receiver.batch.max_bytes_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_events",
+        fieldPath: "spec.http_receiver.batch.batch_events",
+        options: [
+          "spec.http_receiver.batch.max_events",
+          "spec.http_receiver.batch.max_events_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_timeout",
+        fieldPath: "spec.http_receiver.batch.batch_timeout",
+        options: [
+          "spec.http_receiver.batch.timeout_seconds",
+          "spec.http_receiver.batch.timeout_seconds_default",
+        ],
+      },
+      {
+        choiceField: "compression_choice",
+        fieldPath: "spec.http_receiver.compression.compression_choice",
+        options: [
+          "spec.http_receiver.compression.compression_default",
+          "spec.http_receiver.compression.compression_gzip",
+          "spec.http_receiver.compression.compression_none",
+        ],
+      },
+      {
+        choiceField: "ca_choice",
+        fieldPath: "spec.http_receiver.use_tls.ca_choice",
+        options: ["spec.http_receiver.use_tls.no_ca", "spec.http_receiver.use_tls.trusted_ca_url"],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath: "spec.http_receiver.use_tls.mtls_choice",
+        options: [
+          "spec.http_receiver.use_tls.mtls_disabled",
+          "spec.http_receiver.use_tls.mtls_enable",
+        ],
+      },
+      {
+        choiceField: "verify_certificate",
+        fieldPath: "spec.http_receiver.use_tls.verify_certificate",
+        options: [
+          "spec.http_receiver.use_tls.disable_verify_certificate",
+          "spec.http_receiver.use_tls.enable_verify_certificate",
+        ],
+      },
+      {
+        choiceField: "verify_hostname",
+        fieldPath: "spec.http_receiver.use_tls.verify_hostname",
+        options: [
+          "spec.http_receiver.use_tls.disable_verify_hostname",
+          "spec.http_receiver.use_tls.enable_verify_hostname",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.http_receiver.use_tls.mtls_enable.key_url.secret_info_oneof",
+        options: [
+          "spec.http_receiver.use_tls.mtls_enable.key_url.blindfold_secret_info",
+          "spec.http_receiver.use_tls.mtls_enable.key_url.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "tls_choice",
+        fieldPath: "spec.kafka_receiver.tls_choice",
+        options: ["spec.kafka_receiver.no_tls", "spec.kafka_receiver.use_tls"],
+      },
+      {
+        choiceField: "batch_bytes",
+        fieldPath: "spec.kafka_receiver.batch.batch_bytes",
+        options: [
+          "spec.kafka_receiver.batch.max_bytes",
+          "spec.kafka_receiver.batch.max_bytes_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_events",
+        fieldPath: "spec.kafka_receiver.batch.batch_events",
+        options: [
+          "spec.kafka_receiver.batch.max_events",
+          "spec.kafka_receiver.batch.max_events_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_timeout",
+        fieldPath: "spec.kafka_receiver.batch.batch_timeout",
+        options: [
+          "spec.kafka_receiver.batch.timeout_seconds",
+          "spec.kafka_receiver.batch.timeout_seconds_default",
+        ],
+      },
+      {
+        choiceField: "compression_choice",
+        fieldPath: "spec.kafka_receiver.compression.compression_choice",
+        options: [
+          "spec.kafka_receiver.compression.compression_default",
+          "spec.kafka_receiver.compression.compression_gzip",
+          "spec.kafka_receiver.compression.compression_none",
+        ],
+      },
+      {
+        choiceField: "ca_choice",
+        fieldPath: "spec.kafka_receiver.use_tls.ca_choice",
+        options: [
+          "spec.kafka_receiver.use_tls.no_ca",
+          "spec.kafka_receiver.use_tls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath: "spec.kafka_receiver.use_tls.mtls_choice",
+        options: [
+          "spec.kafka_receiver.use_tls.mtls_disabled",
+          "spec.kafka_receiver.use_tls.mtls_enable",
+        ],
+      },
+      {
+        choiceField: "verify_certificate",
+        fieldPath: "spec.kafka_receiver.use_tls.verify_certificate",
+        options: [
+          "spec.kafka_receiver.use_tls.disable_verify_certificate",
+          "spec.kafka_receiver.use_tls.enable_verify_certificate",
+        ],
+      },
+      {
+        choiceField: "verify_hostname",
+        fieldPath: "spec.kafka_receiver.use_tls.verify_hostname",
+        options: [
+          "spec.kafka_receiver.use_tls.disable_verify_hostname",
+          "spec.kafka_receiver.use_tls.enable_verify_hostname",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.kafka_receiver.use_tls.mtls_enable.key_url.secret_info_oneof",
+        options: [
+          "spec.kafka_receiver.use_tls.mtls_enable.key_url.blindfold_secret_info",
+          "spec.kafka_receiver.use_tls.mtls_enable.key_url.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "endpoint_choice",
+        fieldPath: "spec.new_relic_receiver.endpoint_choice",
+        options: ["spec.new_relic_receiver.eu", "spec.new_relic_receiver.us"],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.new_relic_receiver.api_key.secret_info_oneof",
+        options: [
+          "spec.new_relic_receiver.api_key.blindfold_secret_info",
+          "spec.new_relic_receiver.api_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "tls_choice",
+        fieldPath: "spec.qradar_receiver.tls_choice",
+        options: ["spec.qradar_receiver.no_tls", "spec.qradar_receiver.use_tls"],
+      },
+      {
+        choiceField: "batch_bytes",
+        fieldPath: "spec.qradar_receiver.batch.batch_bytes",
+        options: [
+          "spec.qradar_receiver.batch.max_bytes",
+          "spec.qradar_receiver.batch.max_bytes_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_events",
+        fieldPath: "spec.qradar_receiver.batch.batch_events",
+        options: [
+          "spec.qradar_receiver.batch.max_events",
+          "spec.qradar_receiver.batch.max_events_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_timeout",
+        fieldPath: "spec.qradar_receiver.batch.batch_timeout",
+        options: [
+          "spec.qradar_receiver.batch.timeout_seconds",
+          "spec.qradar_receiver.batch.timeout_seconds_default",
+        ],
+      },
+      {
+        choiceField: "compression_choice",
+        fieldPath: "spec.qradar_receiver.compression.compression_choice",
+        options: [
+          "spec.qradar_receiver.compression.compression_default",
+          "spec.qradar_receiver.compression.compression_gzip",
+          "spec.qradar_receiver.compression.compression_none",
+        ],
+      },
+      {
+        choiceField: "ca_choice",
+        fieldPath: "spec.qradar_receiver.use_tls.ca_choice",
+        options: [
+          "spec.qradar_receiver.use_tls.no_ca",
+          "spec.qradar_receiver.use_tls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath: "spec.qradar_receiver.use_tls.mtls_choice",
+        options: [
+          "spec.qradar_receiver.use_tls.mtls_disabled",
+          "spec.qradar_receiver.use_tls.mtls_enable",
+        ],
+      },
+      {
+        choiceField: "verify_certificate",
+        fieldPath: "spec.qradar_receiver.use_tls.verify_certificate",
+        options: [
+          "spec.qradar_receiver.use_tls.disable_verify_certificate",
+          "spec.qradar_receiver.use_tls.enable_verify_certificate",
+        ],
+      },
+      {
+        choiceField: "verify_hostname",
+        fieldPath: "spec.qradar_receiver.use_tls.verify_hostname",
+        options: [
+          "spec.qradar_receiver.use_tls.disable_verify_hostname",
+          "spec.qradar_receiver.use_tls.enable_verify_hostname",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.qradar_receiver.use_tls.mtls_enable.key_url.secret_info_oneof",
+        options: [
+          "spec.qradar_receiver.use_tls.mtls_enable.key_url.blindfold_secret_info",
+          "spec.qradar_receiver.use_tls.mtls_enable.key_url.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "batch_bytes",
+        fieldPath: "spec.s3_receiver.batch.batch_bytes",
+        options: ["spec.s3_receiver.batch.max_bytes", "spec.s3_receiver.batch.max_bytes_disabled"],
+      },
+      {
+        choiceField: "batch_events",
+        fieldPath: "spec.s3_receiver.batch.batch_events",
+        options: [
+          "spec.s3_receiver.batch.max_events",
+          "spec.s3_receiver.batch.max_events_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_timeout",
+        fieldPath: "spec.s3_receiver.batch.batch_timeout",
+        options: [
+          "spec.s3_receiver.batch.timeout_seconds",
+          "spec.s3_receiver.batch.timeout_seconds_default",
+        ],
+      },
+      {
+        choiceField: "compression_choice",
+        fieldPath: "spec.s3_receiver.compression.compression_choice",
+        options: [
+          "spec.s3_receiver.compression.compression_default",
+          "spec.s3_receiver.compression.compression_gzip",
+          "spec.s3_receiver.compression.compression_none",
+        ],
+      },
+      {
+        choiceField: "folder",
+        fieldPath: "spec.s3_receiver.filename_options.folder",
+        options: [
+          "spec.s3_receiver.filename_options.custom_folder",
+          "spec.s3_receiver.filename_options.log_type_folder",
+          "spec.s3_receiver.filename_options.no_folder",
+        ],
+      },
+      {
+        choiceField: "tls_choice",
+        fieldPath: "spec.splunk_receiver.tls_choice",
+        options: ["spec.splunk_receiver.no_tls", "spec.splunk_receiver.use_tls"],
+      },
+      {
+        choiceField: "batch_bytes",
+        fieldPath: "spec.splunk_receiver.batch.batch_bytes",
+        options: [
+          "spec.splunk_receiver.batch.max_bytes",
+          "spec.splunk_receiver.batch.max_bytes_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_events",
+        fieldPath: "spec.splunk_receiver.batch.batch_events",
+        options: [
+          "spec.splunk_receiver.batch.max_events",
+          "spec.splunk_receiver.batch.max_events_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_timeout",
+        fieldPath: "spec.splunk_receiver.batch.batch_timeout",
+        options: [
+          "spec.splunk_receiver.batch.timeout_seconds",
+          "spec.splunk_receiver.batch.timeout_seconds_default",
+        ],
+      },
+      {
+        choiceField: "compression_choice",
+        fieldPath: "spec.splunk_receiver.compression.compression_choice",
+        options: [
+          "spec.splunk_receiver.compression.compression_default",
+          "spec.splunk_receiver.compression.compression_gzip",
+          "spec.splunk_receiver.compression.compression_none",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.splunk_receiver.splunk_hec_token.secret_info_oneof",
+        options: [
+          "spec.splunk_receiver.splunk_hec_token.blindfold_secret_info",
+          "spec.splunk_receiver.splunk_hec_token.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "ca_choice",
+        fieldPath: "spec.splunk_receiver.use_tls.ca_choice",
+        options: [
+          "spec.splunk_receiver.use_tls.no_ca",
+          "spec.splunk_receiver.use_tls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath: "spec.splunk_receiver.use_tls.mtls_choice",
+        options: [
+          "spec.splunk_receiver.use_tls.mtls_disabled",
+          "spec.splunk_receiver.use_tls.mtls_enable",
+        ],
+      },
+      {
+        choiceField: "verify_certificate",
+        fieldPath: "spec.splunk_receiver.use_tls.verify_certificate",
+        options: [
+          "spec.splunk_receiver.use_tls.disable_verify_certificate",
+          "spec.splunk_receiver.use_tls.enable_verify_certificate",
+        ],
+      },
+      {
+        choiceField: "verify_hostname",
+        fieldPath: "spec.splunk_receiver.use_tls.verify_hostname",
+        options: [
+          "spec.splunk_receiver.use_tls.disable_verify_hostname",
+          "spec.splunk_receiver.use_tls.enable_verify_hostname",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.splunk_receiver.use_tls.mtls_enable.key_url.secret_info_oneof",
+        options: [
+          "spec.splunk_receiver.use_tls.mtls_enable.key_url.blindfold_secret_info",
+          "spec.splunk_receiver.use_tls.mtls_enable.key_url.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.sumo_logic_receiver.url.secret_info_oneof",
+        options: [
+          "spec.sumo_logic_receiver.url.blindfold_secret_info",
+          "spec.sumo_logic_receiver.url.clear_secret_info",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -2404,7 +3462,662 @@ export const statisticsTools: ParsedOperation[] = [
         resourceType: "global-log-receiver-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "filter_choice",
+        fieldPath: "spec.filter_choice",
+        options: ["spec.ns_all", "spec.ns_current", "spec.ns_list"],
+      },
+      {
+        choiceField: "log_type",
+        fieldPath: "spec.log_type",
+        options: ["spec.audit_logs", "spec.dns_logs", "spec.request_logs", "spec.security_events"],
+      },
+      {
+        choiceField: "receiver",
+        fieldPath: "spec.receiver",
+        options: [
+          "spec.aws_cloud_watch_receiver",
+          "spec.azure_event_hubs_receiver",
+          "spec.azure_receiver",
+          "spec.datadog_receiver",
+          "spec.gcp_bucket_receiver",
+          "spec.http_receiver",
+          "spec.kafka_receiver",
+          "spec.new_relic_receiver",
+          "spec.qradar_receiver",
+          "spec.s3_receiver",
+          "spec.splunk_receiver",
+          "spec.sumo_logic_receiver",
+        ],
+      },
+      {
+        choiceField: "batch_bytes",
+        fieldPath: "spec.aws_cloud_watch_receiver.batch.batch_bytes",
+        options: [
+          "spec.aws_cloud_watch_receiver.batch.max_bytes",
+          "spec.aws_cloud_watch_receiver.batch.max_bytes_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_events",
+        fieldPath: "spec.aws_cloud_watch_receiver.batch.batch_events",
+        options: [
+          "spec.aws_cloud_watch_receiver.batch.max_events",
+          "spec.aws_cloud_watch_receiver.batch.max_events_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_timeout",
+        fieldPath: "spec.aws_cloud_watch_receiver.batch.batch_timeout",
+        options: [
+          "spec.aws_cloud_watch_receiver.batch.timeout_seconds",
+          "spec.aws_cloud_watch_receiver.batch.timeout_seconds_default",
+        ],
+      },
+      {
+        choiceField: "compression_choice",
+        fieldPath: "spec.aws_cloud_watch_receiver.compression.compression_choice",
+        options: [
+          "spec.aws_cloud_watch_receiver.compression.compression_default",
+          "spec.aws_cloud_watch_receiver.compression.compression_gzip",
+          "spec.aws_cloud_watch_receiver.compression.compression_none",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.azure_event_hubs_receiver.connection_string.secret_info_oneof",
+        options: [
+          "spec.azure_event_hubs_receiver.connection_string.blindfold_secret_info",
+          "spec.azure_event_hubs_receiver.connection_string.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "batch_bytes",
+        fieldPath: "spec.azure_receiver.batch.batch_bytes",
+        options: [
+          "spec.azure_receiver.batch.max_bytes",
+          "spec.azure_receiver.batch.max_bytes_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_events",
+        fieldPath: "spec.azure_receiver.batch.batch_events",
+        options: [
+          "spec.azure_receiver.batch.max_events",
+          "spec.azure_receiver.batch.max_events_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_timeout",
+        fieldPath: "spec.azure_receiver.batch.batch_timeout",
+        options: [
+          "spec.azure_receiver.batch.timeout_seconds",
+          "spec.azure_receiver.batch.timeout_seconds_default",
+        ],
+      },
+      {
+        choiceField: "compression_choice",
+        fieldPath: "spec.azure_receiver.compression.compression_choice",
+        options: [
+          "spec.azure_receiver.compression.compression_default",
+          "spec.azure_receiver.compression.compression_gzip",
+          "spec.azure_receiver.compression.compression_none",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.azure_receiver.connection_string.secret_info_oneof",
+        options: [
+          "spec.azure_receiver.connection_string.blindfold_secret_info",
+          "spec.azure_receiver.connection_string.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "folder",
+        fieldPath: "spec.azure_receiver.filename_options.folder",
+        options: [
+          "spec.azure_receiver.filename_options.custom_folder",
+          "spec.azure_receiver.filename_options.log_type_folder",
+          "spec.azure_receiver.filename_options.no_folder",
+        ],
+      },
+      {
+        choiceField: "endpoint_choice",
+        fieldPath: "spec.datadog_receiver.endpoint_choice",
+        options: ["spec.datadog_receiver.endpoint", "spec.datadog_receiver.site"],
+      },
+      {
+        choiceField: "tls_choice",
+        fieldPath: "spec.datadog_receiver.tls_choice",
+        options: ["spec.datadog_receiver.no_tls", "spec.datadog_receiver.use_tls"],
+      },
+      {
+        choiceField: "batch_bytes",
+        fieldPath: "spec.datadog_receiver.batch.batch_bytes",
+        options: [
+          "spec.datadog_receiver.batch.max_bytes",
+          "spec.datadog_receiver.batch.max_bytes_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_events",
+        fieldPath: "spec.datadog_receiver.batch.batch_events",
+        options: [
+          "spec.datadog_receiver.batch.max_events",
+          "spec.datadog_receiver.batch.max_events_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_timeout",
+        fieldPath: "spec.datadog_receiver.batch.batch_timeout",
+        options: [
+          "spec.datadog_receiver.batch.timeout_seconds",
+          "spec.datadog_receiver.batch.timeout_seconds_default",
+        ],
+      },
+      {
+        choiceField: "compression_choice",
+        fieldPath: "spec.datadog_receiver.compression.compression_choice",
+        options: [
+          "spec.datadog_receiver.compression.compression_default",
+          "spec.datadog_receiver.compression.compression_gzip",
+          "spec.datadog_receiver.compression.compression_none",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.datadog_receiver.datadog_api_key.secret_info_oneof",
+        options: [
+          "spec.datadog_receiver.datadog_api_key.blindfold_secret_info",
+          "spec.datadog_receiver.datadog_api_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "ca_choice",
+        fieldPath: "spec.datadog_receiver.use_tls.ca_choice",
+        options: [
+          "spec.datadog_receiver.use_tls.no_ca",
+          "spec.datadog_receiver.use_tls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath: "spec.datadog_receiver.use_tls.mtls_choice",
+        options: [
+          "spec.datadog_receiver.use_tls.mtls_disabled",
+          "spec.datadog_receiver.use_tls.mtls_enable",
+        ],
+      },
+      {
+        choiceField: "verify_certificate",
+        fieldPath: "spec.datadog_receiver.use_tls.verify_certificate",
+        options: [
+          "spec.datadog_receiver.use_tls.disable_verify_certificate",
+          "spec.datadog_receiver.use_tls.enable_verify_certificate",
+        ],
+      },
+      {
+        choiceField: "verify_hostname",
+        fieldPath: "spec.datadog_receiver.use_tls.verify_hostname",
+        options: [
+          "spec.datadog_receiver.use_tls.disable_verify_hostname",
+          "spec.datadog_receiver.use_tls.enable_verify_hostname",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.datadog_receiver.use_tls.mtls_enable.key_url.secret_info_oneof",
+        options: [
+          "spec.datadog_receiver.use_tls.mtls_enable.key_url.blindfold_secret_info",
+          "spec.datadog_receiver.use_tls.mtls_enable.key_url.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "batch_bytes",
+        fieldPath: "spec.gcp_bucket_receiver.batch.batch_bytes",
+        options: [
+          "spec.gcp_bucket_receiver.batch.max_bytes",
+          "spec.gcp_bucket_receiver.batch.max_bytes_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_events",
+        fieldPath: "spec.gcp_bucket_receiver.batch.batch_events",
+        options: [
+          "spec.gcp_bucket_receiver.batch.max_events",
+          "spec.gcp_bucket_receiver.batch.max_events_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_timeout",
+        fieldPath: "spec.gcp_bucket_receiver.batch.batch_timeout",
+        options: [
+          "spec.gcp_bucket_receiver.batch.timeout_seconds",
+          "spec.gcp_bucket_receiver.batch.timeout_seconds_default",
+        ],
+      },
+      {
+        choiceField: "compression_choice",
+        fieldPath: "spec.gcp_bucket_receiver.compression.compression_choice",
+        options: [
+          "spec.gcp_bucket_receiver.compression.compression_default",
+          "spec.gcp_bucket_receiver.compression.compression_gzip",
+          "spec.gcp_bucket_receiver.compression.compression_none",
+        ],
+      },
+      {
+        choiceField: "folder",
+        fieldPath: "spec.gcp_bucket_receiver.filename_options.folder",
+        options: [
+          "spec.gcp_bucket_receiver.filename_options.custom_folder",
+          "spec.gcp_bucket_receiver.filename_options.log_type_folder",
+          "spec.gcp_bucket_receiver.filename_options.no_folder",
+        ],
+      },
+      {
+        choiceField: "auth_choice",
+        fieldPath: "spec.http_receiver.auth_choice",
+        options: [
+          "spec.http_receiver.auth_basic",
+          "spec.http_receiver.auth_none",
+          "spec.http_receiver.auth_token",
+        ],
+      },
+      {
+        choiceField: "tls_choice",
+        fieldPath: "spec.http_receiver.tls_choice",
+        options: ["spec.http_receiver.no_tls", "spec.http_receiver.use_tls"],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.http_receiver.auth_basic.password.secret_info_oneof",
+        options: [
+          "spec.http_receiver.auth_basic.password.blindfold_secret_info",
+          "spec.http_receiver.auth_basic.password.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.http_receiver.auth_token.token.secret_info_oneof",
+        options: [
+          "spec.http_receiver.auth_token.token.blindfold_secret_info",
+          "spec.http_receiver.auth_token.token.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "batch_bytes",
+        fieldPath: "spec.http_receiver.batch.batch_bytes",
+        options: [
+          "spec.http_receiver.batch.max_bytes",
+          "spec.http_receiver.batch.max_bytes_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_events",
+        fieldPath: "spec.http_receiver.batch.batch_events",
+        options: [
+          "spec.http_receiver.batch.max_events",
+          "spec.http_receiver.batch.max_events_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_timeout",
+        fieldPath: "spec.http_receiver.batch.batch_timeout",
+        options: [
+          "spec.http_receiver.batch.timeout_seconds",
+          "spec.http_receiver.batch.timeout_seconds_default",
+        ],
+      },
+      {
+        choiceField: "compression_choice",
+        fieldPath: "spec.http_receiver.compression.compression_choice",
+        options: [
+          "spec.http_receiver.compression.compression_default",
+          "spec.http_receiver.compression.compression_gzip",
+          "spec.http_receiver.compression.compression_none",
+        ],
+      },
+      {
+        choiceField: "ca_choice",
+        fieldPath: "spec.http_receiver.use_tls.ca_choice",
+        options: ["spec.http_receiver.use_tls.no_ca", "spec.http_receiver.use_tls.trusted_ca_url"],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath: "spec.http_receiver.use_tls.mtls_choice",
+        options: [
+          "spec.http_receiver.use_tls.mtls_disabled",
+          "spec.http_receiver.use_tls.mtls_enable",
+        ],
+      },
+      {
+        choiceField: "verify_certificate",
+        fieldPath: "spec.http_receiver.use_tls.verify_certificate",
+        options: [
+          "spec.http_receiver.use_tls.disable_verify_certificate",
+          "spec.http_receiver.use_tls.enable_verify_certificate",
+        ],
+      },
+      {
+        choiceField: "verify_hostname",
+        fieldPath: "spec.http_receiver.use_tls.verify_hostname",
+        options: [
+          "spec.http_receiver.use_tls.disable_verify_hostname",
+          "spec.http_receiver.use_tls.enable_verify_hostname",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.http_receiver.use_tls.mtls_enable.key_url.secret_info_oneof",
+        options: [
+          "spec.http_receiver.use_tls.mtls_enable.key_url.blindfold_secret_info",
+          "spec.http_receiver.use_tls.mtls_enable.key_url.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "tls_choice",
+        fieldPath: "spec.kafka_receiver.tls_choice",
+        options: ["spec.kafka_receiver.no_tls", "spec.kafka_receiver.use_tls"],
+      },
+      {
+        choiceField: "batch_bytes",
+        fieldPath: "spec.kafka_receiver.batch.batch_bytes",
+        options: [
+          "spec.kafka_receiver.batch.max_bytes",
+          "spec.kafka_receiver.batch.max_bytes_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_events",
+        fieldPath: "spec.kafka_receiver.batch.batch_events",
+        options: [
+          "spec.kafka_receiver.batch.max_events",
+          "spec.kafka_receiver.batch.max_events_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_timeout",
+        fieldPath: "spec.kafka_receiver.batch.batch_timeout",
+        options: [
+          "spec.kafka_receiver.batch.timeout_seconds",
+          "spec.kafka_receiver.batch.timeout_seconds_default",
+        ],
+      },
+      {
+        choiceField: "compression_choice",
+        fieldPath: "spec.kafka_receiver.compression.compression_choice",
+        options: [
+          "spec.kafka_receiver.compression.compression_default",
+          "spec.kafka_receiver.compression.compression_gzip",
+          "spec.kafka_receiver.compression.compression_none",
+        ],
+      },
+      {
+        choiceField: "ca_choice",
+        fieldPath: "spec.kafka_receiver.use_tls.ca_choice",
+        options: [
+          "spec.kafka_receiver.use_tls.no_ca",
+          "spec.kafka_receiver.use_tls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath: "spec.kafka_receiver.use_tls.mtls_choice",
+        options: [
+          "spec.kafka_receiver.use_tls.mtls_disabled",
+          "spec.kafka_receiver.use_tls.mtls_enable",
+        ],
+      },
+      {
+        choiceField: "verify_certificate",
+        fieldPath: "spec.kafka_receiver.use_tls.verify_certificate",
+        options: [
+          "spec.kafka_receiver.use_tls.disable_verify_certificate",
+          "spec.kafka_receiver.use_tls.enable_verify_certificate",
+        ],
+      },
+      {
+        choiceField: "verify_hostname",
+        fieldPath: "spec.kafka_receiver.use_tls.verify_hostname",
+        options: [
+          "spec.kafka_receiver.use_tls.disable_verify_hostname",
+          "spec.kafka_receiver.use_tls.enable_verify_hostname",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.kafka_receiver.use_tls.mtls_enable.key_url.secret_info_oneof",
+        options: [
+          "spec.kafka_receiver.use_tls.mtls_enable.key_url.blindfold_secret_info",
+          "spec.kafka_receiver.use_tls.mtls_enable.key_url.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "endpoint_choice",
+        fieldPath: "spec.new_relic_receiver.endpoint_choice",
+        options: ["spec.new_relic_receiver.eu", "spec.new_relic_receiver.us"],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.new_relic_receiver.api_key.secret_info_oneof",
+        options: [
+          "spec.new_relic_receiver.api_key.blindfold_secret_info",
+          "spec.new_relic_receiver.api_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "tls_choice",
+        fieldPath: "spec.qradar_receiver.tls_choice",
+        options: ["spec.qradar_receiver.no_tls", "spec.qradar_receiver.use_tls"],
+      },
+      {
+        choiceField: "batch_bytes",
+        fieldPath: "spec.qradar_receiver.batch.batch_bytes",
+        options: [
+          "spec.qradar_receiver.batch.max_bytes",
+          "spec.qradar_receiver.batch.max_bytes_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_events",
+        fieldPath: "spec.qradar_receiver.batch.batch_events",
+        options: [
+          "spec.qradar_receiver.batch.max_events",
+          "spec.qradar_receiver.batch.max_events_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_timeout",
+        fieldPath: "spec.qradar_receiver.batch.batch_timeout",
+        options: [
+          "spec.qradar_receiver.batch.timeout_seconds",
+          "spec.qradar_receiver.batch.timeout_seconds_default",
+        ],
+      },
+      {
+        choiceField: "compression_choice",
+        fieldPath: "spec.qradar_receiver.compression.compression_choice",
+        options: [
+          "spec.qradar_receiver.compression.compression_default",
+          "spec.qradar_receiver.compression.compression_gzip",
+          "spec.qradar_receiver.compression.compression_none",
+        ],
+      },
+      {
+        choiceField: "ca_choice",
+        fieldPath: "spec.qradar_receiver.use_tls.ca_choice",
+        options: [
+          "spec.qradar_receiver.use_tls.no_ca",
+          "spec.qradar_receiver.use_tls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath: "spec.qradar_receiver.use_tls.mtls_choice",
+        options: [
+          "spec.qradar_receiver.use_tls.mtls_disabled",
+          "spec.qradar_receiver.use_tls.mtls_enable",
+        ],
+      },
+      {
+        choiceField: "verify_certificate",
+        fieldPath: "spec.qradar_receiver.use_tls.verify_certificate",
+        options: [
+          "spec.qradar_receiver.use_tls.disable_verify_certificate",
+          "spec.qradar_receiver.use_tls.enable_verify_certificate",
+        ],
+      },
+      {
+        choiceField: "verify_hostname",
+        fieldPath: "spec.qradar_receiver.use_tls.verify_hostname",
+        options: [
+          "spec.qradar_receiver.use_tls.disable_verify_hostname",
+          "spec.qradar_receiver.use_tls.enable_verify_hostname",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.qradar_receiver.use_tls.mtls_enable.key_url.secret_info_oneof",
+        options: [
+          "spec.qradar_receiver.use_tls.mtls_enable.key_url.blindfold_secret_info",
+          "spec.qradar_receiver.use_tls.mtls_enable.key_url.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "batch_bytes",
+        fieldPath: "spec.s3_receiver.batch.batch_bytes",
+        options: ["spec.s3_receiver.batch.max_bytes", "spec.s3_receiver.batch.max_bytes_disabled"],
+      },
+      {
+        choiceField: "batch_events",
+        fieldPath: "spec.s3_receiver.batch.batch_events",
+        options: [
+          "spec.s3_receiver.batch.max_events",
+          "spec.s3_receiver.batch.max_events_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_timeout",
+        fieldPath: "spec.s3_receiver.batch.batch_timeout",
+        options: [
+          "spec.s3_receiver.batch.timeout_seconds",
+          "spec.s3_receiver.batch.timeout_seconds_default",
+        ],
+      },
+      {
+        choiceField: "compression_choice",
+        fieldPath: "spec.s3_receiver.compression.compression_choice",
+        options: [
+          "spec.s3_receiver.compression.compression_default",
+          "spec.s3_receiver.compression.compression_gzip",
+          "spec.s3_receiver.compression.compression_none",
+        ],
+      },
+      {
+        choiceField: "folder",
+        fieldPath: "spec.s3_receiver.filename_options.folder",
+        options: [
+          "spec.s3_receiver.filename_options.custom_folder",
+          "spec.s3_receiver.filename_options.log_type_folder",
+          "spec.s3_receiver.filename_options.no_folder",
+        ],
+      },
+      {
+        choiceField: "tls_choice",
+        fieldPath: "spec.splunk_receiver.tls_choice",
+        options: ["spec.splunk_receiver.no_tls", "spec.splunk_receiver.use_tls"],
+      },
+      {
+        choiceField: "batch_bytes",
+        fieldPath: "spec.splunk_receiver.batch.batch_bytes",
+        options: [
+          "spec.splunk_receiver.batch.max_bytes",
+          "spec.splunk_receiver.batch.max_bytes_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_events",
+        fieldPath: "spec.splunk_receiver.batch.batch_events",
+        options: [
+          "spec.splunk_receiver.batch.max_events",
+          "spec.splunk_receiver.batch.max_events_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_timeout",
+        fieldPath: "spec.splunk_receiver.batch.batch_timeout",
+        options: [
+          "spec.splunk_receiver.batch.timeout_seconds",
+          "spec.splunk_receiver.batch.timeout_seconds_default",
+        ],
+      },
+      {
+        choiceField: "compression_choice",
+        fieldPath: "spec.splunk_receiver.compression.compression_choice",
+        options: [
+          "spec.splunk_receiver.compression.compression_default",
+          "spec.splunk_receiver.compression.compression_gzip",
+          "spec.splunk_receiver.compression.compression_none",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.splunk_receiver.splunk_hec_token.secret_info_oneof",
+        options: [
+          "spec.splunk_receiver.splunk_hec_token.blindfold_secret_info",
+          "spec.splunk_receiver.splunk_hec_token.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "ca_choice",
+        fieldPath: "spec.splunk_receiver.use_tls.ca_choice",
+        options: [
+          "spec.splunk_receiver.use_tls.no_ca",
+          "spec.splunk_receiver.use_tls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath: "spec.splunk_receiver.use_tls.mtls_choice",
+        options: [
+          "spec.splunk_receiver.use_tls.mtls_disabled",
+          "spec.splunk_receiver.use_tls.mtls_enable",
+        ],
+      },
+      {
+        choiceField: "verify_certificate",
+        fieldPath: "spec.splunk_receiver.use_tls.verify_certificate",
+        options: [
+          "spec.splunk_receiver.use_tls.disable_verify_certificate",
+          "spec.splunk_receiver.use_tls.enable_verify_certificate",
+        ],
+      },
+      {
+        choiceField: "verify_hostname",
+        fieldPath: "spec.splunk_receiver.use_tls.verify_hostname",
+        options: [
+          "spec.splunk_receiver.use_tls.disable_verify_hostname",
+          "spec.splunk_receiver.use_tls.enable_verify_hostname",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.splunk_receiver.use_tls.mtls_enable.key_url.secret_info_oneof",
+        options: [
+          "spec.splunk_receiver.use_tls.mtls_enable.key_url.blindfold_secret_info",
+          "spec.splunk_receiver.use_tls.mtls_enable.key_url.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.sumo_logic_receiver.url.secret_info_oneof",
+        options: [
+          "spec.sumo_logic_receiver.url.blindfold_secret_info",
+          "spec.sumo_logic_receiver.url.clear_secret_info",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -2604,7 +4317,55 @@ export const statisticsTools: ParsedOperation[] = [
         resourceType: "log-receiver-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "log_receiver_choice",
+        fieldPath: "spec.log_receiver_choice",
+        options: ["spec.syslog"],
+      },
+      {
+        choiceField: "where_choice",
+        fieldPath: "spec.where_choice",
+        options: ["spec.site_local"],
+      },
+      {
+        choiceField: "format_choice",
+        fieldPath: "spec.syslog.format_choice",
+        options: ["spec.syslog.syslog_rfc5424"],
+      },
+      {
+        choiceField: "mode_choice",
+        fieldPath: "spec.syslog.mode_choice",
+        options: ["spec.syslog.tcp_server", "spec.syslog.tls_server", "spec.syslog.udp_server"],
+      },
+      {
+        choiceField: "ca_choice",
+        fieldPath: "spec.syslog.tls_server.ca_choice",
+        options: ["spec.syslog.tls_server.trusted_ca_url", "spec.syslog.tls_server.volterra_ca"],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath: "spec.syslog.tls_server.mtls_choice",
+        options: ["spec.syslog.tls_server.mtls_disabled", "spec.syslog.tls_server.mtls_enable"],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.syslog.tls_server.port_choice",
+        options: [
+          "spec.syslog.tls_server.default_https_port",
+          "spec.syslog.tls_server.default_syslog_tls_port",
+          "spec.syslog.tls_server.port",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.syslog.tls_server.mtls_enable.key_url.secret_info_oneof",
+        options: [
+          "spec.syslog.tls_server.mtls_enable.key_url.blindfold_secret_info",
+          "spec.syslog.tls_server.mtls_enable.key_url.clear_secret_info",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -2899,7 +4660,55 @@ export const statisticsTools: ParsedOperation[] = [
         resourceType: "log-receiver-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "log_receiver_choice",
+        fieldPath: "spec.log_receiver_choice",
+        options: ["spec.syslog"],
+      },
+      {
+        choiceField: "where_choice",
+        fieldPath: "spec.where_choice",
+        options: ["spec.site_local"],
+      },
+      {
+        choiceField: "format_choice",
+        fieldPath: "spec.syslog.format_choice",
+        options: ["spec.syslog.syslog_rfc5424"],
+      },
+      {
+        choiceField: "mode_choice",
+        fieldPath: "spec.syslog.mode_choice",
+        options: ["spec.syslog.tcp_server", "spec.syslog.tls_server", "spec.syslog.udp_server"],
+      },
+      {
+        choiceField: "ca_choice",
+        fieldPath: "spec.syslog.tls_server.ca_choice",
+        options: ["spec.syslog.tls_server.trusted_ca_url", "spec.syslog.tls_server.volterra_ca"],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath: "spec.syslog.tls_server.mtls_choice",
+        options: ["spec.syslog.tls_server.mtls_disabled", "spec.syslog.tls_server.mtls_enable"],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.syslog.tls_server.port_choice",
+        options: [
+          "spec.syslog.tls_server.default_https_port",
+          "spec.syslog.tls_server.default_syslog_tls_port",
+          "spec.syslog.tls_server.port",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.syslog.tls_server.mtls_enable.key_url.secret_info_oneof",
+        options: [
+          "spec.syslog.tls_server.mtls_enable.key_url.blindfold_secret_info",
+          "spec.syslog.tls_server.mtls_enable.key_url.clear_secret_info",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -3129,7 +4938,23 @@ export const statisticsTools: ParsedOperation[] = [
         resourceType: "report-config-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "report_type",
+        fieldPath: "spec.report_type",
+        options: ["spec.bot_defense", "spec.waap"],
+      },
+      {
+        choiceField: "report_frequency",
+        fieldPath: "spec.waap.report_frequency",
+        options: ["spec.waap.daily", "spec.waap.monthly", "spec.waap.weekly"],
+      },
+      {
+        choiceField: "report_namespaces",
+        fieldPath: "spec.waap.report_namespaces",
+        options: ["spec.waap.current_namespace", "spec.waap.namespaces"],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -3425,7 +5250,23 @@ export const statisticsTools: ParsedOperation[] = [
         resourceType: "report-config-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "report_type",
+        fieldPath: "spec.report_type",
+        options: ["spec.bot_defense", "spec.waap"],
+      },
+      {
+        choiceField: "report_frequency",
+        fieldPath: "spec.waap.report_frequency",
+        options: ["spec.waap.daily", "spec.waap.monthly", "spec.waap.weekly"],
+      },
+      {
+        choiceField: "report_namespaces",
+        fieldPath: "spec.waap.report_namespaces",
+        options: ["spec.waap.current_namespace", "spec.waap.namespaces"],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {

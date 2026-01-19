@@ -6,9 +6,6 @@ description: GET Swagger Spec for App Type.
 
 # Swagger Spec
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET the corresponding Swagger spec for the given app type.
 
 ## Tools

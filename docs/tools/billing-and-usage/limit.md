@@ -6,9 +6,6 @@ description: Custom GET Quota Limits.
 
 # Limit
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Custom endpoint to return quota limits.
 
 ## Tools

@@ -6,9 +6,6 @@ description: List
 
 # Catalog
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Retrieves service catalog tailor for the currently logged-in user.
 
 ## Tools
@@ -17,13 +14,16 @@ Retrieves service catalog tailor for the currently logged-in user.
 |------|-------------|
 | `f5xc-api-statistics-catalog-update` | List |
 
-## Side Effects
+## Configuration Choices
 
-Operations on this resource may have the following effects:
+This resource includes mutually exclusive configuration options:
 
-**Modifies:**
+### filter
 
-- catalog
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `use_case_filter` | - |  |
+| `workspace_filter` | - |  |
 
 ## Example Usage
 

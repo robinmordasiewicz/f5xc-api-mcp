@@ -6,9 +6,6 @@ description: GET Domain Details.
 
 # Domain Detail
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET the details of the domain provided.
 
 ## Tools

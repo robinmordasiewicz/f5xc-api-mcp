@@ -6,9 +6,6 @@ description: GET Request.
 
 # Nginx Csg
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 List the set of nginx_csg in a namespace.
 
 ## Tools

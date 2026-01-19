@@ -6,9 +6,6 @@ description: MetricsAllNamespaces.
 
 # All Ns Metric
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 App Firewall metrics.
 
 ## Tools
@@ -16,14 +13,6 @@ App Firewall metrics.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-waf-all-ns-metric-create` | MetricsAllNamespaces. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- all-ns-metric
 
 ## Example Usage
 

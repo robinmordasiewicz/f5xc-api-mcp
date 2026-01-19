@@ -6,9 +6,6 @@ description: Update Support Tenant Access.
 
 # Acces
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 This RPC can be used to manage user access for all flavors of support tenants currently
 supported by
 the platform. Use read-only, read-write with specific namespaces or
@@ -23,14 +20,6 @@ related tenant.
 |------|-------------|
 | `f5xc-api-tenantandidentity-acces-create` | Update Support Tenant Access. |
 | `f5xc-api-tenantandidentity-acces-list` | GET Support Tenant Access. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- acces
 
 ## Example Usage
 

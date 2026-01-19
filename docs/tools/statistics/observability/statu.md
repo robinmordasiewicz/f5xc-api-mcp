@@ -6,9 +6,6 @@ description: Global Log Receiver Status.
 
 # Statu
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET status for global log receivers.
 
 ## Tools
@@ -24,14 +21,6 @@ GET status for global log receivers.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- statu
 
 ## Example Usage
 

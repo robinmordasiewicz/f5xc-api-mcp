@@ -277,7 +277,120 @@ export const wafTools: ParsedOperation[] = [
         resourceType: "app-firewall-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "allowed_response_codes_choice",
+        fieldPath: "spec.allowed_response_codes_choice",
+        options: ["spec.allow_all_response_codes", "spec.allowed_response_codes"],
+        recommendedOption: "spec.allow_all_response_codes",
+      },
+      {
+        choiceField: "anonymization_setting",
+        fieldPath: "spec.anonymization_setting",
+        options: [
+          "spec.custom_anonymization",
+          "spec.default_anonymization",
+          "spec.disable_anonymization",
+        ],
+        recommendedOption: "spec.default_anonymization",
+      },
+      {
+        choiceField: "blocking_page_choice",
+        fieldPath: "spec.blocking_page_choice",
+        options: ["spec.blocking_page", "spec.use_default_blocking_page"],
+        recommendedOption: "spec.use_default_blocking_page",
+      },
+      {
+        choiceField: "bot_protection_choice",
+        fieldPath: "spec.bot_protection_choice",
+        options: ["spec.bot_protection_setting", "spec.default_bot_setting"],
+        recommendedOption: "spec.default_bot_setting",
+      },
+      {
+        choiceField: "detection_setting_choice",
+        fieldPath: "spec.detection_setting_choice",
+        options: [
+          "spec.ai_risk_based_blocking",
+          "spec.default_detection_settings",
+          "spec.detection_settings",
+        ],
+        recommendedOption: "spec.default_detection_settings",
+      },
+      {
+        choiceField: "enforcement_mode_choice",
+        fieldPath: "spec.enforcement_mode_choice",
+        options: ["spec.blocking", "spec.monitoring"],
+        recommendedOption: "spec.monitoring",
+      },
+      {
+        choiceField: "anonymization_choice",
+        fieldPath: "spec.custom_anonymization.anonymization_config[].anonymization_choice",
+        options: [
+          "spec.custom_anonymization.anonymization_config[].cookie",
+          "spec.custom_anonymization.anonymization_config[].http_header",
+          "spec.custom_anonymization.anonymization_config[].query_parameter",
+        ],
+      },
+      {
+        choiceField: "bot_protection_choice",
+        fieldPath: "spec.detection_settings.bot_protection_choice",
+        options: [
+          "spec.detection_settings.bot_protection_setting",
+          "spec.detection_settings.default_bot_setting",
+        ],
+      },
+      {
+        choiceField: "false_positive_suppression",
+        fieldPath: "spec.detection_settings.false_positive_suppression",
+        options: [
+          "spec.detection_settings.disable_suppression",
+          "spec.detection_settings.enable_suppression",
+        ],
+      },
+      {
+        choiceField: "signatures_staging_settings",
+        fieldPath: "spec.detection_settings.signatures_staging_settings",
+        options: [
+          "spec.detection_settings.disable_staging",
+          "spec.detection_settings.stage_new_and_updated_signatures",
+          "spec.detection_settings.stage_new_signatures",
+        ],
+      },
+      {
+        choiceField: "threat_campaign_choice",
+        fieldPath: "spec.detection_settings.threat_campaign_choice",
+        options: [
+          "spec.detection_settings.disable_threat_campaigns",
+          "spec.detection_settings.enable_threat_campaigns",
+        ],
+      },
+      {
+        choiceField: "violation_detection_setting",
+        fieldPath: "spec.detection_settings.violation_detection_setting",
+        options: [
+          "spec.detection_settings.default_violation_settings",
+          "spec.detection_settings.violation_settings",
+        ],
+      },
+      {
+        choiceField: "attack_type_setting",
+        fieldPath: "spec.detection_settings.signature_selection_setting.attack_type_setting",
+        options: [
+          "spec.detection_settings.signature_selection_setting.attack_type_settings",
+          "spec.detection_settings.signature_selection_setting.default_attack_type_settings",
+        ],
+      },
+      {
+        choiceField: "signature_selection_by_accuracy",
+        fieldPath:
+          "spec.detection_settings.signature_selection_setting.signature_selection_by_accuracy",
+        options: [
+          "spec.detection_settings.signature_selection_setting.high_medium_accuracy_signatures",
+          "spec.detection_settings.signature_selection_setting.high_medium_low_accuracy_signatures",
+          "spec.detection_settings.signature_selection_setting.only_high_accuracy_signatures",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -624,7 +737,120 @@ export const wafTools: ParsedOperation[] = [
         resourceType: "app-firewall-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "allowed_response_codes_choice",
+        fieldPath: "spec.allowed_response_codes_choice",
+        options: ["spec.allow_all_response_codes", "spec.allowed_response_codes"],
+        recommendedOption: "spec.allow_all_response_codes",
+      },
+      {
+        choiceField: "anonymization_setting",
+        fieldPath: "spec.anonymization_setting",
+        options: [
+          "spec.custom_anonymization",
+          "spec.default_anonymization",
+          "spec.disable_anonymization",
+        ],
+        recommendedOption: "spec.default_anonymization",
+      },
+      {
+        choiceField: "blocking_page_choice",
+        fieldPath: "spec.blocking_page_choice",
+        options: ["spec.blocking_page", "spec.use_default_blocking_page"],
+        recommendedOption: "spec.use_default_blocking_page",
+      },
+      {
+        choiceField: "bot_protection_choice",
+        fieldPath: "spec.bot_protection_choice",
+        options: ["spec.bot_protection_setting", "spec.default_bot_setting"],
+        recommendedOption: "spec.default_bot_setting",
+      },
+      {
+        choiceField: "detection_setting_choice",
+        fieldPath: "spec.detection_setting_choice",
+        options: [
+          "spec.ai_risk_based_blocking",
+          "spec.default_detection_settings",
+          "spec.detection_settings",
+        ],
+        recommendedOption: "spec.default_detection_settings",
+      },
+      {
+        choiceField: "enforcement_mode_choice",
+        fieldPath: "spec.enforcement_mode_choice",
+        options: ["spec.blocking", "spec.monitoring"],
+        recommendedOption: "spec.monitoring",
+      },
+      {
+        choiceField: "anonymization_choice",
+        fieldPath: "spec.custom_anonymization.anonymization_config[].anonymization_choice",
+        options: [
+          "spec.custom_anonymization.anonymization_config[].cookie",
+          "spec.custom_anonymization.anonymization_config[].http_header",
+          "spec.custom_anonymization.anonymization_config[].query_parameter",
+        ],
+      },
+      {
+        choiceField: "bot_protection_choice",
+        fieldPath: "spec.detection_settings.bot_protection_choice",
+        options: [
+          "spec.detection_settings.bot_protection_setting",
+          "spec.detection_settings.default_bot_setting",
+        ],
+      },
+      {
+        choiceField: "false_positive_suppression",
+        fieldPath: "spec.detection_settings.false_positive_suppression",
+        options: [
+          "spec.detection_settings.disable_suppression",
+          "spec.detection_settings.enable_suppression",
+        ],
+      },
+      {
+        choiceField: "signatures_staging_settings",
+        fieldPath: "spec.detection_settings.signatures_staging_settings",
+        options: [
+          "spec.detection_settings.disable_staging",
+          "spec.detection_settings.stage_new_and_updated_signatures",
+          "spec.detection_settings.stage_new_signatures",
+        ],
+      },
+      {
+        choiceField: "threat_campaign_choice",
+        fieldPath: "spec.detection_settings.threat_campaign_choice",
+        options: [
+          "spec.detection_settings.disable_threat_campaigns",
+          "spec.detection_settings.enable_threat_campaigns",
+        ],
+      },
+      {
+        choiceField: "violation_detection_setting",
+        fieldPath: "spec.detection_settings.violation_detection_setting",
+        options: [
+          "spec.detection_settings.default_violation_settings",
+          "spec.detection_settings.violation_settings",
+        ],
+      },
+      {
+        choiceField: "attack_type_setting",
+        fieldPath: "spec.detection_settings.signature_selection_setting.attack_type_setting",
+        options: [
+          "spec.detection_settings.signature_selection_setting.attack_type_settings",
+          "spec.detection_settings.signature_selection_setting.default_attack_type_settings",
+        ],
+      },
+      {
+        choiceField: "signature_selection_by_accuracy",
+        fieldPath:
+          "spec.detection_settings.signature_selection_setting.signature_selection_by_accuracy",
+        options: [
+          "spec.detection_settings.signature_selection_setting.high_medium_accuracy_signatures",
+          "spec.detection_settings.signature_selection_setting.high_medium_low_accuracy_signatures",
+          "spec.detection_settings.signature_selection_setting.only_high_accuracy_signatures",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -705,7 +931,69 @@ export const wafTools: ParsedOperation[] = [
         resourceType: "schemaenhanced-firewall-policy-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "rule_choice",
+        fieldPath: "spec.rule_choice",
+        options: [
+          "spec.allow_all",
+          "spec.allowed_destinations",
+          "spec.allowed_sources",
+          "spec.denied_destinations",
+          "spec.denied_sources",
+          "spec.deny_all",
+          "spec.rule_list",
+        ],
+      },
+      {
+        choiceField: "action_choice",
+        fieldPath: "spec.rule_list.rules[].action_choice",
+        options: [
+          "spec.rule_list.rules[].allow",
+          "spec.rule_list.rules[].deny",
+          "spec.rule_list.rules[].insert_service",
+        ],
+      },
+      {
+        choiceField: "destination_choice",
+        fieldPath: "spec.rule_list.rules[].destination_choice",
+        options: [
+          "spec.rule_list.rules[].all_destinations",
+          "spec.rule_list.rules[].all_sli_vips",
+          "spec.rule_list.rules[].all_slo_vips",
+          "spec.rule_list.rules[].destination_aws_vpc_ids",
+          "spec.rule_list.rules[].destination_ip_prefix_set",
+          "spec.rule_list.rules[].destination_label_selector",
+          "spec.rule_list.rules[].destination_prefix_list",
+          "spec.rule_list.rules[].inside_destinations",
+          "spec.rule_list.rules[].outside_destinations",
+        ],
+      },
+      {
+        choiceField: "source_choice",
+        fieldPath: "spec.rule_list.rules[].source_choice",
+        options: [
+          "spec.rule_list.rules[].all_sources",
+          "spec.rule_list.rules[].inside_sources",
+          "spec.rule_list.rules[].outside_sources",
+          "spec.rule_list.rules[].source_aws_vpc_ids",
+          "spec.rule_list.rules[].source_ip_prefix_set",
+          "spec.rule_list.rules[].source_label_selector",
+          "spec.rule_list.rules[].source_prefix_list",
+        ],
+      },
+      {
+        choiceField: "traffic_choice",
+        fieldPath: "spec.rule_list.rules[].traffic_choice",
+        options: [
+          "spec.rule_list.rules[].all_tcp_traffic",
+          "spec.rule_list.rules[].all_traffic",
+          "spec.rule_list.rules[].all_udp_traffic",
+          "spec.rule_list.rules[].applications",
+          "spec.rule_list.rules[].protocol_port_range",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -1052,7 +1340,69 @@ export const wafTools: ParsedOperation[] = [
         resourceType: "schemaenhanced-firewall-policy-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "rule_choice",
+        fieldPath: "spec.rule_choice",
+        options: [
+          "spec.allow_all",
+          "spec.allowed_destinations",
+          "spec.allowed_sources",
+          "spec.denied_destinations",
+          "spec.denied_sources",
+          "spec.deny_all",
+          "spec.rule_list",
+        ],
+      },
+      {
+        choiceField: "action_choice",
+        fieldPath: "spec.rule_list.rules[].action_choice",
+        options: [
+          "spec.rule_list.rules[].allow",
+          "spec.rule_list.rules[].deny",
+          "spec.rule_list.rules[].insert_service",
+        ],
+      },
+      {
+        choiceField: "destination_choice",
+        fieldPath: "spec.rule_list.rules[].destination_choice",
+        options: [
+          "spec.rule_list.rules[].all_destinations",
+          "spec.rule_list.rules[].all_sli_vips",
+          "spec.rule_list.rules[].all_slo_vips",
+          "spec.rule_list.rules[].destination_aws_vpc_ids",
+          "spec.rule_list.rules[].destination_ip_prefix_set",
+          "spec.rule_list.rules[].destination_label_selector",
+          "spec.rule_list.rules[].destination_prefix_list",
+          "spec.rule_list.rules[].inside_destinations",
+          "spec.rule_list.rules[].outside_destinations",
+        ],
+      },
+      {
+        choiceField: "source_choice",
+        fieldPath: "spec.rule_list.rules[].source_choice",
+        options: [
+          "spec.rule_list.rules[].all_sources",
+          "spec.rule_list.rules[].inside_sources",
+          "spec.rule_list.rules[].outside_sources",
+          "spec.rule_list.rules[].source_aws_vpc_ids",
+          "spec.rule_list.rules[].source_ip_prefix_set",
+          "spec.rule_list.rules[].source_label_selector",
+          "spec.rule_list.rules[].source_prefix_list",
+        ],
+      },
+      {
+        choiceField: "traffic_choice",
+        fieldPath: "spec.rule_list.rules[].traffic_choice",
+        options: [
+          "spec.rule_list.rules[].all_tcp_traffic",
+          "spec.rule_list.rules[].all_traffic",
+          "spec.rule_list.rules[].all_udp_traffic",
+          "spec.rule_list.rules[].applications",
+          "spec.rule_list.rules[].protocol_port_range",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -1411,7 +1761,24 @@ export const wafTools: ParsedOperation[] = [
         resourceType: "protocol-inspection-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "compliance_check_choice",
+        fieldPath: "spec.enable_disable_compliance_checks.compliance_check_choice",
+        options: [
+          "spec.enable_disable_compliance_checks.disable_compliance_checks",
+          "spec.enable_disable_compliance_checks.enable_compliance_checks",
+        ],
+      },
+      {
+        choiceField: "signature_choice",
+        fieldPath: "spec.enable_disable_signatures.signature_choice",
+        options: [
+          "spec.enable_disable_signatures.disable_signature",
+          "spec.enable_disable_signatures.enable_signature",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -1758,7 +2125,24 @@ export const wafTools: ParsedOperation[] = [
         resourceType: "protocol-inspection-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "compliance_check_choice",
+        fieldPath: "spec.enable_disable_compliance_checks.compliance_check_choice",
+        options: [
+          "spec.enable_disable_compliance_checks.disable_compliance_checks",
+          "spec.enable_disable_compliance_checks.enable_compliance_checks",
+        ],
+      },
+      {
+        choiceField: "signature_choice",
+        fieldPath: "spec.enable_disable_signatures.signature_choice",
+        options: [
+          "spec.enable_disable_signatures.disable_signature",
+          "spec.enable_disable_signatures.enable_signature",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -2278,7 +2662,34 @@ export const wafTools: ParsedOperation[] = [
         resourceType: "schemawaf-exclusion-policy-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.waf_exclusion_rules[].domain_choice",
+        options: [
+          "spec.waf_exclusion_rules[].any_domain",
+          "spec.waf_exclusion_rules[].exact_value",
+          "spec.waf_exclusion_rules[].suffix_value",
+        ],
+      },
+      {
+        choiceField: "path_choice",
+        fieldPath: "spec.waf_exclusion_rules[].path_choice",
+        options: [
+          "spec.waf_exclusion_rules[].any_path",
+          "spec.waf_exclusion_rules[].path_prefix",
+          "spec.waf_exclusion_rules[].path_regex",
+        ],
+      },
+      {
+        choiceField: "waf_advanced_configuration",
+        fieldPath: "spec.waf_exclusion_rules[].waf_advanced_configuration",
+        options: [
+          "spec.waf_exclusion_rules[].app_firewall_detection_control",
+          "spec.waf_exclusion_rules[].waf_skip_processing",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -2625,7 +3036,34 @@ export const wafTools: ParsedOperation[] = [
         resourceType: "schemawaf-exclusion-policy-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.waf_exclusion_rules[].domain_choice",
+        options: [
+          "spec.waf_exclusion_rules[].any_domain",
+          "spec.waf_exclusion_rules[].exact_value",
+          "spec.waf_exclusion_rules[].suffix_value",
+        ],
+      },
+      {
+        choiceField: "path_choice",
+        fieldPath: "spec.waf_exclusion_rules[].path_choice",
+        options: [
+          "spec.waf_exclusion_rules[].any_path",
+          "spec.waf_exclusion_rules[].path_prefix",
+          "spec.waf_exclusion_rules[].path_regex",
+        ],
+      },
+      {
+        choiceField: "waf_advanced_configuration",
+        fieldPath: "spec.waf_exclusion_rules[].waf_advanced_configuration",
+        options: [
+          "spec.waf_exclusion_rules[].app_firewall_detection_control",
+          "spec.waf_exclusion_rules[].waf_skip_processing",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",

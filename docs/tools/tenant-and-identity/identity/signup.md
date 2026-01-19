@@ -6,9 +6,6 @@ description: Read Signup.
 
 # Signup
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET allows users to query signup and its status. Use this to query for a status of a submitted
 signup object.
 

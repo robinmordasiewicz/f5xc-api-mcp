@@ -6,9 +6,6 @@ description: List service provider configs.
 
 # ServiceProviderConfig
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Listserviceproviderconfig CustomPublicAPI.
 
 ## Tools

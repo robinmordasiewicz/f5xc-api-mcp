@@ -6,9 +6,6 @@ description: Download Report.
 
 # Download
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Download report.
 
 ## Tools

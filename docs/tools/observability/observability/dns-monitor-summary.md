@@ -6,9 +6,6 @@ description: GET DNS Monitor Summary.
 
 # DNS Monitor Summary
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Returns the DNS monitor health status, latency, and trend.
 
 ## Tools

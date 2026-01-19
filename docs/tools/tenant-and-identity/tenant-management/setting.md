@@ -6,9 +6,6 @@ description: GetIDMSettings.
 
 # Setting
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GetIDMSettings returns IDM settings for tenant. IDM settings contains info like password
 policy,
 brute-force detection policy, etc...
@@ -19,14 +16,6 @@ brute-force detection policy, etc...
 |------|-------------|
 | `f5xc-api-tenantandidentity-setting-list` | GetIDMSettings. |
 | `f5xc-api-tenantandidentity-setting-update` | UpdateIDMSettings. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Modifies:**
-
-- setting
 
 ## Example Usage
 

@@ -6,9 +6,6 @@ description: GET BGP Status for view.
 
 # Bgpstatu
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Returned from list of BGP status objects for a given view.
 
 ## Tools

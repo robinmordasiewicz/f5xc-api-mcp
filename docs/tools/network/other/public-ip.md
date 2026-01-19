@@ -6,9 +6,6 @@ description: GET Public IP.
 
 # Public IP
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Replacing an public_ip object will update the object by replacing the existing spec with the
 provided one.
 For read-then-write operations a resourceVersion mismatch will occur if the object was
@@ -41,14 +38,6 @@ modified between the read and write.
 | `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
 | `report_fields` | The report_fields parameter | `-` |
 | `report_status_fields` | The report_status_fields parameter | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Modifies:**
-
-- public-ip
 
 ## Example Usage
 

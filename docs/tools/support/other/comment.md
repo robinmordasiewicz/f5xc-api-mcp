@@ -6,9 +6,6 @@ description: Add comment to a customer support ticket.
 
 # Comment
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Adds additional comment to a specified customer support ticket. The comment may include an
 attachment.
 
@@ -26,14 +23,6 @@ attachment.
 |-----------|-------------|--------|
 | `name` | Name | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- comment
 
 ## Example Usage
 

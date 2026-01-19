@@ -6,9 +6,6 @@ description: Top Malicious Bot Automation Types.
 
 # Automation
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET top malicious bots automation types.
 
 ## Tools
@@ -24,14 +21,6 @@ GET top malicious bots automation types.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- automation
 
 ## Example Usage
 

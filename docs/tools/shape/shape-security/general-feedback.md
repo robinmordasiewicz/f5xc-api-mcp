@@ -6,9 +6,6 @@ description: Update Fraud Feedback.
 
 # General Feedback
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Update fraud feedback for a transaction or session.
 
 ## Tools
@@ -24,14 +21,6 @@ Update fraud feedback for a transaction or session.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- general-feedback
 
 ## Example Usage
 

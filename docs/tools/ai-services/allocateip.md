@@ -6,9 +6,6 @@ description: Allocate IP through Global IP Allocator.
 
 # Allocateip
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 AllocateIP will allocate an IP address for the tenant read from context.
 
 ## Tools
@@ -16,14 +13,6 @@ AllocateIP will allocate an IP address for the tenant read from context.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-aiservices-allocateip-create` | Allocate IP through Global IP Allocator. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- allocateip
 
 ## Example Usage
 

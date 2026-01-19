@@ -6,9 +6,6 @@ description: GET List Of Mobile SDKs.
 
 # Mobile Sdk
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 ListMobileSDKs is an API to list all mobile SDKs available for download.
 
 ## Tools

@@ -6,9 +6,6 @@ description: GET Top APIs Endpoints for Virtual Host.
 
 # Top Active
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Top APIs by requested activity metric. For example most-active APIs or most-attacked APIs.
 
 ## Tools
@@ -25,14 +22,6 @@ Top APIs by requested activity metric. For example most-active APIs or most-atta
 |-----------|-------------|--------|
 | `name` | Virtual Host Name | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- top-active
 
 ## Example Usage
 

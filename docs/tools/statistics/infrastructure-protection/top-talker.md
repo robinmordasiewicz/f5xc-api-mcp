@@ -6,9 +6,6 @@ description: L3l4 Top talkers Query.
 
 # Top Talker
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Request to GET l3l4 Top talkers Traffic data.
 
 ## Tools
@@ -25,14 +22,6 @@ Request to GET l3l4 Top talkers Traffic data.
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
 | `network_id` | NetworkId | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- top-talker
 
 ## Example Usage
 

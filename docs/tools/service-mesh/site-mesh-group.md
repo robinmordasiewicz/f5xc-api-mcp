@@ -6,12 +6,6 @@ description: Create Site Mesh Group.
 
 # Site Mesh Group
 
-!!! danger "High Risk Operation"
-    This resource includes operations that may cause significant changes. Review carefully before executing.
-
-!!! note "Confirmation Required"
-    Some operations on this resource require explicit confirmation before execution.
-
 Create a Site Mesh Group in system namespace of user.
 
 ## Tools
@@ -43,23 +37,6 @@ Create a Site Mesh Group in system namespace of user.
 | `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
 | `report_fields` | The report_fields parameter | `-` |
 | `report_status_fields` | The report_status_fields parameter | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- site-mesh-group
-
-**Modifies:**
-
-- site-mesh-group
-
-**Deletes:**
-
-- site-mesh-group
-- contained_resources
 
 ## Example Usage
 

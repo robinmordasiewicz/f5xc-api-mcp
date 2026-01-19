@@ -6,9 +6,6 @@ description: GET List Of Stored Objects.
 
 # Stored Object
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 ListObjects is an API to list objects in object store.
 
 ## Tools

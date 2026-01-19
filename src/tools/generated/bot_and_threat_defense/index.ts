@@ -71,7 +71,29 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
         resourceType: "bot-defense-app-infrastructure-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "infra_choice",
+        fieldPath: "spec.infra_choice",
+        options: ["spec.cloud_hosted", "spec.data_center_hosted"],
+      },
+      {
+        choiceField: "type_choice",
+        fieldPath: "spec.cloud_hosted.ingress[].type_choice",
+        options: [
+          "spec.cloud_hosted.ingress[].host_name",
+          "spec.cloud_hosted.ingress[].ip_address",
+        ],
+      },
+      {
+        choiceField: "type_choice",
+        fieldPath: "spec.data_center_hosted.ingress[].type_choice",
+        options: [
+          "spec.data_center_hosted.ingress[].host_name",
+          "spec.data_center_hosted.ingress[].ip_address",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -417,7 +439,29 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
         resourceType: "bot-defense-app-infrastructure-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "infra_choice",
+        fieldPath: "spec.infra_choice",
+        options: ["spec.cloud_hosted", "spec.data_center_hosted"],
+      },
+      {
+        choiceField: "type_choice",
+        fieldPath: "spec.cloud_hosted.ingress[].type_choice",
+        options: [
+          "spec.cloud_hosted.ingress[].host_name",
+          "spec.cloud_hosted.ingress[].ip_address",
+        ],
+      },
+      {
+        choiceField: "type_choice",
+        fieldPath: "spec.data_center_hosted.ingress[].type_choice",
+        options: [
+          "spec.data_center_hosted.ingress[].host_name",
+          "spec.data_center_hosted.ingress[].ip_address",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",

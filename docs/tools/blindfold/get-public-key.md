@@ -6,9 +6,6 @@ description: Public Key.
 
 # Get Public Key
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GetPublicKey API returns public part of the F5 Distributed Cloud secret management key that needs to
 be given to F5 Distributed Cloud secret management tool to do secret encryption.
 

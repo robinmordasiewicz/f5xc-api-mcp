@@ -6,12 +6,6 @@ description: Create Protocol Inspection.
 
 # Protocol Inspection
 
-!!! danger "High Risk Operation"
-    This resource includes operations that may cause significant changes. Review carefully before executing.
-
-!!! note "Confirmation Required"
-    Some operations on this resource require explicit confirmation before execution.
-
 Create Protocol Inspection Specification in a given namespace. If one already exists it will give an
 error.
 
@@ -44,23 +38,6 @@ error.
 | `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
 | `report_fields` | The report_fields parameter | `-` |
 | `report_status_fields` | The report_status_fields parameter | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- protocol-inspection
-
-**Modifies:**
-
-- protocol-inspection
-
-**Deletes:**
-
-- protocol-inspection
-- contained_resources
 
 ## Example Usage
 

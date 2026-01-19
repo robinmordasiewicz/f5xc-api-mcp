@@ -6,9 +6,6 @@ description: Tenant escalation document.
 
 # Tenant Escalation Doc
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Receive current tenant escalation document.
 
 ## Tools

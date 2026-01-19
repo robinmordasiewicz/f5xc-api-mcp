@@ -6,9 +6,6 @@ description: Suggest block client rule.
 
 # Suggestion
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Suggest blocking SimpleClientSrcRule for a given IP/ASN.
 
 ## Tools
@@ -25,14 +22,6 @@ Suggest blocking SimpleClientSrcRule for a given IP/ASN.
 |-----------|-------------|--------|
 | `name` | Name | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- suggestion
 
 ## Example Usage
 

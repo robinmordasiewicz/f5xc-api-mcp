@@ -6,9 +6,6 @@ description: GET Request.
 
 # Nginx Instance
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 List the set of nginx_instance in a namespace.
 
 ## Tools

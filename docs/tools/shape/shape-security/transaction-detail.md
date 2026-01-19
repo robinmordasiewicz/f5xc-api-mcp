@@ -6,9 +6,6 @@ description: PostSafeTransactionDetails.
 
 # Transaction Detail
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET a detailed information about the requested transaction.
 
 ## Tools
@@ -32,14 +29,6 @@ GET a detailed information about the requested transaction.
 |-----------|-------------|--------|
 | `transaction_id` | Transaction identifier. | `-` |
 | `version` | The API version to use. | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- transaction-detail
 
 ## Example Usage
 

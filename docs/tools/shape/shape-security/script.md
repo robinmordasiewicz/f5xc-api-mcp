@@ -6,9 +6,6 @@ description: List Scripts.
 
 # Script
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 List all the scripts for the tenant depending on start time and end time.
 
 ## Tools
@@ -35,14 +32,6 @@ List all the scripts for the tenant depending on start time and end time.
 | `page_size` | The maximum number of scripts to return per page. | `-` |
 | `page_token` | Page_token is the value of listscriptsresponse.next_page_token from previous request. | `-` |
 | `start_time` | X-required | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- script
 
 ## Example Usage
 

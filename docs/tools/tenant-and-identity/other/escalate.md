@@ -6,9 +6,6 @@ description: Escalate a ticket in managed tenant.
 
 # Escalate
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Escalates a selected ticket. Only certain customers (depending on their contract) are allowed to
 escalate tickets.
 
@@ -25,14 +22,6 @@ escalate tickets.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `tp_id` | Third party ID | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- escalate
 
 ## Example Usage
 

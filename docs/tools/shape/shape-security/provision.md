@@ -6,9 +6,6 @@ description: PostSafeProvision.
 
 # Provision
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET Recognize provision status as add-on service.
 
 ## Tools
@@ -25,14 +22,6 @@ GET Recognize provision status as add-on service.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- provision
 
 ## Example Usage
 

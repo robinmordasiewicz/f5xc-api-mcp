@@ -6,9 +6,6 @@ description: DecryptSecret.
 
 # Decrypt Secret
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 DecryptSecret API takes blinded encrypted secret and policy and responds with blinded decrypted
 secret if user is allowed by the policy.
 
@@ -17,14 +14,6 @@ secret if user is allowed by the policy.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-blindfold-decrypt-secret-create` | DecryptSecret. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- decrypt-secret
 
 ## Example Usage
 

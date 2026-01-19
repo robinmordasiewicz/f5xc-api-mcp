@@ -6,9 +6,6 @@ description: Security Events Aggregation Query All Namespaces.
 
 # Aggregation
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET summary/aggregation data for security events in the given namespace.
 For `system` namespace, all
 security events for the tenant matching the query specified
@@ -22,14 +19,6 @@ fields such as `vh_name`,
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-waf-aggregation-create` | Security Events Aggregation Query All Namespaces. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- aggregation
 
 ## Example Usage
 

@@ -6,12 +6,6 @@ description: Add Event Detail.
 
 # Detail
 
-!!! danger "High Risk Operation"
-    This resource includes operations that may cause significant changes. Review carefully before executing.
-
-!!! note "Confirmation Required"
-    Some operations on this resource require explicit confirmation before execution.
-
 Returns a list of event details. The list contains event details entered by customer and the SOC
 team members, mitigation annotations and any attachments.
 
@@ -33,23 +27,6 @@ team members, mitigation annotations and any attachments.
 | `event_id` | Event ID | `-` |
 | `namespace` | Namespace | `-` |
 | `event_detail_id` | Event Detail ID | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- detail
-
-**Modifies:**
-
-- detail
-
-**Deletes:**
-
-- detail
-- contained_resources
 
 ## Example Usage
 

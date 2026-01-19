@@ -6,12 +6,6 @@ description: Save draft.
 
 # Draft
 
-!!! danger "High Risk Operation"
-    This resource includes operations that may cause significant changes. Review carefully before executing.
-
-!!! note "Confirmation Required"
-    Some operations on this resource require explicit confirmation before execution.
-
 Getbotdetectionrulesdraft CustomAPI.
 
 ## Tools
@@ -29,19 +23,6 @@ Getbotdetectionrulesdraft CustomAPI.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- draft
-
-**Deletes:**
-
-- draft
-- contained_resources
 
 ## Example Usage
 

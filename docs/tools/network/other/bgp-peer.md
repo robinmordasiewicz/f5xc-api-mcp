@@ -6,9 +6,6 @@ description: Show BGP Peer Info.
 
 # Bgp Peer
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Show BGP Peer information.
 
 ## Tools

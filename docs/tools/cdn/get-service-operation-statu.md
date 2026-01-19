@@ -6,9 +6,6 @@ description: GET Service Operation Status.
 
 # Get Service Operation Statu
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET status of an operation command for a given CDN Loadbalancer.
 
 ## Tools
@@ -24,14 +21,6 @@ GET status of an operation command for a given CDN Loadbalancer.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- get-service-operation-statu
 
 ## Example Usage
 

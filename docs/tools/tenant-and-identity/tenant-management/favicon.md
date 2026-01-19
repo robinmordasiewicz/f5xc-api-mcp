@@ -6,9 +6,6 @@ description: Tenant favicon.
 
 # Favicon
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Receive current tenant favicon.
 
 ## Tools

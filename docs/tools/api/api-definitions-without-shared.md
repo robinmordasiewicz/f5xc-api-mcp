@@ -6,9 +6,6 @@ description: List Available API Definitions.
 
 # API Definitions Without Shared
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 List API definitions suitable for API Inventory management
 GET all API Definitions for specific
 namespace exclude shared namespace.

@@ -6,12 +6,6 @@ description: Create IKE Phase2 Profile.
 
 # Ike2
 
-!!! danger "High Risk Operation"
-    This resource includes operations that may cause significant changes. Review carefully before executing.
-
-!!! note "Confirmation Required"
-    Some operations on this resource require explicit confirmation before execution.
-
 Shape of the IKE Phase2 Profile configuration specification.
 
 ## Tools
@@ -43,23 +37,6 @@ Shape of the IKE Phase2 Profile configuration specification.
 | `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
 | `report_fields` | The report_fields parameter | `-` |
 | `report_status_fields` | The report_status_fields parameter | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- ike2
-
-**Modifies:**
-
-- ike2
-
-**Deletes:**
-
-- ike2
-- contained_resources
 
 ## Example Usage
 

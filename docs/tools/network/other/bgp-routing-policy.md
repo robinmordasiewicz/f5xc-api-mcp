@@ -6,12 +6,6 @@ description: Create BGP Routing Policy.
 
 # Bgp Routing Policy
 
-!!! danger "High Risk Operation"
-    This resource includes operations that may cause significant changes. Review carefully before executing.
-
-!!! note "Confirmation Required"
-    Some operations on this resource require explicit confirmation before execution.
-
 BGP Routing Policy is a list of rules containing match criteria
 and action to be applied. These
 rules help contol routes which are
@@ -46,23 +40,6 @@ imported or exported to BGP peers.
 | `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
 | `report_fields` | The report_fields parameter | `-` |
 | `report_status_fields` | The report_status_fields parameter | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- bgp-routing-policy
-
-**Modifies:**
-
-- bgp-routing-policy
-
-**Deletes:**
-
-- bgp-routing-policy
-- contained_resources
 
 ## Example Usage
 

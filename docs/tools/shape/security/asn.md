@@ -6,9 +6,6 @@ description: Malicious Report Transactions ASN.
 
 # Asn
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Malicious Report Transactions ASN.
 
 ## Tools
@@ -24,14 +21,6 @@ Malicious Report Transactions ASN.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- asn
 
 ## Example Usage
 

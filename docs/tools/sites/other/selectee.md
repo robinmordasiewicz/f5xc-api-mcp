@@ -6,9 +6,6 @@ description: GET Selectees.
 
 # Selectee
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET the list of objects selected by this Virtual Site based on its selector label expression.
 
 ## Tools

@@ -6,9 +6,6 @@ description: Audit Log Aggregation Query.
 
 # Aggregation
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Request to GET summary/analytics data for the audit logs that matches the criteria in request.
 
 ## Tools
@@ -24,14 +21,6 @@ Request to GET summary/analytics data for the audit logs that matches the criter
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- aggregation
 
 ## Example Usage
 

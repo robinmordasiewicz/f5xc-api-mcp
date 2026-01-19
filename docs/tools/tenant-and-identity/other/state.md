@@ -6,9 +6,6 @@ description: List states.
 
 # State
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Returns a list of known states of a country. List will be empty if country has no states.
 
 ## Tools

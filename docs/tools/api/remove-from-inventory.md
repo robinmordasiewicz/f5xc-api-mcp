@@ -6,9 +6,6 @@ description: Remove From API Inventory.
 
 # Remove From Inventory
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Update the API Definition's exclude list with the provided API endpoints.
 
 ## Tools
@@ -25,14 +22,6 @@ Update the API Definition's exclude list with the provided API endpoints.
 |-----------|-------------|--------|
 | `name` | Name | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- remove-from-inventory
 
 ## Example Usage
 

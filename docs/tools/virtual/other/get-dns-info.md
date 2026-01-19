@@ -6,9 +6,6 @@ description: GET DNS Info.
 
 # Get DNS Info
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GetDnsInfo is an API to GET DNS information for a given HTTP load balancer.
 
 ## Tools

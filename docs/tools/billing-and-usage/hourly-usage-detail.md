@@ -6,9 +6,6 @@ description: List hourly usage details.
 
 # Hourly Usage Detail
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 List the usage divided by hour. The usage is hourly aggregated, from the start of UTC hour
 to the
 end of UTC hour. It is used to see the detailed breakdown of the usage received from
@@ -27,14 +24,6 @@ ListUsageDetails.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- hourly-usage-detail
 
 ## Example Usage
 

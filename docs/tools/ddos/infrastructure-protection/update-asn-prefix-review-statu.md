@@ -6,9 +6,6 @@ description: Update ASN Prefix Review Status.
 
 # Update Asn Prefix Review Statu
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Update Infraprotect ASN Prefix Review Status.
 
 ## Tools
@@ -25,13 +22,17 @@ Update Infraprotect ASN Prefix Review Status.
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
 
-## Side Effects
+## Configuration Choices
 
-Operations on this resource may have the following effects:
+This resource includes mutually exclusive configuration options:
 
-**Creates:**
+### review_type
 
-- update-asn-prefix-review-statu
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `review_type_approved` | - |  |
+| `review_type_pending` | - |  |
+| `review_type_rejected` | - |  |
 
 ## Example Usage
 

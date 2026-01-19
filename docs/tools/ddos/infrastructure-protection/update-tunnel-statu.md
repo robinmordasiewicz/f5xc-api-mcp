@@ -6,9 +6,6 @@ description: Update Tunnel Status.
 
 # Update Tunnel Statu
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Update Tunnel Status.
 
 ## Tools
@@ -24,14 +21,6 @@ Update Tunnel Status.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- update-tunnel-statu
 
 ## Example Usage
 

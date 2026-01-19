@@ -6,9 +6,6 @@ description: Update OIDC mappers.
 
 # Mapper
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Update OIDC mappers updates OIDC mappers in underlying IDM provider.
 
 ## Tools
@@ -26,14 +23,6 @@ Update OIDC mappers updates OIDC mappers in underlying IDM provider.
 |-----------|-------------|--------|
 | `name` | OIDC provider name | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- mapper
 
 ## Example Usage
 

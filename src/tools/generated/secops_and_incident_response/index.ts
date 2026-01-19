@@ -72,7 +72,26 @@ export const secops_and_incident_responseTools: ParsedOperation[] = [
         resourceType: "malicious-user-mitigation-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "mitigation_action",
+        fieldPath: "spec.mitigation_type.rules[].mitigation_action.mitigation_action",
+        options: [
+          "spec.mitigation_type.rules[].mitigation_action.block_temporarily",
+          "spec.mitigation_type.rules[].mitigation_action.captcha_challenge",
+          "spec.mitigation_type.rules[].mitigation_action.javascript_challenge",
+        ],
+      },
+      {
+        choiceField: "threat_level",
+        fieldPath: "spec.mitigation_type.rules[].threat_level.threat_level",
+        options: [
+          "spec.mitigation_type.rules[].threat_level.high",
+          "spec.mitigation_type.rules[].threat_level.low",
+          "spec.mitigation_type.rules[].threat_level.medium",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -421,7 +440,26 @@ export const secops_and_incident_responseTools: ParsedOperation[] = [
         resourceType: "malicious-user-mitigation-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "mitigation_action",
+        fieldPath: "spec.mitigation_type.rules[].mitigation_action.mitigation_action",
+        options: [
+          "spec.mitigation_type.rules[].mitigation_action.block_temporarily",
+          "spec.mitigation_type.rules[].mitigation_action.captcha_challenge",
+          "spec.mitigation_type.rules[].mitigation_action.javascript_challenge",
+        ],
+      },
+      {
+        choiceField: "threat_level",
+        fieldPath: "spec.mitigation_type.rules[].threat_level.threat_level",
+        options: [
+          "spec.mitigation_type.rules[].threat_level.high",
+          "spec.mitigation_type.rules[].threat_level.low",
+          "spec.mitigation_type.rules[].threat_level.medium",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",

@@ -6,9 +6,6 @@ description: Connector Configuration.
 
 # Config
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET Connector config.
 
 ## Tools

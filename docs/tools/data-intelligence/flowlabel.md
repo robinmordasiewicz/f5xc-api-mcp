@@ -6,9 +6,6 @@ description: List FlowLabels.
 
 # Flowlabel
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 ListFlowLabels takes a customer name and returns a list of FlowLabel objects.
 
 ## Tools

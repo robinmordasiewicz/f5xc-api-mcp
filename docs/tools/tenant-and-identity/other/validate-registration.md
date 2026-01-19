@@ -6,9 +6,6 @@ description: Validate Registration.
 
 # Validate Registration
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 ValidateRegistration validates if the signup registration request is valid when a new customer
 attempts to signup.
 
@@ -17,14 +14,6 @@ attempts to signup.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-tenantandidentity-validate-registration-create` | Validate Registration. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- validate-registration
 
 ## Example Usage
 

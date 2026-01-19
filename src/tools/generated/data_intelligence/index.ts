@@ -223,7 +223,395 @@ export const data_intelligenceTools: ParsedOperation[] = [
         resourceType: "receiver-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "receiver",
+        fieldPath: "spec.receiver",
+        options: [
+          "spec.azure_receiver",
+          "spec.datadog_receiver",
+          "spec.gcp_bucket_receiver",
+          "spec.http_receiver",
+          "spec.s3_receiver",
+          "spec.splunk_receiver",
+        ],
+      },
+      {
+        choiceField: "batch_bytes",
+        fieldPath: "spec.azure_receiver.batch.batch_bytes",
+        options: [
+          "spec.azure_receiver.batch.max_bytes",
+          "spec.azure_receiver.batch.max_bytes_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_events",
+        fieldPath: "spec.azure_receiver.batch.batch_events",
+        options: [
+          "spec.azure_receiver.batch.max_events",
+          "spec.azure_receiver.batch.max_events_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_timeout",
+        fieldPath: "spec.azure_receiver.batch.batch_timeout",
+        options: [
+          "spec.azure_receiver.batch.default_timeout_seconds",
+          "spec.azure_receiver.batch.timeout_seconds",
+        ],
+      },
+      {
+        choiceField: "compression_choice",
+        fieldPath: "spec.azure_receiver.compression.compression_choice",
+        options: [
+          "spec.azure_receiver.compression.gzip_compression",
+          "spec.azure_receiver.compression.no_compression",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.azure_receiver.connection_string.secret_info_oneof",
+        options: [
+          "spec.azure_receiver.connection_string.blindfold_secret_info",
+          "spec.azure_receiver.connection_string.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "endpoint_choice",
+        fieldPath: "spec.datadog_receiver.endpoint_choice",
+        options: ["spec.datadog_receiver.endpoint", "spec.datadog_receiver.site"],
+      },
+      {
+        choiceField: "tls_choice",
+        fieldPath: "spec.datadog_receiver.tls_choice",
+        options: ["spec.datadog_receiver.no_tls", "spec.datadog_receiver.use_tls"],
+      },
+      {
+        choiceField: "batch_bytes",
+        fieldPath: "spec.datadog_receiver.batch.batch_bytes",
+        options: [
+          "spec.datadog_receiver.batch.max_bytes",
+          "spec.datadog_receiver.batch.max_bytes_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_events",
+        fieldPath: "spec.datadog_receiver.batch.batch_events",
+        options: [
+          "spec.datadog_receiver.batch.max_events",
+          "spec.datadog_receiver.batch.max_events_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_timeout",
+        fieldPath: "spec.datadog_receiver.batch.batch_timeout",
+        options: [
+          "spec.datadog_receiver.batch.default_timeout_seconds",
+          "spec.datadog_receiver.batch.timeout_seconds",
+        ],
+      },
+      {
+        choiceField: "compression_choice",
+        fieldPath: "spec.datadog_receiver.compression.compression_choice",
+        options: [
+          "spec.datadog_receiver.compression.gzip_compression",
+          "spec.datadog_receiver.compression.no_compression",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.datadog_receiver.datadog_api_key.secret_info_oneof",
+        options: [
+          "spec.datadog_receiver.datadog_api_key.blindfold_secret_info",
+          "spec.datadog_receiver.datadog_api_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "ca_choice",
+        fieldPath: "spec.datadog_receiver.use_tls.ca_choice",
+        options: [
+          "spec.datadog_receiver.use_tls.no_ca",
+          "spec.datadog_receiver.use_tls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath: "spec.datadog_receiver.use_tls.mtls_choice",
+        options: [
+          "spec.datadog_receiver.use_tls.mtls_disabled",
+          "spec.datadog_receiver.use_tls.mtls_enable",
+        ],
+      },
+      {
+        choiceField: "verify_certificate",
+        fieldPath: "spec.datadog_receiver.use_tls.verify_certificate",
+        options: [
+          "spec.datadog_receiver.use_tls.disable_verify_certificate",
+          "spec.datadog_receiver.use_tls.enable_verify_certificate",
+        ],
+      },
+      {
+        choiceField: "verify_hostname",
+        fieldPath: "spec.datadog_receiver.use_tls.verify_hostname",
+        options: [
+          "spec.datadog_receiver.use_tls.disable_verify_hostname",
+          "spec.datadog_receiver.use_tls.enable_verify_hostname",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.datadog_receiver.use_tls.mtls_enable.key_url.secret_info_oneof",
+        options: [
+          "spec.datadog_receiver.use_tls.mtls_enable.key_url.blindfold_secret_info",
+          "spec.datadog_receiver.use_tls.mtls_enable.key_url.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "batch_bytes",
+        fieldPath: "spec.gcp_bucket_receiver.batch.batch_bytes",
+        options: [
+          "spec.gcp_bucket_receiver.batch.max_bytes",
+          "spec.gcp_bucket_receiver.batch.max_bytes_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_events",
+        fieldPath: "spec.gcp_bucket_receiver.batch.batch_events",
+        options: [
+          "spec.gcp_bucket_receiver.batch.max_events",
+          "spec.gcp_bucket_receiver.batch.max_events_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_timeout",
+        fieldPath: "spec.gcp_bucket_receiver.batch.batch_timeout",
+        options: [
+          "spec.gcp_bucket_receiver.batch.default_timeout_seconds",
+          "spec.gcp_bucket_receiver.batch.timeout_seconds",
+        ],
+      },
+      {
+        choiceField: "compression_choice",
+        fieldPath: "spec.gcp_bucket_receiver.compression.compression_choice",
+        options: [
+          "spec.gcp_bucket_receiver.compression.gzip_compression",
+          "spec.gcp_bucket_receiver.compression.no_compression",
+        ],
+      },
+      {
+        choiceField: "auth_choice",
+        fieldPath: "spec.http_receiver.auth_choice",
+        options: [
+          "spec.http_receiver.auth_basic",
+          "spec.http_receiver.auth_none",
+          "spec.http_receiver.auth_token",
+        ],
+      },
+      {
+        choiceField: "tls_choice",
+        fieldPath: "spec.http_receiver.tls_choice",
+        options: ["spec.http_receiver.no_tls", "spec.http_receiver.use_tls"],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.http_receiver.auth_basic.password.secret_info_oneof",
+        options: [
+          "spec.http_receiver.auth_basic.password.blindfold_secret_info",
+          "spec.http_receiver.auth_basic.password.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.http_receiver.auth_token.token.secret_info_oneof",
+        options: [
+          "spec.http_receiver.auth_token.token.blindfold_secret_info",
+          "spec.http_receiver.auth_token.token.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "batch_bytes",
+        fieldPath: "spec.http_receiver.batch.batch_bytes",
+        options: [
+          "spec.http_receiver.batch.max_bytes",
+          "spec.http_receiver.batch.max_bytes_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_events",
+        fieldPath: "spec.http_receiver.batch.batch_events",
+        options: [
+          "spec.http_receiver.batch.max_events",
+          "spec.http_receiver.batch.max_events_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_timeout",
+        fieldPath: "spec.http_receiver.batch.batch_timeout",
+        options: [
+          "spec.http_receiver.batch.default_timeout_seconds",
+          "spec.http_receiver.batch.timeout_seconds",
+        ],
+      },
+      {
+        choiceField: "compression_choice",
+        fieldPath: "spec.http_receiver.compression.compression_choice",
+        options: [
+          "spec.http_receiver.compression.gzip_compression",
+          "spec.http_receiver.compression.no_compression",
+        ],
+      },
+      {
+        choiceField: "ca_choice",
+        fieldPath: "spec.http_receiver.use_tls.ca_choice",
+        options: ["spec.http_receiver.use_tls.no_ca", "spec.http_receiver.use_tls.trusted_ca_url"],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath: "spec.http_receiver.use_tls.mtls_choice",
+        options: [
+          "spec.http_receiver.use_tls.mtls_disabled",
+          "spec.http_receiver.use_tls.mtls_enable",
+        ],
+      },
+      {
+        choiceField: "verify_certificate",
+        fieldPath: "spec.http_receiver.use_tls.verify_certificate",
+        options: [
+          "spec.http_receiver.use_tls.disable_verify_certificate",
+          "spec.http_receiver.use_tls.enable_verify_certificate",
+        ],
+      },
+      {
+        choiceField: "verify_hostname",
+        fieldPath: "spec.http_receiver.use_tls.verify_hostname",
+        options: [
+          "spec.http_receiver.use_tls.disable_verify_hostname",
+          "spec.http_receiver.use_tls.enable_verify_hostname",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.http_receiver.use_tls.mtls_enable.key_url.secret_info_oneof",
+        options: [
+          "spec.http_receiver.use_tls.mtls_enable.key_url.blindfold_secret_info",
+          "spec.http_receiver.use_tls.mtls_enable.key_url.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "batch_bytes",
+        fieldPath: "spec.s3_receiver.batch.batch_bytes",
+        options: ["spec.s3_receiver.batch.max_bytes", "spec.s3_receiver.batch.max_bytes_disabled"],
+      },
+      {
+        choiceField: "batch_events",
+        fieldPath: "spec.s3_receiver.batch.batch_events",
+        options: [
+          "spec.s3_receiver.batch.max_events",
+          "spec.s3_receiver.batch.max_events_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_timeout",
+        fieldPath: "spec.s3_receiver.batch.batch_timeout",
+        options: [
+          "spec.s3_receiver.batch.default_timeout_seconds",
+          "spec.s3_receiver.batch.timeout_seconds",
+        ],
+      },
+      {
+        choiceField: "compression_choice",
+        fieldPath: "spec.s3_receiver.compression.compression_choice",
+        options: [
+          "spec.s3_receiver.compression.gzip_compression",
+          "spec.s3_receiver.compression.no_compression",
+        ],
+      },
+      {
+        choiceField: "tls_choice",
+        fieldPath: "spec.splunk_receiver.tls_choice",
+        options: ["spec.splunk_receiver.no_tls", "spec.splunk_receiver.use_tls"],
+      },
+      {
+        choiceField: "batch_bytes",
+        fieldPath: "spec.splunk_receiver.batch.batch_bytes",
+        options: [
+          "spec.splunk_receiver.batch.max_bytes",
+          "spec.splunk_receiver.batch.max_bytes_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_events",
+        fieldPath: "spec.splunk_receiver.batch.batch_events",
+        options: [
+          "spec.splunk_receiver.batch.max_events",
+          "spec.splunk_receiver.batch.max_events_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_timeout",
+        fieldPath: "spec.splunk_receiver.batch.batch_timeout",
+        options: [
+          "spec.splunk_receiver.batch.default_timeout_seconds",
+          "spec.splunk_receiver.batch.timeout_seconds",
+        ],
+      },
+      {
+        choiceField: "compression_choice",
+        fieldPath: "spec.splunk_receiver.compression.compression_choice",
+        options: [
+          "spec.splunk_receiver.compression.gzip_compression",
+          "spec.splunk_receiver.compression.no_compression",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.splunk_receiver.splunk_hec_token.secret_info_oneof",
+        options: [
+          "spec.splunk_receiver.splunk_hec_token.blindfold_secret_info",
+          "spec.splunk_receiver.splunk_hec_token.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "ca_choice",
+        fieldPath: "spec.splunk_receiver.use_tls.ca_choice",
+        options: [
+          "spec.splunk_receiver.use_tls.no_ca",
+          "spec.splunk_receiver.use_tls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath: "spec.splunk_receiver.use_tls.mtls_choice",
+        options: [
+          "spec.splunk_receiver.use_tls.mtls_disabled",
+          "spec.splunk_receiver.use_tls.mtls_enable",
+        ],
+      },
+      {
+        choiceField: "verify_certificate",
+        fieldPath: "spec.splunk_receiver.use_tls.verify_certificate",
+        options: [
+          "spec.splunk_receiver.use_tls.disable_verify_certificate",
+          "spec.splunk_receiver.use_tls.enable_verify_certificate",
+        ],
+      },
+      {
+        choiceField: "verify_hostname",
+        fieldPath: "spec.splunk_receiver.use_tls.verify_hostname",
+        options: [
+          "spec.splunk_receiver.use_tls.disable_verify_hostname",
+          "spec.splunk_receiver.use_tls.enable_verify_hostname",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.splunk_receiver.use_tls.mtls_enable.key_url.secret_info_oneof",
+        options: [
+          "spec.splunk_receiver.use_tls.mtls_enable.key_url.blindfold_secret_info",
+          "spec.splunk_receiver.use_tls.mtls_enable.key_url.clear_secret_info",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -518,7 +906,395 @@ export const data_intelligenceTools: ParsedOperation[] = [
         resourceType: "receiver-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "receiver",
+        fieldPath: "spec.receiver",
+        options: [
+          "spec.azure_receiver",
+          "spec.datadog_receiver",
+          "spec.gcp_bucket_receiver",
+          "spec.http_receiver",
+          "spec.s3_receiver",
+          "spec.splunk_receiver",
+        ],
+      },
+      {
+        choiceField: "batch_bytes",
+        fieldPath: "spec.azure_receiver.batch.batch_bytes",
+        options: [
+          "spec.azure_receiver.batch.max_bytes",
+          "spec.azure_receiver.batch.max_bytes_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_events",
+        fieldPath: "spec.azure_receiver.batch.batch_events",
+        options: [
+          "spec.azure_receiver.batch.max_events",
+          "spec.azure_receiver.batch.max_events_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_timeout",
+        fieldPath: "spec.azure_receiver.batch.batch_timeout",
+        options: [
+          "spec.azure_receiver.batch.default_timeout_seconds",
+          "spec.azure_receiver.batch.timeout_seconds",
+        ],
+      },
+      {
+        choiceField: "compression_choice",
+        fieldPath: "spec.azure_receiver.compression.compression_choice",
+        options: [
+          "spec.azure_receiver.compression.gzip_compression",
+          "spec.azure_receiver.compression.no_compression",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.azure_receiver.connection_string.secret_info_oneof",
+        options: [
+          "spec.azure_receiver.connection_string.blindfold_secret_info",
+          "spec.azure_receiver.connection_string.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "endpoint_choice",
+        fieldPath: "spec.datadog_receiver.endpoint_choice",
+        options: ["spec.datadog_receiver.endpoint", "spec.datadog_receiver.site"],
+      },
+      {
+        choiceField: "tls_choice",
+        fieldPath: "spec.datadog_receiver.tls_choice",
+        options: ["spec.datadog_receiver.no_tls", "spec.datadog_receiver.use_tls"],
+      },
+      {
+        choiceField: "batch_bytes",
+        fieldPath: "spec.datadog_receiver.batch.batch_bytes",
+        options: [
+          "spec.datadog_receiver.batch.max_bytes",
+          "spec.datadog_receiver.batch.max_bytes_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_events",
+        fieldPath: "spec.datadog_receiver.batch.batch_events",
+        options: [
+          "spec.datadog_receiver.batch.max_events",
+          "spec.datadog_receiver.batch.max_events_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_timeout",
+        fieldPath: "spec.datadog_receiver.batch.batch_timeout",
+        options: [
+          "spec.datadog_receiver.batch.default_timeout_seconds",
+          "spec.datadog_receiver.batch.timeout_seconds",
+        ],
+      },
+      {
+        choiceField: "compression_choice",
+        fieldPath: "spec.datadog_receiver.compression.compression_choice",
+        options: [
+          "spec.datadog_receiver.compression.gzip_compression",
+          "spec.datadog_receiver.compression.no_compression",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.datadog_receiver.datadog_api_key.secret_info_oneof",
+        options: [
+          "spec.datadog_receiver.datadog_api_key.blindfold_secret_info",
+          "spec.datadog_receiver.datadog_api_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "ca_choice",
+        fieldPath: "spec.datadog_receiver.use_tls.ca_choice",
+        options: [
+          "spec.datadog_receiver.use_tls.no_ca",
+          "spec.datadog_receiver.use_tls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath: "spec.datadog_receiver.use_tls.mtls_choice",
+        options: [
+          "spec.datadog_receiver.use_tls.mtls_disabled",
+          "spec.datadog_receiver.use_tls.mtls_enable",
+        ],
+      },
+      {
+        choiceField: "verify_certificate",
+        fieldPath: "spec.datadog_receiver.use_tls.verify_certificate",
+        options: [
+          "spec.datadog_receiver.use_tls.disable_verify_certificate",
+          "spec.datadog_receiver.use_tls.enable_verify_certificate",
+        ],
+      },
+      {
+        choiceField: "verify_hostname",
+        fieldPath: "spec.datadog_receiver.use_tls.verify_hostname",
+        options: [
+          "spec.datadog_receiver.use_tls.disable_verify_hostname",
+          "spec.datadog_receiver.use_tls.enable_verify_hostname",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.datadog_receiver.use_tls.mtls_enable.key_url.secret_info_oneof",
+        options: [
+          "spec.datadog_receiver.use_tls.mtls_enable.key_url.blindfold_secret_info",
+          "spec.datadog_receiver.use_tls.mtls_enable.key_url.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "batch_bytes",
+        fieldPath: "spec.gcp_bucket_receiver.batch.batch_bytes",
+        options: [
+          "spec.gcp_bucket_receiver.batch.max_bytes",
+          "spec.gcp_bucket_receiver.batch.max_bytes_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_events",
+        fieldPath: "spec.gcp_bucket_receiver.batch.batch_events",
+        options: [
+          "spec.gcp_bucket_receiver.batch.max_events",
+          "spec.gcp_bucket_receiver.batch.max_events_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_timeout",
+        fieldPath: "spec.gcp_bucket_receiver.batch.batch_timeout",
+        options: [
+          "spec.gcp_bucket_receiver.batch.default_timeout_seconds",
+          "spec.gcp_bucket_receiver.batch.timeout_seconds",
+        ],
+      },
+      {
+        choiceField: "compression_choice",
+        fieldPath: "spec.gcp_bucket_receiver.compression.compression_choice",
+        options: [
+          "spec.gcp_bucket_receiver.compression.gzip_compression",
+          "spec.gcp_bucket_receiver.compression.no_compression",
+        ],
+      },
+      {
+        choiceField: "auth_choice",
+        fieldPath: "spec.http_receiver.auth_choice",
+        options: [
+          "spec.http_receiver.auth_basic",
+          "spec.http_receiver.auth_none",
+          "spec.http_receiver.auth_token",
+        ],
+      },
+      {
+        choiceField: "tls_choice",
+        fieldPath: "spec.http_receiver.tls_choice",
+        options: ["spec.http_receiver.no_tls", "spec.http_receiver.use_tls"],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.http_receiver.auth_basic.password.secret_info_oneof",
+        options: [
+          "spec.http_receiver.auth_basic.password.blindfold_secret_info",
+          "spec.http_receiver.auth_basic.password.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.http_receiver.auth_token.token.secret_info_oneof",
+        options: [
+          "spec.http_receiver.auth_token.token.blindfold_secret_info",
+          "spec.http_receiver.auth_token.token.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "batch_bytes",
+        fieldPath: "spec.http_receiver.batch.batch_bytes",
+        options: [
+          "spec.http_receiver.batch.max_bytes",
+          "spec.http_receiver.batch.max_bytes_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_events",
+        fieldPath: "spec.http_receiver.batch.batch_events",
+        options: [
+          "spec.http_receiver.batch.max_events",
+          "spec.http_receiver.batch.max_events_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_timeout",
+        fieldPath: "spec.http_receiver.batch.batch_timeout",
+        options: [
+          "spec.http_receiver.batch.default_timeout_seconds",
+          "spec.http_receiver.batch.timeout_seconds",
+        ],
+      },
+      {
+        choiceField: "compression_choice",
+        fieldPath: "spec.http_receiver.compression.compression_choice",
+        options: [
+          "spec.http_receiver.compression.gzip_compression",
+          "spec.http_receiver.compression.no_compression",
+        ],
+      },
+      {
+        choiceField: "ca_choice",
+        fieldPath: "spec.http_receiver.use_tls.ca_choice",
+        options: ["spec.http_receiver.use_tls.no_ca", "spec.http_receiver.use_tls.trusted_ca_url"],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath: "spec.http_receiver.use_tls.mtls_choice",
+        options: [
+          "spec.http_receiver.use_tls.mtls_disabled",
+          "spec.http_receiver.use_tls.mtls_enable",
+        ],
+      },
+      {
+        choiceField: "verify_certificate",
+        fieldPath: "spec.http_receiver.use_tls.verify_certificate",
+        options: [
+          "spec.http_receiver.use_tls.disable_verify_certificate",
+          "spec.http_receiver.use_tls.enable_verify_certificate",
+        ],
+      },
+      {
+        choiceField: "verify_hostname",
+        fieldPath: "spec.http_receiver.use_tls.verify_hostname",
+        options: [
+          "spec.http_receiver.use_tls.disable_verify_hostname",
+          "spec.http_receiver.use_tls.enable_verify_hostname",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.http_receiver.use_tls.mtls_enable.key_url.secret_info_oneof",
+        options: [
+          "spec.http_receiver.use_tls.mtls_enable.key_url.blindfold_secret_info",
+          "spec.http_receiver.use_tls.mtls_enable.key_url.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "batch_bytes",
+        fieldPath: "spec.s3_receiver.batch.batch_bytes",
+        options: ["spec.s3_receiver.batch.max_bytes", "spec.s3_receiver.batch.max_bytes_disabled"],
+      },
+      {
+        choiceField: "batch_events",
+        fieldPath: "spec.s3_receiver.batch.batch_events",
+        options: [
+          "spec.s3_receiver.batch.max_events",
+          "spec.s3_receiver.batch.max_events_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_timeout",
+        fieldPath: "spec.s3_receiver.batch.batch_timeout",
+        options: [
+          "spec.s3_receiver.batch.default_timeout_seconds",
+          "spec.s3_receiver.batch.timeout_seconds",
+        ],
+      },
+      {
+        choiceField: "compression_choice",
+        fieldPath: "spec.s3_receiver.compression.compression_choice",
+        options: [
+          "spec.s3_receiver.compression.gzip_compression",
+          "spec.s3_receiver.compression.no_compression",
+        ],
+      },
+      {
+        choiceField: "tls_choice",
+        fieldPath: "spec.splunk_receiver.tls_choice",
+        options: ["spec.splunk_receiver.no_tls", "spec.splunk_receiver.use_tls"],
+      },
+      {
+        choiceField: "batch_bytes",
+        fieldPath: "spec.splunk_receiver.batch.batch_bytes",
+        options: [
+          "spec.splunk_receiver.batch.max_bytes",
+          "spec.splunk_receiver.batch.max_bytes_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_events",
+        fieldPath: "spec.splunk_receiver.batch.batch_events",
+        options: [
+          "spec.splunk_receiver.batch.max_events",
+          "spec.splunk_receiver.batch.max_events_disabled",
+        ],
+      },
+      {
+        choiceField: "batch_timeout",
+        fieldPath: "spec.splunk_receiver.batch.batch_timeout",
+        options: [
+          "spec.splunk_receiver.batch.default_timeout_seconds",
+          "spec.splunk_receiver.batch.timeout_seconds",
+        ],
+      },
+      {
+        choiceField: "compression_choice",
+        fieldPath: "spec.splunk_receiver.compression.compression_choice",
+        options: [
+          "spec.splunk_receiver.compression.gzip_compression",
+          "spec.splunk_receiver.compression.no_compression",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.splunk_receiver.splunk_hec_token.secret_info_oneof",
+        options: [
+          "spec.splunk_receiver.splunk_hec_token.blindfold_secret_info",
+          "spec.splunk_receiver.splunk_hec_token.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "ca_choice",
+        fieldPath: "spec.splunk_receiver.use_tls.ca_choice",
+        options: [
+          "spec.splunk_receiver.use_tls.no_ca",
+          "spec.splunk_receiver.use_tls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath: "spec.splunk_receiver.use_tls.mtls_choice",
+        options: [
+          "spec.splunk_receiver.use_tls.mtls_disabled",
+          "spec.splunk_receiver.use_tls.mtls_enable",
+        ],
+      },
+      {
+        choiceField: "verify_certificate",
+        fieldPath: "spec.splunk_receiver.use_tls.verify_certificate",
+        options: [
+          "spec.splunk_receiver.use_tls.disable_verify_certificate",
+          "spec.splunk_receiver.use_tls.enable_verify_certificate",
+        ],
+      },
+      {
+        choiceField: "verify_hostname",
+        fieldPath: "spec.splunk_receiver.use_tls.verify_hostname",
+        options: [
+          "spec.splunk_receiver.use_tls.disable_verify_hostname",
+          "spec.splunk_receiver.use_tls.enable_verify_hostname",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.splunk_receiver.use_tls.mtls_enable.key_url.secret_info_oneof",
+        options: [
+          "spec.splunk_receiver.use_tls.mtls_enable.key_url.blindfold_secret_info",
+          "spec.splunk_receiver.use_tls.mtls_enable.key_url.clear_secret_info",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {

@@ -6,9 +6,6 @@ description: PersistentVolume List.
 
 # Persistentvolume
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 API to GET list of Persistent Volumes in a site.
 
 ## Tools

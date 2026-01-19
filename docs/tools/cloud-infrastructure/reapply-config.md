@@ -6,9 +6,6 @@ description: CloudLink
 
 # Reapply Config
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Reapply CloudLink Config.
 
 ## Tools
@@ -24,14 +21,6 @@ Reapply CloudLink Config.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `name` | Name | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- reapply-config
 
 ## Example Usage
 

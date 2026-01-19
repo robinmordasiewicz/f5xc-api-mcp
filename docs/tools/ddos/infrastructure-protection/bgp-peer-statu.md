@@ -6,9 +6,6 @@ description: BGP Peer Status.
 
 # Bgp Peer Statu
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 API to GET routed DDoS BGP peer status information.
 
 ## Tools
@@ -24,14 +21,6 @@ API to GET routed DDoS BGP peer status information.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- bgp-peer-statu
 
 ## Example Usage
 

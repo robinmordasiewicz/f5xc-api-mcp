@@ -6,9 +6,6 @@ description: Suggest sensitive data rule.
 
 # Data Exposure
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Suggest sensitive data rule for a given path.
 
 ## Tools
@@ -24,14 +21,6 @@ Suggest sensitive data rule for a given path.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- data-exposure
 
 ## Example Usage
 

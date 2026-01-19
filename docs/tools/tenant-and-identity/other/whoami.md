@@ -6,9 +6,6 @@ description: GET User Details.
 
 # Whoami
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET fetches user information based on the username header from the request context
 this API is also
 called as WhoAmI.

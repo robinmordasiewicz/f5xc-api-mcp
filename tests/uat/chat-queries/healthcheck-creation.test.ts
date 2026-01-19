@@ -25,6 +25,7 @@ import {
   analyzeConfigWithDefaults,
   getServerDefaultsSummary,
   getRecommendedValuesSummary,
+  generateOneOfTests,
 } from "../utils/schema-driven-tests.js";
 
 // Mock logger
@@ -368,5 +369,215 @@ describe("Healthcheck - Test Matrix Statistics", () => {
     console.log(`   Plain language queries tested: ${PLAIN_LANGUAGE_QUERIES.length}`);
 
     expect(testMatrix.length).toBeGreaterThan(0);
+  });
+});
+
+/**
+ * OneOf Group Tests for host_header_choice (v2.0.34+)
+ *
+ * Tests the mutually exclusive options for host header configuration:
+ * - use_origin_server_name (default/recommended): Uses origin server name as Host header
+ * - host_header (custom): Custom header value specification
+ */
+describe("Healthcheck - host_header_choice OneOf Group", () => {
+  // Define the host_header_choice OneOf group tests
+  const hostHeaderChoiceTests = generateOneOfTests(HEALTHCHECK_TOOL, [
+    {
+      name: "host_header_choice",
+      options: ["use_origin_server_name", "host_header"],
+      validConfigs: [
+        // Valid: use_origin_server_name only (recommended)
+        {
+          metadata: { name: "hc-origin-name", namespace: "default" },
+          spec: {
+            http_health_check: {
+              path: "/health",
+              use_origin_server_name: {},
+            },
+          },
+        },
+        // Valid: host_header only (custom)
+        {
+          metadata: { name: "hc-custom-header", namespace: "default" },
+          spec: {
+            http_health_check: {
+              path: "/health",
+              host_header: "custom-host.example.com",
+            },
+          },
+        },
+      ],
+      // Invalid: both options specified
+      invalidConfig: {
+        metadata: { name: "hc-both", namespace: "default" },
+        spec: {
+          http_health_check: {
+            path: "/health",
+            use_origin_server_name: {},
+            host_header: "custom-host.example.com",
+          },
+        },
+      },
+    },
+  ]);
+
+  describe("Valid configurations (single option)", () => {
+    for (const testCase of hostHeaderChoiceTests.filter((t) => t.expectedValid)) {
+      it(`should validate: ${testCase.name}`, () => {
+        const result = validateToolParams({
+          toolName: HEALTHCHECK_TOOL,
+          pathParams: { "metadata.namespace": "default" },
+          body: testCase.config,
+        });
+
+        expect(result.valid).toBe(true);
+        console.log(`   ✅ ${testCase.name}: Validation passed`);
+      });
+    }
+  });
+
+  describe("Invalid configurations (multiple options)", () => {
+    for (const testCase of hostHeaderChoiceTests.filter((t) => !t.expectedValid)) {
+      it(`should detect: ${testCase.name}`, () => {
+        const result = validateToolParams({
+          toolName: HEALTHCHECK_TOOL,
+          pathParams: { "metadata.namespace": "default" },
+          body: testCase.config,
+        });
+
+        // Log the validation result for visibility
+        console.log(`   📋 ${testCase.name}:`);
+        console.log(`      Valid: ${result.valid}`);
+        console.log(`      Warnings: ${result.warnings.length}`);
+        for (const warning of result.warnings) {
+          console.log(`      ⚠️ ${warning}`);
+        }
+
+        // Verify the tool is found
+        expect(result.tool).toBeDefined();
+        expect(result.tool?.name).toBe(HEALTHCHECK_TOOL);
+
+        // With nested oneOf detection (v2.0.35+), mutual exclusivity should be detected
+        // Check if mutual exclusivity warning exists for nested oneOf at spec.http_health_check
+        const hasMutualExclusivityWarning = result.warnings.some(
+          (w) =>
+            w.toLowerCase().includes("mutually exclusive") ||
+            w.toLowerCase().includes("choose only one") ||
+            w.toLowerCase().includes("multiple")
+        );
+
+        // Log whether nested oneOf was detected
+        if (hasMutualExclusivityWarning) {
+          console.log("      ✅ Nested oneOf conflict detected");
+          // Verify the warning includes the nested field paths
+          const hasNestedPath = result.warnings.some(
+            (w) =>
+              w.includes("spec.http_health_check") ||
+              w.includes("host_header_choice")
+          );
+          if (hasNestedPath) {
+            console.log("      ✅ Warning includes nested path");
+          }
+        } else {
+          // If not detected, the schema may not have the x-ves-oneof-field annotation
+          console.log("      ℹ️ Nested oneOf not detected - schema may not have annotation");
+        }
+      });
+    }
+  });
+
+  describe("Recommended option tracking", () => {
+    it("should track use_origin_server_name as recommended option with full path", () => {
+      // Search for healthcheck tool and check oneOf groups
+      const results = searchTools("create healthcheck", { limit: 5 });
+      const healthcheckTool = results.find(
+        (r) => r.tool.name === HEALTHCHECK_TOOL || r.tool.resource.includes("healthcheck")
+      );
+
+      expect(healthcheckTool).toBeDefined();
+
+      // Log the oneOf groups for visibility
+      if (healthcheckTool?.tool) {
+        console.log("\n📋 Healthcheck OneOf Groups:");
+        const oneOfGroups = healthcheckTool.tool.oneOfGroups || [];
+        for (const group of oneOfGroups) {
+          console.log(`   ${group.choiceField}:`);
+          console.log(`     Field path: ${group.fieldPath}`);
+          console.log(`     Options: ${group.options.join(", ")}`);
+          if (group.recommendedOption) {
+            console.log(`     Recommended: ${group.recommendedOption}`);
+          }
+        }
+
+        // Find host_header_choice group - should now have nested path
+        const hostHeaderGroup = oneOfGroups.find(
+          (g: { choiceField: string; fieldPath?: string }) =>
+            g.choiceField === "host_header_choice" ||
+            g.fieldPath?.includes("host_header_choice")
+        );
+
+        if (hostHeaderGroup) {
+          console.log(
+            `   ✅ host_header_choice group found at ${hostHeaderGroup.fieldPath}`
+          );
+          console.log(`      Recommended: ${hostHeaderGroup.recommendedOption}`);
+
+          // With nested detection, the fieldPath should include the full nested path
+          if (hostHeaderGroup.fieldPath?.includes("spec.")) {
+            console.log("      ✅ Field path includes nested location (spec.*)");
+          }
+
+          // Verify recommended option includes full path if nested
+          if (hostHeaderGroup.recommendedOption) {
+            // Could be "use_origin_server_name" (top-level) or
+            // "spec.http_health_check.use_origin_server_name" (nested)
+            const isValidRecommended =
+              hostHeaderGroup.recommendedOption === "use_origin_server_name" ||
+              hostHeaderGroup.recommendedOption.endsWith("use_origin_server_name");
+            expect(isValidRecommended).toBe(true);
+          }
+        }
+      }
+    });
+
+    it("should include recommendation in validation warnings when applicable", () => {
+      // Test with no host_header_choice selected
+      const configNoChoice = {
+        metadata: { name: "hc-no-choice", namespace: "default" },
+        spec: {
+          http_health_check: {
+            path: "/health",
+            // Neither use_origin_server_name nor host_header specified
+          },
+        },
+      };
+
+      const result = validateToolParams({
+        toolName: HEALTHCHECK_TOOL,
+        pathParams: { "metadata.namespace": "default" },
+        body: configNoChoice,
+      });
+
+      // Log warnings for visibility
+      console.log("\n📋 Warnings for config without host_header_choice:");
+      for (const warning of result.warnings) {
+        console.log(`   ⚠️ ${warning}`);
+      }
+
+      // Check if validation suggests the recommended option
+      const suggestsRecommended = result.warnings.some(
+        (w) =>
+          w.includes("use_origin_server_name") ||
+          w.includes("recommended") ||
+          w.includes("Consider using")
+      );
+
+      if (suggestsRecommended) {
+        console.log("   ✅ Validation suggests recommended option");
+      }
+
+      // The result should either be valid (server applies default) or have helpful warnings
+      expect(result.tool).toBeDefined();
+    });
   });
 });

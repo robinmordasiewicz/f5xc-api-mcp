@@ -6,12 +6,6 @@ description: DELETE DoS Auto-Mitigation Rule for HTTP Load Balancer.
 
 # Dos Automitigation Rule
 
-!!! danger "High Risk Operation"
-    This resource includes operations that may cause significant changes. Review carefully before executing.
-
-!!! note "Confirmation Required"
-    Some operations on this resource require explicit confirmation before execution.
-
 DELETE the corresponding DoS Auto-Mitigation Rule for the given HTTP load balancer.
 
 ## Tools
@@ -30,15 +24,6 @@ DELETE the corresponding DoS Auto-Mitigation Rule for the given HTTP load balanc
 | `name` | Name | `-` |
 | `namespace` | Namespace | `-` |
 | `dos_automitigation_rule_name` | DoS Mitigation Rule Name | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Deletes:**
-
-- dos-automitigation-rule
-- contained_resources
 
 ## Example Usage
 

@@ -6,9 +6,6 @@ description: Show Matching Flows.
 
 # Matching Flow
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Show VER flows matching the request.
 
 ## Tools
@@ -26,13 +23,19 @@ Show VER flows matching the request.
 | `namespace` | Namespace | `-` |
 | `site` | Site Name | `-` |
 
-## Side Effects
+## Configuration Choices
 
-Operations on this resource may have the following effects:
+This resource includes mutually exclusive configuration options:
 
-**Creates:**
+### interface_or_network
 
-- matching-flow
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `external_service` | - |  |
+| `intf` | - |  |
+| `pod` | - |  |
+| `vn` | - |  |
+| `vn_type` | - |  |
 
 ## Example Usage
 

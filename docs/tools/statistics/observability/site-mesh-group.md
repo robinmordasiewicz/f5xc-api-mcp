@@ -6,9 +6,6 @@ description: Site Mesh Topology.
 
 # Site Mesh Group
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET summary of all site mesh groups.
 
 ## Tools
@@ -25,14 +22,6 @@ GET summary of all site mesh groups.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `site_mesh_group` | Site Mesh Group | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- site-mesh-group
 
 ## Example Usage
 

@@ -6,9 +6,6 @@ description: ReplicaSet List.
 
 # Replicaset
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 API to GET list of replica sets for a given namespace in a site.
 
 ## Tools

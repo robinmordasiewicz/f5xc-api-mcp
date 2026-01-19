@@ -6,9 +6,6 @@ description: Close a customer support ticket in managed tenant.
 
 # Close
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Closes selected customer support ticket (if not already closed). You can always attempt to reopen if
 needed to be.
 
@@ -25,14 +22,6 @@ needed to be.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `tp_id` | Third party ID | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- close
 
 ## Example Usage
 

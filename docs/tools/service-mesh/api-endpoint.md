@@ -6,9 +6,6 @@ description: GET Service API Endpoints.
 
 # API Endpoint
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET all auto discovered API endpoints for App type.
 
 ## Tools
@@ -33,14 +30,6 @@ GET all auto discovered API endpoints for App type.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `api_endpoint_info_request` | List of additional things that needs to be sent as part of the request | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- api-endpoint
 
 ## Example Usage
 

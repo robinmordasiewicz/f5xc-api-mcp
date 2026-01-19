@@ -6,9 +6,6 @@ description: GET Local Zone File.
 
 # Local Zone File
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET local zone file from secondary DNS.
 
 ## Tools

@@ -6,9 +6,6 @@ description: Endpoint Summary.
 
 # Summary
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Getbotdetectionrulessummary CustomAPI.
 
 ## Tools
@@ -25,14 +22,6 @@ Getbotdetectionrulessummary CustomAPI.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- summary
 
 ## Example Usage
 

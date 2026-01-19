@@ -6,9 +6,6 @@ description: List Tcpdump.
 
 # List Tcpdump
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 List tcpdump capture status on a ver node.
 
 ## Tools
@@ -25,14 +22,6 @@ List tcpdump capture status on a ver node.
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
 | `site` | Site Name | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- list-tcpdump
 
 ## Example Usage
 

@@ -6,9 +6,6 @@ description: GET Infraprotect Information.
 
 # Infraprotect Information
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET organisation information.
 
 ## Tools

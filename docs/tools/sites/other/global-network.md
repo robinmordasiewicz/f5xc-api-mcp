@@ -6,9 +6,6 @@ description: Global Network List.
 
 # Global Network
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 API to GET list of Global Network in a site.
 
 ## Tools

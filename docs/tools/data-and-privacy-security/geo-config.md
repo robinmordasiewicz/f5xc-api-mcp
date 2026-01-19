@@ -6,9 +6,6 @@ description: GET Geo Config.
 
 # Geo Config
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Shape of the geo config specification.
 
 ## Tools

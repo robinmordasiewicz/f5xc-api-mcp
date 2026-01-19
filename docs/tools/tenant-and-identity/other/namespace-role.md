@@ -6,9 +6,6 @@ description: GET Namespace Role.
 
 # Namespace Role
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Allows listing a role of a user in a namespace.
 
 ## Tools

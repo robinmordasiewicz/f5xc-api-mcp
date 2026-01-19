@@ -6,9 +6,6 @@ description: Validate AWS TGW Config.
 
 # Validate Config
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Validate AWS TGW Config.
 
 ## Tools
@@ -25,14 +22,6 @@ Validate AWS TGW Config.
 |-----------|-------------|--------|
 | `name` | Name | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- validate-config
 
 ## Example Usage
 

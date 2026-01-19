@@ -6,9 +6,6 @@ description: Diagnosis
 
 # Diagnosi
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET VPM network information.
 
 ## Tools

@@ -6,9 +6,6 @@ description: GET Upgrade Status.
 
 # Upgrade Statu
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 API to GET upgrade status of a site.
 
 ## Tools

@@ -6,9 +6,6 @@ description: GET HTTP Monitor Health.
 
 # HTTP Monitors Health
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Returns list of HTTP monitors in namespace with corresponding region health(s)
 
 ## Tools
@@ -24,14 +21,6 @@ Returns list of HTTP monitors in namespace with corresponding region health(s)
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- http-monitors-health
 
 ## Example Usage
 

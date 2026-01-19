@@ -6,9 +6,6 @@ description: GET Service Policy Set.
 
 # Service Policy Set
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET service_policy_set reads a given object from storage backend for metadata.namespace.
 
 ## Tools

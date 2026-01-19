@@ -6,9 +6,6 @@ description: Segment
 
 # Graph
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Request to GET different network segments with given metrics .
 This will give metric data for all
 segments including intra segment metrics.
@@ -26,14 +23,6 @@ segments including intra segment metrics.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- graph
 
 ## Example Usage
 

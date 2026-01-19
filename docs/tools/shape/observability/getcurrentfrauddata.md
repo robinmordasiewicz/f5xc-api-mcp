@@ -6,9 +6,6 @@ description: GetCurrentFraudData.
 
 # Getcurrentfrauddata
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET Current Fraud data request for a time range.
 
 ## Tools
@@ -16,14 +13,6 @@ GET Current Fraud data request for a time range.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-shape-getcurrentfrauddata-create` | GetCurrentFraudData. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- getcurrentfrauddata
 
 ## Example Usage
 

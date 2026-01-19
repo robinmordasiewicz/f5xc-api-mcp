@@ -6,9 +6,6 @@ description: Configure VPC IP prefixes.
 
 # Set VPC IP Prefixe
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Configure VPC IP prefix set.
 
 ## Tools
@@ -25,14 +22,6 @@ Configure VPC IP prefix set.
 |-----------|-------------|--------|
 | `name` | Name | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- set-vpc-ip-prefixe
 
 ## Example Usage
 

@@ -6,9 +6,6 @@ description: SID Counters.
 
 # Sid Counter
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 API to GET SID Counters.
 
 ## Tools
@@ -24,14 +21,6 @@ API to GET SID Counters.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- sid-counter
 
 ## Example Usage
 

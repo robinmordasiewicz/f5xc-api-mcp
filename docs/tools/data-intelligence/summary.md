@@ -6,9 +6,6 @@ description: Load Executive Summary.
 
 # Summary
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Executive summary page for DI premium customers.
 
 ## Tools
@@ -24,14 +21,6 @@ Executive summary page for DI premium customers.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- summary
 
 ## Example Usage
 

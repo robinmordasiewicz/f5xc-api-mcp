@@ -6,9 +6,6 @@ description: GET Site Networks.
 
 # Network
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Gets Networks Associated to Site.
 
 ## Tools

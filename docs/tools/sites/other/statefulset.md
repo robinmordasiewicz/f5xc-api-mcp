@@ -6,9 +6,6 @@ description: StatefulSet List.
 
 # Statefulset
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 API to GET list of stateful sets for a given namespace in a site.
 
 ## Tools

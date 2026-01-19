@@ -6,9 +6,6 @@ description: Tenant logo.
 
 # Logo
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Receive current tenant logo.
 
 ## Tools

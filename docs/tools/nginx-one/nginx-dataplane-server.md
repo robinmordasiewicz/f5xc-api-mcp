@@ -6,9 +6,6 @@ description: GET NGINX One Dataplane Servers.
 
 # Nginx Dataplane Server
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET NGINX One Servers associated to an NGINX dataplane.
 
 ## Tools
@@ -24,14 +21,6 @@ GET NGINX One Servers associated to an NGINX dataplane.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- nginx-dataplane-server
 
 ## Example Usage
 

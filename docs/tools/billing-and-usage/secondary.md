@@ -6,9 +6,6 @@ description: Make payment method secondary.
 
 # Secondary
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Flags a payment method as secondary. Nothing changes is the payment method is already secondary, if
 the payment method is primary then it becomes secondary and there will be no primary.
 
@@ -26,14 +23,6 @@ the payment method is primary then it becomes secondary and there will be no pri
 |-----------|-------------|--------|
 | `name` | Name | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- secondary
 
 ## Example Usage
 

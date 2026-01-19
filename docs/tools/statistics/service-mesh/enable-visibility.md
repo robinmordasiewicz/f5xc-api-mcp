@@ -6,9 +6,6 @@ description: Enable visibility in all workspaces.
 
 # Enable Visibility
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Enable Visibility of the service in all workspaces. This action will make the
 discovered service
 visible within WAAP, App Connect where the user can perform
@@ -28,14 +25,6 @@ the workspace specific actions.
 |-----------|-------------|--------|
 | `name` | Service Name | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- enable-visibility
 
 ## Example Usage
 

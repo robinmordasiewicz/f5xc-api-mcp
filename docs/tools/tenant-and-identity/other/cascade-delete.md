@@ -6,9 +6,6 @@ description: DELETE User and Related Objects.
 
 # Cascade Delete
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 CascadeDelete deletes the user and associated namespace roles for this user.
 Use this only if the
 user and its referenced objects need to be wiped out altogether.
@@ -28,14 +25,6 @@ system namespace.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- cascade-delete
 
 ## Example Usage
 

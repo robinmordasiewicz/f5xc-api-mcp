@@ -6,9 +6,6 @@ description: GET Filtered HTTP Monitor List.
 
 # Filtered HTTP Monitor List
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 List v1_http_monitor in a namespace based on filter.
 
 ## Tools

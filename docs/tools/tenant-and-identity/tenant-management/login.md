@@ -6,9 +6,6 @@ description: GetLoginEvents.
 
 # Login
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GetLoginEvents returns login events for specified in config period of time. It consider all users
 within current tenant.
 Login events are extracted directly from IDM.

@@ -6,9 +6,6 @@ description: Create
 
 # Rrset
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Create CustomAPI.
 
 ## Tools
@@ -25,14 +22,6 @@ Create CustomAPI.
 |-----------|-------------|--------|
 | `dns_zone_name` | Dns_zone_name | `-` |
 | `group_name` | Group_name | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- rrset
 
 ## Example Usage
 

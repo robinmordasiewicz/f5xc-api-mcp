@@ -6,12 +6,6 @@ description: DELETE tenant profile image.
 
 # Image
 
-!!! danger "High Risk Operation"
-    This resource includes operations that may cause significant changes. Review carefully before executing.
-
-!!! note "Confirmation Required"
-    Some operations on this resource require explicit confirmation before execution.
-
 Uploads new profile image for the tenant entity.
 
 ## Tools
@@ -21,19 +15,6 @@ Uploads new profile image for the tenant entity.
 | `f5xc-api-tenantandidentity-image-list` | Tenant profile image. |
 | `f5xc-api-tenantandidentity-image-update` | Update tenant profile image. |
 | `f5xc-api-tenantandidentity-image-delete` | DELETE tenant profile image. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Modifies:**
-
-- image
-
-**Deletes:**
-
-- image
-- contained_resources
 
 ## Example Usage
 

@@ -6,9 +6,6 @@ description: GET Devices by Unique Access.
 
 # Unique
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET devices unique access information.
 
 ## Tools
@@ -16,14 +13,6 @@ GET devices unique access information.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-shape-unique-create` | GET Devices by Unique Access. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- unique
 
 ## Example Usage
 

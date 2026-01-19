@@ -71,7 +71,383 @@ export const bigipTools: ParsedOperation[] = [
         resourceType: "bigipapm-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "http_management_choice",
+        fieldPath: "spec.http_management_choice",
+        options: ["spec.https_management"],
+      },
+      {
+        choiceField: "site_type_choice",
+        fieldPath: "spec.site_type_choice",
+        options: ["spec.aws_site_type_choice", "spec.baremetal_site_type_choice"],
+      },
+      {
+        choiceField: "license_type",
+        fieldPath: "spec.aws_site_type_choice.license_type",
+        options: ["spec.aws_site_type_choice.market_place_image"],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.aws_site_type_choice.apm_aws_site.admin_password.secret_info_oneof",
+        options: [
+          "spec.aws_site_type_choice.apm_aws_site.admin_password.blindfold_secret_info",
+          "spec.aws_site_type_choice.apm_aws_site.admin_password.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "external_vip_choice",
+        fieldPath: "spec.aws_site_type_choice.apm_aws_site.endpoint_service.external_vip_choice",
+        options: [
+          "spec.aws_site_type_choice.apm_aws_site.endpoint_service.advertise_on_slo_ip",
+          "spec.aws_site_type_choice.apm_aws_site.endpoint_service.advertise_on_slo_ip_external",
+          "spec.aws_site_type_choice.apm_aws_site.endpoint_service.disable_advertise_on_slo_ip",
+        ],
+      },
+      {
+        choiceField: "inside_vip_choice",
+        fieldPath: "spec.aws_site_type_choice.apm_aws_site.endpoint_service.inside_vip_choice",
+        options: [
+          "spec.aws_site_type_choice.apm_aws_site.endpoint_service.automatic_vip",
+          "spec.aws_site_type_choice.apm_aws_site.endpoint_service.configured_vip",
+        ],
+      },
+      {
+        choiceField: "tcp_port_choice",
+        fieldPath: "spec.aws_site_type_choice.apm_aws_site.endpoint_service.tcp_port_choice",
+        options: [
+          "spec.aws_site_type_choice.apm_aws_site.endpoint_service.custom_tcp_ports",
+          "spec.aws_site_type_choice.apm_aws_site.endpoint_service.default_tcp_ports",
+          "spec.aws_site_type_choice.apm_aws_site.endpoint_service.http_port",
+          "spec.aws_site_type_choice.apm_aws_site.endpoint_service.https_port",
+          "spec.aws_site_type_choice.apm_aws_site.endpoint_service.no_tcp_ports",
+        ],
+      },
+      {
+        choiceField: "udp_port_choice",
+        fieldPath: "spec.aws_site_type_choice.apm_aws_site.endpoint_service.udp_port_choice",
+        options: [
+          "spec.aws_site_type_choice.apm_aws_site.endpoint_service.custom_udp_ports",
+          "spec.aws_site_type_choice.apm_aws_site.endpoint_service.no_udp_ports",
+        ],
+      },
+      {
+        choiceField: "mgmt_subnet_choice",
+        fieldPath: "spec.aws_site_type_choice.apm_aws_site.nodes[].mgmt_subnet_choice",
+        options: [
+          "spec.aws_site_type_choice.apm_aws_site.nodes[].mgmt_subnet",
+          "spec.aws_site_type_choice.apm_aws_site.nodes[].reserved_mgmt_subnet",
+        ],
+      },
+      {
+        choiceField: "tunnel_prefix_choice",
+        fieldPath: "spec.aws_site_type_choice.apm_aws_site.nodes[].tunnel_prefix_choice",
+        options: [
+          "spec.aws_site_type_choice.apm_aws_site.nodes[].automatic_prefix",
+          "spec.aws_site_type_choice.apm_aws_site.nodes[].tunnel_prefix",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.aws_site_type_choice.apm_aws_site.nodes[].mgmt_subnet.choice",
+        options: [
+          "spec.aws_site_type_choice.apm_aws_site.nodes[].mgmt_subnet.existing_subnet_id",
+          "spec.aws_site_type_choice.apm_aws_site.nodes[].mgmt_subnet.subnet_param",
+        ],
+      },
+      {
+        choiceField: "ami_choice",
+        fieldPath: "spec.aws_site_type_choice.market_place_image.ami_choice",
+        options: [
+          "spec.aws_site_type_choice.market_place_image.BestPlusPayG200Mbps",
+          "spec.aws_site_type_choice.market_place_image.best_plus_payg_1gbps",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.baremetal_site_type_choice.f5_bare_metal_site.admin_password.secret_info_oneof",
+        options: [
+          "spec.baremetal_site_type_choice.f5_bare_metal_site.admin_password.blindfold_secret_info",
+          "spec.baremetal_site_type_choice.f5_bare_metal_site.admin_password.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.baremetal_site_type_choice.f5_bare_metal_site.bigiq_instance.password.secret_info_oneof",
+        options: [
+          "spec.baremetal_site_type_choice.f5_bare_metal_site.bigiq_instance.password.blindfold_secret_info",
+          "spec.baremetal_site_type_choice.f5_bare_metal_site.bigiq_instance.password.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "advertise_choice",
+        fieldPath: "spec.https_management.advertise_choice",
+        options: [
+          "spec.https_management.advertise_on_internet",
+          "spec.https_management.advertise_on_internet_default_vip",
+          "spec.https_management.advertise_on_sli_vip",
+          "spec.https_management.advertise_on_slo_internet_vip",
+          "spec.https_management.advertise_on_slo_sli",
+          "spec.https_management.advertise_on_slo_vip",
+        ],
+      },
+      {
+        choiceField: "internet_choice",
+        fieldPath: "spec.https_management.internet_choice",
+        options: [],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.https_management.port_choice",
+        options: ["spec.https_management.default_https_port", "spec.https_management.https_port"],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath: "spec.https_management.advertise_on_sli_vip.mtls_choice",
+        options: [
+          "spec.https_management.advertise_on_sli_vip.no_mtls",
+          "spec.https_management.advertise_on_sli_vip.use_mtls",
+        ],
+      },
+      {
+        choiceField: "ocsp_stapling_choice",
+        fieldPath:
+          "spec.https_management.advertise_on_sli_vip.tls_certificates[].ocsp_stapling_choice",
+        options: [
+          "spec.https_management.advertise_on_sli_vip.tls_certificates[].custom_hash_algorithms",
+          "spec.https_management.advertise_on_sli_vip.tls_certificates[].disable_ocsp_stapling",
+          "spec.https_management.advertise_on_sli_vip.tls_certificates[].use_system_defaults",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.https_management.advertise_on_sli_vip.tls_certificates[].private_key.secret_info_oneof",
+        options: [
+          "spec.https_management.advertise_on_sli_vip.tls_certificates[].private_key.blindfold_secret_info",
+          "spec.https_management.advertise_on_sli_vip.tls_certificates[].private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.https_management.advertise_on_sli_vip.tls_config.choice",
+        options: [
+          "spec.https_management.advertise_on_sli_vip.tls_config.custom_security",
+          "spec.https_management.advertise_on_sli_vip.tls_config.default_security",
+          "spec.https_management.advertise_on_sli_vip.tls_config.low_security",
+          "spec.https_management.advertise_on_sli_vip.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath: "spec.https_management.advertise_on_sli_vip.use_mtls.crl_choice",
+        options: [
+          "spec.https_management.advertise_on_sli_vip.use_mtls.crl",
+          "spec.https_management.advertise_on_sli_vip.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath: "spec.https_management.advertise_on_sli_vip.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.https_management.advertise_on_sli_vip.use_mtls.trusted_ca",
+          "spec.https_management.advertise_on_sli_vip.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath: "spec.https_management.advertise_on_sli_vip.use_mtls.xfcc_header",
+        options: [
+          "spec.https_management.advertise_on_sli_vip.use_mtls.xfcc_disabled",
+          "spec.https_management.advertise_on_sli_vip.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath: "spec.https_management.advertise_on_slo_internet_vip.mtls_choice",
+        options: [
+          "spec.https_management.advertise_on_slo_internet_vip.no_mtls",
+          "spec.https_management.advertise_on_slo_internet_vip.use_mtls",
+        ],
+      },
+      {
+        choiceField: "ocsp_stapling_choice",
+        fieldPath:
+          "spec.https_management.advertise_on_slo_internet_vip.tls_certificates[].ocsp_stapling_choice",
+        options: [
+          "spec.https_management.advertise_on_slo_internet_vip.tls_certificates[].custom_hash_algorithms",
+          "spec.https_management.advertise_on_slo_internet_vip.tls_certificates[].disable_ocsp_stapling",
+          "spec.https_management.advertise_on_slo_internet_vip.tls_certificates[].use_system_defaults",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.https_management.advertise_on_slo_internet_vip.tls_certificates[].private_key.secret_info_oneof",
+        options: [
+          "spec.https_management.advertise_on_slo_internet_vip.tls_certificates[].private_key.blindfold_secret_info",
+          "spec.https_management.advertise_on_slo_internet_vip.tls_certificates[].private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.https_management.advertise_on_slo_internet_vip.tls_config.choice",
+        options: [
+          "spec.https_management.advertise_on_slo_internet_vip.tls_config.custom_security",
+          "spec.https_management.advertise_on_slo_internet_vip.tls_config.default_security",
+          "spec.https_management.advertise_on_slo_internet_vip.tls_config.low_security",
+          "spec.https_management.advertise_on_slo_internet_vip.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath: "spec.https_management.advertise_on_slo_internet_vip.use_mtls.crl_choice",
+        options: [
+          "spec.https_management.advertise_on_slo_internet_vip.use_mtls.crl",
+          "spec.https_management.advertise_on_slo_internet_vip.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath: "spec.https_management.advertise_on_slo_internet_vip.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.https_management.advertise_on_slo_internet_vip.use_mtls.trusted_ca",
+          "spec.https_management.advertise_on_slo_internet_vip.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath: "spec.https_management.advertise_on_slo_internet_vip.use_mtls.xfcc_header",
+        options: [
+          "spec.https_management.advertise_on_slo_internet_vip.use_mtls.xfcc_disabled",
+          "spec.https_management.advertise_on_slo_internet_vip.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath: "spec.https_management.advertise_on_slo_sli.mtls_choice",
+        options: [
+          "spec.https_management.advertise_on_slo_sli.no_mtls",
+          "spec.https_management.advertise_on_slo_sli.use_mtls",
+        ],
+      },
+      {
+        choiceField: "ocsp_stapling_choice",
+        fieldPath:
+          "spec.https_management.advertise_on_slo_sli.tls_certificates[].ocsp_stapling_choice",
+        options: [
+          "spec.https_management.advertise_on_slo_sli.tls_certificates[].custom_hash_algorithms",
+          "spec.https_management.advertise_on_slo_sli.tls_certificates[].disable_ocsp_stapling",
+          "spec.https_management.advertise_on_slo_sli.tls_certificates[].use_system_defaults",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.https_management.advertise_on_slo_sli.tls_certificates[].private_key.secret_info_oneof",
+        options: [
+          "spec.https_management.advertise_on_slo_sli.tls_certificates[].private_key.blindfold_secret_info",
+          "spec.https_management.advertise_on_slo_sli.tls_certificates[].private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.https_management.advertise_on_slo_sli.tls_config.choice",
+        options: [
+          "spec.https_management.advertise_on_slo_sli.tls_config.custom_security",
+          "spec.https_management.advertise_on_slo_sli.tls_config.default_security",
+          "spec.https_management.advertise_on_slo_sli.tls_config.low_security",
+          "spec.https_management.advertise_on_slo_sli.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath: "spec.https_management.advertise_on_slo_sli.use_mtls.crl_choice",
+        options: [
+          "spec.https_management.advertise_on_slo_sli.use_mtls.crl",
+          "spec.https_management.advertise_on_slo_sli.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath: "spec.https_management.advertise_on_slo_sli.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.https_management.advertise_on_slo_sli.use_mtls.trusted_ca",
+          "spec.https_management.advertise_on_slo_sli.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath: "spec.https_management.advertise_on_slo_sli.use_mtls.xfcc_header",
+        options: [
+          "spec.https_management.advertise_on_slo_sli.use_mtls.xfcc_disabled",
+          "spec.https_management.advertise_on_slo_sli.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath: "spec.https_management.advertise_on_slo_vip.mtls_choice",
+        options: [
+          "spec.https_management.advertise_on_slo_vip.no_mtls",
+          "spec.https_management.advertise_on_slo_vip.use_mtls",
+        ],
+      },
+      {
+        choiceField: "ocsp_stapling_choice",
+        fieldPath:
+          "spec.https_management.advertise_on_slo_vip.tls_certificates[].ocsp_stapling_choice",
+        options: [
+          "spec.https_management.advertise_on_slo_vip.tls_certificates[].custom_hash_algorithms",
+          "spec.https_management.advertise_on_slo_vip.tls_certificates[].disable_ocsp_stapling",
+          "spec.https_management.advertise_on_slo_vip.tls_certificates[].use_system_defaults",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.https_management.advertise_on_slo_vip.tls_certificates[].private_key.secret_info_oneof",
+        options: [
+          "spec.https_management.advertise_on_slo_vip.tls_certificates[].private_key.blindfold_secret_info",
+          "spec.https_management.advertise_on_slo_vip.tls_certificates[].private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.https_management.advertise_on_slo_vip.tls_config.choice",
+        options: [
+          "spec.https_management.advertise_on_slo_vip.tls_config.custom_security",
+          "spec.https_management.advertise_on_slo_vip.tls_config.default_security",
+          "spec.https_management.advertise_on_slo_vip.tls_config.low_security",
+          "spec.https_management.advertise_on_slo_vip.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath: "spec.https_management.advertise_on_slo_vip.use_mtls.crl_choice",
+        options: [
+          "spec.https_management.advertise_on_slo_vip.use_mtls.crl",
+          "spec.https_management.advertise_on_slo_vip.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath: "spec.https_management.advertise_on_slo_vip.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.https_management.advertise_on_slo_vip.use_mtls.trusted_ca",
+          "spec.https_management.advertise_on_slo_vip.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath: "spec.https_management.advertise_on_slo_vip.use_mtls.xfcc_header",
+        options: [
+          "spec.https_management.advertise_on_slo_vip.use_mtls.xfcc_disabled",
+          "spec.https_management.advertise_on_slo_vip.use_mtls.xfcc_options",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -366,7 +742,312 @@ export const bigipTools: ParsedOperation[] = [
         resourceType: "bigipapm-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "http_management_choice",
+        fieldPath: "spec.http_management_choice",
+        options: ["spec.https_management"],
+      },
+      {
+        choiceField: "site_type_choice",
+        fieldPath: "spec.site_type_choice",
+        options: ["spec.aws_site_type_choice", "spec.baremetal_site_type_choice"],
+      },
+      {
+        choiceField: "external_vip_choice",
+        fieldPath: "spec.aws_site_type_choice.apm_aws_site.endpoint_service.external_vip_choice",
+        options: [
+          "spec.aws_site_type_choice.apm_aws_site.endpoint_service.advertise_on_slo_ip",
+          "spec.aws_site_type_choice.apm_aws_site.endpoint_service.advertise_on_slo_ip_external",
+          "spec.aws_site_type_choice.apm_aws_site.endpoint_service.disable_advertise_on_slo_ip",
+        ],
+      },
+      {
+        choiceField: "tcp_port_choice",
+        fieldPath: "spec.aws_site_type_choice.apm_aws_site.endpoint_service.tcp_port_choice",
+        options: [
+          "spec.aws_site_type_choice.apm_aws_site.endpoint_service.custom_tcp_ports",
+          "spec.aws_site_type_choice.apm_aws_site.endpoint_service.default_tcp_ports",
+          "spec.aws_site_type_choice.apm_aws_site.endpoint_service.http_port",
+          "spec.aws_site_type_choice.apm_aws_site.endpoint_service.https_port",
+          "spec.aws_site_type_choice.apm_aws_site.endpoint_service.no_tcp_ports",
+        ],
+      },
+      {
+        choiceField: "udp_port_choice",
+        fieldPath: "spec.aws_site_type_choice.apm_aws_site.endpoint_service.udp_port_choice",
+        options: [
+          "spec.aws_site_type_choice.apm_aws_site.endpoint_service.custom_udp_ports",
+          "spec.aws_site_type_choice.apm_aws_site.endpoint_service.no_udp_ports",
+        ],
+      },
+      {
+        choiceField: "advertise_choice",
+        fieldPath: "spec.https_management.advertise_choice",
+        options: [
+          "spec.https_management.advertise_on_internet",
+          "spec.https_management.advertise_on_internet_default_vip",
+          "spec.https_management.advertise_on_sli_vip",
+          "spec.https_management.advertise_on_slo_internet_vip",
+          "spec.https_management.advertise_on_slo_sli",
+          "spec.https_management.advertise_on_slo_vip",
+        ],
+      },
+      {
+        choiceField: "internet_choice",
+        fieldPath: "spec.https_management.internet_choice",
+        options: [],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.https_management.port_choice",
+        options: ["spec.https_management.default_https_port", "spec.https_management.https_port"],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath: "spec.https_management.advertise_on_sli_vip.mtls_choice",
+        options: [
+          "spec.https_management.advertise_on_sli_vip.no_mtls",
+          "spec.https_management.advertise_on_sli_vip.use_mtls",
+        ],
+      },
+      {
+        choiceField: "ocsp_stapling_choice",
+        fieldPath:
+          "spec.https_management.advertise_on_sli_vip.tls_certificates[].ocsp_stapling_choice",
+        options: [
+          "spec.https_management.advertise_on_sli_vip.tls_certificates[].custom_hash_algorithms",
+          "spec.https_management.advertise_on_sli_vip.tls_certificates[].disable_ocsp_stapling",
+          "spec.https_management.advertise_on_sli_vip.tls_certificates[].use_system_defaults",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.https_management.advertise_on_sli_vip.tls_certificates[].private_key.secret_info_oneof",
+        options: [
+          "spec.https_management.advertise_on_sli_vip.tls_certificates[].private_key.blindfold_secret_info",
+          "spec.https_management.advertise_on_sli_vip.tls_certificates[].private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.https_management.advertise_on_sli_vip.tls_config.choice",
+        options: [
+          "spec.https_management.advertise_on_sli_vip.tls_config.custom_security",
+          "spec.https_management.advertise_on_sli_vip.tls_config.default_security",
+          "spec.https_management.advertise_on_sli_vip.tls_config.low_security",
+          "spec.https_management.advertise_on_sli_vip.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath: "spec.https_management.advertise_on_sli_vip.use_mtls.crl_choice",
+        options: [
+          "spec.https_management.advertise_on_sli_vip.use_mtls.crl",
+          "spec.https_management.advertise_on_sli_vip.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath: "spec.https_management.advertise_on_sli_vip.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.https_management.advertise_on_sli_vip.use_mtls.trusted_ca",
+          "spec.https_management.advertise_on_sli_vip.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath: "spec.https_management.advertise_on_sli_vip.use_mtls.xfcc_header",
+        options: [
+          "spec.https_management.advertise_on_sli_vip.use_mtls.xfcc_disabled",
+          "spec.https_management.advertise_on_sli_vip.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath: "spec.https_management.advertise_on_slo_internet_vip.mtls_choice",
+        options: [
+          "spec.https_management.advertise_on_slo_internet_vip.no_mtls",
+          "spec.https_management.advertise_on_slo_internet_vip.use_mtls",
+        ],
+      },
+      {
+        choiceField: "ocsp_stapling_choice",
+        fieldPath:
+          "spec.https_management.advertise_on_slo_internet_vip.tls_certificates[].ocsp_stapling_choice",
+        options: [
+          "spec.https_management.advertise_on_slo_internet_vip.tls_certificates[].custom_hash_algorithms",
+          "spec.https_management.advertise_on_slo_internet_vip.tls_certificates[].disable_ocsp_stapling",
+          "spec.https_management.advertise_on_slo_internet_vip.tls_certificates[].use_system_defaults",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.https_management.advertise_on_slo_internet_vip.tls_certificates[].private_key.secret_info_oneof",
+        options: [
+          "spec.https_management.advertise_on_slo_internet_vip.tls_certificates[].private_key.blindfold_secret_info",
+          "spec.https_management.advertise_on_slo_internet_vip.tls_certificates[].private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.https_management.advertise_on_slo_internet_vip.tls_config.choice",
+        options: [
+          "spec.https_management.advertise_on_slo_internet_vip.tls_config.custom_security",
+          "spec.https_management.advertise_on_slo_internet_vip.tls_config.default_security",
+          "spec.https_management.advertise_on_slo_internet_vip.tls_config.low_security",
+          "spec.https_management.advertise_on_slo_internet_vip.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath: "spec.https_management.advertise_on_slo_internet_vip.use_mtls.crl_choice",
+        options: [
+          "spec.https_management.advertise_on_slo_internet_vip.use_mtls.crl",
+          "spec.https_management.advertise_on_slo_internet_vip.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath: "spec.https_management.advertise_on_slo_internet_vip.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.https_management.advertise_on_slo_internet_vip.use_mtls.trusted_ca",
+          "spec.https_management.advertise_on_slo_internet_vip.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath: "spec.https_management.advertise_on_slo_internet_vip.use_mtls.xfcc_header",
+        options: [
+          "spec.https_management.advertise_on_slo_internet_vip.use_mtls.xfcc_disabled",
+          "spec.https_management.advertise_on_slo_internet_vip.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath: "spec.https_management.advertise_on_slo_sli.mtls_choice",
+        options: [
+          "spec.https_management.advertise_on_slo_sli.no_mtls",
+          "spec.https_management.advertise_on_slo_sli.use_mtls",
+        ],
+      },
+      {
+        choiceField: "ocsp_stapling_choice",
+        fieldPath:
+          "spec.https_management.advertise_on_slo_sli.tls_certificates[].ocsp_stapling_choice",
+        options: [
+          "spec.https_management.advertise_on_slo_sli.tls_certificates[].custom_hash_algorithms",
+          "spec.https_management.advertise_on_slo_sli.tls_certificates[].disable_ocsp_stapling",
+          "spec.https_management.advertise_on_slo_sli.tls_certificates[].use_system_defaults",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.https_management.advertise_on_slo_sli.tls_certificates[].private_key.secret_info_oneof",
+        options: [
+          "spec.https_management.advertise_on_slo_sli.tls_certificates[].private_key.blindfold_secret_info",
+          "spec.https_management.advertise_on_slo_sli.tls_certificates[].private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.https_management.advertise_on_slo_sli.tls_config.choice",
+        options: [
+          "spec.https_management.advertise_on_slo_sli.tls_config.custom_security",
+          "spec.https_management.advertise_on_slo_sli.tls_config.default_security",
+          "spec.https_management.advertise_on_slo_sli.tls_config.low_security",
+          "spec.https_management.advertise_on_slo_sli.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath: "spec.https_management.advertise_on_slo_sli.use_mtls.crl_choice",
+        options: [
+          "spec.https_management.advertise_on_slo_sli.use_mtls.crl",
+          "spec.https_management.advertise_on_slo_sli.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath: "spec.https_management.advertise_on_slo_sli.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.https_management.advertise_on_slo_sli.use_mtls.trusted_ca",
+          "spec.https_management.advertise_on_slo_sli.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath: "spec.https_management.advertise_on_slo_sli.use_mtls.xfcc_header",
+        options: [
+          "spec.https_management.advertise_on_slo_sli.use_mtls.xfcc_disabled",
+          "spec.https_management.advertise_on_slo_sli.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath: "spec.https_management.advertise_on_slo_vip.mtls_choice",
+        options: [
+          "spec.https_management.advertise_on_slo_vip.no_mtls",
+          "spec.https_management.advertise_on_slo_vip.use_mtls",
+        ],
+      },
+      {
+        choiceField: "ocsp_stapling_choice",
+        fieldPath:
+          "spec.https_management.advertise_on_slo_vip.tls_certificates[].ocsp_stapling_choice",
+        options: [
+          "spec.https_management.advertise_on_slo_vip.tls_certificates[].custom_hash_algorithms",
+          "spec.https_management.advertise_on_slo_vip.tls_certificates[].disable_ocsp_stapling",
+          "spec.https_management.advertise_on_slo_vip.tls_certificates[].use_system_defaults",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.https_management.advertise_on_slo_vip.tls_certificates[].private_key.secret_info_oneof",
+        options: [
+          "spec.https_management.advertise_on_slo_vip.tls_certificates[].private_key.blindfold_secret_info",
+          "spec.https_management.advertise_on_slo_vip.tls_certificates[].private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.https_management.advertise_on_slo_vip.tls_config.choice",
+        options: [
+          "spec.https_management.advertise_on_slo_vip.tls_config.custom_security",
+          "spec.https_management.advertise_on_slo_vip.tls_config.default_security",
+          "spec.https_management.advertise_on_slo_vip.tls_config.low_security",
+          "spec.https_management.advertise_on_slo_vip.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath: "spec.https_management.advertise_on_slo_vip.use_mtls.crl_choice",
+        options: [
+          "spec.https_management.advertise_on_slo_vip.use_mtls.crl",
+          "spec.https_management.advertise_on_slo_vip.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath: "spec.https_management.advertise_on_slo_vip.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.https_management.advertise_on_slo_vip.use_mtls.trusted_ca",
+          "spec.https_management.advertise_on_slo_vip.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath: "spec.https_management.advertise_on_slo_vip.use_mtls.xfcc_header",
+        options: [
+          "spec.https_management.advertise_on_slo_vip.use_mtls.xfcc_disabled",
+          "spec.https_management.advertise_on_slo_vip.use_mtls.xfcc_options",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -962,7 +1643,297 @@ export const bigipTools: ParsedOperation[] = [
         resourceType: "viewsbigip-virtual-server-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "api_definition_choice",
+        fieldPath: "spec.api_definition_choice",
+        options: ["spec.api_specification", "spec.disable_api_definition"],
+      },
+      {
+        choiceField: "api_discovery_choice",
+        fieldPath: "spec.api_discovery_choice",
+        options: ["spec.disable_api_discovery", "spec.enable_api_discovery"],
+      },
+      {
+        choiceField: "sensitive_data_policy_choice",
+        fieldPath: "spec.sensitive_data_policy_choice",
+        options: ["spec.default_sensitive_data_policy", "spec.sensitive_data_policy"],
+      },
+      {
+        choiceField: "validation_target_choice",
+        fieldPath: "spec.api_specification.validation_target_choice",
+        options: [
+          "spec.api_specification.validation_all_spec_endpoints",
+          "spec.api_specification.validation_custom_list",
+          "spec.api_specification.validation_disabled",
+        ],
+      },
+      {
+        choiceField: "oversized_body_choice",
+        fieldPath: "spec.api_specification.validation_all_spec_endpoints.oversized_body_choice",
+        options: [],
+      },
+      {
+        choiceField: "fall_through_mode_choice",
+        fieldPath:
+          "spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_choice",
+        options: [
+          "spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_allow",
+          "spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_custom",
+        ],
+      },
+      {
+        choiceField: "action_choice",
+        fieldPath:
+          "spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].action_choice",
+        options: [
+          "spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].action_block",
+          "spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].action_report",
+          "spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].action_skip",
+        ],
+      },
+      {
+        choiceField: "condition_type_choice",
+        fieldPath:
+          "spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].condition_type_choice",
+        options: [
+          "spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].api_endpoint",
+          "spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].api_group",
+          "spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].base_path",
+        ],
+      },
+      {
+        choiceField: "fail_configuration",
+        fieldPath:
+          "spec.api_specification.validation_all_spec_endpoints.settings.fail_configuration",
+        options: [],
+      },
+      {
+        choiceField: "oversized_body_choice",
+        fieldPath:
+          "spec.api_specification.validation_all_spec_endpoints.settings.oversized_body_choice",
+        options: [
+          "spec.api_specification.validation_all_spec_endpoints.settings.oversized_body_fail_validation",
+          "spec.api_specification.validation_all_spec_endpoints.settings.oversized_body_skip_validation",
+        ],
+      },
+      {
+        choiceField: "property_validation_settings_choice",
+        fieldPath:
+          "spec.api_specification.validation_all_spec_endpoints.settings.property_validation_settings_choice",
+        options: [
+          "spec.api_specification.validation_all_spec_endpoints.settings.property_validation_settings_custom",
+          "spec.api_specification.validation_all_spec_endpoints.settings.property_validation_settings_default",
+        ],
+      },
+      {
+        choiceField: "additional_parameters_choice",
+        fieldPath:
+          "spec.api_specification.validation_all_spec_endpoints.settings.property_validation_settings_custom.queryParameters.additional_parameters_choice",
+        options: [
+          "spec.api_specification.validation_all_spec_endpoints.settings.property_validation_settings_custom.queryParameters.allow_additional_parameters",
+          "spec.api_specification.validation_all_spec_endpoints.settings.property_validation_settings_custom.queryParameters.disallow_additional_parameters",
+        ],
+      },
+      {
+        choiceField: "response_validation_mode_choice",
+        fieldPath:
+          "spec.api_specification.validation_all_spec_endpoints.validation_mode.response_validation_mode_choice",
+        options: [
+          "spec.api_specification.validation_all_spec_endpoints.validation_mode.response_validation_mode_active",
+          "spec.api_specification.validation_all_spec_endpoints.validation_mode.skip_response_validation",
+        ],
+      },
+      {
+        choiceField: "validation_mode_choice",
+        fieldPath:
+          "spec.api_specification.validation_all_spec_endpoints.validation_mode.validation_mode_choice",
+        options: [
+          "spec.api_specification.validation_all_spec_endpoints.validation_mode.skip_validation",
+          "spec.api_specification.validation_all_spec_endpoints.validation_mode.validation_mode_active",
+        ],
+      },
+      {
+        choiceField: "validation_enforcement_type",
+        fieldPath:
+          "spec.api_specification.validation_all_spec_endpoints.validation_mode.response_validation_mode_active.validation_enforcement_type",
+        options: [
+          "spec.api_specification.validation_all_spec_endpoints.validation_mode.response_validation_mode_active.enforcement_block",
+          "spec.api_specification.validation_all_spec_endpoints.validation_mode.response_validation_mode_active.enforcement_report",
+        ],
+      },
+      {
+        choiceField: "validation_enforcement_type",
+        fieldPath:
+          "spec.api_specification.validation_all_spec_endpoints.validation_mode.validation_mode_active.validation_enforcement_type",
+        options: [
+          "spec.api_specification.validation_all_spec_endpoints.validation_mode.validation_mode_active.enforcement_block",
+          "spec.api_specification.validation_all_spec_endpoints.validation_mode.validation_mode_active.enforcement_report",
+        ],
+      },
+      {
+        choiceField: "oversized_body_choice",
+        fieldPath: "spec.api_specification.validation_custom_list.oversized_body_choice",
+        options: [],
+      },
+      {
+        choiceField: "fall_through_mode_choice",
+        fieldPath:
+          "spec.api_specification.validation_custom_list.fall_through_mode.fall_through_mode_choice",
+        options: [
+          "spec.api_specification.validation_custom_list.fall_through_mode.fall_through_mode_allow",
+          "spec.api_specification.validation_custom_list.fall_through_mode.fall_through_mode_custom",
+        ],
+      },
+      {
+        choiceField: "action_choice",
+        fieldPath:
+          "spec.api_specification.validation_custom_list.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].action_choice",
+        options: [
+          "spec.api_specification.validation_custom_list.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].action_block",
+          "spec.api_specification.validation_custom_list.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].action_report",
+          "spec.api_specification.validation_custom_list.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].action_skip",
+        ],
+      },
+      {
+        choiceField: "condition_type_choice",
+        fieldPath:
+          "spec.api_specification.validation_custom_list.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].condition_type_choice",
+        options: [
+          "spec.api_specification.validation_custom_list.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].api_endpoint",
+          "spec.api_specification.validation_custom_list.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].api_group",
+          "spec.api_specification.validation_custom_list.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].base_path",
+        ],
+      },
+      {
+        choiceField: "condition_type_choice",
+        fieldPath:
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].condition_type_choice",
+        options: [
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].api_endpoint",
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].api_group",
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].base_path",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath:
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].domain_choice",
+        options: [
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].any_domain",
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].specific_domain",
+        ],
+      },
+      {
+        choiceField: "response_validation_mode_choice",
+        fieldPath:
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].validation_mode.response_validation_mode_choice",
+        options: [
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].validation_mode.response_validation_mode_active",
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].validation_mode.skip_response_validation",
+        ],
+      },
+      {
+        choiceField: "validation_mode_choice",
+        fieldPath:
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].validation_mode.validation_mode_choice",
+        options: [
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].validation_mode.skip_validation",
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].validation_mode.validation_mode_active",
+        ],
+      },
+      {
+        choiceField: "validation_enforcement_type",
+        fieldPath:
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].validation_mode.response_validation_mode_active.validation_enforcement_type",
+        options: [
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].validation_mode.response_validation_mode_active.enforcement_block",
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].validation_mode.response_validation_mode_active.enforcement_report",
+        ],
+      },
+      {
+        choiceField: "validation_enforcement_type",
+        fieldPath:
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].validation_mode.validation_mode_active.validation_enforcement_type",
+        options: [
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].validation_mode.validation_mode_active.enforcement_block",
+          "spec.api_specification.validation_custom_list.open_api_validation_rules[].validation_mode.validation_mode_active.enforcement_report",
+        ],
+      },
+      {
+        choiceField: "fail_configuration",
+        fieldPath: "spec.api_specification.validation_custom_list.settings.fail_configuration",
+        options: [],
+      },
+      {
+        choiceField: "oversized_body_choice",
+        fieldPath: "spec.api_specification.validation_custom_list.settings.oversized_body_choice",
+        options: [
+          "spec.api_specification.validation_custom_list.settings.oversized_body_fail_validation",
+          "spec.api_specification.validation_custom_list.settings.oversized_body_skip_validation",
+        ],
+      },
+      {
+        choiceField: "property_validation_settings_choice",
+        fieldPath:
+          "spec.api_specification.validation_custom_list.settings.property_validation_settings_choice",
+        options: [
+          "spec.api_specification.validation_custom_list.settings.property_validation_settings_custom",
+          "spec.api_specification.validation_custom_list.settings.property_validation_settings_default",
+        ],
+      },
+      {
+        choiceField: "additional_parameters_choice",
+        fieldPath:
+          "spec.api_specification.validation_custom_list.settings.property_validation_settings_custom.queryParameters.additional_parameters_choice",
+        options: [
+          "spec.api_specification.validation_custom_list.settings.property_validation_settings_custom.queryParameters.allow_additional_parameters",
+          "spec.api_specification.validation_custom_list.settings.property_validation_settings_custom.queryParameters.disallow_additional_parameters",
+        ],
+      },
+      {
+        choiceField: "api_discovery_settings_choice",
+        fieldPath: "spec.enable_api_discovery.api_discovery_settings_choice",
+        options: [
+          "spec.enable_api_discovery.custom_api_auth_discovery",
+          "spec.enable_api_discovery.default_api_auth_discovery",
+        ],
+      },
+      {
+        choiceField: "learn_from_redirect_traffic",
+        fieldPath: "spec.enable_api_discovery.learn_from_redirect_traffic",
+        options: [
+          "spec.enable_api_discovery.disable_learn_from_redirect_traffic",
+          "spec.enable_api_discovery.enable_learn_from_redirect_traffic",
+        ],
+      },
+      {
+        choiceField: "api_crawler",
+        fieldPath: "spec.enable_api_discovery.api_crawler.api_crawler",
+        options: [
+          "spec.enable_api_discovery.api_crawler.api_crawler_config",
+          "spec.enable_api_discovery.api_crawler.disable_api_crawler",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.enable_api_discovery.api_crawler.api_crawler_config.domains[].simple_login.password.secret_info_oneof",
+        options: [
+          "spec.enable_api_discovery.api_crawler.api_crawler_config.domains[].simple_login.password.blindfold_secret_info",
+          "spec.enable_api_discovery.api_crawler.api_crawler_config.domains[].simple_login.password.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "api_repos_choice",
+        fieldPath:
+          "spec.enable_api_discovery.api_discovery_from_code_scan.code_base_integrations[].api_repos_choice",
+        options: [
+          "spec.enable_api_discovery.api_discovery_from_code_scan.code_base_integrations[].all_repos",
+          "spec.enable_api_discovery.api_discovery_from_code_scan.code_base_integrations[].selected_repos",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -1031,7 +2002,13 @@ export const bigipTools: ParsedOperation[] = [
         resourceType: "bigcnedata-group-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "data_group_type",
+        fieldPath: "spec.data_group_type",
+        options: ["spec.address_records", "spec.integer_records", "spec.string_records"],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -1325,7 +2302,13 @@ export const bigipTools: ParsedOperation[] = [
         resourceType: "bigcnedata-group-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "data_group_type",
+        fieldPath: "spec.data_group_type",
+        options: ["spec.address_records", "spec.integer_records", "spec.string_records"],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {

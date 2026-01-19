@@ -6,9 +6,6 @@ description: GET OS based on SW_VERSION.
 
 # Software Os Version
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 API to GET OS IMAGE based on the software version.
 
 ## Tools
@@ -16,14 +13,6 @@ API to GET OS IMAGE based on the software version.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-servicemesh-software-os-version-create` | GET OS based on SW_VERSION. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- software-os-version
 
 ## Example Usage
 

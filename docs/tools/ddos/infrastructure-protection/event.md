@@ -6,9 +6,6 @@ description: List of events.
 
 # Event
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Returns a list of events. Events are created when a high priority mitigation is started. Events then
 serve as a
 one stop shop to review activities to mitigate a DDoS attack.
@@ -29,18 +26,6 @@ one stop shop to review activities to mitigate a DDoS attack.
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
 | `event_id` | Event ID | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- event
-
-**Modifies:**
-
-- event
 
 ## Example Usage
 

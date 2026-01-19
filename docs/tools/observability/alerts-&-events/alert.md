@@ -6,9 +6,6 @@ description: GET Alerts.
 
 # Alert
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET alerts matching the filter for the given namespace.
 
 ## Tools

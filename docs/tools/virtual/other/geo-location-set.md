@@ -6,12 +6,6 @@ description: Create Geolocation.
 
 # Geo Location Set
 
-!!! danger "High Risk Operation"
-    This resource includes operations that may cause significant changes. Review carefully before executing.
-
-!!! note "Confirmation Required"
-    Some operations on this resource require explicit confirmation before execution.
-
 List the set of geo_location_set in a namespace.
 
 ## Tools
@@ -43,23 +37,6 @@ List the set of geo_location_set in a namespace.
 | `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
 | `report_fields` | The report_fields parameter | `-` |
 | `report_status_fields` | The report_status_fields parameter | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- geo-location-set
-
-**Modifies:**
-
-- geo-location-set
-
-**Deletes:**
-
-- geo-location-set
-- contained_resources
 
 ## Example Usage
 

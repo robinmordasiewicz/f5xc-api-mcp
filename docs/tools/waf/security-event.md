@@ -6,9 +6,6 @@ description: Client Security Events Metrics.
 
 # Security Event
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET number of security events per client for a given namespace.
 The security events counter can be
 aggregated based on one or more labels listed here.
@@ -28,14 +25,6 @@ SERVICE, INSTANCE, WAF_INSTANCE_ID, WAF_MODE.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- security-event
 
 ## Example Usage
 

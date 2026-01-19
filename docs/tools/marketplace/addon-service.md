@@ -6,9 +6,6 @@ description: GET Addon Service Details.
 
 # Addon Service
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Retrieves addon service information for the given addon service name.
 
 ## Tools

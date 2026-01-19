@@ -6,9 +6,6 @@ description: ChangePassword.
 
 # Change Password
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Change host user password.
 
 ## Tools
@@ -25,14 +22,6 @@ Change host user password.
 |-----------|-------------|--------|
 | `node` | Node Name | `-` |
 | `site` | Site Name | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- change-password
 
 ## Example Usage
 

@@ -6,9 +6,6 @@ description: Audit Log Scroll Query.
 
 # Scroll
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 The response for audit log query contain no more than 500 messages.
 One can use scroll request to
 scroll through more than 500 messages or all messages
@@ -35,14 +32,6 @@ response indicates no more messages to fetch (EOF).
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `scroll_id` | Long Base-64 encoded string which can be used to retrieve next batch of log messages. | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- scroll
 
 ## Example Usage
 

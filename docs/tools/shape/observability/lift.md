@@ -6,9 +6,6 @@ description: Lift Dashboard.
 
 # Lift
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET lift chart data from shape recognize API.
 
 ## Tools
@@ -16,14 +13,6 @@ GET lift chart data from shape recognize API.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-shape-lift-create` | Lift Dashboard. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- lift
 
 ## Example Usage
 

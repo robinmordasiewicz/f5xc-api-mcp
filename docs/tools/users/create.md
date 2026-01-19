@@ -6,9 +6,6 @@ description: Create
 
 # Create
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Create creates a new label in shared namespace. Any other namespace requested will return error.
 
 ## Tools
@@ -24,14 +21,6 @@ Create creates a new label in shared namespace. Any other namespace requested wi
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- create
 
 ## Example Usage
 

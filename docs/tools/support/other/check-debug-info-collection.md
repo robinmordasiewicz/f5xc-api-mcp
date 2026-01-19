@@ -6,9 +6,6 @@ description: Check Debug Info Collection.
 
 # Check Debug Info Collection
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Check if the zip file of debug info from node is available.
 
 ## Tools

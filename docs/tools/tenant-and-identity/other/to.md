@@ -6,9 +6,6 @@ description: GET TOS
 
 # To
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET TOS provides TOS version with text.
 
 ## Tools

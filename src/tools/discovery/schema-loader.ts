@@ -46,6 +46,12 @@ export interface MutuallyExclusiveGroup {
     description?: string;
   }>;
   reason?: string;
+  /**
+   * Recommended option for this choice group (v2.0.34+)
+   * Extracted from x-f5xc-recommended-oneof-variant-{choiceField} or
+   * inferred from x-f5xc-server-default: true on a variant property
+   */
+  recommendedOption?: string;
 }
 
 /**
@@ -457,10 +463,40 @@ export function extractMutuallyExclusiveGroups(
       try {
         const options = JSON.parse(value) as string[];
         const choiceField = key.replace("x-ves-oneof-field-", "");
+
+        // Look for recommended option
+        let recommendedOption: string | undefined;
+
+        // Method 1: Look for x-f5xc-recommended-oneof-variant-{choiceField} annotation
+        const recommendedKey = `x-f5xc-recommended-oneof-variant-${choiceField}`;
+        if (recommendedKey in schema && typeof schema[recommendedKey] === "string") {
+          recommendedOption = schema[recommendedKey] as string;
+        }
+
+        // Method 2: Infer from x-f5xc-server-default: true on variant properties
+        if (!recommendedOption && schema.properties) {
+          for (const opt of options) {
+            const optProp = schema.properties[opt];
+            if (optProp && typeof optProp === "object") {
+              const optObj = optProp as ResolvedSchema;
+              if (optObj["x-f5xc-server-default"] === true) {
+                recommendedOption = opt;
+                break;
+              }
+            }
+          }
+        }
+
         groups.push({
           fieldPath: path ? `${path}.${choiceField}` : choiceField,
-          options: options.map((opt) => ({ fieldName: opt })),
+          // Include full path in field names for proper validation
+          options: options.map((opt) => ({ fieldName: path ? `${path}.${opt}` : opt })),
           reason: `Choose one of: ${options.join(", ")}`,
+          recommendedOption: recommendedOption
+            ? path
+              ? `${path}.${recommendedOption}`
+              : recommendedOption
+            : undefined,
         });
       } catch {
         // Invalid JSON, skip

@@ -72,7 +72,53 @@ export const data_and_privacy_securityTools: ParsedOperation[] = [
         resourceType: "data-type-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "pattern_choice",
+        fieldPath: "spec.rules[].pattern_choice",
+        options: [
+          "spec.rules[].key_pattern",
+          "spec.rules[].key_value_pattern",
+          "spec.rules[].value_pattern",
+        ],
+      },
+      {
+        choiceField: "type_choice",
+        fieldPath: "spec.rules[].key_pattern.type_choice",
+        options: [
+          "spec.rules[].key_pattern.exact_values",
+          "spec.rules[].key_pattern.regex_value",
+          "spec.rules[].key_pattern.substring_value",
+        ],
+      },
+      {
+        choiceField: "type_choice",
+        fieldPath: "spec.rules[].key_value_pattern.key_pattern.type_choice",
+        options: [
+          "spec.rules[].key_value_pattern.key_pattern.exact_values",
+          "spec.rules[].key_value_pattern.key_pattern.regex_value",
+          "spec.rules[].key_value_pattern.key_pattern.substring_value",
+        ],
+      },
+      {
+        choiceField: "type_choice",
+        fieldPath: "spec.rules[].key_value_pattern.value_pattern.type_choice",
+        options: [
+          "spec.rules[].key_value_pattern.value_pattern.exact_values",
+          "spec.rules[].key_value_pattern.value_pattern.regex_value",
+          "spec.rules[].key_value_pattern.value_pattern.substring_value",
+        ],
+      },
+      {
+        choiceField: "type_choice",
+        fieldPath: "spec.rules[].value_pattern.type_choice",
+        options: [
+          "spec.rules[].value_pattern.exact_values",
+          "spec.rules[].value_pattern.regex_value",
+          "spec.rules[].value_pattern.substring_value",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -420,7 +466,53 @@ export const data_and_privacy_securityTools: ParsedOperation[] = [
         resourceType: "data-type-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "pattern_choice",
+        fieldPath: "spec.rules[].pattern_choice",
+        options: [
+          "spec.rules[].key_pattern",
+          "spec.rules[].key_value_pattern",
+          "spec.rules[].value_pattern",
+        ],
+      },
+      {
+        choiceField: "type_choice",
+        fieldPath: "spec.rules[].key_pattern.type_choice",
+        options: [
+          "spec.rules[].key_pattern.exact_values",
+          "spec.rules[].key_pattern.regex_value",
+          "spec.rules[].key_pattern.substring_value",
+        ],
+      },
+      {
+        choiceField: "type_choice",
+        fieldPath: "spec.rules[].key_value_pattern.key_pattern.type_choice",
+        options: [
+          "spec.rules[].key_value_pattern.key_pattern.exact_values",
+          "spec.rules[].key_value_pattern.key_pattern.regex_value",
+          "spec.rules[].key_value_pattern.key_pattern.substring_value",
+        ],
+      },
+      {
+        choiceField: "type_choice",
+        fieldPath: "spec.rules[].key_value_pattern.value_pattern.type_choice",
+        options: [
+          "spec.rules[].key_value_pattern.value_pattern.exact_values",
+          "spec.rules[].key_value_pattern.value_pattern.regex_value",
+          "spec.rules[].key_value_pattern.value_pattern.substring_value",
+        ],
+      },
+      {
+        choiceField: "type_choice",
+        fieldPath: "spec.rules[].value_pattern.type_choice",
+        options: [
+          "spec.rules[].value_pattern.exact_values",
+          "spec.rules[].value_pattern.regex_value",
+          "spec.rules[].value_pattern.substring_value",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",

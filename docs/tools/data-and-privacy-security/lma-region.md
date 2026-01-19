@@ -6,9 +6,6 @@ description: GET LMA Region.
 
 # Lma Region
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 List the set of lma_region in a namespace.
 
 ## Tools

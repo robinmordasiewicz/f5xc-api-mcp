@@ -6,9 +6,6 @@ description: DELETE secret policy with given policy name.
 
 # Softdelete
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Deletepolicy CustomAPI.
 
 ## Tools
@@ -25,14 +22,6 @@ Deletepolicy CustomAPI.
 |-----------|-------------|--------|
 | `name` | Name | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- softdelete
 
 ## Example Usage
 

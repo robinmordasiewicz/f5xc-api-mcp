@@ -6,12 +6,6 @@ description: Create AWS VPC site.
 
 # AWS VPC Site
 
-!!! danger "High Risk Operation"
-    This resource includes operations that may cause significant changes. Review carefully before executing.
-
-!!! note "Confirmation Required"
-    Some operations on this resource require explicit confirmation before execution.
-
 Shape of the AWS VPC site replace specification.
 
 ## Tools
@@ -43,23 +37,6 @@ Shape of the AWS VPC site replace specification.
 | `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
 | `report_fields` | The report_fields parameter | `-` |
 | `report_status_fields` | The report_status_fields parameter | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- aws-vpc-site
-
-**Modifies:**
-
-- aws-vpc-site
-
-**Deletes:**
-
-- aws-vpc-site
-- contained_resources
 
 ## Example Usage
 

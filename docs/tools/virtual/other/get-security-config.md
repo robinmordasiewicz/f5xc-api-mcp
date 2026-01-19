@@ -6,9 +6,6 @@ description: GET Security Config for HTTP Load Balancer.
 
 # Get Security Config
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Fetch the corresponding Security Config for the given HTTP load balancers.
 
 ## Tools
@@ -25,13 +22,16 @@ Fetch the corresponding Security Config for the given HTTP load balancers.
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
 
-## Side Effects
+## Configuration Choices
 
-Operations on this resource may have the following effects:
+This resource includes mutually exclusive configuration options:
 
-**Creates:**
+### loadbalancer_choice
 
-- get-security-config
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `all_http_loadbalancers` | - |  |
+| `http_loadbalancers_list` | - |  |
 
 ## Example Usage
 

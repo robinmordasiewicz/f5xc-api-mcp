@@ -6,9 +6,6 @@ description: Evaluate Batch API Access.
 
 # Evaluate Batch API Acces
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 EvaluateBatchAPIAccess can evaluate multiple lists of API URL, method under a batch of namespaces
 for a given user of a tenant.
 
@@ -17,14 +14,6 @@ for a given user of a tenant.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-tenantandidentity-evaluate-batch-api-acces-create` | Evaluate Batch API Access. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- evaluate-batch-api-acces
 
 ## Example Usage
 

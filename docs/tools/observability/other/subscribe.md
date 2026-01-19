@@ -6,9 +6,6 @@ description: Subscribe to Observability service.
 
 # Subscribe
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Subscribe to Observability Synthetic Monitor.
 
 ## Tools
@@ -17,13 +14,15 @@ Subscribe to Observability Synthetic Monitor.
 |------|-------------|
 | `f5xc-api-observability-subscribe-create` | Subscribe to Observability service. |
 
-## Side Effects
+## Configuration Choices
 
-Operations on this resource may have the following effects:
+This resource includes mutually exclusive configuration options:
 
-**Creates:**
+### service
 
-- subscribe
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `syntheticMonitors` | - |  |
 
 ## Example Usage
 

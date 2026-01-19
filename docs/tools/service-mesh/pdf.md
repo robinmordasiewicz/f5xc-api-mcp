@@ -6,9 +6,6 @@ description: GET Service API Endpoint PDF.
 
 # Pdf
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET PDF of all metrics for a given auto discovered API endpoint for App type.
 
 ## Tools
@@ -34,14 +31,6 @@ GET PDF of all metrics for a given auto discovered API endpoint for App type.
 |-----------|-------------|--------|
 | `collapsed_url` | API endpoint for which PDFs are requested. | `-` |
 | `method` | Method of API endpoint for which PDFs are requested. | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- pdf
 
 ## Example Usage
 

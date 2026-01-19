@@ -6,9 +6,6 @@ description: GET API Endpoint PDF.
 
 # Pdf
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET PDF of all metrics for a given auto discovered API endpoint for Virtual Host.
 
 ## Tools

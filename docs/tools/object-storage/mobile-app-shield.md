@@ -6,9 +6,6 @@ description: GET List Of Mobile App Shields.
 
 # Mobile App Shield
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 ListMobileAppShields is an API to list all mobile app shields available for download.
 
 ## Tools

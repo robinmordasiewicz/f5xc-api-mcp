@@ -6,9 +6,6 @@ description: Unsubscribe to Mobile App Shield.
 
 # Unsubscribe
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Unsubscribe to Mobile App Shield.
 
 ## Tools
@@ -16,14 +13,6 @@ Unsubscribe to Mobile App Shield.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-shape-unsubscribe-create` | Unsubscribe to Mobile App Shield. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- unsubscribe
 
 ## Example Usage
 

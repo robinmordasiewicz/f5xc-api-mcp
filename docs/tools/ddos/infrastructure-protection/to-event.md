@@ -6,9 +6,6 @@ description: Link Alert to Event.
 
 # To Event
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Allows customers to link alerts with events. This helps with tracking of any mitigation activity and
 event investigation.
 
@@ -26,14 +23,6 @@ event investigation.
 |-----------|-------------|--------|
 | `alert_id` | Alert ID | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Modifies:**
-
-- to-event
 
 ## Example Usage
 

@@ -6,9 +6,6 @@ description: Suspicious User Logs Query.
 
 # Suspicious User Log
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET suspicious user logs for the given namespace.
 For `system` namespace, all suspicious users logs
 for the tenant matching the query specified
@@ -30,14 +27,6 @@ fields such as `vh_name`, `user`, `site`,
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- suspicious-user-log
 
 ## Example Usage
 

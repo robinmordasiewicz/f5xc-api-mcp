@@ -6,9 +6,6 @@ description: DELETE Tenant.
 
 # Request Delete
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Request to mark Tenant for deletion queue, after approve it will completely removed from the system.
 
 ## Tools
@@ -16,14 +13,6 @@ Request to mark Tenant for deletion queue, after approve it will completely remo
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-tenantandidentity-request-delete-create` | DELETE Tenant. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- request-delete
 
 ## Example Usage
 

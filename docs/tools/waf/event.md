@@ -6,9 +6,6 @@ description: Security Events Query.
 
 # Event
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET security events for the given namespace.
 For `system` namespace, all security events for the
 tenant matching the query specified
@@ -30,14 +27,6 @@ fields such as `vh_name`, `sec_event_type`, `src_site`, `city`,
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- event
 
 ## Example Usage
 

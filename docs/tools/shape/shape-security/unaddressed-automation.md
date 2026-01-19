@@ -6,9 +6,6 @@ description: Insight Unaddressed Automations.
 
 # Unaddressed Automation
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Insight Unaddressed Automations.
 
 ## Tools
@@ -24,14 +21,6 @@ Insight Unaddressed Automations.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- unaddressed-automation
 
 ## Example Usage
 

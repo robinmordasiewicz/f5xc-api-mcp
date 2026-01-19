@@ -6,9 +6,6 @@ description: GET API Group Element.
 
 # API Group Element
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET api_group_element reads a given object from storage backend for metadata.namespace.
 
 ## Tools

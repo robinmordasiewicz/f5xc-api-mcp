@@ -6,9 +6,6 @@ description: GET Source Summary.
 
 # Source Summary
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Returns the healthy and critical status count, latency, and coordinates for each source region.
 
 ## Tools

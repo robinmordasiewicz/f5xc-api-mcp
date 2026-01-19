@@ -6,9 +6,6 @@ description: Unsubscribe to Flow Collection.
 
 # Unsubscribe
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Unsubscribe to Flow Collection.
 
 ## Tools
@@ -16,14 +13,6 @@ Unsubscribe to Flow Collection.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-statistics-unsubscribe-create` | Unsubscribe to Flow Collection. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- unsubscribe
 
 ## Example Usage
 

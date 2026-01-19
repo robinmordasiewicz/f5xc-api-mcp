@@ -6,9 +6,6 @@ description: Validate JS Injection.
 
 # Src Tag Injection
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Validate js src tag injection in the target URL.
 
 ## Tools
@@ -16,14 +13,6 @@ Validate js src tag injection in the target URL.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-shape-src-tag-injection-create` | Validate JS Injection. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- src-tag-injection
 
 ## Example Usage
 

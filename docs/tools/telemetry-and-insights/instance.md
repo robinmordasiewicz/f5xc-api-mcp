@@ -6,9 +6,6 @@ description: Service Instance Query.
 
 # Instance
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Request to GET time-series data for a service instance.
 
 ## Tools
@@ -24,14 +21,6 @@ Request to GET time-series data for a service instance.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- instance
 
 ## Example Usage
 

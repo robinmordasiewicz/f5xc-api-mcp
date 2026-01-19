@@ -6,9 +6,6 @@ description: GET HTTP Monitor Summary.
 
 # HTTP Monitor Summary
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Returns the HTTP monitor health status, latency, and trend.
 
 ## Tools

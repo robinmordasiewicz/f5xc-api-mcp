@@ -6,9 +6,6 @@ description: Cloud Credential.
 
 # Edge Credential
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Returns the cloud credential for the matching edge type.
 
 ## Tools
@@ -16,14 +13,6 @@ Returns the cloud credential for the matching edge type.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-cloudinfrastructure-edge-credential-create` | Cloud Credential. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- edge-credential
 
 ## Example Usage
 

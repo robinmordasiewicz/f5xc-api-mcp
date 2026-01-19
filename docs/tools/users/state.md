@@ -6,9 +6,6 @@ description: Set Token State.
 
 # State
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 TokenState changes token status, it can be used to disable token.
 
 ## Tools
@@ -25,14 +22,6 @@ TokenState changes token status, it can be used to disable token.
 |-----------|-------------|--------|
 | `name` | Token name | `-` |
 | `namespace` | Token namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- state
 
 ## Example Usage
 

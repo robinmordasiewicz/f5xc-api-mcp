@@ -6,12 +6,6 @@ description: Child Tenant.
 
 # Child Tenant
 
-!!! danger "High Risk Operation"
-    This resource includes operations that may cause significant changes. Review carefully before executing.
-
-!!! note "Confirmation Required"
-    Some operations on this resource require explicit confirmation before execution.
-
 GET list of child tenants user has access to based on assigned membership.
 This is an optimized list
 generated based on the requesting user's current group assignments
@@ -47,23 +41,6 @@ tenant.
 | `name` | Filter child tenant list using name of child tenant. | `-` |
 | `page_limit` | PageLimit will hold the limit of items required per query. | `-` |
 | `page_start` | PageStart will hold the UUID of the first item in the requested page. | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- child-tenant
-
-**Modifies:**
-
-- child-tenant
-
-**Deletes:**
-
-- child-tenant
-- contained_resources
 
 ## Example Usage
 

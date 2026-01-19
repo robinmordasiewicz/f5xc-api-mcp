@@ -6,9 +6,6 @@ description: L3l4 Mitigation Traffic Query.
 
 # By Mitigation
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Request to GET l3l4 Mitigation Traffic data.
 
 ## Tools
@@ -25,14 +22,6 @@ Request to GET l3l4 Mitigation Traffic data.
 |-----------|-------------|--------|
 | `mitigation_id` | MitigationId | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- by-mitigation
 
 ## Example Usage
 

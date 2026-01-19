@@ -6,9 +6,6 @@ description: Confirm Alert Receiver.
 
 # Confirm
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 API to confirm the Alert Receiver - applicable only for email and sms.
 
 ## Tools
@@ -25,14 +22,6 @@ API to confirm the Alert Receiver - applicable only for email and sms.
 |-----------|-------------|--------|
 | `name` | Name | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- confirm
 
 ## Example Usage
 

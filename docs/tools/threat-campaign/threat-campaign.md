@@ -6,9 +6,6 @@ description: GET Threat Campaign by ID.
 
 # Threat Campaign
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET Threat Campaign by ID.
 
 ## Tools

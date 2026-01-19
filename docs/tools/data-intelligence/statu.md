@@ -6,9 +6,6 @@ description: Update Status of Receiver.
 
 # Statu
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Update receiver object status from enable to disable and vice versa.
 
 ## Tools
@@ -25,14 +22,6 @@ Update receiver object status from enable to disable and vice versa.
 |-----------|-------------|--------|
 | `id` | ID | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- statu
 
 ## Example Usage
 

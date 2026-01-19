@@ -6,9 +6,6 @@ description: List Usage Plans.
 
 # Custom List
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Endpoint to GET usage plans.
 
 ## Tools

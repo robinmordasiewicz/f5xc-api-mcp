@@ -6,9 +6,6 @@ description: Register New AWS Account.
 
 # Register
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Use this API to register F5XC AWS marketplace product for F5XC service.
 
 ## Tools
@@ -16,14 +13,6 @@ Use this API to register F5XC AWS marketplace product for F5XC service.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-marketplace-register-create` | Register New AWS Account. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- register
 
 ## Example Usage
 

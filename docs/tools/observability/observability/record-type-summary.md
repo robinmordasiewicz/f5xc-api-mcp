@@ -6,9 +6,6 @@ description: GET Record Type Summary.
 
 # Record Type Summary
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Returns record type summary for DNS monitor including record type and count.
 
 ## Tools

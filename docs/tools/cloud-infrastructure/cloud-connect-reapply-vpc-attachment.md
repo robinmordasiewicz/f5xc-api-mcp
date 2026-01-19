@@ -6,9 +6,6 @@ description: ReApplyVPCAttachment.
 
 # Cloud Connect Reapply VPC Attachment
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 RE-applies VPC attachment in a cloud connect config.
 
 ## Tools
@@ -16,14 +13,6 @@ RE-applies VPC attachment in a cloud connect config.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-cloudinfrastructure-cloud-connect-reapply-vpc-attachment-create` | ReApplyVPCAttachment. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- cloud-connect-reapply-vpc-attachment
 
 ## Example Usage
 

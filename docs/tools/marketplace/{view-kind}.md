@@ -6,9 +6,6 @@ description: GET Terraform Parameters for view.
 
 # {view Kind}
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Returned from list of terraform parameter objects for a given view.
 
 ## Tools

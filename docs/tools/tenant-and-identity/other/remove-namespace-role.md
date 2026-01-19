@@ -6,9 +6,6 @@ description: Remove role from User Group.
 
 # Remove Namespace Role
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 RemoveRole allows customers to remove a namespace/role from the user group.
 
 ## Tools
@@ -24,14 +21,6 @@ RemoveRole allows customers to remove a namespace/role from the user group.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `name` | Name of the user group | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Modifies:**
-
-- remove-namespace-role
 
 ## Example Usage
 

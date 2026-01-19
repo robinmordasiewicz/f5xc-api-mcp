@@ -6,12 +6,6 @@ description: Update Application.
 
 # Application
 
-!!! danger "High Risk Operation"
-    This resource includes operations that may cause significant changes. Review carefully before executing.
-
-!!! note "Confirmation Required"
-    Some operations on this resource require explicit confirmation before execution.
-
 Update an application's information.
 
 ## Tools
@@ -29,19 +23,6 @@ Update an application's information.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `app_id` | Target application ID to DELETE. | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- application
-
-**Deletes:**
-
-- application
-- contained_resources
 
 ## Example Usage
 

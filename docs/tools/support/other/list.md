@@ -6,9 +6,6 @@ description: List USB devices.
 
 # List
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 List connected USB devices.
 
 ## Tools

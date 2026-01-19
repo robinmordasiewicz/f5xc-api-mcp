@@ -6,9 +6,6 @@ description: Validate contact.
 
 # Validate Contact
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 It validates that:
 
 * the provided country and zip code are not empty
@@ -21,14 +18,6 @@ the configured list of countries
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-tenantandidentity-validate-contact-create` | Validate contact. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-* validate-contact
 
 ## Example Usage
 

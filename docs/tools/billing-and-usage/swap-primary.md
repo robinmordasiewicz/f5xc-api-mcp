@@ -6,9 +6,6 @@ description: Make payment method secondary.
 
 # Swap Primary
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Swaps payment method roles - the payment method used as a parameter will became primary, any other
 will become secondary. The `name` parameter is ignored.
 
@@ -26,14 +23,6 @@ will become secondary. The `name` parameter is ignored.
 |-----------|-------------|--------|
 | `name` | Name | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- swap-primary
 
 ## Example Usage
 

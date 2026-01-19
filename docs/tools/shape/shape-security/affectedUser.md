@@ -6,9 +6,6 @@ description: List Affected Users.
 
 # AffectedUser
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 List affected users who have loaded this particular script.
 
 ## Tools
@@ -25,14 +22,6 @@ List affected users who have loaded this particular script.
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
 | `script_id` | Script_id | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- affectedUser
 
 ## Example Usage
 

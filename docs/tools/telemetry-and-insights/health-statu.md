@@ -6,9 +6,6 @@ description: Discovered Service Health Status.
 
 # Health Statu
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET Discovered Service Health status.
 
 ## Tools

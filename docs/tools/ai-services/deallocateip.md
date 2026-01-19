@@ -6,12 +6,6 @@ description: Deallocate IP through Global IP Allocator.
 
 # Deallocateip
 
-!!! danger "High Risk Operation"
-    This resource includes operations that may cause significant changes. Review carefully before executing.
-
-!!! note "Confirmation Required"
-    Some operations on this resource require explicit confirmation before execution.
-
 DeallocateIP will de-allocate the specified IP address for tenant.
 
 ## Tools
@@ -19,14 +13,6 @@ DeallocateIP will de-allocate the specified IP address for tenant.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-aiservices-deallocateip-delete` | Deallocate IP through Global IP Allocator. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Deletes:**
-
-- deallocateip
 
 ## Example Usage
 

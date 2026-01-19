@@ -6,9 +6,6 @@ description: Update API Endpoints Schemas.
 
 # Update Schema
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Update the payload schema for the specified endpoints or all pending changes if empty list is
 provided.
 NOTE: only API endpoints returned by a call to `GetAPIEndpointsSchemaStates` can be
@@ -29,14 +26,6 @@ DEPRECATED. USE virtual host custom API UpdateAPIEndpointsSchemas.
 |-----------|-------------|--------|
 | `name` | Name | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- update-schema
 
 ## Example Usage
 

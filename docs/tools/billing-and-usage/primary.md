@@ -6,9 +6,6 @@ description: Make credit card primary.
 
 # Primary
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Flags a payment method as primary. Nothing changes is the payment method is already primary, if the
 payment method is secondary then it becomes default and there will be no secondary.
 
@@ -26,14 +23,6 @@ payment method is secondary then it becomes default and there will be no seconda
 |-----------|-------------|--------|
 | `name` | Name | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- primary
 
 ## Example Usage
 

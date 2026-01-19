@@ -6,9 +6,6 @@ description: AI Assistant Query.
 
 # Query
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Enable service by returning service account details.
 
 ## Tools
@@ -24,14 +21,6 @@ Enable service by returning service account details.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- query
 
 ## Example Usage
 

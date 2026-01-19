@@ -6,9 +6,6 @@ description: Top Malicious Bots by Attack Intent.
 
 # Attackintent
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Top Malicious Bots by Attack Intent.
 
 ## Tools
@@ -24,14 +21,6 @@ Top Malicious Bots by Attack Intent.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- attackintent
 
 ## Example Usage
 

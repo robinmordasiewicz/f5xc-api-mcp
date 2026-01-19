@@ -6,9 +6,6 @@ description: GetUserSessions.
 
 # Session
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GetUserSessions returns a list of user sessions.
 
 ## Tools

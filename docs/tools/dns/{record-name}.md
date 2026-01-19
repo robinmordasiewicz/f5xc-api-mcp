@@ -6,12 +6,6 @@ description: DELETE
 
 # {record Name}
 
-!!! danger "High Risk Operation"
-    This resource includes operations that may cause significant changes. Review carefully before executing.
-
-!!! note "Confirmation Required"
-    Some operations on this resource require explicit confirmation before execution.
-
 Replace CustomAPI.
 
 ## Tools
@@ -32,19 +26,6 @@ Replace CustomAPI.
 | `group_name` | Group_name | `-` |
 | `record_name` | Record_name | `-` |
 | `type` | Type | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Modifies:**
-
-- rrset
-
-**Deletes:**
-
-- rrset
-- contained_resources
 
 ## Example Usage
 

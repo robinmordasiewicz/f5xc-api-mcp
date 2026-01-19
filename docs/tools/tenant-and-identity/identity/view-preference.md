@@ -6,9 +6,6 @@ description: GET view preference.
 
 # View Preference
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET view preference gets view preference for specific user.
 
 ## Tools
@@ -17,14 +14,6 @@ GET view preference gets view preference for specific user.
 |------|-------------|
 | `f5xc-api-tenantandidentity-view-preference-list` | GET view preference. |
 | `f5xc-api-tenantandidentity-view-preference-update` | Set view preference. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Modifies:**
-
-- view-preference
 
 ## Example Usage
 

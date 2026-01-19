@@ -6,9 +6,6 @@ description: Template Connector.
 
 # Template
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET iApp template.
 
 ## Tools

@@ -6,9 +6,6 @@ description: Channel Dashboard.
 
 # Channel
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET channel chart data from shape recognize API.
 
 ## Tools
@@ -16,14 +13,6 @@ GET channel chart data from shape recognize API.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-shape-channel-create` | Channel Dashboard. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- channel
 
 ## Example Usage
 

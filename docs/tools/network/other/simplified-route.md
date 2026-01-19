@@ -6,9 +6,6 @@ description: Show Simplified Routes.
 
 # Simplified Route
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Show user-friendly VER routes matching the request.
 
 ## Tools
@@ -26,13 +23,25 @@ Show user-friendly VER routes matching the request.
 | `namespace` | Namespace | `-` |
 | `site` | Site Name | `-` |
 
-## Side Effects
+## Configuration Choices
 
-Operations on this resource may have the following effects:
+This resource includes mutually exclusive configuration options:
 
-**Creates:**
+### cluster_node_choice
 
-- simplified-route
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `all_nodes` | - |  |
+| `node` | - |  |
+
+### network_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `global_network` | - |  |
+| `segment` | - |  |
+| `sli` | - |  |
+| `slo` | - |  |
 
 ## Example Usage
 

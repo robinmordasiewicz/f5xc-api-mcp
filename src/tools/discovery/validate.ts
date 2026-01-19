@@ -328,6 +328,7 @@ function validateRequiredFields(
 
 /**
  * Validate oneOf constraints (warning for multiple selections)
+ * Enhanced in v2.0.34 to include recommended option hints
  */
 function validateOneOfGroups(
   oneOfGroups: OneOfGroup[],
@@ -343,9 +344,19 @@ function validateOneOfGroups(
     });
 
     if (selectedOptions.length > 1) {
-      warnings.push(
-        `Multiple mutually exclusive options selected for ${group.choiceField}: ${selectedOptions.join(", ")}. Choose only one.`
-      );
+      // Multiple options selected - include recommended hint if available
+      let warningMsg = `Multiple mutually exclusive options selected for ${group.choiceField}: ${selectedOptions.join(", ")}. Choose only one.`;
+      if (group.recommendedOption) {
+        warningMsg += ` Recommended: ${group.recommendedOption}`;
+      }
+      warnings.push(warningMsg);
+    } else if (selectedOptions.length === 0) {
+      // No option selected - suggest recommended option if available
+      if (group.recommendedOption) {
+        warnings.push(
+          `No option selected for ${group.choiceField}. Consider using the recommended option: ${group.recommendedOption}`
+        );
+      }
     }
   }
 }

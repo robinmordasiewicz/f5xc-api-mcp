@@ -6,9 +6,6 @@ description: Eval AI Assistant Query.
 
 # Eval Query
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Temporarily to be used in place of AIAssistantQuery for evaluating API access/RBAC check.
 
 ## Tools
@@ -24,14 +21,6 @@ Temporarily to be used in place of AIAssistantQuery for evaluating API access/RB
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- eval-query
 
 ## Example Usage
 

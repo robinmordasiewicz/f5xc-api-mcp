@@ -6,9 +6,6 @@ description: Enable Client-Side Defense.
 
 # Init
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Enable Client-Side Defense feature for the tenant.
 
 ## Tools
@@ -16,14 +13,6 @@ Enable Client-Side Defense feature for the tenant.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-shape-init-create` | Enable Client-Side Defense. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- init
 
 ## Example Usage
 

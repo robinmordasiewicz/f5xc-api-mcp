@@ -6,9 +6,6 @@ description: GET SAFE Block table list.
 
 # Audit
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET SAFE block table list.
 
 ## Tools

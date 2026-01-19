@@ -6,9 +6,6 @@ description: GET Report.
 
 # Report
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET Report will read the report metadata.
 
 ## Tools

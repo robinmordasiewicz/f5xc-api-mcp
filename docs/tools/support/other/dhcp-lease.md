@@ -6,9 +6,6 @@ description: Show DHCP Leases.
 
 # Dhcp Lease
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET DHCP lease information.
 
 ## Tools

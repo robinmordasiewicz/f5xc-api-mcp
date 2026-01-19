@@ -6,9 +6,6 @@ description: GET JS Injection Configuration.
 
 # Js Configuration
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET JS Injection Configuration for this tenant.
 
 ## Tools

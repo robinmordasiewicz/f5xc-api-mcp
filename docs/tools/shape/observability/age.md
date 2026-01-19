@@ -6,9 +6,6 @@ description: GET Devices By Age.
 
 # Age
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET device age information.
 
 ## Tools
@@ -16,14 +13,6 @@ GET device age information.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-shape-age-create` | GET Devices By Age. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- age
 
 ## Example Usage
 

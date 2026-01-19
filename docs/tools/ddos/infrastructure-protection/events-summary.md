@@ -6,9 +6,6 @@ description: Simple events view.
 
 # Events Summary
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Return a list of available event (suitable for an alert)
 
 ## Tools

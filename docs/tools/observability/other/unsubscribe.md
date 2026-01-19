@@ -6,9 +6,6 @@ description: Unsubscribe to Observability Synthetic Monitor.
 
 # Unsubscribe
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Unsubscribe to Observability Synthetic Monitor.
 
 ## Tools
@@ -17,13 +14,15 @@ Unsubscribe to Observability Synthetic Monitor.
 |------|-------------|
 | `f5xc-api-observability-unsubscribe-create` | Unsubscribe to Observability Synthetic Monitor. |
 
-## Side Effects
+## Configuration Choices
 
-Operations on this resource may have the following effects:
+This resource includes mutually exclusive configuration options:
 
-**Creates:**
+### service
 
-- unsubscribe
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `syntheticMonitors` | - |  |
 
 ## Example Usage
 

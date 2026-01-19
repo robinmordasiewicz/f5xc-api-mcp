@@ -6,9 +6,6 @@ description: Generate Report Now.
 
 # Generate
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Generate report now.
 
 ## Tools
@@ -25,14 +22,6 @@ Generate report now.
 |-----------|-------------|--------|
 | `name` | Name | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- generate
 
 ## Example Usage
 

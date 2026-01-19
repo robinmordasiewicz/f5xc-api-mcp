@@ -6,9 +6,6 @@ description: Accept TOS.
 
 # Accept To
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Accept TOS updates version of accepted terms of service.
 
 ## Tools
@@ -24,14 +21,6 @@ Accept TOS updates version of accepted terms of service.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- accept-to
 
 ## Example Usage
 

@@ -6,9 +6,6 @@ description: Top Malicious Bots by ASOrg.
 
 # Asorg
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET top malicious bots by AS Organization.
 
 ## Tools
@@ -24,14 +21,6 @@ GET top malicious bots by AS Organization.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- asorg
 
 ## Example Usage
 

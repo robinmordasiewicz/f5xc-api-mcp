@@ -6,9 +6,6 @@ description: List cities.
 
 # Citie
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Returns a list of known cities of a country/state.
 
 ## Tools

@@ -6,12 +6,6 @@ description: Create Network Policy.
 
 # Network Policy
 
-!!! danger "High Risk Operation"
-    This resource includes operations that may cause significant changes. Review carefully before executing.
-
-!!! note "Confirmation Required"
-    Some operations on this resource require explicit confirmation before execution.
-
 Replaces configured Network Policy with new set of parameters in specified namespace.
 
 ## Tools
@@ -43,23 +37,6 @@ Replaces configured Network Policy with new set of parameters in specified names
 | `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
 | `report_fields` | The report_fields parameter | `-` |
 | `report_status_fields` | The report_status_fields parameter | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- network-policy
-
-**Modifies:**
-
-- network-policy
-
-**Deletes:**
-
-- network-policy
-- contained_resources
 
 ## Example Usage
 

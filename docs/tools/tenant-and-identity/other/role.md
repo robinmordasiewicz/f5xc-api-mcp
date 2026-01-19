@@ -6,12 +6,6 @@ description: Custom Create Role.
 
 # Role
 
-!!! danger "High Risk Operation"
-    This resource includes operations that may cause significant changes. Review carefully before executing.
-
-!!! note "Confirmation Required"
-    Some operations on this resource require explicit confirmation before execution.
-
 Create a role object and the rbac_policy object which the role associated with.
 
 ## Tools
@@ -32,23 +26,6 @@ Create a role object and the rbac_policy object which the role associated with.
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
 | `name` | Name | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- role
-
-**Modifies:**
-
-- role
-
-**Deletes:**
-
-- role
-- contained_resources
 
 ## Example Usage
 

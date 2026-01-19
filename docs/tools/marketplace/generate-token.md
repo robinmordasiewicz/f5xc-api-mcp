@@ -6,9 +6,6 @@ description: Generate Token.
 
 # Generate Token
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Generate token that will be used by the third party application.
 
 ## Tools

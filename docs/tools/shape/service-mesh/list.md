@@ -6,9 +6,6 @@ description: All Protected Endpoints.
 
 # List
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET All Protected Endpoints.
 
 ## Tools
@@ -24,14 +21,6 @@ GET All Protected Endpoints.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- list
 
 ## Example Usage
 

@@ -6,9 +6,6 @@ description: Reopen a closed customer support ticket in managed tenant.
 
 # Reopen
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Reopens a selected closed customer support ticket.
 
 ## Tools
@@ -24,14 +21,6 @@ Reopens a selected closed customer support ticket.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `tp_id` | Third party ID | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- reopen
 
 ## Example Usage
 

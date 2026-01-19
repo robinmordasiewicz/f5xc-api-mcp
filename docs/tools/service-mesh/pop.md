@@ -6,9 +6,6 @@ description: Remove Override.
 
 # Pop
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Remove override for dynamic component for API endpoints discovered for this App type.
 
 ## Tools
@@ -25,14 +22,6 @@ Remove override for dynamic component for API endpoints discovered for this App 
 |-----------|-------------|--------|
 | `app_type_name` | App Type | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- pop
 
 ## Example Usage
 

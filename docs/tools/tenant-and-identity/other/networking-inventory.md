@@ -6,9 +6,6 @@ description: Networking Objects Inventory.
 
 # Networking Inventory
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 NetworkingInventory returns inventory of configured networking related objects for the
 tenant.
 Inventory of system-wide objects (global networks, sites, site mesh groups, etc) is
@@ -19,14 +16,6 @@ returned.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-tenantandidentity-networking-inventory-create` | Networking Objects Inventory. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- networking-inventory
 
 ## Example Usage
 

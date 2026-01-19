@@ -6,9 +6,6 @@ description: Move To API Inventory.
 
 # Move To Inventory
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Update the API Definition's include list with the provided API endpoints.
 
 ## Tools
@@ -25,14 +22,6 @@ Update the API Definition's include list with the provided API endpoints.
 |-----------|-------------|--------|
 | `name` | Name | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- move-to-inventory
 
 ## Example Usage
 

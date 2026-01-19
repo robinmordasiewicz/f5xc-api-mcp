@@ -6,9 +6,6 @@ description: Send Signup Email.
 
 # Send Email
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Use this API to send a tenant provisioning signup email when the signup URL link in the previously
 sent email has expired or is no longer accessible.
 
@@ -17,14 +14,6 @@ sent email has expired or is no longer accessible.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-marketplace-send-email-create` | Send Signup Email. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- send-email
 
 ## Example Usage
 

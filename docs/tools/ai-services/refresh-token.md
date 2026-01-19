@@ -6,9 +6,6 @@ description: Refresh Token.
 
 # Refresh Token
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Enable service by returning service account details.
 
 ## Tools
@@ -16,14 +13,6 @@ Enable service by returning service account details.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-aiservices-refresh-token-create` | Refresh Token. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- refresh-token
 
 ## Example Usage
 

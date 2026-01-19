@@ -6,9 +6,6 @@ description: Clone Alert Template.
 
 # Statu
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET Client-Side Defense status for the tenant.
 
 ## Tools
@@ -26,14 +23,6 @@ GET Client-Side Defense status for the tenant.
 |-----------|-------------|--------|
 | `name` | Name | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- statu
 
 ## Example Usage
 

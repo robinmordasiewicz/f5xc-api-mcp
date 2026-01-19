@@ -6,9 +6,6 @@ description: Enable Application Traffic Insights.
 
 # Enable
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Enable Application Traffic Insights feature for the tenant.
 
 ## Tools
@@ -16,14 +13,6 @@ Enable Application Traffic Insights feature for the tenant.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-shape-enable-create` | Enable Application Traffic Insights. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- enable
 
 ## Example Usage
 

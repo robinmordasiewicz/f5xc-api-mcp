@@ -6,9 +6,6 @@ description: Bulk Revoke API credentials.
 
 # API Credential
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 It is used to revoke multiple API credentials. This API would disable the credentials and mark them
 for deletion.
 The actual removal of objects would be done in the background.
@@ -36,14 +33,6 @@ credentials.
 |-----------|-------------|--------|
 | `name` | Credential name | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-* api-credential
 
 ## Example Usage
 

@@ -6,9 +6,6 @@ description: GET Navigation Tile.
 
 # Navigation Tile
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET navigation_tile reads a given object from storage backend for metadata.namespace.
 
 ## Tools

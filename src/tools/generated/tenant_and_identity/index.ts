@@ -84,7 +84,17 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     operationMetadata: null,
     curlExample: null,
     dependencies: [],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "access_type_choice",
+        fieldPath: "access_config.access_type_choice",
+        options: [
+          "access_config.read_only",
+          "access_config.read_write_all",
+          "access_config.read_write_ns",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -1374,7 +1384,47 @@ export const tenant_and_identityTools: ParsedOperation[] = [
         resourceType: "authentication-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "auth_type_choice",
+        fieldPath: "spec.auth_type_choice",
+        options: ["spec.oidc_auth"],
+      },
+      {
+        choiceField: "secret_choice",
+        fieldPath: "spec.cookie_params.secret_choice",
+        options: ["spec.cookie_params.auth_hmac", "spec.cookie_params.kms_key_hmac"],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.cookie_params.auth_hmac.prim_key.secret_info_oneof",
+        options: [
+          "spec.cookie_params.auth_hmac.prim_key.blindfold_secret_info",
+          "spec.cookie_params.auth_hmac.prim_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.cookie_params.auth_hmac.sec_key.secret_info_oneof",
+        options: [
+          "spec.cookie_params.auth_hmac.sec_key.blindfold_secret_info",
+          "spec.cookie_params.auth_hmac.sec_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "auth_params_choice",
+        fieldPath: "spec.oidc_auth.auth_params_choice",
+        options: ["spec.oidc_auth.oidc_auth_params", "spec.oidc_auth.oidc_well_known_config_url"],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.oidc_auth.client_secret.secret_info_oneof",
+        options: [
+          "spec.oidc_auth.client_secret.blindfold_secret_info",
+          "spec.oidc_auth.client_secret.clear_secret_info",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -1669,7 +1719,47 @@ export const tenant_and_identityTools: ParsedOperation[] = [
         resourceType: "authentication-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "auth_type_choice",
+        fieldPath: "spec.auth_type_choice",
+        options: ["spec.oidc_auth"],
+      },
+      {
+        choiceField: "secret_choice",
+        fieldPath: "spec.cookie_params.secret_choice",
+        options: ["spec.cookie_params.auth_hmac", "spec.cookie_params.kms_key_hmac"],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.cookie_params.auth_hmac.prim_key.secret_info_oneof",
+        options: [
+          "spec.cookie_params.auth_hmac.prim_key.blindfold_secret_info",
+          "spec.cookie_params.auth_hmac.prim_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.cookie_params.auth_hmac.sec_key.secret_info_oneof",
+        options: [
+          "spec.cookie_params.auth_hmac.sec_key.blindfold_secret_info",
+          "spec.cookie_params.auth_hmac.sec_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "auth_params_choice",
+        fieldPath: "spec.oidc_auth.auth_params_choice",
+        options: ["spec.oidc_auth.oidc_auth_params", "spec.oidc_auth.oidc_well_known_config_url"],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath: "spec.oidc_auth.client_secret.secret_info_oneof",
+        options: [
+          "spec.oidc_auth.client_secret.blindfold_secret_info",
+          "spec.oidc_auth.client_secret.clear_secret_info",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -2043,7 +2133,13 @@ export const tenant_and_identityTools: ParsedOperation[] = [
         resourceType: "tenant-managementchild-tenant-manager-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "tenant_owner_choice",
+        fieldPath: "spec.tenant_owner_choice",
+        options: ["spec.tenant_owner_group"],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -2338,7 +2434,18 @@ export const tenant_and_identityTools: ParsedOperation[] = [
         resourceType: "tenant-managementchild-tenant-manager-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "tenant_owner_choice",
+        fieldPath: "spec.tenant_owner_choice",
+        options: ["spec.tenant_owner_group"],
+      },
+      {
+        choiceField: "content_choice",
+        fieldPath: "spec.banner_message.content_choice",
+        options: ["spec.banner_message.content_html", "spec.banner_message.content_text"],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -4379,7 +4486,13 @@ export const tenant_and_identityTools: ParsedOperation[] = [
         resourceType: "tenant-managementmanaged-tenant-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "tenant_choice",
+        fieldPath: "spec.tenant_choice",
+        options: ["spec.tenant_id"],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -5552,7 +5665,18 @@ export const tenant_and_identityTools: ParsedOperation[] = [
         resourceType: "schemaoidc-provider-custom-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "oidcproviderspec",
+        fieldPath: "spec.oidcproviderspec",
+        options: [
+          "spec.azure_oidc_spec_type",
+          "spec.google_oidc_spec_type",
+          "spec.oidc_v10_spec_type",
+          "spec.okta_oidc_spec_type",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -7685,7 +7809,18 @@ export const tenant_and_identityTools: ParsedOperation[] = [
         resourceType: "tenant-profile-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "storage_provider",
+        fieldPath: "spec.favicon.storage_provider",
+        options: ["spec.favicon.aws_s3"],
+      },
+      {
+        choiceField: "storage_provider",
+        fieldPath: "spec.logo.storage_provider",
+        options: ["spec.logo.aws_s3"],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -7980,7 +8115,18 @@ export const tenant_and_identityTools: ParsedOperation[] = [
         resourceType: "tenant-profile-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "storage_provider",
+        fieldPath: "spec.favicon.storage_provider",
+        options: ["spec.favicon.aws_s3"],
+      },
+      {
+        choiceField: "storage_provider",
+        fieldPath: "spec.logo.storage_provider",
+        options: ["spec.logo.aws_s3"],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -8596,7 +8742,29 @@ export const tenant_and_identityTools: ParsedOperation[] = [
         resourceType: "user-identification-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "identifier",
+        fieldPath: "spec.rules[].identifier",
+        options: [
+          "spec.rules[].client_asn",
+          "spec.rules[].client_city",
+          "spec.rules[].client_country",
+          "spec.rules[].client_ip",
+          "spec.rules[].client_region",
+          "spec.rules[].cookie_name",
+          "spec.rules[].http_header_name",
+          "spec.rules[].ip_and_http_header_name",
+          "spec.rules[].ip_and_ja4_tls_fingerprint",
+          "spec.rules[].ip_and_tls_fingerprint",
+          "spec.rules[].ja4_tls_fingerprint",
+          "spec.rules[].jwt_claim_name",
+          "spec.rules[].none",
+          "spec.rules[].query_param_key",
+          "spec.rules[].tls_fingerprint",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {
@@ -8893,7 +9061,29 @@ export const tenant_and_identityTools: ParsedOperation[] = [
         resourceType: "user-identification-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "identifier",
+        fieldPath: "spec.rules[].identifier",
+        options: [
+          "spec.rules[].client_asn",
+          "spec.rules[].client_city",
+          "spec.rules[].client_country",
+          "spec.rules[].client_ip",
+          "spec.rules[].client_region",
+          "spec.rules[].cookie_name",
+          "spec.rules[].http_header_name",
+          "spec.rules[].ip_and_http_header_name",
+          "spec.rules[].ip_and_ja4_tls_fingerprint",
+          "spec.rules[].ip_and_tls_fingerprint",
+          "spec.rules[].ja4_tls_fingerprint",
+          "spec.rules[].jwt_claim_name",
+          "spec.rules[].none",
+          "spec.rules[].query_param_key",
+          "spec.rules[].tls_fingerprint",
+        ],
+      },
+    ],
     subscriptionRequirements: [],
   },
   {

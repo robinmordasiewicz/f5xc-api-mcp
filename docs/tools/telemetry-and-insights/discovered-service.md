@@ -6,9 +6,6 @@ description: GET Discovered Service Object.
 
 # Discovered Service
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 List the discovered services of specific type like virtual-servers, K8s, consul, NGINX server, etc.
 
 ## Tools

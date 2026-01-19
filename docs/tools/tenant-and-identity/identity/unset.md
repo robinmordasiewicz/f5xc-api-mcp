@@ -6,9 +6,6 @@ description: Unset admin ntfn preference.
 
 # Unset
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Unset admin ntfn preference unsets specific admin notification preference for the user and store it
 in user settings object.
 It can be used in email newsletters to allow easy unsubscribing for users.
@@ -18,14 +15,6 @@ It can be used in email newsletters to allow easy unsubscribing for users.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-tenantandidentity-unset-update` | Unset admin ntfn preference. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Modifies:**
-
-- unset
 
 ## Example Usage
 

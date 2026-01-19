@@ -6,9 +6,6 @@ description: Recover secret policy with given policy name.
 
 # Recover
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Recoverpolicy CustomAPI.
 
 ## Tools
@@ -25,14 +22,6 @@ Recoverpolicy CustomAPI.
 |-----------|-------------|--------|
 | `name` | Name | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- recover
 
 ## Example Usage
 

@@ -6,9 +6,6 @@ description: JIRA Projects & Issue Types.
 
 # Jira Projects Issue Type
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Returns the available projects and issue types that are available from the Jira ticket tracking
 system.
 
@@ -17,14 +14,6 @@ system.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-support-jira-projects-issue-type-create` | JIRA Projects & Issue Types. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- jira-projects-issue-type
 
 ## Example Usage
 

@@ -6,9 +6,6 @@ description: Download BotDetection Updates Release Notes.
 
 # Download Release Note
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Downloadbotdetectionupdatesreleasenotes CustomAPI.
 
 ## Tools

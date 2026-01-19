@@ -6,9 +6,6 @@ description: List secret policy.
 
 # List Policy
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Listpolicy CustomAPI.
 
 ## Tools

@@ -6,9 +6,6 @@ description: List Network Interactions By Script.
 
 # NetworkInteraction
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 List all the network interactions for a script depending on start time and end time.
 
 ## Tools

@@ -6,9 +6,6 @@ description: Add user to groups.
 
 # Group Add
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Assign existing user to specific groups.
 
 ## Tools
@@ -16,14 +13,6 @@ Assign existing user to specific groups.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-tenantandidentity-group-add-update` | Add user to groups. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Modifies:**
-
-- group-add
 
 ## Example Usage
 

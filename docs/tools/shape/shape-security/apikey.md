@@ -6,9 +6,6 @@ description: API Key
 
 # Apikey
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET API key.
 
 ## Tools

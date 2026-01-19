@@ -6,9 +6,6 @@ description: Application Objects Inventory.
 
 # Application Inventory
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 ApplicationInventory returns inventory of configured application related objects for the
 tenant.
 Inventory of namespaced objects (HTTP LBs, TCP LBs, etc) in a particular namespace is
@@ -27,14 +24,6 @@ returned.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- application-inventory
 
 ## Example Usage
 

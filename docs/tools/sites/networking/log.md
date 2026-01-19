@@ -6,9 +6,6 @@ description: External connector log query.
 
 # Log
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Request to GET external connector logs that matches the criteria in request for a given
 namespace.
 The logs are per site per external connector is specified as match condition in the
@@ -29,14 +26,6 @@ request to GET the logs for a external connector.
 | `external_connector` | External connector | `-` |
 | `namespace` | Namespace | `-` |
 | `site` | Site | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- log
 
 ## Example Usage
 

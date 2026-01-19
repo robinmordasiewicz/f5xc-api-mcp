@@ -6,9 +6,6 @@ description: List Reports History.
 
 # List Reports History
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 List Reports history for the list of report configurations in the given namespace.
 
 ## Tools
@@ -24,14 +21,6 @@ List Reports history for the list of report configurations in the given namespac
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- list-reports-history
 
 ## Example Usage
 

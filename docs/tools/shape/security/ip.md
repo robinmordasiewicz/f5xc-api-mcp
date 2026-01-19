@@ -6,9 +6,6 @@ description: Malicious Report Transactions IP.
 
 # IP
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Malicious Report Transactions IP.
 
 ## Tools
@@ -24,14 +21,6 @@ Malicious Report Transactions IP.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- ip
 
 ## Example Usage
 

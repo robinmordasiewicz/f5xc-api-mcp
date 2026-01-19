@@ -6,9 +6,6 @@ description: Unassign domain owner.
 
 # Unassign
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Unassign domain owner tries to remove domain owner privilege from user in the request.
 It checks
 that requester is domain owner.
@@ -32,14 +29,6 @@ NOTE: previously granted roles (including admin roles) will be retained.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-tenantandidentity-unassign-create` | Unassign domain owner. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- unassign
 
 ## Example Usage
 

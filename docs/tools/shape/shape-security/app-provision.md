@@ -6,9 +6,6 @@ description: Application Provision.
 
 # App Provision
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Provision an application for a tenant.
 
 ## Tools
@@ -16,14 +13,6 @@ Provision an application for a tenant.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-shape-app-provision-create` | Application Provision. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- app-provision
 
 ## Example Usage
 

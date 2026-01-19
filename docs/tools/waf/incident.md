@@ -6,9 +6,6 @@ description: Security Incidents Query.
 
 # Incident
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET security incidents for the given namespace.
 For `system` namespace, all security incidents for
 the tenant matching the query specified
@@ -29,14 +26,6 @@ fields such as `vh_name`, `intent`, `city`, `country`.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- incident
 
 ## Example Usage
 

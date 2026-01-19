@@ -6,9 +6,6 @@ description: GET TLS Report Detail.
 
 # TLS Report Detail
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Returns the HTML encoding of the generated TLS report.
 
 ## Tools

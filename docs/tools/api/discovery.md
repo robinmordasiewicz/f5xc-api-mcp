@@ -6,12 +6,6 @@ description: Create Discovery.
 
 # Discovery
 
-!!! danger "High Risk Operation"
-    This resource includes operations that may cause significant changes. Review carefully before executing.
-
-!!! note "Confirmation Required"
-    Some operations on this resource require explicit confirmation before execution.
-
 API to replace discovery object for a site or virtual site in system namespace.
 
 ## Tools
@@ -43,23 +37,6 @@ API to replace discovery object for a site or virtual site in system namespace.
 | `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
 | `report_fields` | The report_fields parameter | `-` |
 | `report_status_fields` | The report_status_fields parameter | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- discovery
-
-**Modifies:**
-
-- discovery
-
-**Deletes:**
-
-- discovery
-- contained_resources
 
 ## Example Usage
 

@@ -6,9 +6,6 @@ description: Find Filter Sets for 1 or More Context Keys.
 
 # Find
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Retrieve any saved filter sets that are applicable for the given context key(s)
 
 ## Tools
@@ -24,14 +21,6 @@ Retrieve any saved filter sets that are applicable for the given context key(s)
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- find
 
 ## Example Usage
 

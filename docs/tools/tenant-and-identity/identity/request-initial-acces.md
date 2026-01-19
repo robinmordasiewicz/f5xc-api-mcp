@@ -6,9 +6,6 @@ description: Request Initial Access.
 
 # Request Initial Acces
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Request initial access requests initial access for user within tenant.
 Emails will be send to
 tenant's admins with corresponding information.
@@ -18,14 +15,6 @@ tenant's admins with corresponding information.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-tenantandidentity-request-initial-acces-update` | Request Initial Access. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Modifies:**
-
-- request-initial-acces
 
 ## Example Usage
 

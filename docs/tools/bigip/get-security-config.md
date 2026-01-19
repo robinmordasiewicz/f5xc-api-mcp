@@ -6,9 +6,6 @@ description: GET Security Config for BIG-IP Load Balancer.
 
 # Get Security Config
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Fetch the corresponding Security Config for the given BIG-IP load balancers.
 
 ## Tools
@@ -25,13 +22,16 @@ Fetch the corresponding Security Config for the given BIG-IP load balancers.
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
 
-## Side Effects
+## Configuration Choices
 
-Operations on this resource may have the following effects:
+This resource includes mutually exclusive configuration options:
 
-**Creates:**
+### loadbalancer_choice
 
-- get-security-config
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `all_bigip_virtual_servers` | - |  |
+| `bigip_virtual_servers_list` | - |  |
 
 ## Example Usage
 

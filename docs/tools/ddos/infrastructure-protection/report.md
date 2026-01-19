@@ -6,9 +6,6 @@ description: List reports.
 
 # Report
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Returns a list of available reports to be downloaded. Reports summarise an event or a mitigation in
 a single PDF document.
 
@@ -27,14 +24,6 @@ a single PDF document.
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
 | `report_id` | Report ID | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- report
 
 ## Example Usage
 

@@ -6,9 +6,6 @@ description: GET Learnt Schema per API endpoint.
 
 # Learnt Schema
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET Learnt Schema per API endpoint for a given auto discovered API endpoint for Service.
 
 ## Tools
@@ -25,14 +22,6 @@ GET Learnt Schema per API endpoint for a given auto discovered API endpoint for 
 |-----------|-------------|--------|
 | `app_type_name` | App Type | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- learnt-schema
 
 ## Example Usage
 

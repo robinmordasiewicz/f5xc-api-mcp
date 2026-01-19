@@ -6,9 +6,6 @@ description: Site Edge Query.
 
 # Edge
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Request to GET time-series data for an edge returned in the site traffic graph.
 
 ## Tools
@@ -24,14 +21,6 @@ Request to GET time-series data for an edge returned in the site traffic graph.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- edge
 
 ## Example Usage
 

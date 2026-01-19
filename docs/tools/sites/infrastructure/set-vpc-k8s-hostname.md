@@ -6,9 +6,6 @@ description: Configure VPC K8s hostnames.
 
 # Set VPC K8S Hostname
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Configure VPC K8s node hostname set.
 
 ## Tools
@@ -25,14 +22,6 @@ Configure VPC K8s node hostname set.
 |-----------|-------------|--------|
 | `name` | Name | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- set-vpc-k8s-hostname
 
 ## Example Usage
 

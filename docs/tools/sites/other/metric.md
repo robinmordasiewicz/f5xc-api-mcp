@@ -6,9 +6,6 @@ description: Pods Metrics.
 
 # Metric
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 API to GET pods metrics for a given namespace in a site.
 
 ## Tools
@@ -25,14 +22,6 @@ API to GET pods metrics for a given namespace in a site.
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
 | `site` | Site | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- metric
 
 ## Example Usage
 

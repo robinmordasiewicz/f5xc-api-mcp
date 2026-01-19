@@ -6,9 +6,6 @@ description: Check subscription status for Flow Collection.
 
 # Subscription Statu
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 Check subscription status flow Flow Collection.
 
 ## Tools

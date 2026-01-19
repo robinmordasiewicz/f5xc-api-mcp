@@ -2604,7 +2604,16 @@ export const shapeTools: ParsedOperation[] = [
         resourceType: "bot-allowlist-policy-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "client_identifier_choice",
+        fieldPath: "spec.allowlist_policy_content.ip_allowlist[].client_identifier_choice",
+        options: [
+          "spec.allowlist_policy_content.ip_allowlist[].ip_detail",
+          "spec.allowlist_policy_content.ip_allowlist[].ip_prefix_detail",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -3218,7 +3227,1469 @@ export const shapeTools: ParsedOperation[] = [
         resourceType: "bot-endpoint-policy-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "endpoint_type_choice",
+        fieldPath: "spec.endpoint_policy_content.endpoint_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints",
+          "spec.endpoint_policy_content.protected_web_endpoints",
+        ],
+      },
+      {
+        choiceField: "mobile_client_action_type",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].mobile_client_action_type",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].block",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].continue",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transform",
+        ],
+      },
+      {
+        choiceField: "send_headers_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].continue.send_headers_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].continue.append_headers",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].continue.no_headers",
+        ],
+      },
+      {
+        choiceField: "domain_operator_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].domain.domain_operator_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].domain.all_domain",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].domain.domain_and",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].domain.domain_none",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].domain.domain_or",
+        ],
+      },
+      {
+        choiceField: "flow_label_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.flow_label_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.account_management",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.authentication",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.credit_card",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.delivery_services",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.financial_services",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.flight",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.guest_session",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.loyalty",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.mailing_list",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.media",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.miscellaneous",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.profile_management",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.quotes",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.search",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.shopping_gift_cards",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.socials",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.undefined_flow_label",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.account_management.label_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.account_management.change_password",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.account_management.check_eligibility",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.account_management.create",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.account_management.exists",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.account_management.password_forgot",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.account_management.password_recover",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.account_management.password_reset",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.authentication.label_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.authentication.login",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.authentication.login_alexa",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.authentication.login_mfa",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.authentication.login_partner",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.authentication.logout",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.authentication.token_refresh",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.authentication.token_validate",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.authentication.zelle_retrieve_token",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.credit_card.label_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.credit_card.activate",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.credit_card.apply",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.credit_card.apply_to_account",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.credit_card.view_history",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.credit_card.view_list",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.delivery_services.label_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.delivery_services.hold",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.delivery_services.incorrectly_routed",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.delivery_services.view_items",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.financial_services.label_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.financial_services.account_apply",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.financial_services.loan_personal_apply",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.financial_services.money_send",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.financial_services.money_transfer",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.financial_services.ofx",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.financial_services.request_credit_score",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.financial_services.student_apply",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.financial_services.zelle_execute_transaction",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.flight.label_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.flight.change_flight",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.flight.checkin",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.flight.flight_status",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.flight.submit_travel_documents",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.flight.time_table",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.flight.view_flight",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.guest_session.label_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.guest_session.create",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.loyalty.label_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.loyalty.conversion",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.loyalty.reset_miles",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.loyalty.view_account",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.mailing_list.label_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.mailing_list.create_password",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.mailing_list.signup",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.mailing_list.unsubscribe",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.media.label_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.media.content",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.media.play",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.media.record",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.miscellaneous.label_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.miscellaneous.contact_us",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.miscellaneous.ratings",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.profile_management.label_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.profile_management.create",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.profile_management.update",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.profile_management.view",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.quotes.label_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.quotes.insurance_fire_request",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.quotes.request",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.search.label_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.search.fare_search",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.search.find_user",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.search.flight_search",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.search.location_search",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.search.product_search",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.search.room_search",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.search.shipment_search",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.search.ticket_search",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.shopping_gift_cards.label_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.shopping_gift_cards.gift_card_check_balance",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.shopping_gift_cards.gift_card_make_purches_with_card",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.shopping_gift_cards.gift_card_purchase_card",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.shopping_gift_cards.shop_add_to_cart",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.shopping_gift_cards.shop_apply_gift_card",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.shopping_gift_cards.shop_apply_promo_code",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.shopping_gift_cards.shop_checkout",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.shopping_gift_cards.shop_choose_seat",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.shopping_gift_cards.shop_enter_drawing_submission",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.shopping_gift_cards.shop_hold_inventory",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.shopping_gift_cards.shop_make_payment",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.shopping_gift_cards.shop_offer",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.shopping_gift_cards.shop_order",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.shopping_gift_cards.shop_price_inquiry",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.shopping_gift_cards.shop_purchase_gift_card",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.shopping_gift_cards.shop_return",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.shopping_gift_cards.shop_schedule_pickup",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.shopping_gift_cards.shop_track_order",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.shopping_gift_cards.shop_update_quantity",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.socials.label_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.socials.follow",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.socials.like",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.socials.message",
+        ],
+      },
+      {
+        choiceField: "header_operator_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].header[].header_operator_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].header[].all_header",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].header[].header_and",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].header[].header_none",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].header[].header_or",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].header[].not_present_header",
+        ],
+      },
+      {
+        choiceField: "match_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].header[].header_and.header_match[].match_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].header[].header_and.header_match[].contain_value",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].header[].header_and.header_match[].end_with_value",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].header[].header_and.header_match[].exact_value",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].header[].header_and.header_match[].start_with_value",
+        ],
+      },
+      {
+        choiceField: "match_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].header[].header_none.header_match[].match_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].header[].header_none.header_match[].contain_value",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].header[].header_none.header_match[].end_with_value",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].header[].header_none.header_match[].exact_value",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].header[].header_none.header_match[].start_with_value",
+        ],
+      },
+      {
+        choiceField: "match_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].header[].header_or.header_match[].match_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].header[].header_or.header_match[].contain_value",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].header[].header_or.header_match[].end_with_value",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].header[].header_or.header_match[].exact_value",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].header[].header_or.header_match[].start_with_value",
+        ],
+      },
+      {
+        choiceField: "path_operator_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].path.path_operator_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].path.all_path",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].path.path_and",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].path.path_none",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].path.path_or",
+        ],
+      },
+      {
+        choiceField: "match_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].path.path_and.path_match[].match_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].path.path_and.path_match[].contain_value",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].path.path_and.path_match[].end_with_value",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].path.path_and.path_match[].exact_value",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].path.path_and.path_match[].start_with_value",
+        ],
+      },
+      {
+        choiceField: "match_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].path.path_none.path_match[].match_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].path.path_none.path_match[].contain_value",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].path.path_none.path_match[].end_with_value",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].path.path_none.path_match[].exact_value",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].path.path_none.path_match[].start_with_value",
+        ],
+      },
+      {
+        choiceField: "match_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].path.path_or.path_match[].match_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].path.path_or.path_match[].contain_value",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].path.path_or.path_match[].end_with_value",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].path.path_or.path_match[].exact_value",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].path.path_or.path_match[].start_with_value",
+        ],
+      },
+      {
+        choiceField: "query_operator_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].query.query_operator_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].query.all_query",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].query.query_and",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].query.query_none",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].query.query_or",
+        ],
+      },
+      {
+        choiceField: "match_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].query.query_and.query_match[].match_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].query.query_and.query_match[].contain_value",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].query.query_and.query_match[].end_with_value",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].query.query_and.query_match[].exact_value",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].query.query_and.query_match[].start_with_value",
+        ],
+      },
+      {
+        choiceField: "match_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].query.query_none.query_match[].match_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].query.query_none.query_match[].contain_value",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].query.query_none.query_match[].end_with_value",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].query.query_none.query_match[].exact_value",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].query.query_none.query_match[].start_with_value",
+        ],
+      },
+      {
+        choiceField: "match_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].query.query_or.query_match[].match_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].query.query_or.query_match[].contain_value",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].query.query_or.query_match[].end_with_value",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].query.query_or.query_match[].exact_value",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].query.query_or.query_match[].start_with_value",
+        ],
+      },
+      {
+        choiceField: "request_body_operator_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].request_body.request_body_operator_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].request_body.all_request_body",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].request_body.request_body_and",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].request_body.request_body_none",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].request_body.request_body_or",
+        ],
+      },
+      {
+        choiceField: "match_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].request_body.request_body_and.request_body_match[].match_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].request_body.request_body_and.request_body_match[].contain_value",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].request_body.request_body_and.request_body_match[].end_with_value",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].request_body.request_body_and.request_body_match[].exact_value",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].request_body.request_body_and.request_body_match[].start_with_value",
+        ],
+      },
+      {
+        choiceField: "match_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].request_body.request_body_none.request_body_match[].match_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].request_body.request_body_none.request_body_match[].contain_value",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].request_body.request_body_none.request_body_match[].end_with_value",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].request_body.request_body_none.request_body_match[].exact_value",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].request_body.request_body_none.request_body_match[].start_with_value",
+        ],
+      },
+      {
+        choiceField: "match_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].request_body.request_body_or.request_body_match[].match_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].request_body.request_body_or.request_body_match[].contain_value",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].request_body.request_body_or.request_body_match[].end_with_value",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].request_body.request_body_or.request_body_match[].exact_value",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].request_body.request_body_or.request_body_match[].start_with_value",
+        ],
+      },
+      {
+        choiceField: "cookiechoice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].cookiechoice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].cookie_all",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].cookie_and",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].cookie_none",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].cookie_or",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].not_present_cookie",
+        ],
+      },
+      {
+        choiceField: "compare_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].cookie_and.cookie_match[].compare_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].cookie_and.cookie_match[].contains",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].cookie_and.cookie_match[].ends_with",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].cookie_and.cookie_match[].equals",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].cookie_and.cookie_match[].starts_with",
+        ],
+      },
+      {
+        choiceField: "compare_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].cookie_none.cookie_match[].compare_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].cookie_none.cookie_match[].contains",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].cookie_none.cookie_match[].ends_with",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].cookie_none.cookie_match[].equals",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].cookie_none.cookie_match[].starts_with",
+        ],
+      },
+      {
+        choiceField: "compare_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].cookie_or.cookie_match[].compare_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].cookie_or.cookie_match[].contains",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].cookie_or.cookie_match[].ends_with",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].cookie_or.cookie_match[].equals",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].cookie_or.cookie_match[].starts_with",
+        ],
+      },
+      {
+        choiceField: "responsebodychoice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseBody.responsebodychoice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseBody.responseBody_all",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseBody.responseBody_and",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseBody.responseBody_none",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseBody.responseBody_or",
+        ],
+      },
+      {
+        choiceField: "compare_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseBody.responseBody_and.responseBody_match[].compare_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseBody.responseBody_and.responseBody_match[].contains",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseBody.responseBody_and.responseBody_match[].ends_with",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseBody.responseBody_and.responseBody_match[].equals",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseBody.responseBody_and.responseBody_match[].starts_with",
+        ],
+      },
+      {
+        choiceField: "compare_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseBody.responseBody_none.responseBody_match[].compare_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseBody.responseBody_none.responseBody_match[].contains",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseBody.responseBody_none.responseBody_match[].ends_with",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseBody.responseBody_none.responseBody_match[].equals",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseBody.responseBody_none.responseBody_match[].starts_with",
+        ],
+      },
+      {
+        choiceField: "compare_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseBody.responseBody_or.responseBody_match[].compare_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseBody.responseBody_or.responseBody_match[].contains",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseBody.responseBody_or.responseBody_match[].ends_with",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseBody.responseBody_or.responseBody_match[].equals",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseBody.responseBody_or.responseBody_match[].starts_with",
+        ],
+      },
+      {
+        choiceField: "responsecodechoice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseCode.responsecodechoice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseCode.responseCode_all",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseCode.responseCode_and",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseCode.responseCode_none",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseCode.responseCode_or",
+        ],
+      },
+      {
+        choiceField: "header_operator_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseHeader[].header_operator_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseHeader[].header_all",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseHeader[].header_and",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseHeader[].header_none",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseHeader[].header_or",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseHeader[].not_present_header",
+        ],
+      },
+      {
+        choiceField: "compare_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseHeader[].header_and.responseHeader_match[].compare_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseHeader[].header_and.responseHeader_match[].contains",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseHeader[].header_and.responseHeader_match[].ends_with",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseHeader[].header_and.responseHeader_match[].equals",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseHeader[].header_and.responseHeader_match[].starts_with",
+        ],
+      },
+      {
+        choiceField: "compare_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseHeader[].header_none.responseHeader_match[].compare_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseHeader[].header_none.responseHeader_match[].contains",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseHeader[].header_none.responseHeader_match[].ends_with",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseHeader[].header_none.responseHeader_match[].equals",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseHeader[].header_none.responseHeader_match[].starts_with",
+        ],
+      },
+      {
+        choiceField: "compare_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseHeader[].header_or.responseHeader_match[].compare_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseHeader[].header_or.responseHeader_match[].contains",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseHeader[].header_or.responseHeader_match[].ends_with",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseHeader[].header_or.responseHeader_match[].equals",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseHeader[].header_or.responseHeader_match[].starts_with",
+        ],
+      },
+      {
+        choiceField: "cookiechoice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.cookie[].cookiechoice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.cookie[].cookie_all",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.cookie[].cookie_and",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.cookie[].cookie_none",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.cookie[].cookie_or",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.cookie[].not_present_cookie",
+        ],
+      },
+      {
+        choiceField: "compare_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.cookie[].cookie_and.cookie_match[].compare_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.cookie[].cookie_and.cookie_match[].contains",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.cookie[].cookie_and.cookie_match[].ends_with",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.cookie[].cookie_and.cookie_match[].equals",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.cookie[].cookie_and.cookie_match[].starts_with",
+        ],
+      },
+      {
+        choiceField: "compare_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.cookie[].cookie_none.cookie_match[].compare_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.cookie[].cookie_none.cookie_match[].contains",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.cookie[].cookie_none.cookie_match[].ends_with",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.cookie[].cookie_none.cookie_match[].equals",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.cookie[].cookie_none.cookie_match[].starts_with",
+        ],
+      },
+      {
+        choiceField: "compare_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.cookie[].cookie_or.cookie_match[].compare_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.cookie[].cookie_or.cookie_match[].contains",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.cookie[].cookie_or.cookie_match[].ends_with",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.cookie[].cookie_or.cookie_match[].equals",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.cookie[].cookie_or.cookie_match[].starts_with",
+        ],
+      },
+      {
+        choiceField: "responsebodychoice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.responseBody.responsebodychoice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.responseBody.responseBody_all",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.responseBody.responseBody_and",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.responseBody.responseBody_none",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.responseBody.responseBody_or",
+        ],
+      },
+      {
+        choiceField: "compare_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.responseBody.responseBody_and.responseBody_match[].compare_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.responseBody.responseBody_and.responseBody_match[].contains",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.responseBody.responseBody_and.responseBody_match[].ends_with",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.responseBody.responseBody_and.responseBody_match[].equals",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.responseBody.responseBody_and.responseBody_match[].starts_with",
+        ],
+      },
+      {
+        choiceField: "compare_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.responseBody.responseBody_none.responseBody_match[].compare_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.responseBody.responseBody_none.responseBody_match[].contains",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.responseBody.responseBody_none.responseBody_match[].ends_with",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.responseBody.responseBody_none.responseBody_match[].equals",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.responseBody.responseBody_none.responseBody_match[].starts_with",
+        ],
+      },
+      {
+        choiceField: "compare_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.responseBody.responseBody_or.responseBody_match[].compare_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.responseBody.responseBody_or.responseBody_match[].contains",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.responseBody.responseBody_or.responseBody_match[].ends_with",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.responseBody.responseBody_or.responseBody_match[].equals",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.responseBody.responseBody_or.responseBody_match[].starts_with",
+        ],
+      },
+      {
+        choiceField: "responsecodechoice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.responseCode.responsecodechoice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.responseCode.responseCode_all",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.responseCode.responseCode_and",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.responseCode.responseCode_none",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.responseCode.responseCode_or",
+        ],
+      },
+      {
+        choiceField: "header_operator_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.responseHeader[].header_operator_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.responseHeader[].header_all",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.responseHeader[].header_and",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.responseHeader[].header_none",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.responseHeader[].header_or",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.responseHeader[].not_present_header",
+        ],
+      },
+      {
+        choiceField: "compare_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.responseHeader[].header_and.responseHeader_match[].compare_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.responseHeader[].header_and.responseHeader_match[].contains",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.responseHeader[].header_and.responseHeader_match[].ends_with",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.responseHeader[].header_and.responseHeader_match[].equals",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.responseHeader[].header_and.responseHeader_match[].starts_with",
+        ],
+      },
+      {
+        choiceField: "compare_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.responseHeader[].header_none.responseHeader_match[].compare_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.responseHeader[].header_none.responseHeader_match[].contains",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.responseHeader[].header_none.responseHeader_match[].ends_with",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.responseHeader[].header_none.responseHeader_match[].equals",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.responseHeader[].header_none.responseHeader_match[].starts_with",
+        ],
+      },
+      {
+        choiceField: "compare_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.responseHeader[].header_or.responseHeader_match[].compare_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.responseHeader[].header_or.responseHeader_match[].contains",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.responseHeader[].header_or.responseHeader_match[].ends_with",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.responseHeader[].header_or.responseHeader_match[].equals",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_success.responseHeader[].header_or.responseHeader_match[].starts_with",
+        ],
+      },
+      {
+        choiceField: "add_headers_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transform.add_headers_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transform.add_headers",
+          "spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transform.no_headers",
+        ],
+      },
+      {
+        choiceField: "web_client_action_type",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].web_client_action_type",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].block",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].continue",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].redirect",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transform",
+        ],
+      },
+      {
+        choiceField: "send_headers_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].continue.send_headers_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].continue.append_headers",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].continue.no_headers",
+        ],
+      },
+      {
+        choiceField: "domain_operator_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].domain.domain_operator_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].domain.all_domain",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].domain.domain_and",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].domain.domain_none",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].domain.domain_or",
+        ],
+      },
+      {
+        choiceField: "flow_label_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.flow_label_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.account_management",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.authentication",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.credit_card",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.delivery_services",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.financial_services",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.flight",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.guest_session",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.loyalty",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.mailing_list",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.media",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.miscellaneous",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.profile_management",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.quotes",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.search",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.shopping_gift_cards",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.socials",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.undefined_flow_label",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.account_management.label_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.account_management.change_password",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.account_management.check_eligibility",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.account_management.create",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.account_management.exists",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.account_management.password_forgot",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.account_management.password_recover",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.account_management.password_reset",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.authentication.label_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.authentication.login",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.authentication.login_alexa",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.authentication.login_mfa",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.authentication.login_partner",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.authentication.logout",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.authentication.token_refresh",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.authentication.token_validate",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.authentication.zelle_retrieve_token",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.credit_card.label_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.credit_card.activate",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.credit_card.apply",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.credit_card.apply_to_account",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.credit_card.view_history",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.credit_card.view_list",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.delivery_services.label_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.delivery_services.hold",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.delivery_services.incorrectly_routed",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.delivery_services.view_items",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.financial_services.label_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.financial_services.account_apply",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.financial_services.loan_personal_apply",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.financial_services.money_send",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.financial_services.money_transfer",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.financial_services.ofx",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.financial_services.request_credit_score",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.financial_services.student_apply",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.financial_services.zelle_execute_transaction",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.flight.label_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.flight.change_flight",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.flight.checkin",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.flight.flight_status",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.flight.submit_travel_documents",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.flight.time_table",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.flight.view_flight",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.guest_session.label_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.guest_session.create",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.loyalty.label_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.loyalty.conversion",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.loyalty.reset_miles",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.loyalty.view_account",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.mailing_list.label_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.mailing_list.create_password",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.mailing_list.signup",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.mailing_list.unsubscribe",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.media.label_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.media.content",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.media.play",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.media.record",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.miscellaneous.label_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.miscellaneous.contact_us",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.miscellaneous.ratings",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.profile_management.label_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.profile_management.create",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.profile_management.update",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.profile_management.view",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.quotes.label_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.quotes.insurance_fire_request",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.quotes.request",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.search.label_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.search.fare_search",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.search.find_user",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.search.flight_search",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.search.location_search",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.search.product_search",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.search.room_search",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.search.shipment_search",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.search.ticket_search",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.shopping_gift_cards.label_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.shopping_gift_cards.gift_card_check_balance",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.shopping_gift_cards.gift_card_make_purches_with_card",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.shopping_gift_cards.gift_card_purchase_card",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.shopping_gift_cards.shop_add_to_cart",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.shopping_gift_cards.shop_apply_gift_card",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.shopping_gift_cards.shop_apply_promo_code",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.shopping_gift_cards.shop_checkout",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.shopping_gift_cards.shop_choose_seat",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.shopping_gift_cards.shop_enter_drawing_submission",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.shopping_gift_cards.shop_hold_inventory",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.shopping_gift_cards.shop_make_payment",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.shopping_gift_cards.shop_offer",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.shopping_gift_cards.shop_order",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.shopping_gift_cards.shop_price_inquiry",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.shopping_gift_cards.shop_purchase_gift_card",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.shopping_gift_cards.shop_return",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.shopping_gift_cards.shop_schedule_pickup",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.shopping_gift_cards.shop_track_order",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.shopping_gift_cards.shop_update_quantity",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.socials.label_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.socials.follow",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.socials.like",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].flow_label_choice.socials.message",
+        ],
+      },
+      {
+        choiceField: "header_operator_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].header[].header_operator_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].header[].all_header",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].header[].header_and",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].header[].header_none",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].header[].header_or",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].header[].not_present_header",
+        ],
+      },
+      {
+        choiceField: "match_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].header[].header_and.header_match[].match_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].header[].header_and.header_match[].contain_value",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].header[].header_and.header_match[].end_with_value",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].header[].header_and.header_match[].exact_value",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].header[].header_and.header_match[].start_with_value",
+        ],
+      },
+      {
+        choiceField: "match_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].header[].header_none.header_match[].match_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].header[].header_none.header_match[].contain_value",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].header[].header_none.header_match[].end_with_value",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].header[].header_none.header_match[].exact_value",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].header[].header_none.header_match[].start_with_value",
+        ],
+      },
+      {
+        choiceField: "match_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].header[].header_or.header_match[].match_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].header[].header_or.header_match[].contain_value",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].header[].header_or.header_match[].end_with_value",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].header[].header_or.header_match[].exact_value",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].header[].header_or.header_match[].start_with_value",
+        ],
+      },
+      {
+        choiceField: "path_operator_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].path.path_operator_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].path.all_path",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].path.path_and",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].path.path_none",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].path.path_or",
+        ],
+      },
+      {
+        choiceField: "match_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].path.path_and.path_match[].match_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].path.path_and.path_match[].contain_value",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].path.path_and.path_match[].end_with_value",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].path.path_and.path_match[].exact_value",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].path.path_and.path_match[].start_with_value",
+        ],
+      },
+      {
+        choiceField: "match_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].path.path_none.path_match[].match_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].path.path_none.path_match[].contain_value",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].path.path_none.path_match[].end_with_value",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].path.path_none.path_match[].exact_value",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].path.path_none.path_match[].start_with_value",
+        ],
+      },
+      {
+        choiceField: "match_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].path.path_or.path_match[].match_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].path.path_or.path_match[].contain_value",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].path.path_or.path_match[].end_with_value",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].path.path_or.path_match[].exact_value",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].path.path_or.path_match[].start_with_value",
+        ],
+      },
+      {
+        choiceField: "query_operator_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].query.query_operator_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].query.all_query",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].query.query_and",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].query.query_none",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].query.query_or",
+        ],
+      },
+      {
+        choiceField: "match_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].query.query_and.query_match[].match_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].query.query_and.query_match[].contain_value",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].query.query_and.query_match[].end_with_value",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].query.query_and.query_match[].exact_value",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].query.query_and.query_match[].start_with_value",
+        ],
+      },
+      {
+        choiceField: "match_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].query.query_none.query_match[].match_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].query.query_none.query_match[].contain_value",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].query.query_none.query_match[].end_with_value",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].query.query_none.query_match[].exact_value",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].query.query_none.query_match[].start_with_value",
+        ],
+      },
+      {
+        choiceField: "match_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].query.query_or.query_match[].match_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].query.query_or.query_match[].contain_value",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].query.query_or.query_match[].end_with_value",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].query.query_or.query_match[].exact_value",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].query.query_or.query_match[].start_with_value",
+        ],
+      },
+      {
+        choiceField: "request_body_operator_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].request_body.request_body_operator_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].request_body.all_request_body",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].request_body.request_body_and",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].request_body.request_body_none",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].request_body.request_body_or",
+        ],
+      },
+      {
+        choiceField: "match_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].request_body.request_body_and.request_body_match[].match_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].request_body.request_body_and.request_body_match[].contain_value",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].request_body.request_body_and.request_body_match[].end_with_value",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].request_body.request_body_and.request_body_match[].exact_value",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].request_body.request_body_and.request_body_match[].start_with_value",
+        ],
+      },
+      {
+        choiceField: "match_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].request_body.request_body_none.request_body_match[].match_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].request_body.request_body_none.request_body_match[].contain_value",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].request_body.request_body_none.request_body_match[].end_with_value",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].request_body.request_body_none.request_body_match[].exact_value",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].request_body.request_body_none.request_body_match[].start_with_value",
+        ],
+      },
+      {
+        choiceField: "match_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].request_body.request_body_or.request_body_match[].match_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].request_body.request_body_or.request_body_match[].contain_value",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].request_body.request_body_or.request_body_match[].end_with_value",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].request_body.request_body_or.request_body_match[].exact_value",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].request_body.request_body_or.request_body_match[].start_with_value",
+        ],
+      },
+      {
+        choiceField: "cookiechoice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].cookiechoice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].cookie_all",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].cookie_and",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].cookie_none",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].cookie_or",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].not_present_cookie",
+        ],
+      },
+      {
+        choiceField: "compare_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].cookie_and.cookie_match[].compare_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].cookie_and.cookie_match[].contains",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].cookie_and.cookie_match[].ends_with",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].cookie_and.cookie_match[].equals",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].cookie_and.cookie_match[].starts_with",
+        ],
+      },
+      {
+        choiceField: "compare_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].cookie_none.cookie_match[].compare_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].cookie_none.cookie_match[].contains",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].cookie_none.cookie_match[].ends_with",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].cookie_none.cookie_match[].equals",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].cookie_none.cookie_match[].starts_with",
+        ],
+      },
+      {
+        choiceField: "compare_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].cookie_or.cookie_match[].compare_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].cookie_or.cookie_match[].contains",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].cookie_or.cookie_match[].ends_with",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].cookie_or.cookie_match[].equals",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].cookie_or.cookie_match[].starts_with",
+        ],
+      },
+      {
+        choiceField: "responsebodychoice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.responseBody.responsebodychoice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.responseBody.responseBody_all",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.responseBody.responseBody_and",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.responseBody.responseBody_none",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.responseBody.responseBody_or",
+        ],
+      },
+      {
+        choiceField: "compare_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.responseBody.responseBody_and.responseBody_match[].compare_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.responseBody.responseBody_and.responseBody_match[].contains",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.responseBody.responseBody_and.responseBody_match[].ends_with",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.responseBody.responseBody_and.responseBody_match[].equals",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.responseBody.responseBody_and.responseBody_match[].starts_with",
+        ],
+      },
+      {
+        choiceField: "compare_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.responseBody.responseBody_none.responseBody_match[].compare_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.responseBody.responseBody_none.responseBody_match[].contains",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.responseBody.responseBody_none.responseBody_match[].ends_with",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.responseBody.responseBody_none.responseBody_match[].equals",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.responseBody.responseBody_none.responseBody_match[].starts_with",
+        ],
+      },
+      {
+        choiceField: "compare_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.responseBody.responseBody_or.responseBody_match[].compare_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.responseBody.responseBody_or.responseBody_match[].contains",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.responseBody.responseBody_or.responseBody_match[].ends_with",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.responseBody.responseBody_or.responseBody_match[].equals",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.responseBody.responseBody_or.responseBody_match[].starts_with",
+        ],
+      },
+      {
+        choiceField: "responsecodechoice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.responseCode.responsecodechoice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.responseCode.responseCode_all",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.responseCode.responseCode_and",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.responseCode.responseCode_none",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.responseCode.responseCode_or",
+        ],
+      },
+      {
+        choiceField: "header_operator_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.responseHeader[].header_operator_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.responseHeader[].header_all",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.responseHeader[].header_and",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.responseHeader[].header_none",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.responseHeader[].header_or",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.responseHeader[].not_present_header",
+        ],
+      },
+      {
+        choiceField: "compare_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.responseHeader[].header_and.responseHeader_match[].compare_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.responseHeader[].header_and.responseHeader_match[].contains",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.responseHeader[].header_and.responseHeader_match[].ends_with",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.responseHeader[].header_and.responseHeader_match[].equals",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.responseHeader[].header_and.responseHeader_match[].starts_with",
+        ],
+      },
+      {
+        choiceField: "compare_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.responseHeader[].header_none.responseHeader_match[].compare_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.responseHeader[].header_none.responseHeader_match[].contains",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.responseHeader[].header_none.responseHeader_match[].ends_with",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.responseHeader[].header_none.responseHeader_match[].equals",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.responseHeader[].header_none.responseHeader_match[].starts_with",
+        ],
+      },
+      {
+        choiceField: "compare_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.responseHeader[].header_or.responseHeader_match[].compare_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.responseHeader[].header_or.responseHeader_match[].contains",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.responseHeader[].header_or.responseHeader_match[].ends_with",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.responseHeader[].header_or.responseHeader_match[].equals",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_failure.responseHeader[].header_or.responseHeader_match[].starts_with",
+        ],
+      },
+      {
+        choiceField: "cookiechoice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.cookie[].cookiechoice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.cookie[].cookie_all",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.cookie[].cookie_and",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.cookie[].cookie_none",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.cookie[].cookie_or",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.cookie[].not_present_cookie",
+        ],
+      },
+      {
+        choiceField: "compare_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.cookie[].cookie_and.cookie_match[].compare_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.cookie[].cookie_and.cookie_match[].contains",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.cookie[].cookie_and.cookie_match[].ends_with",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.cookie[].cookie_and.cookie_match[].equals",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.cookie[].cookie_and.cookie_match[].starts_with",
+        ],
+      },
+      {
+        choiceField: "compare_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.cookie[].cookie_none.cookie_match[].compare_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.cookie[].cookie_none.cookie_match[].contains",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.cookie[].cookie_none.cookie_match[].ends_with",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.cookie[].cookie_none.cookie_match[].equals",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.cookie[].cookie_none.cookie_match[].starts_with",
+        ],
+      },
+      {
+        choiceField: "compare_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.cookie[].cookie_or.cookie_match[].compare_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.cookie[].cookie_or.cookie_match[].contains",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.cookie[].cookie_or.cookie_match[].ends_with",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.cookie[].cookie_or.cookie_match[].equals",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.cookie[].cookie_or.cookie_match[].starts_with",
+        ],
+      },
+      {
+        choiceField: "responsebodychoice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.responseBody.responsebodychoice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.responseBody.responseBody_all",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.responseBody.responseBody_and",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.responseBody.responseBody_none",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.responseBody.responseBody_or",
+        ],
+      },
+      {
+        choiceField: "compare_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.responseBody.responseBody_and.responseBody_match[].compare_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.responseBody.responseBody_and.responseBody_match[].contains",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.responseBody.responseBody_and.responseBody_match[].ends_with",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.responseBody.responseBody_and.responseBody_match[].equals",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.responseBody.responseBody_and.responseBody_match[].starts_with",
+        ],
+      },
+      {
+        choiceField: "compare_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.responseBody.responseBody_none.responseBody_match[].compare_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.responseBody.responseBody_none.responseBody_match[].contains",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.responseBody.responseBody_none.responseBody_match[].ends_with",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.responseBody.responseBody_none.responseBody_match[].equals",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.responseBody.responseBody_none.responseBody_match[].starts_with",
+        ],
+      },
+      {
+        choiceField: "compare_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.responseBody.responseBody_or.responseBody_match[].compare_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.responseBody.responseBody_or.responseBody_match[].contains",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.responseBody.responseBody_or.responseBody_match[].ends_with",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.responseBody.responseBody_or.responseBody_match[].equals",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.responseBody.responseBody_or.responseBody_match[].starts_with",
+        ],
+      },
+      {
+        choiceField: "responsecodechoice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.responseCode.responsecodechoice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.responseCode.responseCode_all",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.responseCode.responseCode_and",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.responseCode.responseCode_none",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.responseCode.responseCode_or",
+        ],
+      },
+      {
+        choiceField: "header_operator_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.responseHeader[].header_operator_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.responseHeader[].header_all",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.responseHeader[].header_and",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.responseHeader[].header_none",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.responseHeader[].header_or",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.responseHeader[].not_present_header",
+        ],
+      },
+      {
+        choiceField: "compare_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.responseHeader[].header_and.responseHeader_match[].compare_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.responseHeader[].header_and.responseHeader_match[].contains",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.responseHeader[].header_and.responseHeader_match[].ends_with",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.responseHeader[].header_and.responseHeader_match[].equals",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.responseHeader[].header_and.responseHeader_match[].starts_with",
+        ],
+      },
+      {
+        choiceField: "compare_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.responseHeader[].header_none.responseHeader_match[].compare_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.responseHeader[].header_none.responseHeader_match[].contains",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.responseHeader[].header_none.responseHeader_match[].ends_with",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.responseHeader[].header_none.responseHeader_match[].equals",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.responseHeader[].header_none.responseHeader_match[].starts_with",
+        ],
+      },
+      {
+        choiceField: "compare_type_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.responseHeader[].header_or.responseHeader_match[].compare_type_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.responseHeader[].header_or.responseHeader_match[].contains",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.responseHeader[].header_or.responseHeader_match[].ends_with",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.responseHeader[].header_or.responseHeader_match[].equals",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transaction_result_criteria.transaction_result_success.responseHeader[].header_or.responseHeader_match[].starts_with",
+        ],
+      },
+      {
+        choiceField: "add_headers_choice",
+        fieldPath:
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transform.add_headers_choice",
+        options: [
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transform.add_headers",
+          "spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transform.no_headers",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -3299,7 +4770,18 @@ export const shapeTools: ParsedOperation[] = [
         resourceType: "bot-infrastructure-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "create_bot_infra_choice",
+        fieldPath: "spec.create_bot_infra_choice",
+        options: ["spec.create_cloud_hosted"],
+      },
+      {
+        choiceField: "type_choice",
+        fieldPath: "spec.create_cloud_hosted.type_choice",
+        options: ["spec.create_cloud_hosted.production", "spec.create_cloud_hosted.testing"],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -3572,7 +5054,21 @@ export const shapeTools: ParsedOperation[] = [
         resourceType: "bot-defensebot-infrastructure-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "bot_infra_choice",
+        fieldPath: "spec.bot_infra_choice",
+        options: ["spec.cloud_hosted", "spec.on_prem", "spec.physical_hosted"],
+      },
+      {
+        choiceField: "type_choice",
+        fieldPath: "spec.cloud_hosted.ingress[].type_choice",
+        options: [
+          "spec.cloud_hosted.ingress[].host_name",
+          "spec.cloud_hosted.ingress[].ip_address",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -3893,7 +5389,26 @@ export const shapeTools: ParsedOperation[] = [
         resourceType: "bot-network-policy-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "domain_operator_choice",
+        fieldPath:
+          "spec.network_policy_content.manual_routing_list.manual_routing[].domain_operator_choice",
+        options: [
+          "spec.network_policy_content.manual_routing_list.manual_routing[].http",
+          "spec.network_policy_content.manual_routing_list.manual_routing[].https",
+        ],
+      },
+      {
+        choiceField: "outbound_operator_choice",
+        fieldPath:
+          "spec.network_policy_content.manual_routing_list.manual_routing[].outbound_operator_choice",
+        options: [
+          "spec.network_policy_content.manual_routing_list.manual_routing[].protocol_http",
+          "spec.network_policy_content.manual_routing_list.manual_routing[].protocol_https",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -8592,7 +10107,501 @@ export const shapeTools: ParsedOperation[] = [
         resourceType: "bot-defenseprotected-application-create",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "connector_type_choice",
+        fieldPath: "spec.connector_type_choice",
+        options: [
+          "spec.adobe_commerce_connector",
+          "spec.big_ip_iapp",
+          "spec.cloudflare",
+          "spec.cloudfront",
+          "spec.custom_connector",
+          "spec.f5_big_ip",
+          "spec.salesforce_commerce_connector",
+        ],
+      },
+      {
+        choiceField: "java_script_choice",
+        fieldPath: "spec.cloudflare.java_script_choice",
+        options: [
+          "spec.cloudflare.disable_js_insert",
+          "spec.cloudflare.js_insertion_rules",
+          "spec.cloudflare.manual_js_insert",
+        ],
+      },
+      {
+        choiceField: "mobile_sdk_choice",
+        fieldPath: "spec.cloudflare.mobile_sdk_choice",
+        options: ["spec.cloudflare.disable_mobile_sdk", "spec.cloudflare.mobile_sdk_config"],
+      },
+      {
+        choiceField: "domain_matcher_choice",
+        fieldPath: "spec.cloudflare.js_insertion_rules.exclude_list[].domain_matcher_choice",
+        options: [
+          "spec.cloudflare.js_insertion_rules.exclude_list[].any_domain",
+          "spec.cloudflare.js_insertion_rules.exclude_list[].domain",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.cloudflare.js_insertion_rules.exclude_list[].domain.domain_choice",
+        options: [
+          "spec.cloudflare.js_insertion_rules.exclude_list[].domain.exact_value",
+          "spec.cloudflare.js_insertion_rules.exclude_list[].domain.regex_value",
+          "spec.cloudflare.js_insertion_rules.exclude_list[].domain.suffix_value",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath: "spec.cloudflare.js_insertion_rules.exclude_list[].path.path_match",
+        options: [
+          "spec.cloudflare.js_insertion_rules.exclude_list[].path.path",
+          "spec.cloudflare.js_insertion_rules.exclude_list[].path.prefix",
+          "spec.cloudflare.js_insertion_rules.exclude_list[].path.regex",
+        ],
+      },
+      {
+        choiceField: "domain_matcher_choice",
+        fieldPath: "spec.cloudflare.js_insertion_rules.rules[].domain_matcher_choice",
+        options: [
+          "spec.cloudflare.js_insertion_rules.rules[].any_domain",
+          "spec.cloudflare.js_insertion_rules.rules[].domain",
+        ],
+      },
+      {
+        choiceField: "uri_path",
+        fieldPath: "spec.cloudflare.js_insertion_rules.rules[].uri_path",
+        options: [
+          "spec.cloudflare.js_insertion_rules.rules[].exact_path",
+          "spec.cloudflare.js_insertion_rules.rules[].glob",
+          "spec.cloudflare.js_insertion_rules.rules[].prefix",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.cloudflare.js_insertion_rules.rules[].domain.domain_choice",
+        options: [
+          "spec.cloudflare.js_insertion_rules.rules[].domain.exact_value",
+          "spec.cloudflare.js_insertion_rules.rules[].domain.regex_value",
+          "spec.cloudflare.js_insertion_rules.rules[].domain.suffix_value",
+        ],
+      },
+      {
+        choiceField: "value_match",
+        fieldPath: "spec.cloudflare.mobile_sdk_config.mobile_identifier.headers[].value_match",
+        options: [
+          "spec.cloudflare.mobile_sdk_config.mobile_identifier.headers[].exact",
+          "spec.cloudflare.mobile_sdk_config.mobile_identifier.headers[].regex",
+        ],
+      },
+      {
+        choiceField: "client_type_choice",
+        fieldPath: "spec.cloudflare.protected_endpoints[].client_type_choice",
+        options: [
+          "spec.cloudflare.protected_endpoints[].mobile_client",
+          "spec.cloudflare.protected_endpoints[].web_client",
+          "spec.cloudflare.protected_endpoints[].web_mobile_client",
+        ],
+      },
+      {
+        choiceField: "domain_matcher_choice",
+        fieldPath: "spec.cloudflare.protected_endpoints[].domain_matcher_choice",
+        options: [
+          "spec.cloudflare.protected_endpoints[].any_domain",
+          "spec.cloudflare.protected_endpoints[].domain",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.cloudflare.protected_endpoints[].domain.domain_choice",
+        options: [
+          "spec.cloudflare.protected_endpoints[].domain.exact_value",
+          "spec.cloudflare.protected_endpoints[].domain.regex_value",
+          "spec.cloudflare.protected_endpoints[].domain.suffix_value",
+        ],
+      },
+      {
+        choiceField: "mitigation",
+        fieldPath: "spec.cloudflare.protected_endpoints[].mobile_client.mitigation",
+        options: [
+          "spec.cloudflare.protected_endpoints[].mobile_client.block",
+          "spec.cloudflare.protected_endpoints[].mobile_client.continue",
+        ],
+      },
+      {
+        choiceField: "add_header_choice",
+        fieldPath: "spec.cloudflare.protected_endpoints[].mobile_client.continue.add_header_choice",
+        options: [
+          "spec.cloudflare.protected_endpoints[].mobile_client.continue.add_header",
+          "spec.cloudflare.protected_endpoints[].mobile_client.continue.no_header",
+        ],
+      },
+      {
+        choiceField: "mitigation",
+        fieldPath: "spec.cloudflare.protected_endpoints[].web_client.mitigation",
+        options: [
+          "spec.cloudflare.protected_endpoints[].web_client.block",
+          "spec.cloudflare.protected_endpoints[].web_client.continue",
+          "spec.cloudflare.protected_endpoints[].web_client.redirect",
+        ],
+      },
+      {
+        choiceField: "add_header_choice",
+        fieldPath: "spec.cloudflare.protected_endpoints[].web_client.continue.add_header_choice",
+        options: [
+          "spec.cloudflare.protected_endpoints[].web_client.continue.add_header",
+          "spec.cloudflare.protected_endpoints[].web_client.continue.no_header",
+        ],
+      },
+      {
+        choiceField: "mobile_mitigation",
+        fieldPath: "spec.cloudflare.protected_endpoints[].web_mobile_client.mobile_mitigation",
+        options: [
+          "spec.cloudflare.protected_endpoints[].web_mobile_client.block_mobile",
+          "spec.cloudflare.protected_endpoints[].web_mobile_client.continue_mobile",
+        ],
+      },
+      {
+        choiceField: "web_mitigation",
+        fieldPath: "spec.cloudflare.protected_endpoints[].web_mobile_client.web_mitigation",
+        options: [
+          "spec.cloudflare.protected_endpoints[].web_mobile_client.block_web",
+          "spec.cloudflare.protected_endpoints[].web_mobile_client.continue_web",
+          "spec.cloudflare.protected_endpoints[].web_mobile_client.redirect_web",
+        ],
+      },
+      {
+        choiceField: "add_header_choice",
+        fieldPath:
+          "spec.cloudflare.protected_endpoints[].web_mobile_client.continue_mobile.add_header_choice",
+        options: [
+          "spec.cloudflare.protected_endpoints[].web_mobile_client.continue_mobile.add_header",
+          "spec.cloudflare.protected_endpoints[].web_mobile_client.continue_mobile.no_header",
+        ],
+      },
+      {
+        choiceField: "add_header_choice",
+        fieldPath:
+          "spec.cloudflare.protected_endpoints[].web_mobile_client.continue_web.add_header_choice",
+        options: [
+          "spec.cloudflare.protected_endpoints[].web_mobile_client.continue_web.add_header",
+          "spec.cloudflare.protected_endpoints[].web_mobile_client.continue_web.no_header",
+        ],
+      },
+      {
+        choiceField: "client_source_choice",
+        fieldPath: "spec.cloudflare.trusted_clients[].client_source_choice",
+        options: [
+          "spec.cloudflare.trusted_clients[].http_header",
+          "spec.cloudflare.trusted_clients[].ip_prefix",
+        ],
+      },
+      {
+        choiceField: "value_match",
+        fieldPath: "spec.cloudflare.trusted_clients[].http_header.headers[].value_match",
+        options: [
+          "spec.cloudflare.trusted_clients[].http_header.headers[].exact",
+          "spec.cloudflare.trusted_clients[].http_header.headers[].regex",
+        ],
+      },
+      {
+        choiceField: "aws_configuration_type_choice",
+        fieldPath: "spec.cloudfront.aws_configuration_type_choice",
+        options: [
+          "spec.cloudfront.aws_configuration_id_selector",
+          "spec.cloudfront.aws_configuration_tag_selector",
+          "spec.cloudfront.disable_aws_configuration",
+        ],
+      },
+      {
+        choiceField: "java_script_choice",
+        fieldPath: "spec.cloudfront.java_script_choice",
+        options: [
+          "spec.cloudfront.disable_js_insert",
+          "spec.cloudfront.js_insertion_rules",
+          "spec.cloudfront.manual_js_insert",
+        ],
+      },
+      {
+        choiceField: "mobile_sdk_choice",
+        fieldPath: "spec.cloudfront.mobile_sdk_choice",
+        options: ["spec.cloudfront.disable_mobile_sdk", "spec.cloudfront.mobile_sdk_config"],
+      },
+      {
+        choiceField: "domain_matcher_choice",
+        fieldPath: "spec.cloudfront.js_insertion_rules.exclude_list[].domain_matcher_choice",
+        options: [
+          "spec.cloudfront.js_insertion_rules.exclude_list[].any_domain",
+          "spec.cloudfront.js_insertion_rules.exclude_list[].domain",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.cloudfront.js_insertion_rules.exclude_list[].domain.domain_choice",
+        options: [
+          "spec.cloudfront.js_insertion_rules.exclude_list[].domain.exact_value",
+          "spec.cloudfront.js_insertion_rules.exclude_list[].domain.regex_value",
+          "spec.cloudfront.js_insertion_rules.exclude_list[].domain.suffix_value",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath: "spec.cloudfront.js_insertion_rules.exclude_list[].path.path_match",
+        options: [
+          "spec.cloudfront.js_insertion_rules.exclude_list[].path.path",
+          "spec.cloudfront.js_insertion_rules.exclude_list[].path.prefix",
+          "spec.cloudfront.js_insertion_rules.exclude_list[].path.regex",
+        ],
+      },
+      {
+        choiceField: "domain_matcher_choice",
+        fieldPath: "spec.cloudfront.js_insertion_rules.rules[].domain_matcher_choice",
+        options: [
+          "spec.cloudfront.js_insertion_rules.rules[].any_domain",
+          "spec.cloudfront.js_insertion_rules.rules[].domain",
+        ],
+      },
+      {
+        choiceField: "uri_path",
+        fieldPath: "spec.cloudfront.js_insertion_rules.rules[].uri_path",
+        options: [
+          "spec.cloudfront.js_insertion_rules.rules[].exact_path",
+          "spec.cloudfront.js_insertion_rules.rules[].glob",
+          "spec.cloudfront.js_insertion_rules.rules[].prefix",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.cloudfront.js_insertion_rules.rules[].domain.domain_choice",
+        options: [
+          "spec.cloudfront.js_insertion_rules.rules[].domain.exact_value",
+          "spec.cloudfront.js_insertion_rules.rules[].domain.regex_value",
+          "spec.cloudfront.js_insertion_rules.rules[].domain.suffix_value",
+        ],
+      },
+      {
+        choiceField: "value_match",
+        fieldPath: "spec.cloudfront.mobile_sdk_config.mobile_identifier.headers[].value_match",
+        options: [
+          "spec.cloudfront.mobile_sdk_config.mobile_identifier.headers[].exact",
+          "spec.cloudfront.mobile_sdk_config.mobile_identifier.headers[].regex",
+        ],
+      },
+      {
+        choiceField: "client_type_choice",
+        fieldPath: "spec.cloudfront.protected_endpoints[].client_type_choice",
+        options: [
+          "spec.cloudfront.protected_endpoints[].mobile_client",
+          "spec.cloudfront.protected_endpoints[].web_client",
+          "spec.cloudfront.protected_endpoints[].web_mobile_client",
+        ],
+      },
+      {
+        choiceField: "domain_matcher_choice",
+        fieldPath: "spec.cloudfront.protected_endpoints[].domain_matcher_choice",
+        options: [
+          "spec.cloudfront.protected_endpoints[].any_domain",
+          "spec.cloudfront.protected_endpoints[].domain",
+        ],
+      },
+      {
+        choiceField: "flow_label_choice",
+        fieldPath: "spec.cloudfront.protected_endpoints[].flow_label_choice",
+        options: [
+          "spec.cloudfront.protected_endpoints[].flow_label",
+          "spec.cloudfront.protected_endpoints[].undefined_flow_label",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.cloudfront.protected_endpoints[].domain.domain_choice",
+        options: [
+          "spec.cloudfront.protected_endpoints[].domain.exact_value",
+          "spec.cloudfront.protected_endpoints[].domain.regex_value",
+          "spec.cloudfront.protected_endpoints[].domain.suffix_value",
+        ],
+      },
+      {
+        choiceField: "flow_label_choice",
+        fieldPath: "spec.cloudfront.protected_endpoints[].flow_label.flow_label_choice",
+        options: [
+          "spec.cloudfront.protected_endpoints[].flow_label.account_management",
+          "spec.cloudfront.protected_endpoints[].flow_label.authentication",
+          "spec.cloudfront.protected_endpoints[].flow_label.financial_services",
+          "spec.cloudfront.protected_endpoints[].flow_label.flight",
+          "spec.cloudfront.protected_endpoints[].flow_label.profile_management",
+          "spec.cloudfront.protected_endpoints[].flow_label.search",
+          "spec.cloudfront.protected_endpoints[].flow_label.shopping_gift_cards",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.cloudfront.protected_endpoints[].flow_label.account_management.label_choice",
+        options: [
+          "spec.cloudfront.protected_endpoints[].flow_label.account_management.create",
+          "spec.cloudfront.protected_endpoints[].flow_label.account_management.password_reset",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath: "spec.cloudfront.protected_endpoints[].flow_label.authentication.label_choice",
+        options: [
+          "spec.cloudfront.protected_endpoints[].flow_label.authentication.login",
+          "spec.cloudfront.protected_endpoints[].flow_label.authentication.login_mfa",
+          "spec.cloudfront.protected_endpoints[].flow_label.authentication.login_partner",
+          "spec.cloudfront.protected_endpoints[].flow_label.authentication.logout",
+          "spec.cloudfront.protected_endpoints[].flow_label.authentication.token_refresh",
+        ],
+      },
+      {
+        choiceField: "transaction_result_choice",
+        fieldPath:
+          "spec.cloudfront.protected_endpoints[].flow_label.authentication.login.transaction_result_choice",
+        options: [
+          "spec.cloudfront.protected_endpoints[].flow_label.authentication.login.disable_transaction_result",
+          "spec.cloudfront.protected_endpoints[].flow_label.authentication.login.transaction_result",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.cloudfront.protected_endpoints[].flow_label.financial_services.label_choice",
+        options: [
+          "spec.cloudfront.protected_endpoints[].flow_label.financial_services.apply",
+          "spec.cloudfront.protected_endpoints[].flow_label.financial_services.money_transfer",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath: "spec.cloudfront.protected_endpoints[].flow_label.flight.label_choice",
+        options: ["spec.cloudfront.protected_endpoints[].flow_label.flight.checkin"],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.cloudfront.protected_endpoints[].flow_label.profile_management.label_choice",
+        options: [
+          "spec.cloudfront.protected_endpoints[].flow_label.profile_management.create",
+          "spec.cloudfront.protected_endpoints[].flow_label.profile_management.update",
+          "spec.cloudfront.protected_endpoints[].flow_label.profile_management.view",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath: "spec.cloudfront.protected_endpoints[].flow_label.search.label_choice",
+        options: [
+          "spec.cloudfront.protected_endpoints[].flow_label.search.flight_search",
+          "spec.cloudfront.protected_endpoints[].flow_label.search.product_search",
+          "spec.cloudfront.protected_endpoints[].flow_label.search.reservation_search",
+          "spec.cloudfront.protected_endpoints[].flow_label.search.room_search",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.cloudfront.protected_endpoints[].flow_label.shopping_gift_cards.label_choice",
+        options: [
+          "spec.cloudfront.protected_endpoints[].flow_label.shopping_gift_cards.gift_card_make_purchase_with_gift_card",
+          "spec.cloudfront.protected_endpoints[].flow_label.shopping_gift_cards.gift_card_validation",
+          "spec.cloudfront.protected_endpoints[].flow_label.shopping_gift_cards.shop_add_to_cart",
+          "spec.cloudfront.protected_endpoints[].flow_label.shopping_gift_cards.shop_checkout",
+          "spec.cloudfront.protected_endpoints[].flow_label.shopping_gift_cards.shop_choose_seat",
+          "spec.cloudfront.protected_endpoints[].flow_label.shopping_gift_cards.shop_enter_drawing_submission",
+          "spec.cloudfront.protected_endpoints[].flow_label.shopping_gift_cards.shop_make_payment",
+          "spec.cloudfront.protected_endpoints[].flow_label.shopping_gift_cards.shop_order",
+          "spec.cloudfront.protected_endpoints[].flow_label.shopping_gift_cards.shop_price_inquiry",
+          "spec.cloudfront.protected_endpoints[].flow_label.shopping_gift_cards.shop_promo_code_validation",
+          "spec.cloudfront.protected_endpoints[].flow_label.shopping_gift_cards.shop_purchase_gift_card",
+          "spec.cloudfront.protected_endpoints[].flow_label.shopping_gift_cards.shop_update_quantity",
+        ],
+      },
+      {
+        choiceField: "mitigation",
+        fieldPath: "spec.cloudfront.protected_endpoints[].mobile_client.mitigation",
+        options: [
+          "spec.cloudfront.protected_endpoints[].mobile_client.block",
+          "spec.cloudfront.protected_endpoints[].mobile_client.continue",
+        ],
+      },
+      {
+        choiceField: "add_header_choice",
+        fieldPath: "spec.cloudfront.protected_endpoints[].mobile_client.continue.add_header_choice",
+        options: [
+          "spec.cloudfront.protected_endpoints[].mobile_client.continue.add_header",
+          "spec.cloudfront.protected_endpoints[].mobile_client.continue.no_header",
+        ],
+      },
+      {
+        choiceField: "mitigation",
+        fieldPath: "spec.cloudfront.protected_endpoints[].web_client.mitigation",
+        options: [
+          "spec.cloudfront.protected_endpoints[].web_client.block",
+          "spec.cloudfront.protected_endpoints[].web_client.continue",
+          "spec.cloudfront.protected_endpoints[].web_client.redirect",
+        ],
+      },
+      {
+        choiceField: "add_header_choice",
+        fieldPath: "spec.cloudfront.protected_endpoints[].web_client.continue.add_header_choice",
+        options: [
+          "spec.cloudfront.protected_endpoints[].web_client.continue.add_header",
+          "spec.cloudfront.protected_endpoints[].web_client.continue.no_header",
+        ],
+      },
+      {
+        choiceField: "mobile_mitigation",
+        fieldPath: "spec.cloudfront.protected_endpoints[].web_mobile_client.mobile_mitigation",
+        options: [
+          "spec.cloudfront.protected_endpoints[].web_mobile_client.block_mobile",
+          "spec.cloudfront.protected_endpoints[].web_mobile_client.continue_mobile",
+        ],
+      },
+      {
+        choiceField: "web_mitigation",
+        fieldPath: "spec.cloudfront.protected_endpoints[].web_mobile_client.web_mitigation",
+        options: [
+          "spec.cloudfront.protected_endpoints[].web_mobile_client.block_web",
+          "spec.cloudfront.protected_endpoints[].web_mobile_client.continue_web",
+          "spec.cloudfront.protected_endpoints[].web_mobile_client.redirect_web",
+        ],
+      },
+      {
+        choiceField: "add_header_choice",
+        fieldPath:
+          "spec.cloudfront.protected_endpoints[].web_mobile_client.continue_mobile.add_header_choice",
+        options: [
+          "spec.cloudfront.protected_endpoints[].web_mobile_client.continue_mobile.add_header",
+          "spec.cloudfront.protected_endpoints[].web_mobile_client.continue_mobile.no_header",
+        ],
+      },
+      {
+        choiceField: "add_header_choice",
+        fieldPath:
+          "spec.cloudfront.protected_endpoints[].web_mobile_client.continue_web.add_header_choice",
+        options: [
+          "spec.cloudfront.protected_endpoints[].web_mobile_client.continue_web.add_header",
+          "spec.cloudfront.protected_endpoints[].web_mobile_client.continue_web.no_header",
+        ],
+      },
+      {
+        choiceField: "client_source_choice",
+        fieldPath: "spec.cloudfront.trusted_clients[].client_source_choice",
+        options: [
+          "spec.cloudfront.trusted_clients[].http_header",
+          "spec.cloudfront.trusted_clients[].ip_prefix",
+        ],
+      },
+      {
+        choiceField: "value_match",
+        fieldPath: "spec.cloudfront.trusted_clients[].http_header.headers[].value_match",
+        options: [
+          "spec.cloudfront.trusted_clients[].http_header.headers[].exact",
+          "spec.cloudfront.trusted_clients[].http_header.headers[].regex",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",
@@ -8939,7 +10948,503 @@ export const shapeTools: ParsedOperation[] = [
         resourceType: "bot-defenseprotected-application-replace",
       },
     ],
-    oneOfGroups: [],
+    oneOfGroups: [
+      {
+        choiceField: "connector_type_choice",
+        fieldPath: "spec.connector_type_choice",
+        options: [
+          "spec.adobe_commerce_connector",
+          "spec.big_ip_iapp",
+          "spec.cloudflare",
+          "spec.cloudfront",
+          "spec.custom_connector",
+          "spec.f5_big_ip",
+          "spec.not_applicable_connector",
+          "spec.salesforce_commerce_connector",
+          "spec.xc_mesh",
+        ],
+      },
+      {
+        choiceField: "java_script_choice",
+        fieldPath: "spec.cloudflare.java_script_choice",
+        options: [
+          "spec.cloudflare.disable_js_insert",
+          "spec.cloudflare.js_insertion_rules",
+          "spec.cloudflare.manual_js_insert",
+        ],
+      },
+      {
+        choiceField: "mobile_sdk_choice",
+        fieldPath: "spec.cloudflare.mobile_sdk_choice",
+        options: ["spec.cloudflare.disable_mobile_sdk", "spec.cloudflare.mobile_sdk_config"],
+      },
+      {
+        choiceField: "domain_matcher_choice",
+        fieldPath: "spec.cloudflare.js_insertion_rules.exclude_list[].domain_matcher_choice",
+        options: [
+          "spec.cloudflare.js_insertion_rules.exclude_list[].any_domain",
+          "spec.cloudflare.js_insertion_rules.exclude_list[].domain",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.cloudflare.js_insertion_rules.exclude_list[].domain.domain_choice",
+        options: [
+          "spec.cloudflare.js_insertion_rules.exclude_list[].domain.exact_value",
+          "spec.cloudflare.js_insertion_rules.exclude_list[].domain.regex_value",
+          "spec.cloudflare.js_insertion_rules.exclude_list[].domain.suffix_value",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath: "spec.cloudflare.js_insertion_rules.exclude_list[].path.path_match",
+        options: [
+          "spec.cloudflare.js_insertion_rules.exclude_list[].path.path",
+          "spec.cloudflare.js_insertion_rules.exclude_list[].path.prefix",
+          "spec.cloudflare.js_insertion_rules.exclude_list[].path.regex",
+        ],
+      },
+      {
+        choiceField: "domain_matcher_choice",
+        fieldPath: "spec.cloudflare.js_insertion_rules.rules[].domain_matcher_choice",
+        options: [
+          "spec.cloudflare.js_insertion_rules.rules[].any_domain",
+          "spec.cloudflare.js_insertion_rules.rules[].domain",
+        ],
+      },
+      {
+        choiceField: "uri_path",
+        fieldPath: "spec.cloudflare.js_insertion_rules.rules[].uri_path",
+        options: [
+          "spec.cloudflare.js_insertion_rules.rules[].exact_path",
+          "spec.cloudflare.js_insertion_rules.rules[].glob",
+          "spec.cloudflare.js_insertion_rules.rules[].prefix",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.cloudflare.js_insertion_rules.rules[].domain.domain_choice",
+        options: [
+          "spec.cloudflare.js_insertion_rules.rules[].domain.exact_value",
+          "spec.cloudflare.js_insertion_rules.rules[].domain.regex_value",
+          "spec.cloudflare.js_insertion_rules.rules[].domain.suffix_value",
+        ],
+      },
+      {
+        choiceField: "value_match",
+        fieldPath: "spec.cloudflare.mobile_sdk_config.mobile_identifier.headers[].value_match",
+        options: [
+          "spec.cloudflare.mobile_sdk_config.mobile_identifier.headers[].exact",
+          "spec.cloudflare.mobile_sdk_config.mobile_identifier.headers[].regex",
+        ],
+      },
+      {
+        choiceField: "client_type_choice",
+        fieldPath: "spec.cloudflare.protected_endpoints[].client_type_choice",
+        options: [
+          "spec.cloudflare.protected_endpoints[].mobile_client",
+          "spec.cloudflare.protected_endpoints[].web_client",
+          "spec.cloudflare.protected_endpoints[].web_mobile_client",
+        ],
+      },
+      {
+        choiceField: "domain_matcher_choice",
+        fieldPath: "spec.cloudflare.protected_endpoints[].domain_matcher_choice",
+        options: [
+          "spec.cloudflare.protected_endpoints[].any_domain",
+          "spec.cloudflare.protected_endpoints[].domain",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.cloudflare.protected_endpoints[].domain.domain_choice",
+        options: [
+          "spec.cloudflare.protected_endpoints[].domain.exact_value",
+          "spec.cloudflare.protected_endpoints[].domain.regex_value",
+          "spec.cloudflare.protected_endpoints[].domain.suffix_value",
+        ],
+      },
+      {
+        choiceField: "mitigation",
+        fieldPath: "spec.cloudflare.protected_endpoints[].mobile_client.mitigation",
+        options: [
+          "spec.cloudflare.protected_endpoints[].mobile_client.block",
+          "spec.cloudflare.protected_endpoints[].mobile_client.continue",
+        ],
+      },
+      {
+        choiceField: "add_header_choice",
+        fieldPath: "spec.cloudflare.protected_endpoints[].mobile_client.continue.add_header_choice",
+        options: [
+          "spec.cloudflare.protected_endpoints[].mobile_client.continue.add_header",
+          "spec.cloudflare.protected_endpoints[].mobile_client.continue.no_header",
+        ],
+      },
+      {
+        choiceField: "mitigation",
+        fieldPath: "spec.cloudflare.protected_endpoints[].web_client.mitigation",
+        options: [
+          "spec.cloudflare.protected_endpoints[].web_client.block",
+          "spec.cloudflare.protected_endpoints[].web_client.continue",
+          "spec.cloudflare.protected_endpoints[].web_client.redirect",
+        ],
+      },
+      {
+        choiceField: "add_header_choice",
+        fieldPath: "spec.cloudflare.protected_endpoints[].web_client.continue.add_header_choice",
+        options: [
+          "spec.cloudflare.protected_endpoints[].web_client.continue.add_header",
+          "spec.cloudflare.protected_endpoints[].web_client.continue.no_header",
+        ],
+      },
+      {
+        choiceField: "mobile_mitigation",
+        fieldPath: "spec.cloudflare.protected_endpoints[].web_mobile_client.mobile_mitigation",
+        options: [
+          "spec.cloudflare.protected_endpoints[].web_mobile_client.block_mobile",
+          "spec.cloudflare.protected_endpoints[].web_mobile_client.continue_mobile",
+        ],
+      },
+      {
+        choiceField: "web_mitigation",
+        fieldPath: "spec.cloudflare.protected_endpoints[].web_mobile_client.web_mitigation",
+        options: [
+          "spec.cloudflare.protected_endpoints[].web_mobile_client.block_web",
+          "spec.cloudflare.protected_endpoints[].web_mobile_client.continue_web",
+          "spec.cloudflare.protected_endpoints[].web_mobile_client.redirect_web",
+        ],
+      },
+      {
+        choiceField: "add_header_choice",
+        fieldPath:
+          "spec.cloudflare.protected_endpoints[].web_mobile_client.continue_mobile.add_header_choice",
+        options: [
+          "spec.cloudflare.protected_endpoints[].web_mobile_client.continue_mobile.add_header",
+          "spec.cloudflare.protected_endpoints[].web_mobile_client.continue_mobile.no_header",
+        ],
+      },
+      {
+        choiceField: "add_header_choice",
+        fieldPath:
+          "spec.cloudflare.protected_endpoints[].web_mobile_client.continue_web.add_header_choice",
+        options: [
+          "spec.cloudflare.protected_endpoints[].web_mobile_client.continue_web.add_header",
+          "spec.cloudflare.protected_endpoints[].web_mobile_client.continue_web.no_header",
+        ],
+      },
+      {
+        choiceField: "client_source_choice",
+        fieldPath: "spec.cloudflare.trusted_clients[].client_source_choice",
+        options: [
+          "spec.cloudflare.trusted_clients[].http_header",
+          "spec.cloudflare.trusted_clients[].ip_prefix",
+        ],
+      },
+      {
+        choiceField: "value_match",
+        fieldPath: "spec.cloudflare.trusted_clients[].http_header.headers[].value_match",
+        options: [
+          "spec.cloudflare.trusted_clients[].http_header.headers[].exact",
+          "spec.cloudflare.trusted_clients[].http_header.headers[].regex",
+        ],
+      },
+      {
+        choiceField: "aws_configuration_type_choice",
+        fieldPath: "spec.cloudfront.aws_configuration_type_choice",
+        options: [
+          "spec.cloudfront.aws_configuration_id_selector",
+          "spec.cloudfront.aws_configuration_tag_selector",
+          "spec.cloudfront.disable_aws_configuration",
+        ],
+      },
+      {
+        choiceField: "java_script_choice",
+        fieldPath: "spec.cloudfront.java_script_choice",
+        options: [
+          "spec.cloudfront.disable_js_insert",
+          "spec.cloudfront.js_insertion_rules",
+          "spec.cloudfront.manual_js_insert",
+        ],
+      },
+      {
+        choiceField: "mobile_sdk_choice",
+        fieldPath: "spec.cloudfront.mobile_sdk_choice",
+        options: ["spec.cloudfront.disable_mobile_sdk", "spec.cloudfront.mobile_sdk_config"],
+      },
+      {
+        choiceField: "domain_matcher_choice",
+        fieldPath: "spec.cloudfront.js_insertion_rules.exclude_list[].domain_matcher_choice",
+        options: [
+          "spec.cloudfront.js_insertion_rules.exclude_list[].any_domain",
+          "spec.cloudfront.js_insertion_rules.exclude_list[].domain",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.cloudfront.js_insertion_rules.exclude_list[].domain.domain_choice",
+        options: [
+          "spec.cloudfront.js_insertion_rules.exclude_list[].domain.exact_value",
+          "spec.cloudfront.js_insertion_rules.exclude_list[].domain.regex_value",
+          "spec.cloudfront.js_insertion_rules.exclude_list[].domain.suffix_value",
+        ],
+      },
+      {
+        choiceField: "path_match",
+        fieldPath: "spec.cloudfront.js_insertion_rules.exclude_list[].path.path_match",
+        options: [
+          "spec.cloudfront.js_insertion_rules.exclude_list[].path.path",
+          "spec.cloudfront.js_insertion_rules.exclude_list[].path.prefix",
+          "spec.cloudfront.js_insertion_rules.exclude_list[].path.regex",
+        ],
+      },
+      {
+        choiceField: "domain_matcher_choice",
+        fieldPath: "spec.cloudfront.js_insertion_rules.rules[].domain_matcher_choice",
+        options: [
+          "spec.cloudfront.js_insertion_rules.rules[].any_domain",
+          "spec.cloudfront.js_insertion_rules.rules[].domain",
+        ],
+      },
+      {
+        choiceField: "uri_path",
+        fieldPath: "spec.cloudfront.js_insertion_rules.rules[].uri_path",
+        options: [
+          "spec.cloudfront.js_insertion_rules.rules[].exact_path",
+          "spec.cloudfront.js_insertion_rules.rules[].glob",
+          "spec.cloudfront.js_insertion_rules.rules[].prefix",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.cloudfront.js_insertion_rules.rules[].domain.domain_choice",
+        options: [
+          "spec.cloudfront.js_insertion_rules.rules[].domain.exact_value",
+          "spec.cloudfront.js_insertion_rules.rules[].domain.regex_value",
+          "spec.cloudfront.js_insertion_rules.rules[].domain.suffix_value",
+        ],
+      },
+      {
+        choiceField: "value_match",
+        fieldPath: "spec.cloudfront.mobile_sdk_config.mobile_identifier.headers[].value_match",
+        options: [
+          "spec.cloudfront.mobile_sdk_config.mobile_identifier.headers[].exact",
+          "spec.cloudfront.mobile_sdk_config.mobile_identifier.headers[].regex",
+        ],
+      },
+      {
+        choiceField: "client_type_choice",
+        fieldPath: "spec.cloudfront.protected_endpoints[].client_type_choice",
+        options: [
+          "spec.cloudfront.protected_endpoints[].mobile_client",
+          "spec.cloudfront.protected_endpoints[].web_client",
+          "spec.cloudfront.protected_endpoints[].web_mobile_client",
+        ],
+      },
+      {
+        choiceField: "domain_matcher_choice",
+        fieldPath: "spec.cloudfront.protected_endpoints[].domain_matcher_choice",
+        options: [
+          "spec.cloudfront.protected_endpoints[].any_domain",
+          "spec.cloudfront.protected_endpoints[].domain",
+        ],
+      },
+      {
+        choiceField: "flow_label_choice",
+        fieldPath: "spec.cloudfront.protected_endpoints[].flow_label_choice",
+        options: [
+          "spec.cloudfront.protected_endpoints[].flow_label",
+          "spec.cloudfront.protected_endpoints[].undefined_flow_label",
+        ],
+      },
+      {
+        choiceField: "domain_choice",
+        fieldPath: "spec.cloudfront.protected_endpoints[].domain.domain_choice",
+        options: [
+          "spec.cloudfront.protected_endpoints[].domain.exact_value",
+          "spec.cloudfront.protected_endpoints[].domain.regex_value",
+          "spec.cloudfront.protected_endpoints[].domain.suffix_value",
+        ],
+      },
+      {
+        choiceField: "flow_label_choice",
+        fieldPath: "spec.cloudfront.protected_endpoints[].flow_label.flow_label_choice",
+        options: [
+          "spec.cloudfront.protected_endpoints[].flow_label.account_management",
+          "spec.cloudfront.protected_endpoints[].flow_label.authentication",
+          "spec.cloudfront.protected_endpoints[].flow_label.financial_services",
+          "spec.cloudfront.protected_endpoints[].flow_label.flight",
+          "spec.cloudfront.protected_endpoints[].flow_label.profile_management",
+          "spec.cloudfront.protected_endpoints[].flow_label.search",
+          "spec.cloudfront.protected_endpoints[].flow_label.shopping_gift_cards",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.cloudfront.protected_endpoints[].flow_label.account_management.label_choice",
+        options: [
+          "spec.cloudfront.protected_endpoints[].flow_label.account_management.create",
+          "spec.cloudfront.protected_endpoints[].flow_label.account_management.password_reset",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath: "spec.cloudfront.protected_endpoints[].flow_label.authentication.label_choice",
+        options: [
+          "spec.cloudfront.protected_endpoints[].flow_label.authentication.login",
+          "spec.cloudfront.protected_endpoints[].flow_label.authentication.login_mfa",
+          "spec.cloudfront.protected_endpoints[].flow_label.authentication.login_partner",
+          "spec.cloudfront.protected_endpoints[].flow_label.authentication.logout",
+          "spec.cloudfront.protected_endpoints[].flow_label.authentication.token_refresh",
+        ],
+      },
+      {
+        choiceField: "transaction_result_choice",
+        fieldPath:
+          "spec.cloudfront.protected_endpoints[].flow_label.authentication.login.transaction_result_choice",
+        options: [
+          "spec.cloudfront.protected_endpoints[].flow_label.authentication.login.disable_transaction_result",
+          "spec.cloudfront.protected_endpoints[].flow_label.authentication.login.transaction_result",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.cloudfront.protected_endpoints[].flow_label.financial_services.label_choice",
+        options: [
+          "spec.cloudfront.protected_endpoints[].flow_label.financial_services.apply",
+          "spec.cloudfront.protected_endpoints[].flow_label.financial_services.money_transfer",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath: "spec.cloudfront.protected_endpoints[].flow_label.flight.label_choice",
+        options: ["spec.cloudfront.protected_endpoints[].flow_label.flight.checkin"],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.cloudfront.protected_endpoints[].flow_label.profile_management.label_choice",
+        options: [
+          "spec.cloudfront.protected_endpoints[].flow_label.profile_management.create",
+          "spec.cloudfront.protected_endpoints[].flow_label.profile_management.update",
+          "spec.cloudfront.protected_endpoints[].flow_label.profile_management.view",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath: "spec.cloudfront.protected_endpoints[].flow_label.search.label_choice",
+        options: [
+          "spec.cloudfront.protected_endpoints[].flow_label.search.flight_search",
+          "spec.cloudfront.protected_endpoints[].flow_label.search.product_search",
+          "spec.cloudfront.protected_endpoints[].flow_label.search.reservation_search",
+          "spec.cloudfront.protected_endpoints[].flow_label.search.room_search",
+        ],
+      },
+      {
+        choiceField: "label_choice",
+        fieldPath:
+          "spec.cloudfront.protected_endpoints[].flow_label.shopping_gift_cards.label_choice",
+        options: [
+          "spec.cloudfront.protected_endpoints[].flow_label.shopping_gift_cards.gift_card_make_purchase_with_gift_card",
+          "spec.cloudfront.protected_endpoints[].flow_label.shopping_gift_cards.gift_card_validation",
+          "spec.cloudfront.protected_endpoints[].flow_label.shopping_gift_cards.shop_add_to_cart",
+          "spec.cloudfront.protected_endpoints[].flow_label.shopping_gift_cards.shop_checkout",
+          "spec.cloudfront.protected_endpoints[].flow_label.shopping_gift_cards.shop_choose_seat",
+          "spec.cloudfront.protected_endpoints[].flow_label.shopping_gift_cards.shop_enter_drawing_submission",
+          "spec.cloudfront.protected_endpoints[].flow_label.shopping_gift_cards.shop_make_payment",
+          "spec.cloudfront.protected_endpoints[].flow_label.shopping_gift_cards.shop_order",
+          "spec.cloudfront.protected_endpoints[].flow_label.shopping_gift_cards.shop_price_inquiry",
+          "spec.cloudfront.protected_endpoints[].flow_label.shopping_gift_cards.shop_promo_code_validation",
+          "spec.cloudfront.protected_endpoints[].flow_label.shopping_gift_cards.shop_purchase_gift_card",
+          "spec.cloudfront.protected_endpoints[].flow_label.shopping_gift_cards.shop_update_quantity",
+        ],
+      },
+      {
+        choiceField: "mitigation",
+        fieldPath: "spec.cloudfront.protected_endpoints[].mobile_client.mitigation",
+        options: [
+          "spec.cloudfront.protected_endpoints[].mobile_client.block",
+          "spec.cloudfront.protected_endpoints[].mobile_client.continue",
+        ],
+      },
+      {
+        choiceField: "add_header_choice",
+        fieldPath: "spec.cloudfront.protected_endpoints[].mobile_client.continue.add_header_choice",
+        options: [
+          "spec.cloudfront.protected_endpoints[].mobile_client.continue.add_header",
+          "spec.cloudfront.protected_endpoints[].mobile_client.continue.no_header",
+        ],
+      },
+      {
+        choiceField: "mitigation",
+        fieldPath: "spec.cloudfront.protected_endpoints[].web_client.mitigation",
+        options: [
+          "spec.cloudfront.protected_endpoints[].web_client.block",
+          "spec.cloudfront.protected_endpoints[].web_client.continue",
+          "spec.cloudfront.protected_endpoints[].web_client.redirect",
+        ],
+      },
+      {
+        choiceField: "add_header_choice",
+        fieldPath: "spec.cloudfront.protected_endpoints[].web_client.continue.add_header_choice",
+        options: [
+          "spec.cloudfront.protected_endpoints[].web_client.continue.add_header",
+          "spec.cloudfront.protected_endpoints[].web_client.continue.no_header",
+        ],
+      },
+      {
+        choiceField: "mobile_mitigation",
+        fieldPath: "spec.cloudfront.protected_endpoints[].web_mobile_client.mobile_mitigation",
+        options: [
+          "spec.cloudfront.protected_endpoints[].web_mobile_client.block_mobile",
+          "spec.cloudfront.protected_endpoints[].web_mobile_client.continue_mobile",
+        ],
+      },
+      {
+        choiceField: "web_mitigation",
+        fieldPath: "spec.cloudfront.protected_endpoints[].web_mobile_client.web_mitigation",
+        options: [
+          "spec.cloudfront.protected_endpoints[].web_mobile_client.block_web",
+          "spec.cloudfront.protected_endpoints[].web_mobile_client.continue_web",
+          "spec.cloudfront.protected_endpoints[].web_mobile_client.redirect_web",
+        ],
+      },
+      {
+        choiceField: "add_header_choice",
+        fieldPath:
+          "spec.cloudfront.protected_endpoints[].web_mobile_client.continue_mobile.add_header_choice",
+        options: [
+          "spec.cloudfront.protected_endpoints[].web_mobile_client.continue_mobile.add_header",
+          "spec.cloudfront.protected_endpoints[].web_mobile_client.continue_mobile.no_header",
+        ],
+      },
+      {
+        choiceField: "add_header_choice",
+        fieldPath:
+          "spec.cloudfront.protected_endpoints[].web_mobile_client.continue_web.add_header_choice",
+        options: [
+          "spec.cloudfront.protected_endpoints[].web_mobile_client.continue_web.add_header",
+          "spec.cloudfront.protected_endpoints[].web_mobile_client.continue_web.no_header",
+        ],
+      },
+      {
+        choiceField: "client_source_choice",
+        fieldPath: "spec.cloudfront.trusted_clients[].client_source_choice",
+        options: [
+          "spec.cloudfront.trusted_clients[].http_header",
+          "spec.cloudfront.trusted_clients[].ip_prefix",
+        ],
+      },
+      {
+        choiceField: "value_match",
+        fieldPath: "spec.cloudfront.trusted_clients[].http_header.headers[].value_match",
+        options: [
+          "spec.cloudfront.trusted_clients[].http_header.headers[].exact",
+          "spec.cloudfront.trusted_clients[].http_header.headers[].regex",
+        ],
+      },
+    ],
     subscriptionRequirements: [
       {
         addonService: "f5xc_waap_standard",

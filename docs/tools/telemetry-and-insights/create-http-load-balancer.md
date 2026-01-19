@@ -6,9 +6,6 @@ description: Create HTTP/HTTPS load balancer.
 
 # Create HTTP Load Balancer
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Create HTTP/HTTPS load balancer using the discovered virtual server as an origin server.
 
 ## Tools
@@ -25,14 +22,6 @@ Create HTTP/HTTPS load balancer using the discovered virtual server as an origin
 |-----------|-------------|--------|
 | `name` | Service Name | `-` |
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- create-http-load-balancer
 
 ## Example Usage
 

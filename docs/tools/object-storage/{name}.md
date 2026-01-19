@@ -6,12 +6,6 @@ description: DELETE Stored Object(s)
 
 # {name}
 
-!!! danger "High Risk Operation"
-    This resource includes operations that may cause significant changes. Review carefully before executing.
-
-!!! note "Confirmation Required"
-    Some operations on this resource require explicit confirmation before execution.
-
 GetMobileAppShield is an API to download particular version of mobile app shield.
 
 ## Tools
@@ -38,15 +32,6 @@ GetMobileAppShield is an API to download particular version of mobile app shield
 |-----------|-------------|--------|
 | `object_type` | X-required | `-` |
 | `force_delete` | Optional query parameter. If provided will DELETE all the versions of the specified object. | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Deletes:**
-
-- stored-object
-- contained_resources
 
 ## Example Usage
 

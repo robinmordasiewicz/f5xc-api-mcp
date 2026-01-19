@@ -6,9 +6,6 @@ description: GET List of Managed Tenant By User.
 
 # Managed Tenants By User
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET list of managed tenants that user have access to based on assigned membership.
 This is an
 optimized list generated based on the requesting user's current group assignments

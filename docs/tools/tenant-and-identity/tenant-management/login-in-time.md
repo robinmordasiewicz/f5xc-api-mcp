@@ -6,9 +6,6 @@ description: GetLoginEventsInTimeFrame.
 
 # Login In Time
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GetLoginEventsInTimeFrame returns login events for specified period of time. It consider all users
 specified by context tenant.
 
@@ -17,14 +14,6 @@ specified by context tenant.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-tenantandidentity-login-in-time-create` | GetLoginEventsInTimeFrame. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- login-in-time
 
 ## Example Usage
 

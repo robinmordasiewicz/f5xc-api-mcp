@@ -6,9 +6,6 @@ description: List USB Enablement Rules.
 
 # Rule
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 List USB Enablement Rules.
 
 ## Tools

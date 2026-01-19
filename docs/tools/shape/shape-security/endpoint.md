@@ -6,9 +6,6 @@ description: Report Endpoints.
 
 # Endpoint
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Report Endpoints.
 
 ## Tools
@@ -24,14 +21,6 @@ Report Endpoints.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- endpoint
 
 ## Example Usage
 

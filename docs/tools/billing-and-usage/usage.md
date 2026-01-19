@@ -6,9 +6,6 @@ description: GET Quota Usage.
 
 # Usage
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET allows users to query limits and current usage of resources.
 
 ## Tools

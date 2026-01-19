@@ -6,9 +6,6 @@ description: GET Detected Domains.
 
 # Detected Domain
 
-!!! info "Low Risk"
-    Operations on this resource are generally safe.
-
 GET the detected domains data for the tenant.
 
 ## Tools

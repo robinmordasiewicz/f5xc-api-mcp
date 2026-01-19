@@ -6,9 +6,6 @@ description: Soft restart.
 
 # Soft Restart
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Soft restart reloads VER instance on the node.
 
 ## Tools
@@ -27,14 +24,6 @@ Soft restart reloads VER instance on the node.
 | `node` | Node Name | `-` |
 | `service` | Service Name | `-` |
 | `site` | Site Name | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- soft-restart
 
 ## Example Usage
 

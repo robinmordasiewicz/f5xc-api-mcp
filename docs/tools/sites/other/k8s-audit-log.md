@@ -6,9 +6,6 @@ description: K8s Audit Log Query.
 
 # K8S Audit Log
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 Request to GET Physical K8s audit logs that matches the criteria in request for a given
 namespace.
 If no match conditions are specified in the request, then the response contains all
@@ -31,14 +28,6 @@ audit logs across all namespaces in a K8s Cluster.
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
 | `site` | Site | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- k8s-audit-log
 
 ## Example Usage
 

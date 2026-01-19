@@ -6,9 +6,6 @@ description: Transit Usage.
 
 # Transit Usage
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 API to GET transit usage data.
 
 ## Tools
@@ -24,14 +21,6 @@ API to GET transit usage data.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `namespace` | Namespace | `-` |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- transit-usage
 
 ## Example Usage
 

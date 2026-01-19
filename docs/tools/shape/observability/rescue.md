@@ -6,9 +6,6 @@ description: Rescue Dashboard.
 
 # Rescue
 
-!!! warning "Medium Risk"
-    Some operations on this resource may modify or delete data.
-
 GET rescue chart data from shape recognize API.
 
 ## Tools
@@ -16,14 +13,6 @@ GET rescue chart data from shape recognize API.
 | Tool | Description |
 |------|-------------|
 | `f5xc-api-shape-rescue-create` | Rescue Dashboard. |
-
-## Side Effects
-
-Operations on this resource may have the following effects:
-
-**Creates:**
-
-- rescue
 
 ## Example Usage
 
