@@ -38,6 +38,8 @@
     "test:report": "tsx scripts/generate-test-report.ts",
     "test:cleanup": "tsx tests/e2e/scripts/orphan-cleanup.ts",
     "test:all": "npm run test:discover && npm run test:errors && npm run test:performance && npm run test:workflows && npm run test:report",
+    "test:interactive": "vitest run tests/uat/interactive-crud/",
+    "test:interactive:watch": "vitest tests/uat/interactive-crud/",
     "validate:auth": "tsx scripts/validate-auth-integration.ts",
     "lint": "eslint src/**/*.ts",
     "lint:fix": "eslint src/**/*.ts --fix",
