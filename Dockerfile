@@ -31,12 +31,6 @@ FROM node:24-alpine AS production
 
 WORKDIR /app
 
-# Update npm and patch bundled tar vulnerability (CVE-2026-23745)
-# Pin to specific version for reproducible builds (update periodically)
-RUN npm install -g npm@11.7.0 && \
-    cd /usr/local/lib/node_modules/npm && \
-    npm install tar@7.5.3 --save
-
 # Create non-root user
 RUN addgroup -g 1001 -S nodejs && \
     adduser -S mcp -u 1001 -G nodejs
