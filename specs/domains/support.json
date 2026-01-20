@@ -3,7 +3,7 @@
   "info": {
     "title": "Support",
     "description": "Case management workflows including submission, commentary, and closure paths. Urgency adjustments and routing for time-sensitive incidents. Tax exemption verification requests. Site-level tcpdump operations—initiation, enumeration, and termination—for low-level network troubleshooting and protocol analysis.",
-    "version": "2.0.42",
+    "version": "2.0.43",
     "contact": {
       "name": "F5 Distributed Cloud",
       "url": "https://docs.cloud.f5.com"
@@ -12677,8 +12677,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:28:19.712169+00:00"
+                "validatedAt": "2026-01-20T02:55:33.338310+00:00"
               },
               "deterministic": true
             },
@@ -12690,7 +12689,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:47.026563+00:00",
+            "x-reconciled-at": "2026-01-20T03:04:02.732620+00:00",
             "x-f5xc-conflicts-with": [
               "uid"
             ]
@@ -12721,8 +12720,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:28:19.712211+00:00"
+                "validatedAt": "2026-01-20T02:55:33.338354+00:00"
               },
               "deterministic": true
             },
@@ -12734,7 +12732,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:47.026594+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:02.732652+00:00"
           },
           "site": {
             "type": "string",
@@ -12752,6 +12750,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:55:33.338395+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -12775,6 +12778,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:55:33.338426+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -12787,7 +12795,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:47.026633+00:00",
+            "x-reconciled-at": "2026-01-20T03:04:02.732693+00:00",
             "x-f5xc-conflicts-with": [
               "name"
             ]
@@ -12831,6 +12839,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:55:33.338468+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -12841,7 +12854,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:47.026666+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:02.732725+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -12882,6 +12895,11 @@
                 "minLength": 0,
                 "maxLength": 1024,
                 "format": "byte"
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.518520+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -12907,6 +12925,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.518589+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -12932,6 +12955,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.518631+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -12957,6 +12985,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.518669+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -13025,8 +13058,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:29:57.931761+00:00"
+                "validatedAt": "2026-01-20T02:57:11.518712+00:00"
               },
               "deterministic": true
             },
@@ -13038,7 +13070,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:49.385016+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.280543+00:00"
           },
           "namespace": {
             "type": "string",
@@ -13066,8 +13098,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:29:57.931801+00:00"
+                "validatedAt": "2026-01-20T02:57:11.518749+00:00"
               },
               "deterministic": true
             },
@@ -13079,7 +13110,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:49.385046+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.280573+00:00"
           }
         },
         "x-f5xc-description-short": "Closes an open existing customer support ticket.",
@@ -13166,8 +13197,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.8,
-                "category": "content",
-                "validatedAt": "2026-01-20T02:29:57.931860+00:00"
+                "validatedAt": "2026-01-20T02:57:11.518822+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -13210,8 +13240,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:29:57.931881+00:00"
+                "validatedAt": "2026-01-20T02:57:11.518855+00:00"
               },
               "deterministic": true
             },
@@ -13223,7 +13252,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:49.385107+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.280635+00:00"
           },
           "namespace": {
             "type": "string",
@@ -13251,8 +13280,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:29:57.931902+00:00"
+                "validatedAt": "2026-01-20T02:57:11.518887+00:00"
               },
               "deterministic": true
             },
@@ -13264,7 +13292,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:49.385135+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.280663+00:00"
           }
         },
         "x-f5xc-description-short": "Adds a new comment to an existing customer support ticket.",
@@ -13364,6 +13392,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.518999+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -13388,6 +13421,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.519047+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -13423,8 +13461,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "temporal",
-                "validatedAt": "2026-01-20T02:29:57.932037+00:00"
+                "validatedAt": "2026-01-20T02:57:11.519100+00:00"
               },
               "deterministic": true
             },
@@ -13451,6 +13488,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.519136+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -13475,6 +13517,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.519180+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -13600,8 +13647,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:29:57.932121+00:00"
+                "validatedAt": "2026-01-20T02:57:11.519220+00:00"
               },
               "deterministic": true
             },
@@ -13613,7 +13659,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:49.385295+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.280823+00:00"
           },
           "namespace": {
             "type": "string",
@@ -13641,8 +13687,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:29:57.932142+00:00"
+                "validatedAt": "2026-01-20T02:57:11.519252+00:00"
               },
               "deterministic": true
             },
@@ -13654,7 +13699,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:49.385323+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.280850+00:00"
           }
         },
         "x-f5xc-description-short": "Changes priority of an existing customer support ticket.",
@@ -13778,7 +13823,7 @@
             "maxLength": 17,
             "minLength": 17,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:49.385425+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.280959+00:00"
           },
           "system_metadata": {
             "$ref": "#/components/schemas/schemaSystemObjectGetMetaType"
@@ -13872,8 +13917,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.7,
-                "category": "general",
-                "validatedAt": "2026-01-20T02:29:57.932238+00:00"
+                "validatedAt": "2026-01-20T02:57:11.519363+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -13939,8 +13983,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.8,
-                "category": "content",
-                "validatedAt": "2026-01-20T02:29:57.932288+00:00"
+                "validatedAt": "2026-01-20T02:57:11.519425+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -13951,7 +13994,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:49.385501+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.281035+00:00"
           },
           "disabled": {
             "type": "boolean",
@@ -14020,8 +14063,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:29:57.932312+00:00"
+                "validatedAt": "2026-01-20T02:57:11.519462+00:00"
               },
               "deterministic": true
             },
@@ -14033,7 +14075,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:49.385580+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.281102+00:00"
           },
           "namespace": {
             "type": "string",
@@ -14060,8 +14102,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:29:57.932333+00:00"
+                "validatedAt": "2026-01-20T02:57:11.519492+00:00"
               },
               "deterministic": true
             },
@@ -14073,7 +14114,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:49.385608+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.281129+00:00"
           },
           "owner_view": {
             "$ref": "#/components/schemas/schemaViewRefType"
@@ -14112,6 +14153,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.519546+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -14123,7 +14169,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:49.385664+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.281184+00:00"
           },
           "uid": {
             "type": "string",
@@ -14141,6 +14187,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.519576+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -14153,7 +14204,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:49.385694+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.281213+00:00"
           }
         },
         "x-f5xc-description-short": "By default a summary of customer_support is returned in 'List'. By setting 'report_fields' in the ListRequest more details of each item can be got.",
@@ -14217,9 +14268,16 @@
             "x-f5xc-description-short": "List of priorities for filtering the customer support ticket list. Required: YES.",
             "x-f5xc-constraints": {
               "type": "array",
-              "category": "general",
+              "category": "discovery",
               "array": {
-                "minItems": 1
+                "minItems": 1,
+                "uniqueItems": true
+              },
+              "deterministic": true,
+              "metadata": {
+                "source": "discovery",
+                "confidence": 0.99,
+                "validatedAt": "2026-01-20T02:57:11.519647+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -14257,9 +14315,16 @@
             "x-f5xc-description-short": "List of status for filtering the customer support ticket list. Required: YES.",
             "x-f5xc-constraints": {
               "type": "array",
-              "category": "general",
+              "category": "discovery",
               "array": {
-                "minItems": 1
+                "minItems": 1,
+                "uniqueItems": true
+              },
+              "deterministic": true,
+              "metadata": {
+                "source": "discovery",
+                "confidence": 0.99,
+                "validatedAt": "2026-01-20T02:57:11.519701+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -14271,7 +14336,7 @@
             "maxLength": 17,
             "minLength": 17,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:49.385734+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.281253+00:00"
           }
         },
         "x-f5xc-description-short": "Input message of the 'ListCTSupportTickets' RPC. Fields can be used to control scope and filtering of collection.",
@@ -14333,8 +14398,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.7,
-                "category": "general",
-                "validatedAt": "2026-01-20T02:29:57.932454+00:00"
+                "validatedAt": "2026-01-20T02:57:11.519748+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -14399,8 +14463,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:29:57.932476+00:00"
+                "validatedAt": "2026-01-20T02:57:11.519783+00:00"
               },
               "deterministic": true
             },
@@ -14412,7 +14475,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:49.385786+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.281304+00:00"
           },
           "namespace": {
             "type": "string",
@@ -14440,8 +14503,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:29:57.932497+00:00"
+                "validatedAt": "2026-01-20T02:57:11.519814+00:00"
               },
               "deterministic": true
             },
@@ -14453,7 +14515,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:49.385814+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.281332+00:00"
           },
           "priority": {
             "$ref": "#/components/schemas/customer_supportSupportTicketPriority"
@@ -14538,6 +14600,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.519881+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -14604,8 +14671,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:29:57.932584+00:00"
+                "validatedAt": "2026-01-20T02:57:11.519927+00:00"
               },
               "deterministic": true
             },
@@ -14617,7 +14683,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:49.385896+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.281413+00:00"
           }
         },
         "x-f5xc-description-short": "Any error that may occurred during tax status verification request.",
@@ -14675,8 +14741,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:29:57.932606+00:00"
+                "validatedAt": "2026-01-20T02:57:11.519959+00:00"
               },
               "deterministic": true
             },
@@ -14688,7 +14753,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:49.385926+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.281443+00:00"
           },
           "namespace": {
             "type": "string",
@@ -14716,8 +14781,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:29:57.932629+00:00"
+                "validatedAt": "2026-01-20T02:57:11.519988+00:00"
               },
               "deterministic": true
             },
@@ -14729,7 +14793,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:49.385953+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.281470+00:00"
           }
         },
         "x-f5xc-description-short": "Reopens a closed existing customer support ticket.",
@@ -15051,6 +15115,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.520062+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -15073,6 +15142,11 @@
                 "minLength": 0,
                 "maxLength": 1024,
                 "format": "byte"
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.520100+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -15083,7 +15157,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:49.386042+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.281557+00:00"
           }
         },
         "x-f5xc-description-short": "Contains an arbitrary serialized protocol buffer message along with a URL that describes the type of the serialized message.",
@@ -15132,8 +15206,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "network",
-                "validatedAt": "2026-01-20T02:29:57.932748+00:00"
+                "validatedAt": "2026-01-20T02:57:11.520143+00:00"
               },
               "deterministic": true
             },
@@ -15159,6 +15232,11 @@
                 "minLength": 0,
                 "maxLength": 1024,
                 "format": "date-time"
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.520192+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -15185,6 +15263,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.520231+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -15195,7 +15278,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:49.386092+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.281607+00:00"
           },
           "service_name": {
             "type": "string",
@@ -15212,6 +15295,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.520278+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -15244,6 +15332,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.520325+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -15254,7 +15347,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:49.386130+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.281643+00:00"
           },
           "type": {
             "type": "string",
@@ -15279,6 +15372,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.520363+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -15336,6 +15434,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.520405+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -15400,8 +15503,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:29:57.932949+00:00"
+                "validatedAt": "2026-01-20T02:57:11.520437+00:00"
               },
               "deterministic": true
             },
@@ -15413,7 +15515,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:49.386199+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.281712+00:00"
           }
         },
         "x-f5xc-description-short": "Initializer is information about an initializer that has not yet completed.",
@@ -15523,20 +15625,18 @@
             "minLength": 0,
             "x-f5xc-constraints": {
               "type": "string",
-              "category": "content",
+              "category": "discovery",
               "string": {
-                "minLength": 0,
-                "maxLength": 1200,
-                "characterSet": {
-                  "description": "Free text with UTF-8 support"
+                "byteLength": {
+                  "max": 1200
                 }
               },
               "metadata": {
-                "source": "inferred",
-                "confidence": 0.8,
-                "category": "content",
-                "validatedAt": "2026-01-20T02:29:57.933007+00:00"
-              }
+                "source": "discovery",
+                "confidence": 0.99,
+                "validatedAt": "2026-01-20T02:57:11.520544+00:00"
+              },
+              "deterministic": true
             },
             "x-f5xc-required-for": {
               "minimum_config": false,
@@ -15546,7 +15646,7 @@
             },
             "x-original-maxLength": 1200,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:49.386261+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.281775+00:00"
           },
           "disable": {
             "type": "boolean",
@@ -15619,8 +15719,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:29:57.933029+00:00"
+                "validatedAt": "2026-01-20T02:57:11.520581+00:00"
               },
               "deterministic": true
             },
@@ -15632,7 +15731,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:49.386309+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.281823+00:00"
           },
           "namespace": {
             "type": "string",
@@ -15661,8 +15760,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:29:57.933048+00:00"
+                "validatedAt": "2026-01-20T02:57:11.520611+00:00"
               },
               "deterministic": true
             },
@@ -15674,7 +15772,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:49.386336+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.281850+00:00"
           }
         },
         "x-f5xc-description-short": "ObjectCreateMetaType is metadata that can be specified in Create request of an object.",
@@ -15748,20 +15846,18 @@
             "minLength": 0,
             "x-f5xc-constraints": {
               "type": "string",
-              "category": "content",
+              "category": "discovery",
               "string": {
-                "minLength": 0,
-                "maxLength": 1200,
-                "characterSet": {
-                  "description": "Free text with UTF-8 support"
+                "byteLength": {
+                  "max": 1200
                 }
               },
               "metadata": {
-                "source": "inferred",
-                "confidence": 0.8,
-                "category": "content",
-                "validatedAt": "2026-01-20T02:29:57.933094+00:00"
-              }
+                "source": "discovery",
+                "confidence": 0.99,
+                "validatedAt": "2026-01-20T02:57:11.520702+00:00"
+              },
+              "deterministic": true
             },
             "x-f5xc-required-for": {
               "minimum_config": false,
@@ -15771,7 +15867,7 @@
             },
             "x-original-maxLength": 1200,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:49.386377+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.281890+00:00"
           },
           "disable": {
             "type": "boolean",
@@ -15846,8 +15942,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:29:57.933115+00:00"
+                "validatedAt": "2026-01-20T02:57:11.520737+00:00"
               },
               "deterministic": true
             },
@@ -15859,7 +15954,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:49.386424+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.281949+00:00"
           },
           "namespace": {
             "type": "string",
@@ -15888,8 +15983,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:29:57.933137+00:00"
+                "validatedAt": "2026-01-20T02:57:11.520767+00:00"
               },
               "deterministic": true
             },
@@ -15901,7 +15995,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:49.386451+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.281976+00:00"
           }
         },
         "x-f5xc-description-short": "ObjectGetMetaType is metadata that can be specified in GET/Create response of an object.",
@@ -15946,6 +16040,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.520806+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -15957,7 +16056,7 @@
             "readOnly": true,
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:49.386480+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.282006+00:00"
           },
           "name": {
             "type": "string",
@@ -15993,8 +16092,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:29:57.933184+00:00"
+                "validatedAt": "2026-01-20T02:57:11.520838+00:00"
               },
               "deterministic": true
             },
@@ -16006,7 +16104,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:49.386508+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.282032+00:00"
           },
           "namespace": {
             "type": "string",
@@ -16035,8 +16133,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:29:57.933206+00:00"
+                "validatedAt": "2026-01-20T02:57:11.520870+00:00"
               },
               "deterministic": true
             },
@@ -16048,7 +16145,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:49.386544+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.282059+00:00"
           },
           "tenant": {
             "type": "string",
@@ -16067,6 +16164,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.520920+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -16079,7 +16181,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:49.386572+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.282086+00:00"
           },
           "uid": {
             "type": "string",
@@ -16098,6 +16200,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.520951+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -16111,7 +16218,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:49.386601+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.282114+00:00"
           }
         },
         "x-f5xc-description-short": "Type establishes a 'direct reference' from one object(the referrer) to another(the referred).",
@@ -16156,6 +16263,11 @@
                 "minLength": 0,
                 "maxLength": 1024,
                 "format": "date-time"
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.521004+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -16183,6 +16295,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.521051+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -16210,6 +16327,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.521095+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -16238,6 +16360,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.521139+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -16264,6 +16391,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.521168+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -16276,7 +16408,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:49.386678+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.282191+00:00"
           },
           "vtrp_id": {
             "type": "string",
@@ -16292,6 +16424,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.521207+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -16384,6 +16521,11 @@
               "number": {
                 "minimum": 0,
                 "maximum": 2147483647
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.521235+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -16410,6 +16552,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.521276+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -16420,7 +16567,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:49.386737+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.282250+00:00"
           },
           "status": {
             "type": "string",
@@ -16438,6 +16585,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.521317+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -16448,7 +16600,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:49.386764+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.282276+00:00"
           }
         },
         "x-f5xc-description-short": "Status is a return value for calls that don't return other objects.",
@@ -16490,6 +16642,11 @@
                 "minLength": 0,
                 "maxLength": 1024,
                 "format": "date-time"
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.521368+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -16516,6 +16673,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.521415+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -16542,6 +16704,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.521458+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -16569,6 +16736,11 @@
                 "minLength": 0,
                 "maxLength": 1024,
                 "format": "date-time"
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.521508+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -16633,6 +16805,11 @@
                 "minLength": 0,
                 "maxLength": 1024,
                 "format": "date-time"
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.521576+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -16661,6 +16838,11 @@
               "number": {
                 "minimum": 0,
                 "maximum": 2147483647
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.521604+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -16691,6 +16873,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.521644+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -16702,7 +16889,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:49.386888+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.282400+00:00"
           },
           "uid": {
             "type": "string",
@@ -16721,6 +16908,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.521676+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -16733,7 +16925,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:49.386917+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.282428+00:00"
           }
         },
         "x-f5xc-description-short": "SystemObjectGetMetaType is metadata generated or populated by the system for all persisted objects and cannot be updated directly by users.",
@@ -16783,6 +16975,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.521714+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -16793,7 +16990,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:49.386947+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.282457+00:00"
           },
           "name": {
             "type": "string",
@@ -16829,8 +17026,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:29:57.933841+00:00"
+                "validatedAt": "2026-01-20T02:57:11.521746+00:00"
               },
               "deterministic": true
             },
@@ -16842,7 +17038,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:49.386974+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.282485+00:00"
           },
           "namespace": {
             "type": "string",
@@ -16871,8 +17067,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:29:57.933864+00:00"
+                "validatedAt": "2026-01-20T02:57:11.521779+00:00"
               },
               "deterministic": true
             },
@@ -16884,7 +17079,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:49.387001+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.282512+00:00"
           },
           "uid": {
             "type": "string",
@@ -16901,6 +17096,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.521810+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -16913,7 +17113,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:49.387030+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.282540+00:00"
           }
         },
         "x-f5xc-description-short": "ViewRefType represents a reference to a view.",
@@ -16957,6 +17157,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.521853+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -17005,8 +17210,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.8,
-                "category": "content",
-                "validatedAt": "2026-01-20T02:29:57.933970+00:00"
+                "validatedAt": "2026-01-20T02:57:11.521930+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -17017,7 +17221,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:49.387078+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.282588+00:00"
           },
           "ongoing": {
             "type": "boolean",
@@ -17050,6 +17254,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.521978+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -17094,6 +17303,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.522032+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -17118,6 +17332,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.522074+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -17145,6 +17364,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.522111+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -17233,6 +17457,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.522159+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -17260,6 +17489,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.522199+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -17311,8 +17545,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "temporal",
-                "validatedAt": "2026-01-20T02:29:57.934215+00:00"
+                "validatedAt": "2026-01-20T02:57:11.522261+00:00"
               },
               "deterministic": true
             },
@@ -17364,8 +17597,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.8,
-                "category": "content",
-                "validatedAt": "2026-01-20T02:29:57.934270+00:00"
+                "validatedAt": "2026-01-20T02:57:11.522326+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -17376,7 +17608,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:49.387257+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.282766+00:00"
           },
           "escalated": {
             "type": "boolean",
@@ -17439,6 +17671,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.522386+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -17483,6 +17720,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.522439+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -17513,8 +17755,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.9,
-                "category": "metadata",
-                "validatedAt": "2026-01-20T02:29:57.934382+00:00"
+                "validatedAt": "2026-01-20T02:57:11.522472+00:00"
               },
               "deterministic": true
             },
@@ -17540,6 +17781,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.522513+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -17567,6 +17813,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.522550+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -17596,6 +17847,11 @@
                 "minLength": 0,
                 "maxLength": 1024,
                 "format": "date-time"
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:11.522594+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -17688,6 +17944,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.788500+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -17712,6 +17973,11 @@
                 "minLength": 0,
                 "maxLength": 1024,
                 "format": "byte"
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.788592+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -17775,6 +18041,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.788677+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -17805,6 +18076,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.788716+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -17829,6 +18105,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.788751+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -17862,8 +18143,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.85,
-                "category": "identity",
-                "validatedAt": "2026-01-20T02:30:27.977212+00:00"
+                "validatedAt": "2026-01-20T02:57:41.788793+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -17914,6 +18194,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.788848+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -17953,6 +18238,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.788913+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -17978,6 +18268,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.788959+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -18021,7 +18316,7 @@
             "maxLength": 17,
             "minLength": 17,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:50.034147+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.963371+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -18053,6 +18348,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.789013+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -18137,6 +18437,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.789095+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -18160,6 +18465,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.789139+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -18198,6 +18508,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.789203+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -18222,6 +18537,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.789253+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -18245,6 +18565,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.789300+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -18268,6 +18593,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.789346+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -18390,6 +18720,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.789397+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -18451,6 +18786,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.789460+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -18486,8 +18826,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:30:27.977777+00:00"
+                "validatedAt": "2026-01-20T02:57:41.789495+00:00"
               },
               "deterministic": true
             },
@@ -18499,7 +18838,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:50.034375+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.963600+00:00"
           },
           "node": {
             "type": "string",
@@ -18516,6 +18855,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.789532+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -18540,6 +18884,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.789568+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -18589,6 +18938,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.789610+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -18614,6 +18968,11 @@
               "number": {
                 "minimum": 0,
                 "maximum": 2147483647
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.789640+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -18666,8 +19025,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "network",
-                "validatedAt": "2026-01-20T02:30:27.977901+00:00"
+                "validatedAt": "2026-01-20T02:57:41.789678+00:00"
               },
               "deterministic": true
             },
@@ -18701,8 +19059,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "network",
-                "validatedAt": "2026-01-20T02:30:27.977927+00:00"
+                "validatedAt": "2026-01-20T02:57:41.789714+00:00"
               },
               "deterministic": true
             },
@@ -18756,6 +19113,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.789763+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -18779,6 +19141,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.789806+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -18816,6 +19183,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.789866+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -18842,6 +19214,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.789919+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -18852,7 +19229,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:50.034548+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.963767+00:00"
           },
           "wifi_support": {
             "type": "boolean",
@@ -18919,8 +19296,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.7,
-                "category": "general",
-                "validatedAt": "2026-01-20T02:30:27.978098+00:00"
+                "validatedAt": "2026-01-20T02:57:41.789965+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -18946,6 +19322,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.790001+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -18977,8 +19358,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.9,
-                "category": "timing",
-                "validatedAt": "2026-01-20T02:30:27.978146+00:00"
+                "validatedAt": "2026-01-20T02:57:41.790036+00:00"
               },
               "deterministic": true
             },
@@ -19005,6 +19385,11 @@
               "number": {
                 "minimum": 0,
                 "maximum": 2147483647
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.790063+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -19040,8 +19425,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:30:27.978182+00:00"
+                "validatedAt": "2026-01-20T02:57:41.790096+00:00"
               },
               "deterministic": true
             },
@@ -19053,7 +19437,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:50.034627+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.963845+00:00"
           },
           "node": {
             "type": "string",
@@ -19070,6 +19454,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.790131+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -19094,6 +19483,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.790165+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -19144,6 +19538,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.790208+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -19169,6 +19568,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.790249+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -19194,6 +19598,11 @@
               "number": {
                 "minimum": 0,
                 "maximum": 2147483647
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.790272+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -19218,6 +19627,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.790313+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -19242,6 +19656,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.790354+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -19268,6 +19687,11 @@
               "number": {
                 "minimum": 0,
                 "maximum": 2147483647
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.790382+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -19293,6 +19717,11 @@
               "number": {
                 "minimum": 0,
                 "maximum": 2147483647
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.790406+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -19318,6 +19747,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.790452+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -19403,6 +19837,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.790499+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -19458,8 +19897,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:30:27.978477+00:00"
+                "validatedAt": "2026-01-20T02:57:41.790535+00:00"
               },
               "deterministic": true
             },
@@ -19471,7 +19909,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:50.034776+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.964006+00:00"
           },
           "node": {
             "type": "string",
@@ -19488,6 +19926,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.790572+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -19512,6 +19955,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.790607+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -19592,8 +20040,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:30:27.978559+00:00"
+                "validatedAt": "2026-01-20T02:57:41.790642+00:00"
               },
               "deterministic": true
             },
@@ -19605,7 +20052,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:50.034827+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.964058+00:00"
           },
           "node": {
             "type": "string",
@@ -19622,6 +20069,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.790677+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -19646,6 +20098,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.790715+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -19656,7 +20113,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:50.034863+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.964094+00:00"
           }
         },
         "x-f5xc-description-short": "Name and formal displayed name of the service.",
@@ -19707,8 +20164,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:30:27.978634+00:00"
+                "validatedAt": "2026-01-20T02:57:41.790750+00:00"
               },
               "deterministic": true
             },
@@ -19720,7 +20176,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:50.034893+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.964124+00:00"
           },
           "node": {
             "type": "string",
@@ -19737,6 +20193,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.790786+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -19761,6 +20222,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.790829+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -19785,6 +20251,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.790865+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -19849,6 +20320,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.790938+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -19890,8 +20366,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:30:27.978762+00:00"
+                "validatedAt": "2026-01-20T02:57:41.790975+00:00"
               },
               "deterministic": true
             },
@@ -19903,7 +20378,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:50.034961+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.964195+00:00"
           },
           "node": {
             "type": "string",
@@ -19920,6 +20395,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.791011+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -19944,6 +20424,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.791052+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -19954,7 +20439,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:50.034998+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.964232+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -19997,7 +20482,7 @@
             "maxLength": 17,
             "minLength": 17,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:50.035030+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.964264+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -20064,6 +20549,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.791204+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -20095,10 +20585,15 @@
             "maxLength": 4,
             "x-f5xc-constraints": {
               "type": "string",
-              "category": "general",
+              "category": "discovery",
               "string": {
-                "minLength": 0,
-                "maxLength": 1024
+                "format": "uri"
+              },
+              "deterministic": true,
+              "metadata": {
+                "source": "discovery",
+                "confidence": 0.99,
+                "validatedAt": "2026-01-20T02:57:41.791293+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -20109,7 +20604,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:50.035112+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.964346+00:00"
           },
           "store_provider": {
             "type": "string",
@@ -20128,6 +20623,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.791344+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -20178,6 +20678,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.791389+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -20188,7 +20693,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:50.035151+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.964386+00:00"
           },
           "url": {
             "type": "string",
@@ -20215,22 +20720,17 @@
             "minLength": 0,
             "x-f5xc-constraints": {
               "type": "string",
-              "category": "network",
+              "category": "discovery",
               "string": {
-                "minLength": 0,
-                "maxLength": 131072,
-                "format": "uri",
-                "pattern": "^(https?|ftp)://[^\\s/$.?#].[^\\s]*$",
-                "formatDescription": "RFC 3986 URI with scheme (http, https, ftp)",
-                "validation": {
-                  "rfc": "RFC 3986"
-                }
+                "byteLength": {
+                  "max": 131072
+                },
+                "format": "uri"
               },
               "metadata": {
-                "source": "inferred",
-                "confidence": 0.9,
-                "category": "network",
-                "validatedAt": "2026-01-20T02:30:27.979052+00:00"
+                "source": "discovery",
+                "confidence": 0.99,
+                "validatedAt": "2026-01-20T02:57:41.791472+00:00"
               },
               "deterministic": true
             },
@@ -20332,6 +20832,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.791507+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -20342,7 +20847,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:50.035212+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.964446+00:00"
           },
           "location": {
             "type": "string",
@@ -20358,6 +20863,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.791548+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -20368,7 +20878,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:50.035241+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.964475+00:00"
           },
           "provider": {
             "type": "string",
@@ -20385,6 +20895,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.791594+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -20395,7 +20910,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:50.035268+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.964502+00:00"
           },
           "secret_encoding": {
             "$ref": "#/components/schemas/schemaSecretEncodingType"
@@ -20416,6 +20931,11 @@
               "number": {
                 "minimum": 0,
                 "maximum": 2147483647
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.791620+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -20427,7 +20947,7 @@
             "maxLength": 1,
             "minLength": 1,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:50.035305+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.964540+00:00"
           }
         },
         "x-f5xc-description-short": "X-displayName: \"Vault Secret\" VaultSecretInfoType specifies information about the Secret managed by Hashicorp Vault.",
@@ -20484,8 +21004,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:30:27.979171+00:00"
+                "validatedAt": "2026-01-20T02:57:41.791655+00:00"
               },
               "deterministic": true
             },
@@ -20497,7 +21016,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:50.035336+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.964570+00:00"
           }
         },
         "x-f5xc-description-short": "X-displayName: \"Wingman Secret\" WingmanSecretInfoType specifies the handle to the wingman secret.",
@@ -20546,8 +21065,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "temporal",
-                "validatedAt": "2026-01-20T02:30:27.979206+00:00"
+                "validatedAt": "2026-01-20T02:57:41.791703+00:00"
               },
               "deterministic": true
             },
@@ -20574,6 +21092,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.791742+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -20599,6 +21122,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.791783+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -20609,7 +21137,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:50.035384+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.964619+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -20649,6 +21177,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.791829+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -20691,8 +21224,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:30:27.979319+00:00"
+                "validatedAt": "2026-01-20T02:57:41.791862+00:00"
               },
               "deterministic": true
             },
@@ -20704,7 +21236,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:50.035423+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.964658+00:00"
           },
           "serial": {
             "type": "string",
@@ -20722,6 +21254,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.791915+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -20747,6 +21284,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.791958+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -20772,6 +21314,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.791999+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -20782,7 +21329,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:50.035469+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.964704+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -20824,6 +21371,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.792049+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -20849,6 +21401,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.792087+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -20875,6 +21432,11 @@
               "number": {
                 "minimum": 0,
                 "maximum": 2147483647
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.792111+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -20900,6 +21462,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.792153+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -20925,6 +21492,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.792194+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -20935,7 +21507,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:50.035549+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.964771+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -20977,6 +21549,11 @@
               "number": {
                 "minimum": 0,
                 "maximum": 2147483647
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.792219+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -21002,6 +21579,11 @@
               "number": {
                 "minimum": 0,
                 "maximum": 2147483647
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.792242+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -21027,6 +21609,11 @@
               "number": {
                 "minimum": 0,
                 "maximum": 2147483647
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.792264+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -21051,6 +21638,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.792309+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -21076,6 +21668,11 @@
               "number": {
                 "minimum": 0,
                 "maximum": 2147483647
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.792334+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -21101,6 +21698,11 @@
               "number": {
                 "minimum": 0,
                 "maximum": 2147483647
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.792360+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -21125,6 +21727,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.792402+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -21175,6 +21782,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.792453+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -21199,6 +21811,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.792507+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -21261,6 +21878,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.792558+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -21285,6 +21907,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.792609+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -21309,6 +21936,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.792659+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -21355,6 +21987,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.792711+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -21379,6 +22016,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.792755+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -21403,6 +22045,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.792797+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -21413,7 +22060,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:50.035728+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.964957+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -21506,6 +22153,11 @@
               "number": {
                 "minimum": 0,
                 "maximum": 2147483647
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.792828+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -21531,6 +22183,11 @@
               "number": {
                 "minimum": 0,
                 "maximum": 2147483647
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.792852+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -21555,6 +22212,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.792889+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -21601,6 +22263,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.792959+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -21655,8 +22322,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "network",
-                "validatedAt": "2026-01-20T02:30:27.980054+00:00"
+                "validatedAt": "2026-01-20T02:57:41.793023+00:00"
               },
               "deterministic": true
             },
@@ -21699,8 +22365,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:30:27.980075+00:00"
+                "validatedAt": "2026-01-20T02:57:41.793055+00:00"
               },
               "deterministic": true
             },
@@ -21712,7 +22377,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:50.035838+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.965065+00:00"
           },
           "port": {
             "type": "string",
@@ -21731,6 +22396,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.793093+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -21756,6 +22426,11 @@
               "number": {
                 "minimum": 0,
                 "maximum": 2147483647
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.793120+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -21807,6 +22482,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.793172+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -21848,8 +22528,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:30:27.980169+00:00"
+                "validatedAt": "2026-01-20T02:57:41.793206+00:00"
               },
               "deterministic": true
             },
@@ -21861,7 +22540,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:50.035896+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.965122+00:00"
           },
           "release": {
             "type": "string",
@@ -21878,6 +22557,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.793250+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -21902,6 +22586,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.793293+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -21926,6 +22615,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.793335+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -21936,7 +22630,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:50.035943+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.965167+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -22003,8 +22697,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.8,
-                "category": "networking",
-                "validatedAt": "2026-01-20T02:30:27.980289+00:00"
+                "validatedAt": "2026-01-20T02:57:41.793382+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -22032,11 +22725,16 @@
             "minimum": 0,
             "maximum": 2147483647,
             "x-f5xc-constraints": {
-              "type": "number",
-              "category": "general",
+              "type": "integer",
+              "category": "discovery",
               "number": {
-                "minimum": 0,
-                "maximum": 2147483647
+                "minimum": 0
+              },
+              "deterministic": true,
+              "metadata": {
+                "source": "discovery",
+                "confidence": 0.99,
+                "validatedAt": "2026-01-20T02:57:41.793450+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -22147,8 +22845,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:30:27.980347+00:00"
+                "validatedAt": "2026-01-20T02:57:41.793508+00:00"
               },
               "deterministic": true
             },
@@ -22160,7 +22857,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:50.036092+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.965316+00:00"
           },
           "serial": {
             "type": "string",
@@ -22179,6 +22876,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.793549+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -22203,6 +22905,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.793592+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -22228,6 +22935,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.793635+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -22238,7 +22950,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:50.036138+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.965361+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -22278,6 +22990,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.793678+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -22302,6 +23019,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.793716+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -22343,8 +23065,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:30:27.980508+00:00"
+                "validatedAt": "2026-01-20T02:57:41.793750+00:00"
               },
               "deterministic": true
             },
@@ -22356,7 +23077,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:50.036187+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.965409+00:00"
           },
           "serial": {
             "type": "string",
@@ -22373,6 +23094,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.793789+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -22398,6 +23124,11 @@
               "number": {
                 "minimum": 0,
                 "maximum": 2147483647
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.793815+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -22422,6 +23153,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.793855+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -22473,6 +23209,11 @@
               "number": {
                 "minimum": 0,
                 "maximum": 2147483647
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.793883+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -22497,6 +23238,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.793947+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -22522,6 +23268,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.793999+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -22547,6 +23298,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.794050+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -22572,6 +23328,11 @@
               "number": {
                 "minimum": 0,
                 "maximum": 2147483647
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.794080+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -22596,6 +23357,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.794129+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -22620,6 +23386,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.794171+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -22646,6 +23417,11 @@
               "number": {
                 "minimum": 0,
                 "maximum": 2147483647
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.794193+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -22677,8 +23453,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.8,
-                "category": "content",
-                "validatedAt": "2026-01-20T02:30:27.980853+00:00"
+                "validatedAt": "2026-01-20T02:57:41.794252+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -22689,7 +23464,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:50.036318+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:05.965542+00:00"
           },
           "i_manufacturer": {
             "type": "string",
@@ -22706,6 +23481,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.794300+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -22730,6 +23510,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.794345+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -22755,6 +23540,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.794386+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -22780,6 +23570,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.794431+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -22804,6 +23599,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.794474+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -22835,8 +23635,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.99,
-                "category": "networking",
-                "validatedAt": "2026-01-20T02:30:27.981063+00:00"
+                "validatedAt": "2026-01-20T02:57:41.794507+00:00"
               },
               "deterministic": true
             },
@@ -22863,6 +23662,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.794557+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -22888,6 +23692,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.794595+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -22916,6 +23725,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:41.794642+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -23002,6 +23816,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:43.543219+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -23012,7 +23831,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:50.092318+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:06.026324+00:00"
           },
           "value": {
             "type": "string",
@@ -23027,6 +23846,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:43.543278+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -23037,7 +23861,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:50.092349+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:06.026357+00:00"
           }
         },
         "x-f5xc-description-short": "DHCP Option information as a (key, value) pair.",
@@ -23076,6 +23900,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:43.543326+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -23106,8 +23935,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.8,
-                "category": "content",
-                "validatedAt": "2026-01-20T02:30:29.741555+00:00"
+                "validatedAt": "2026-01-20T02:57:43.543386+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -23118,7 +23946,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:50.092391+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:06.026399+00:00"
           },
           "expiry": {
             "type": "string",
@@ -23135,6 +23963,11 @@
                 "minLength": 0,
                 "maxLength": 1024,
                 "format": "date-time"
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:43.543427+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -23167,8 +24000,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "network",
-                "validatedAt": "2026-01-20T02:30:29.741629+00:00"
+                "validatedAt": "2026-01-20T02:57:43.543480+00:00"
               },
               "deterministic": true
             },
@@ -23193,6 +24025,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:43.543535+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -23217,6 +24054,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:43.543564+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -23241,6 +24083,11 @@
                 "minLength": 0,
                 "maxLength": 1024,
                 "format": "date-time"
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:43.543608+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -23265,6 +24112,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:43.543639+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -23303,6 +24155,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:43.543693+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -23409,6 +24266,11 @@
               "number": {
                 "minimum": 0,
                 "maximum": 2147483647
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:43.543753+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -23433,6 +24295,11 @@
               "number": {
                 "minimum": 0,
                 "maximum": 2147483647
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:43.543780+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -23456,6 +24323,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:43.543823+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -23479,6 +24351,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:57:43.543862+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -23543,6 +24420,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:59:30.567105+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -23567,6 +24449,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:59:30.567171+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -23602,6 +24489,11 @@
               "number": {
                 "minimum": 0,
                 "maximum": 2147483647
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:59:30.567202+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -23653,6 +24545,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:59:30.567237+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -23677,6 +24574,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:59:30.567277+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -23701,6 +24603,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:59:30.567308+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -23750,8 +24657,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.85,
-                "category": "identity",
-                "validatedAt": "2026-01-20T02:32:16.607475+00:00"
+                "validatedAt": "2026-01-20T02:59:30.567348+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -23811,8 +24717,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:32:16.607515+00:00"
+                "validatedAt": "2026-01-20T02:59:30.567384+00:00"
               },
               "deterministic": true
             },
@@ -23824,7 +24729,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:52.012228+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:08.068850+00:00"
           },
           "node": {
             "type": "string",
@@ -23841,6 +24746,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:59:30.567420+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -23865,6 +24775,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:59:30.567456+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -23988,8 +24903,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:32:16.607607+00:00"
+                "validatedAt": "2026-01-20T02:59:30.567496+00:00"
               },
               "deterministic": true
             },
@@ -24001,7 +24915,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:52.012312+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:08.068946+00:00"
           },
           "node": {
             "type": "string",
@@ -24018,6 +24932,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:59:30.567532+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -24042,6 +24961,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:59:30.567566+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -24214,6 +25138,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:59:30.567642+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -24239,6 +25168,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:59:30.567677+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -24262,6 +25196,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T02:59:30.567712+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -24338,8 +25277,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.7,
-                "category": "general",
-                "validatedAt": "2026-01-20T02:33:20.658976+00:00"
+                "validatedAt": "2026-01-20T03:00:34.381266+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -24382,8 +25320,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.9,
-                "category": "timing",
-                "validatedAt": "2026-01-20T02:33:20.659020+00:00"
+                "validatedAt": "2026-01-20T03:00:34.381317+00:00"
               },
               "deterministic": true
             },
@@ -24423,8 +25360,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:33:20.659046+00:00"
+                "validatedAt": "2026-01-20T03:00:34.381356+00:00"
               },
               "deterministic": true
             },
@@ -24436,7 +25372,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:53.188572+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:09.305384+00:00"
           },
           "node": {
             "type": "string",
@@ -24461,10 +25397,16 @@
             "x-f5xc-description-short": "Name of the node from which ping is initiated Required: YES.",
             "x-f5xc-constraints": {
               "type": "string",
-              "category": "general",
+              "category": "discovery",
               "string": {
-                "minLength": 1,
-                "maxLength": 64
+                "maxLength": 64,
+                "minLength": 1
+              },
+              "deterministic": true,
+              "metadata": {
+                "source": "discovery",
+                "confidence": 0.99,
+                "validatedAt": "2026-01-20T03:00:34.381439+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -24498,6 +25440,11 @@
               "number": {
                 "minimum": 0,
                 "maximum": 2147483647
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:00:34.381472+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -24523,6 +25470,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:00:34.381509+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -24575,6 +25527,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:00:34.381552+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -24599,6 +25556,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:00:34.381588+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -24624,6 +25586,11 @@
               "number": {
                 "minimum": 0,
                 "maximum": 2147483647
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:00:34.381611+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -24648,6 +25615,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:00:34.381653+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -24672,6 +25644,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:00:34.381693+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -24697,6 +25674,11 @@
               "number": {
                 "minimum": 0,
                 "maximum": 2147483647
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:00:34.381719+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -24722,6 +25704,11 @@
               "number": {
                 "minimum": 0,
                 "maximum": 2147483647
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:00:34.381740+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -24746,6 +25733,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:00:34.381785+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -24819,21 +25811,15 @@
             "minLength": 0,
             "x-f5xc-constraints": {
               "type": "string",
-              "category": "network",
+              "category": "discovery",
               "string": {
-                "minLength": 0,
                 "maxLength": 256,
-                "pattern": "^([a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?\\.)*[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?$",
-                "format": "fqdn",
-                "validation": {
-                  "rfc": "RFC 1123"
-                }
+                "format": "hostname"
               },
               "metadata": {
-                "source": "inferred",
-                "confidence": 0.95,
-                "category": "network",
-                "validatedAt": "2026-01-20T02:33:20.659315+00:00"
+                "source": "discovery",
+                "confidence": 0.99,
+                "validatedAt": "2026-01-20T03:00:34.381861+00:00"
               },
               "deterministic": true
             },
@@ -24865,10 +25851,15 @@
             "maxLength": 1024,
             "x-f5xc-constraints": {
               "type": "string",
-              "category": "general",
+              "category": "discovery",
               "string": {
-                "minLength": 0,
-                "maxLength": 1024
+                "format": "ip"
+              },
+              "deterministic": true,
+              "metadata": {
+                "source": "discovery",
+                "confidence": 0.99,
+                "validatedAt": "2026-01-20T03:00:34.381929+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -24930,10 +25921,16 @@
             "x-f5xc-description-short": "Exclusive with [any_intf] Name of the chosen interface on the node.",
             "x-f5xc-constraints": {
               "type": "string",
-              "category": "general",
+              "category": "discovery",
               "string": {
-                "minLength": 1,
-                "maxLength": 256
+                "maxLength": 256,
+                "minLength": 1
+              },
+              "deterministic": true,
+              "metadata": {
+                "source": "discovery",
+                "confidence": 0.99,
+                "validatedAt": "2026-01-20T03:00:34.382000+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -25019,10 +26016,16 @@
             "x-f5xc-description-short": "Exclusive with [pod vn vn_type] Name of the chosen interface on the node.",
             "x-f5xc-constraints": {
               "type": "string",
-              "category": "general",
+              "category": "discovery",
               "string": {
-                "minLength": 1,
-                "maxLength": 256
+                "maxLength": 256,
+                "minLength": 1
+              },
+              "deterministic": true,
+              "metadata": {
+                "source": "discovery",
+                "confidence": 0.99,
+                "validatedAt": "2026-01-20T03:02:36.853138+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -25057,10 +26060,16 @@
             "x-f5xc-description-short": "Exclusive with [intf vn vn_type] Name of the pod whose interface on the node is chosen.",
             "x-f5xc-constraints": {
               "type": "string",
-              "category": "general",
+              "category": "discovery",
               "string": {
-                "minLength": 1,
-                "maxLength": 256
+                "maxLength": 256,
+                "minLength": 1
+              },
+              "deterministic": true,
+              "metadata": {
+                "source": "discovery",
+                "confidence": 0.99,
+                "validatedAt": "2026-01-20T03:02:36.853203+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -25095,10 +26104,16 @@
             "x-f5xc-description-short": "Exclusive with [intf pod vn_type] Name of chosen Virtual Network.",
             "x-f5xc-constraints": {
               "type": "string",
-              "category": "general",
+              "category": "discovery",
               "string": {
-                "minLength": 1,
-                "maxLength": 256
+                "maxLength": 256,
+                "minLength": 1
+              },
+              "deterministic": true,
+              "metadata": {
+                "source": "discovery",
+                "confidence": 0.99,
+                "validatedAt": "2026-01-20T03:02:36.853263+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -25208,8 +26223,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:35:22.043513+00:00"
+                "validatedAt": "2026-01-20T03:02:36.853305+00:00"
               },
               "deterministic": true
             },
@@ -25221,7 +26235,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:55.955840+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:12.300964+00:00"
           },
           "node": {
             "type": "string",
@@ -25246,10 +26260,16 @@
             "x-f5xc-description-short": "Name of the node on which Tcpdump was run Required: YES.",
             "x-f5xc-constraints": {
               "type": "string",
-              "category": "general",
+              "category": "discovery",
               "string": {
-                "minLength": 1,
-                "maxLength": 64
+                "maxLength": 64,
+                "minLength": 1
+              },
+              "deterministic": true,
+              "metadata": {
+                "source": "discovery",
+                "confidence": 0.99,
+                "validatedAt": "2026-01-20T03:02:36.853377+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -25275,6 +26295,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:02:36.853412+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -25326,6 +26351,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:02:36.853467+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -25388,8 +26418,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:35:22.043651+00:00"
+                "validatedAt": "2026-01-20T03:02:36.853503+00:00"
               },
               "deterministic": true
             },
@@ -25401,7 +26430,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:55.955919+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:12.301045+00:00"
           },
           "node": {
             "type": "string",
@@ -25426,10 +26455,16 @@
             "x-f5xc-description-short": "Name of the node on which Tcpdump status is requested Required: YES.",
             "x-f5xc-constraints": {
               "type": "string",
-              "category": "general",
+              "category": "discovery",
               "string": {
-                "minLength": 1,
-                "maxLength": 64
+                "maxLength": 64,
+                "minLength": 1
+              },
+              "deterministic": true,
+              "metadata": {
+                "source": "discovery",
+                "confidence": 0.99,
+                "validatedAt": "2026-01-20T03:02:36.853571+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -25455,6 +26490,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:02:36.853606+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -25570,8 +26610,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.7,
-                "category": "general",
-                "validatedAt": "2026-01-20T02:35:22.043743+00:00"
+                "validatedAt": "2026-01-20T03:02:36.853673+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -25608,6 +26647,11 @@
               "number": {
                 "minimum": 0,
                 "maximum": 2147483647
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:02:36.853706+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -25643,8 +26687,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:35:22.043779+00:00"
+                "validatedAt": "2026-01-20T03:02:36.853740+00:00"
               },
               "deterministic": true
             },
@@ -25656,7 +26699,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:55.956009+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:12.301135+00:00"
           },
           "node": {
             "type": "string",
@@ -25681,10 +26724,16 @@
             "x-f5xc-description-short": "Name of the node on which tcpdump is initiated Required: YES.",
             "x-f5xc-constraints": {
               "type": "string",
-              "category": "general",
+              "category": "discovery",
               "string": {
-                "minLength": 1,
-                "maxLength": 64
+                "maxLength": 64,
+                "minLength": 1
+              },
+              "deterministic": true,
+              "metadata": {
+                "source": "discovery",
+                "confidence": 0.99,
+                "validatedAt": "2026-01-20T03:02:36.853810+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -25715,10 +26764,16 @@
             "x-f5xc-description-medium": "Tcpdump OPTIONS / filter rules to be applied while running tcpdump. These filter rules will be in the same format as linux tcpdump filter rules.",
             "x-f5xc-constraints": {
               "type": "string",
-              "category": "general",
+              "category": "discovery",
               "string": {
-                "minLength": 1,
-                "maxLength": 256
+                "maxLength": 256,
+                "minLength": 1
+              },
+              "deterministic": true,
+              "metadata": {
+                "source": "discovery",
+                "confidence": 0.99,
+                "validatedAt": "2026-01-20T03:02:36.853882+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -25744,6 +26799,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:02:36.853927+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -25803,8 +26863,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.7,
-                "category": "general",
-                "validatedAt": "2026-01-20T02:35:22.043876+00:00"
+                "validatedAt": "2026-01-20T03:02:36.853969+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -25832,6 +26891,11 @@
               "number": {
                 "minimum": 0,
                 "maximum": 2147483647
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:02:36.853997+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -25860,6 +26924,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:02:36.854045+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -25885,6 +26954,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:02:36.854079+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -25909,6 +26983,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:02:36.854120+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -25919,7 +26998,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:55.956112+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:12.301240+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -26017,20 +27096,18 @@
             "minLength": 0,
             "x-f5xc-constraints": {
               "type": "string",
-              "category": "content",
+              "category": "discovery",
               "string": {
-                "minLength": 0,
-                "maxLength": 1200,
-                "characterSet": {
-                  "description": "Free text with UTF-8 support"
+                "byteLength": {
+                  "max": 1200
                 }
               },
               "metadata": {
-                "source": "inferred",
-                "confidence": 0.8,
-                "category": "content",
-                "validatedAt": "2026-01-20T02:35:34.719771+00:00"
-              }
+                "source": "discovery",
+                "confidence": 0.99,
+                "validatedAt": "2026-01-20T03:02:49.705305+00:00"
+              },
+              "deterministic": true
             },
             "x-f5xc-required-for": {
               "minimum_config": false,
@@ -26040,7 +27117,7 @@
             },
             "x-original-maxLength": 1200,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:56.190524+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:12.554037+00:00"
           },
           "disable": {
             "type": "boolean",
@@ -26113,8 +27190,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:35:34.719792+00:00"
+                "validatedAt": "2026-01-20T03:02:49.705340+00:00"
               },
               "deterministic": true
             },
@@ -26126,7 +27202,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:56.190584+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:12.554086+00:00"
           },
           "namespace": {
             "type": "string",
@@ -26155,8 +27231,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:35:34.719813+00:00"
+                "validatedAt": "2026-01-20T03:02:49.705370+00:00"
               },
               "deterministic": true
             },
@@ -26168,7 +27243,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:56.190611+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:12.554113+00:00"
           }
         },
         "x-f5xc-description-short": "ObjectReplaceMetaType is metadata that can be specified in Replace request of an object.",
@@ -26211,6 +27286,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:02:49.706209+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -26237,6 +27317,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:02:49.706250+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -26263,6 +27348,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:02:49.706277+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -26305,8 +27395,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:35:34.720434+00:00"
+                "validatedAt": "2026-01-20T03:02:49.706309+00:00"
               },
               "deterministic": true
             },
@@ -26318,7 +27407,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:56.191212+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:12.554719+00:00"
           }
         },
         "x-f5xc-description-short": "Issue (ticket) type information that's specific to Jira - modeled after the JIRA REST API response format.",
@@ -26362,6 +27451,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:02:49.706336+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -26402,6 +27496,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:02:49.706380+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -26412,7 +27511,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:56.191261+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:12.554768+00:00"
           },
           "name": {
             "type": "string",
@@ -26447,8 +27546,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:35:34.720506+00:00"
+                "validatedAt": "2026-01-20T03:02:49.706410+00:00"
               },
               "deterministic": true
             },
@@ -26460,7 +27558,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:56.191289+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:12.554796+00:00"
           }
         },
         "x-f5xc-description-short": "Contains fields and information that are specific to Jira projects - modeled after the JIRA REST API response format.",
@@ -26612,8 +27710,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:35:34.720568+00:00"
+                "validatedAt": "2026-01-20T03:02:49.706449+00:00"
               },
               "deterministic": true
             },
@@ -26625,7 +27722,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:56.191388+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:12.554905+00:00"
           },
           "namespace": {
             "type": "string",
@@ -26653,8 +27750,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:35:34.720593+00:00"
+                "validatedAt": "2026-01-20T03:02:49.706479+00:00"
               },
               "deterministic": true
             },
@@ -26666,7 +27762,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:56.191415+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:12.554934+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -26852,10 +27948,16 @@
             "maxLength": 1024,
             "x-f5xc-constraints": {
               "type": "string",
-              "category": "general",
+              "category": "discovery",
               "string": {
                 "minLength": 1,
-                "maxLength": 1024
+                "format": "email"
+              },
+              "deterministic": true,
+              "metadata": {
+                "source": "discovery",
+                "confidence": 0.99,
+                "validatedAt": "2026-01-20T03:02:49.706610+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -26885,10 +27987,15 @@
             "minLength": 0,
             "x-f5xc-constraints": {
               "type": "string",
-              "category": "general",
+              "category": "discovery",
               "string": {
-                "minLength": 0,
                 "maxLength": 512
+              },
+              "deterministic": true,
+              "metadata": {
+                "source": "discovery",
+                "confidence": 0.99,
+                "validatedAt": "2026-01-20T03:02:49.706686+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -26921,10 +28028,16 @@
             "maxLength": 1024,
             "x-f5xc-constraints": {
               "type": "string",
-              "category": "general",
+              "category": "discovery",
               "string": {
                 "minLength": 1,
-                "maxLength": 1024
+                "format": "hostname"
+              },
+              "deterministic": true,
+              "metadata": {
+                "source": "discovery",
+                "confidence": 0.99,
+                "validatedAt": "2026-01-20T03:02:49.706767+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -26994,6 +28107,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:02:49.706821+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -27052,6 +28170,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:02:49.706886+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -27119,8 +28242,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.7,
-                "category": "general",
-                "validatedAt": "2026-01-20T02:35:34.720889+00:00"
+                "validatedAt": "2026-01-20T03:02:49.706947+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -27186,8 +28308,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.8,
-                "category": "content",
-                "validatedAt": "2026-01-20T02:35:34.720936+00:00"
+                "validatedAt": "2026-01-20T03:02:49.707004+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -27198,7 +28319,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:56.191647+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:12.555159+00:00"
           },
           "disabled": {
             "type": "boolean",
@@ -27268,8 +28389,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:35:34.720959+00:00"
+                "validatedAt": "2026-01-20T03:02:49.707040+00:00"
               },
               "deterministic": true
             },
@@ -27281,7 +28401,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:56.191714+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:12.555225+00:00"
           },
           "namespace": {
             "type": "string",
@@ -27308,8 +28428,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:35:34.720979+00:00"
+                "validatedAt": "2026-01-20T03:02:49.707070+00:00"
               },
               "deterministic": true
             },
@@ -27321,7 +28440,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:56.191741+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:12.555252+00:00"
           },
           "owner_view": {
             "$ref": "#/components/schemas/schemaViewRefType"
@@ -27344,6 +28463,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:02:49.707110+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -27355,7 +28479,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:56.191786+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:12.555297+00:00"
           },
           "uid": {
             "type": "string",
@@ -27373,6 +28497,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:02:49.707140+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -27385,7 +28514,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:56.191814+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:12.555326+00:00"
           }
         },
         "x-f5xc-description-short": "By default a summary of ticket_tracking_system is returned in 'List'.",
@@ -27576,8 +28705,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:35:47.841733+00:00"
+                "validatedAt": "2026-01-20T03:03:02.872327+00:00"
               },
               "deterministic": true
             },
@@ -27589,7 +28717,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:56.475382+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:12.861754+00:00"
           },
           "node": {
             "type": "string",
@@ -27606,6 +28734,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:03:02.872361+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -27635,8 +28768,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.8,
-                "category": "policy",
-                "validatedAt": "2026-01-20T02:35:47.841781+00:00"
+                "validatedAt": "2026-01-20T03:03:02.872397+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -27661,6 +28793,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:03:02.872431+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -27713,8 +28850,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.8,
-                "category": "policy",
-                "validatedAt": "2026-01-20T02:35:47.841826+00:00"
+                "validatedAt": "2026-01-20T03:03:02.872466+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -27805,8 +28941,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:35:47.841851+00:00"
+                "validatedAt": "2026-01-20T03:03:02.872502+00:00"
               },
               "deterministic": true
             },
@@ -27818,7 +28953,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:56.475463+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:12.861835+00:00"
           },
           "node": {
             "type": "string",
@@ -27835,6 +28970,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:03:02.872537+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -27864,8 +29004,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.8,
-                "category": "policy",
-                "validatedAt": "2026-01-20T02:35:47.841896+00:00"
+                "validatedAt": "2026-01-20T03:03:02.872573+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -27890,6 +29029,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:03:02.872607+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -27942,8 +29086,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.8,
-                "category": "policy",
-                "validatedAt": "2026-01-20T02:35:47.841941+00:00"
+                "validatedAt": "2026-01-20T03:03:02.872641+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -28023,8 +29166,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:35:47.841963+00:00"
+                "validatedAt": "2026-01-20T03:03:02.872675+00:00"
               },
               "deterministic": true
             },
@@ -28036,7 +29178,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:56.475556+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:12.861927+00:00"
           },
           "node": {
             "type": "string",
@@ -28053,6 +29195,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:03:02.872709+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -28077,6 +29224,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:03:02.872743+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -28144,8 +29296,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.8,
-                "category": "policy",
-                "validatedAt": "2026-01-20T02:35:47.842038+00:00"
+                "validatedAt": "2026-01-20T03:03:02.872786+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -28204,8 +29355,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:35:47.842059+00:00"
+                "validatedAt": "2026-01-20T03:03:02.872819+00:00"
               },
               "deterministic": true
             },
@@ -28217,7 +29367,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:56.475635+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:12.862005+00:00"
           },
           "node": {
             "type": "string",
@@ -28234,6 +29384,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:03:02.872853+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -28258,6 +29413,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:03:02.872887+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -28321,6 +29481,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:03:02.872947+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -28346,6 +29511,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:03:02.872996+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -28371,6 +29541,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:03:02.873045+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -28396,6 +29571,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:03:02.873085+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -28421,6 +29601,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:03:02.873128+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -28445,6 +29630,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:03:02.873170+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -28522,6 +29712,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:03:47.767467+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -28563,6 +29758,11 @@
               "number": {
                 "minimum": 0,
                 "maximum": 2147483647
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:03:47.767522+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -28589,6 +29789,11 @@
               "number": {
                 "minimum": 0,
                 "maximum": 2147483647
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:03:47.767574+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -28615,6 +29820,11 @@
               "number": {
                 "minimum": 0,
                 "maximum": 2147483647
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:03:47.767618+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -28643,6 +29853,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:03:47.767667+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -28669,6 +29884,11 @@
               "number": {
                 "minimum": 0,
                 "maximum": 2147483647
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:03:47.767698+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -28728,6 +29948,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:03:47.767738+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -28791,8 +30016,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:36:32.373366+00:00"
+                "validatedAt": "2026-01-20T03:03:47.767776+00:00"
               },
               "deterministic": true
             },
@@ -28804,7 +30028,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:57.323253+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:13.772724+00:00"
           },
           "node": {
             "type": "string",
@@ -28821,6 +30045,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:03:47.767813+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -28845,6 +30074,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:03:47.767854+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -28958,6 +30192,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:03:47.767909+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -29080,6 +30319,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:03:47.767969+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -29138,8 +30382,7 @@
               "metadata": {
                 "source": "inferred",
                 "confidence": 0.95,
-                "category": "naming",
-                "validatedAt": "2026-01-20T02:36:32.373564+00:00"
+                "validatedAt": "2026-01-20T03:03:47.768004+00:00"
               },
               "deterministic": true
             },
@@ -29151,7 +30394,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-20T02:36:57.323383+00:00"
+            "x-reconciled-at": "2026-01-20T03:04:13.772853+00:00"
           },
           "node": {
             "type": "string",
@@ -29168,6 +30411,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:03:47.768040+00:00"
               }
             },
             "x-f5xc-required-for": {
@@ -29192,6 +30440,11 @@
               "string": {
                 "minLength": 0,
                 "maxLength": 1024
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "validatedAt": "2026-01-20T03:03:47.768074+00:00"
               }
             },
             "x-f5xc-required-for": {
