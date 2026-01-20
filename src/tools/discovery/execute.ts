@@ -12,6 +12,9 @@ import { getToolByName } from "../registry.js";
 import { toolExists } from "./index-loader.js";
 import { CredentialManager, AuthMode, createHttpClient } from "@robinmordasiewicz/f5xc-auth";
 import { logger } from "../../utils/logging.js";
+import { quotaService } from "../../services/quota-service.js";
+import type { QuotaInfo } from "../../types/quota.js";
+import { formatQuotaError } from "../../services/quota-formatter.js";
 
 /**
  * Tool execution parameters
@@ -39,6 +42,8 @@ export interface ExecuteToolResult {
   error?: string;
   /** HTTP status code (if API call was made) */
   statusCode?: number;
+  /** Quota information (if quota check was performed) */
+  quotaInfo?: QuotaInfo;
   /** Tool metadata */
   toolInfo: {
     name: string;
@@ -173,6 +178,36 @@ function generateDocumentationResponse(
 }
 
 /**
+ * Extract namespace from parameters
+ *
+ * @param pathParams - Path parameters
+ * @param body - Request body
+ * @returns Namespace string or null if not found
+ */
+function extractNamespace(
+  pathParams?: Record<string, string>,
+  body?: Record<string, unknown>
+): string | null {
+  // Extract namespace from path params (e.g., metadata.namespace)
+  if (pathParams?.["metadata.namespace"]) {
+    return pathParams["metadata.namespace"];
+  }
+  if (pathParams?.namespace) {
+    return pathParams.namespace;
+  }
+
+  // Extract from request body metadata
+  if (body?.metadata && typeof body.metadata === "object") {
+    const metadata = body.metadata as Record<string, unknown>;
+    if (metadata.namespace && typeof metadata.namespace === "string") {
+      return metadata.namespace;
+    }
+  }
+
+  return null;
+}
+
+/**
  * Execute a tool by name with the given parameters
  *
  * In authenticated mode: Makes the actual API call
@@ -252,6 +287,49 @@ export async function executeTool(
   // Authenticated mode - execute API call
   try {
     const httpClient = createHttpClient(creds);
+
+    // Check quota for create operations
+    if (tool.operation === "create") {
+      const namespace = extractNamespace(pathParams, body);
+
+      if (namespace) {
+        // Check if quota checking is enabled
+        const quotaCheckEnabled = process.env.F5XC_QUOTA_CHECK_ENABLED !== "false";
+
+        if (quotaCheckEnabled) {
+          const quotaCheck = await quotaService.checkQuotaAvailability(
+            namespace,
+            tool.resource,
+            httpClient
+          );
+
+          if (!quotaCheck.allowed) {
+            logger.warn(`Quota limit reached for ${tool.resource}`, {
+              toolName,
+              namespace,
+              quotaInfo: quotaCheck.quotaInfo,
+            });
+
+            return {
+              success: false,
+              error: formatQuotaError(quotaCheck),
+              quotaInfo: quotaCheck.quotaInfo,
+              toolInfo,
+            };
+          }
+
+          // Log warning if quota is in yellow zone (80-99%)
+          if (quotaCheck.quotaInfo.threshold === "yellow") {
+            logger.info(`Quota warning for ${tool.resource}`, {
+              toolName,
+              namespace,
+              quotaInfo: quotaCheck.quotaInfo,
+            });
+          }
+        }
+      }
+    }
+
     const path = buildPath(normalizeToolPath(tool.path), pathParams);
     const queryString = buildQueryString(queryParams);
     const fullPath = `${path}${queryString}`;

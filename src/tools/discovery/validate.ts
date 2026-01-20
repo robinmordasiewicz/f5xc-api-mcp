@@ -11,6 +11,11 @@
 import { getToolByName } from "../registry.js";
 import type { ParsedOperation } from "../../generator/openapi-parser.js";
 import type { OneOfGroup } from "../../generator/dependency-types.js";
+import type { HttpClient } from "@robinmordasiewicz/f5xc-auth";
+import type { QuotaInfo } from "../../types/quota.js";
+import { quotaService } from "../../services/quota-service.js";
+import { formatQuotaError, formatQuotaWarning } from "../../services/quota-formatter.js";
+import { logger } from "../../utils/logging.js";
 
 /**
  * Validation error detail
@@ -24,6 +29,8 @@ export interface ValidationError {
   expected?: string;
   /** Actual value received */
   actual?: string;
+  /** Quota information for quota-related errors */
+  quotaInfo?: QuotaInfo;
 }
 
 /**
@@ -54,6 +61,8 @@ export interface ValidationResult {
     recommendedValue: unknown;
     currentValue?: unknown;
   }>;
+  /** Quota information (if quota check was performed) */
+  quotaInfo?: QuotaInfo;
 }
 
 /**
@@ -68,6 +77,8 @@ export interface ValidateParams {
   queryParams?: Record<string, string>;
   /** Request body */
   body?: Record<string, unknown>;
+  /** Parsed tool operation (internal use) */
+  tool?: ParsedOperation;
 }
 
 /**
@@ -140,6 +151,122 @@ export function validateToolParams(params: ValidateParams): ValidationResult {
     appliedDefaults: appliedDefaults.length > 0 ? appliedDefaults : undefined,
     recommendedValues: recommendedValues.length > 0 ? recommendedValues : undefined,
   };
+}
+
+/**
+ * Validate quota availability for resource creation
+ *
+ * @param params - Validation parameters including tool, pathParams, body
+ * @param httpClient - HTTP client for quota API calls
+ * @returns Validation result with quota information
+ */
+export async function validateQuotaAvailability(
+  params: ValidateParams,
+  httpClient: HttpClient
+): Promise<ValidationResult> {
+  const { tool: toolParam, pathParams = {}, body } = params;
+
+  // Get tool definition if not provided
+  const tool = toolParam ?? getToolByName(params.toolName);
+  if (!tool) {
+    return {
+      valid: false,
+      errors: [
+        {
+          path: "toolName",
+          message: `Tool "${params.toolName}" not found`,
+        },
+      ],
+      warnings: [],
+    };
+  }
+
+  // Only check quota for create operations
+  if (tool.operation !== "create") {
+    return {
+      valid: true,
+      errors: [],
+      warnings: [],
+    };
+  }
+
+  const namespace = extractNamespace(pathParams, body);
+
+  if (!namespace) {
+    // Cannot validate quota without namespace
+    return {
+      valid: true,
+      errors: [],
+      warnings: ["Namespace not provided - quota validation skipped"],
+    };
+  }
+
+  try {
+    const quotaCheck = await quotaService.checkQuotaAvailability(
+      namespace,
+      tool.resource,
+      httpClient
+    );
+
+    const warnings: string[] = [];
+    const errors: ValidationError[] = [];
+
+    // Red zone: Block creation
+    if (!quotaCheck.allowed) {
+      errors.push({
+        path: "quota",
+        message: formatQuotaError(quotaCheck),
+        quotaInfo: quotaCheck.quotaInfo,
+      });
+    }
+
+    // Yellow zone: Warn about approaching limit
+    if (quotaCheck.quotaInfo.threshold === "yellow") {
+      warnings.push(formatQuotaWarning(quotaCheck.quotaInfo, tool.resource));
+    }
+
+    return {
+      valid: errors.length === 0,
+      errors,
+      warnings,
+      quotaInfo: quotaCheck.quotaInfo,
+    };
+  } catch (error) {
+    // Quota check failed - log but don't block execution
+    logger.error("Quota validation failed", { error });
+
+    return {
+      valid: true,
+      errors: [],
+      warnings: ["Quota validation failed - proceeding without quota check"],
+    };
+  }
+}
+
+/**
+ * Extract namespace from parameters
+ */
+function extractNamespace(
+  pathParams: Record<string, string>,
+  body?: Record<string, unknown>
+): string | null {
+  // Extract namespace from path params (e.g., metadata.namespace)
+  if (pathParams["metadata.namespace"]) {
+    return pathParams["metadata.namespace"];
+  }
+  if (pathParams.namespace) {
+    return pathParams.namespace;
+  }
+
+  // Extract from request body metadata
+  if (body?.metadata && typeof body.metadata === "object") {
+    const metadata = body.metadata as Record<string, unknown>;
+    if (metadata.namespace && typeof metadata.namespace === "string") {
+      return metadata.namespace;
+    }
+  }
+
+  return null;
 }
 
 /**

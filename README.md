@@ -18,6 +18,108 @@ other MCP-compatible tools.
 - **URL Normalization** - Automatically handles various F5XC URL formats
 - **Pre-enriched Specs** - Uses optimized OpenAPI 3.0.3 specifications with domain metadata
 - **Server-Applied Defaults** - Distinguishes user-required fields from server-defaulted fields (v2.0.28+)
+- **Quota Awareness** - Pre-flight quota validation prevents resource creation failures (v2.1.0+)
+
+## Quota Awareness
+
+The MCP server automatically checks resource quota availability before executing create
+operations, preventing failures due to quota limits.
+
+### Features
+
+- **Pre-Flight Validation** - Checks quota before API calls
+- **Automatic Blocking** - Prevents creation when quota is at 100%
+- **Warning System** - Warns when quota usage is 80-99%
+- **Caching** - 5-minute cache reduces API calls
+- **Per-Namespace Tracking** - Quota limits checked per namespace
+- **Configurable Thresholds** - Customize warning and blocking levels
+
+### Quota MCP Tools
+
+Three MCP tools provide visibility into quota usage:
+
+**`f5xc-api-get-quota-status`**
+
+```typescript
+// Get quota status for a specific resource type
+{
+  "namespace": "production",
+  "resourceType": "healthcheck"
+}
+
+// Output:
+// Quota Status for healthcheck
+// Namespace: production
+// Current Usage: 95/100 (95%)
+// Remaining: 5
+// Status: ⚠️ Approaching limit
+```
+
+**`f5xc-api-list-namespace-quotas`**
+
+```typescript
+// List all quota limits for a namespace
+{
+  "namespace": "production",
+  "showOnlyLimited": false
+}
+
+// Output: Table of all resource quotas with usage
+```
+
+**`f5xc-api-clear-quota-cache`**
+
+```typescript
+// Clear quota cache to force fresh API queries
+{
+  "namespace": "production"  // optional
+}
+```
+
+### Quota Thresholds
+
+Resource creation behavior based on quota usage:
+
+| Zone | Usage | Behavior |
+|------|-------|----------|
+| 🟢 Green | 0-79% | Creation allowed, no warnings |
+| 🟡 Yellow | 80-99% | Creation allowed, warning logged |
+| 🔴 Red | 100%+ | **Creation blocked** with error |
+
+### Example Error Message
+
+When quota limit is reached:
+
+```text
+ERROR: Resource quota limit reached
+
+Resource Type: healthcheck
+Namespace: production
+Current Usage: 100/100 (100%)
+Status: ❌ At limit - cannot create additional resources
+
+Action Required:
+1. Delete unused healthcheck resources in the 'production' namespace
+2. Request quota increase from F5 XC support
+3. Use a different namespace with available quota
+```
+
+### Configuration
+
+Control quota checking behavior via environment variables:
+
+```bash
+# Enable/disable quota checking (default: true)
+export F5XC_QUOTA_CHECK_ENABLED=true
+
+# Cache TTL in seconds (default: 300 = 5 minutes)
+export F5XC_QUOTA_CACHE_TTL=300
+
+# Threshold percentages (defaults: 79, 99, 100)
+export F5XC_QUOTA_GREEN_THRESHOLD=79
+export F5XC_QUOTA_YELLOW_THRESHOLD=99
+export F5XC_QUOTA_RED_THRESHOLD=100
+```
 
 ## Server-Applied Default Values
 
@@ -274,6 +376,11 @@ Add to `opencode.json` (project root or `~/.config/opencode/opencode.json`):
 | `F5XC_PROFILE` | No | Profile name to use (default: active profile from config) |
 | `F5XC_TLS_INSECURE` | No | Disable SSL verification (staging only, set to `true`) |
 | `F5XC_CA_BUNDLE` | No | Path to custom CA certificate bundle |
+| `F5XC_QUOTA_CHECK_ENABLED` | No | Enable quota validation (default: `true`) |
+| `F5XC_QUOTA_CACHE_TTL` | No | Quota cache TTL in seconds (default: `300`) |
+| `F5XC_QUOTA_GREEN_THRESHOLD` | No | Green zone percentage (default: `79`) |
+| `F5XC_QUOTA_YELLOW_THRESHOLD` | No | Yellow zone percentage (default: `99`) |
+| `F5XC_QUOTA_RED_THRESHOLD` | No | Red zone percentage (default: `100`) |
 | `LOG_LEVEL` | No | Logging verbosity (debug, info, warn, error) |
 
 ## Profile-Based Configuration

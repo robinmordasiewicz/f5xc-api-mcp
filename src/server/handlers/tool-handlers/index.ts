@@ -18,6 +18,7 @@ import { registerExecutionTools } from "./execution.js";
 import { registerAnalysisTools } from "./analysis.js";
 import { registerPlanningTools } from "./planning.js";
 import { registerGuidanceTools } from "./guidance.js";
+import { registerQuotaTools } from "./quota.js";
 
 /**
  * Context for tool registration containing necessary dependencies.
@@ -48,6 +49,7 @@ export function registerTools(server: McpServer, context: ToolRegistrationContex
   registerAnalysisTools(server);
   registerPlanningTools(server);
   registerGuidanceTools(server);
+  registerQuotaTools(server, credentialManager);
 
   // Log registration completion
   const indexMetadata = getIndexMetadata();
@@ -55,7 +57,7 @@ export function registerTools(server: McpServer, context: ToolRegistrationContex
   logger.info("Tool registration completed (dynamic discovery mode)", {
     authMode,
     authenticated: authMode !== AuthMode.NONE,
-    registeredTools: 14,
+    registeredTools: 17, // Updated: 14 + 3 quota tools
     indexedTools: indexMetadata.totalTools,
     consolidatedResources: consolidationStats.consolidatedCount,
     consolidationReduction: consolidationStats.reductionPercent,
@@ -71,3 +73,4 @@ export { registerExecutionTools } from "./execution.js";
 export { registerAnalysisTools } from "./analysis.js";
 export { registerPlanningTools } from "./planning.js";
 export { registerGuidanceTools } from "./guidance.js";
+export { registerQuotaTools } from "./quota.js";
