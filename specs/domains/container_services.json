@@ -3,7 +3,7 @@
   "info": {
     "title": "Container Services",
     "description": "Namespaced isolation with configurable limits and autoscaling policies. vK8s abstracts operational overhead while providing scheduling, persistent storage, and service mesh integration. Compute profiles specify CPU, memory, and GPU allocations for reproducible environments. Telemetry tracks consumption patterns across geographically distributed infrastructure nodes.",
-    "version": "2.0.41",
+    "version": "2.0.42",
     "contact": {
       "name": "F5 Distributed Cloud",
       "url": "https://docs.cloud.f5.com"
@@ -3812,6 +3812,14 @@
             "x-f5xc-description-medium": "When a configuration object(e.g. Virtual_host) refers to another(e.g route) then kind will hold the referred object's kind (e.g. \"route\").",
             "minLength": 0,
             "maxLength": 14,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -3821,7 +3829,7 @@
             "readOnly": true,
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.312984+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.049294+00:00"
           },
           "name": {
             "type": "string",
@@ -3834,6 +3842,34 @@
             "x-f5xc-description-medium": "When a configuration object(e.g. Virtual_host) refers to another(e.g route) then name will hold the referred object's(e.g. Route's) name.",
             "minLength": 0,
             "maxLength": 16,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "naming",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?$",
+                "characterSet": {
+                  "allowed": "[a-z0-9-]",
+                  "restricted": "[^a-z0-9-]",
+                  "required": "[a-z0-9]",
+                  "description": "Lowercase alphanumeric with hyphens, not at start/end"
+                },
+                "format": "dns-label",
+                "formatDescription": "RFC 1123 DNS label: lowercase, alphanumeric, hyphens allowed but not at start/end",
+                "validation": {
+                  "rfc": "RFC 1123",
+                  "standard": "Kubernetes resource naming"
+                }
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.95,
+                "category": "naming",
+                "validatedAt": "2026-01-20T02:36:18.119502+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -3842,7 +3878,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.313014+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.049324+00:00"
           },
           "namespace": {
             "type": "string",
@@ -3855,6 +3891,27 @@
             "x-f5xc-description-medium": "When a configuration object(e.g. Virtual_host) refers to another(e.g route) then namespace will hold the referred object's(e.g. Route's) namespace.",
             "minLength": 0,
             "maxLength": 6,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "naming",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?$",
+                "characterSet": {
+                  "allowed": "[a-z0-9-]",
+                  "description": "Kubernetes namespace format"
+                },
+                "format": "dns-label"
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.95,
+                "category": "naming",
+                "validatedAt": "2026-01-20T02:36:18.119552+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -3863,7 +3920,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.313043+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.049352+00:00"
           },
           "tenant": {
             "type": "string",
@@ -3876,6 +3933,14 @@
             "x-f5xc-description-medium": "When a configuration object(e.g. Virtual_host) refers to another(e.g route) then tenant will hold the referred object's(e.g. Route's) tenant.",
             "minLength": 0,
             "maxLength": 18,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -3886,7 +3951,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.313071+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.049380+00:00"
           },
           "uid": {
             "type": "string",
@@ -3899,6 +3964,14 @@
             "x-f5xc-description-medium": "When a configuration object(e.g. Virtual_host) refers to another(e.g route) then uid will hold the referred object's(e.g. Route's) uid.",
             "minLength": 0,
             "maxLength": 36,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -3910,7 +3983,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.313100+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.049409+00:00"
           }
         },
         "x-f5xc-description-short": "Type establishes a 'direct reference' from one object(the referrer) to another(the referred).",
@@ -3942,6 +4015,14 @@
             "x-f5xc-description-medium": "URL/resource name that uniquely identifies the type of the serialized protocol buffer message. This string must contain at least one \"/\" character. The last segment of the URL's path must represent the fully qualified name of the type (as in ).",
             "minLength": 0,
             "maxLength": 1024,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -3955,6 +4036,15 @@
             "format": "byte",
             "minLength": 0,
             "maxLength": 15,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "format": "byte"
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -3963,7 +4053,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.313141+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.049450+00:00"
           }
         },
         "x-f5xc-description-short": "Contains an arbitrary serialized protocol buffer message along with a URL that describes the type of the serialized message.",
@@ -3997,6 +4087,26 @@
             "x-f5xc-description-short": "Hostname of the instance of the site that sent the status.",
             "minLength": 0,
             "maxLength": 1024,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "network",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "pattern": "^([a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?\\.)*[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?$",
+                "format": "fqdn",
+                "validation": {
+                  "rfc": "RFC 1123"
+                }
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.95,
+                "category": "network",
+                "validatedAt": "2026-01-20T02:36:18.119690+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -4012,6 +4122,15 @@
             "x-displayname": "Last Updated.",
             "minLength": 0,
             "maxLength": 1024,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "format": "date-time"
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -4030,6 +4149,14 @@
             "x-f5xc-description-medium": "X-reason: \"Insufficient memory in data plane\" A human readable string explaining the reason for reaching this condition.",
             "minLength": 0,
             "maxLength": 43,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -4038,7 +4165,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.313191+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.049500+00:00"
           },
           "service_name": {
             "type": "string",
@@ -4049,6 +4176,14 @@
             "x-f5xc-description-short": "Name of the service that sent the status.",
             "minLength": 0,
             "maxLength": 1024,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -4073,6 +4208,14 @@
             "x-f5xc-description-medium": "Status of the condition \"Success\" Validtion has succeded. Requested operation was successful. \"Failed\" Validation has failed. \"Incomplete\" Validation of configuration has failed due to missing configuration. \"Installed\" Validation has passed and configuration has been installed in data path or...",
             "minLength": 0,
             "maxLength": 17,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -4081,7 +4224,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.313228+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.049548+00:00"
           },
           "type": {
             "type": "string",
@@ -4100,6 +4243,14 @@
             "x-f5xc-description-medium": "Type of the condition \"Validation\" represents validation user given configuration object \"Operational\" represents operational status of a given configuration object.",
             "minLength": 0,
             "maxLength": 1024,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -4179,6 +4330,14 @@
             "x-f5xc-example": "value",
             "minLength": 0,
             "maxLength": 1024,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -4218,6 +4377,34 @@
             "x-f5xc-description-short": "Name of the service that is responsible for initializing this object.",
             "minLength": 0,
             "maxLength": 16,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "naming",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?$",
+                "characterSet": {
+                  "allowed": "[a-z0-9-]",
+                  "restricted": "[^a-z0-9-]",
+                  "required": "[a-z0-9]",
+                  "description": "Lowercase alphanumeric with hyphens, not at start/end"
+                },
+                "format": "dns-label",
+                "formatDescription": "RFC 1123 DNS label: lowercase, alphanumeric, hyphens allowed but not at start/end",
+                "validation": {
+                  "rfc": "RFC 1123",
+                  "standard": "Kubernetes resource naming"
+                }
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.95,
+                "category": "naming",
+                "validatedAt": "2026-01-20T02:36:18.119888+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -4226,7 +4413,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.313300+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.049622+00:00"
           }
         },
         "x-f5xc-description-short": "Initializer is information about an initializer that has not yet completed.",
@@ -4318,6 +4505,14 @@
             "x-f5xc-example": "15",
             "minLength": 0,
             "maxLength": 15,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -4326,7 +4521,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.313369+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.049691+00:00"
           }
         },
         "x-f5xc-description-short": "Metric data contains timestamp and the value.",
@@ -4394,6 +4589,23 @@
             },
             "x-f5xc-description-short": "Human readable description for the object.",
             "minLength": 0,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "content",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1200,
+                "characterSet": {
+                  "description": "Free text with UTF-8 support"
+                }
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.8,
+                "category": "content",
+                "validatedAt": "2026-01-20T02:36:18.119990+00:00"
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -4402,7 +4614,7 @@
             },
             "x-original-maxLength": 1200,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.313411+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.049732+00:00"
           },
           "disable": {
             "type": "boolean",
@@ -4452,6 +4664,34 @@
             "x-f5xc-description-medium": "Name of configuration object. It has to be unique within the namespace. It can only be specified during create API and cannot be changed during replace API.",
             "minLength": 0,
             "maxLength": 16,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "naming",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?$",
+                "characterSet": {
+                  "allowed": "[a-z0-9-]",
+                  "restricted": "[^a-z0-9-]",
+                  "required": "[a-z0-9]",
+                  "description": "Lowercase alphanumeric with hyphens, not at start/end"
+                },
+                "format": "dns-label",
+                "formatDescription": "RFC 1123 DNS label: lowercase, alphanumeric, hyphens allowed but not at start/end",
+                "validation": {
+                  "rfc": "RFC 1123",
+                  "standard": "Kubernetes resource naming"
+                }
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.95,
+                "category": "naming",
+                "validatedAt": "2026-01-20T02:36:18.120013+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": true,
               "create": true,
@@ -4460,7 +4700,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.313460+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.049780+00:00"
           },
           "namespace": {
             "type": "string",
@@ -4473,6 +4713,27 @@
             "x-f5xc-description-medium": "Defines the workspace within which each the configuration object is to be created. Must be a DNS_LABEL format. For a namespace object itself, namespace value will be \"\".",
             "minLength": 0,
             "maxLength": 6,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "naming",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?$",
+                "characterSet": {
+                  "allowed": "[a-z0-9-]",
+                  "description": "Kubernetes namespace format"
+                },
+                "format": "dns-label"
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.95,
+                "category": "naming",
+                "validatedAt": "2026-01-20T02:36:18.120032+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -4481,7 +4742,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.313488+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.049808+00:00"
           }
         },
         "x-f5xc-description-short": "ObjectCreateMetaType is metadata that can be specified in Create request of an object.",
@@ -4553,6 +4814,23 @@
             },
             "x-f5xc-description-short": "Human readable description for the object.",
             "minLength": 0,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "content",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1200,
+                "characterSet": {
+                  "description": "Free text with UTF-8 support"
+                }
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.8,
+                "category": "content",
+                "validatedAt": "2026-01-20T02:36:18.120076+00:00"
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -4561,7 +4839,7 @@
             },
             "x-original-maxLength": 1200,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.313529+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.049849+00:00"
           },
           "disable": {
             "type": "boolean",
@@ -4613,6 +4891,34 @@
             "x-f5xc-description-medium": "Name of configuration object. It has to be unique within the namespace. It can only be specified during create API and cannot be changed during replace API.",
             "minLength": 0,
             "maxLength": 16,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "naming",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?$",
+                "characterSet": {
+                  "allowed": "[a-z0-9-]",
+                  "restricted": "[^a-z0-9-]",
+                  "required": "[a-z0-9]",
+                  "description": "Lowercase alphanumeric with hyphens, not at start/end"
+                },
+                "format": "dns-label",
+                "formatDescription": "RFC 1123 DNS label: lowercase, alphanumeric, hyphens allowed but not at start/end",
+                "validation": {
+                  "rfc": "RFC 1123",
+                  "standard": "Kubernetes resource naming"
+                }
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.95,
+                "category": "naming",
+                "validatedAt": "2026-01-20T02:36:18.120096+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": true,
               "create": true,
@@ -4621,7 +4927,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.313577+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.049896+00:00"
           },
           "namespace": {
             "type": "string",
@@ -4634,6 +4940,27 @@
             "x-f5xc-description-medium": "Defines the workspace within which each the configuration object is to be created. Must be a DNS_LABEL format. For a namespace object itself, namespace value will be \"\".",
             "minLength": 0,
             "maxLength": 6,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "naming",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?$",
+                "characterSet": {
+                  "allowed": "[a-z0-9-]",
+                  "description": "Kubernetes namespace format"
+                },
+                "format": "dns-label"
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.95,
+                "category": "naming",
+                "validatedAt": "2026-01-20T02:36:18.120116+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -4642,7 +4969,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.313616+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.049924+00:00"
           }
         },
         "x-f5xc-description-short": "ObjectGetMetaType is metadata that can be specified in GET/Create response of an object.",
@@ -4714,6 +5041,23 @@
             },
             "x-f5xc-description-short": "Human readable description for the object.",
             "minLength": 0,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "content",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1200,
+                "characterSet": {
+                  "description": "Free text with UTF-8 support"
+                }
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.8,
+                "category": "content",
+                "validatedAt": "2026-01-20T02:36:18.120160+00:00"
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -4722,7 +5066,7 @@
             },
             "x-original-maxLength": 1200,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.313658+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.049965+00:00"
           },
           "disable": {
             "type": "boolean",
@@ -4772,6 +5116,34 @@
             "x-f5xc-description-medium": "Name of configuration object. It has to be unique within the namespace. It can only be specified during create API and cannot be changed during replace API.",
             "minLength": 0,
             "maxLength": 16,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "naming",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?$",
+                "characterSet": {
+                  "allowed": "[a-z0-9-]",
+                  "restricted": "[^a-z0-9-]",
+                  "required": "[a-z0-9]",
+                  "description": "Lowercase alphanumeric with hyphens, not at start/end"
+                },
+                "format": "dns-label",
+                "formatDescription": "RFC 1123 DNS label: lowercase, alphanumeric, hyphens allowed but not at start/end",
+                "validation": {
+                  "rfc": "RFC 1123",
+                  "standard": "Kubernetes resource naming"
+                }
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.95,
+                "category": "naming",
+                "validatedAt": "2026-01-20T02:36:18.120179+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": true,
               "create": true,
@@ -4780,7 +5152,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.313706+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.050013+00:00"
           },
           "namespace": {
             "type": "string",
@@ -4793,6 +5165,27 @@
             "x-f5xc-description-medium": "Defines the workspace within which each the configuration object is to be created. Must be a DNS_LABEL format. For a namespace object itself, namespace value will be \"\".",
             "minLength": 0,
             "maxLength": 6,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "naming",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?$",
+                "characterSet": {
+                  "allowed": "[a-z0-9-]",
+                  "description": "Kubernetes namespace format"
+                },
+                "format": "dns-label"
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.95,
+                "category": "naming",
+                "validatedAt": "2026-01-20T02:36:18.120198+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -4801,7 +5194,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.313733+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.050040+00:00"
           }
         },
         "x-f5xc-description-short": "ObjectReplaceMetaType is metadata that can be specified in Replace request of an object.",
@@ -4839,6 +5232,15 @@
             "x-f5xc-description-medium": "Creation_timestamp is when the status object was created. It is used to find/tie-break for latest status object from same origin.",
             "minLength": 0,
             "maxLength": 1024,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "format": "date-time"
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -4858,6 +5260,14 @@
             "x-f5xc-description-medium": "Class of creator which created this StatusObject. This will be service's DNS FQDN. This will be set by the system based on client certificate information.",
             "minLength": 0,
             "maxLength": 1024,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -4877,6 +5287,14 @@
             "x-f5xc-description-medium": "ID of creator which created this StatusObject. This will be a concrete identifier for service (e.g. Identifying the environment also). This will be set by the system based on client certificate information.",
             "minLength": 0,
             "maxLength": 1024,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -4897,6 +5315,14 @@
             "x-f5xc-description-medium": "Status_id is a field used by the generator to distinguish (if necessary) between two status objects for the same config object from the same site and same service and potentially same daemon(creator-ID).",
             "minLength": 0,
             "maxLength": 1024,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -4915,6 +5341,14 @@
             "x-f5xc-description-short": "Uid is the unique in time and space value for a StatusObject.",
             "minLength": 0,
             "maxLength": 36,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -4925,7 +5359,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.313811+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.050118+00:00"
           },
           "vtrp_id": {
             "type": "string",
@@ -4935,6 +5369,14 @@
             "x-f5xc-description-short": "Origin of this status exchanged by VTRP.",
             "minLength": 0,
             "maxLength": 1024,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5019,6 +5461,14 @@
             "x-f5xc-description-short": "Suggested HTTP return code for this status, 0 if not set.",
             "minimum": 0,
             "maximum": 2147483647,
+            "x-f5xc-constraints": {
+              "type": "number",
+              "category": "general",
+              "number": {
+                "minimum": 0,
+                "maximum": 2147483647
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5037,6 +5487,14 @@
             "x-f5xc-description-medium": "Human-readable description of why this operation is in the \"Failure\" status. If this value is empty there is no information available.",
             "minLength": 0,
             "maxLength": 43,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5045,7 +5503,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.313871+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.050177+00:00"
           },
           "status": {
             "type": "string",
@@ -5057,6 +5515,14 @@
             "x-f5xc-description-short": "Status of the operation. One of: \"Success\" or \"Failure\".",
             "minLength": 0,
             "maxLength": 17,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5065,7 +5531,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.313898+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.050205+00:00"
           }
         },
         "x-f5xc-description-short": "Status is a return value for calls that don't return other objects.",
@@ -5100,6 +5566,15 @@
             "x-f5xc-description-medium": "CreationTimestamp is a timestamp representing the server time when this object was created. It is not guaranteed to be set in happens-before order across separate operations. Clients may not set this value.",
             "minLength": 0,
             "maxLength": 1024,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "format": "date-time"
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5118,6 +5593,14 @@
             "x-f5xc-description-short": "Value identifying the class of the user or service which created this configuration object.",
             "minLength": 0,
             "maxLength": 1024,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5136,6 +5619,14 @@
             "x-f5xc-description-short": "Value identifying the exact user or service that created this configuration object.",
             "minLength": 0,
             "maxLength": 1024,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5154,6 +5645,15 @@
             "x-f5xc-description-medium": "DeletionTimestamp is RFC 3339 date and time at which this resource will be deleted. This field is set by the server when a graceful deletion is requested by the user, and is not directly settable by a client. The resource is expected to be deleted (no longer visible from resource lists, and not...",
             "minLength": 0,
             "maxLength": 1024,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "format": "date-time"
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5209,6 +5709,15 @@
             "x-f5xc-description-medium": "ModificationTimestamp is a timestamp representing the server time when this object was last modified.",
             "minLength": 0,
             "maxLength": 1024,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "format": "date-time"
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5229,6 +5738,14 @@
             "x-f5xc-description-medium": "Unique index for the object. Some objects need a unique integer index to be allocated for each object type. This field will be populated for all objects that need it and will be zero otherwise.",
             "minimum": 0,
             "maximum": 2147483647,
+            "x-f5xc-constraints": {
+              "type": "number",
+              "category": "general",
+              "number": {
+                "minimum": 0,
+                "maximum": 2147483647
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5251,6 +5768,14 @@
             "x-f5xc-description-medium": "Tenant to which this configuration object belongs to. The value for this is found from presented credentials.",
             "minLength": 0,
             "maxLength": 18,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5260,7 +5785,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.314023+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.050330+00:00"
           },
           "uid": {
             "type": "string",
@@ -5273,6 +5798,14 @@
             "x-f5xc-description-medium": "Uid is the unique in time and space value for this object. It is generated by the server on successful creation of an object and is not allowed to change on Replace API. The value of is taken from uid field of ObjectMetaType, if provided.",
             "minLength": 0,
             "maxLength": 36,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5283,7 +5816,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.314052+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.050359+00:00"
           }
         },
         "x-f5xc-description-short": "SystemObjectGetMetaType is metadata generated or populated by the system for all persisted objects and cannot be updated directly by users.",
@@ -5351,6 +5884,23 @@
             "x-f5xc-description-short": "Description of the method used to calculate trend.",
             "minLength": 0,
             "maxLength": 0,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "content",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "characterSet": {
+                  "description": "Free text with UTF-8 support"
+                }
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.8,
+                "category": "content",
+                "validatedAt": "2026-01-20T02:36:18.120752+00:00"
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5359,7 +5909,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.314083+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.050390+00:00"
           },
           "previous_value": {
             "type": "string",
@@ -5371,6 +5921,14 @@
             "x-f5xc-description-short": "Configuration parameter for previous value.",
             "minLength": 0,
             "maxLength": 1024,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5390,6 +5948,14 @@
             "x-f5xc-example": "-15",
             "minLength": 0,
             "maxLength": 15,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5398,7 +5964,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.314130+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.050436+00:00"
           }
         },
         "x-f5xc-description-short": "Trend value contains trend value, trend sentiment and trend calculation description and window size.",
@@ -5481,6 +6047,14 @@
             "x-f5xc-example": "http_proxy",
             "minLength": 0,
             "maxLength": 14,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5489,7 +6063,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.314162+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.050467+00:00"
           },
           "name": {
             "type": "string",
@@ -5502,6 +6076,34 @@
             "x-f5xc-description-medium": "When a configuration object(e.g. Virtual_host) refers to another(e.g route) then name will hold the referred object's(e.g. Route's) name.",
             "minLength": 0,
             "maxLength": 16,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "naming",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?$",
+                "characterSet": {
+                  "allowed": "[a-z0-9-]",
+                  "restricted": "[^a-z0-9-]",
+                  "required": "[a-z0-9]",
+                  "description": "Lowercase alphanumeric with hyphens, not at start/end"
+                },
+                "format": "dns-label",
+                "formatDescription": "RFC 1123 DNS label: lowercase, alphanumeric, hyphens allowed but not at start/end",
+                "validation": {
+                  "rfc": "RFC 1123",
+                  "standard": "Kubernetes resource naming"
+                }
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.95,
+                "category": "naming",
+                "validatedAt": "2026-01-20T02:36:18.120857+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5510,7 +6112,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.314189+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.050494+00:00"
           },
           "namespace": {
             "type": "string",
@@ -5523,6 +6125,27 @@
             "x-f5xc-description-medium": "When a configuration object(e.g. Virtual_host) refers to another(e.g route) then namespace will hold the referred object's(e.g. Route's) namespace.",
             "minLength": 0,
             "maxLength": 6,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "naming",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?$",
+                "characterSet": {
+                  "allowed": "[a-z0-9-]",
+                  "description": "Kubernetes namespace format"
+                },
+                "format": "dns-label"
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.95,
+                "category": "naming",
+                "validatedAt": "2026-01-20T02:36:18.120878+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5531,7 +6154,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.314216+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.050521+00:00"
           },
           "uid": {
             "type": "string",
@@ -5542,6 +6165,14 @@
             "x-f5xc-example": "f3744323-1adf-4aaa-a5dc-0707c1d1bd82",
             "minLength": 0,
             "maxLength": 36,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5552,7 +6183,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.314244+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.050560+00:00"
           }
         },
         "x-f5xc-description-short": "ViewRefType represents a reference to a view.",
@@ -5600,6 +6231,34 @@
             },
             "x-f5xc-description-short": "When a configuration object(e.g. Virtual_host) refers to another(e.g route) then name will hold the referred object's(e.g.",
             "x-f5xc-description-medium": "When a configuration object(e.g. Virtual_host) refers to another(e.g route) then name will hold the referred object's(e.g. Route's) name. Required: YES.",
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "naming",
+              "string": {
+                "minLength": 1,
+                "maxLength": 128,
+                "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?$",
+                "characterSet": {
+                  "allowed": "[a-z0-9-]",
+                  "restricted": "[^a-z0-9-]",
+                  "required": "[a-z0-9]",
+                  "description": "Lowercase alphanumeric with hyphens, not at start/end"
+                },
+                "format": "dns-label",
+                "formatDescription": "RFC 1123 DNS label: lowercase, alphanumeric, hyphens allowed but not at start/end",
+                "validation": {
+                  "rfc": "RFC 1123",
+                  "standard": "Kubernetes resource naming"
+                }
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.95,
+                "category": "naming",
+                "validatedAt": "2026-01-20T02:36:18.120918+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": true,
               "create": true,
@@ -5608,7 +6267,7 @@
             },
             "x-original-maxLength": 128,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.314275+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.050591+00:00"
           },
           "namespace": {
             "type": "string",
@@ -5627,6 +6286,27 @@
             "x-f5xc-description-short": "When a configuration object(e.g. Virtual_host) refers to another(e.g route) then namespace will hold the referred object's(e.g.",
             "x-f5xc-description-medium": "When a configuration object(e.g. Virtual_host) refers to another(e.g route) then namespace will hold the referred object's(e.g. Route's) namespace.",
             "minLength": 0,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "naming",
+              "string": {
+                "minLength": 0,
+                "maxLength": 64,
+                "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?$",
+                "characterSet": {
+                  "allowed": "[a-z0-9-]",
+                  "description": "Kubernetes namespace format"
+                },
+                "format": "dns-label"
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.95,
+                "category": "naming",
+                "validatedAt": "2026-01-20T02:36:18.120939+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5635,7 +6315,7 @@
             },
             "x-original-maxLength": 64,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.314303+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.050618+00:00"
           },
           "tenant": {
             "type": "string",
@@ -5654,6 +6334,14 @@
             "x-f5xc-description-short": "When a configuration object(e.g. Virtual_host) refers to another(e.g route) then tenant will hold the referred object's(e.g.",
             "x-f5xc-description-medium": "When a configuration object(e.g. Virtual_host) refers to another(e.g route) then tenant will hold the referred object's(e.g. Route's) tenant.",
             "minLength": 0,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 64
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5664,7 +6352,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 64,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.314330+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.050646+00:00"
           }
         },
         "x-f5xc-description-short": "Type establishes a direct reference from one object(the referrer) to another(the referred).",
@@ -5777,6 +6465,13 @@
             },
             "x-f5xc-description-short": "Reference to virtual-sites Default virtual-site of the Virtual K8s object.",
             "x-f5xc-description-medium": "Reference to virtual-sites Default virtual-site of the Virtual K8s object. If no virtual-site is specified in the Kubernetes API resource object annotations via F5 XC/virtual-sites, then this virtual-site is used select sites on which to instantiate the Kubernetes API resource object.",
+            "x-f5xc-constraints": {
+              "type": "array",
+              "category": "general",
+              "array": {
+                "maxItems": 32
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5831,6 +6526,34 @@
             "x-f5xc-example": "name",
             "minLength": 0,
             "maxLength": 16,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "naming",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?$",
+                "characterSet": {
+                  "allowed": "[a-z0-9-]",
+                  "restricted": "[^a-z0-9-]",
+                  "required": "[a-z0-9]",
+                  "description": "Lowercase alphanumeric with hyphens, not at start/end"
+                },
+                "format": "dns-label",
+                "formatDescription": "RFC 1123 DNS label: lowercase, alphanumeric, hyphens allowed but not at start/end",
+                "validation": {
+                  "rfc": "RFC 1123",
+                  "standard": "Kubernetes resource naming"
+                }
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.95,
+                "category": "naming",
+                "validatedAt": "2026-01-20T02:36:18.121007+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5839,7 +6562,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.314459+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.050773+00:00"
           },
           "namespace": {
             "type": "string",
@@ -5851,6 +6574,27 @@
             "x-f5xc-description-short": "Namespace in which the configuration object is present.",
             "minLength": 0,
             "maxLength": 6,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "naming",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?$",
+                "characterSet": {
+                  "allowed": "[a-z0-9-]",
+                  "description": "Kubernetes namespace format"
+                },
+                "format": "dns-label"
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.95,
+                "category": "naming",
+                "validatedAt": "2026-01-20T02:36:18.121027+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5859,7 +6603,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.314486+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.050801+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -5962,7 +6706,7 @@
             "maxLength": 17,
             "minLength": 17,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.314582+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.050895+00:00"
           },
           "system_metadata": {
             "$ref": "#/components/schemas/schemaSystemObjectGetMetaType"
@@ -6053,6 +6797,13 @@
             },
             "x-f5xc-description-short": "Reference to virtual-sites Default virtual-site of the Virtual K8s object.",
             "x-f5xc-description-medium": "Reference to virtual-sites Default virtual-site of the Virtual K8s object. If no virtual-site is specified in the Kubernetes API resource object annotations via F5 XC/virtual-sites, then this virtual-site is used select sites on which to instantiate the Kubernetes API resource object.",
+            "x-f5xc-constraints": {
+              "type": "array",
+              "category": "general",
+              "array": {
+                "maxItems": 32
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -6110,6 +6861,21 @@
             "x-displayname": "Items",
             "x-f5xc-example": "[\"item1\", \"item2\", \"item3\"]",
             "x-f5xc-description-short": "Items represents the collection in response.",
+            "x-f5xc-constraints": {
+              "type": "array",
+              "category": "general",
+              "array": {
+                "minItems": 0,
+                "maxItems": 256,
+                "uniqueItems": false
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.7,
+                "category": "general",
+                "validatedAt": "2026-01-20T02:36:18.121131+00:00"
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -6160,6 +6926,23 @@
             "x-f5xc-description-short": "The description set for this virtual_k8s.",
             "minLength": 0,
             "maxLength": 0,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "content",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "characterSet": {
+                  "description": "Free text with UTF-8 support"
+                }
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.8,
+                "category": "content",
+                "validatedAt": "2026-01-20T02:36:18.121176+00:00"
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -6168,7 +6951,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.314704+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.051006+00:00"
           },
           "disabled": {
             "type": "boolean",
@@ -6214,6 +6997,34 @@
             "x-f5xc-example": "name",
             "minLength": 0,
             "maxLength": 16,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "naming",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?$",
+                "characterSet": {
+                  "allowed": "[a-z0-9-]",
+                  "restricted": "[^a-z0-9-]",
+                  "required": "[a-z0-9]",
+                  "description": "Lowercase alphanumeric with hyphens, not at start/end"
+                },
+                "format": "dns-label",
+                "formatDescription": "RFC 1123 DNS label: lowercase, alphanumeric, hyphens allowed but not at start/end",
+                "validation": {
+                  "rfc": "RFC 1123",
+                  "standard": "Kubernetes resource naming"
+                }
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.95,
+                "category": "naming",
+                "validatedAt": "2026-01-20T02:36:18.121197+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -6222,7 +7033,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.314771+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.051072+00:00"
           },
           "namespace": {
             "type": "string",
@@ -6233,6 +7044,27 @@
             "x-f5xc-example": "ns1",
             "minLength": 0,
             "maxLength": 6,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "naming",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?$",
+                "characterSet": {
+                  "allowed": "[a-z0-9-]",
+                  "description": "Kubernetes namespace format"
+                },
+                "format": "dns-label"
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.95,
+                "category": "naming",
+                "validatedAt": "2026-01-20T02:36:18.121217+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -6241,7 +7073,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.314799+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.051099+00:00"
           },
           "owner_view": {
             "$ref": "#/components/schemas/schemaViewRefType"
@@ -6274,6 +7106,14 @@
             "x-f5xc-example": "example-corp",
             "minLength": 0,
             "maxLength": 18,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -6283,7 +7123,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.314854+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.051153+00:00"
           },
           "uid": {
             "type": "string",
@@ -6294,6 +7134,14 @@
             "x-f5xc-example": "d27938ba-967e-40a7-9709-57b8627f9f75",
             "minLength": 0,
             "maxLength": 36,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -6304,7 +7152,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.314882+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.051181+00:00"
           }
         },
         "x-f5xc-description-short": "By default a summary of virtual_k8s is returned in 'List'. By setting 'report_fields' in the ListRequest more details of each item can be got.",
@@ -6445,7 +7293,7 @@
             "maxLength": 16,
             "minLength": 7,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.314946+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.051244+00:00"
           },
           "value": {
             "type": "array",
@@ -6464,7 +7312,7 @@
             "maxLength": 15,
             "minLength": 3,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.314976+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.051274+00:00"
           }
         },
         "x-f5xc-description-short": "PVC Metric Type Data contains key/value pair that uniquely identifies the group_by labels specified in the request.",
@@ -6506,6 +7354,14 @@
             "x-f5xc-description-medium": "End time of metric collection from which data will be considered to build graph. Format: unix_timestamp|RFC 3339 Optional: If not specified, then the end_time will be evaluated to start_time+10m If start_time is not specified, then the end_time will be evaluated to <current time>.",
             "minLength": 0,
             "maxLength": 1024,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -6538,6 +7394,14 @@
             },
             "x-f5xc-description-short": "Select fields to be returned in the response. One or more fields in {PVC_USAGE, PVC_CAPACITY} can be specified.",
             "x-f5xc-description-medium": "Select fields to be returned in the response. One or more fields in {PVC_USAGE, PVC_CAPACITY} can be specified. Required: YES.",
+            "x-f5xc-constraints": {
+              "type": "array",
+              "category": "general",
+              "array": {
+                "minItems": 1,
+                "maxItems": 8
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": true,
               "create": true,
@@ -6556,6 +7420,14 @@
             "x-f5xc-description-medium": "Filter is used to specify the list of matchers syntax for filter := {[<matcher>]} <matcher> := <label><operator>\"<value>\" <label> := string One or more labels defined in MetricLabel {PVC, SITE} can be specified in the filter. <value> := string <operator> := [\"=\"|\"!=\"|\"=~\"|\"!~\"] = : equal to != ...",
             "minLength": 0,
             "maxLength": 1024,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -6588,6 +7460,27 @@
             "x-f5xc-example": "ns1",
             "minLength": 0,
             "maxLength": 6,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "naming",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?$",
+                "characterSet": {
+                  "allowed": "[a-z0-9-]",
+                  "description": "Kubernetes namespace format"
+                },
+                "format": "dns-label"
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.95,
+                "category": "naming",
+                "validatedAt": "2026-01-20T02:36:18.121402+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -6596,7 +7489,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.315046+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.051342+00:00"
           },
           "range": {
             "type": "string",
@@ -6615,6 +7508,14 @@
             "x-f5xc-description-medium": "Range decides how far to go back in time to fetch values for each step. For example, if the range is 5m, then for step t1, query will be evaluated for t1-5m and for t2, query will be evaluated for t2-5m and so on. Format: [0-9][smhd], where s - seconds, m - minutes, h - hours, d - days.",
             "minLength": 0,
             "maxLength": 1024,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -6639,6 +7540,14 @@
             "x-f5xc-description-medium": "Start time of metric collection from which data will be considered to build graph. Format: unix_timestamp|RFC 3339 Optional: If not specified, then the start_time will be evaluated to end_time-10m If end_time is not specified, then the start_time will be evaluated to <current time>-10m.",
             "minLength": 0,
             "maxLength": 1024,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -6663,6 +7572,14 @@
             "x-f5xc-description-medium": "Step is the resolution width, which determines the number of the data points [x-axis (time)] to be returned in the response. The timestamps in the response will be t1=start_time, t2=t1+step, ... Tn=tn-1+step, where tn <= end_time.",
             "minLength": 0,
             "maxLength": 1024,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -6731,6 +7648,14 @@
             "x-f5xc-description-medium": "Actual step size used in the response. It could be higher than the requested step due to metric rollups and the query duration. Format: [0-9][smhd], where s - seconds, m - minutes, h - hours, d - days.",
             "minLength": 0,
             "maxLength": 1024,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -6831,6 +7756,13 @@
             },
             "x-f5xc-description-short": "Reference to virtual-sites Default virtual-site of the Virtual K8s object.",
             "x-f5xc-description-medium": "Reference to virtual-sites Default virtual-site of the Virtual K8s object. If no virtual-site is specified in the Kubernetes API resource object annotations via F5 XC/virtual-sites, then this virtual-site is used select sites on which to instantiate the Kubernetes API resource object.",
+            "x-f5xc-constraints": {
+              "type": "array",
+              "category": "general",
+              "array": {
+                "maxItems": 32
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -6953,6 +7885,22 @@
             "x-f5xc-description-short": "Exclusive with [port_ranges] HTTP port to Listen.",
             "minimum": 1,
             "maximum": 65535,
+            "x-f5xc-constraints": {
+              "type": "number",
+              "category": "networking",
+              "number": {
+                "minimum": 1,
+                "maximum": 65535,
+                "multipleOf": 1
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.99,
+                "category": "networking",
+                "validatedAt": "2026-01-20T02:36:37.050498+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -6986,6 +7934,14 @@
             },
             "x-f5xc-description-short": "Exclusive with [port] A string containing a comma separated list of port ranges.",
             "x-f5xc-description-medium": "Exclusive with [port] A string containing a comma separated list of port ranges. Each port range consists of a single port or two ports separated by \"-\".",
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 1,
+                "maxLength": 512
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -7071,6 +8027,14 @@
             "x-f5xc-description-short": "Exclusive with [default_header pass_through server_name] Define the header value for the header name “server”.",
             "x-f5xc-description-medium": "Exclusive with [default_header pass_through server_name] Define the header value for the header name “server”. If header value is already present, it is not overwritten and passed as-is.",
             "minLength": 0,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 8096
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -7104,6 +8068,14 @@
             "x-f5xc-description-medium": "The idle timeout for downstream connections. The idle timeout is defined as the period in which there are no active requests. When the idle timeout is reached the connection will be closed.",
             "minimum": 0,
             "maximum": 2147483647,
+            "x-f5xc-constraints": {
+              "type": "number",
+              "category": "general",
+              "number": {
+                "minimum": 0,
+                "maximum": 2147483647
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -7185,6 +8157,22 @@
             "x-f5xc-description-short": "Exclusive with [port_ranges] HTTPS port to Listen.",
             "minimum": 1,
             "maximum": 65535,
+            "x-f5xc-constraints": {
+              "type": "number",
+              "category": "networking",
+              "number": {
+                "minimum": 1,
+                "maximum": 65535,
+                "multipleOf": 1
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.99,
+                "category": "networking",
+                "validatedAt": "2026-01-20T02:36:37.050650+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -7218,6 +8206,14 @@
             },
             "x-f5xc-description-short": "Exclusive with [port] A string containing a comma separated list of port ranges.",
             "x-f5xc-description-medium": "Exclusive with [port] A string containing a comma separated list of port ranges. Each port range consists of a single port or two ports separated by \"-\".",
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 1,
+                "maxLength": 512
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -7244,6 +8240,14 @@
             "x-f5xc-description-short": "Exclusive with [append_server_name default_header pass_through] Define the header value for the header name “server”.",
             "x-f5xc-description-medium": "Exclusive with [append_server_name default_header pass_through] Define the header value for the header name “server”. This will overwrite existing values, if any, for the server header.",
             "minLength": 0,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 8096
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -7344,6 +8348,14 @@
             "x-f5xc-description-short": "Exclusive with [default_header pass_through server_name] Define the header value for the header name “server”.",
             "x-f5xc-description-medium": "Exclusive with [default_header pass_through server_name] Define the header value for the header name “server”. If header value is already present, it is not overwritten and passed as-is.",
             "minLength": 0,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 8096
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -7377,6 +8389,14 @@
             "x-f5xc-description-medium": "The idle timeout for downstream connections. The idle timeout is defined as the period in which there are no active requests. When the idle timeout is reached the connection will be closed.",
             "minimum": 0,
             "maximum": 2147483647,
+            "x-f5xc-constraints": {
+              "type": "number",
+              "category": "general",
+              "number": {
+                "minimum": 0,
+                "maximum": 2147483647
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -7463,6 +8483,22 @@
             "x-f5xc-description-short": "Exclusive with [port_ranges] HTTPS port to Listen.",
             "minimum": 1,
             "maximum": 65535,
+            "x-f5xc-constraints": {
+              "type": "number",
+              "category": "networking",
+              "number": {
+                "minimum": 1,
+                "maximum": 65535,
+                "multipleOf": 1
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.99,
+                "category": "networking",
+                "validatedAt": "2026-01-20T02:36:37.050801+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -7496,6 +8532,14 @@
             },
             "x-f5xc-description-short": "Exclusive with [port] A string containing a comma separated list of port ranges.",
             "x-f5xc-description-medium": "Exclusive with [port] A string containing a comma separated list of port ranges. Each port range consists of a single port or two ports separated by \"-\".",
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 1,
+                "maxLength": 512
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -7522,6 +8566,14 @@
             "x-f5xc-description-short": "Exclusive with [append_server_name default_header pass_through] Define the header value for the header name “server”.",
             "x-f5xc-description-medium": "Exclusive with [append_server_name default_header pass_through] Define the header value for the header name “server”. This will overwrite existing values, if any, for the server header.",
             "minLength": 0,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 8096
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -7645,6 +8697,21 @@
               "ves.io.schema.rules.repeated.unique": "true"
             },
             "x-f5xc-example": "{\"key\": \"value\"}",
+            "x-f5xc-constraints": {
+              "type": "array",
+              "category": "http",
+              "array": {
+                "maxItems": 16,
+                "minItems": 0,
+                "uniqueItems": false
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.8,
+                "category": "http",
+                "validatedAt": "2026-01-20T02:36:37.050904+00:00"
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -7724,6 +8791,21 @@
               "ves.io.schema.rules.repeated.unique": "true"
             },
             "x-f5xc-example": "{\"key\": \"value\"}",
+            "x-f5xc-constraints": {
+              "type": "array",
+              "category": "http",
+              "array": {
+                "maxItems": 16,
+                "minItems": 0,
+                "uniqueItems": false
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.8,
+                "category": "http",
+                "validatedAt": "2026-01-20T02:36:37.050932+00:00"
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -7817,6 +8899,14 @@
             "x-f5xc-description-medium": "Exclusive with [auto_host_rewrite disable_host_rewrite] Host header will be swapped with this value.",
             "minLength": 0,
             "maxLength": 1024,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -7894,6 +8984,14 @@
             },
             "x-f5xc-description-short": "Exclusive with [presence regex] Header value to match exactly.",
             "minLength": 0,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 256
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -7941,6 +9039,34 @@
               "ves.io.schema.rules.string.max_bytes": "256",
               "ves.io.schema.rules.string.min_bytes": "1"
             },
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "naming",
+              "string": {
+                "minLength": 1,
+                "maxLength": 256,
+                "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?$",
+                "characterSet": {
+                  "allowed": "[a-z0-9-]",
+                  "restricted": "[^a-z0-9-]",
+                  "required": "[a-z0-9]",
+                  "description": "Lowercase alphanumeric with hyphens, not at start/end"
+                },
+                "format": "dns-label",
+                "formatDescription": "RFC 1123 DNS label: lowercase, alphanumeric, hyphens allowed but not at start/end",
+                "validation": {
+                  "rfc": "RFC 1123",
+                  "standard": "Kubernetes resource naming"
+                }
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.95,
+                "category": "naming",
+                "validatedAt": "2026-01-20T02:36:37.051022+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": true,
               "create": true,
@@ -7949,7 +9075,7 @@
             },
             "x-original-maxLength": 256,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.598197+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.365776+00:00"
           },
           "presence": {
             "type": "boolean",
@@ -7987,6 +9113,20 @@
             },
             "x-f5xc-description-short": "Exclusive with [exact presence] Regex match of the header value in re2 format.",
             "minLength": 0,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "content",
+              "string": {
+                "minLength": 0,
+                "maxLength": 256
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "category": "content",
+                "validatedAt": "2026-01-20T02:36:37.051066+00:00"
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -8044,6 +9184,21 @@
             },
             "x-f5xc-description-short": "Exclusive with [prefix regex] Exact path value to match.",
             "minLength": 0,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "content",
+              "string": {
+                "minLength": 0,
+                "maxLength": 256,
+                "pattern": "^[/a-zA-Z0-9._-]+$"
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.8,
+                "category": "content",
+                "validatedAt": "2026-01-20T02:36:37.051218+00:00"
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -8073,6 +9228,14 @@
             },
             "x-f5xc-description-short": "Exclusive with [path regex] Path prefix to match (e.g. The value / will match on all paths)",
             "minLength": 0,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 256
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -8103,6 +9266,20 @@
             },
             "x-f5xc-description-short": "Exclusive with [path prefix] Regular expression of path match (e.g. The value .* will match on all paths)",
             "x-f5xc-description-medium": "Exclusive with [path prefix] Regular expression of path match (e.g. The value .* will match on all paths).",
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "content",
+              "string": {
+                "minLength": 1,
+                "maxLength": 256
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "category": "content",
+                "validatedAt": "2026-01-20T02:36:37.051283+00:00"
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": true,
               "create": true,
@@ -8163,6 +9340,22 @@
             "x-f5xc-description-short": "Exclusive with [no_port_match port_ranges] Exact Port to match.",
             "minimum": 1,
             "maximum": 65535,
+            "x-f5xc-constraints": {
+              "type": "number",
+              "category": "networking",
+              "number": {
+                "minimum": 1,
+                "maximum": 65535,
+                "multipleOf": 1
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.99,
+                "category": "networking",
+                "validatedAt": "2026-01-20T02:36:37.051304+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -8194,6 +9387,14 @@
               "ves.io.schema.rules.string.port_range": "true"
             },
             "x-f5xc-description-short": "Exclusive with [no_port_match port] Port range to match.",
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 1,
+                "maxLength": 32
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -8247,6 +9448,14 @@
             "x-f5xc-description-short": "Response body to send. Currently supported URL schemes is string:/// for which message should be encoded in Base64 format.",
             "x-f5xc-description-medium": "Response body to send. Currently supported URL schemes is string:/// for which message should be encoded in Base64 format. The message can be either plain text or HTML.",
             "minLength": 0,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 65536
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -8272,6 +9481,14 @@
             },
             "minimum": 0,
             "maximum": 2147483647,
+            "x-f5xc-constraints": {
+              "type": "number",
+              "category": "general",
+              "number": {
+                "minimum": 0,
+                "maximum": 2147483647
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": true,
               "create": true,
@@ -8349,6 +9566,14 @@
             "x-f5xc-description-short": "Swap host part of incoming URL in redirect URL.",
             "minLength": 0,
             "maxLength": 1024,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -8374,6 +9599,14 @@
             },
             "x-f5xc-description-short": "Exclusive with [prefix_rewrite] swap path part of incoming URL in redirect URL.",
             "minLength": 0,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 256
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -8403,6 +9636,14 @@
             "x-f5xc-description-short": "Exclusive with [path_redirect] In Redirect response, the matched prefix (or path) should be swapped with this value.",
             "x-f5xc-description-medium": "Exclusive with [path_redirect] In Redirect response, the matched prefix (or path) should be swapped with this value. This option allows redirect URLs be dynamically created based on the request.",
             "minLength": 0,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 256
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -8430,6 +9671,14 @@
             "x-f5xc-description-medium": "Swap protocol part of incoming URL in redirect URL The protocol can be swapped with either HTTP or HTTPS When incoming-proto option is specified, swapping of protocol is not done.",
             "minLength": 0,
             "maxLength": 1024,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -8460,6 +9709,14 @@
               "ves.io.schema.rules.string.min_len": "1"
             },
             "x-f5xc-description-short": "Exclusive with [remove_all_params retain_all_params].",
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 1,
+                "maxLength": 256
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -8488,6 +9745,14 @@
             "x-f5xc-description-short": "The HTTP status code to use in the redirect response.",
             "minimum": 0,
             "maximum": 2147483647,
+            "x-f5xc-constraints": {
+              "type": "number",
+              "category": "general",
+              "number": {
+                "minimum": 0,
+                "maximum": 2147483647
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -8542,6 +9807,14 @@
             "x-f5xc-description-medium": "Name of the Secret Management Access object that contains information about the backend Secret Management service.",
             "minLength": 0,
             "maxLength": 1024,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -8569,6 +9842,14 @@
             "x-f5xc-description-medium": "Location is the uri_ref. It could be in URL format for string:/// Or it could be a path if the store provider is an HTTP/HTTPS location Required: YES.",
             "minLength": 0,
             "maxLength": 4,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": true,
               "create": true,
@@ -8577,7 +9858,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.598627+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.366199+00:00"
           },
           "store_provider": {
             "type": "string",
@@ -8590,6 +9871,14 @@
             "x-f5xc-description-medium": "Name of the Secret Management Access object that contains information about the store to GET encrypted bytes This field needs to be provided only if the URL scheme is not string:///.",
             "minLength": 0,
             "maxLength": 1024,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -8632,6 +9921,14 @@
             "x-f5xc-description-medium": "Name of the Secret Management Access object that contains information about the store to GET encrypted bytes This field needs to be provided only if the URL scheme is not string:///.",
             "minLength": 0,
             "maxLength": 8,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -8640,7 +9937,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.598667+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.366238+00:00"
           },
           "url": {
             "type": "string",
@@ -8665,6 +9962,27 @@
             "x-f5xc-description-medium": "URL of the secret. Currently supported URL schemes is string:///. For string:/// scheme, Secret needs to be encoded Base64 format. When asked for this secret, caller will GET Secret bytes after Base64 decoding. Required: YES.",
             "format": "uri",
             "minLength": 0,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "network",
+              "string": {
+                "minLength": 0,
+                "maxLength": 131072,
+                "format": "uri",
+                "pattern": "^(https?|ftp)://[^\\s/$.?#].[^\\s]*$",
+                "formatDescription": "RFC 3986 URI with scheme (http, https, ftp)",
+                "validation": {
+                  "rfc": "RFC 3986"
+                }
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.9,
+                "category": "network",
+                "validatedAt": "2026-01-20T02:36:37.051830+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": true,
               "create": true,
@@ -8742,6 +10060,14 @@
               "ves.io.schema.rules.repeated.unique": "true"
             },
             "x-f5xc-description-short": "Ordered list of hash algorithms to be used. Required: YES.",
+            "x-f5xc-constraints": {
+              "type": "array",
+              "category": "general",
+              "array": {
+                "minItems": 1,
+                "maxItems": 4
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": true,
               "create": true,
@@ -8868,6 +10194,14 @@
             "x-f5xc-example": "Deployment",
             "minLength": 0,
             "maxLength": 14,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -8876,7 +10210,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.598938+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.366504+00:00"
           },
           "name": {
             "type": "string",
@@ -8887,6 +10221,34 @@
             "x-f5xc-example": "adservice",
             "minLength": 0,
             "maxLength": 16,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "naming",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?$",
+                "characterSet": {
+                  "allowed": "[a-z0-9-]",
+                  "restricted": "[^a-z0-9-]",
+                  "required": "[a-z0-9]",
+                  "description": "Lowercase alphanumeric with hyphens, not at start/end"
+                },
+                "format": "dns-label",
+                "formatDescription": "RFC 1123 DNS label: lowercase, alphanumeric, hyphens allowed but not at start/end",
+                "validation": {
+                  "rfc": "RFC 1123",
+                  "standard": "Kubernetes resource naming"
+                }
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.95,
+                "category": "naming",
+                "validatedAt": "2026-01-20T02:36:37.052141+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -8895,7 +10257,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.598967+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.366532+00:00"
           },
           "namespace": {
             "type": "string",
@@ -8906,6 +10268,27 @@
             "x-f5xc-example": "ns1",
             "minLength": 0,
             "maxLength": 6,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "naming",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?$",
+                "characterSet": {
+                  "allowed": "[a-z0-9-]",
+                  "description": "Kubernetes namespace format"
+                },
+                "format": "dns-label"
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.95,
+                "category": "naming",
+                "validatedAt": "2026-01-20T02:36:37.052162+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -8914,7 +10297,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.598995+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.366569+00:00"
           }
         },
         "x-f5xc-description-short": "KubeRefType represents a reference to a Kubernetes (K8s) object.",
@@ -9055,6 +10438,14 @@
             },
             "x-f5xc-description-short": "TLS certificate. Certificate or certificate chain in PEM format including the PEM headers.",
             "x-f5xc-description-medium": "TLS certificate. Certificate or certificate chain in PEM format including the PEM headers. Required: YES.",
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 1,
+                "maxLength": 131072
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": true,
               "create": true,
@@ -9078,6 +10469,23 @@
             "x-f5xc-example": "Certificate used in production environment",
             "minLength": 0,
             "maxLength": 0,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "content",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "characterSet": {
+                  "description": "Free text with UTF-8 support"
+                }
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.8,
+                "category": "content",
+                "validatedAt": "2026-01-20T02:36:37.053086+00:00"
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -9086,7 +10494,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.599809+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.367378+00:00"
           },
           "disable_ocsp_stapling": {
             "$ref": "#/components/schemas/ioschemaEmpty",
@@ -9160,6 +10568,14 @@
             "x-f5xc-description-medium": "X-displayName: \"Key\" Key of the individual secret. Vault Secrets are stored as key-value pair. If user is only interested in one value from the map, this field should be set to the corresponding key.",
             "minLength": 0,
             "maxLength": 16,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -9168,7 +10584,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.599945+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.367512+00:00"
           },
           "location": {
             "type": "string",
@@ -9178,6 +10594,14 @@
             "x-f5xc-description-short": "X-displayName: \"Location\" x-required Path to secret in Vault.",
             "minLength": 0,
             "maxLength": 4,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -9186,7 +10610,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.599974+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.367554+00:00"
           },
           "provider": {
             "type": "string",
@@ -9197,6 +10621,14 @@
             "x-f5xc-description-medium": "X-displayName: \"Provider\" x-required Name of the Secret Management Access object that contains information about the backend Vault.",
             "minLength": 0,
             "maxLength": 8,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -9205,7 +10637,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.600001+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.367583+00:00"
           },
           "secret_encoding": {
             "$ref": "#/components/schemas/schemaSecretEncodingType"
@@ -9220,6 +10652,14 @@
             "x-f5xc-description-medium": "X-displayName: \"Version\" Version of the secret to be fetched. As vault secrets are versioned, user can specify this field to fetch specific version. If not provided latest version will be returned.",
             "minimum": 0,
             "maximum": 2147483647,
+            "x-f5xc-constraints": {
+              "type": "number",
+              "category": "general",
+              "number": {
+                "minimum": 0,
+                "maximum": 2147483647
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -9229,7 +10669,7 @@
             "maxLength": 1,
             "minLength": 1,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.600038+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.367620+00:00"
           }
         },
         "x-f5xc-description-short": "X-displayName: \"Vault Secret\" VaultSecretInfoType specifies information about the Secret managed by Hashicorp Vault.",
@@ -9263,6 +10703,34 @@
             "x-f5xc-description-short": "X-displayName: \"Name\" x-required Name of the secret.",
             "minLength": 0,
             "maxLength": 16,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "naming",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?$",
+                "characterSet": {
+                  "allowed": "[a-z0-9-]",
+                  "restricted": "[^a-z0-9-]",
+                  "required": "[a-z0-9]",
+                  "description": "Lowercase alphanumeric with hyphens, not at start/end"
+                },
+                "format": "dns-label",
+                "formatDescription": "RFC 1123 DNS label: lowercase, alphanumeric, hyphens allowed but not at start/end",
+                "validation": {
+                  "rfc": "RFC 1123",
+                  "standard": "Kubernetes resource naming"
+                }
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.95,
+                "category": "naming",
+                "validatedAt": "2026-01-20T02:36:37.053396+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -9271,7 +10739,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.600182+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.367765+00:00"
           }
         },
         "x-f5xc-description-short": "X-displayName: \"Wingman Secret\" WingmanSecretInfoType specifies the handle to the wingman secret.",
@@ -9351,6 +10819,14 @@
             },
             "x-f5xc-description-short": "Users can add one or more certificates that share the same set of domains.",
             "x-f5xc-description-medium": "Users can add one or more certificates that share the same set of domains. For example, domain.com and *.domain.com - but use different signature algorithms Required: YES.",
+            "x-f5xc-constraints": {
+              "type": "array",
+              "category": "general",
+              "array": {
+                "minItems": 1,
+                "maxItems": 16
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": true,
               "create": true,
@@ -9495,6 +10971,13 @@
               "ves.io.schema.rules.repeated.unique": "true"
             },
             "x-f5xc-description-short": "Select one or more certificates with any domain names. Required: YES.",
+            "x-f5xc-constraints": {
+              "type": "array",
+              "category": "general",
+              "array": {
+                "maxItems": 32
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": true,
               "create": true,
@@ -9595,6 +11078,14 @@
               "ves.io.schema.rules.string.truststore_url": "true"
             },
             "x-f5xc-description-short": "Exclusive with [trusted_ca] Upload a Root CA Certificate specifically for this Load Balancer.",
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 1,
+                "maxLength": 131072
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": true,
               "create": true,
@@ -9747,6 +11238,14 @@
             "x-f5xc-description-short": "Use given IP address as VIP on the site.",
             "minLength": 0,
             "maxLength": 1024,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -10108,6 +11607,13 @@
             "x-validation-rules": {
               "ves.io.schema.rules.repeated.max_items": "32"
             },
+            "x-f5xc-constraints": {
+              "type": "array",
+              "category": "general",
+              "array": {
+                "maxItems": 32
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -10162,6 +11668,13 @@
               "ves.io.schema.rules.repeated.max_items": "16"
             },
             "x-f5xc-description-short": "Containers to use for service Required: YES.",
+            "x-f5xc-constraints": {
+              "type": "array",
+              "category": "general",
+              "array": {
+                "maxItems": 16
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": true,
               "create": true,
@@ -10191,6 +11704,14 @@
             "x-f5xc-description-short": "Exclusive with [scale_to_zero] Number of replicas of service to spawn per site.",
             "minimum": 0,
             "maximum": 2147483647,
+            "x-f5xc-constraints": {
+              "type": "number",
+              "category": "general",
+              "number": {
+                "minimum": 0,
+                "maximum": 2147483647
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -10221,6 +11742,13 @@
             },
             "x-validation-rules": {
               "ves.io.schema.rules.repeated.max_items": "16"
+            },
+            "x-f5xc-constraints": {
+              "type": "array",
+              "category": "general",
+              "array": {
+                "maxItems": 16
+              }
             },
             "x-f5xc-required-for": {
               "minimum_config": false,
@@ -10327,6 +11855,14 @@
               "ves.io.schema.rules.repeated.unique": "true"
             },
             "x-f5xc-description-short": "Where should this load balancer be available Required: YES.",
+            "x-f5xc-constraints": {
+              "type": "array",
+              "category": "general",
+              "array": {
+                "minItems": 1,
+                "maxItems": 32
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": true,
               "create": true,
@@ -10351,6 +11887,13 @@
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true",
               "ves.io.schema.rules.repeated.max_items": "16"
+            },
+            "x-f5xc-constraints": {
+              "type": "array",
+              "category": "general",
+              "array": {
+                "maxItems": 16
+              }
             },
             "x-f5xc-required-for": {
               "minimum_config": true,
@@ -10433,6 +11976,13 @@
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true",
               "ves.io.schema.rules.repeated.max_items": "16"
+            },
+            "x-f5xc-constraints": {
+              "type": "array",
+              "category": "general",
+              "array": {
+                "maxItems": 16
+              }
             },
             "x-f5xc-required-for": {
               "minimum_config": true,
@@ -10627,6 +12177,21 @@
             },
             "x-f5xc-description-short": "List of Domains (host/authority header) that will be matched to Load Balancer.",
             "x-f5xc-description-medium": "List of Domains (host/authority header) that will be matched to Load Balancer. Wildcard hosts are supported in the suffix or prefix form Supported Domains and search order: 1. Exact Domain names: www.example.com. 2.",
+            "x-f5xc-constraints": {
+              "type": "array",
+              "category": "networking",
+              "array": {
+                "minItems": 1,
+                "maxItems": 32,
+                "uniqueItems": true
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "category": "networking",
+                "validatedAt": "2026-01-20T02:36:37.053747+00:00"
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": true,
               "create": true,
@@ -10656,6 +12221,14 @@
             "x-f5xc-description-short": "Service port to advertise on Internet via HTTP loadbalancer using port 80 Required: YES.",
             "minimum": 0,
             "maximum": 2147483647,
+            "x-f5xc-constraints": {
+              "type": "number",
+              "category": "general",
+              "number": {
+                "minimum": 0,
+                "maximum": 2147483647
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": true,
               "create": true,
@@ -10784,6 +12357,14 @@
               "ves.io.schema.rules.string.uri_ref": "true"
             },
             "minLength": 0,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 16384
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -10812,6 +12393,34 @@
               "ves.io.schema.rules.string.max_len": "256"
             },
             "minLength": 0,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "naming",
+              "string": {
+                "minLength": 0,
+                "maxLength": 256,
+                "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?$",
+                "characterSet": {
+                  "allowed": "[a-z0-9-]",
+                  "restricted": "[^a-z0-9-]",
+                  "required": "[a-z0-9]",
+                  "description": "Lowercase alphanumeric with hyphens, not at start/end"
+                },
+                "format": "dns-label",
+                "formatDescription": "RFC 1123 DNS label: lowercase, alphanumeric, hyphens allowed but not at start/end",
+                "validation": {
+                  "rfc": "RFC 1123",
+                  "standard": "Kubernetes resource naming"
+                }
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.95,
+                "category": "naming",
+                "validatedAt": "2026-01-20T02:36:37.053817+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": true,
               "create": true,
@@ -10820,7 +12429,7 @@
             },
             "x-original-maxLength": 256,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.601069+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.368652+00:00"
           },
           "volume_name": {
             "type": "string",
@@ -10840,6 +12449,14 @@
               "ves.io.schema.rules.string.max_len": "256"
             },
             "minLength": 0,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 256
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": true,
               "create": true,
@@ -10922,6 +12539,13 @@
               "ves.io.schema.rules.repeated.max_items": "32",
               "ves.io.schema.rules.repeated.unique": "true"
             },
+            "x-f5xc-constraints": {
+              "type": "array",
+              "category": "general",
+              "array": {
+                "maxItems": 32
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -10993,6 +12617,13 @@
               "ves.io.schema.rules.repeated.max_items": "128"
             },
             "x-f5xc-description-short": "Arguments to the entrypoint. Overrides the docker image's CMD.",
+            "x-f5xc-constraints": {
+              "type": "array",
+              "category": "general",
+              "array": {
+                "maxItems": 128
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -11018,6 +12649,13 @@
               "ves.io.schema.rules.repeated.max_items": "128"
             },
             "x-f5xc-description-short": "Command to execute. Overrides the docker image's ENTRYPOINT.",
+            "x-f5xc-constraints": {
+              "type": "array",
+              "category": "general",
+              "array": {
+                "maxItems": 128
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -11084,6 +12722,34 @@
               "ves.io.schema.rules.string.max_len": "256"
             },
             "minLength": 0,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "naming",
+              "string": {
+                "minLength": 0,
+                "maxLength": 256,
+                "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?$",
+                "characterSet": {
+                  "allowed": "[a-z0-9-]",
+                  "restricted": "[^a-z0-9-]",
+                  "required": "[a-z0-9]",
+                  "description": "Lowercase alphanumeric with hyphens, not at start/end"
+                },
+                "format": "dns-label",
+                "formatDescription": "RFC 1123 DNS label: lowercase, alphanumeric, hyphens allowed but not at start/end",
+                "validation": {
+                  "rfc": "RFC 1123",
+                  "standard": "Kubernetes resource naming"
+                }
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.95,
+                "category": "naming",
+                "validatedAt": "2026-01-20T02:36:37.053921+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": true,
               "create": true,
@@ -11092,7 +12758,7 @@
             },
             "x-original-maxLength": 256,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.601214+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.368796+00:00"
           },
           "readiness_check": {
             "$ref": "#/components/schemas/workloadHealthCheckType"
@@ -11205,6 +12871,34 @@
             "x-f5xc-example": "name",
             "minLength": 0,
             "maxLength": 16,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "naming",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?$",
+                "characterSet": {
+                  "allowed": "[a-z0-9-]",
+                  "restricted": "[^a-z0-9-]",
+                  "required": "[a-z0-9]",
+                  "description": "Lowercase alphanumeric with hyphens, not at start/end"
+                },
+                "format": "dns-label",
+                "formatDescription": "RFC 1123 DNS label: lowercase, alphanumeric, hyphens allowed but not at start/end",
+                "validation": {
+                  "rfc": "RFC 1123",
+                  "standard": "Kubernetes resource naming"
+                }
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.95,
+                "category": "naming",
+                "validatedAt": "2026-01-20T02:36:37.053950+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -11213,7 +12907,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.601311+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.368892+00:00"
           },
           "namespace": {
             "type": "string",
@@ -11225,6 +12919,27 @@
             "x-f5xc-description-short": "Namespace in which the configuration object is present.",
             "minLength": 0,
             "maxLength": 6,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "naming",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?$",
+                "characterSet": {
+                  "allowed": "[a-z0-9-]",
+                  "description": "Kubernetes namespace format"
+                },
+                "format": "dns-label"
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.95,
+                "category": "naming",
+                "validatedAt": "2026-01-20T02:36:37.053971+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -11233,7 +12948,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.601338+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.368919+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -11281,6 +12996,14 @@
               "ves.io.schema.rules.repeated.unique": "true"
             },
             "x-f5xc-description-short": "Which customer sites should this workload be deployed Required: YES.",
+            "x-f5xc-constraints": {
+              "type": "array",
+              "category": "general",
+              "array": {
+                "minItems": 1,
+                "maxItems": 32
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": true,
               "create": true,
@@ -11333,6 +13056,14 @@
               "ves.io.schema.rules.repeated.unique": "true"
             },
             "x-f5xc-description-short": "Which customer virtual sites should this workload be deployed Required: YES.",
+            "x-f5xc-constraints": {
+              "type": "array",
+              "category": "general",
+              "array": {
+                "minItems": 1,
+                "maxItems": 32
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": true,
               "create": true,
@@ -11472,6 +13203,14 @@
               "ves.io.schema.rules.repeated.unique": "true"
             },
             "x-f5xc-description-short": "Which regional edge sites should this workload be deployed Required: YES.",
+            "x-f5xc-constraints": {
+              "type": "array",
+              "category": "general",
+              "array": {
+                "minItems": 1,
+                "maxItems": 32
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": true,
               "create": true,
@@ -11524,6 +13263,14 @@
               "ves.io.schema.rules.repeated.unique": "true"
             },
             "x-f5xc-description-short": "Which regional edge virtual sites should this workload be deployed Required: YES.",
+            "x-f5xc-constraints": {
+              "type": "array",
+              "category": "general",
+              "array": {
+                "minItems": 1,
+                "maxItems": 32
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": true,
               "create": true,
@@ -11616,6 +13363,34 @@
               "ves.io.schema.rules.string.max_len": "256"
             },
             "minLength": 0,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "naming",
+              "string": {
+                "minLength": 0,
+                "maxLength": 256,
+                "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?$",
+                "characterSet": {
+                  "allowed": "[a-z0-9-]",
+                  "restricted": "[^a-z0-9-]",
+                  "required": "[a-z0-9]",
+                  "description": "Lowercase alphanumeric with hyphens, not at start/end"
+                },
+                "format": "dns-label",
+                "formatDescription": "RFC 1123 DNS label: lowercase, alphanumeric, hyphens allowed but not at start/end",
+                "validation": {
+                  "rfc": "RFC 1123",
+                  "standard": "Kubernetes resource naming"
+                }
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.95,
+                "category": "naming",
+                "validatedAt": "2026-01-20T02:36:37.054072+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -11624,7 +13399,7 @@
             },
             "x-original-maxLength": 256,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.601490+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.369072+00:00"
           },
           "value": {
             "type": "string",
@@ -11641,6 +13416,14 @@
               "ves.io.schema.rules.string.max_len": "256"
             },
             "minLength": 0,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 256
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -11649,7 +13432,7 @@
             },
             "x-original-maxLength": 256,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.601517+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.369099+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -11700,6 +13483,34 @@
             },
             "minLength": 0,
             "maxLength": 16,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "naming",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?$",
+                "characterSet": {
+                  "allowed": "[a-z0-9-]",
+                  "restricted": "[^a-z0-9-]",
+                  "required": "[a-z0-9]",
+                  "description": "Lowercase alphanumeric with hyphens, not at start/end"
+                },
+                "format": "dns-label",
+                "formatDescription": "RFC 1123 DNS label: lowercase, alphanumeric, hyphens allowed but not at start/end",
+                "validation": {
+                  "rfc": "RFC 1123",
+                  "standard": "Kubernetes resource naming"
+                }
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.95,
+                "category": "naming",
+                "validatedAt": "2026-01-20T02:36:37.054124+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -11708,7 +13519,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.601564+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.369148+00:00"
           }
         },
         "x-f5xc-description-short": "Ephemeral storage volume configuration for the workload.",
@@ -11763,6 +13574,13 @@
             },
             "x-f5xc-description-short": "Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem.",
             "x-f5xc-description-medium": "Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions ('|', etc) won't work. To use a shell, you need to...",
+            "x-f5xc-constraints": {
+              "type": "array",
+              "category": "general",
+              "array": {
+                "maxItems": 16
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": true,
               "create": true,
@@ -11885,7 +13703,7 @@
             "maxLength": 17,
             "minLength": 17,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.601679+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.369253+00:00"
           },
           "system_metadata": {
             "$ref": "#/components/schemas/schemaSystemObjectGetMetaType"
@@ -11992,6 +13810,14 @@
             },
             "x-f5xc-description-short": "The value of the host header in the HTTP health check request.",
             "minLength": 0,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 262
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -12020,6 +13846,21 @@
             },
             "x-f5xc-description-short": "Path to access on the HTTP server. Required: YES.",
             "minLength": 0,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "content",
+              "string": {
+                "minLength": 0,
+                "maxLength": 2048,
+                "pattern": "^[/a-zA-Z0-9._-]+$"
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.8,
+                "category": "content",
+                "validatedAt": "2026-01-20T02:36:37.054273+00:00"
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": true,
               "create": true,
@@ -12108,6 +13949,21 @@
             },
             "x-f5xc-description-short": "List of domains (host/authority header) that will be matched to loadbalancer.",
             "x-f5xc-description-medium": "List of domains (host/authority header) that will be matched to loadbalancer. Wildcard hosts are supported in the suffix or prefix form Domain search order: 1. Exact domain names: `` is invalid Domains are also used for SNI matching if the loadbalancer type is HTTPS Domains also indicate the...",
+            "x-f5xc-constraints": {
+              "type": "array",
+              "category": "networking",
+              "array": {
+                "minItems": 1,
+                "maxItems": 32,
+                "uniqueItems": true
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "category": "networking",
+                "validatedAt": "2026-01-20T02:36:37.054298+00:00"
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": true,
               "create": true,
@@ -12198,6 +14054,14 @@
             "x-f5xc-description-medium": "Number of consecutive successful responses after having failed before declaring healthy. In other words, this is the number of healthy health checks required before marking healthy. Note that during startup and liveliness, only a single successful health check is required to mark a container...",
             "minimum": 0,
             "maximum": 2147483647,
+            "x-f5xc-constraints": {
+              "type": "number",
+              "category": "general",
+              "number": {
+                "minimum": 0,
+                "maximum": 2147483647
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": true,
               "create": true,
@@ -12229,6 +14093,14 @@
             "x-f5xc-description-short": "Number of seconds after the container has started before health checks are initiated.",
             "minimum": 0,
             "maximum": 2147483647,
+            "x-f5xc-constraints": {
+              "type": "number",
+              "category": "general",
+              "number": {
+                "minimum": 0,
+                "maximum": 2147483647
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -12258,6 +14130,22 @@
             "x-f5xc-description-short": "Time interval in seconds between two health check requests. Required: YES.",
             "minimum": 0,
             "maximum": 2147483647,
+            "x-f5xc-constraints": {
+              "type": "number",
+              "category": "timing",
+              "number": {
+                "minimum": 0,
+                "maximum": 2147483647,
+                "multipleOf": 1
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.9,
+                "category": "timing",
+                "validatedAt": "2026-01-20T02:36:37.054360+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": true,
               "create": true,
@@ -12295,6 +14183,22 @@
             "x-f5xc-description-medium": "Timeout in seconds to wait for successful response. In other words, it is the time to wait for a health check response. If the timeout is reached the health check attempt will be considered a failure.",
             "minimum": 0,
             "maximum": 2147483647,
+            "x-f5xc-constraints": {
+              "type": "number",
+              "category": "timing",
+              "number": {
+                "minimum": 0,
+                "maximum": 2147483647,
+                "multipleOf": 1
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.9,
+                "category": "timing",
+                "validatedAt": "2026-01-20T02:36:37.054383+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": true,
               "create": true,
@@ -12325,6 +14229,14 @@
             "x-f5xc-description-medium": "Number of consecutive failed responses before declaring unhealthy. In other words, this is the number of unhealthy health checks required before a container is marked unhealthy. Required: YES.",
             "minimum": 0,
             "maximum": 2147483647,
+            "x-f5xc-constraints": {
+              "type": "number",
+              "category": "general",
+              "number": {
+                "minimum": 0,
+                "maximum": 2147483647
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": true,
               "create": true,
@@ -12392,6 +14304,21 @@
             },
             "x-f5xc-description-short": "Path of the directory on the host Required: YES.",
             "minLength": 0,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "content",
+              "string": {
+                "minLength": 0,
+                "maxLength": 256,
+                "pattern": "^[/a-zA-Z0-9._-]+$"
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.8,
+                "category": "content",
+                "validatedAt": "2026-01-20T02:36:37.054438+00:00"
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": true,
               "create": true,
@@ -12506,6 +14433,34 @@
             "x-f5xc-description-short": "Name is a container image which are usually given a name such as alpine, ubuntu, or quay.I/O/etcd:0.13.",
             "x-f5xc-description-medium": "Name is a container image which are usually given a name such as alpine, ubuntu, or quay.I/O/etcd:0.13. The format is registry/image:tag or registry/image@image-digest. If registry is not specified, the Docker public registry is assumed.",
             "minLength": 0,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "naming",
+              "string": {
+                "minLength": 0,
+                "maxLength": 256,
+                "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?$",
+                "characterSet": {
+                  "allowed": "[a-z0-9-]",
+                  "restricted": "[^a-z0-9-]",
+                  "required": "[a-z0-9]",
+                  "description": "Lowercase alphanumeric with hyphens, not at start/end"
+                },
+                "format": "dns-label",
+                "formatDescription": "RFC 1123 DNS label: lowercase, alphanumeric, hyphens allowed but not at start/end",
+                "validation": {
+                  "rfc": "RFC 1123",
+                  "standard": "Kubernetes resource naming"
+                }
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.95,
+                "category": "naming",
+                "validatedAt": "2026-01-20T02:36:37.054464+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": true,
               "create": true,
@@ -12514,7 +14469,7 @@
             },
             "x-original-maxLength": 256,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.601962+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.369543+00:00"
           },
           "public": {
             "$ref": "#/components/schemas/ioschemaEmpty",
@@ -12572,6 +14527,13 @@
               "ves.io.schema.rules.repeated.max_items": "16"
             },
             "x-f5xc-description-short": "Containers to use for the job Required: YES.",
+            "x-f5xc-constraints": {
+              "type": "array",
+              "category": "general",
+              "array": {
+                "maxItems": 16
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": true,
               "create": true,
@@ -12599,6 +14561,14 @@
             "x-f5xc-description-short": "Number of replicas of the batch job to spawn per site.",
             "minimum": 0,
             "maximum": 2147483647,
+            "x-f5xc-constraints": {
+              "type": "number",
+              "category": "general",
+              "number": {
+                "minimum": 0,
+                "maximum": 2147483647
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -12620,6 +14590,13 @@
             },
             "x-validation-rules": {
               "ves.io.schema.rules.repeated.max_items": "16"
+            },
+            "x-f5xc-constraints": {
+              "type": "array",
+              "category": "general",
+              "array": {
+                "maxItems": 16
+              }
             },
             "x-f5xc-required-for": {
               "minimum_config": false,
@@ -12680,6 +14657,21 @@
             "x-displayname": "Items",
             "x-f5xc-example": "[\"item1\", \"item2\", \"item3\"]",
             "x-f5xc-description-short": "Items represents the collection in response.",
+            "x-f5xc-constraints": {
+              "type": "array",
+              "category": "general",
+              "array": {
+                "minItems": 0,
+                "maxItems": 256,
+                "uniqueItems": false
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.7,
+                "category": "general",
+                "validatedAt": "2026-01-20T02:36:37.054558+00:00"
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -12729,6 +14721,23 @@
             "x-displayname": "Description.",
             "minLength": 0,
             "maxLength": 0,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "content",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "characterSet": {
+                  "description": "Free text with UTF-8 support"
+                }
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.8,
+                "category": "content",
+                "validatedAt": "2026-01-20T02:36:37.054606+00:00"
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -12737,7 +14746,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.602089+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.369673+00:00"
           },
           "disabled": {
             "type": "boolean",
@@ -12783,6 +14792,34 @@
             "x-f5xc-example": "name",
             "minLength": 0,
             "maxLength": 16,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "naming",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?$",
+                "characterSet": {
+                  "allowed": "[a-z0-9-]",
+                  "restricted": "[^a-z0-9-]",
+                  "required": "[a-z0-9]",
+                  "description": "Lowercase alphanumeric with hyphens, not at start/end"
+                },
+                "format": "dns-label",
+                "formatDescription": "RFC 1123 DNS label: lowercase, alphanumeric, hyphens allowed but not at start/end",
+                "validation": {
+                  "rfc": "RFC 1123",
+                  "standard": "Kubernetes resource naming"
+                }
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.95,
+                "category": "naming",
+                "validatedAt": "2026-01-20T02:36:37.054629+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -12791,7 +14828,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.602157+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.369739+00:00"
           },
           "namespace": {
             "type": "string",
@@ -12802,6 +14839,27 @@
             "x-f5xc-example": "ns1",
             "minLength": 0,
             "maxLength": 6,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "naming",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?$",
+                "characterSet": {
+                  "allowed": "[a-z0-9-]",
+                  "description": "Kubernetes namespace format"
+                },
+                "format": "dns-label"
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.95,
+                "category": "naming",
+                "validatedAt": "2026-01-20T02:36:37.054648+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -12810,7 +14868,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.602185+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.369766+00:00"
           },
           "owner_view": {
             "$ref": "#/components/schemas/schemaViewRefType"
@@ -12843,6 +14901,14 @@
             "x-f5xc-example": "example-corp",
             "minLength": 0,
             "maxLength": 18,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -12852,7 +14918,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.602239+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.369820+00:00"
           },
           "uid": {
             "type": "string",
@@ -12863,6 +14929,14 @@
             "x-f5xc-example": "d27938ba-967e-40a7-9709-57b8627f9f75",
             "minLength": 0,
             "maxLength": 36,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -12873,7 +14947,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.602268+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.369848+00:00"
           }
         },
         "x-f5xc-description-short": "By default a summary of workload is returned in 'List'. By setting 'report_fields' in the ListRequest more details of each item can be got.",
@@ -12941,6 +15015,14 @@
             "x-f5xc-description-medium": "Exclusive with [auto_host_rewrite disable_host_rewrite] Host header will be swapped with this value.",
             "minLength": 0,
             "maxLength": 1024,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -12991,6 +15073,13 @@
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true",
               "ves.io.schema.rules.repeated.max_items": "16"
+            },
+            "x-f5xc-constraints": {
+              "type": "array",
+              "category": "general",
+              "array": {
+                "maxItems": 16
+              }
             },
             "x-f5xc-required-for": {
               "minimum_config": true,
@@ -13063,6 +15152,14 @@
             "x-f5xc-example": "example-resource",
             "x-f5xc-description-short": "Exclusive with [default] Use the specified class name.",
             "minLength": 0,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 256
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -13176,6 +15273,34 @@
             },
             "minLength": 0,
             "maxLength": 16,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "naming",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?$",
+                "characterSet": {
+                  "allowed": "[a-z0-9-]",
+                  "restricted": "[^a-z0-9-]",
+                  "required": "[a-z0-9]",
+                  "description": "Lowercase alphanumeric with hyphens, not at start/end"
+                },
+                "format": "dns-label",
+                "formatDescription": "RFC 1123 DNS label: lowercase, alphanumeric, hyphens allowed but not at start/end",
+                "validation": {
+                  "rfc": "RFC 1123",
+                  "standard": "Kubernetes resource naming"
+                }
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.95,
+                "category": "naming",
+                "validatedAt": "2026-01-20T02:36:37.054833+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": true,
               "create": true,
@@ -13184,7 +15309,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.602399+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.369979+00:00"
           },
           "persistent_volume": {
             "$ref": "#/components/schemas/workloadPersistentStorageVolumeType"
@@ -13226,6 +15351,34 @@
             "x-f5xc-example": "example-resource",
             "minLength": 0,
             "maxLength": 16,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "naming",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?$",
+                "characterSet": {
+                  "allowed": "[a-z0-9-]",
+                  "restricted": "[^a-z0-9-]",
+                  "required": "[a-z0-9]",
+                  "description": "Lowercase alphanumeric with hyphens, not at start/end"
+                },
+                "format": "dns-label",
+                "formatDescription": "RFC 1123 DNS label: lowercase, alphanumeric, hyphens allowed but not at start/end",
+                "validation": {
+                  "rfc": "RFC 1123",
+                  "standard": "Kubernetes resource naming"
+                }
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.95,
+                "category": "naming",
+                "validatedAt": "2026-01-20T02:36:37.054855+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -13234,7 +15387,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.602438+00:00",
+            "x-reconciled-at": "2026-01-20T02:36:57.370017+00:00",
             "x-f5xc-conflicts-with": [
               "num"
             ]
@@ -13255,6 +15408,14 @@
             },
             "minimum": 0,
             "maximum": 2147483647,
+            "x-f5xc-constraints": {
+              "type": "number",
+              "category": "general",
+              "number": {
+                "minimum": 0,
+                "maximum": 2147483647
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": true,
               "create": true,
@@ -13310,6 +15471,22 @@
             "x-f5xc-description-short": "Port the workload can be reached on Required: YES.",
             "minimum": 1,
             "maximum": 65535,
+            "x-f5xc-constraints": {
+              "type": "number",
+              "category": "networking",
+              "number": {
+                "minimum": 1,
+                "maximum": 65535,
+                "multipleOf": 1
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.99,
+                "category": "networking",
+                "validatedAt": "2026-01-20T02:36:37.054888+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": true,
               "create": true,
@@ -13343,6 +15520,14 @@
             "x-f5xc-description-short": "Exclusive with [same_as_port] Port the workload is listening on.",
             "minimum": 0,
             "maximum": 2147483647,
+            "x-f5xc-constraints": {
+              "type": "number",
+              "category": "general",
+              "number": {
+                "minimum": 0,
+                "maximum": 2147483647
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -13398,6 +15583,34 @@
             },
             "minLength": 0,
             "maxLength": 16,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "naming",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?$",
+                "characterSet": {
+                  "allowed": "[a-z0-9-]",
+                  "restricted": "[^a-z0-9-]",
+                  "required": "[a-z0-9]",
+                  "description": "Lowercase alphanumeric with hyphens, not at start/end"
+                },
+                "format": "dns-label",
+                "formatDescription": "RFC 1123 DNS label: lowercase, alphanumeric, hyphens allowed but not at start/end",
+                "validation": {
+                  "rfc": "RFC 1123",
+                  "standard": "Kubernetes resource naming"
+                }
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.95,
+                "category": "naming",
+                "validatedAt": "2026-01-20T02:36:37.054932+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": true,
               "create": true,
@@ -13406,7 +15619,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.602524+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.370104+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -13649,6 +15862,13 @@
               "ves.io.schema.rules.repeated.max_items": "16"
             },
             "x-f5xc-description-short": "Containers to use for service Required: YES.",
+            "x-f5xc-constraints": {
+              "type": "array",
+              "category": "general",
+              "array": {
+                "maxItems": 16
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": true,
               "create": true,
@@ -13678,6 +15898,14 @@
             "x-f5xc-description-short": "Exclusive with [scale_to_zero] Number of replicas of service to spawn per site.",
             "minimum": 0,
             "maximum": 2147483647,
+            "x-f5xc-constraints": {
+              "type": "number",
+              "category": "general",
+              "number": {
+                "minimum": 0,
+                "maximum": 2147483647
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -13707,6 +15935,13 @@
               "ves.io.schema.rules.repeated.max_items": "16"
             },
             "x-f5xc-description-short": "Persistent storage configuration for the service Required: YES.",
+            "x-f5xc-constraints": {
+              "type": "array",
+              "category": "general",
+              "array": {
+                "maxItems": 16
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": true,
               "create": true,
@@ -13734,6 +15969,13 @@
             },
             "x-validation-rules": {
               "ves.io.schema.rules.repeated.max_items": "16"
+            },
+            "x-f5xc-constraints": {
+              "type": "array",
+              "category": "general",
+              "array": {
+                "maxItems": 16
+              }
             },
             "x-f5xc-required-for": {
               "minimum_config": false,
@@ -13873,6 +16115,34 @@
             },
             "minLength": 0,
             "maxLength": 16,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "naming",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?$",
+                "characterSet": {
+                  "allowed": "[a-z0-9-]",
+                  "restricted": "[^a-z0-9-]",
+                  "required": "[a-z0-9]",
+                  "description": "Lowercase alphanumeric with hyphens, not at start/end"
+                },
+                "format": "dns-label",
+                "formatDescription": "RFC 1123 DNS label: lowercase, alphanumeric, hyphens allowed but not at start/end",
+                "validation": {
+                  "rfc": "RFC 1123",
+                  "standard": "Kubernetes resource naming"
+                }
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.95,
+                "category": "naming",
+                "validatedAt": "2026-01-20T02:36:37.055082+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -13881,7 +16151,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.602831+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.370399+00:00"
           },
           "persistent_volume": {
             "$ref": "#/components/schemas/workloadPersistentStorageVolumeType",
@@ -13975,6 +16245,21 @@
             },
             "x-f5xc-description-short": "List of additional domains (host/authority header) that will be matched to this loadbalancer.",
             "x-f5xc-description-medium": "List of additional domains (host/authority header) that will be matched to this loadbalancer. Domains are also used for SNI matching if the is true Domains also indicate the list of names for which DNS resolution will be done by VER.",
+            "x-f5xc-constraints": {
+              "type": "array",
+              "category": "networking",
+              "array": {
+                "maxItems": 32,
+                "minItems": 1,
+                "uniqueItems": true
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.85,
+                "category": "networking",
+                "validatedAt": "2026-01-20T02:36:37.055110+00:00"
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -14105,6 +16390,14 @@
             "x-f5xc-description-medium": "End time of metric collection from which data will be considered to build graph. Format: unix_timestamp|RFC 3339 Optional: If not specified, then the end_time will be evaluated to start_time+10m If start_time is not specified, then the end_time will be evaluated to <current time>.",
             "minLength": 0,
             "maxLength": 1024,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -14137,6 +16430,14 @@
             },
             "x-f5xc-description-short": "Select fields to be returned in the response. One or more fields in {CPU_USAGE, MEMORY_USAGE, DISK_READS, DISK_WRITES} can be specified.",
             "x-f5xc-description-medium": "Select fields to be returned in the response. One or more fields in {CPU_USAGE, MEMORY_USAGE, DISK_READS, DISK_WRITES} can be specified. Required: YES.",
+            "x-f5xc-constraints": {
+              "type": "array",
+              "category": "general",
+              "array": {
+                "minItems": 1,
+                "maxItems": 8
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": true,
               "create": true,
@@ -14155,6 +16456,14 @@
             "x-f5xc-description-medium": "Filter is used to specify the list of matchers syntax for filter := {[<matcher>]} <matcher> := <label><operator>\"<value>\" <label> := string One or more labels defined in UsageLabel {CONTAINER, POD, SITE} can be specified in the filter. <value> := string <operator> := [\"=\"|\"!=\"|\"=~\"|\"!~\"] = ...",
             "minLength": 0,
             "maxLength": 1024,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -14203,6 +16512,27 @@
             "x-f5xc-description-short": "Namespace is used to scope the workload usage to a given namespace.",
             "minLength": 0,
             "maxLength": 6,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "naming",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?$",
+                "characterSet": {
+                  "allowed": "[a-z0-9-]",
+                  "description": "Kubernetes namespace format"
+                },
+                "format": "dns-label"
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.95,
+                "category": "naming",
+                "validatedAt": "2026-01-20T02:36:37.055243+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -14211,7 +16541,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.602979+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.370556+00:00"
           },
           "range": {
             "type": "string",
@@ -14230,6 +16560,14 @@
             "x-f5xc-description-medium": "Range decides how far to go back in time to fetch values for each step. For example, if the range is 5m, then for step t1, query will be evaluated for t1-5m and for t2, query will be evaluated for t2-5m and so on. Format: [0-9][smhd], where s - seconds, m - minutes, h - hours, d - days.",
             "minLength": 0,
             "maxLength": 1024,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -14254,6 +16592,14 @@
             "x-f5xc-description-medium": "Start time of metric collection from which data will be considered to build graph. Format: unix_timestamp|RFC 3339 Optional: If not specified, then the start_time will be evaluated to end_time-10m If end_time is not specified, then the start_time will be evaluated to <current time>-10m.",
             "minLength": 0,
             "maxLength": 1024,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -14278,6 +16624,14 @@
             "x-f5xc-description-medium": "Step is the resolution width, which determines the number of the data points [x-axis (time)] to be returned in the response. The timestamps in the response will be t1=start_time, t2=t1+step, ... Tn=tn-1+step, where tn <= end_time.",
             "minLength": 0,
             "maxLength": 1024,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -14348,6 +16702,14 @@
             "x-f5xc-description-medium": "Actual step size used in the response. It could be higher than the requested step due to metric rollups and the query duration. Format: [0-9][smhd], where s - seconds, m - minutes, h - hours, d - days.",
             "minLength": 0,
             "maxLength": 1024,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -14417,7 +16779,7 @@
             "maxLength": 16,
             "minLength": 7,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.603061+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.370636+00:00"
           },
           "value": {
             "type": "array",
@@ -14436,7 +16798,7 @@
             "maxLength": 15,
             "minLength": 3,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.603092+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.370667+00:00"
           }
         },
         "x-f5xc-description-short": "Usage Type Data contains key/value pair that uniquely identifies a workload in the response and the corresponding metric data.",
@@ -14509,6 +16871,14 @@
             "x-f5xc-description-short": "Path within the workload container at which the volume should be mounted. Must not contain ':'.",
             "x-f5xc-description-medium": "Path within the workload container at which the volume should be mounted. Must not contain ':'. Required: YES.",
             "minLength": 0,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 256
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": true,
               "create": true,
@@ -14533,6 +16903,14 @@
             "x-f5xc-description-short": "Path within the volume from which the workload's volume should be mounted. Defaults to \"\" (volume's root).",
             "x-f5xc-description-medium": "Path within the volume from which the workload's volume should be mounted. Defaults to \"\" (volume's root).",
             "minLength": 0,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 256
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -14574,6 +16952,14 @@
             "x-f5xc-description-medium": "When a configuration object(e.g. Virtual_host) refers to another(e.g route) then kind will hold the referred object's kind (e.g. \"route\").",
             "minLength": 0,
             "maxLength": 14,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -14583,7 +16969,7 @@
             "readOnly": true,
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.668468+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.449176+00:00"
           },
           "name": {
             "type": "string",
@@ -14596,6 +16982,34 @@
             "x-f5xc-description-medium": "When a configuration object(e.g. Virtual_host) refers to another(e.g route) then name will hold the referred object's(e.g. Route's) name.",
             "minLength": 0,
             "maxLength": 16,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "naming",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?$",
+                "characterSet": {
+                  "allowed": "[a-z0-9-]",
+                  "restricted": "[^a-z0-9-]",
+                  "required": "[a-z0-9]",
+                  "description": "Lowercase alphanumeric with hyphens, not at start/end"
+                },
+                "format": "dns-label",
+                "formatDescription": "RFC 1123 DNS label: lowercase, alphanumeric, hyphens allowed but not at start/end",
+                "validation": {
+                  "rfc": "RFC 1123",
+                  "standard": "Kubernetes resource naming"
+                }
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.95,
+                "category": "naming",
+                "validatedAt": "2026-01-20T02:36:39.249924+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -14604,7 +17018,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.668495+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.449203+00:00"
           },
           "namespace": {
             "type": "string",
@@ -14617,6 +17031,27 @@
             "x-f5xc-description-medium": "When a configuration object(e.g. Virtual_host) refers to another(e.g route) then namespace will hold the referred object's(e.g. Route's) namespace.",
             "minLength": 0,
             "maxLength": 6,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "naming",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?$",
+                "characterSet": {
+                  "allowed": "[a-z0-9-]",
+                  "description": "Kubernetes namespace format"
+                },
+                "format": "dns-label"
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.95,
+                "category": "naming",
+                "validatedAt": "2026-01-20T02:36:39.249944+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -14625,7 +17060,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.668523+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.449231+00:00"
           },
           "tenant": {
             "type": "string",
@@ -14638,6 +17073,14 @@
             "x-f5xc-description-medium": "When a configuration object(e.g. Virtual_host) refers to another(e.g route) then tenant will hold the referred object's(e.g. Route's) tenant.",
             "minLength": 0,
             "maxLength": 18,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -14648,7 +17091,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.668550+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.449259+00:00"
           },
           "uid": {
             "type": "string",
@@ -14661,6 +17104,14 @@
             "x-f5xc-description-medium": "When a configuration object(e.g. Virtual_host) refers to another(e.g route) then uid will hold the referred object's(e.g. Route's) uid.",
             "minLength": 0,
             "maxLength": 36,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -14672,7 +17123,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.668580+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.449288+00:00"
           }
         },
         "x-f5xc-description-short": "Type establishes a 'direct reference' from one object(the referrer) to another(the referred).",
@@ -14771,6 +17222,15 @@
             "x-f5xc-description-short": "Ephemeral storage in MiB (mebibyte) allocated for the workload_flavor.",
             "minLength": 0,
             "maxLength": 1024,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "format": "uint64"
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -14794,6 +17254,15 @@
             "x-f5xc-description-short": "Memory in MiB (mebibyte) allocated for the workload_flavor.",
             "minLength": 0,
             "maxLength": 1024,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "format": "uint64"
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -14869,6 +17338,34 @@
             "x-f5xc-example": "name",
             "minLength": 0,
             "maxLength": 16,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "naming",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?$",
+                "characterSet": {
+                  "allowed": "[a-z0-9-]",
+                  "restricted": "[^a-z0-9-]",
+                  "required": "[a-z0-9]",
+                  "description": "Lowercase alphanumeric with hyphens, not at start/end"
+                },
+                "format": "dns-label",
+                "formatDescription": "RFC 1123 DNS label: lowercase, alphanumeric, hyphens allowed but not at start/end",
+                "validation": {
+                  "rfc": "RFC 1123",
+                  "standard": "Kubernetes resource naming"
+                }
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.95,
+                "category": "naming",
+                "validatedAt": "2026-01-20T02:36:39.250761+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -14877,7 +17374,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.669271+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.449967+00:00"
           },
           "namespace": {
             "type": "string",
@@ -14889,6 +17386,27 @@
             "x-f5xc-description-short": "Namespace in which the configuration object is present.",
             "minLength": 0,
             "maxLength": 6,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "naming",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?$",
+                "characterSet": {
+                  "allowed": "[a-z0-9-]",
+                  "description": "Kubernetes namespace format"
+                },
+                "format": "dns-label"
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.95,
+                "category": "naming",
+                "validatedAt": "2026-01-20T02:36:39.250781+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -14897,7 +17415,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.669298+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.449994+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -15000,7 +17518,7 @@
             "maxLength": 17,
             "minLength": 17,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.669394+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.450089+00:00"
           },
           "system_metadata": {
             "$ref": "#/components/schemas/schemaSystemObjectGetMetaType"
@@ -15075,6 +17593,15 @@
             "x-f5xc-description-short": "Ephemeral storage in MiB (mebibyte) allocated for the workload_flavor.",
             "minLength": 0,
             "maxLength": 1024,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "format": "uint64"
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -15098,6 +17625,15 @@
             "x-f5xc-description-short": "Memory in MiB (mebibyte) allocated for the workload_flavor.",
             "minLength": 0,
             "maxLength": 1024,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "format": "uint64"
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -15176,6 +17712,21 @@
             "x-displayname": "Items",
             "x-f5xc-example": "[\"item1\", \"item2\", \"item3\"]",
             "x-f5xc-description-short": "Items represents the collection in response.",
+            "x-f5xc-constraints": {
+              "type": "array",
+              "category": "general",
+              "array": {
+                "minItems": 0,
+                "maxItems": 256,
+                "uniqueItems": false
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.7,
+                "category": "general",
+                "validatedAt": "2026-01-20T02:36:39.250942+00:00"
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -15226,6 +17777,23 @@
             "x-f5xc-description-short": "The description set for this workload_flavor.",
             "minLength": 0,
             "maxLength": 0,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "content",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "characterSet": {
+                  "description": "Free text with UTF-8 support"
+                }
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.8,
+                "category": "content",
+                "validatedAt": "2026-01-20T02:36:39.250986+00:00"
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -15234,7 +17802,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.669497+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.450191+00:00"
           },
           "disabled": {
             "type": "boolean",
@@ -15280,6 +17848,34 @@
             "x-f5xc-example": "name",
             "minLength": 0,
             "maxLength": 16,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "naming",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?$",
+                "characterSet": {
+                  "allowed": "[a-z0-9-]",
+                  "restricted": "[^a-z0-9-]",
+                  "required": "[a-z0-9]",
+                  "description": "Lowercase alphanumeric with hyphens, not at start/end"
+                },
+                "format": "dns-label",
+                "formatDescription": "RFC 1123 DNS label: lowercase, alphanumeric, hyphens allowed but not at start/end",
+                "validation": {
+                  "rfc": "RFC 1123",
+                  "standard": "Kubernetes resource naming"
+                }
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.95,
+                "category": "naming",
+                "validatedAt": "2026-01-20T02:36:39.251007+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -15288,7 +17884,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.669564+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.450257+00:00"
           },
           "namespace": {
             "type": "string",
@@ -15299,6 +17895,27 @@
             "x-f5xc-example": "ns1",
             "minLength": 0,
             "maxLength": 6,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "naming",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?$",
+                "characterSet": {
+                  "allowed": "[a-z0-9-]",
+                  "description": "Kubernetes namespace format"
+                },
+                "format": "dns-label"
+              },
+              "metadata": {
+                "source": "inferred",
+                "confidence": 0.95,
+                "category": "naming",
+                "validatedAt": "2026-01-20T02:36:39.251026+00:00"
+              },
+              "deterministic": true
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -15307,7 +17924,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.669623+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.450285+00:00"
           },
           "owner_view": {
             "$ref": "#/components/schemas/schemaViewRefType"
@@ -15340,6 +17957,14 @@
             "x-f5xc-example": "example-corp",
             "minLength": 0,
             "maxLength": 18,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -15349,7 +17974,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.669680+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.450340+00:00"
           },
           "uid": {
             "type": "string",
@@ -15360,6 +17985,14 @@
             "x-f5xc-example": "d27938ba-967e-40a7-9709-57b8627f9f75",
             "minLength": 0,
             "maxLength": 36,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -15370,7 +18003,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-19T18:45:32.669709+00:00"
+            "x-reconciled-at": "2026-01-20T02:36:57.450368+00:00"
           }
         },
         "x-f5xc-description-short": "By default a summary of workload_flavor is returned in 'List'. By setting 'report_fields' in the ListRequest more details of each item can be got.",
@@ -15462,6 +18095,15 @@
             "x-f5xc-description-short": "Ephemeral storage in MiB (mebibyte) allocated for the workload_flavor.",
             "minLength": 0,
             "maxLength": 1024,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "format": "uint64"
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -15485,6 +18127,15 @@
             "x-f5xc-description-short": "Memory in MiB (mebibyte) allocated for the workload_flavor.",
             "minLength": 0,
             "maxLength": 1024,
+            "x-f5xc-constraints": {
+              "type": "string",
+              "category": "general",
+              "string": {
+                "minLength": 0,
+                "maxLength": 1024,
+                "format": "uint64"
+              }
+            },
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
