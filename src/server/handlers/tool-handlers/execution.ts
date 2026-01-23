@@ -32,9 +32,18 @@ export function registerExecuteToolTool(
     DISCOVERY_TOOLS.execute.description,
     {
       toolName: z.string().describe("Tool name to execute"),
-      pathParams: z.record(z.string(), z.string()).optional().describe("Path parameters"),
-      queryParams: z.record(z.string(), z.string()).optional().describe("Query parameters"),
-      body: z.record(z.string(), z.unknown()).optional().describe("Request body"),
+      pathParams: z
+        .record(z.string().regex(/^[a-zA-Z0-9_-]+$/), z.string())
+        .optional()
+        .describe("Path parameters"),
+      queryParams: z
+        .record(z.string().regex(/^[a-zA-Z0-9_-]+$/), z.string())
+        .optional()
+        .describe("Query parameters"),
+      body: z
+        .record(z.string().regex(/^[a-zA-Z0-9_-]+$/), z.unknown())
+        .optional()
+        .describe("Request body"),
     },
     async (args) => {
       const result = await executeTool(
@@ -65,9 +74,18 @@ export function registerExecuteResourceTool(
     {
       resourceName: z.string().describe("Consolidated resource name"),
       operation: z.enum(["create", "get", "list", "update", "delete"]).describe("CRUD operation"),
-      pathParams: z.record(z.string(), z.string()).optional().describe("Path parameters"),
-      queryParams: z.record(z.string(), z.string()).optional().describe("Query parameters"),
-      body: z.record(z.string(), z.unknown()).optional().describe("Request body"),
+      pathParams: z
+        .record(z.string().regex(/^[a-zA-Z0-9_-]+$/), z.string())
+        .optional()
+        .describe("Path parameters"),
+      queryParams: z
+        .record(z.string().regex(/^[a-zA-Z0-9_-]+$/), z.string())
+        .optional()
+        .describe("Query parameters"),
+      body: z
+        .record(z.string().regex(/^[a-zA-Z0-9_-]+$/), z.unknown())
+        .optional()
+        .describe("Request body"),
     },
     async (args) => {
       // Resolve to underlying tool
