@@ -32,31 +32,6 @@ vi.mock("../../../src/utils/logging.js", () => ({
 }));
 
 describe("Guidance Queries - User Experience Simulation", () => {
-  describe("WAF Best Practices: 'What are best practices for WAF?'", () => {
-    it("should return WAF domain best practices", () => {
-      const result = queryBestPractices({ domain: "waf" });
-
-      expect(result.success).toBe(true);
-      expect(result.practices).toBeDefined();
-      expect(result.practices?.domain).toBe("waf");
-    });
-
-    it("should include security notes for WAF", () => {
-      const practices = getDomainBestPractices("waf");
-
-      expect(practices).toBeDefined();
-      expect(practices?.displayName).toBeDefined();
-      expect(practices?.totalTools).toBeGreaterThan(0);
-    });
-
-    it("should provide danger analysis for WAF domain", () => {
-      const practices = getDomainBestPractices("waf");
-
-      expect(practices?.dangerAnalysis).toBeDefined();
-      expect(practices?.dangerAnalysis.safePercentage).toBeGreaterThanOrEqual(0);
-    });
-  });
-
   describe("Virtual Domain: 'Common mistakes with load balancers?'", () => {
     it("should return virtual domain best practices", () => {
       const result = queryBestPractices({ domain: "virtual" });

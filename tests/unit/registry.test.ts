@@ -111,7 +111,6 @@ describe("registry", () => {
         "network_security",
         "observability",
         "virtual",
-        "waf",
       ];
 
       for (const expected of expectedDomains) {

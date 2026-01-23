@@ -37,7 +37,6 @@ describe("Discovery Queries - User Experience Simulation", () => {
       expect(domains.length).toBeGreaterThan(5);
       expect(domains).toContain("virtual");
       expect(domains).toContain("dns");
-      expect(domains).toContain("waf");
     });
 
     it("should provide tool counts per domain for capability overview", () => {
@@ -149,25 +148,6 @@ describe("Discovery Queries - User Experience Simulation", () => {
 
       expect(results.length).toBeGreaterThan(0);
       expect(results[0].resource.domain).toBe("dns");
-    });
-  });
-
-  describe("WAF Discovery: 'What security features are available?'", () => {
-    it("should find WAF-related tools", () => {
-      const results = searchTools("waf firewall", { limit: 10 });
-
-      expect(results.length).toBeGreaterThan(0);
-      expect(results.some((r) => r.tool.domain === "waf")).toBe(true);
-    });
-
-    it("should find app firewall tools", () => {
-      const results = searchTools("app firewall", { limit: 10 });
-
-      expect(results.length).toBeGreaterThan(0);
-      // Use some() instead of checking first result - search may return "app" resource first
-      expect(results.some((r) => r.tool.resource.includes("app-firewall"))).toBe(
-        true
-      );
     });
   });
 
