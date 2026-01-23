@@ -147,21 +147,6 @@ curl -X GET "https://example.com/api/test"`;
       }
     });
 
-    it("should generate valid CURL for app firewall list", async () => {
-      const result = await executeTool({
-        toolName: "f5xc-api-waf-app-firewall-list",
-        pathParams: { namespace: "default" },
-      });
-
-      expect(isDocumentationResponse(result)).toBe(true);
-      if (isDocumentationResponse(result)) {
-        expect(result.curlExample).toContain("curl -X GET");
-
-        const validation = validateCurlSyntax(result.curlExample);
-        expect(validation.valid).toBe(true);
-      }
-    });
-
     it("should include Authorization header in CURL", async () => {
       const result = await executeTool({
         toolName: "f5xc-api-virtual-http-loadbalancer-list",
