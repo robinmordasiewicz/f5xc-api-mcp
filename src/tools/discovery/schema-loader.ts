@@ -15,6 +15,7 @@ import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import { getToolByName } from "../registry.js";
 import type { FieldDefaultMetadata } from "../../generator/openapi-parser.js";
+import { safeMerge } from "../../utils/safe-merge.js";
 
 // Get specs directory path
 const __filename = fileURLToPath(import.meta.url);
@@ -262,7 +263,7 @@ export function resolveNestedRefs(
       // Merge sibling properties with resolved schema
       // Sibling properties (like default, x-f5xc-server-default) take precedence
       if (Object.keys(siblingProps).length > 0) {
-        return { ...resolvedSchema, ...siblingProps } as ResolvedSchema;
+        return safeMerge(resolvedSchema, siblingProps) as ResolvedSchema;
       }
 
       return resolvedSchema;

@@ -110,7 +110,7 @@ export function buildSearchIndex(
   tools: ToolIndexEntry[],
   config: Partial<IndexConfig> = {}
 ): SearchIndex {
-  const fullConfig = { ...DEFAULT_CONFIG, ...config };
+  const fullConfig: IndexConfig = { ...DEFAULT_CONFIG, ...config };
 
   const index: SearchIndex = {
     terms: new Map(),
