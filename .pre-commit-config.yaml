@@ -63,6 +63,21 @@ repos:
         files: \.ts$
         pass_filenames: false
 
+      - id: test-unit
+        name: Run Unit Tests
+        entry: npm test
+        language: system
+        files: \.(ts|tsx|js|jsx)$
+        pass_filenames: false
+
+      - id: test-full
+        name: Run Full Test Suite
+        entry: bash -c 'npm run test:all && npm run test:coverage'
+        language: system
+        files: \.(ts|tsx|js|jsx|json|yaml|yml)$
+        pass_filenames: false
+        stages: [push]
+
   # Markdown linting
   - repo: https://github.com/igorshubovych/markdownlint-cli
     rev: v0.47.0
