@@ -4,10 +4,7 @@ import { z } from "zod";
  * Safely merge objects, guarding against prototype pollution.
  * Only merges own enumerable string-keyed properties.
  */
-export function safeMerge<T extends Record<string, unknown>>(
-  target: T,
-  source: Partial<Record<string, unknown>>
-): T {
+export function safeMerge<T extends Record<string, unknown>>(target: T, source: Partial<T>): T {
   const result: Record<string, unknown> = { ...target };
 
   for (const key of Object.keys(source)) {
@@ -19,7 +16,7 @@ export function safeMerge<T extends Record<string, unknown>>(
       throw new Error(`Invalid property name: ${key}`);
     }
 
-    result[key] = source[key];
+    result[key] = (source as Record<string, unknown>)[key];
   }
 
   return result as T;
