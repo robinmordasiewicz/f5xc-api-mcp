@@ -29,12 +29,12 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: "24"
           cache: "npm"
@@ -58,20 +58,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Check for changes
-        id: changes
-        run: |
-          if [[ -n $(git status specs/ --porcelain) ]]; then
-            echo "changed=true" >> $GITHUB_OUTPUT
-            echo "Specs have changed"
-          else
-            echo "changed=false" >> $GITHUB_OUTPUT
-            echo "No changes to specs"
-          fi
-
       - name: Get version info
         id: version
-        if: steps.changes.outputs.changed == 'true' || github.event.inputs.force_regenerate == 'true'
         run: |
           if [[ -f specs/index.json ]]; then
             VERSION=$(jq -r '.version // "unknown"' specs/index.json)
@@ -87,12 +75,22 @@ jobs:
           fi
 
       - name: Generate tools from specs
-        if: steps.changes.outputs.changed == 'true' || github.event.inputs.force_regenerate == 'true'
         run: npm run generate
 
       - name: Generate test fixtures
-        if: steps.changes.outputs.changed == 'true' || github.event.inputs.force_regenerate == 'true'
         run: npm run generate:fixtures
+
+      - name: Check for changes in generated code
+        id: changes
+        run: |
+          if [[ -n $(git status src/tools/ tests/fixtures/ --porcelain) ]]; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "Generated code has changed"
+            git status src/tools/ tests/fixtures/ --porcelain
+          else
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "No changes to generated code"
+          fi
 
       - name: Fix formatting
         if: steps.changes.outputs.changed == 'true' || github.event.inputs.force_regenerate == 'true'
@@ -146,7 +144,7 @@ jobs:
             - **Total Domains**: ${{ steps.stats.outputs.total_domains }}
 
             ### Changes
-            - Synced latest enriched specs from upstream
+            - Downloaded latest enriched specs from upstream (dynamically, not stored in git)
             - Regenerated MCP tools from new specs
             - Regenerated dynamic test fixtures
             - All tests passing
@@ -187,8 +185,8 @@ jobs:
             echo "" >> $GITHUB_STEP_SUMMARY
             echo "### Changed Files" >> $GITHUB_STEP_SUMMARY
             echo '```' >> $GITHUB_STEP_SUMMARY
-            git status specs/ --porcelain >> $GITHUB_STEP_SUMMARY || true
+            git status src/tools/ tests/fixtures/ --porcelain >> $GITHUB_STEP_SUMMARY || true
             echo '```' >> $GITHUB_STEP_SUMMARY
           else
-            echo "ℹ️ No changes detected in specs" >> $GITHUB_STEP_SUMMARY
+            echo "ℹ️ No changes detected in generated code (specs are up to date)" >> $GITHUB_STEP_SUMMARY
           fi

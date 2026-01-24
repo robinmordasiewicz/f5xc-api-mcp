@@ -11,9 +11,10 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # Early stage: Sync and verify OpenAPI specs are current
-  verify-specs:
-    name: Verify OpenAPI Specs
+  # Early stage: Download and verify OpenAPI specs
+  # Specs are downloaded dynamically from upstream, not stored in git
+  sync-specs:
+    name: Sync OpenAPI Specs
     runs-on: ubuntu-latest
 
     steps:
@@ -29,31 +30,41 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Sync OpenAPI specs from upstream
+      - name: Download OpenAPI specs from upstream
         run: npm run sync-specs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Regenerate tools from specs
-        run: npm run generate
-
-      - name: Check for uncommitted changes
+      - name: Verify specs downloaded
         run: |
-          if [[ -n $(git status specs/ src/tools/ --porcelain) ]]; then
-            echo "::error::OpenAPI specs or generated tools are out of date!"
-            echo "Run 'npm run sync-specs && npm run generate' locally and commit the changes."
-            git status specs/ src/tools/ --porcelain
-            git diff --stat specs/ src/tools/
+          if [ ! -f "specs/index.json" ]; then
+            echo "::error::Failed to download OpenAPI specs"
             exit 1
           fi
-          echo "✅ OpenAPI specs and generated tools are up to date"
+          echo "✅ OpenAPI specs downloaded successfully"
+          echo "Version: $(jq -r '.version' specs/index.json)"
+
+      - name: Cache specs for downstream jobs
+        uses: actions/upload-artifact@v6
+        with:
+          name: openapi-specs
+          path: specs/
+          retention-days: 1
 
   lint-and-typecheck:
     name: Lint & Type Check
     runs-on: ubuntu-latest
-    needs: verify-specs
+    needs: sync-specs
 
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+
+      - name: Download OpenAPI specs
+        uses: actions/download-artifact@v6
+        with:
+          name: openapi-specs
+          path: specs/
 
       - name: Setup Node.js
         uses: actions/setup-node@v6
@@ -81,6 +92,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+
+      - name: Download OpenAPI specs
+        uses: actions/download-artifact@v6
+        with:
+          name: openapi-specs
+          path: specs/
 
       - name: Setup Node.js
         uses: actions/setup-node@v6
@@ -113,6 +130,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
+      - name: Download OpenAPI specs
+        uses: actions/download-artifact@v6
+        with:
+          name: openapi-specs
+          path: specs/
+
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
@@ -143,6 +166,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+
+      - name: Download OpenAPI specs
+        uses: actions/download-artifact@v6
+        with:
+          name: openapi-specs
+          path: specs/
 
       - name: Setup Node.js
         uses: actions/setup-node@v6
