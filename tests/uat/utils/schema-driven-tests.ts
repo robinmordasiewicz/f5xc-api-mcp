@@ -233,10 +233,31 @@ export function generatePlainLanguageTests(
 }
 
 /**
+ * Dangerous property names that could lead to prototype pollution
+ */
+const DANGEROUS_PROPERTIES = new Set(["__proto__", "constructor", "prototype"]);
+
+/**
+ * Check if a property name is safe (not a prototype pollution vector)
+ */
+function isSafePropertyName(name: string): boolean {
+  return !DANGEROUS_PROPERTIES.has(name);
+}
+
+/**
  * Set a nested value in an object using dot notation
+ * Includes safeguards against prototype pollution attacks
  */
 function setNestedValue(obj: Record<string, unknown>, path: string, value: unknown): void {
   const parts = path.split(".");
+
+  // Validate all parts are safe property names
+  for (const part of parts) {
+    if (!isSafePropertyName(part)) {
+      throw new Error(`Unsafe property name in path: ${part}`);
+    }
+  }
+
   let current = obj;
 
   for (let i = 0; i < parts.length - 1; i++) {
@@ -247,7 +268,8 @@ function setNestedValue(obj: Record<string, unknown>, path: string, value: unkno
     current = current[part] as Record<string, unknown>;
   }
 
-  current[parts[parts.length - 1]] = value;
+  const finalKey = parts[parts.length - 1];
+  current[finalKey] = value;
 }
 
 /**
