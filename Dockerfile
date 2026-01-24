@@ -17,7 +17,10 @@ RUN npm ci --ignore-scripts
 COPY tsconfig.json ./
 COPY src/ ./src/
 COPY scripts/ ./scripts/
-COPY specs/index.json ./specs/
+
+# Download OpenAPI specs from upstream (not stored in git)
+# Source: https://github.com/robinmordasiewicz/f5xc-api-enriched/releases
+RUN npm run sync-specs
 
 # Build TypeScript (now that all source files are present)
 # The prebuild hook runs generate:version which needs scripts/
@@ -31,9 +34,11 @@ FROM node:24-alpine AS production
 
 WORKDIR /app
 
-# Create non-root user
+# Create non-root user and remove npm (not needed in production, eliminates CVEs)
+# Removing npm also removes vulnerable bundled dependencies (tar, diff, glob, etc.)
 RUN addgroup -g 1001 -S nodejs && \
-    adduser -S mcp -u 1001 -G nodejs
+    adduser -S mcp -u 1001 -G nodejs && \
+    rm -rf /usr/local/lib/node_modules/npm /usr/local/bin/npm /usr/local/bin/npx
 
 # Copy built files and production dependencies
 COPY --from=builder --chown=mcp:nodejs /app/dist ./dist

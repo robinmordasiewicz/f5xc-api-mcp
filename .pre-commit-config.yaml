@@ -32,15 +32,9 @@ repos:
         args: ["--only-verified"]
 
   # TypeScript/JavaScript linting and formatting
+  # Note: Generated tools are created by CI/CD pipeline, not pre-commit
   - repo: local
     hooks:
-      - id: generate-tools
-        name: Generate Tools from OpenAPI Specs
-        entry: bash -c 'npm run generate && git add src/tools/generated/'
-        language: system
-        always_run: true
-        pass_filenames: false
-
       - id: eslint
         name: ESLint
         entry: npm run lint
