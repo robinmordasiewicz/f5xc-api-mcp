@@ -1,6 +1,6 @@
 {
-  "version": "2.0.44",
-  "timestamp": "2026-01-20T05:09:08.575309+00:00",
+  "version": "2.0.46",
+  "timestamp": "2026-01-20T16:13:21.474089+00:00",
   "specifications": [
     {
       "domain": "admin_console_and_ui",
@@ -139,7 +139,7 @@
         "Define API groups and testing policies"
       ],
       "x-f5xc-related-domains": [
-        "waf",
+        "virtual",
         "network_security"
       ],
       "x-f5xc-icon": "🔐",
@@ -548,7 +548,7 @@
       "x-f5xc-related-domains": [
         "bot_defense",
         "shape",
-        "waf"
+        "virtual"
       ],
       "x-f5xc-icon": "🦠",
       "x-f5xc-logo-svg": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23EF4444'%3E%3Cpath d='M19.5 5.5 18 4l-1.5 1.5L18 7l1.5-1.5zM12 2v3m0 14v3m10-10h-3M5 12H2m15.5 6.5L18 20l1.5-1.5L18 17l-1.5 1.5zm-11 0L6 20l-1.5-1.5L6 17l-1.5 1.5zm0-11L6 4l-1.5 1.5L6 7 4.5 5.5zM12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0 8c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z'/%3E%3C/svg%3E",
@@ -1554,7 +1554,7 @@
         "Configure forward proxy policies"
       ],
       "x-f5xc-related-domains": [
-        "waf",
+        "virtual",
         "api",
         "network"
       ],
@@ -1901,7 +1901,7 @@
       ],
       "x-f5xc-related-domains": [
         "bot_defense",
-        "waf",
+        "virtual",
         "network_security"
       ],
       "x-f5xc-icon": "🚨",
@@ -2038,7 +2038,7 @@
       ],
       "x-f5xc-related-domains": [
         "bot_defense",
-        "waf"
+        "virtual"
       ],
       "x-f5xc-icon": "🎭",
       "x-f5xc-logo-svg": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23A855F7'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5-9c.83 0 1.5-.67 1.5-1.5S7.83 8 7 8s-1.5.67-1.5 1.5S6.17 11 7 11zm10 0c.83 0 1.5-.67 1.5-1.5S17.83 8 17 8s-1.5.67-1.5 1.5.67 1.5 1.5 1.5zM12 17.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z'/%3E%3C/svg%3E",
@@ -2604,8 +2604,8 @@
       "x-f5xc-description-short": "HTTP, TCP, UDP load balancing with origin pools.",
       "x-f5xc-description-medium": "Traffic distribution across regions with routing rules. Health checks and failover policies.",
       "file": "virtual.json",
-      "path_count": 85,
-      "schema_count": 743,
+      "path_count": 133,
+      "schema_count": 972,
       "x-f5xc-complexity": "advanced",
       "x-f5xc-is-preview": false,
       "x-f5xc-requires-tier": "Advanced",
@@ -2707,6 +2707,55 @@
           "icon": "💓",
           "category": "Monitoring",
           "supports_logs": false,
+          "supports_metrics": true,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        },
+        {
+          "name": "app_firewall",
+          "description": "Web Application Firewall policy for HTTP traffic protection",
+          "description_short": "WAF policy",
+          "tier": "Advanced",
+          "icon": "🛡️",
+          "category": "Security",
+          "supports_logs": true,
+          "supports_metrics": true,
+          "dependencies": {
+            "required": [],
+            "optional": [
+              "service_policy"
+            ]
+          },
+          "relationship_hints": [
+            "service_policy: Fine-grained access control rules"
+          ]
+        },
+        {
+          "name": "service_policy",
+          "description": "Service-level access control and traffic management rules",
+          "description_short": "Service policy",
+          "tier": "Advanced",
+          "icon": "📋",
+          "category": "Security",
+          "supports_logs": true,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        },
+        {
+          "name": "malicious_user_detection",
+          "description": "Automated detection and mitigation of malicious user behavior",
+          "description_short": "Malicious user detection",
+          "tier": "Advanced",
+          "icon": "🚨",
+          "category": "Security",
+          "supports_logs": true,
           "supports_metrics": true,
           "dependencies": {
             "required": [],
@@ -2872,103 +2921,6 @@
           "relationship_hints": []
         }
       ]
-    },
-    {
-      "domain": "waf",
-      "title": "Waf",
-      "description": "Signature-based attack detection with customizable blocking responses. Attack type classification, protocol inspection, and AI-driven risk assessment. Exclusion policies override default blocking for trusted traffic. Staged signature testing validates rules before enforcement. Security event metrics track rule hits and blocked requests across namespaces.",
-      "x-f5xc-description-short": "Request inspection, attack signatures, and bot mitigation.",
-      "x-f5xc-description-medium": "Application firewall rules with signature-based detection. Exclusion policies, blocking pages, and anomaly prevention.",
-      "file": "waf.json",
-      "path_count": 40,
-      "schema_count": 314,
-      "x-f5xc-complexity": "advanced",
-      "x-f5xc-is-preview": false,
-      "x-f5xc-requires-tier": "Advanced",
-      "x-f5xc-category": "Security",
-      "x-f5xc-use-cases": [
-        "Configure web application firewall rules",
-        "Manage application security policies",
-        "Enable enhanced firewall capabilities",
-        "Configure protocol inspection"
-      ],
-      "x-f5xc-related-domains": [
-        "api",
-        "network_security",
-        "virtual"
-      ],
-      "x-f5xc-icon": "🛡️",
-      "x-f5xc-logo-svg": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2310B981'%3E%3Cpath d='M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z'/%3E%3C/svg%3E",
-      "x-f5xc-primary-resources": [
-        {
-          "name": "app_firewall",
-          "description": "Web Application Firewall policy for HTTP traffic protection",
-          "description_short": "WAF policy",
-          "tier": "Advanced",
-          "icon": "🛡️",
-          "category": "Security",
-          "supports_logs": true,
-          "supports_metrics": true,
-          "dependencies": {
-            "required": [],
-            "optional": [
-              "service_policy"
-            ]
-          },
-          "relationship_hints": [
-            "service_policy: Fine-grained access control rules"
-          ]
-        },
-        {
-          "name": "service_policy",
-          "description": "Service-level access control and traffic management rules",
-          "description_short": "Service policy",
-          "tier": "Advanced",
-          "icon": "📋",
-          "category": "Security",
-          "supports_logs": true,
-          "supports_metrics": false,
-          "dependencies": {
-            "required": [],
-            "optional": []
-          },
-          "relationship_hints": []
-        },
-        {
-          "name": "malicious_user_detection",
-          "description": "Automated detection and mitigation of malicious user behavior",
-          "description_short": "Malicious user detection",
-          "tier": "Advanced",
-          "icon": "🚨",
-          "category": "Security",
-          "supports_logs": true,
-          "supports_metrics": true,
-          "dependencies": {
-            "required": [],
-            "optional": []
-          },
-          "relationship_hints": []
-        }
-      ],
-      "x-f5xc-examples": {
-        "app_firewall": {
-          "minimal": {
-            "description": "Basic WAF policy with default detection",
-            "use_case": "Quick WAF protection setup",
-            "yaml": "metadata:\n  name: basic-waf\n  namespace: default\nspec:\n  blocking: {}\n  detection_settings:\n    signature_selection_setting:\n      default_attack_type_settings: {}\n      high_medium_accuracy_signatures: {}\n"
-          },
-          "production": {
-            "description": "Production WAF with signature detection and bot defense",
-            "use_case": "Production security with comprehensive protection",
-            "yaml": "metadata:\n  name: prod-waf\n  namespace: production\nspec:\n  blocking: {}\n  detection_settings:\n    signature_selection_setting:\n      default_attack_type_settings: {}\n      high_medium_low_accuracy_signatures: {}\n    enable_suppression: true\n    enable_threat_campaigns: true\n  bot_defense_setting:\n    policy:\n      protected_app_endpoints:\n        - metadata:\n            name: login\n          http_methods:\n            - POST\n          protocol: HTTPS\n          path:\n            prefix: /api/login\n      js_insert_all_pages:\n        javascript_location: AFTER_HEAD\n  allow_all_response_codes: false\n  default_anonymization: true\n"
-          },
-          "advanced": {
-            "description": "Advanced WAF with custom rules and data guard",
-            "use_case": "High-security environments with custom policies",
-            "yaml": "metadata:\n  name: advanced-waf\n  namespace: security\nspec:\n  blocking: {}\n  detection_settings:\n    signature_selection_setting:\n      attack_type_settings:\n        - attack_type: ATTACK_TYPE_COMMAND_EXECUTION\n          disabled: false\n        - attack_type: ATTACK_TYPE_SQL_INJECTION\n          disabled: false\n        - attack_type: ATTACK_TYPE_CROSS_SITE_SCRIPTING\n          disabled: false\n      high_medium_low_accuracy_signatures: {}\n    enable_suppression: true\n    enable_threat_campaigns: true\n    violation_settings:\n      disabled_violation_types:\n        - violation_type: VIOL_FILETYPE\n  bot_defense_setting:\n    policy:\n      protected_app_endpoints:\n        - metadata:\n            name: api-endpoint\n          http_methods:\n            - POST\n            - PUT\n          protocol: HTTPS\n          path:\n            prefix: /api/\n      js_insert_all_pages:\n        javascript_location: AFTER_HEAD\n  data_guard_rules:\n    - name: mask-credit-cards\n      path:\n        prefix: /\n      target_parameters:\n        - parameter_name:\n            exact_value: credit_card\n      apply_data_guard: {}\n"
-          }
-        }
-      }
     }
   ],
   "x-f5xc-critical-resources": [

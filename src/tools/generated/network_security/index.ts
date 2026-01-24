@@ -6670,7 +6670,7 @@ export const network_securityTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [
       {
-        domain: "waf",
+        domain: "virtual",
         fieldPath: "",
         inline: false,
         required: false,
@@ -7020,7 +7020,7 @@ export const network_securityTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [
       {
-        domain: "waf",
+        domain: "virtual",
         fieldPath: "",
         inline: false,
         required: false,
@@ -7281,7 +7281,7 @@ export const network_securityTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [
       {
-        domain: "waf",
+        domain: "virtual",
         fieldPath: "",
         inline: false,
         required: false,
