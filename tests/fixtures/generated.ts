@@ -5,17 +5,17 @@
  * These fixtures are dynamically generated from the current OpenAPI specs
  * to ensure tests always use real values and don't hardcode spec content.
  *
- * Generated at: 2026-01-20T05:11:24.011Z
- * Total tools: 1535
- * Total domains: 38
+ * Generated at: 2026-01-24T00:25:35.316Z
+ * Total tools: 1536
+ * Total domains: 37
  */
 
 /**
  * Registry statistics
  */
 export const REGISTRY_STATS = {
-  totalTools: 1535,
-  totalDomains: 38,
+  totalTools: 1536,
+  totalDomains: 37,
   domainCounts: {
     admin_console_and_ui: 2,
     ai_services: 11,
@@ -52,9 +52,8 @@ export const REGISTRY_STATS = {
     tenant_and_identity: 180,
     threat_campaign: 1,
     users: 12,
-    virtual: 89,
+    virtual: 126,
     vpm_and_node_management: 1,
-    waf: 36,
   },
 } as const;
 
@@ -99,7 +98,6 @@ export const AVAILABLE_DOMAINS = [
   "users",
   "virtual",
   "vpm_and_node_management",
-  "waf",
 ] as const;
 
 /**

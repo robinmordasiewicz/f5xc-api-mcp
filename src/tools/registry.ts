@@ -42,7 +42,6 @@ import { threat_campaignTools } from "./generated/threat_campaign/index.js";
 import { usersTools } from "./generated/users/index.js";
 import { virtualTools } from "./generated/virtual/index.js";
 import { vpm_and_node_managementTools } from "./generated/vpm_and_node_management/index.js";
-import { wafTools } from "./generated/waf/index.js";
 
 /**
  * All registered tools from all domains
@@ -85,7 +84,6 @@ export const allTools: ParsedOperation[] = [
   ...usersTools,
   ...virtualTools,
   ...vpm_and_node_managementTools,
-  ...wafTools,
 ];
 
 /**

@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-20T05:09:08.575309+00:00",
-  "totalResources": 792,
+  "generatedAt": "2026-01-20T16:13:21.474089+00:00",
+  "totalResources": 793,
   "dependencies": {
     "admin_console_and_ui/static-component": {
       "resource": "static-component",
@@ -13077,7 +13077,7 @@
       "requires": [
         {
           "resourceType": "service-policy",
-          "domain": "waf",
+          "domain": "virtual",
           "fieldPath": "",
           "required": false,
           "inline": false
@@ -13327,11 +13327,11 @@
         }
       ],
       "creationOrder": [
-        "waf/service-policy",
         "unknown/schema-object-create-meta",
         "unknown/schemaservice-policy-create",
         "unknown/schema-object-replace-meta",
         "unknown/schemaservice-policy-replace",
+        "virtual/service-policy",
         "network_security/service-policy"
       ]
     },
@@ -28085,6 +28085,194 @@
         "virtual/unsubscribe"
       ]
     },
+    "virtual/app-firewall": {
+      "resource": "app-firewall",
+      "domain": "virtual",
+      "requires": [
+        {
+          "resourceType": "app-firewall",
+          "domain": "virtual",
+          "fieldPath": "",
+          "required": false,
+          "inline": false
+        },
+        {
+          "resourceType": "schema-object-create-meta",
+          "domain": "",
+          "fieldPath": "metadata",
+          "required": false,
+          "inline": false
+        },
+        {
+          "resourceType": "app-firewall-create",
+          "domain": "",
+          "fieldPath": "spec",
+          "required": false,
+          "inline": false
+        },
+        {
+          "resourceType": "schema-object-replace-meta",
+          "domain": "",
+          "fieldPath": "metadata",
+          "required": false,
+          "inline": false
+        },
+        {
+          "resourceType": "app-firewall-replace",
+          "domain": "",
+          "fieldPath": "spec",
+          "required": false,
+          "inline": false
+        }
+      ],
+      "requiredBy": [
+        {
+          "resourceType": "app-firewall",
+          "domain": "virtual",
+          "fieldPath": "",
+          "required": false,
+          "inline": false
+        }
+      ],
+      "oneOfGroups": [
+        {
+          "choiceField": "allowed_response_codes_choice",
+          "options": [
+            "spec.allow_all_response_codes",
+            "spec.allowed_response_codes"
+          ],
+          "fieldPath": "spec.allowed_response_codes_choice",
+          "recommendedOption": "spec.allow_all_response_codes"
+        },
+        {
+          "choiceField": "anonymization_setting",
+          "options": [
+            "spec.custom_anonymization",
+            "spec.default_anonymization",
+            "spec.disable_anonymization"
+          ],
+          "fieldPath": "spec.anonymization_setting",
+          "recommendedOption": "spec.default_anonymization"
+        },
+        {
+          "choiceField": "blocking_page_choice",
+          "options": [
+            "spec.blocking_page",
+            "spec.use_default_blocking_page"
+          ],
+          "fieldPath": "spec.blocking_page_choice",
+          "recommendedOption": "spec.use_default_blocking_page"
+        },
+        {
+          "choiceField": "bot_protection_choice",
+          "options": [
+            "spec.bot_protection_setting",
+            "spec.default_bot_setting"
+          ],
+          "fieldPath": "spec.bot_protection_choice",
+          "recommendedOption": "spec.default_bot_setting"
+        },
+        {
+          "choiceField": "detection_setting_choice",
+          "options": [
+            "spec.ai_risk_based_blocking",
+            "spec.default_detection_settings",
+            "spec.detection_settings"
+          ],
+          "fieldPath": "spec.detection_setting_choice",
+          "recommendedOption": "spec.default_detection_settings"
+        },
+        {
+          "choiceField": "enforcement_mode_choice",
+          "options": [
+            "spec.blocking",
+            "spec.monitoring"
+          ],
+          "fieldPath": "spec.enforcement_mode_choice",
+          "recommendedOption": "spec.monitoring"
+        },
+        {
+          "choiceField": "anonymization_choice",
+          "options": [
+            "spec.custom_anonymization.anonymization_config[].cookie",
+            "spec.custom_anonymization.anonymization_config[].http_header",
+            "spec.custom_anonymization.anonymization_config[].query_parameter"
+          ],
+          "fieldPath": "spec.custom_anonymization.anonymization_config[].anonymization_choice"
+        },
+        {
+          "choiceField": "false_positive_suppression",
+          "options": [
+            "spec.detection_settings.disable_suppression",
+            "spec.detection_settings.enable_suppression"
+          ],
+          "fieldPath": "spec.detection_settings.false_positive_suppression"
+        },
+        {
+          "choiceField": "signatures_staging_settings",
+          "options": [
+            "spec.detection_settings.disable_staging",
+            "spec.detection_settings.stage_new_and_updated_signatures",
+            "spec.detection_settings.stage_new_signatures"
+          ],
+          "fieldPath": "spec.detection_settings.signatures_staging_settings"
+        },
+        {
+          "choiceField": "threat_campaign_choice",
+          "options": [
+            "spec.detection_settings.disable_threat_campaigns",
+            "spec.detection_settings.enable_threat_campaigns"
+          ],
+          "fieldPath": "spec.detection_settings.threat_campaign_choice"
+        },
+        {
+          "choiceField": "violation_detection_setting",
+          "options": [
+            "spec.detection_settings.default_violation_settings",
+            "spec.detection_settings.violation_settings"
+          ],
+          "fieldPath": "spec.detection_settings.violation_detection_setting"
+        },
+        {
+          "choiceField": "attack_type_setting",
+          "options": [
+            "spec.detection_settings.signature_selection_setting.attack_type_settings",
+            "spec.detection_settings.signature_selection_setting.default_attack_type_settings"
+          ],
+          "fieldPath": "spec.detection_settings.signature_selection_setting.attack_type_setting"
+        },
+        {
+          "choiceField": "signature_selection_by_accuracy",
+          "options": [
+            "spec.detection_settings.signature_selection_setting.high_medium_accuracy_signatures",
+            "spec.detection_settings.signature_selection_setting.high_medium_low_accuracy_signatures",
+            "spec.detection_settings.signature_selection_setting.only_high_accuracy_signatures"
+          ],
+          "fieldPath": "spec.detection_settings.signature_selection_setting.signature_selection_by_accuracy"
+        }
+      ],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
+      "creationOrder": [
+        "unknown/schema-object-create-meta",
+        "unknown/app-firewall-create",
+        "unknown/schema-object-replace-meta",
+        "unknown/app-firewall-replace",
+        "virtual/app-firewall"
+      ]
+    },
     "virtual/cluster": {
       "resource": "cluster",
       "domain": "virtual",
@@ -28231,6 +28419,120 @@
         "unknown/schema-object-replace-meta",
         "unknown/cluster-replace",
         "virtual/cluster"
+      ]
+    },
+    "virtual/enhanced-firewall-policy": {
+      "resource": "enhanced-firewall-policy",
+      "domain": "virtual",
+      "requires": [
+        {
+          "resourceType": "enhanced-firewall-policy",
+          "domain": "",
+          "fieldPath": "",
+          "required": false,
+          "inline": false
+        },
+        {
+          "resourceType": "schema-object-create-meta",
+          "domain": "",
+          "fieldPath": "metadata",
+          "required": false,
+          "inline": false
+        },
+        {
+          "resourceType": "schemaenhanced-firewall-policy-create",
+          "domain": "",
+          "fieldPath": "spec",
+          "required": false,
+          "inline": false
+        },
+        {
+          "resourceType": "schema-object-replace-meta",
+          "domain": "",
+          "fieldPath": "metadata",
+          "required": false,
+          "inline": false
+        },
+        {
+          "resourceType": "schemaenhanced-firewall-policy-replace",
+          "domain": "",
+          "fieldPath": "spec",
+          "required": false,
+          "inline": false
+        }
+      ],
+      "requiredBy": [],
+      "oneOfGroups": [
+        {
+          "choiceField": "rule_choice",
+          "options": [
+            "spec.allow_all",
+            "spec.allowed_destinations",
+            "spec.allowed_sources",
+            "spec.denied_destinations",
+            "spec.denied_sources",
+            "spec.deny_all",
+            "spec.rule_list"
+          ],
+          "fieldPath": "spec.rule_choice"
+        },
+        {
+          "choiceField": "action_choice",
+          "options": [
+            "spec.rule_list.rules[].allow",
+            "spec.rule_list.rules[].deny",
+            "spec.rule_list.rules[].insert_service"
+          ],
+          "fieldPath": "spec.rule_list.rules[].action_choice"
+        },
+        {
+          "choiceField": "destination_choice",
+          "options": [
+            "spec.rule_list.rules[].all_destinations",
+            "spec.rule_list.rules[].all_sli_vips",
+            "spec.rule_list.rules[].all_slo_vips",
+            "spec.rule_list.rules[].destination_aws_vpc_ids",
+            "spec.rule_list.rules[].destination_ip_prefix_set",
+            "spec.rule_list.rules[].destination_label_selector",
+            "spec.rule_list.rules[].destination_prefix_list",
+            "spec.rule_list.rules[].inside_destinations",
+            "spec.rule_list.rules[].outside_destinations"
+          ],
+          "fieldPath": "spec.rule_list.rules[].destination_choice"
+        },
+        {
+          "choiceField": "source_choice",
+          "options": [
+            "spec.rule_list.rules[].all_sources",
+            "spec.rule_list.rules[].inside_sources",
+            "spec.rule_list.rules[].outside_sources",
+            "spec.rule_list.rules[].source_aws_vpc_ids",
+            "spec.rule_list.rules[].source_ip_prefix_set",
+            "spec.rule_list.rules[].source_label_selector",
+            "spec.rule_list.rules[].source_prefix_list"
+          ],
+          "fieldPath": "spec.rule_list.rules[].source_choice"
+        },
+        {
+          "choiceField": "traffic_choice",
+          "options": [
+            "spec.rule_list.rules[].all_tcp_traffic",
+            "spec.rule_list.rules[].all_traffic",
+            "spec.rule_list.rules[].all_udp_traffic",
+            "spec.rule_list.rules[].applications",
+            "spec.rule_list.rules[].protocol_port_range"
+          ],
+          "fieldPath": "spec.rule_list.rules[].traffic_choice"
+        }
+      ],
+      "subscriptions": [],
+      "creationOrder": [
+        "unknown/enhanced-firewall-policy",
+        "unknown/schema-object-create-meta",
+        "unknown/schemaenhanced-firewall-policy-create",
+        "unknown/schema-object-replace-meta",
+        "unknown/schemaenhanced-firewall-policy-replace",
+        "virtual/enhanced-firewall-policy"
       ]
     },
     "virtual/healthcheck": {
@@ -30064,6 +30366,75 @@
         "virtual/origin-pool"
       ]
     },
+    "virtual/protocol-inspection": {
+      "resource": "protocol-inspection",
+      "domain": "virtual",
+      "requires": [
+        {
+          "resourceType": "protocol-inspection",
+          "domain": "",
+          "fieldPath": "",
+          "required": false,
+          "inline": false
+        },
+        {
+          "resourceType": "schema-object-create-meta",
+          "domain": "",
+          "fieldPath": "metadata",
+          "required": false,
+          "inline": false
+        },
+        {
+          "resourceType": "protocol-inspection-create",
+          "domain": "",
+          "fieldPath": "spec",
+          "required": false,
+          "inline": false
+        },
+        {
+          "resourceType": "schema-object-replace-meta",
+          "domain": "",
+          "fieldPath": "metadata",
+          "required": false,
+          "inline": false
+        },
+        {
+          "resourceType": "protocol-inspection-replace",
+          "domain": "",
+          "fieldPath": "spec",
+          "required": false,
+          "inline": false
+        }
+      ],
+      "requiredBy": [],
+      "oneOfGroups": [
+        {
+          "choiceField": "compliance_check_choice",
+          "options": [
+            "spec.enable_disable_compliance_checks.disable_compliance_checks",
+            "spec.enable_disable_compliance_checks.enable_compliance_checks"
+          ],
+          "fieldPath": "spec.enable_disable_compliance_checks.compliance_check_choice"
+        },
+        {
+          "choiceField": "signature_choice",
+          "options": [
+            "spec.enable_disable_signatures.disable_signature",
+            "spec.enable_disable_signatures.enable_signature"
+          ],
+          "fieldPath": "spec.enable_disable_signatures.signature_choice"
+        }
+      ],
+      "subscriptions": [],
+      "creationOrder": [
+        "unknown/protocol-inspection",
+        "unknown/schema-object-create-meta",
+        "unknown/protocol-inspection-create",
+        "unknown/schema-object-replace-meta",
+        "unknown/protocol-inspection-replace",
+        "virtual/protocol-inspection"
+      ]
+    },
     "virtual/proxy": {
       "resource": "proxy",
       "domain": "virtual",
@@ -30679,23 +31050,6 @@
             "spec.request_constraints.max_url_size_none"
           ],
           "fieldPath": "spec.request_constraints.max_url_size_choice"
-        },
-        {
-          "choiceField": "dst_segment_choice",
-          "options": [
-            "spec.segment_policy.dst_any",
-            "spec.segment_policy.dst_segments",
-            "spec.segment_policy.intra_segment"
-          ],
-          "fieldPath": "spec.segment_policy.dst_segment_choice"
-        },
-        {
-          "choiceField": "src_segment_choice",
-          "options": [
-            "spec.segment_policy.src_any",
-            "spec.segment_policy.src_segments"
-          ],
-          "fieldPath": "spec.segment_policy.src_segment_choice"
         }
       ],
       "subscriptions": [
@@ -30727,7 +31081,7 @@
       "requires": [
         {
           "resourceType": "service-policy",
-          "domain": "waf",
+          "domain": "virtual",
           "fieldPath": "",
           "required": false,
           "inline": false
@@ -30761,7 +31115,22 @@
           "inline": false
         }
       ],
-      "requiredBy": [],
+      "requiredBy": [
+        {
+          "resourceType": "service-policy",
+          "domain": "network_security",
+          "fieldPath": "",
+          "required": false,
+          "inline": false
+        },
+        {
+          "resourceType": "service-policy",
+          "domain": "virtual",
+          "fieldPath": "",
+          "required": false,
+          "inline": false
+        }
+      ],
       "oneOfGroups": [
         {
           "choiceField": "rule_choice",
@@ -30960,23 +31329,6 @@
             "spec.rule_list.rules[].spec.request_constraints.max_url_size_none"
           ],
           "fieldPath": "spec.rule_list.rules[].spec.request_constraints.max_url_size_choice"
-        },
-        {
-          "choiceField": "dst_segment_choice",
-          "options": [
-            "spec.rule_list.rules[].spec.segment_policy.dst_any",
-            "spec.rule_list.rules[].spec.segment_policy.dst_segments",
-            "spec.rule_list.rules[].spec.segment_policy.intra_segment"
-          ],
-          "fieldPath": "spec.rule_list.rules[].spec.segment_policy.dst_segment_choice"
-        },
-        {
-          "choiceField": "src_segment_choice",
-          "options": [
-            "spec.rule_list.rules[].spec.segment_policy.src_any",
-            "spec.rule_list.rules[].spec.segment_policy.src_segments"
-          ],
-          "fieldPath": "spec.rule_list.rules[].spec.segment_policy.src_segment_choice"
         }
       ],
       "subscriptions": [
@@ -30994,7 +31346,6 @@
         }
       ],
       "creationOrder": [
-        "waf/service-policy",
         "unknown/schema-object-create-meta",
         "unknown/schemaservice-policy-create",
         "unknown/schema-object-replace-meta",
@@ -31655,6 +32006,98 @@
         "virtual/virtual-host"
       ]
     },
+    "virtual/waf-exclusion-policy": {
+      "resource": "waf-exclusion-policy",
+      "domain": "virtual",
+      "requires": [
+        {
+          "resourceType": "waf-exclusion-policy",
+          "domain": "",
+          "fieldPath": "",
+          "required": false,
+          "inline": false
+        },
+        {
+          "resourceType": "schema-object-create-meta",
+          "domain": "",
+          "fieldPath": "metadata",
+          "required": false,
+          "inline": false
+        },
+        {
+          "resourceType": "schemawaf-exclusion-policy-create",
+          "domain": "",
+          "fieldPath": "spec",
+          "required": false,
+          "inline": false
+        },
+        {
+          "resourceType": "schema-object-replace-meta",
+          "domain": "",
+          "fieldPath": "metadata",
+          "required": false,
+          "inline": false
+        },
+        {
+          "resourceType": "schemawaf-exclusion-policy-replace",
+          "domain": "",
+          "fieldPath": "spec",
+          "required": false,
+          "inline": false
+        }
+      ],
+      "requiredBy": [],
+      "oneOfGroups": [
+        {
+          "choiceField": "domain_choice",
+          "options": [
+            "spec.waf_exclusion_rules[].any_domain",
+            "spec.waf_exclusion_rules[].exact_value",
+            "spec.waf_exclusion_rules[].suffix_value"
+          ],
+          "fieldPath": "spec.waf_exclusion_rules[].domain_choice"
+        },
+        {
+          "choiceField": "path_choice",
+          "options": [
+            "spec.waf_exclusion_rules[].any_path",
+            "spec.waf_exclusion_rules[].path_prefix",
+            "spec.waf_exclusion_rules[].path_regex"
+          ],
+          "fieldPath": "spec.waf_exclusion_rules[].path_choice"
+        },
+        {
+          "choiceField": "waf_advanced_configuration",
+          "options": [
+            "spec.waf_exclusion_rules[].app_firewall_detection_control",
+            "spec.waf_exclusion_rules[].waf_skip_processing"
+          ],
+          "fieldPath": "spec.waf_exclusion_rules[].waf_advanced_configuration"
+        }
+      ],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
+      "creationOrder": [
+        "unknown/waf-exclusion-policy",
+        "unknown/schema-object-create-meta",
+        "unknown/schemawaf-exclusion-policy-create",
+        "unknown/schema-object-replace-meta",
+        "unknown/schemawaf-exclusion-policy-replace",
+        "virtual/waf-exclusion-policy"
+      ]
+    },
     "virtual/get-security-config": {
       "resource": "get-security-config",
       "domain": "virtual",
@@ -31704,6 +32147,17 @@
       "subscriptions": [],
       "creationOrder": [
         "virtual/available"
+      ]
+    },
+    "virtual/suggestion": {
+      "resource": "suggestion",
+      "domain": "virtual",
+      "requires": [],
+      "requiredBy": [],
+      "oneOfGroups": [],
+      "subscriptions": [],
+      "creationOrder": [
+        "virtual/suggestion"
       ]
     },
     "virtual/dos-automitigation-rule": {
@@ -31772,6 +32226,160 @@
       ],
       "creationOrder": [
         "virtual/service-policy-set"
+      ]
+    },
+    "virtual/active-staged-signature": {
+      "resource": "active-staged-signature",
+      "domain": "virtual",
+      "requires": [],
+      "requiredBy": [],
+      "oneOfGroups": [],
+      "subscriptions": [],
+      "creationOrder": [
+        "virtual/active-staged-signature"
+      ]
+    },
+    "virtual/released-signature": {
+      "resource": "released-signature",
+      "domain": "virtual",
+      "requires": [],
+      "requiredBy": [],
+      "oneOfGroups": [],
+      "subscriptions": [],
+      "creationOrder": [
+        "virtual/released-signature"
+      ]
+    },
+    "virtual/all-ns-metric": {
+      "resource": "all-ns-metric",
+      "domain": "virtual",
+      "requires": [],
+      "requiredBy": [],
+      "oneOfGroups": [],
+      "subscriptions": [],
+      "creationOrder": [
+        "virtual/all-ns-metric"
+      ]
+    },
+    "virtual/all-ns-event": {
+      "resource": "all-ns-event",
+      "domain": "virtual",
+      "requires": [],
+      "requiredBy": [],
+      "oneOfGroups": [],
+      "subscriptions": [],
+      "creationOrder": [
+        "virtual/all-ns-event"
+      ]
+    },
+    "virtual/aggregation": {
+      "resource": "aggregation",
+      "domain": "virtual",
+      "requires": [],
+      "requiredBy": [],
+      "oneOfGroups": [],
+      "subscriptions": [],
+      "creationOrder": [
+        "virtual/aggregation"
+      ]
+    },
+    "virtual/loadbalancer": {
+      "resource": "loadbalancer",
+      "domain": "virtual",
+      "requires": [],
+      "requiredBy": [],
+      "oneOfGroups": [],
+      "subscriptions": [],
+      "creationOrder": [
+        "virtual/loadbalancer"
+      ]
+    },
+    "virtual/metric": {
+      "resource": "metric",
+      "domain": "virtual",
+      "requires": [],
+      "requiredBy": [],
+      "oneOfGroups": [],
+      "subscriptions": [],
+      "creationOrder": [
+        "virtual/metric"
+      ]
+    },
+    "virtual/event": {
+      "resource": "event",
+      "domain": "virtual",
+      "requires": [],
+      "requiredBy": [],
+      "oneOfGroups": [],
+      "subscriptions": [],
+      "creationOrder": [
+        "virtual/event"
+      ]
+    },
+    "virtual/scroll": {
+      "resource": "scroll",
+      "domain": "virtual",
+      "requires": [],
+      "requiredBy": [],
+      "oneOfGroups": [],
+      "subscriptions": [],
+      "creationOrder": [
+        "virtual/scroll"
+      ]
+    },
+    "virtual/incident": {
+      "resource": "incident",
+      "domain": "virtual",
+      "requires": [],
+      "requiredBy": [],
+      "oneOfGroups": [],
+      "subscriptions": [],
+      "creationOrder": [
+        "virtual/incident"
+      ]
+    },
+    "virtual/suspicious-user-log": {
+      "resource": "suspicious-user-log",
+      "domain": "virtual",
+      "requires": [],
+      "requiredBy": [],
+      "oneOfGroups": [],
+      "subscriptions": [],
+      "creationOrder": [
+        "virtual/suspicious-user-log"
+      ]
+    },
+    "virtual/hit": {
+      "resource": "hit",
+      "domain": "virtual",
+      "requires": [],
+      "requiredBy": [],
+      "oneOfGroups": [],
+      "subscriptions": [],
+      "creationOrder": [
+        "virtual/hit"
+      ]
+    },
+    "virtual/rule-hit": {
+      "resource": "rule-hit",
+      "domain": "virtual",
+      "requires": [],
+      "requiredBy": [],
+      "oneOfGroups": [],
+      "subscriptions": [],
+      "creationOrder": [
+        "virtual/rule-hit"
+      ]
+    },
+    "virtual/security-event": {
+      "resource": "security-event",
+      "domain": "virtual",
+      "requires": [],
+      "requiredBy": [],
+      "oneOfGroups": [],
+      "subscriptions": [],
+      "creationOrder": [
+        "virtual/security-event"
       ]
     },
     "virtual/api-endpoint": {
@@ -32001,6 +32609,17 @@
         "virtual/update-state"
       ]
     },
+    "virtual/staged-signature": {
+      "resource": "staged-signature",
+      "domain": "virtual",
+      "requires": [],
+      "requiredBy": [],
+      "oneOfGroups": [],
+      "subscriptions": [],
+      "creationOrder": [
+        "virtual/staged-signature"
+      ]
+    },
     "vpm_and_node_management/upgrade-statu": {
       "resource": "upgrade-statu",
       "domain": "vpm_and_node_management",
@@ -32010,855 +32629,6 @@
       "subscriptions": [],
       "creationOrder": [
         "vpm_and_node_management/upgrade-statu"
-      ]
-    },
-    "waf/app-firewall": {
-      "resource": "app-firewall",
-      "domain": "waf",
-      "requires": [
-        {
-          "resourceType": "app-firewall",
-          "domain": "waf",
-          "fieldPath": "",
-          "required": false,
-          "inline": false
-        },
-        {
-          "resourceType": "schema-object-create-meta",
-          "domain": "",
-          "fieldPath": "metadata",
-          "required": false,
-          "inline": false
-        },
-        {
-          "resourceType": "app-firewall-create",
-          "domain": "",
-          "fieldPath": "spec",
-          "required": false,
-          "inline": false
-        },
-        {
-          "resourceType": "schema-object-replace-meta",
-          "domain": "",
-          "fieldPath": "metadata",
-          "required": false,
-          "inline": false
-        },
-        {
-          "resourceType": "app-firewall-replace",
-          "domain": "",
-          "fieldPath": "spec",
-          "required": false,
-          "inline": false
-        }
-      ],
-      "requiredBy": [
-        {
-          "resourceType": "app-firewall",
-          "domain": "waf",
-          "fieldPath": "",
-          "required": false,
-          "inline": false
-        }
-      ],
-      "oneOfGroups": [
-        {
-          "choiceField": "allowed_response_codes_choice",
-          "options": [
-            "spec.allow_all_response_codes",
-            "spec.allowed_response_codes"
-          ],
-          "fieldPath": "spec.allowed_response_codes_choice",
-          "recommendedOption": "spec.allow_all_response_codes"
-        },
-        {
-          "choiceField": "anonymization_setting",
-          "options": [
-            "spec.custom_anonymization",
-            "spec.default_anonymization",
-            "spec.disable_anonymization"
-          ],
-          "fieldPath": "spec.anonymization_setting",
-          "recommendedOption": "spec.default_anonymization"
-        },
-        {
-          "choiceField": "blocking_page_choice",
-          "options": [
-            "spec.blocking_page",
-            "spec.use_default_blocking_page"
-          ],
-          "fieldPath": "spec.blocking_page_choice",
-          "recommendedOption": "spec.use_default_blocking_page"
-        },
-        {
-          "choiceField": "bot_protection_choice",
-          "options": [
-            "spec.bot_protection_setting",
-            "spec.default_bot_setting"
-          ],
-          "fieldPath": "spec.bot_protection_choice",
-          "recommendedOption": "spec.default_bot_setting"
-        },
-        {
-          "choiceField": "detection_setting_choice",
-          "options": [
-            "spec.ai_risk_based_blocking",
-            "spec.default_detection_settings",
-            "spec.detection_settings"
-          ],
-          "fieldPath": "spec.detection_setting_choice",
-          "recommendedOption": "spec.default_detection_settings"
-        },
-        {
-          "choiceField": "enforcement_mode_choice",
-          "options": [
-            "spec.blocking",
-            "spec.monitoring"
-          ],
-          "fieldPath": "spec.enforcement_mode_choice",
-          "recommendedOption": "spec.monitoring"
-        },
-        {
-          "choiceField": "anonymization_choice",
-          "options": [
-            "spec.custom_anonymization.anonymization_config[].cookie",
-            "spec.custom_anonymization.anonymization_config[].http_header",
-            "spec.custom_anonymization.anonymization_config[].query_parameter"
-          ],
-          "fieldPath": "spec.custom_anonymization.anonymization_config[].anonymization_choice"
-        },
-        {
-          "choiceField": "false_positive_suppression",
-          "options": [
-            "spec.detection_settings.disable_suppression",
-            "spec.detection_settings.enable_suppression"
-          ],
-          "fieldPath": "spec.detection_settings.false_positive_suppression"
-        },
-        {
-          "choiceField": "signatures_staging_settings",
-          "options": [
-            "spec.detection_settings.disable_staging",
-            "spec.detection_settings.stage_new_and_updated_signatures",
-            "spec.detection_settings.stage_new_signatures"
-          ],
-          "fieldPath": "spec.detection_settings.signatures_staging_settings"
-        },
-        {
-          "choiceField": "threat_campaign_choice",
-          "options": [
-            "spec.detection_settings.disable_threat_campaigns",
-            "spec.detection_settings.enable_threat_campaigns"
-          ],
-          "fieldPath": "spec.detection_settings.threat_campaign_choice"
-        },
-        {
-          "choiceField": "violation_detection_setting",
-          "options": [
-            "spec.detection_settings.default_violation_settings",
-            "spec.detection_settings.violation_settings"
-          ],
-          "fieldPath": "spec.detection_settings.violation_detection_setting"
-        },
-        {
-          "choiceField": "attack_type_setting",
-          "options": [
-            "spec.detection_settings.signature_selection_setting.attack_type_settings",
-            "spec.detection_settings.signature_selection_setting.default_attack_type_settings"
-          ],
-          "fieldPath": "spec.detection_settings.signature_selection_setting.attack_type_setting"
-        },
-        {
-          "choiceField": "signature_selection_by_accuracy",
-          "options": [
-            "spec.detection_settings.signature_selection_setting.high_medium_accuracy_signatures",
-            "spec.detection_settings.signature_selection_setting.high_medium_low_accuracy_signatures",
-            "spec.detection_settings.signature_selection_setting.only_high_accuracy_signatures"
-          ],
-          "fieldPath": "spec.detection_settings.signature_selection_setting.signature_selection_by_accuracy"
-        }
-      ],
-      "subscriptions": [
-        {
-          "addonService": "f5xc_waap_standard",
-          "displayName": "F5XC WAAP Standard",
-          "tier": "standard",
-          "required": false
-        },
-        {
-          "addonService": "f5xc_waap_advanced",
-          "displayName": "F5XC WAAP Advanced",
-          "tier": "advanced",
-          "required": false
-        }
-      ],
-      "creationOrder": [
-        "unknown/schema-object-create-meta",
-        "unknown/app-firewall-create",
-        "unknown/schema-object-replace-meta",
-        "unknown/app-firewall-replace",
-        "waf/app-firewall"
-      ]
-    },
-    "waf/enhanced-firewall-policy": {
-      "resource": "enhanced-firewall-policy",
-      "domain": "waf",
-      "requires": [
-        {
-          "resourceType": "enhanced-firewall-policy",
-          "domain": "",
-          "fieldPath": "",
-          "required": false,
-          "inline": false
-        },
-        {
-          "resourceType": "schema-object-create-meta",
-          "domain": "",
-          "fieldPath": "metadata",
-          "required": false,
-          "inline": false
-        },
-        {
-          "resourceType": "schemaenhanced-firewall-policy-create",
-          "domain": "",
-          "fieldPath": "spec",
-          "required": false,
-          "inline": false
-        },
-        {
-          "resourceType": "schema-object-replace-meta",
-          "domain": "",
-          "fieldPath": "metadata",
-          "required": false,
-          "inline": false
-        },
-        {
-          "resourceType": "schemaenhanced-firewall-policy-replace",
-          "domain": "",
-          "fieldPath": "spec",
-          "required": false,
-          "inline": false
-        }
-      ],
-      "requiredBy": [],
-      "oneOfGroups": [
-        {
-          "choiceField": "rule_choice",
-          "options": [
-            "spec.allow_all",
-            "spec.allowed_destinations",
-            "spec.allowed_sources",
-            "spec.denied_destinations",
-            "spec.denied_sources",
-            "spec.deny_all",
-            "spec.rule_list"
-          ],
-          "fieldPath": "spec.rule_choice"
-        },
-        {
-          "choiceField": "action_choice",
-          "options": [
-            "spec.rule_list.rules[].allow",
-            "spec.rule_list.rules[].deny",
-            "spec.rule_list.rules[].insert_service"
-          ],
-          "fieldPath": "spec.rule_list.rules[].action_choice"
-        },
-        {
-          "choiceField": "destination_choice",
-          "options": [
-            "spec.rule_list.rules[].all_destinations",
-            "spec.rule_list.rules[].all_sli_vips",
-            "spec.rule_list.rules[].all_slo_vips",
-            "spec.rule_list.rules[].destination_aws_vpc_ids",
-            "spec.rule_list.rules[].destination_ip_prefix_set",
-            "spec.rule_list.rules[].destination_label_selector",
-            "spec.rule_list.rules[].destination_prefix_list",
-            "spec.rule_list.rules[].inside_destinations",
-            "spec.rule_list.rules[].outside_destinations"
-          ],
-          "fieldPath": "spec.rule_list.rules[].destination_choice"
-        },
-        {
-          "choiceField": "source_choice",
-          "options": [
-            "spec.rule_list.rules[].all_sources",
-            "spec.rule_list.rules[].inside_sources",
-            "spec.rule_list.rules[].outside_sources",
-            "spec.rule_list.rules[].source_aws_vpc_ids",
-            "spec.rule_list.rules[].source_ip_prefix_set",
-            "spec.rule_list.rules[].source_label_selector",
-            "spec.rule_list.rules[].source_prefix_list"
-          ],
-          "fieldPath": "spec.rule_list.rules[].source_choice"
-        },
-        {
-          "choiceField": "traffic_choice",
-          "options": [
-            "spec.rule_list.rules[].all_tcp_traffic",
-            "spec.rule_list.rules[].all_traffic",
-            "spec.rule_list.rules[].all_udp_traffic",
-            "spec.rule_list.rules[].applications",
-            "spec.rule_list.rules[].protocol_port_range"
-          ],
-          "fieldPath": "spec.rule_list.rules[].traffic_choice"
-        }
-      ],
-      "subscriptions": [
-        {
-          "addonService": "f5xc_waap_standard",
-          "displayName": "F5XC WAAP Standard",
-          "tier": "standard",
-          "required": false
-        },
-        {
-          "addonService": "f5xc_waap_advanced",
-          "displayName": "F5XC WAAP Advanced",
-          "tier": "advanced",
-          "required": false
-        }
-      ],
-      "creationOrder": [
-        "unknown/enhanced-firewall-policy",
-        "unknown/schema-object-create-meta",
-        "unknown/schemaenhanced-firewall-policy-create",
-        "unknown/schema-object-replace-meta",
-        "unknown/schemaenhanced-firewall-policy-replace",
-        "waf/enhanced-firewall-policy"
-      ]
-    },
-    "waf/protocol-inspection": {
-      "resource": "protocol-inspection",
-      "domain": "waf",
-      "requires": [
-        {
-          "resourceType": "protocol-inspection",
-          "domain": "",
-          "fieldPath": "",
-          "required": false,
-          "inline": false
-        },
-        {
-          "resourceType": "schema-object-create-meta",
-          "domain": "",
-          "fieldPath": "metadata",
-          "required": false,
-          "inline": false
-        },
-        {
-          "resourceType": "protocol-inspection-create",
-          "domain": "",
-          "fieldPath": "spec",
-          "required": false,
-          "inline": false
-        },
-        {
-          "resourceType": "schema-object-replace-meta",
-          "domain": "",
-          "fieldPath": "metadata",
-          "required": false,
-          "inline": false
-        },
-        {
-          "resourceType": "protocol-inspection-replace",
-          "domain": "",
-          "fieldPath": "spec",
-          "required": false,
-          "inline": false
-        }
-      ],
-      "requiredBy": [],
-      "oneOfGroups": [
-        {
-          "choiceField": "compliance_check_choice",
-          "options": [
-            "spec.enable_disable_compliance_checks.disable_compliance_checks",
-            "spec.enable_disable_compliance_checks.enable_compliance_checks"
-          ],
-          "fieldPath": "spec.enable_disable_compliance_checks.compliance_check_choice"
-        },
-        {
-          "choiceField": "signature_choice",
-          "options": [
-            "spec.enable_disable_signatures.disable_signature",
-            "spec.enable_disable_signatures.enable_signature"
-          ],
-          "fieldPath": "spec.enable_disable_signatures.signature_choice"
-        }
-      ],
-      "subscriptions": [
-        {
-          "addonService": "f5xc_waap_standard",
-          "displayName": "F5XC WAAP Standard",
-          "tier": "standard",
-          "required": false
-        },
-        {
-          "addonService": "f5xc_waap_advanced",
-          "displayName": "F5XC WAAP Advanced",
-          "tier": "advanced",
-          "required": false
-        }
-      ],
-      "creationOrder": [
-        "unknown/protocol-inspection",
-        "unknown/schema-object-create-meta",
-        "unknown/protocol-inspection-create",
-        "unknown/schema-object-replace-meta",
-        "unknown/protocol-inspection-replace",
-        "waf/protocol-inspection"
-      ]
-    },
-    "waf/waf-exclusion-policy": {
-      "resource": "waf-exclusion-policy",
-      "domain": "waf",
-      "requires": [
-        {
-          "resourceType": "waf-exclusion-policy",
-          "domain": "",
-          "fieldPath": "",
-          "required": false,
-          "inline": false
-        },
-        {
-          "resourceType": "schema-object-create-meta",
-          "domain": "",
-          "fieldPath": "metadata",
-          "required": false,
-          "inline": false
-        },
-        {
-          "resourceType": "schemawaf-exclusion-policy-create",
-          "domain": "",
-          "fieldPath": "spec",
-          "required": false,
-          "inline": false
-        },
-        {
-          "resourceType": "schema-object-replace-meta",
-          "domain": "",
-          "fieldPath": "metadata",
-          "required": false,
-          "inline": false
-        },
-        {
-          "resourceType": "schemawaf-exclusion-policy-replace",
-          "domain": "",
-          "fieldPath": "spec",
-          "required": false,
-          "inline": false
-        }
-      ],
-      "requiredBy": [],
-      "oneOfGroups": [
-        {
-          "choiceField": "domain_choice",
-          "options": [
-            "spec.waf_exclusion_rules[].any_domain",
-            "spec.waf_exclusion_rules[].exact_value",
-            "spec.waf_exclusion_rules[].suffix_value"
-          ],
-          "fieldPath": "spec.waf_exclusion_rules[].domain_choice"
-        },
-        {
-          "choiceField": "path_choice",
-          "options": [
-            "spec.waf_exclusion_rules[].any_path",
-            "spec.waf_exclusion_rules[].path_prefix",
-            "spec.waf_exclusion_rules[].path_regex"
-          ],
-          "fieldPath": "spec.waf_exclusion_rules[].path_choice"
-        },
-        {
-          "choiceField": "waf_advanced_configuration",
-          "options": [
-            "spec.waf_exclusion_rules[].app_firewall_detection_control",
-            "spec.waf_exclusion_rules[].waf_skip_processing"
-          ],
-          "fieldPath": "spec.waf_exclusion_rules[].waf_advanced_configuration"
-        }
-      ],
-      "subscriptions": [
-        {
-          "addonService": "f5xc_waap_standard",
-          "displayName": "F5XC WAAP Standard",
-          "tier": "standard",
-          "required": false
-        },
-        {
-          "addonService": "f5xc_waap_advanced",
-          "displayName": "F5XC WAAP Advanced",
-          "tier": "advanced",
-          "required": false
-        }
-      ],
-      "creationOrder": [
-        "unknown/waf-exclusion-policy",
-        "unknown/schema-object-create-meta",
-        "unknown/schemawaf-exclusion-policy-create",
-        "unknown/schema-object-replace-meta",
-        "unknown/schemawaf-exclusion-policy-replace",
-        "waf/waf-exclusion-policy"
-      ]
-    },
-    "waf/active-staged-signature": {
-      "resource": "active-staged-signature",
-      "domain": "waf",
-      "requires": [],
-      "requiredBy": [],
-      "oneOfGroups": [],
-      "subscriptions": [
-        {
-          "addonService": "f5xc_waap_standard",
-          "displayName": "F5XC WAAP Standard",
-          "tier": "standard",
-          "required": false
-        },
-        {
-          "addonService": "f5xc_waap_advanced",
-          "displayName": "F5XC WAAP Advanced",
-          "tier": "advanced",
-          "required": false
-        }
-      ],
-      "creationOrder": [
-        "waf/active-staged-signature"
-      ]
-    },
-    "waf/released-signature": {
-      "resource": "released-signature",
-      "domain": "waf",
-      "requires": [],
-      "requiredBy": [],
-      "oneOfGroups": [],
-      "subscriptions": [
-        {
-          "addonService": "f5xc_waap_standard",
-          "displayName": "F5XC WAAP Standard",
-          "tier": "standard",
-          "required": false
-        },
-        {
-          "addonService": "f5xc_waap_advanced",
-          "displayName": "F5XC WAAP Advanced",
-          "tier": "advanced",
-          "required": false
-        }
-      ],
-      "creationOrder": [
-        "waf/released-signature"
-      ]
-    },
-    "waf/all-ns-metric": {
-      "resource": "all-ns-metric",
-      "domain": "waf",
-      "requires": [],
-      "requiredBy": [],
-      "oneOfGroups": [],
-      "subscriptions": [
-        {
-          "addonService": "f5xc_waap_standard",
-          "displayName": "F5XC WAAP Standard",
-          "tier": "standard",
-          "required": false
-        },
-        {
-          "addonService": "f5xc_waap_advanced",
-          "displayName": "F5XC WAAP Advanced",
-          "tier": "advanced",
-          "required": false
-        }
-      ],
-      "creationOrder": [
-        "waf/all-ns-metric"
-      ]
-    },
-    "waf/all-ns-event": {
-      "resource": "all-ns-event",
-      "domain": "waf",
-      "requires": [],
-      "requiredBy": [],
-      "oneOfGroups": [],
-      "subscriptions": [
-        {
-          "addonService": "f5xc_waap_standard",
-          "displayName": "F5XC WAAP Standard",
-          "tier": "standard",
-          "required": false
-        },
-        {
-          "addonService": "f5xc_waap_advanced",
-          "displayName": "F5XC WAAP Advanced",
-          "tier": "advanced",
-          "required": false
-        }
-      ],
-      "creationOrder": [
-        "waf/all-ns-event"
-      ]
-    },
-    "waf/aggregation": {
-      "resource": "aggregation",
-      "domain": "waf",
-      "requires": [],
-      "requiredBy": [],
-      "oneOfGroups": [],
-      "subscriptions": [
-        {
-          "addonService": "f5xc_waap_standard",
-          "displayName": "F5XC WAAP Standard",
-          "tier": "standard",
-          "required": false
-        },
-        {
-          "addonService": "f5xc_waap_advanced",
-          "displayName": "F5XC WAAP Advanced",
-          "tier": "advanced",
-          "required": false
-        }
-      ],
-      "creationOrder": [
-        "waf/aggregation"
-      ]
-    },
-    "waf/loadbalancer": {
-      "resource": "loadbalancer",
-      "domain": "waf",
-      "requires": [],
-      "requiredBy": [],
-      "oneOfGroups": [],
-      "subscriptions": [
-        {
-          "addonService": "f5xc_waap_standard",
-          "displayName": "F5XC WAAP Standard",
-          "tier": "standard",
-          "required": false
-        },
-        {
-          "addonService": "f5xc_waap_advanced",
-          "displayName": "F5XC WAAP Advanced",
-          "tier": "advanced",
-          "required": false
-        }
-      ],
-      "creationOrder": [
-        "waf/loadbalancer"
-      ]
-    },
-    "waf/metric": {
-      "resource": "metric",
-      "domain": "waf",
-      "requires": [],
-      "requiredBy": [],
-      "oneOfGroups": [],
-      "subscriptions": [
-        {
-          "addonService": "f5xc_waap_standard",
-          "displayName": "F5XC WAAP Standard",
-          "tier": "standard",
-          "required": false
-        },
-        {
-          "addonService": "f5xc_waap_advanced",
-          "displayName": "F5XC WAAP Advanced",
-          "tier": "advanced",
-          "required": false
-        }
-      ],
-      "creationOrder": [
-        "waf/metric"
-      ]
-    },
-    "waf/event": {
-      "resource": "event",
-      "domain": "waf",
-      "requires": [],
-      "requiredBy": [],
-      "oneOfGroups": [],
-      "subscriptions": [
-        {
-          "addonService": "f5xc_waap_standard",
-          "displayName": "F5XC WAAP Standard",
-          "tier": "standard",
-          "required": false
-        },
-        {
-          "addonService": "f5xc_waap_advanced",
-          "displayName": "F5XC WAAP Advanced",
-          "tier": "advanced",
-          "required": false
-        }
-      ],
-      "creationOrder": [
-        "waf/event"
-      ]
-    },
-    "waf/scroll": {
-      "resource": "scroll",
-      "domain": "waf",
-      "requires": [],
-      "requiredBy": [],
-      "oneOfGroups": [],
-      "subscriptions": [
-        {
-          "addonService": "f5xc_waap_standard",
-          "displayName": "F5XC WAAP Standard",
-          "tier": "standard",
-          "required": false
-        },
-        {
-          "addonService": "f5xc_waap_advanced",
-          "displayName": "F5XC WAAP Advanced",
-          "tier": "advanced",
-          "required": false
-        }
-      ],
-      "creationOrder": [
-        "waf/scroll"
-      ]
-    },
-    "waf/incident": {
-      "resource": "incident",
-      "domain": "waf",
-      "requires": [],
-      "requiredBy": [],
-      "oneOfGroups": [],
-      "subscriptions": [
-        {
-          "addonService": "f5xc_waap_standard",
-          "displayName": "F5XC WAAP Standard",
-          "tier": "standard",
-          "required": false
-        },
-        {
-          "addonService": "f5xc_waap_advanced",
-          "displayName": "F5XC WAAP Advanced",
-          "tier": "advanced",
-          "required": false
-        }
-      ],
-      "creationOrder": [
-        "waf/incident"
-      ]
-    },
-    "waf/suspicious-user-log": {
-      "resource": "suspicious-user-log",
-      "domain": "waf",
-      "requires": [],
-      "requiredBy": [],
-      "oneOfGroups": [],
-      "subscriptions": [
-        {
-          "addonService": "f5xc_waap_standard",
-          "displayName": "F5XC WAAP Standard",
-          "tier": "standard",
-          "required": false
-        },
-        {
-          "addonService": "f5xc_waap_advanced",
-          "displayName": "F5XC WAAP Advanced",
-          "tier": "advanced",
-          "required": false
-        }
-      ],
-      "creationOrder": [
-        "waf/suspicious-user-log"
-      ]
-    },
-    "waf/hit": {
-      "resource": "hit",
-      "domain": "waf",
-      "requires": [],
-      "requiredBy": [],
-      "oneOfGroups": [],
-      "subscriptions": [
-        {
-          "addonService": "f5xc_waap_standard",
-          "displayName": "F5XC WAAP Standard",
-          "tier": "standard",
-          "required": false
-        },
-        {
-          "addonService": "f5xc_waap_advanced",
-          "displayName": "F5XC WAAP Advanced",
-          "tier": "advanced",
-          "required": false
-        }
-      ],
-      "creationOrder": [
-        "waf/hit"
-      ]
-    },
-    "waf/rule-hit": {
-      "resource": "rule-hit",
-      "domain": "waf",
-      "requires": [],
-      "requiredBy": [],
-      "oneOfGroups": [],
-      "subscriptions": [
-        {
-          "addonService": "f5xc_waap_standard",
-          "displayName": "F5XC WAAP Standard",
-          "tier": "standard",
-          "required": false
-        },
-        {
-          "addonService": "f5xc_waap_advanced",
-          "displayName": "F5XC WAAP Advanced",
-          "tier": "advanced",
-          "required": false
-        }
-      ],
-      "creationOrder": [
-        "waf/rule-hit"
-      ]
-    },
-    "waf/security-event": {
-      "resource": "security-event",
-      "domain": "waf",
-      "requires": [],
-      "requiredBy": [],
-      "oneOfGroups": [],
-      "subscriptions": [
-        {
-          "addonService": "f5xc_waap_standard",
-          "displayName": "F5XC WAAP Standard",
-          "tier": "standard",
-          "required": false
-        },
-        {
-          "addonService": "f5xc_waap_advanced",
-          "displayName": "F5XC WAAP Advanced",
-          "tier": "advanced",
-          "required": false
-        }
-      ],
-      "creationOrder": [
-        "waf/security-event"
-      ]
-    },
-    "waf/staged-signature": {
-      "resource": "staged-signature",
-      "domain": "waf",
-      "requires": [],
-      "requiredBy": [],
-      "oneOfGroups": [],
-      "subscriptions": [
-        {
-          "addonService": "f5xc_waap_standard",
-          "displayName": "F5XC WAAP Standard",
-          "tier": "standard",
-          "required": false
-        },
-        {
-          "addonService": "f5xc_waap_advanced",
-          "displayName": "F5XC WAAP Advanced",
-          "tier": "advanced",
-          "required": false
-        }
-      ],
-      "creationOrder": [
-        "waf/staged-signature"
       ]
     }
   },
@@ -33190,29 +32960,12 @@
       "shape/gettransactiondata",
       "shape/safecubejsdata",
       "tenant_and_identity/all-application-inventory-waf-filter",
+      "virtual/app-firewall",
       "virtual/rate-limiter-policy",
       "virtual/service-policy-rule",
       "virtual/service-policy",
-      "virtual/service-policy-set",
-      "waf/app-firewall",
-      "waf/enhanced-firewall-policy",
-      "waf/protocol-inspection",
-      "waf/waf-exclusion-policy",
-      "waf/active-staged-signature",
-      "waf/released-signature",
-      "waf/all-ns-metric",
-      "waf/all-ns-event",
-      "waf/aggregation",
-      "waf/loadbalancer",
-      "waf/metric",
-      "waf/event",
-      "waf/scroll",
-      "waf/incident",
-      "waf/suspicious-user-log",
-      "waf/hit",
-      "waf/rule-hit",
-      "waf/security-event",
-      "waf/staged-signature"
+      "virtual/waf-exclusion-policy",
+      "virtual/service-policy-set"
     ],
     "f5xc_waap_advanced": [
       "api/api-crawler",
@@ -33445,29 +33198,12 @@
       "shape/gettransactiondata",
       "shape/safecubejsdata",
       "tenant_and_identity/all-application-inventory-waf-filter",
+      "virtual/app-firewall",
       "virtual/rate-limiter-policy",
       "virtual/service-policy-rule",
       "virtual/service-policy",
-      "virtual/service-policy-set",
-      "waf/app-firewall",
-      "waf/enhanced-firewall-policy",
-      "waf/protocol-inspection",
-      "waf/waf-exclusion-policy",
-      "waf/active-staged-signature",
-      "waf/released-signature",
-      "waf/all-ns-metric",
-      "waf/all-ns-event",
-      "waf/aggregation",
-      "waf/loadbalancer",
-      "waf/metric",
-      "waf/event",
-      "waf/scroll",
-      "waf/incident",
-      "waf/suspicious-user-log",
-      "waf/hit",
-      "waf/rule-hit",
-      "waf/security-event",
-      "waf/staged-signature"
+      "virtual/waf-exclusion-policy",
+      "virtual/service-policy-set"
     ],
     "f5xc_content_delivery_network_standard": [
       "cdn/subscribe",
@@ -34498,7 +34234,21 @@
         "inline": false
       },
       {
+        "resourceType": "app-firewall",
+        "domain": "virtual",
+        "fieldPath": "metadata",
+        "required": false,
+        "inline": false
+      },
+      {
         "resourceType": "cluster",
+        "domain": "virtual",
+        "fieldPath": "metadata",
+        "required": false,
+        "inline": false
+      },
+      {
+        "resourceType": "enhanced-firewall-policy",
         "domain": "virtual",
         "fieldPath": "metadata",
         "required": false,
@@ -34520,6 +34270,13 @@
       },
       {
         "resourceType": "origin-pool",
+        "domain": "virtual",
+        "fieldPath": "metadata",
+        "required": false,
+        "inline": false
+      },
+      {
+        "resourceType": "protocol-inspection",
         "domain": "virtual",
         "fieldPath": "metadata",
         "required": false,
@@ -34575,29 +34332,8 @@
         "inline": false
       },
       {
-        "resourceType": "app-firewall",
-        "domain": "waf",
-        "fieldPath": "metadata",
-        "required": false,
-        "inline": false
-      },
-      {
-        "resourceType": "enhanced-firewall-policy",
-        "domain": "waf",
-        "fieldPath": "metadata",
-        "required": false,
-        "inline": false
-      },
-      {
-        "resourceType": "protocol-inspection",
-        "domain": "waf",
-        "fieldPath": "metadata",
-        "required": false,
-        "inline": false
-      },
-      {
         "resourceType": "waf-exclusion-policy",
-        "domain": "waf",
+        "domain": "virtual",
         "fieldPath": "metadata",
         "required": false,
         "inline": false
@@ -35615,7 +35351,21 @@
         "inline": false
       },
       {
+        "resourceType": "app-firewall",
+        "domain": "virtual",
+        "fieldPath": "metadata",
+        "required": false,
+        "inline": false
+      },
+      {
         "resourceType": "cluster",
+        "domain": "virtual",
+        "fieldPath": "metadata",
+        "required": false,
+        "inline": false
+      },
+      {
+        "resourceType": "enhanced-firewall-policy",
         "domain": "virtual",
         "fieldPath": "metadata",
         "required": false,
@@ -35637,6 +35387,13 @@
       },
       {
         "resourceType": "origin-pool",
+        "domain": "virtual",
+        "fieldPath": "metadata",
+        "required": false,
+        "inline": false
+      },
+      {
+        "resourceType": "protocol-inspection",
         "domain": "virtual",
         "fieldPath": "metadata",
         "required": false,
@@ -35692,29 +35449,8 @@
         "inline": false
       },
       {
-        "resourceType": "app-firewall",
-        "domain": "waf",
-        "fieldPath": "metadata",
-        "required": false,
-        "inline": false
-      },
-      {
-        "resourceType": "enhanced-firewall-policy",
-        "domain": "waf",
-        "fieldPath": "metadata",
-        "required": false,
-        "inline": false
-      },
-      {
-        "resourceType": "protocol-inspection",
-        "domain": "waf",
-        "fieldPath": "metadata",
-        "required": false,
-        "inline": false
-      },
-      {
         "resourceType": "waf-exclusion-policy",
-        "domain": "waf",
+        "domain": "virtual",
         "fieldPath": "metadata",
         "required": false,
         "inline": false
@@ -38548,7 +38284,7 @@
         "inline": false
       }
     ],
-    "waf/service-policy": [
+    "virtual/service-policy": [
       {
         "resourceType": "service-policy",
         "domain": "network_security",
@@ -40440,6 +40176,33 @@
         "inline": false
       }
     ],
+    "virtual/app-firewall": [
+      {
+        "resourceType": "app-firewall",
+        "domain": "virtual",
+        "fieldPath": "",
+        "required": false,
+        "inline": false
+      }
+    ],
+    "unknown/app-firewall-create": [
+      {
+        "resourceType": "app-firewall",
+        "domain": "virtual",
+        "fieldPath": "spec",
+        "required": false,
+        "inline": false
+      }
+    ],
+    "unknown/app-firewall-replace": [
+      {
+        "resourceType": "app-firewall",
+        "domain": "virtual",
+        "fieldPath": "spec",
+        "required": false,
+        "inline": false
+      }
+    ],
     "unknown/cluster": [
       {
         "resourceType": "cluster",
@@ -40461,6 +40224,33 @@
     "unknown/cluster-replace": [
       {
         "resourceType": "cluster",
+        "domain": "virtual",
+        "fieldPath": "spec",
+        "required": false,
+        "inline": false
+      }
+    ],
+    "unknown/enhanced-firewall-policy": [
+      {
+        "resourceType": "enhanced-firewall-policy",
+        "domain": "virtual",
+        "fieldPath": "",
+        "required": false,
+        "inline": false
+      }
+    ],
+    "unknown/schemaenhanced-firewall-policy-create": [
+      {
+        "resourceType": "enhanced-firewall-policy",
+        "domain": "virtual",
+        "fieldPath": "spec",
+        "required": false,
+        "inline": false
+      }
+    ],
+    "unknown/schemaenhanced-firewall-policy-replace": [
+      {
+        "resourceType": "enhanced-firewall-policy",
         "domain": "virtual",
         "fieldPath": "spec",
         "required": false,
@@ -40542,6 +40332,33 @@
     "unknown/viewsorigin-pool-replace": [
       {
         "resourceType": "origin-pool",
+        "domain": "virtual",
+        "fieldPath": "spec",
+        "required": false,
+        "inline": false
+      }
+    ],
+    "unknown/protocol-inspection": [
+      {
+        "resourceType": "protocol-inspection",
+        "domain": "virtual",
+        "fieldPath": "",
+        "required": false,
+        "inline": false
+      }
+    ],
+    "unknown/protocol-inspection-create": [
+      {
+        "resourceType": "protocol-inspection",
+        "domain": "virtual",
+        "fieldPath": "spec",
+        "required": false,
+        "inline": false
+      }
+    ],
+    "unknown/protocol-inspection-replace": [
+      {
+        "resourceType": "protocol-inspection",
         "domain": "virtual",
         "fieldPath": "spec",
         "required": false,
@@ -40710,6 +40527,33 @@
         "inline": false
       }
     ],
+    "unknown/waf-exclusion-policy": [
+      {
+        "resourceType": "waf-exclusion-policy",
+        "domain": "virtual",
+        "fieldPath": "",
+        "required": false,
+        "inline": false
+      }
+    ],
+    "unknown/schemawaf-exclusion-policy-create": [
+      {
+        "resourceType": "waf-exclusion-policy",
+        "domain": "virtual",
+        "fieldPath": "spec",
+        "required": false,
+        "inline": false
+      }
+    ],
+    "unknown/schemawaf-exclusion-policy-replace": [
+      {
+        "resourceType": "waf-exclusion-policy",
+        "domain": "virtual",
+        "fieldPath": "spec",
+        "required": false,
+        "inline": false
+      }
+    ],
     "unknown/http-loadbalancer-api-inventory-schema-query": [
       {
         "resourceType": "get-schema-update",
@@ -40733,114 +40577,6 @@
         "resourceType": "top-active",
         "domain": "virtual",
         "fieldPath": "top_by_metric",
-        "required": false,
-        "inline": false
-      }
-    ],
-    "waf/app-firewall": [
-      {
-        "resourceType": "app-firewall",
-        "domain": "waf",
-        "fieldPath": "",
-        "required": false,
-        "inline": false
-      }
-    ],
-    "unknown/app-firewall-create": [
-      {
-        "resourceType": "app-firewall",
-        "domain": "waf",
-        "fieldPath": "spec",
-        "required": false,
-        "inline": false
-      }
-    ],
-    "unknown/app-firewall-replace": [
-      {
-        "resourceType": "app-firewall",
-        "domain": "waf",
-        "fieldPath": "spec",
-        "required": false,
-        "inline": false
-      }
-    ],
-    "unknown/enhanced-firewall-policy": [
-      {
-        "resourceType": "enhanced-firewall-policy",
-        "domain": "waf",
-        "fieldPath": "",
-        "required": false,
-        "inline": false
-      }
-    ],
-    "unknown/schemaenhanced-firewall-policy-create": [
-      {
-        "resourceType": "enhanced-firewall-policy",
-        "domain": "waf",
-        "fieldPath": "spec",
-        "required": false,
-        "inline": false
-      }
-    ],
-    "unknown/schemaenhanced-firewall-policy-replace": [
-      {
-        "resourceType": "enhanced-firewall-policy",
-        "domain": "waf",
-        "fieldPath": "spec",
-        "required": false,
-        "inline": false
-      }
-    ],
-    "unknown/protocol-inspection": [
-      {
-        "resourceType": "protocol-inspection",
-        "domain": "waf",
-        "fieldPath": "",
-        "required": false,
-        "inline": false
-      }
-    ],
-    "unknown/protocol-inspection-create": [
-      {
-        "resourceType": "protocol-inspection",
-        "domain": "waf",
-        "fieldPath": "spec",
-        "required": false,
-        "inline": false
-      }
-    ],
-    "unknown/protocol-inspection-replace": [
-      {
-        "resourceType": "protocol-inspection",
-        "domain": "waf",
-        "fieldPath": "spec",
-        "required": false,
-        "inline": false
-      }
-    ],
-    "unknown/waf-exclusion-policy": [
-      {
-        "resourceType": "waf-exclusion-policy",
-        "domain": "waf",
-        "fieldPath": "",
-        "required": false,
-        "inline": false
-      }
-    ],
-    "unknown/schemawaf-exclusion-policy-create": [
-      {
-        "resourceType": "waf-exclusion-policy",
-        "domain": "waf",
-        "fieldPath": "spec",
-        "required": false,
-        "inline": false
-      }
-    ],
-    "unknown/schemawaf-exclusion-policy-replace": [
-      {
-        "resourceType": "waf-exclusion-policy",
-        "domain": "waf",
-        "fieldPath": "spec",
         "required": false,
         "inline": false
       }
