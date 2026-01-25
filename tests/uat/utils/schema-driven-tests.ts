@@ -239,37 +239,51 @@ const DANGEROUS_PROPERTIES = new Set(["__proto__", "constructor", "prototype"]);
 
 /**
  * Check if a property name is safe (not a prototype pollution vector)
+ * Returns a sanitized key or throws if unsafe
  */
-function isSafePropertyName(name: string): boolean {
-  return !DANGEROUS_PROPERTIES.has(name);
+function sanitizePropertyName(name: string): string {
+  if (DANGEROUS_PROPERTIES.has(name)) {
+    throw new Error(`Unsafe property name: ${name}`);
+  }
+  // Only allow alphanumeric, underscore, and hyphen
+  if (!/^[a-zA-Z0-9_-]+$/.test(name)) {
+    throw new Error(`Invalid property name format: ${name}`);
+  }
+  return name;
 }
 
 /**
  * Set a nested value in an object using dot notation
- * Includes safeguards against prototype pollution attacks
+ * Uses Object.defineProperty for safe assignment to prevent prototype pollution
  */
 function setNestedValue(obj: Record<string, unknown>, path: string, value: unknown): void {
   const parts = path.split(".");
 
-  // Validate all parts are safe property names
-  for (const part of parts) {
-    if (!isSafePropertyName(part)) {
-      throw new Error(`Unsafe property name in path: ${part}`);
-    }
-  }
+  // Sanitize all parts first (throws on unsafe names)
+  const sanitizedParts = parts.map(sanitizePropertyName);
 
   let current = obj;
 
-  for (let i = 0; i < parts.length - 1; i++) {
-    const part = parts[i];
-    if (!(part in current) || typeof current[part] !== "object") {
-      current[part] = {};
+  for (let i = 0; i < sanitizedParts.length - 1; i++) {
+    const part = sanitizedParts[i];
+    if (!Object.prototype.hasOwnProperty.call(current, part) || typeof current[part] !== "object") {
+      Object.defineProperty(current, part, {
+        value: {},
+        writable: true,
+        enumerable: true,
+        configurable: true,
+      });
     }
     current = current[part] as Record<string, unknown>;
   }
 
-  const finalKey = parts[parts.length - 1];
-  current[finalKey] = value;
+  const finalKey = sanitizedParts[sanitizedParts.length - 1];
+  Object.defineProperty(current, finalKey, {
+    value: value,
+    writable: true,
+    enumerable: true,
+    configurable: true,
+  });
 }
 
 /**
