@@ -101,6 +101,8 @@ jobs:
   secret-scan:
     name: Secret Detection
     runs-on: ubuntu-latest
+    # Skip on scheduled runs - we scan on every push/PR anyway
+    if: github.event_name != 'schedule'
 
     steps:
       - name: Checkout
@@ -186,14 +188,14 @@ jobs:
           echo "| Scan | Status |" >> $GITHUB_STEP_SUMMARY
           echo "|------|--------|" >> $GITHUB_STEP_SUMMARY
           echo "| Dependency Scan | ${{ needs.dependency-scan.result == 'success' && '✅ Passed' || '❌ Failed' }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Secret Detection | ${{ needs.secret-scan.result == 'success' && '✅ Passed' || '❌ Failed' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Secret Detection | ${{ needs.secret-scan.result == 'success' && '✅ Passed' || (needs.secret-scan.result == 'skipped' && '⏭️ Skipped' || '❌ Failed') }} |" >> $GITHUB_STEP_SUMMARY
           echo "| License Check | ${{ needs.license-check.result == 'success' && '✅ Passed' || '❌ Failed' }} |" >> $GITHUB_STEP_SUMMARY
           echo "| CodeQL Analysis | ${{ needs.codeql.result == 'success' && '✅ Passed' || '❌ Failed' }} |" >> $GITHUB_STEP_SUMMARY
 
       - name: Fail if any security check failed
         if: |
           needs.dependency-scan.result != 'success' ||
-          needs.secret-scan.result != 'success' ||
+          (needs.secret-scan.result != 'success' && needs.secret-scan.result != 'skipped') ||
           needs.license-check.result != 'success' ||
           needs.codeql.result != 'success'
         run: |
