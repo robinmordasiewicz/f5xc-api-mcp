@@ -5,7 +5,7 @@
  * These fixtures are dynamically generated from the current OpenAPI specs
  * to ensure tests always use real values and don't hardcode spec content.
  *
- * Generated at: 2026-01-29T12:15:04.330Z
+ * Generated at: 2026-01-29T18:16:02.143Z
  * Total tools: 1536
  * Total domains: 37
  */
