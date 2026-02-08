@@ -1,0 +1,44 @@
+---
+title: Safecubejsdata
+description: GetSafeCubeJSData.
+---
+
+GET Safe CubeJS data request for a given query.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-shape-safecubejsdata-create` | GetSafeCubeJSData. |
+
+## Example Usage
+
+Ask Claude to help you work with Safecubejsdata resources:
+
+### Create Safecubejsdata
+
+> "Create a safecubejsdata named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/safecubejsdatas" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/safecubejsdatas/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/safecubejsdatas" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @safecubejsdata.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/safecubejsdatas/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

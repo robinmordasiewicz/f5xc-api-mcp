@@ -1,0 +1,54 @@
+---
+title: Pod
+description: Pod List
+---
+
+API to GET list of pods in a site for a given namespace.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-sites-pod-list` | Pod List |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+| `site` | Site | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Pod resources:
+
+### List Pods
+
+> "List all pods in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/pods" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/pods/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/pods" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @pod.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/pods/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

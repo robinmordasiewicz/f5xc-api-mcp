@@ -1,0 +1,44 @@
+---
+title: All Ns Stat
+description: GET API Endpoints Stats for All Namespaces.
+---
+
+GET API endpoints stats for all Namespaces. This API is specific to system namespace.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-tenantandidentity-all-ns-stat-create` | GET API Endpoints Stats for All Namespaces. |
+
+## Example Usage
+
+Ask Claude to help you work with All Ns Stat resources:
+
+### Create All Ns Stat
+
+> "Create a all-ns-stat named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/all_ns_stats" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/all_ns_stats/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/all_ns_stats" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @all_ns_stat.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/all_ns_stats/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

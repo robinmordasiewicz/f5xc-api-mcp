@@ -1,0 +1,215 @@
+---
+title: Third Party Application
+description: GET Third Party Application.
+---
+
+List the set of third_party_application in a namespace.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-marketplace-third-party-application-get` | GET Third Party Application. |
+| `f5xc-api-marketplace-third-party-application-list` | List Third Party Application. |
+| `f5xc-api-marketplace-third-party-application-update` | Replace Third Party Applicationr. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+| `metadata.namespace` | Namespace | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### api_definition_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.api_specification` | - |  |
+| `spec.disable_api_definition` | - |  |
+
+### api_discovery_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.disable_api_discovery` | - |  |
+| `spec.enable_api_discovery` | - |  |
+
+### sensitive_data_policy_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.default_sensitive_data_policy` | - |  |
+| `spec.sensitive_data_policy` | - |  |
+
+### validation_target_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.api_specification.validation_all_spec_endpoints` | - |  |
+| `spec.api_specification.validation_custom_list` | - |  |
+| `spec.api_specification.validation_disabled` | - |  |
+
+### oversized_body_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+
+### fall_through_mode_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_allow` | - |  |
+| `spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_custom` | - |  |
+
+### action_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].action_block` | - |  |
+| `spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].action_report` | - |  |
+| `spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].action_skip` | - |  |
+
+### condition_type_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].api_endpoint` | - |  |
+| `spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].api_group` | - |  |
+| `spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].base_path` | - |  |
+
+### fail_configuration
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+
+### property_validation_settings_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.api_specification.validation_all_spec_endpoints.settings.property_validation_settings_custom` | - |  |
+| `spec.api_specification.validation_all_spec_endpoints.settings.property_validation_settings_default` | - |  |
+
+### additional_parameters_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.api_specification.validation_all_spec_endpoints.settings.property_validation_settings_custom.queryParameters.allow_additional_parameters` | - |  |
+| `spec.api_specification.validation_all_spec_endpoints.settings.property_validation_settings_custom.queryParameters.disallow_additional_parameters` | - |  |
+
+### response_validation_mode_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.api_specification.validation_all_spec_endpoints.validation_mode.response_validation_mode_active` | - |  |
+| `spec.api_specification.validation_all_spec_endpoints.validation_mode.skip_response_validation` | - |  |
+
+### validation_mode_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.api_specification.validation_all_spec_endpoints.validation_mode.skip_validation` | - |  |
+| `spec.api_specification.validation_all_spec_endpoints.validation_mode.validation_mode_active` | - |  |
+
+### validation_enforcement_type
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.api_specification.validation_all_spec_endpoints.validation_mode.response_validation_mode_active.enforcement_block` | - |  |
+| `spec.api_specification.validation_all_spec_endpoints.validation_mode.response_validation_mode_active.enforcement_report` | - |  |
+
+### domain_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.api_specification.validation_custom_list.open_api_validation_rules[].any_domain` | - |  |
+| `spec.api_specification.validation_custom_list.open_api_validation_rules[].specific_domain` | - |  |
+
+### api_discovery_settings_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.enable_api_discovery.custom_api_auth_discovery` | - |  |
+| `spec.enable_api_discovery.default_api_auth_discovery` | - |  |
+
+### learn_from_redirect_traffic
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.enable_api_discovery.disable_learn_from_redirect_traffic` | - |  |
+| `spec.enable_api_discovery.enable_learn_from_redirect_traffic` | - |  |
+
+### api_crawler
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.enable_api_discovery.api_crawler.api_crawler_config` | - |  |
+| `spec.enable_api_discovery.api_crawler.disable_api_crawler` | - |  |
+
+### secret_info_oneof
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.enable_api_discovery.api_crawler.api_crawler_config.domains[].simple_login.password.blindfold_secret_info` | - |  |
+| `spec.enable_api_discovery.api_crawler.api_crawler_config.domains[].simple_login.password.clear_secret_info` | - |  |
+
+### api_repos_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.enable_api_discovery.api_discovery_from_code_scan.code_base_integrations[].all_repos` | - |  |
+| `spec.enable_api_discovery.api_discovery_from_code_scan.code_base_integrations[].selected_repos` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Third Party Application resources:
+
+### List Third Party Applications
+
+> "List all third-party-applications in the 'production' namespace"
+
+### Get Third Party Application Details
+
+> "Get details of the third-party-application named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/third_party_applications" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/third_party_applications/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/third_party_applications" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @third_party_application.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/third_party_applications/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

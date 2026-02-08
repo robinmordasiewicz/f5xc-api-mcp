@@ -1,0 +1,65 @@
+---
+title: Update Advertisement Statu
+description: Update Infraprotect Internet prefix advertisement.
+---
+
+Update Infraprotect Internet prefix advertisement.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-ddos-update-advertisement-statu-create` | Update Infraprotect Internet prefix advertisement. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### activation_selection
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `activation_announce` | - |  |
+| `activation_withdraw` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Update Advertisement Statu resources:
+
+### Create Update Advertisement Statu
+
+> "Create a update-advertisement-statu named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/update_advertisement_status" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/update_advertisement_status/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/update_advertisement_status" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @update_advertisement_statu.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/update_advertisement_status/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

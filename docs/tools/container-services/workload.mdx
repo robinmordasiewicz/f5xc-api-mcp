@@ -1,0 +1,343 @@
+---
+title: Workload
+description: Create Workload.
+---
+
+List the set of workload in a namespace.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-containerservices-workload-create` | Create Workload. |
+| `f5xc-api-containerservices-workload-get` | GET Workload. |
+| `f5xc-api-containerservices-workload-list` | List Workload. |
+| `f5xc-api-containerservices-workload-update` | Replace Workload. |
+| `f5xc-api-containerservices-workload-delete` | DELETE Workload. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### workload_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.job` | - |  |
+| `spec.service` | - |  |
+| `spec.simple_service` | - |  |
+| `spec.stateful_service` | - |  |
+
+### choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.job.configuration.parameters[].env_var` | - |  |
+| `spec.job.configuration.parameters[].file` | - |  |
+
+### flavor_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.job.containers[].custom_flavor` | - |  |
+| `spec.job.containers[].default_flavor` | - |  |
+| `spec.job.containers[].flavor` | - |  |
+
+### registry_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.job.containers[].image.container_registry` | - |  |
+| `spec.job.containers[].image.public` | - |  |
+
+### health_check_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.job.containers[].liveness_check.exec_health_check` | - |  |
+| `spec.job.containers[].liveness_check.http_health_check` | - |  |
+| `spec.job.containers[].liveness_check.tcp_health_check` | - |  |
+
+### port_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.job.containers[].liveness_check.http_health_check.port.name` | - |  |
+| `spec.job.containers[].liveness_check.http_health_check.port.num` | - |  |
+
+### deploy_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.job.deploy_options.all_res` | - |  |
+| `spec.job.deploy_options.default_virtual_sites` | - |  |
+| `spec.job.deploy_options.deploy_ce_sites` | - |  |
+| `spec.job.deploy_options.deploy_ce_virtual_sites` | - |  |
+| `spec.job.deploy_options.deploy_re_sites` | - |  |
+| `spec.job.deploy_options.deploy_re_virtual_sites` | - |  |
+
+### volume_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.job.volumes[].empty_dir` | - |  |
+| `spec.job.volumes[].host_path` | - |  |
+| `spec.job.volumes[].persistent_volume` | - |  |
+
+### class_name_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.job.volumes[].persistent_volume.storage.class_name` | - |  |
+| `spec.job.volumes[].persistent_volume.storage.default` | - |  |
+
+### scaling_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.service.num_replicas` | - |  |
+| `spec.service.scale_to_zero` | - |  |
+
+### advertise_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.service.advertise_options.advertise_custom` | - |  |
+| `spec.service.advertise_options.advertise_in_cluster` | - |  |
+| `spec.service.advertise_options.advertise_on_public` | - |  |
+| `spec.service.advertise_options.do_not_advertise` | - |  |
+
+### loadbalancer_type
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.http` | - |  |
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https` | - |  |
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https_auto_cert` | - |  |
+
+### route_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.default_route` | - |  |
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes` | - |  |
+
+### host_rewrite_params
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.default_route.auto_host_rewrite` | - |  |
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.default_route.disable_host_rewrite` | - |  |
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.default_route.host_rewrite` | - |  |
+
+### default_lb_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.default_loadbalancer` | - |  |
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.non_default_loadbalancer` | - |  |
+
+### path_normalize_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.disable_path_normalize` | - |  |
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.enable_path_normalize` | - |  |
+
+### server_header_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.append_server_name` | - |  |
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.default_header` | - |  |
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.pass_through` | - |  |
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.server_name` | - |  |
+
+### tls_certificates_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params` | - |  |
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters` | - |  |
+
+### coalescing_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.coalescing_options.default_coalescing` | - |  |
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.coalescing_options.strict_coalescing` | - |  |
+
+### http_protocol_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only` | - |  |
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_v2` | - |  |
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v2_only` | - |  |
+
+### header_transformation_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.default_header_transformation` | - |  |
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.legacy_header_transformation` | - |  |
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.preserve_case_header_transformation` | - |  |
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.proper_case_header_transformation` | - |  |
+
+### mtls_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.no_mtls` | - |  |
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.use_mtls` | - |  |
+
+### crl_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.crl` | - |  |
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.no_crl` | - |  |
+
+### trusted_ca_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.trusted_ca` | - |  |
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.trusted_ca_url` | - |  |
+
+### xfcc_header
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.xfcc_disabled` | - |  |
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_cert_params.use_mtls.xfcc_options` | - |  |
+
+### ocsp_stapling_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].custom_hash_algorithms` | - |  |
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].disable_ocsp_stapling` | - |  |
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].use_system_defaults` | - |  |
+
+### secret_info_oneof
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].private_key.blindfold_secret_info` | - |  |
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.https.tls_parameters.tls_certificates[].private_key.clear_secret_info` | - |  |
+
+### value_match
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].exact` | - |  |
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].presence` | - |  |
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.headers[].regex` | - |  |
+
+### port_match
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.no_port_match` | - |  |
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.port` | - |  |
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.incoming_port.port_ranges` | - |  |
+
+### path_match
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.path.path` | - |  |
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.path.prefix` | - |  |
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].direct_response_route.path.regex` | - |  |
+
+### query_params
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.remove_all_params` | - |  |
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.replace_params` | - |  |
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.retain_all_params` | - |  |
+
+### redirect_path_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.path_redirect` | - |  |
+| `spec.service.advertise_options.advertise_custom.ports[].http_loadbalancer.specific_routes.routes[].redirect_route.route_redirect.prefix_rewrite` | - |  |
+
+### target_port_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.service.advertise_options.advertise_custom.ports[].port.info.same_as_port` | - |  |
+| `spec.service.advertise_options.advertise_custom.ports[].port.info.target_port` | - |  |
+
+### persistence_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.simple_service.disabled` | - |  |
+| `spec.simple_service.enabled` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Workload resources:
+
+### Create Workload
+
+> "Create a workload named 'example' in the 'production' namespace"
+
+### List Workloads
+
+> "List all workloads in the 'production' namespace"
+
+### Get Workload Details
+
+> "Get details of the workload named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/workloads" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/workloads/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/workloads" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @workload.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/workloads/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

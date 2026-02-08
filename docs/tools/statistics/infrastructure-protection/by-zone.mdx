@@ -1,0 +1,54 @@
+---
+title: By Zone
+description: L3l4 Zone Traffic Query.
+---
+
+Request to GET l3l4 zone destination Traffic data.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-statistics-by-zone-create` | L3l4 Zone Traffic Query. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+| `network_id` | NetworkId | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with By Zone resources:
+
+### Create By Zone
+
+> "Create a by-zone named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/by_zones" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/by_zones/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/by_zones" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @by_zone.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/by_zones/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

@@ -1,0 +1,59 @@
+---
+title: Daemonset
+description: DaemonSet List.
+---
+
+API to GET list of daemon sets for a given namespace in a site.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-sites-daemonset-list` | DaemonSet List. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `site` | Site | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace to scope the listing of daemon sets in a site. | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Daemonset resources:
+
+### List Daemonsets
+
+> "List all daemonsets in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/daemonsets" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/daemonsets/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/daemonsets" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @daemonset.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/daemonsets/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

@@ -1,0 +1,44 @@
+---
+title: Segment Metric
+description: All Cloud Connect Segment Metrics.
+---
+
+Cloud Connect APIs are used to GET the segment data for cloud connect.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-cloudinfrastructure-segment-metric-create` | All Cloud Connect Segment Metrics. |
+
+## Example Usage
+
+Ask Claude to help you work with Segment Metric resources:
+
+### Create Segment Metric
+
+> "Create a segment-metric named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/segment_metrics" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/segment_metrics/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/segment_metrics" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @segment_metric.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/segment_metrics/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

@@ -1,0 +1,169 @@
+---
+title: Cluster
+description: Create Cluster.
+---
+
+Replacing an cluster object will update the object by replacing the existing spec with the provided
+one.
+For read-then-write operations a resourceVersion mismatch will occur if the object was modified
+between the read and write.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-virtual-cluster-create` | Create Cluster. |
+| `f5xc-api-virtual-cluster-get` | GET Cluster. |
+| `f5xc-api-virtual-cluster-list` | List Cluster. |
+| `f5xc-api-virtual-cluster-update` | Replace Cluster. |
+| `f5xc-api-virtual-cluster-delete` | DELETE Cluster. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### http_protocol_type
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.auto_http_config` | - |  |
+| `spec.http1_config` | - |  |
+| `spec.http2_options` | - |  |
+
+### panic_threshold_type
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.no_panic_threshold` | - |  |
+| `spec.panic_threshold` | - |  |
+
+### proxy_protocol_type
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.disable_proxy_protocol` | - |  |
+| `spec.proxy_protocol_v1` | - |  |
+| `spec.proxy_protocol_v2` | - |  |
+
+### header_transformation_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.http1_config.header_transformation.default_header_transformation` | - |  |
+| `spec.http1_config.header_transformation.legacy_header_transformation` | - |  |
+| `spec.http1_config.header_transformation.preserve_case_header_transformation` | - |  |
+| `spec.http1_config.header_transformation.proper_case_header_transformation` | - |  |
+
+### max_session_keys_type
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.tls_parameters.default_session_key_caching` | - |  |
+| `spec.tls_parameters.disable_session_key_caching` | - |  |
+| `spec.tls_parameters.max_session_keys` | - |  |
+
+### sni_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.tls_parameters.disable_sni` | - |  |
+| `spec.tls_parameters.sni` | - |  |
+| `spec.tls_parameters.use_host_header_as_sni` | - |  |
+
+### tls_params_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.tls_parameters.cert_params` | - |  |
+| `spec.tls_parameters.common_params` | - |  |
+
+### trusted_ca_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.tls_parameters.cert_params.validation_params.trusted_ca` | - |  |
+| `spec.tls_parameters.cert_params.validation_params.trusted_ca_url` | - |  |
+
+### ocsp_stapling_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.tls_parameters.common_params.tls_certificates[].custom_hash_algorithms` | - |  |
+| `spec.tls_parameters.common_params.tls_certificates[].disable_ocsp_stapling` | - |  |
+| `spec.tls_parameters.common_params.tls_certificates[].use_system_defaults` | - |  |
+
+### secret_info_oneof
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.tls_parameters.common_params.tls_certificates[].private_key.blindfold_secret_info` | - |  |
+| `spec.tls_parameters.common_params.tls_certificates[].private_key.clear_secret_info` | - |  |
+
+### map_downstream_to_upstream_conn_pool_type
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.upstream_conn_pool_reuse_type.disable_conn_pool_reuse` | - |  |
+| `spec.upstream_conn_pool_reuse_type.enable_conn_pool_reuse` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Cluster resources:
+
+### Create Cluster
+
+> "Create a cluster named 'example' in the 'production' namespace"
+
+### List Clusters
+
+> "List all clusters in the 'production' namespace"
+
+### Get Cluster Details
+
+> "Get details of the cluster named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/clusters" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/clusters/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/clusters" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @cluster.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/clusters/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

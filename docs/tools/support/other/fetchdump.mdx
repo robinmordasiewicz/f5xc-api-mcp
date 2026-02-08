@@ -1,0 +1,54 @@
+---
+title: Fetchdump
+description: FetchDump
+---
+
+Fetch the captured pcap data from an earlier Tcpdump request.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-support-fetchdump-create` | FetchDump |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+| `site` | Site Name | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Fetchdump resources:
+
+### Create Fetchdump
+
+> "Create a fetchdump named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/fetchdumps" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/fetchdumps/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/fetchdumps" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @fetchdump.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/fetchdumps/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

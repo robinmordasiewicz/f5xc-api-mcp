@@ -1,0 +1,44 @@
+---
+title: Channel
+description: Channel Dashboard.
+---
+
+GET channel chart data from shape recognize API.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-shape-channel-create` | Channel Dashboard. |
+
+## Example Usage
+
+Ask Claude to help you work with Channel resources:
+
+### Create Channel
+
+> "Create a channel named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/channels" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/channels/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/channels" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @channel.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/channels/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

@@ -1,0 +1,44 @@
+---
+title: Friction Histogram
+description: Friction Histogram Dashboard.
+---
+
+GET Histogram Aggregation chart data from shape recognize API.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-shape-friction-histogram-create` | Friction Histogram Dashboard. |
+
+## Example Usage
+
+Ask Claude to help you work with Friction Histogram resources:
+
+### Create Friction Histogram
+
+> "Create a friction-histogram named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/friction_histograms" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/friction_histograms/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/friction_histograms" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @friction_histogram.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/friction_histograms/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

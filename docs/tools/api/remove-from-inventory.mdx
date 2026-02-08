@@ -1,0 +1,54 @@
+---
+title: Remove From Inventory
+description: Remove From API Inventory.
+---
+
+Update the API Definition's exclude list with the provided API endpoints.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-api-remove-from-inventory-create` | Remove From API Inventory. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Remove From Inventory resources:
+
+### Create Remove From Inventory
+
+> "Create a remove-from-inventory named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/remove_from_inventorys" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/remove_from_inventorys/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/remove_from_inventorys" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @remove_from_inventory.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/remove_from_inventorys/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

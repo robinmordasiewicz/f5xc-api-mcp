@@ -1,0 +1,53 @@
+---
+title: Oas Validation
+description: Suggest Open API specification validation rule.
+---
+
+Suggest Open API specification validation rule for a given path.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-api-oas-validation-create` | Suggest Open API specification validation rule. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Oas Validation resources:
+
+### Create Oas Validation
+
+> "Create a oas-validation named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/oas_validations" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/oas_validations/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/oas_validations" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @oas_validation.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/oas_validations/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

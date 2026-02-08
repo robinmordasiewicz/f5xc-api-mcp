@@ -1,0 +1,77 @@
+---
+title: Atb
+description: ATB
+---
+
+Enable/disable ATB.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-shape-atb-create` | ATB |
+| `f5xc-api-shape-atb-list` | ATB Status. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `virtual_host` | Name of Virtual Host to scope traffic overview query. | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### frequency
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `daily` | - |  |
+| `monthly` | - |  |
+| `weekly` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Atb resources:
+
+### Create Atb
+
+> "Create a atb named 'example' in the 'production' namespace"
+
+### List Atbs
+
+> "List all atbs in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/atbs" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/atbs/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/atbs" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @atb.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/atbs/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

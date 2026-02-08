@@ -1,0 +1,77 @@
+---
+title: IP Prefix Set
+description: Create IP Prefix Set.
+---
+
+Replace ip_prefix_set replaces an existing object in the storage backend for metadata.namespace.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-network-ip-prefix-set-create` | Create IP Prefix Set. |
+| `f5xc-api-network-ip-prefix-set-get` | GET IP Prefix Set. |
+| `f5xc-api-network-ip-prefix-set-list` | List IP Prefix Set. |
+| `f5xc-api-network-ip-prefix-set-update` | Replace IP Prefix Set. |
+| `f5xc-api-network-ip-prefix-set-delete` | DELETE IP Prefix Set. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with IP Prefix Set resources:
+
+### Create IP Prefix Set
+
+> "Create a ip-prefix-set named 'example' in the 'production' namespace"
+
+### List IP Prefix Sets
+
+> "List all ip-prefix-sets in the 'production' namespace"
+
+### Get IP Prefix Set Details
+
+> "Get details of the ip-prefix-set named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/ip_prefix_sets" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/ip_prefix_sets/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/ip_prefix_sets" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @ip_prefix_set.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/ip_prefix_sets/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

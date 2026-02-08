@@ -1,0 +1,55 @@
+---
+title: Unsubscribe
+description: Unsubscribe to Observability Synthetic Monitor.
+---
+
+Unsubscribe to Observability Synthetic Monitor.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-observability-unsubscribe-create` | Unsubscribe to Observability Synthetic Monitor. |
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### service
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `syntheticMonitors` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Unsubscribe resources:
+
+### Create Unsubscribe
+
+> "Create a unsubscribe named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/unsubscribes" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/unsubscribes/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/unsubscribes" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @unsubscribe.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/unsubscribes/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

@@ -1,0 +1,56 @@
+---
+title: Login
+description: GetLoginEvents.
+---
+
+GetLoginEvents returns login events for specified in config period of time. It consider all users
+within current tenant.
+Login events are extracted directly from IDM.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-tenantandidentity-login-list` | GetLoginEvents. |
+
+## Parameters
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `first` | Start offset. | `-` |
+| `max` | Records per page. | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Login resources:
+
+### List Logins
+
+> "List all logins in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/logins" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/logins/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/logins" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @login.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/logins/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

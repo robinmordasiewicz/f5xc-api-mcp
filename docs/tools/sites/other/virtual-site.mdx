@@ -1,0 +1,77 @@
+---
+title: Virtual Site
+description: Create Virtual Site.
+---
+
+Replace a given virtual site object in a given namespace.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-sites-virtual-site-create` | Create Virtual Site. |
+| `f5xc-api-sites-virtual-site-get` | GET Virtual Site. |
+| `f5xc-api-sites-virtual-site-list` | List Virtual Site. |
+| `f5xc-api-sites-virtual-site-update` | Replace Virtual Site. |
+| `f5xc-api-sites-virtual-site-delete` | DELETE Virtual Site. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Virtual Site resources:
+
+### Create Virtual Site
+
+> "Create a virtual-site named 'example' in the 'production' namespace"
+
+### List Virtual Sites
+
+> "List all virtual-sites in the 'production' namespace"
+
+### Get Virtual Site Details
+
+> "Get details of the virtual-site named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/virtual_sites" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/virtual_sites/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/virtual_sites" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @virtual_site.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/virtual_sites/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

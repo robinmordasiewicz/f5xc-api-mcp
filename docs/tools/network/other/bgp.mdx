@@ -1,0 +1,184 @@
+---
+title: Bgp
+description: Create BGP.
+---
+
+BGP object is the configuration for peering with external BGP servers.
+Replace BGP will replace the
+contents of given BGP object.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-network-bgp-create` | Create BGP. |
+| `f5xc-api-network-bgp-get` | GET BGP |
+| `f5xc-api-network-bgp-list` | List BGP |
+| `f5xc-api-network-bgp-update` | Replace BGP. |
+| `f5xc-api-network-bgp-delete` | DELETE BGP. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### router_id_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.bgp_parameters.from_site` | - |  |
+| `spec.bgp_parameters.ip_address` | - |  |
+| `spec.bgp_parameters.local_address` | - |  |
+
+### bfd_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.peers[].bfd_disabled` | - |  |
+| `spec.peers[].bfd_enabled` | - |  |
+
+### enable_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.peers[].disable` | - |  |
+| `spec.peers[].routing_policies` | - |  |
+
+### passive_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.peers[].passive_mode_disabled` | - |  |
+| `spec.peers[].passive_mode_enabled` | - |  |
+
+### type_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.peers[].external` | - |  |
+
+### address_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.peers[].external.address` | - |  |
+| `spec.peers[].external.default_gateway` | - |  |
+| `spec.peers[].external.disable` | - |  |
+| `spec.peers[].external.external_connector` | - |  |
+| `spec.peers[].external.from_site` | - |  |
+| `spec.peers[].external.subnet_begin_offset` | - |  |
+| `spec.peers[].external.subnet_end_offset` | - |  |
+
+### address_choice_v6
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.peers[].external.address_ipv6` | - |  |
+| `spec.peers[].external.default_gateway_v6` | - |  |
+| `spec.peers[].external.disable_v6` | - |  |
+| `spec.peers[].external.from_site_v6` | - |  |
+| `spec.peers[].external.subnet_begin_offset_v6` | - |  |
+| `spec.peers[].external.subnet_end_offset_v6` | - |  |
+
+### auth_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.peers[].external.md5_auth_key` | - |  |
+| `spec.peers[].external.no_authentication` | - |  |
+
+### interface_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.peers[].external.interface` | - |  |
+| `spec.peers[].external.interface_list` | - |  |
+
+### direction
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.peers[].routing_policies.route_policy[].inbound` | - |  |
+| `spec.peers[].routing_policies.route_policy[].outbound` | - |  |
+
+### node_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.peers[].routing_policies.route_policy[].all_nodes` | - |  |
+| `spec.peers[].routing_policies.route_policy[].node_name` | - |  |
+
+### ref_or_selector
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.where.site` | - |  |
+| `spec.where.virtual_site` | - |  |
+
+### internet_vip_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.where.site.disable_internet_vip` | - |  |
+| `spec.where.site.enable_internet_vip` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Bgp resources:
+
+### Create Bgp
+
+> "Create a bgp named 'example' in the 'production' namespace"
+
+### List Bgps
+
+> "List all bgps in the 'production' namespace"
+
+### Get Bgp Details
+
+> "Get details of the bgp named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/bgps" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/bgps/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/bgps" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @bgp.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/bgps/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

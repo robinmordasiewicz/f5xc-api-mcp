@@ -1,0 +1,65 @@
+---
+title: Transaction Detail
+description: PostSafeTransactionDetails.
+---
+
+GET a detailed information about the requested transaction.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-shape-transaction-detail-create` | PostSafeTransactionDetails. |
+| `f5xc-api-shape-transaction-detail-list` | GET SAFE Anayst Transaction Details. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `transaction_id` | Transaction identifier. | `-` |
+| `version` | The API version to use. | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Transaction Detail resources:
+
+### Create Transaction Detail
+
+> "Create a transaction-detail named 'example' in the 'production' namespace"
+
+### List Transaction Details
+
+> "List all transaction-details in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/transaction_details" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/transaction_details/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/transaction_details" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @transaction_detail.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/transaction_details/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

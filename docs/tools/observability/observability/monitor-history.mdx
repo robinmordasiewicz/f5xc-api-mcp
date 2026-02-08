@@ -1,0 +1,63 @@
+---
+title: Monitor History
+description: GET Monitor History.
+---
+
+Returns the healthy and critical statuses for the specified monitor.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-observability-monitor-history-list` | GET Monitor History. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `end_time` | End_time. | `-` |
+| `monitor_name` | Monitor_name. X-required | `-` |
+| `monitor_type` | Monitor_type. X-required | `-` |
+| `start_time` | Start_time. X-required | `-` |
+| `step_size` | Step_size. | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Monitor History resources:
+
+### List Monitor Historys
+
+> "List all monitor-historys in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/monitor_historys" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/monitor_historys/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/monitor_historys" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @monitor_history.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/monitor_historys/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

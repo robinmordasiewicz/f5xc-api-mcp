@@ -1,0 +1,63 @@
+---
+title: Route Table
+description: GET Network Route Tables.
+---
+
+Gets Route Tables Associated with a Network.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-statistics-route-table-get` | GET Network Route Tables. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `id` | ID | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `regions` | Regions used as filters. | `-` |
+| `route_table_ids` | Route Table IDs used as filters. | `-` |
+| `site` | Site Name | `-` |
+| `subnet_cidrs` | Subnet cidrs used as filters. | `-` |
+| `subnet_ids` | Subnet IDs used as filters. | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Route Table resources:
+
+### Get Route Table Details
+
+> "Get details of the route-table named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/route_tables" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/route_tables/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/route_tables" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @route_table.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/route_tables/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

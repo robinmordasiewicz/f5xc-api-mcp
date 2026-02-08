@@ -1,0 +1,260 @@
+---
+title: Nfv Service
+description: Create NFV Service.
+---
+
+Replaces configured NFV Service with new set of parameters.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-servicemesh-nfv-service-create` | Create NFV Service. |
+| `f5xc-api-servicemesh-nfv-service-get` | GET NFV Service. |
+| `f5xc-api-servicemesh-nfv-service-list` | List NFV Service. |
+| `f5xc-api-servicemesh-nfv-service-update` | Replace NFV Service. |
+| `f5xc-api-servicemesh-nfv-service-delete` | DELETE NFV Service. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### http_management_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.disable_https_management` | - |  |
+| `spec.https_management` | - |  |
+
+### service_provider_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.f5_big_ip_aws_service` | - |  |
+| `spec.palo_alto_fw_service` | - |  |
+
+### ssh_management_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.disable_ssh_access` | - |  |
+| `spec.enabled_ssh_access` | - |  |
+
+### advertise_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.enabled_ssh_access.advertise_on_sli` | - |  |
+| `spec.enabled_ssh_access.advertise_on_slo` | - |  |
+| `spec.enabled_ssh_access.advertise_on_slo_sli` | - |  |
+
+### image_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.f5_big_ip_aws_service.market_place_image` | - |  |
+
+### site_type_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.f5_big_ip_aws_service.aws_tgw_site_params` | - |  |
+
+### secret_info_oneof
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.f5_big_ip_aws_service.admin_password.blindfold_secret_info` | - |  |
+| `spec.f5_big_ip_aws_service.admin_password.clear_secret_info` | - |  |
+
+### external_vip_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.f5_big_ip_aws_service.endpoint_service.advertise_on_slo_ip` | - |  |
+| `spec.f5_big_ip_aws_service.endpoint_service.advertise_on_slo_ip_external` | - |  |
+| `spec.f5_big_ip_aws_service.endpoint_service.disable_advertise_on_slo_ip` | - |  |
+
+### inside_vip_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.f5_big_ip_aws_service.endpoint_service.automatic_vip` | - |  |
+| `spec.f5_big_ip_aws_service.endpoint_service.configured_vip` | - |  |
+
+### tcp_port_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.f5_big_ip_aws_service.endpoint_service.custom_tcp_ports` | - |  |
+| `spec.f5_big_ip_aws_service.endpoint_service.default_tcp_ports` | - |  |
+| `spec.f5_big_ip_aws_service.endpoint_service.http_port` | - |  |
+| `spec.f5_big_ip_aws_service.endpoint_service.https_port` | - |  |
+| `spec.f5_big_ip_aws_service.endpoint_service.no_tcp_ports` | - |  |
+
+### udp_port_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.f5_big_ip_aws_service.endpoint_service.custom_udp_ports` | - |  |
+| `spec.f5_big_ip_aws_service.endpoint_service.no_udp_ports` | - |  |
+
+### ami_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.f5_big_ip_aws_service.market_place_image.AWAFPayG200Mbps` | - |  |
+| `spec.f5_big_ip_aws_service.market_place_image.AWAFPayG3Gbps` | - |  |
+| `spec.f5_big_ip_aws_service.market_place_image.BestPlusPayG200Mbps` | - |  |
+| `spec.f5_big_ip_aws_service.market_place_image.best_plus_payg_1gbps` | - |  |
+
+### mgmt_subnet_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.f5_big_ip_aws_service.nodes[].mgmt_subnet` | - |  |
+| `spec.f5_big_ip_aws_service.nodes[].reserved_mgmt_subnet` | - |  |
+
+### tunnel_prefix_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.f5_big_ip_aws_service.nodes[].automatic_prefix` | - |  |
+| `spec.f5_big_ip_aws_service.nodes[].tunnel_prefix` | - |  |
+
+### choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.f5_big_ip_aws_service.nodes[].mgmt_subnet.existing_subnet_id` | - |  |
+| `spec.f5_big_ip_aws_service.nodes[].mgmt_subnet.subnet_param` | - |  |
+
+### internet_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+
+### port_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.https_management.default_https_port` | - |  |
+| `spec.https_management.https_port` | - |  |
+
+### mtls_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.https_management.advertise_on_sli_vip.no_mtls` | - |  |
+| `spec.https_management.advertise_on_sli_vip.use_mtls` | - |  |
+
+### ocsp_stapling_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.https_management.advertise_on_sli_vip.tls_certificates[].custom_hash_algorithms` | - |  |
+| `spec.https_management.advertise_on_sli_vip.tls_certificates[].disable_ocsp_stapling` | - |  |
+| `spec.https_management.advertise_on_sli_vip.tls_certificates[].use_system_defaults` | - |  |
+
+### crl_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.https_management.advertise_on_sli_vip.use_mtls.crl` | - |  |
+| `spec.https_management.advertise_on_sli_vip.use_mtls.no_crl` | - |  |
+
+### trusted_ca_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.https_management.advertise_on_sli_vip.use_mtls.trusted_ca` | - |  |
+| `spec.https_management.advertise_on_sli_vip.use_mtls.trusted_ca_url` | - |  |
+
+### xfcc_header
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.https_management.advertise_on_sli_vip.use_mtls.xfcc_disabled` | - |  |
+| `spec.https_management.advertise_on_sli_vip.use_mtls.xfcc_options` | - |  |
+
+### panaroma_connection
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.palo_alto_fw_service.disable_panaroma` | - |  |
+| `spec.palo_alto_fw_service.panorama_server` | - |  |
+
+### setup_options
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.palo_alto_fw_service.auto_setup` | - |  |
+| `spec.palo_alto_fw_service.ssh_key` | - |  |
+
+### ssh_keys_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.palo_alto_fw_service.auto_setup.manual_ssh_keys` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Nfv Service resources:
+
+### Create Nfv Service
+
+> "Create a nfv-service named 'example' in the 'production' namespace"
+
+### List Nfv Services
+
+> "List all nfv-services in the 'production' namespace"
+
+### Get Nfv Service Details
+
+> "Get details of the nfv-service named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/nfv_services" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/nfv_services/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/nfv_services" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @nfv_service.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/nfv_services/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

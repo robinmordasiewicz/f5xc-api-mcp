@@ -1,0 +1,227 @@
+---
+title: Apm
+description: Create APM Service.
+---
+
+Replaces configured APM Service with new set of parameters.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-bigip-apm-create` | Create APM Service. |
+| `f5xc-api-bigip-apm-get` | GET APM Service. |
+| `f5xc-api-bigip-apm-list` | List BIG-IP APM as a Service. |
+| `f5xc-api-bigip-apm-update` | Replace APM Service. |
+| `f5xc-api-bigip-apm-delete` | DELETE BIG-IP APM as a Service. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### http_management_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.https_management` | - |  |
+
+### site_type_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.aws_site_type_choice` | - |  |
+| `spec.baremetal_site_type_choice` | - |  |
+
+### license_type
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.aws_site_type_choice.market_place_image` | - |  |
+
+### secret_info_oneof
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.aws_site_type_choice.apm_aws_site.admin_password.blindfold_secret_info` | - |  |
+| `spec.aws_site_type_choice.apm_aws_site.admin_password.clear_secret_info` | - |  |
+
+### external_vip_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.aws_site_type_choice.apm_aws_site.endpoint_service.advertise_on_slo_ip` | - |  |
+| `spec.aws_site_type_choice.apm_aws_site.endpoint_service.advertise_on_slo_ip_external` | - |  |
+| `spec.aws_site_type_choice.apm_aws_site.endpoint_service.disable_advertise_on_slo_ip` | - |  |
+
+### inside_vip_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.aws_site_type_choice.apm_aws_site.endpoint_service.automatic_vip` | - |  |
+| `spec.aws_site_type_choice.apm_aws_site.endpoint_service.configured_vip` | - |  |
+
+### tcp_port_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.aws_site_type_choice.apm_aws_site.endpoint_service.custom_tcp_ports` | - |  |
+| `spec.aws_site_type_choice.apm_aws_site.endpoint_service.default_tcp_ports` | - |  |
+| `spec.aws_site_type_choice.apm_aws_site.endpoint_service.http_port` | - |  |
+| `spec.aws_site_type_choice.apm_aws_site.endpoint_service.https_port` | - |  |
+| `spec.aws_site_type_choice.apm_aws_site.endpoint_service.no_tcp_ports` | - |  |
+
+### udp_port_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.aws_site_type_choice.apm_aws_site.endpoint_service.custom_udp_ports` | - |  |
+| `spec.aws_site_type_choice.apm_aws_site.endpoint_service.no_udp_ports` | - |  |
+
+### mgmt_subnet_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.aws_site_type_choice.apm_aws_site.nodes[].mgmt_subnet` | - |  |
+| `spec.aws_site_type_choice.apm_aws_site.nodes[].reserved_mgmt_subnet` | - |  |
+
+### tunnel_prefix_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.aws_site_type_choice.apm_aws_site.nodes[].automatic_prefix` | - |  |
+| `spec.aws_site_type_choice.apm_aws_site.nodes[].tunnel_prefix` | - |  |
+
+### choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.aws_site_type_choice.apm_aws_site.nodes[].mgmt_subnet.existing_subnet_id` | - |  |
+| `spec.aws_site_type_choice.apm_aws_site.nodes[].mgmt_subnet.subnet_param` | - |  |
+
+### ami_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.aws_site_type_choice.market_place_image.BestPlusPayG200Mbps` | - |  |
+| `spec.aws_site_type_choice.market_place_image.best_plus_payg_1gbps` | - |  |
+
+### advertise_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.https_management.advertise_on_internet` | - |  |
+| `spec.https_management.advertise_on_internet_default_vip` | - |  |
+| `spec.https_management.advertise_on_sli_vip` | - |  |
+| `spec.https_management.advertise_on_slo_internet_vip` | - |  |
+| `spec.https_management.advertise_on_slo_sli` | - |  |
+| `spec.https_management.advertise_on_slo_vip` | - |  |
+
+### internet_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+
+### port_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.https_management.default_https_port` | - |  |
+| `spec.https_management.https_port` | - |  |
+
+### mtls_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.https_management.advertise_on_sli_vip.no_mtls` | - |  |
+| `spec.https_management.advertise_on_sli_vip.use_mtls` | - |  |
+
+### ocsp_stapling_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.https_management.advertise_on_sli_vip.tls_certificates[].custom_hash_algorithms` | - |  |
+| `spec.https_management.advertise_on_sli_vip.tls_certificates[].disable_ocsp_stapling` | - |  |
+| `spec.https_management.advertise_on_sli_vip.tls_certificates[].use_system_defaults` | - |  |
+
+### crl_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.https_management.advertise_on_sli_vip.use_mtls.crl` | - |  |
+| `spec.https_management.advertise_on_sli_vip.use_mtls.no_crl` | - |  |
+
+### trusted_ca_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.https_management.advertise_on_sli_vip.use_mtls.trusted_ca` | - |  |
+| `spec.https_management.advertise_on_sli_vip.use_mtls.trusted_ca_url` | - |  |
+
+### xfcc_header
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.https_management.advertise_on_sli_vip.use_mtls.xfcc_disabled` | - |  |
+| `spec.https_management.advertise_on_sli_vip.use_mtls.xfcc_options` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Apm resources:
+
+### Create Apm
+
+> "Create a apm named 'example' in the 'production' namespace"
+
+### List Apms
+
+> "List all apms in the 'production' namespace"
+
+### Get Apm Details
+
+> "Get details of the apm named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/apms" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/apms/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/apms" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @apm.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/apms/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

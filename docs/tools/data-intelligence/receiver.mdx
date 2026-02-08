@@ -1,0 +1,178 @@
+---
+title: Receiver
+description: Create Data Delivery.
+---
+
+Replaces the content of an Data Delivery object.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-dataintelligence-receiver-create` | Create Data Delivery. |
+| `f5xc-api-dataintelligence-receiver-get` | GET Data Delivery. |
+| `f5xc-api-dataintelligence-receiver-list` | List Data Delivery. |
+| `f5xc-api-dataintelligence-receiver-update` | Replace Data Delivery. |
+| `f5xc-api-dataintelligence-receiver-delete` | DELETE Data Delivery. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### receiver
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.azure_receiver` | - |  |
+| `spec.datadog_receiver` | - |  |
+| `spec.gcp_bucket_receiver` | - |  |
+| `spec.http_receiver` | - |  |
+| `spec.s3_receiver` | - |  |
+| `spec.splunk_receiver` | - |  |
+
+### batch_bytes
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.azure_receiver.batch.max_bytes` | - |  |
+| `spec.azure_receiver.batch.max_bytes_disabled` | - |  |
+
+### batch_events
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.azure_receiver.batch.max_events` | - |  |
+| `spec.azure_receiver.batch.max_events_disabled` | - |  |
+
+### batch_timeout
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.azure_receiver.batch.default_timeout_seconds` | - |  |
+| `spec.azure_receiver.batch.timeout_seconds` | - |  |
+
+### compression_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.azure_receiver.compression.gzip_compression` | - |  |
+| `spec.azure_receiver.compression.no_compression` | - |  |
+
+### secret_info_oneof
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.azure_receiver.connection_string.blindfold_secret_info` | - |  |
+| `spec.azure_receiver.connection_string.clear_secret_info` | - |  |
+
+### endpoint_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.datadog_receiver.endpoint` | - |  |
+| `spec.datadog_receiver.site` | - |  |
+
+### tls_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.datadog_receiver.no_tls` | - |  |
+| `spec.datadog_receiver.use_tls` | - |  |
+
+### ca_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.datadog_receiver.use_tls.no_ca` | - |  |
+| `spec.datadog_receiver.use_tls.trusted_ca_url` | - |  |
+
+### mtls_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.datadog_receiver.use_tls.mtls_disabled` | - |  |
+| `spec.datadog_receiver.use_tls.mtls_enable` | - |  |
+
+### verify_certificate
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.datadog_receiver.use_tls.disable_verify_certificate` | - |  |
+| `spec.datadog_receiver.use_tls.enable_verify_certificate` | - |  |
+
+### verify_hostname
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.datadog_receiver.use_tls.disable_verify_hostname` | - |  |
+| `spec.datadog_receiver.use_tls.enable_verify_hostname` | - |  |
+
+### auth_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.http_receiver.auth_basic` | - |  |
+| `spec.http_receiver.auth_none` | - |  |
+| `spec.http_receiver.auth_token` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Receiver resources:
+
+### Create Receiver
+
+> "Create a receiver named 'example' in the 'production' namespace"
+
+### List Receivers
+
+> "List all receivers in the 'production' namespace"
+
+### Get Receiver Details
+
+> "Get details of the receiver named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/receivers" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/receivers/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/receivers" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @receiver.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/receivers/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

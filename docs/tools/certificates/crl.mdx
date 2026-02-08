@@ -1,0 +1,88 @@
+---
+title: Crl
+description: Create CRL.
+---
+
+List the set of CRL in a namespace.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-certificates-crl-create` | Create CRL. |
+| `f5xc-api-certificates-crl-get` | GET CRL |
+| `f5xc-api-certificates-crl-list` | List CRL |
+| `f5xc-api-certificates-crl-update` | Replace CRL. |
+| `f5xc-api-certificates-crl-delete` | DELETE CRL. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### access_info_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.http_access` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Crl resources:
+
+### Create Crl
+
+> "Create a crl named 'example' in the 'production' namespace"
+
+### List Crls
+
+> "List all crls in the 'production' namespace"
+
+### Get Crl Details
+
+> "Get details of the crl named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/crls" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/crls/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/crls" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @crl.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/crls/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

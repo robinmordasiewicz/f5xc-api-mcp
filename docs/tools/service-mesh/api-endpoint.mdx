@@ -1,0 +1,66 @@
+---
+title: API Endpoint
+description: GET Service API Endpoints.
+---
+
+GET all auto discovered API endpoints for App type.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-servicemesh-api-endpoint-create` | GET Service API Endpoints. |
+| `f5xc-api-servicemesh-api-endpoint-list` | GET API endpoints. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `app_type_name` | App Type | `-` |
+| `namespace` | Namespace | `-` |
+| `service_name` | Service | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `api_endpoint_info_request` | List of additional things that needs to be sent as part of the request | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with API Endpoint resources:
+
+### Create API Endpoint
+
+> "Create a api-endpoint named 'example' in the 'production' namespace"
+
+### List API Endpoints
+
+> "List all api-endpoints in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/api_endpoints" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/api_endpoints/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/api_endpoints" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @api_endpoint.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/api_endpoints/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

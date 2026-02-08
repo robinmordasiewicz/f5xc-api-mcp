@@ -1,0 +1,61 @@
+---
+title: Sources Openapi Schema
+description: GET relevant source OpenApi schema per API endpoint.
+---
+
+GET openapi schema per API endpoint for a given source types and Virtual Host.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-virtual-sources-openapi-schema-get` | GET relevant source OpenApi schema per API endpoint. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `name` | Virtual Host | `-` |
+| `namespace` | Namespace | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `discovery_source_types` | List of wanted discovery source types | `-` |
+| `id` | Endpoint ID. | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Sources Openapi Schema resources:
+
+### Get Sources Openapi Schema Details
+
+> "Get details of the sources-openapi-schema named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/sources_openapi_schemas" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/sources_openapi_schemas/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/sources_openapi_schemas" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @sources_openapi_schema.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/sources_openapi_schemas/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

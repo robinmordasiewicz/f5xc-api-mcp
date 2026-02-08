@@ -1,0 +1,103 @@
+---
+title: User Identification
+description: Create User Identification.
+---
+
+Replace user_identification replaces an existing object in the storage backend for
+metadata.namespace.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-tenantandidentity-user-identification-create` | Create User Identification. |
+| `f5xc-api-tenantandidentity-user-identification-get` | GET User Identification. |
+| `f5xc-api-tenantandidentity-user-identification-list` | List User Identification. |
+| `f5xc-api-tenantandidentity-user-identification-update` | Replace User Identification. |
+| `f5xc-api-tenantandidentity-user-identification-delete` | DELETE User Identification. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### identifier
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.rules[].client_asn` | - |  |
+| `spec.rules[].client_city` | - |  |
+| `spec.rules[].client_country` | - |  |
+| `spec.rules[].client_ip` | - |  |
+| `spec.rules[].client_region` | - |  |
+| `spec.rules[].cookie_name` | - |  |
+| `spec.rules[].http_header_name` | - |  |
+| `spec.rules[].ip_and_http_header_name` | - |  |
+| `spec.rules[].ip_and_ja4_tls_fingerprint` | - |  |
+| `spec.rules[].ip_and_tls_fingerprint` | - |  |
+| `spec.rules[].ja4_tls_fingerprint` | - |  |
+| `spec.rules[].jwt_claim_name` | - |  |
+| `spec.rules[].none` | - |  |
+| `spec.rules[].query_param_key` | - |  |
+| `spec.rules[].tls_fingerprint` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with User Identification resources:
+
+### Create User Identification
+
+> "Create a user-identification named 'example' in the 'production' namespace"
+
+### List User Identifications
+
+> "List all user-identifications in the 'production' namespace"
+
+### Get User Identification Details
+
+> "Get details of the user-identification named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/user_identifications" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/user_identifications/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/user_identifications" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @user_identification.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/user_identifications/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

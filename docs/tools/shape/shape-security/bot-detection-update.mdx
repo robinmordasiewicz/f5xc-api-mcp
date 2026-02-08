@@ -1,0 +1,53 @@
+---
+title: Bot Detection Update
+description: GET bot detection updates.
+---
+
+Getbotdetectionupdates CustomAPI.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-shape-bot-detection-update-list` | GET bot detection updates. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Bot Detection Update resources:
+
+### List Bot Detection Updates
+
+> "List all bot-detection-updates in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/bot_detection_updates" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/bot_detection_updates/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/bot_detection_updates" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @bot_detection_update.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/bot_detection_updates/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

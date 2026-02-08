@@ -1,0 +1,291 @@
+---
+title: Fleet
+description: Create Fleet.
+---
+
+Create fleet will create a fleet object in 'system' namespace of the user.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-cemanagement-fleet-create` | Create Fleet. |
+| `f5xc-api-cemanagement-fleet-get` | GET Fleet |
+| `f5xc-api-cemanagement-fleet-list` | List Fleet. |
+| `f5xc-api-cemanagement-fleet-update` | Replace Fleet. |
+| `f5xc-api-cemanagement-fleet-delete` | DELETE Fleet. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### bond_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.bond_device_list` | - |  |
+| `spec.no_bond_devices` | - |  |
+
+### dc_cluster_group_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.dc_cluster_group` | - |  |
+| `spec.dc_cluster_group_inside` | - |  |
+| `spec.no_dc_cluster_group` | - |  |
+
+### gpu_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.disable_gpu` | - |  |
+| `spec.enable_gpu` | - |  |
+| `spec.enable_vgpu` | - |  |
+
+### interface_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.default_config` | - |  |
+| `spec.device_list` | - |  |
+| `spec.interface_list` | - |  |
+
+### logs_receiver_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.log_receiver` | - |  |
+| `spec.logs_streaming_disabled` | - |  |
+
+### sriov_interface_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.default_sriov_interface` | - |  |
+| `spec.sriov_interfaces` | - |  |
+
+### storage_class_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.default_storage_class` | - |  |
+| `spec.storage_class_list` | - |  |
+
+### storage_device_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.no_storage_device` | - |  |
+| `spec.storage_device_list` | - |  |
+
+### storage_interface_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.no_storage_interfaces` | - |  |
+| `spec.storage_interface_list` | - |  |
+
+### storage_static_routes_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.no_storage_static_routes` | - |  |
+| `spec.storage_static_routes` | - |  |
+
+### usb_policy_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.allow_all_usb` | - |  |
+| `spec.deny_all_usb` | - |  |
+| `spec.usb_policy` | - |  |
+
+### vm_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.disable_vm` | - |  |
+| `spec.enable_vm` | - |  |
+
+### blocked_services_value_type_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.blocked_services[].dns` | - |  |
+| `spec.blocked_services[].ssh` | - |  |
+| `spec.blocked_services[].web_user_interface` | - |  |
+
+### lacp_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.bond_device_list.bond_devices[].active_backup` | - |  |
+| `spec.bond_device_list.bond_devices[].lacp` | - |  |
+
+### device_instance
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.device_list.devices[].network_device` | - |  |
+
+### kubernetes_upgrade_drain_enable_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.kubernetes_upgrade_drain.disable_upgrade_drain` | - |  |
+| `spec.kubernetes_upgrade_drain.enable_upgrade_drain` | - |  |
+
+### drain_max_unavailable_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.kubernetes_upgrade_drain.enable_upgrade_drain.drain_max_unavailable_node_count` | - |  |
+
+### vega_upgrade_mode_toggle_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.kubernetes_upgrade_drain.enable_upgrade_drain.disable_vega_upgrade_mode` | - |  |
+| `spec.kubernetes_upgrade_drain.enable_upgrade_drain.enable_vega_upgrade_mode` | - |  |
+
+### perf_mode_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.performance_enhancement_mode.perf_mode_l3_enhanced` | - |  |
+| `spec.performance_enhancement_mode.perf_mode_l7_enhanced` | - |  |
+
+### device_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.storage_class_list.storage_classes[].custom_storage` | - |  |
+| `spec.storage_class_list.storage_classes[].hpe_storage` | - |  |
+| `spec.storage_class_list.storage_classes[].netapp_trident` | - |  |
+| `spec.storage_class_list.storage_classes[].pure_service_orchestrator` | - |  |
+
+### secret_info_oneof
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.storage_device_list.storage_devices[].hpe_storage.iscsi_chap_password.blindfold_secret_info` | - |  |
+| `spec.storage_device_list.storage_devices[].hpe_storage.iscsi_chap_password.clear_secret_info` | - |  |
+
+### backend_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas` | - |  |
+| `spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san` | - |  |
+
+### data_lif
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.data_lif_dns_name` | - |  |
+| `spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.data_lif_ip` | - |  |
+
+### management_lif
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.management_lif_dns_name` | - |  |
+| `spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.management_lif_ip` | - |  |
+
+### qos_policy_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.storage[].volume_defaults.adaptive_qos_policy` | - |  |
+| `spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.storage[].volume_defaults.no_qos` | - |  |
+| `spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.storage[].volume_defaults.qos_policy` | - |  |
+
+### chap_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.no_chap` | - |  |
+| `spec.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.use_chap` | - |  |
+
+### mgmt_endpoint
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_array.flash_arrays[].mgmt_dns_name` | - |  |
+| `spec.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_array.flash_arrays[].mgmt_ip` | - |  |
+
+### nfs_endpoint
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_blade.flash_blades[].nfs_endpoint_dns_name` | - |  |
+| `spec.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_blade.flash_blades[].nfs_endpoint_ip` | - |  |
+
+### ver
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.storage_static_routes.storage_routes[].nexthop.nexthop_address.ipv4` | - |  |
+| `spec.storage_static_routes.storage_routes[].nexthop.nexthop_address.ipv6` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Fleet resources:
+
+### Create Fleet
+
+> "Create a fleet named 'example' in the 'production' namespace"
+
+### List Fleets
+
+> "List all fleets in the 'production' namespace"
+
+### Get Fleet Details
+
+> "Get details of the fleet named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/fleets" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/fleets/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/fleets" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @fleet.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/fleets/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

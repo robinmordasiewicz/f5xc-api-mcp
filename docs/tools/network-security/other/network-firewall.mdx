@@ -1,0 +1,104 @@
+---
+title: Network Firewall
+description: Create Network Firewall.
+---
+
+Replace network firewall will replace the contains of given object.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-networksecurity-network-firewall-create` | Create Network Firewall. |
+| `f5xc-api-networksecurity-network-firewall-get` | GET Network Firewall. |
+| `f5xc-api-networksecurity-network-firewall-list` | List Network Firewall. |
+| `f5xc-api-networksecurity-network-firewall-update` | Replace Network Firewall. |
+| `f5xc-api-networksecurity-network-firewall-delete` | DELETE Network Firewall. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### fast_acl_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.active_fast_acls` | - |  |
+| `spec.disable_fast_acl` | - |  |
+
+### forward_proxy_policy_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.active_forward_proxy_policies` | - |  |
+| `spec.disable_forward_proxy_policy` | - |  |
+
+### network_policy_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.active_enhanced_firewall_policies` | - |  |
+| `spec.active_network_policies` | - |  |
+| `spec.disable_network_policy` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Network Firewall resources:
+
+### Create Network Firewall
+
+> "Create a network-firewall named 'example' in the 'production' namespace"
+
+### List Network Firewalls
+
+> "List all network-firewalls in the 'production' namespace"
+
+### Get Network Firewall Details
+
+> "Get details of the network-firewall named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/network_firewalls" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/network_firewalls/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/network_firewalls" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @network_firewall.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/network_firewalls/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

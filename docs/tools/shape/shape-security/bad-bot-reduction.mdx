@@ -1,0 +1,53 @@
+---
+title: Bad Bot Reduction
+description: Insight Bad Bot Reduction.
+---
+
+Insight Bad Bot Reduction.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-shape-bad-bot-reduction-create` | Insight Bad Bot Reduction. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Bad Bot Reduction resources:
+
+### Create Bad Bot Reduction
+
+> "Create a bad-bot-reduction named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/bad_bot_reductions" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/bad_bot_reductions/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/bad_bot_reductions" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @bad_bot_reduction.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/bad_bot_reductions/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

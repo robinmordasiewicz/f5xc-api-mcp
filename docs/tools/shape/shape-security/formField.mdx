@@ -1,0 +1,71 @@
+---
+title: FormField
+description: List All Form Fields.
+---
+
+List form fields for all the scripts depending on start time and end time with GET method.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-shape-formfield-create` | List All Form Fields. |
+| `f5xc-api-shape-formfield-get` | GET Form Field. |
+| `f5xc-api-shape-formfield-list` | List All Form Fields with GET method. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+| `id` | ID | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `end_time` | X-required | `-` |
+| `start_time` | X-required | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with FormField resources:
+
+### Create FormField
+
+> "Create a formField named 'example' in the 'production' namespace"
+
+### List FormFields
+
+> "List all formFields in the 'production' namespace"
+
+### Get FormField Details
+
+> "Get details of the formField named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/formFields" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/formFields/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/formFields" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @formField.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/formFields/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

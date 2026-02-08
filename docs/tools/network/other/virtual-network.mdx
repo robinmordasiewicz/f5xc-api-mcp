@@ -1,0 +1,99 @@
+---
+title: Virtual Network
+description: Create Virtual Network.
+---
+
+Replace given virtual network in given namespace.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-network-virtual-network-create` | Create Virtual Network. |
+| `f5xc-api-network-virtual-network-get` | GET Virtual Network. |
+| `f5xc-api-network-virtual-network-list` | List Virtual Network. |
+| `f5xc-api-network-virtual-network-update` | Replace Virtual Network. |
+| `f5xc-api-network-virtual-network-delete` | DELETE Virtual Network. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### network_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.global_network` | - |  |
+| `spec.legacy_type` | - |  |
+| `spec.site_local_inside_network` | - |  |
+| `spec.site_local_network` | - |  |
+
+### next_hop_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.static_routes[].default_gateway` | - |  |
+| `spec.static_routes[].ip_address` | - |  |
+| `spec.static_routes[].node_interface` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Virtual Network resources:
+
+### Create Virtual Network
+
+> "Create a virtual-network named 'example' in the 'production' namespace"
+
+### List Virtual Networks
+
+> "List all virtual-networks in the 'production' namespace"
+
+### Get Virtual Network Details
+
+> "Get details of the virtual-network named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/virtual_networks" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/virtual_networks/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/virtual_networks" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @virtual_network.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/virtual_networks/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

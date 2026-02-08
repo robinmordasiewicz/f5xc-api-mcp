@@ -1,0 +1,67 @@
+---
+title: Unsubscribe
+description: Unsubscribe to XC addon services.
+---
+
+Unsubscribe to XC addon services.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-billingandusage-unsubscribe-create` | Unsubscribe to XC addon services. |
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### addon_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `f5xc_appstack_standard` | - |  |
+| `f5xc_big_ip_irule_standard` | - |  |
+| `f5xc_bigip_utilities_standard` | - |  |
+| `f5xc_content_delivery_network_advanced` | - |  |
+| `f5xc_content_delivery_network_standard` | - |  |
+| `f5xc_delegated_access_standard` | - |  |
+| `f5xc_securemesh_advanced` | - |  |
+| `f5xc_securemesh_standard` | - |  |
+| `f5xc_site_management_standard` | - |  |
+| `f5xc_synthetic_monitoring_standard` | - |  |
+| `f5xc_waap_advanced` | - |  |
+| `f5xc_waap_standard` | - |  |
+| `f5xc_web_app_scanning_standard` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Unsubscribe resources:
+
+### Create Unsubscribe
+
+> "Create a unsubscribe named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/unsubscribes" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/unsubscribes/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/unsubscribes" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @unsubscribe.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/unsubscribes/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

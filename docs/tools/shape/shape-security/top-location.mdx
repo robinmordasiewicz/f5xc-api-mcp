@@ -1,0 +1,67 @@
+---
+title: Top Location
+description: POST SAFE Top Locations.
+---
+
+POST SAFE Analyst Station Dashboard Transaction Breakdown request.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-shape-top-location-create` | POST SAFE Top Locations. |
+| `f5xc-api-shape-top-location-list` | GET SAFE Top Locations. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `from` | Timestamp representing start date of the requested period in millieseconds. | `-` |
+| `limit` | Limited number of records. | `-` |
+| `to` | Timestamp representing end date of the requested period in millieseconds. | `-` |
+| `version` | The API version to use. | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Top Location resources:
+
+### Create Top Location
+
+> "Create a top-location named 'example' in the 'production' namespace"
+
+### List Top Locations
+
+> "List all top-locations in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/top_locations" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/top_locations/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/top_locations" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @top_location.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/top_locations/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

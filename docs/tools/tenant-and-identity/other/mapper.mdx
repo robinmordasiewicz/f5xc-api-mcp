@@ -1,0 +1,59 @@
+---
+title: Mapper
+description: Update OIDC mappers.
+---
+
+Update OIDC mappers updates OIDC mappers in underlying IDM provider.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-tenantandidentity-mapper-create` | Update OIDC mappers. |
+| `f5xc-api-tenantandidentity-mapper-get` | GET OIDC mappers. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `name` | OIDC provider name | `-` |
+| `namespace` | Namespace | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Mapper resources:
+
+### Create Mapper
+
+> "Create a mapper named 'example' in the 'production' namespace"
+
+### Get Mapper Details
+
+> "Get details of the mapper named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/mappers" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/mappers/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/mappers" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @mapper.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/mappers/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

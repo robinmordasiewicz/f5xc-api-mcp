@@ -1,0 +1,97 @@
+---
+title: Protocol Inspection
+description: Create Protocol Inspection.
+---
+
+Create Protocol Inspection Specification in a given namespace. If one already exists it will give an
+error.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-virtual-protocol-inspection-create` | Create Protocol Inspection. |
+| `f5xc-api-virtual-protocol-inspection-get` | GET Protocol Inspection. |
+| `f5xc-api-virtual-protocol-inspection-list` | List Configure Protocol Inspection. |
+| `f5xc-api-virtual-protocol-inspection-update` | Replace Protocol Inspection. |
+| `f5xc-api-virtual-protocol-inspection-delete` | DELETE Configure Protocol Inspection. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### compliance_check_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.enable_disable_compliance_checks.disable_compliance_checks` | - |  |
+| `spec.enable_disable_compliance_checks.enable_compliance_checks` | - |  |
+
+### signature_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.enable_disable_signatures.disable_signature` | - |  |
+| `spec.enable_disable_signatures.enable_signature` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Protocol Inspection resources:
+
+### Create Protocol Inspection
+
+> "Create a protocol-inspection named 'example' in the 'production' namespace"
+
+### List Protocol Inspections
+
+> "List all protocol-inspections in the 'production' namespace"
+
+### Get Protocol Inspection Details
+
+> "Get details of the protocol-inspection named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/protocol_inspections" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/protocol_inspections/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/protocol_inspections" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @protocol_inspection.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/protocol_inspections/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

@@ -1,0 +1,59 @@
+---
+title: Domain Detail
+description: GET Domain Details.
+---
+
+GET the details of the domain provided.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-shape-domain-detail-list` | GET Domain Details. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `name` | Name of the domain to GET the details. | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Domain Detail resources:
+
+### List Domain Details
+
+> "List all domain-details in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/domain_details" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/domain_details/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/domain_details" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @domain_detail.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/domain_details/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

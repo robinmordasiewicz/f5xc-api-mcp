@@ -1,0 +1,199 @@
+---
+title: Network Interface
+description: Create Network Interface.
+---
+
+Network interface represents configuration of a network device.
+Replace network interface will
+replace the contents of given network interface object.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-cemanagement-network-interface-create` | Create Network Interface. |
+| `f5xc-api-cemanagement-network-interface-get` | GET Network Interface. |
+| `f5xc-api-cemanagement-network-interface-list` | List Network Interface. |
+| `f5xc-api-cemanagement-network-interface-update` | Replace Network Interface. |
+| `f5xc-api-cemanagement-network-interface-delete` | DELETE Network Interface. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### interface_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.dedicated_interface` | - |  |
+| `spec.dedicated_management_interface` | - |  |
+| `spec.ethernet_interface` | - |  |
+| `spec.layer2_interface` | - |  |
+| `spec.tunnel_interface` | - |  |
+
+### monitoring_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.dedicated_interface.monitor` | - |  |
+| `spec.dedicated_interface.monitor_disabled` | - |  |
+
+### node_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.dedicated_interface.cluster` | - |  |
+| `spec.dedicated_interface.node` | - |  |
+
+### primary_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.dedicated_interface.is_primary` | - |  |
+| `spec.dedicated_interface.not_primary` | - |  |
+
+### address_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.ethernet_interface.dhcp_client` | - |  |
+| `spec.ethernet_interface.dhcp_server` | - |  |
+| `spec.ethernet_interface.static_ip` | - |  |
+
+### ipv6_address_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.ethernet_interface.ipv6_auto_config` | - |  |
+| `spec.ethernet_interface.no_ipv6_address` | - |  |
+| `spec.ethernet_interface.static_ipv6_address` | - |  |
+
+### network_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.ethernet_interface.segment_network` | - |  |
+| `spec.ethernet_interface.site_local_inside_network` | - |  |
+| `spec.ethernet_interface.site_local_network` | - |  |
+| `spec.ethernet_interface.storage_network` | - |  |
+
+### vlan_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.ethernet_interface.untagged` | - |  |
+| `spec.ethernet_interface.vlan_id` | - |  |
+
+### interfaces_addressing_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.ethernet_interface.dhcp_server.automatic_from_end` | - |  |
+| `spec.ethernet_interface.dhcp_server.automatic_from_start` | - |  |
+| `spec.ethernet_interface.dhcp_server.interface_ip_map` | - |  |
+
+### dns_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.ethernet_interface.dhcp_server.dhcp_networks[].dns_address` | - |  |
+| `spec.ethernet_interface.dhcp_server.dhcp_networks[].same_as_dgw` | - |  |
+
+### gateway_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.ethernet_interface.dhcp_server.dhcp_networks[].dgw_address` | - |  |
+| `spec.ethernet_interface.dhcp_server.dhcp_networks[].first_address` | - |  |
+| `spec.ethernet_interface.dhcp_server.dhcp_networks[].last_address` | - |  |
+
+### network_prefix_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.ethernet_interface.dhcp_server.dhcp_networks[].network_prefix` | - |  |
+
+### autoconfig_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.ethernet_interface.ipv6_auto_config.host` | - |  |
+| `spec.ethernet_interface.ipv6_auto_config.router` | - |  |
+
+### local_dns_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.ethernet_interface.ipv6_auto_config.router.dns_config.local_dns.configured_address` | - |  |
+| `spec.ethernet_interface.ipv6_auto_config.router.dns_config.local_dns.first_address` | - |  |
+| `spec.ethernet_interface.ipv6_auto_config.router.dns_config.local_dns.last_address` | - |  |
+
+### layer2_interface_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.layer2_interface.l2sriov_interface` | - |  |
+| `spec.layer2_interface.l2vlan_interface` | - |  |
+| `spec.layer2_interface.l2vlan_slo_interface` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Network Interface resources:
+
+### Create Network Interface
+
+> "Create a network-interface named 'example' in the 'production' namespace"
+
+### List Network Interfaces
+
+> "List all network-interfaces in the 'production' namespace"
+
+### Get Network Interface Details
+
+> "Get details of the network-interface named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/network_interfaces" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/network_interfaces/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/network_interfaces" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @network_interface.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/network_interfaces/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

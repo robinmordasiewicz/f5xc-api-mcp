@@ -1,0 +1,44 @@
+---
+title: DataSet
+description: GET Data Sets.
+---
+
+GET the list of data sets eligible for the tenant.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-dataintelligence-dataset-list` | GET Data Sets. |
+
+## Example Usage
+
+Ask Claude to help you work with DataSet resources:
+
+### List DataSets
+
+> "List all dataSets in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/dataSets" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/dataSets/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/dataSets" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @dataSet.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/dataSets/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

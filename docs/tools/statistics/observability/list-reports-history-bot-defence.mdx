@@ -1,0 +1,53 @@
+---
+title: List Reports History Bot Defence
+description: List Reports History Bot Defence.
+---
+
+List Reports history bot defence for the list of report configurations in the given namespace.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-statistics-list-reports-history-bot-defence-create` | List Reports History Bot Defence. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with List Reports History Bot Defence resources:
+
+### Create List Reports History Bot Defence
+
+> "Create a list-reports-history-bot-defence named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/list_reports_history_bot_defences" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/list_reports_history_bot_defences/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/list_reports_history_bot_defences" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @list_reports_history_bot_defence.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/list_reports_history_bot_defences/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

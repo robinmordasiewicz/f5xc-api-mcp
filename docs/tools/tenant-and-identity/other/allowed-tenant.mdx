@@ -1,0 +1,78 @@
+---
+title: Allowed Tenant
+description: Create Allowed Tenant.
+---
+
+Creates a allowed_tenant config instance. Name of the object is name of the tenant that is allowed
+to manage.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-tenantandidentity-allowed-tenant-create` | Create Allowed Tenant. |
+| `f5xc-api-tenantandidentity-allowed-tenant-get` | GET Allowed Tenant. |
+| `f5xc-api-tenantandidentity-allowed-tenant-list` | List Allowed Tenant. |
+| `f5xc-api-tenantandidentity-allowed-tenant-update` | Replace Allowed Tenant. |
+| `f5xc-api-tenantandidentity-allowed-tenant-delete` | DELETE Allowed Tenant. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Allowed Tenant resources:
+
+### Create Allowed Tenant
+
+> "Create a allowed-tenant named 'example' in the 'production' namespace"
+
+### List Allowed Tenants
+
+> "List all allowed-tenants in the 'production' namespace"
+
+### Get Allowed Tenant Details
+
+> "Get details of the allowed-tenant named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/allowed_tenants" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/allowed_tenants/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/allowed_tenants" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @allowed_tenant.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/allowed_tenants/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

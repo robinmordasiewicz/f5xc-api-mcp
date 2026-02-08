@@ -1,0 +1,44 @@
+---
+title: Threat Type
+description: Peergroup By Threat Types.
+---
+
+GetThreat Types traffic count for Peergroup Benchmarking.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-shape-threat-type-create` | Peergroup By Threat Types. |
+
+## Example Usage
+
+Ask Claude to help you work with Threat Type resources:
+
+### Create Threat Type
+
+> "Create a threat-type named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/threat_types" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/threat_types/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/threat_types" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @threat_type.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/threat_types/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

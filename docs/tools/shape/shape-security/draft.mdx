@@ -1,0 +1,59 @@
+---
+title: Draft
+description: Save draft.
+---
+
+Getbotdetectionrulesdraft CustomAPI.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-shape-draft-create` | Save draft. |
+| `f5xc-api-shape-draft-list` | GET bot detection rules which are in draft state. |
+| `f5xc-api-shape-draft-delete` | Discard draft. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Draft resources:
+
+### Create Draft
+
+> "Create a draft named 'example' in the 'production' namespace"
+
+### List Drafts
+
+> "List all drafts in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/drafts" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/drafts/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/drafts" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @draft.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/drafts/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

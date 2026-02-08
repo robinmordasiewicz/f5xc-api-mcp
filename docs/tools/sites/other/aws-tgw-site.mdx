@@ -1,0 +1,357 @@
+---
+title: AWS Tgw Site
+description: Create AWS TGW site.
+---
+
+Shape of the AWS TGW site replace specification.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-sites-aws-tgw-site-create` | Create AWS TGW site. |
+| `f5xc-api-sites-aws-tgw-site-get` | GET AWS TGW site. |
+| `f5xc-api-sites-aws-tgw-site-list` | List Configure AWS TGW Site. |
+| `f5xc-api-sites-aws-tgw-site-update` | Replace AWS TGW site. |
+| `f5xc-api-sites-aws-tgw-site-delete` | DELETE Configure AWS TGW Site. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### blocked_services_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.block_all_services` | - |  |
+| `spec.blocked_services` | - |  |
+| `spec.default_blocked_services` | - |  |
+
+### direct_connect_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.direct_connect_disabled` | - |  |
+| `spec.direct_connect_enabled` | - |  |
+| `spec.private_connectivity` | - |  |
+
+### logs_receiver_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.log_receiver` | - |  |
+| `spec.logs_streaming_disabled` | - |  |
+
+### deployment
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.aws_parameters.aws_cred` | - |  |
+
+### internet_vip_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.aws_parameters.disable_internet_vip` | - |  |
+| `spec.aws_parameters.enable_internet_vip` | - |  |
+
+### security_group_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.aws_parameters.custom_security_group` | - |  |
+| `spec.aws_parameters.f5xc_security_group` | - |  |
+
+### service_vpc_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.aws_parameters.new_vpc` | - |  |
+| `spec.aws_parameters.vpc_id` | - |  |
+
+### tgw_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.aws_parameters.existing_tgw` | - |  |
+| `spec.aws_parameters.new_tgw` | - |  |
+
+### tgw_cidr_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.aws_parameters.reserved_tgw_cidr` | - |  |
+| `spec.aws_parameters.tgw_cidr` | - |  |
+
+### worker_nodes
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.aws_parameters.no_worker_nodes` | - |  |
+| `spec.aws_parameters.nodes_per_az` | - |  |
+| `spec.aws_parameters.total_nodes` | - |  |
+
+### secret_info_oneof
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.aws_parameters.admin_password.blindfold_secret_info` | - |  |
+| `spec.aws_parameters.admin_password.clear_secret_info` | - |  |
+
+### choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.aws_parameters.az_nodes[].inside_subnet` | - |  |
+| `spec.aws_parameters.az_nodes[].reserved_inside_subnet` | - |  |
+
+### asn_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.aws_parameters.new_tgw.system_generated` | - |  |
+| `spec.aws_parameters.new_tgw.user_assigned` | - |  |
+
+### name_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.aws_parameters.new_vpc.autogenerate` | - |  |
+| `spec.aws_parameters.new_vpc.name_tag` | - |  |
+
+### blocked_services_value_type_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.blocked_services.blocked_sevice[].dns` | - |  |
+| `spec.blocked_services.blocked_sevice[].ssh` | - |  |
+| `spec.blocked_services.blocked_sevice[].web_user_interface` | - |  |
+
+### vif_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.direct_connect_enabled.hosted_vifs` | - |  |
+| `spec.direct_connect_enabled.standard_vifs` | - |  |
+
+### connectivity_options
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.direct_connect_enabled.hosted_vifs.site_registration_over_direct_connect` | - |  |
+| `spec.direct_connect_enabled.hosted_vifs.site_registration_over_internet` | - |  |
+
+### vif_region_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.direct_connect_enabled.hosted_vifs.vif_list[].other_region` | - |  |
+| `spec.direct_connect_enabled.hosted_vifs.vif_list[].same_as_site_region` | - |  |
+
+### kubernetes_upgrade_drain_enable_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.kubernetes_upgrade_drain.disable_upgrade_drain` | - |  |
+| `spec.kubernetes_upgrade_drain.enable_upgrade_drain` | - |  |
+
+### drain_max_unavailable_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.kubernetes_upgrade_drain.enable_upgrade_drain.drain_max_unavailable_node_count` | - |  |
+
+### vega_upgrade_mode_toggle_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.kubernetes_upgrade_drain.enable_upgrade_drain.disable_vega_upgrade_mode` | - |  |
+| `spec.kubernetes_upgrade_drain.enable_upgrade_drain.enable_vega_upgrade_mode` | - |  |
+
+### offline_survivability_mode_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.offline_survivability_mode.enable_offline_survivability_mode` | - |  |
+| `spec.offline_survivability_mode.no_offline_survivability_mode` | - |  |
+
+### operating_system_version_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.os.default_os_version` | - |  |
+| `spec.os.operating_system_version` | - |  |
+
+### perf_mode_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.performance_enhancement_mode.perf_mode_l3_enhanced` | - |  |
+| `spec.performance_enhancement_mode.perf_mode_l7_enhanced` | - |  |
+
+### network_options
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.private_connectivity.inside` | - |  |
+| `spec.private_connectivity.outside` | - |  |
+
+### volterra_sw_version_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.sw.default_sw_version` | - |  |
+| `spec.sw.volterra_software_version` | - |  |
+
+### east_west_service_policy_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.tgw_security.active_east_west_service_policies` | - |  |
+| `spec.tgw_security.east_west_service_policy_allow_all` | - |  |
+| `spec.tgw_security.no_east_west_policy` | - |  |
+
+### forward_proxy_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.tgw_security.active_forward_proxy_policies` | - |  |
+| `spec.tgw_security.forward_proxy_allow_all` | - |  |
+| `spec.tgw_security.no_forward_proxy` | - |  |
+
+### network_policy_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.tgw_security.active_enhanced_firewall_policies` | - |  |
+| `spec.tgw_security.active_network_policies` | - |  |
+| `spec.tgw_security.no_network_policy` | - |  |
+
+### dc_cluster_group_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.vn_config.dc_cluster_group_inside_vn` | - |  |
+| `spec.vn_config.dc_cluster_group_outside_vn` | - |  |
+| `spec.vn_config.no_dc_cluster_group` | - |  |
+
+### global_network_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.vn_config.global_network_list` | - |  |
+| `spec.vn_config.no_global_network` | - |  |
+
+### inside_static_route_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.vn_config.inside_static_routes` | - |  |
+| `spec.vn_config.no_inside_static_routes` | - |  |
+
+### outside_static_route_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.vn_config.no_outside_static_routes` | - |  |
+| `spec.vn_config.outside_static_routes` | - |  |
+
+### site_mesh_group_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.vn_config.sm_connection_public_ip` | - |  |
+| `spec.vn_config.sm_connection_pvt_ip` | - |  |
+
+### port_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.vn_config.allowed_vip_port.custom_ports` | - |  |
+| `spec.vn_config.allowed_vip_port.disable_allowed_vip_port` | - |  |
+| `spec.vn_config.allowed_vip_port.use_http_https_port` | - |  |
+| `spec.vn_config.allowed_vip_port.use_http_port` | - |  |
+| `spec.vn_config.allowed_vip_port.use_https_port` | - |  |
+
+### connection_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.vn_config.global_network_list.global_network_connections[].sli_to_global_dr` | - |  |
+| `spec.vn_config.global_network_list.global_network_connections[].slo_to_global_dr` | - |  |
+
+### config_mode_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.vn_config.inside_static_routes.static_route_list[].custom_static_route` | - |  |
+| `spec.vn_config.inside_static_routes.static_route_list[].simple_static_route` | - |  |
+
+### ver
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.vn_config.inside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv4` | - |  |
+| `spec.vn_config.inside_static_routes.static_route_list[].custom_static_route.nexthop.nexthop_address.ipv6` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with AWS Tgw Site resources:
+
+### Create AWS Tgw Site
+
+> "Create a aws-tgw-site named 'example' in the 'production' namespace"
+
+### List AWS Tgw Sites
+
+> "List all aws-tgw-sites in the 'production' namespace"
+
+### Get AWS Tgw Site Details
+
+> "Get details of the aws-tgw-site named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/aws_tgw_sites" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/aws_tgw_sites/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/aws_tgw_sites" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @aws_tgw_site.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/aws_tgw_sites/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

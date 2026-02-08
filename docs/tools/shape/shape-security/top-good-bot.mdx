@@ -1,0 +1,44 @@
+---
+title: Top Good Bot
+description: Peer Group Top Good Bots.
+---
+
+GET Peer Group Top Good Bots.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-shape-top-good-bot-create` | Peer Group Top Good Bots. |
+
+## Example Usage
+
+Ask Claude to help you work with Top Good Bot resources:
+
+### Create Top Good Bot
+
+> "Create a top-good-bot named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/top_good_bots" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/top_good_bots/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/top_good_bots" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @top_good_bot.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/top_good_bots/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

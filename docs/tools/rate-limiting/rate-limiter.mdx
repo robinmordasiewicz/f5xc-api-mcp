@@ -1,0 +1,104 @@
+---
+title: Rate Limiter
+description: Create Rate Limiter.
+---
+
+Replace rate_limiter replaces an existing object in the storage backend for metadata.namespace.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-ratelimiting-rate-limiter-create` | Create Rate Limiter. |
+| `f5xc-api-ratelimiting-rate-limiter-get` | GET Rate Limiter. |
+| `f5xc-api-ratelimiting-rate-limiter-list` | List Rate Limiter. |
+| `f5xc-api-ratelimiting-rate-limiter-update` | Replace Rate Limiter. |
+| `f5xc-api-ratelimiting-rate-limiter-delete` | DELETE Rate Limiter. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### action_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.limits[].action_block` | - |  |
+| `spec.limits[].disabled` | - |  |
+
+### algorithm
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.limits[].leaky_bucket` | - |  |
+| `spec.limits[].token_bucket` | - |  |
+
+### block_duration_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.limits[].action_block.hours` | - |  |
+| `spec.limits[].action_block.minutes` | - |  |
+| `spec.limits[].action_block.seconds` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Rate Limiter resources:
+
+### Create Rate Limiter
+
+> "Create a rate-limiter named 'example' in the 'production' namespace"
+
+### List Rate Limiters
+
+> "List all rate-limiters in the 'production' namespace"
+
+### Get Rate Limiter Details
+
+> "Get details of the rate-limiter named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/rate_limiters" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/rate_limiters/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/rate_limiters" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @rate_limiter.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/rate_limiters/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

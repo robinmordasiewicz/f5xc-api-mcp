@@ -1,0 +1,73 @@
+---
+title: Traceroute
+description: Traceroute.
+---
+
+Run traceroute to a destination.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-network-traceroute-create` | Traceroute. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+| `site` | Site Name | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### hostname_or_ip
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `dest.hostname` | - |  |
+| `dest.ip` | - |  |
+
+### interface_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `intf.any_intf` | - |  |
+| `intf.intf` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Traceroute resources:
+
+### Create Traceroute
+
+> "Create a traceroute named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/traceroutes" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/traceroutes/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/traceroutes" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @traceroute.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/traceroutes/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

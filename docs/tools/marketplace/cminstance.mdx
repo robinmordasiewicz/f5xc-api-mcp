@@ -1,0 +1,92 @@
+---
+title: Cminstance
+description: Create Central Manager Insatnce.
+---
+
+Update the configuration by replacing the existing spec with the provided one.
+For read-then-write
+operations a resourceVersion mismatch will occur if the object was modified between the read and
+write.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-marketplace-cminstance-create` | Create Central Manager Insatnce. |
+| `f5xc-api-marketplace-cminstance-get` | GET Central Manager Instance. |
+| `f5xc-api-marketplace-cminstance-list` | List Central Manager Instance. |
+| `f5xc-api-marketplace-cminstance-update` | Replace Central Manager Instance. |
+| `f5xc-api-marketplace-cminstance-delete` | DELETE Central Manager Instance. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### secret_info_oneof
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.api_token.blindfold_secret_info` | - |  |
+| `spec.api_token.clear_secret_info` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Cminstance resources:
+
+### Create Cminstance
+
+> "Create a cminstance named 'example' in the 'production' namespace"
+
+### List Cminstances
+
+> "List all cminstances in the 'production' namespace"
+
+### Get Cminstance Details
+
+> "Get details of the cminstance named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/cminstances" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/cminstances/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/cminstances" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @cminstance.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/cminstances/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

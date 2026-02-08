@@ -1,0 +1,60 @@
+---
+title: Report
+description: List reports.
+---
+
+Returns a list of available reports to be downloaded. Reports summarise an event or a mitigation in
+a single PDF document.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-ddos-report-create` | List reports. |
+| `f5xc-api-ddos-report-list` | Report details. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+| `report_id` | Report ID | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Report resources:
+
+### Create Report
+
+> "Create a report named 'example' in the 'production' namespace"
+
+### List Reports
+
+> "List all reports in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/reports" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/reports/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/reports" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @report.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/reports/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

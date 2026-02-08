@@ -1,0 +1,59 @@
+---
+title: Platform Event
+description: Platform event Query.
+---
+
+Request to GET platform event that matches the criteria in request for a given namespace.
+If no
+match conditions are specified in the request, then the response contains all
+CRUD operations
+performed in the namespace. User with access to the `system` namespace
+may query for platform events
+across all namespaces for a given tenant.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-observability-platform-event-create` | Platform event Query. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Platform Event resources:
+
+### Create Platform Event
+
+> "Create a platform-event named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/platform_events" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/platform_events/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/platform_events" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @platform_event.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/platform_events/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

@@ -1,0 +1,62 @@
+---
+title: Filtered HTTP Monitor List
+description: GET Filtered HTTP Monitor List.
+---
+
+List v1_http_monitor in a namespace based on filter.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-observability-filtered-http-monitor-list-list` | GET Filtered HTTP Monitor List. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `filter` | Monitor filter. | `-` |
+| `limit` | Limit. | `-` |
+| `page` | Page. | `-` |
+| `sort` | Sort. | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Filtered HTTP Monitor List resources:
+
+### List Filtered HTTP Monitor Lists
+
+> "List all filtered-http-monitor-lists in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/filtered_http_monitor_lists" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/filtered_http_monitor_lists/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/filtered_http_monitor_lists" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @filtered_http_monitor_list.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/filtered_http_monitor_lists/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

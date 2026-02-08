@@ -1,0 +1,238 @@
+---
+title: Bot Endpoint Policy
+description: GET Bot Endpoint Policy.
+---
+
+List the set of bot_endpoint_policy in a namespace.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-shape-bot-endpoint-policy-get` | GET Bot Endpoint Policy. |
+| `f5xc-api-shape-bot-endpoint-policy-list` | List Bot Endpoint Policy. |
+| `f5xc-api-shape-bot-endpoint-policy-update` | Custom Replace Bot Endpoint Policy. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### endpoint_type_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.endpoint_policy_content.protected_mobile_endpoints` | - |  |
+| `spec.endpoint_policy_content.protected_web_endpoints` | - |  |
+
+### mobile_client_action_type
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].block` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].continue` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transform` | - |  |
+
+### send_headers_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].continue.append_headers` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].continue.no_headers` | - |  |
+
+### domain_operator_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].domain.all_domain` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].domain.domain_and` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].domain.domain_none` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].domain.domain_or` | - |  |
+
+### flow_label_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.account_management` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.authentication` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.credit_card` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.delivery_services` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.financial_services` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.flight` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.guest_session` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.loyalty` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.mailing_list` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.media` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.miscellaneous` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.profile_management` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.quotes` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.search` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.shopping_gift_cards` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.socials` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.undefined_flow_label` | - |  |
+
+### label_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.account_management.change_password` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.account_management.check_eligibility` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.account_management.create` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.account_management.exists` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.account_management.password_forgot` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.account_management.password_recover` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].flow_label_choice.account_management.password_reset` | - |  |
+
+### header_operator_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].header[].all_header` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].header[].header_and` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].header[].header_none` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].header[].header_or` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].header[].not_present_header` | - |  |
+
+### match_type_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].header[].header_and.header_match[].contain_value` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].header[].header_and.header_match[].end_with_value` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].header[].header_and.header_match[].exact_value` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].header[].header_and.header_match[].start_with_value` | - |  |
+
+### path_operator_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].path.all_path` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].path.path_and` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].path.path_none` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].path.path_or` | - |  |
+
+### query_operator_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].query.all_query` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].query.query_and` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].query.query_none` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].query.query_or` | - |  |
+
+### request_body_operator_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].request_body.all_request_body` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].request_body.request_body_and` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].request_body.request_body_none` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].request_body.request_body_or` | - |  |
+
+### cookiechoice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].cookie_all` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].cookie_and` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].cookie_none` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].cookie_or` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].not_present_cookie` | - |  |
+
+### compare_type_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].cookie_and.cookie_match[].contains` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].cookie_and.cookie_match[].ends_with` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].cookie_and.cookie_match[].equals` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.cookie[].cookie_and.cookie_match[].starts_with` | - |  |
+
+### responsebodychoice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseBody.responseBody_all` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseBody.responseBody_and` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseBody.responseBody_none` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseBody.responseBody_or` | - |  |
+
+### responsecodechoice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseCode.responseCode_all` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseCode.responseCode_and` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseCode.responseCode_none` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transaction_result_criteria.transaction_result_failure.responseCode.responseCode_or` | - |  |
+
+### add_headers_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transform.add_headers` | - |  |
+| `spec.endpoint_policy_content.protected_mobile_endpoints.protected_mobile_endpoints[].transform.no_headers` | - |  |
+
+### web_client_action_type
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].block` | - |  |
+| `spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].continue` | - |  |
+| `spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].redirect` | - |  |
+| `spec.endpoint_policy_content.protected_web_endpoints.protected_web_endpoints[].transform` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Bot Endpoint Policy resources:
+
+### List Bot Endpoint Policys
+
+> "List all bot-endpoint-policys in the 'production' namespace"
+
+### Get Bot Endpoint Policy Details
+
+> "Get details of the bot-endpoint-policy named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/bot_endpoint_policys" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/bot_endpoint_policys/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/bot_endpoint_policys" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @bot_endpoint_policy.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/bot_endpoint_policys/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

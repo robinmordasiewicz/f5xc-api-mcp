@@ -1,0 +1,68 @@
+---
+title: Shape Bot Defense Instance
+description: GET Virtual Host.
+---
+
+List the set of shape_bot_defense_instance in a namespace.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-botandthreatdefense-shape-bot-defense-instance-get` | GET Virtual Host. |
+| `f5xc-api-botandthreatdefense-shape-bot-defense-instance-list` | List Shape Bot Defense Instance. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Shape Bot Defense Instance resources:
+
+### List Shape Bot Defense Instances
+
+> "List all shape-bot-defense-instances in the 'production' namespace"
+
+### Get Shape Bot Defense Instance Details
+
+> "Get details of the shape-bot-defense-instance named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/shape_bot_defense_instances" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/shape_bot_defense_instances/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/shape_bot_defense_instances" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @shape_bot_defense_instance.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/shape_bot_defense_instances/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

@@ -1,0 +1,232 @@
+---
+title: Service Policy Rule
+description: Create Service Policy Rule.
+---
+
+Replace service_policy_rule replaces an existing object in the storage backend for
+metadata.namespace.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-virtual-service-policy-rule-create` | Create Service Policy Rule. |
+| `f5xc-api-virtual-service-policy-rule-get` | GET Service Policy Rule. |
+| `f5xc-api-virtual-service-policy-rule-list` | List Service Policy Rule. |
+| `f5xc-api-virtual-service-policy-rule-update` | Replace Service Policy Rule. |
+| `f5xc-api-virtual-service-policy-rule-delete` | DELETE Service Policy Rule. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### asn_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.any_asn` | - |  |
+| `spec.asn_list` | - |  |
+| `spec.asn_matcher` | - |  |
+
+### client_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.any_client` | - |  |
+| `spec.client_name` | - |  |
+| `spec.client_name_matcher` | - |  |
+| `spec.client_selector` | - |  |
+| `spec.ip_threat_category_list` | - |  |
+
+### dst_asn_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+
+### dst_ip_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+
+### ip_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.any_ip` | - |  |
+| `spec.ip_matcher` | - |  |
+| `spec.ip_prefix_list` | - |  |
+
+### tls_fingerprint_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.ja4_tls_fingerprint` | - |  |
+| `spec.tls_fingerprint_matcher` | - |  |
+
+### match
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.arg_matchers[].check_not_present` | - |  |
+| `spec.arg_matchers[].check_present` | - |  |
+| `spec.arg_matchers[].item` | - |  |
+
+### action_type
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.bot_action.bot_skip_processing` | - |  |
+| `spec.bot_action.none` | - |  |
+
+### max_cookie_count_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.request_constraints.max_cookie_count_exceeds` | - |  |
+| `spec.request_constraints.max_cookie_count_none` | - |  |
+
+### max_cookie_key_size_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.request_constraints.max_cookie_key_size_exceeds` | - |  |
+| `spec.request_constraints.max_cookie_key_size_none` | - |  |
+
+### max_cookie_value_size_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.request_constraints.max_cookie_value_size_exceeds` | - |  |
+| `spec.request_constraints.max_cookie_value_size_none` | - |  |
+
+### max_header_count_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.request_constraints.max_header_count_exceeds` | - |  |
+| `spec.request_constraints.max_header_count_none` | - |  |
+
+### max_header_key_size_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.request_constraints.max_header_key_size_exceeds` | - |  |
+| `spec.request_constraints.max_header_key_size_none` | - |  |
+
+### max_header_value_size_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.request_constraints.max_header_value_size_exceeds` | - |  |
+| `spec.request_constraints.max_header_value_size_none` | - |  |
+
+### max_parameter_count_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.request_constraints.max_parameter_count_exceeds` | - |  |
+| `spec.request_constraints.max_parameter_count_none` | - |  |
+
+### max_parameter_name_size_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.request_constraints.max_parameter_name_size_exceeds` | - |  |
+| `spec.request_constraints.max_parameter_name_size_none` | - |  |
+
+### max_parameter_value_size_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.request_constraints.max_parameter_value_size_exceeds` | - |  |
+| `spec.request_constraints.max_parameter_value_size_none` | - |  |
+
+### max_query_size_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.request_constraints.max_query_size_exceeds` | - |  |
+| `spec.request_constraints.max_query_size_none` | - |  |
+
+### max_request_line_size_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.request_constraints.max_request_line_size_exceeds` | - |  |
+| `spec.request_constraints.max_request_line_size_none` | - |  |
+
+### max_request_size_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.request_constraints.max_request_size_exceeds` | - |  |
+| `spec.request_constraints.max_request_size_none` | - |  |
+
+### max_url_size_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.request_constraints.max_url_size_exceeds` | - |  |
+| `spec.request_constraints.max_url_size_none` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Service Policy Rule resources:
+
+### Create Service Policy Rule
+
+> "Create a service-policy-rule named 'example' in the 'production' namespace"
+
+### List Service Policy Rules
+
+> "List all service-policy-rules in the 'production' namespace"
+
+### Get Service Policy Rule Details
+
+> "Get details of the service-policy-rule named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/service_policy_rules" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/service_policy_rules/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/service_policy_rules" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @service_policy_rule.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/service_policy_rules/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

@@ -1,0 +1,167 @@
+---
+title: Network Connector
+description: Create Network Connector.
+---
+
+Replace Network Connector will replace the contains of given object.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-network-network-connector-create` | Create Network Connector. |
+| `f5xc-api-network-network-connector-get` | GET Network Connector. |
+| `f5xc-api-network-network-connector-list` | List Network Connector. |
+| `f5xc-api-network-network-connector-update` | Replace Network Connector. |
+| `f5xc-api-network-network-connector-delete` | DELETE Network Connector. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### connector_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.sli_to_global_dr` | - |  |
+| `spec.sli_to_slo_snat` | - |  |
+| `spec.slo_to_global_dr` | - |  |
+
+### forward_proxy_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.disable_forward_proxy` | - |  |
+| `spec.enable_forward_proxy` | - |  |
+
+### tls_interception_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.enable_forward_proxy.no_interception` | - |  |
+| `spec.enable_forward_proxy.tls_intercept` | - |  |
+
+### interception_policy_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.enable_forward_proxy.tls_intercept.enable_for_all_domains` | - |  |
+| `spec.enable_forward_proxy.tls_intercept.policy` | - |  |
+
+### signing_cert_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.enable_forward_proxy.tls_intercept.custom_certificate` | - |  |
+| `spec.enable_forward_proxy.tls_intercept.volterra_certificate` | - |  |
+
+### trusted_ca_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.enable_forward_proxy.tls_intercept.trusted_ca_url` | - |  |
+| `spec.enable_forward_proxy.tls_intercept.volterra_trusted_ca` | - |  |
+
+### ocsp_stapling_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.enable_forward_proxy.tls_intercept.custom_certificate.custom_hash_algorithms` | - |  |
+| `spec.enable_forward_proxy.tls_intercept.custom_certificate.disable_ocsp_stapling` | - |  |
+| `spec.enable_forward_proxy.tls_intercept.custom_certificate.use_system_defaults` | - |  |
+
+### secret_info_oneof
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.enable_forward_proxy.tls_intercept.custom_certificate.private_key.blindfold_secret_info` | - |  |
+| `spec.enable_forward_proxy.tls_intercept.custom_certificate.private_key.clear_secret_info` | - |  |
+
+### enable_disable_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.enable_forward_proxy.tls_intercept.policy.interception_rules[].disable_interception` | - |  |
+| `spec.enable_forward_proxy.tls_intercept.policy.interception_rules[].enable_interception` | - |  |
+
+### domain_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.enable_forward_proxy.tls_intercept.policy.interception_rules[].domain_match.exact_value` | - |  |
+| `spec.enable_forward_proxy.tls_intercept.policy.interception_rules[].domain_match.regex_value` | - |  |
+| `spec.enable_forward_proxy.tls_intercept.policy.interception_rules[].domain_match.suffix_value` | - |  |
+
+### pool_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.sli_to_slo_snat.interface_ip` | - |  |
+
+### routing_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.sli_to_slo_snat.default_gw_snat` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Network Connector resources:
+
+### Create Network Connector
+
+> "Create a network-connector named 'example' in the 'production' namespace"
+
+### List Network Connectors
+
+> "List all network-connectors in the 'production' namespace"
+
+### Get Network Connector Details
+
+> "Get details of the network-connector named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/network_connectors" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/network_connectors/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/network_connectors" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @network_connector.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/network_connectors/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

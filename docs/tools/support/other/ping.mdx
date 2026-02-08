@@ -1,0 +1,73 @@
+---
+title: Ping
+description: Ping
+---
+
+Run ping to a destination.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-support-ping-create` | Ping |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+| `site` | Site Name | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### hostname_or_ip
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `dest.hostname` | - |  |
+| `dest.ip` | - |  |
+
+### interface_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `intf.any_intf` | - |  |
+| `intf.intf` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Ping resources:
+
+### Create Ping
+
+> "Create a ping named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/pings" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/pings/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/pings" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @ping.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/pings/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

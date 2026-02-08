@@ -1,0 +1,130 @@
+---
+title: Alert Receiver
+description: Create Alert Receiver.
+---
+
+Replaces the content of an Alert Receiver object.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-statistics-alert-receiver-create` | Create Alert Receiver. |
+| `f5xc-api-statistics-alert-receiver-get` | GET Alert Receiver. |
+| `f5xc-api-statistics-alert-receiver-list` | List Alert Receiver. |
+| `f5xc-api-statistics-alert-receiver-update` | Replace Alert Receiver. |
+| `f5xc-api-statistics-alert-receiver-delete` | DELETE Alert Receiver. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### receiver
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.email` | - |  |
+| `spec.opsgenie` | - |  |
+| `spec.pagerduty` | - |  |
+| `spec.slack` | - |  |
+| `spec.sms` | - |  |
+| `spec.webhook` | - |  |
+
+### secret_info_oneof
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.opsgenie.api_key.blindfold_secret_info` | - |  |
+| `spec.opsgenie.api_key.clear_secret_info` | - |  |
+
+### auth_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.webhook.http_config.auth_token` | - |  |
+| `spec.webhook.http_config.basic_auth` | - |  |
+| `spec.webhook.http_config.client_cert_obj` | - |  |
+| `spec.webhook.http_config.no_authorization` | - |  |
+
+### tls_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.webhook.http_config.no_tls` | - |  |
+| `spec.webhook.http_config.use_tls` | - |  |
+
+### server_validation_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.webhook.http_config.use_tls.use_server_verification` | - |  |
+| `spec.webhook.http_config.use_tls.volterra_trusted_ca` | - |  |
+
+### sni_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.webhook.http_config.use_tls.disable_sni` | - |  |
+| `spec.webhook.http_config.use_tls.sni` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Alert Receiver resources:
+
+### Create Alert Receiver
+
+> "Create a alert-receiver named 'example' in the 'production' namespace"
+
+### List Alert Receivers
+
+> "List all alert-receivers in the 'production' namespace"
+
+### Get Alert Receiver Details
+
+> "Get details of the alert-receiver named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/alert_receivers" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/alert_receivers/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/alert_receivers" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @alert_receiver.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/alert_receivers/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

@@ -1,0 +1,53 @@
+---
+title: Persistentvolume
+description: PersistentVolume List.
+---
+
+API to GET list of Persistent Volumes in a site.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-sites-persistentvolume-list` | PersistentVolume List. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `site` | Site | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Persistentvolume resources:
+
+### List Persistentvolumes
+
+> "List all persistentvolumes in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/persistentvolumes" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/persistentvolumes/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/persistentvolumes" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @persistentvolume.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/persistentvolumes/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

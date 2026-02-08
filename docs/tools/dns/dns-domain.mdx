@@ -1,0 +1,88 @@
+---
+title: DNS Domain
+description: Create DNS Domain.
+---
+
+Create DNS Domain in a given namespace. If one already exist it will give a error.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-dns-dns-domain-create` | Create DNS Domain. |
+| `f5xc-api-dns-dns-domain-get` | GET DNS Domain. |
+| `f5xc-api-dns-dns-domain-list` | List DNS Domain. |
+| `f5xc-api-dns-dns-domain-update` | Replace DNS Domain. |
+| `f5xc-api-dns-dns-domain-delete` | DELETE DNS Domain. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### domain_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.volterra_managed` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with DNS Domain resources:
+
+### Create DNS Domain
+
+> "Create a dns-domain named 'example' in the 'production' namespace"
+
+### List DNS Domains
+
+> "List all dns-domains in the 'production' namespace"
+
+### Get DNS Domain Details
+
+> "Get details of the dns-domain named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/dns_domains" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/dns_domains/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/dns_domains" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @dns_domain.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/dns_domains/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```
