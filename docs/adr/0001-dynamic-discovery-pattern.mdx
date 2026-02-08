@@ -19,7 +19,7 @@ How can we provide access to all F5 XC API tools while remaining within practica
 
 * Token efficiency - Must fit within LLM context windows (~200K tokens)
 * User experience - Tools must remain discoverable and usable
-* Performance - Search and discovery must be fast (<100ms)
+* Performance - Search and discovery must be fast (`<100ms`)
 * Scalability - Must handle growth to 10,000+ tools
 * Cost - Minimize token usage to reduce API costs
 
@@ -39,7 +39,7 @@ of token efficiency (95%+ reduction), user experience, and scalability.
 * **95%+ Token Reduction**: From ~535K tokens to ~500 tokens upfront
 * **Scalability**: Can scale to 10,000+ tools without context issues
 * **User Experience**: Natural discovery workflow (search -> describe -> execute)
-* **Performance**: <10ms search times with inverted index
+* **Performance**: `<10ms` search times with inverted index
 * **Cost Efficiency**: Dramatically reduced token costs per request
 
 ### Negative Consequences
@@ -71,7 +71,7 @@ of token efficiency (95%+ reduction), user experience, and scalability.
 * **Good**: 95%+ token reduction (535K -> 500 tokens)
 * **Good**: Scales to unlimited tools
 * **Good**: Natural search-based discovery
-* **Good**: Fast search performance (<10ms)
+* **Good**: Fast search performance (`<10ms`)
 * **Bad**: Requires additional discovery step
 * **Bad**: More complex implementation
 
@@ -105,10 +105,10 @@ User Query -> search-tools -> Results with Scores
 
 ### Performance Characteristics
 
-* **Search**: <10ms for 1,548 tools (O(log n) with inverted index)
-* **Describe**: <50ms for schema retrieval
-* **Execute**: <100ms in documentation mode
-* **Index Build**: <1 second on server startup
+* **Search**: `<10ms` for 1,548 tools (O(log n) with inverted index)
+* **Describe**: `<50ms` for schema retrieval
+* **Execute**: `<100ms` in documentation mode
+* **Index Build**: `<1 second` on server startup
 
 ## Links
 
