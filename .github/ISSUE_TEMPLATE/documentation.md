@@ -3,7 +3,6 @@ name: Documentation
 description: Suggest a documentation improvement or report missing docs
 labels: ["documentation"]
 ---
-<!-- markdownlint-disable MD041 -->
 
 ## What Needs to Be Documented
 
