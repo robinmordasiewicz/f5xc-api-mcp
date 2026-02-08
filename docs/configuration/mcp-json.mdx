@@ -1,4 +1,7 @@
-# MCP Configuration Reference
+---
+title: MCP Configuration Reference
+description: Complete reference for MCP server configuration files
+---
 
 Complete reference for MCP server configuration files.
 
@@ -17,15 +20,16 @@ Complete reference for MCP server configuration files.
 | VS Code (Continue) | `~/.continue/config.json` |
 | Cursor | Cursor settings or `.cursor/mcp.json` |
 
-!!! note "OpenCode Configuration Differences"
-    OpenCode uses a different schema than Claude Desktop/Code:
+:::note[OpenCode Configuration Differences]
+OpenCode uses a different schema than Claude Desktop/Code:
 
-    - Top-level key: `"mcp"` (not `"mcpServers"`)
-    - Command format: `"command": ["npx", "package"]` (array, not separate command/args)
-    - Environment: `"environment"` (not `"env"`)
-    - Requires: `"type": "local"` for stdio servers
+- Top-level key: `"mcp"` (not `"mcpServers"`)
+- Command format: `"command": ["npx", "package"]` (array, not separate command/args)
+- Environment: `"environment"` (not `"env"`)
+- Requires: `"type": "local"` for stdio servers
 
-    See [OpenCode Configuration](../index.md#ide-configuration) for examples.
+See [OpenCode Configuration](../index/#ide-configuration) for examples.
+:::
 
 ## Configuration Schema
 
@@ -340,6 +344,6 @@ Use a JSON validator or editor with JSON support. Common issues:
 
 ## Next Steps
 
-- [Environment Variables](environment-variables.md)
-- [Authentication](authentication.md)
-- [Troubleshooting FAQ](../troubleshooting/faq.md)
+- [Environment Variables](../configuration/environment-variables/)
+- [Authentication](../configuration/authentication/)
+- [Troubleshooting FAQ](../troubleshooting/faq/)
