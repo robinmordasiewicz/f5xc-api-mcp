@@ -1,0 +1,44 @@
+---
+title: Upgrade Statu
+description: Upgrade Status.
+---
+
+Request to GET the upgrade status.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-vpmandnodemanagement-upgrade-statu-list` | Upgrade Status. |
+
+## Example Usage
+
+Ask Claude to help you work with Upgrade Statu resources:
+
+### List Upgrade Status
+
+> "List all upgrade-status in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/upgrade_status" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/upgrade_status/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/upgrade_status" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @upgrade_statu.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/upgrade_status/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

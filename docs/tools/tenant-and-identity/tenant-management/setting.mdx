@@ -1,0 +1,47 @@
+---
+title: Setting
+description: GetIDMSettings.
+---
+
+GetIDMSettings returns IDM settings for tenant. IDM settings contains info like password
+policy,
+brute-force detection policy, etc...
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-tenantandidentity-setting-list` | GetIDMSettings. |
+| `f5xc-api-tenantandidentity-setting-update` | UpdateIDMSettings. |
+
+## Example Usage
+
+Ask Claude to help you work with Setting resources:
+
+### List Settings
+
+> "List all settings in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/settings" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/settings/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/settings" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @setting.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/settings/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

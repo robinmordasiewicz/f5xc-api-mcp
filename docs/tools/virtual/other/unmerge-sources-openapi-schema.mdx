@@ -1,0 +1,54 @@
+---
+title: Unmerge Sources Openapi Schema
+description: Unmerge Source from API Endpoint.
+---
+
+Unmerge Source Discovered schema from API Endpoint merged schema.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-virtual-unmerge-sources-openapi-schema-create` | Unmerge Source from API Endpoint. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `name` | Virtual Host Name | `-` |
+| `namespace` | Namespace | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Unmerge Sources Openapi Schema resources:
+
+### Create Unmerge Sources Openapi Schema
+
+> "Create a unmerge-sources-openapi-schema named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/unmerge_sources_openapi_schemas" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/unmerge_sources_openapi_schemas/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/unmerge_sources_openapi_schemas" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @unmerge_sources_openapi_schema.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/unmerge_sources_openapi_schemas/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

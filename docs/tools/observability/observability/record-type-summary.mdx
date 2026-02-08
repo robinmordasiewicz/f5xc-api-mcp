@@ -1,0 +1,53 @@
+---
+title: Record Type Summary
+description: GET Record Type Summary.
+---
+
+Returns record type summary for DNS monitor including record type and count.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-observability-record-type-summary-list` | GET Record Type Summary. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Record Type Summary resources:
+
+### List Record Type Summarys
+
+> "List all record-type-summarys in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/record_type_summarys" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/record_type_summarys/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/record_type_summarys" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @record_type_summary.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/record_type_summarys/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

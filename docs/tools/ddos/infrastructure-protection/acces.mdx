@@ -1,0 +1,44 @@
+---
+title: Acces
+description: Customer access.
+---
+
+RPC to GET customer access and availability info.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-ddos-acces-list` | Customer access. |
+
+## Example Usage
+
+Ask Claude to help you work with Acces resources:
+
+### List Access
+
+> "List all access in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/access" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/access/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/access" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @acces.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/access/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

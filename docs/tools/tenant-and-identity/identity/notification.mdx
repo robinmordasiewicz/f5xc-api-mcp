@@ -1,0 +1,52 @@
+---
+title: Notification
+description: GET ntfn preferences.
+---
+
+GET ntfn preferences gets current notification preferences for user.
+It combines information from
+two sources:
+
+- explicitly set notification preferences in user settings object
+
+- default values
+from uam config (for those notifications which not explicitly set)
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-tenantandidentity-notification-list` | GET ntfn preferences. |
+| `f5xc-api-tenantandidentity-notification-update` | Update ntfn preferences. |
+
+## Example Usage
+
+Ask Claude to help you work with Notification resources:
+
+### List Notifications
+
+> "List all notifications in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/notifications" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/notifications/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/notifications" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @notification.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/notifications/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

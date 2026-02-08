@@ -1,0 +1,44 @@
+---
+title: Transaction
+description: GET Bot Assessment for Transactions.
+---
+
+GET Bot Transactions Information.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-shape-transaction-create` | GET Bot Assessment for Transactions. |
+
+## Example Usage
+
+Ask Claude to help you work with Transaction resources:
+
+### Create Transaction
+
+> "Create a transaction named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/transactions" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/transactions/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/transactions" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @transaction.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/transactions/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

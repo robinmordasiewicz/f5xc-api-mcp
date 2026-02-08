@@ -1,0 +1,60 @@
+---
+title: Active Service Policie
+description: Set Active Service Policies.
+---
+
+SetActiveServicePolicies sets the active service policies for the namespace
+An emtpy list in the
+request will clear the active service policies for the namespace.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-tenantandidentity-active-service-policie-create` | Set Active Service Policies. |
+| `f5xc-api-tenantandidentity-active-service-policie-list` | GET Active Service Policies. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Active Service Policie resources:
+
+### Create Active Service Policie
+
+> "Create a active-service-policie named 'example' in the 'production' namespace"
+
+### List Active Service Policies
+
+> "List all active-service-policies in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/active_service_policies" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/active_service_policies/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/active_service_policies" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @active_service_policie.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/active_service_policies/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

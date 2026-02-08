@@ -1,0 +1,135 @@
+---
+title: Advertise Policy
+description: Create Advertise Policy.
+---
+
+Advertise_policy object controls how and where a service represented by a given virtual_host object
+is advertised to consumers.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-network-advertise-policy-create` | Create Advertise Policy. |
+| `f5xc-api-network-advertise-policy-get` | GET Advertise Policy. |
+| `f5xc-api-network-advertise-policy-list` | List Advertise Policy. |
+| `f5xc-api-network-advertise-policy-update` | Replace Advertise Policy. |
+| `f5xc-api-network-advertise-policy-delete` | DELETE Advertise Policy. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### port_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.port` | - |  |
+| `spec.port_ranges` | - |  |
+
+### client_certificate_verify_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.tls_parameters.client_certificate_optional` | - |  |
+| `spec.tls_parameters.client_certificate_required` | - |  |
+| `spec.tls_parameters.no_client_certificate` | - |  |
+
+### ocsp_stapling_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.tls_parameters.common_params.tls_certificates[].custom_hash_algorithms` | - |  |
+| `spec.tls_parameters.common_params.tls_certificates[].disable_ocsp_stapling` | - |  |
+| `spec.tls_parameters.common_params.tls_certificates[].use_system_defaults` | - |  |
+
+### secret_info_oneof
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.tls_parameters.common_params.tls_certificates[].private_key.blindfold_secret_info` | - |  |
+| `spec.tls_parameters.common_params.tls_certificates[].private_key.clear_secret_info` | - |  |
+
+### trusted_ca_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.tls_parameters.common_params.validation_params.trusted_ca` | - |  |
+| `spec.tls_parameters.common_params.validation_params.trusted_ca_url` | - |  |
+
+### ref_or_selector
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.where.site` | - |  |
+| `spec.where.virtual_network` | - |  |
+| `spec.where.virtual_site` | - |  |
+
+### internet_vip_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.where.site.disable_internet_vip` | - |  |
+| `spec.where.site.enable_internet_vip` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Advertise Policy resources:
+
+### Create Advertise Policy
+
+> "Create a advertise-policy named 'example' in the 'production' namespace"
+
+### List Advertise Policys
+
+> "List all advertise-policys in the 'production' namespace"
+
+### Get Advertise Policy Details
+
+> "Get details of the advertise-policy named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/advertise_policys" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/advertise_policys/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/advertise_policys" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @advertise_policy.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/advertise_policys/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

@@ -1,0 +1,54 @@
+---
+title: Remote Zone File
+description: GET Remote Zone File.
+---
+
+GET remote zone file from primary DNS.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-dns-remote-zone-file-list` | GET Remote Zone File. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `dns_zone_name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Remote Zone File resources:
+
+### List Remote Zone Files
+
+> "List all remote-zone-files in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/remote_zone_files" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/remote_zone_files/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/remote_zone_files" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @remote_zone_file.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/remote_zone_files/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

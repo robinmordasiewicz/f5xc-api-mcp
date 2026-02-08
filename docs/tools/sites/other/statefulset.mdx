@@ -1,0 +1,54 @@
+---
+title: Statefulset
+description: StatefulSet List.
+---
+
+API to GET list of stateful sets for a given namespace in a site.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-sites-statefulset-list` | StatefulSet List. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+| `site` | Site | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Statefulset resources:
+
+### List Statefulsets
+
+> "List all statefulsets in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/statefulsets" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/statefulsets/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/statefulsets" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @statefulset.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/statefulsets/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

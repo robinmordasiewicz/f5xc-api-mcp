@@ -1,0 +1,68 @@
+---
+title: Unlink Ticket
+description: Unlink Tickets.
+---
+
+Remove the Ticket from vulnerability in XC platform
+External ticket systems will continue to have
+the record.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-virtual-unlink-ticket-create` | Unlink Tickets. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `name` | Virtual Host Name | `-` |
+| `namespace` | Namespace | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### unlink_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `label_filter` | - |  |
+| `ticket_uid` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Unlink Ticket resources:
+
+### Create Unlink Ticket
+
+> "Create a unlink-ticket named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/unlink_tickets" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/unlink_tickets/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/unlink_tickets" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @unlink_ticket.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/unlink_tickets/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

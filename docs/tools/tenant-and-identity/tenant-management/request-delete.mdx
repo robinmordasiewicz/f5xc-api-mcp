@@ -1,0 +1,44 @@
+---
+title: Request Delete
+description: DELETE Tenant.
+---
+
+Request to mark Tenant for deletion queue, after approve it will completely removed from the system.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-tenantandidentity-request-delete-create` | DELETE Tenant. |
+
+## Example Usage
+
+Ask Claude to help you work with Request Delete resources:
+
+### Create Request Delete
+
+> "Create a request-delete named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/request_deletes" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/request_deletes/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/request_deletes" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @request_delete.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/request_deletes/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

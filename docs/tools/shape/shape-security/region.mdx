@@ -1,0 +1,44 @@
+---
+title: Region
+description: Regions
+---
+
+GET protected apps regions list.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-shape-region-list` | Regions |
+
+## Example Usage
+
+Ask Claude to help you work with Region resources:
+
+### List Regions
+
+> "List all regions in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/regions" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/regions/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/regions" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @region.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/regions/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

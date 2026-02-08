@@ -1,0 +1,55 @@
+---
+title: Disconnect
+description: Disconnect.
+---
+
+Disconnect the node from LTE network.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-support-disconnect-create` | Disconnect. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+| `node` | Node Name | `-` |
+| `site` | Site Name | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Disconnect resources:
+
+### Create Disconnect
+
+> "Create a disconnect named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/disconnects" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/disconnects/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/disconnects" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @disconnect.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/disconnects/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

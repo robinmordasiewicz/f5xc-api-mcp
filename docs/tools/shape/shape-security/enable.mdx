@@ -1,0 +1,44 @@
+---
+title: Enable
+description: Enable Application Traffic Insights.
+---
+
+Enable Application Traffic Insights feature for the tenant.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-shape-enable-create` | Enable Application Traffic Insights. |
+
+## Example Usage
+
+Ask Claude to help you work with Enable resources:
+
+### Create Enable
+
+> "Create a enable named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/enables" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/enables/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/enables" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @enable.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/enables/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

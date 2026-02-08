@@ -1,0 +1,178 @@
+---
+title: K8S Cluster
+description: Create Configuration Specification.
+---
+
+Replacing an k8s_cluster object will update the object by replacing the existing spec with the
+provided one.
+For read-then-write operations a resourceVersion mismatch will occur if the object was
+modified between the read and write.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-sites-k8s-cluster-create` | Create Configuration Specification. |
+| `f5xc-api-sites-k8s-cluster-get` | GET Configuration Specification. |
+| `f5xc-api-sites-k8s-cluster-list` | List K8s Cluster. |
+| `f5xc-api-sites-k8s-cluster-update` | Replace Configuration Specification. |
+| `f5xc-api-sites-k8s-cluster-delete` | DELETE K8s Cluster. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### apps_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.cluster_wide_app_list` | - |  |
+| `spec.no_cluster_wide_apps` | - |  |
+
+### cluster_role_bindings_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.use_custom_cluster_role_bindings` | - |  |
+| `spec.use_default_cluster_role_bindings` | - |  |
+
+### cluster_role_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.use_custom_cluster_role_list` | - |  |
+| `spec.use_default_cluster_roles` | - |  |
+
+### cluster_scoped_resource_access_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.cluster_scoped_access_deny` | - |  |
+| `spec.cluster_scoped_access_permit` | - |  |
+
+### global_access_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.global_access_enable` | - |  |
+| `spec.no_global_access` | - |  |
+
+### insecure_registries_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.insecure_registry_list` | - |  |
+| `spec.no_insecure_registries` | - |  |
+
+### local_access_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.local_access_config` | - |  |
+| `spec.no_local_access` | - |  |
+
+### pod_security_admission_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.use_custom_pod_security_admission` | - |  |
+| `spec.use_default_pod_security_admission` | - |  |
+
+### pod_security_policy_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.use_custom_psp_list` | - |  |
+| `spec.use_default_psp` | - |  |
+
+### vk8s_namespace_access_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.vk8s_namespace_access_deny` | - |  |
+| `spec.vk8s_namespace_access_permit` | - |  |
+
+### app_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.cluster_wide_app_list.cluster_wide_apps[].argo_cd` | - |  |
+| `spec.cluster_wide_app_list.cluster_wide_apps[].dashboard` | - |  |
+| `spec.cluster_wide_app_list.cluster_wide_apps[].metrics_server` | - |  |
+| `spec.cluster_wide_app_list.cluster_wide_apps[].prometheus` | - |  |
+
+### port_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.cluster_wide_app_list.cluster_wide_apps[].argo_cd.local_domain.default_port` | - |  |
+| `spec.cluster_wide_app_list.cluster_wide_apps[].argo_cd.local_domain.port` | - |  |
+
+### secret_info_oneof
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.cluster_wide_app_list.cluster_wide_apps[].argo_cd.local_domain.password.blindfold_secret_info` | - |  |
+| `spec.cluster_wide_app_list.cluster_wide_apps[].argo_cd.local_domain.password.clear_secret_info` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with K8S Cluster resources:
+
+### Create K8S Cluster
+
+> "Create a k8s-cluster named 'example' in the 'production' namespace"
+
+### List K8S Clusters
+
+> "List all k8s-clusters in the 'production' namespace"
+
+### Get K8S Cluster Details
+
+> "Get details of the k8s-cluster named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/k8s_clusters" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/k8s_clusters/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/k8s_clusters" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @k8s_cluster.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/k8s_clusters/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

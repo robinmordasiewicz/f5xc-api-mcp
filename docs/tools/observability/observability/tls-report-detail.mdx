@@ -1,0 +1,59 @@
+---
+title: TLS Report Detail
+description: GET TLS Report Detail.
+---
+
+Returns the HTML encoding of the generated TLS report.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-observability-tls-report-detail-list` | GET TLS Report Detail. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `monitor_name` | Monitor_name. X-required | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with TLS Report Detail resources:
+
+### List TLS Report Details
+
+> "List all tls-report-details in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/tls_report_details" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/tls_report_details/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/tls_report_details" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @tls_report_detail.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/tls_report_details/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

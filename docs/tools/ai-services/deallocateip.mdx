@@ -1,0 +1,40 @@
+---
+title: Deallocateip
+description: Deallocate IP through Global IP Allocator.
+---
+
+DeallocateIP will de-allocate the specified IP address for tenant.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-aiservices-deallocateip-delete` | Deallocate IP through Global IP Allocator. |
+
+## Example Usage
+
+Ask Claude to help you work with Deallocateip resources:
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/deallocateips" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/deallocateips/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/deallocateips" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @deallocateip.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/deallocateips/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

@@ -1,0 +1,56 @@
+---
+title: Soft Restart
+description: Soft restart.
+---
+
+Soft restart reloads VER instance on the node.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-support-soft-restart-create` | Soft restart. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+| `node` | Node Name | `-` |
+| `service` | Service Name | `-` |
+| `site` | Site Name | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Soft Restart resources:
+
+### Create Soft Restart
+
+> "Create a soft-restart named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/soft_restarts" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/soft_restarts/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/soft_restarts" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @soft_restart.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/soft_restarts/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

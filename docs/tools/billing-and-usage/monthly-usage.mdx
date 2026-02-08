@@ -1,0 +1,54 @@
+---
+title: Monthly Usage
+description: List monthly usage details.
+---
+
+List monthly usage details per tenant and namespace. Some usage have only sense in the system
+namespace and this selector has no effect on it.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-billingandusage-monthly-usage-create` | List monthly usage details. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Monthly Usage resources:
+
+### Create Monthly Usage
+
+> "Create a monthly-usage named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/monthly_usages" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/monthly_usages/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/monthly_usages" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @monthly_usage.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/monthly_usages/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

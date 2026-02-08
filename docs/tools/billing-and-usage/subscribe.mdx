@@ -1,0 +1,67 @@
+---
+title: Subscribe
+description: Subscribe to XC addon services.
+---
+
+Subscribe to XC addon services.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-billingandusage-subscribe-create` | Subscribe to XC addon services. |
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### addon_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `f5xc_appstack_standard` | - |  |
+| `f5xc_big_ip_irule_standard` | - |  |
+| `f5xc_bigip_utilities_standard` | - |  |
+| `f5xc_content_delivery_network_advanced` | - |  |
+| `f5xc_content_delivery_network_standard` | - |  |
+| `f5xc_delegated_access_standard` | - |  |
+| `f5xc_securemesh_advanced` | - |  |
+| `f5xc_securemesh_standard` | - |  |
+| `f5xc_site_management_standard` | - |  |
+| `f5xc_synthetic_monitoring_standard` | - |  |
+| `f5xc_waap_advanced` | - |  |
+| `f5xc_waap_standard` | - |  |
+| `f5xc_web_app_scanning_standard` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Subscribe resources:
+
+### Create Subscribe
+
+> "Create a subscribe named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/subscribes" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/subscribes/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/subscribes" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @subscribe.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/subscribes/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

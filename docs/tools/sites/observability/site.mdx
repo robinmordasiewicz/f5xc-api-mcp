@@ -1,0 +1,111 @@
+---
+title: Site
+description: Site Topology.
+---
+
+GET topology of a site and the resources associated/connected to the site such as other Customer
+sites,
+Regional Sites, VPCs (Virtual Private Cloud) networks, etc., and the associated metrics.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-sites-site-create` | Site Topology. |
+| `f5xc-api-sites-site-get` | GET Site |
+| `f5xc-api-sites-site-list` | List Site |
+| `f5xc-api-sites-site-update` | Replace Site. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `site` | Site | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+| `metadata.namespace` | Namespace | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### private_access_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.default_underlay_network.site_local_inside` | - |  |
+| `spec.default_underlay_network.site_local_outside` | - |  |
+
+### kubernetes_upgrade_drain_enable_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.kubernetes_upgrade_drain.disable_upgrade_drain` | - |  |
+| `spec.kubernetes_upgrade_drain.enable_upgrade_drain` | - |  |
+
+### drain_max_unavailable_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.kubernetes_upgrade_drain.enable_upgrade_drain.drain_max_unavailable_node_count` | - |  |
+
+### vega_upgrade_mode_toggle_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.kubernetes_upgrade_drain.enable_upgrade_drain.disable_vega_upgrade_mode` | - |  |
+| `spec.kubernetes_upgrade_drain.enable_upgrade_drain.enable_vega_upgrade_mode` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Site resources:
+
+### Create Site
+
+> "Create a site named 'example' in the 'production' namespace"
+
+### List Sites
+
+> "List all sites in the 'production' namespace"
+
+### Get Site Details
+
+> "Get details of the site named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/sites" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/sites/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/sites" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @site.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/sites/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

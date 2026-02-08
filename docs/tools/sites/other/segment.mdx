@@ -1,0 +1,54 @@
+---
+title: Segment
+description: Segment List.
+---
+
+API to GET list of segments in a site.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-sites-segment-list` | Segment List. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+| `site` | Site | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Segment resources:
+
+### List Segments
+
+> "List all segments in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/segments" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/segments/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/segments" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @segment.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/segments/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

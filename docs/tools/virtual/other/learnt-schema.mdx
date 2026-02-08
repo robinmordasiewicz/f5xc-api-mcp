@@ -1,0 +1,63 @@
+---
+title: Learnt Schema
+description: GET GET Learnt Schema per API endpoint.
+---
+
+GET Learnt Schema per API endpoint for a given auto discovered API endpoint for Virtual Host.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-virtual-learnt-schema-get` | GET GET Learnt Schema per API endpoint. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `name` | Virtual Host | `-` |
+| `namespace` | Namespace | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `api_endpoint_info_request` | List of additional things that needs to be sent as part of the request | `-` |
+| `collapsed_url` | API endpoint for which PDFs are requested. | `-` |
+| `domains` | List of domains that needs to be sent as part of the request | `-` |
+| `method` | Method of API endpoint for which PDFs are requested. | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Learnt Schema resources:
+
+### Get Learnt Schema Details
+
+> "Get details of the learnt-schema named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/learnt_schemas" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/learnt_schemas/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/learnt_schemas" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @learnt_schema.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/learnt_schemas/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

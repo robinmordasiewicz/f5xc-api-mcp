@@ -1,0 +1,66 @@
+---
+title: Update Asn Review Statu
+description: Update ASN Review Status.
+---
+
+Update Infraprotect ASN Review Status.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-ddos-update-asn-review-statu-create` | Update ASN Review Status. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### review_type
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `review_type_approved` | - |  |
+| `review_type_pending` | - |  |
+| `review_type_rejected` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Update Asn Review Statu resources:
+
+### Create Update Asn Review Statu
+
+> "Create a update-asn-review-statu named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/update_asn_review_status" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/update_asn_review_status/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/update_asn_review_status" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @update_asn_review_statu.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/update_asn_review_status/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

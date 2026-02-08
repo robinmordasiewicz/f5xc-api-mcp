@@ -1,0 +1,75 @@
+---
+title: Address Allocator
+description: Create Address Allocator.
+---
+
+Create Address Allocator will create an address allocator object in 'system' namespace of the user.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-network-address-allocator-create` | Create Address Allocator. |
+| `f5xc-api-network-address-allocator-get` | GET Address Allocator. |
+| `f5xc-api-network-address-allocator-list` | List Address Allocator. |
+| `f5xc-api-network-address-allocator-delete` | DELETE Address Allocator. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Address Allocator resources:
+
+### Create Address Allocator
+
+> "Create a address-allocator named 'example' in the 'production' namespace"
+
+### List Address Allocators
+
+> "List all address-allocators in the 'production' namespace"
+
+### Get Address Allocator Details
+
+> "Get details of the address-allocator named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/address_allocators" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/address_allocators/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/address_allocators" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @address_allocator.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/address_allocators/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

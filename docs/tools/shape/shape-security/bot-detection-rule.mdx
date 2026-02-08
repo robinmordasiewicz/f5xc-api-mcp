@@ -1,0 +1,73 @@
+---
+title: Bot Detection Rule
+description: Deploy Bot Detection Rules.
+---
+
+List the set of bot_detection_rule in a namespace.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-shape-bot-detection-rule-create` | Deploy Bot Detection Rules. |
+| `f5xc-api-shape-bot-detection-rule-get` | GET Bot Detection Rule. |
+| `f5xc-api-shape-bot-detection-rule-list` | List Bot Detection Rule. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Bot Detection Rule resources:
+
+### Create Bot Detection Rule
+
+> "Create a bot-detection-rule named 'example' in the 'production' namespace"
+
+### List Bot Detection Rules
+
+> "List all bot-detection-rules in the 'production' namespace"
+
+### Get Bot Detection Rule Details
+
+> "Get details of the bot-detection-rule named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/bot_detection_rules" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/bot_detection_rules/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/bot_detection_rules" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @bot_detection_rule.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/bot_detection_rules/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

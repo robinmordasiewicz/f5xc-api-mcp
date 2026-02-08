@@ -1,0 +1,54 @@
+---
+title: Deployment Statu
+description: Deployment Status.
+---
+
+GET deployment status.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-shape-deployment-statu-get` | Deployment Status. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `name` | Name | `-` |
+| `namespace` | Name Space | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Deployment Statu resources:
+
+### Get Deployment Statu Details
+
+> "Get details of the deployment-statu named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/deployment_status" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/deployment_status/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/deployment_status" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @deployment_statu.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/deployment_status/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

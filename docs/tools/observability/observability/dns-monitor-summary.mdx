@@ -1,0 +1,61 @@
+---
+title: DNS Monitor Summary
+description: GET DNS Monitor Summary.
+---
+
+Returns the DNS monitor health status, latency, and trend.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-observability-dns-monitor-summary-list` | GET DNS Monitor Summary. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `end_time` | End_time. | `-` |
+| `monitor_name` | Monitor_name. | `-` |
+| `start_time` | Start_time. X-required | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with DNS Monitor Summary resources:
+
+### List DNS Monitor Summarys
+
+> "List all dns-monitor-summarys in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/dns_monitor_summarys" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/dns_monitor_summarys/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/dns_monitor_summarys" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @dns_monitor_summary.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/dns_monitor_summarys/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

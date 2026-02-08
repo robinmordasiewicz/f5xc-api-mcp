@@ -1,0 +1,44 @@
+---
+title: Getcurrentfrauddata
+description: GetCurrentFraudData.
+---
+
+GET Current Fraud data request for a time range.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-shape-getcurrentfrauddata-create` | GetCurrentFraudData. |
+
+## Example Usage
+
+Ask Claude to help you work with Getcurrentfrauddata resources:
+
+### Create Getcurrentfrauddata
+
+> "Create a getcurrentfrauddata named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/getcurrentfrauddatas" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/getcurrentfrauddatas/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/getcurrentfrauddatas" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @getcurrentfrauddata.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/getcurrentfrauddatas/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

@@ -1,0 +1,77 @@
+---
+title: Trusted Ca List
+description: Create Root CA Certificate.
+---
+
+Shape of the Root CA Certificate specification.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-certificates-trusted-ca-list-create` | Create Root CA Certificate. |
+| `f5xc-api-certificates-trusted-ca-list-get` | GET Root CA Certificate. |
+| `f5xc-api-certificates-trusted-ca-list-list` | List Root CA Certificate. |
+| `f5xc-api-certificates-trusted-ca-list-update` | Replace Root CA Certificate. |
+| `f5xc-api-certificates-trusted-ca-list-delete` | DELETE Root CA Certificate. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Trusted Ca List resources:
+
+### Create Trusted Ca List
+
+> "Create a trusted-ca-list named 'example' in the 'production' namespace"
+
+### List Trusted Ca Lists
+
+> "List all trusted-ca-lists in the 'production' namespace"
+
+### Get Trusted Ca List Details
+
+> "Get details of the trusted-ca-list named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/trusted_ca_lists" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/trusted_ca_lists/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/trusted_ca_lists" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @trusted_ca_list.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/trusted_ca_lists/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

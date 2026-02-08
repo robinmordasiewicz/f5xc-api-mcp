@@ -1,0 +1,44 @@
+---
+title: Current
+description: GET current usage plan.
+---
+
+Endpoint to GET current usage plan.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-billingandusage-current-list` | GET current usage plan. |
+
+## Example Usage
+
+Ask Claude to help you work with Current resources:
+
+### List Currents
+
+> "List all currents in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/currents" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/currents/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/currents" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @current.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/currents/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

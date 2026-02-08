@@ -1,0 +1,58 @@
+---
+title: Top Sensitive Data
+description: GET Sensitive Data Summary for Virtual Host.
+---
+
+GET sensitive data summary for the given Virtual Host.
+For each sensitive data type (e.g. SSN, CC,
+Email) we count the number of APIEPs having the respective
+sensitive data type and return top k (max
+10) types with maximum APIEPs.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-virtual-top-sensitive-data-create` | GET Sensitive Data Summary for Virtual Host. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `name` | Virtual Host Name | `-` |
+| `namespace` | Namespace | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Top Sensitive Data resources:
+
+### Create Top Sensitive Data
+
+> "Create a top-sensitive-data named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/top_sensitive_datas" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/top_sensitive_datas/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/top_sensitive_datas" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @top_sensitive_data.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/top_sensitive_datas/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

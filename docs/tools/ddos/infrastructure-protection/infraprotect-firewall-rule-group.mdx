@@ -1,0 +1,77 @@
+---
+title: Infraprotect Firewall Rule Group
+description: Replace DDoS transit Firewall Rule Group.
+---
+
+List the set of infraprotect_firewall_rule_group in a namespace.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-ddos-infraprotect-firewall-rule-group-create` | Replace DDoS transit Firewall Rule Group. |
+| `f5xc-api-ddos-infraprotect-firewall-rule-group-get` | GET Infraprotect Firewall Rule Group. |
+| `f5xc-api-ddos-infraprotect-firewall-rule-group-list` | List Infraprotect Firewall Rule Group. |
+| `f5xc-api-ddos-infraprotect-firewall-rule-group-update` | Replace DDoS transit Firewall Rule Group. |
+| `f5xc-api-ddos-infraprotect-firewall-rule-group-delete` | DELETE Infraprotect Firewall Rule Group. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Infraprotect Firewall Rule Group resources:
+
+### Create Infraprotect Firewall Rule Group
+
+> "Create a infraprotect-firewall-rule-group named 'example' in the 'production' namespace"
+
+### List Infraprotect Firewall Rule Groups
+
+> "List all infraprotect-firewall-rule-groups in the 'production' namespace"
+
+### Get Infraprotect Firewall Rule Group Details
+
+> "Get details of the infraprotect-firewall-rule-group named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/infraprotect_firewall_rule_groups" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/infraprotect_firewall_rule_groups/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/infraprotect_firewall_rule_groups" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @infraprotect_firewall_rule_group.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/infraprotect_firewall_rule_groups/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

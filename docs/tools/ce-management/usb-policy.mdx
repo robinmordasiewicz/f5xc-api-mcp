@@ -1,0 +1,77 @@
+---
+title: Usb Policy
+description: Create USB policy.
+---
+
+Replaces the content of an USB policy object.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-cemanagement-usb-policy-create` | Create USB policy. |
+| `f5xc-api-cemanagement-usb-policy-get` | GET USB policy. |
+| `f5xc-api-cemanagement-usb-policy-list` | List USB policy. |
+| `f5xc-api-cemanagement-usb-policy-update` | Replace USB policy. |
+| `f5xc-api-cemanagement-usb-policy-delete` | DELETE USB policy. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Usb Policy resources:
+
+### Create Usb Policy
+
+> "Create a usb-policy named 'example' in the 'production' namespace"
+
+### List Usb Policys
+
+> "List all usb-policys in the 'production' namespace"
+
+### Get Usb Policy Details
+
+> "Get details of the usb-policy named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/usb_policys" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/usb_policys/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/usb_policys" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @usb_policy.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/usb_policys/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

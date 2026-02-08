@@ -1,0 +1,54 @@
+---
+title: Upgradable Sw Version
+description: GET Upgradable SW Versions.
+---
+
+API to GET list of sw versions that can be upgraded to.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-cemanagement-upgradable-sw-version-list` | GET Upgradable SW Versions. |
+
+## Parameters
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `current_os_version` | Fetch upgradable sw versions for site. | `-` |
+| `current_sw_version` | Fetch upgradable sw versions for site. | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Upgradable Sw Version resources:
+
+### List Upgradable Sw Versions
+
+> "List all upgradable-sw-versions in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/upgradable_sw_versions" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/upgradable_sw_versions/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/upgradable_sw_versions" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @upgradable_sw_version.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/upgradable_sw_versions/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

@@ -1,0 +1,54 @@
+---
+title: L7ddos Rps Threshold
+description: Set L7 DDoS RPS Threshold.
+---
+
+Sets the L7 DDoS RPS threshold for HTTP load balancer.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-virtual-l7ddos-rps-threshold-create` | Set L7 DDoS RPS Threshold. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with L7ddos Rps Threshold resources:
+
+### Create L7ddos Rps Threshold
+
+> "Create a l7ddos-rps-threshold named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/l7ddos_rps_thresholds" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/l7ddos_rps_thresholds/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/l7ddos_rps_thresholds" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @l7ddos_rps_threshold.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/l7ddos_rps_thresholds/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

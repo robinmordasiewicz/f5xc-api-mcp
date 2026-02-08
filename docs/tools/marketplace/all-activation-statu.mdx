@@ -1,0 +1,54 @@
+---
+title: All Activation Statu
+description: All Addon Service Activation Status.
+---
+
+GET current subscription status for all addon services in a feature tier. Response can indicate
+whether the service was successfully subscribed or in pending state.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-marketplace-all-activation-statu-list` | All Addon Service Activation Status. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `addon_service` | Addon_service | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with All Activation Statu resources:
+
+### List All Activation Status
+
+> "List all all-activation-status in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/all_activation_status" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/all_activation_status/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/all_activation_status" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @all_activation_statu.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/all_activation_status/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

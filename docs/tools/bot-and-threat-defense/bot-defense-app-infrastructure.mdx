@@ -1,0 +1,96 @@
+---
+title: Bot Defense App Infrastructure
+description: Create Bot Defense App Infrastructure.
+---
+
+Replace a given Bot Defense App Infrastructure in a given namespace.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-botandthreatdefense-bot-defense-app-infrastructure-create` | Create Bot Defense App Infrastructure. |
+| `f5xc-api-botandthreatdefense-bot-defense-app-infrastructure-get` | Bot Defense App Infrastructure. |
+| `f5xc-api-botandthreatdefense-bot-defense-app-infrastructure-list` | List Bot Defense App Infrastructure. |
+| `f5xc-api-botandthreatdefense-bot-defense-app-infrastructure-update` | Replace Bot Defense App Infrastructure. |
+| `f5xc-api-botandthreatdefense-bot-defense-app-infrastructure-delete` | DELETE Bot Defense App Infrastructure. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### infra_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.cloud_hosted` | - |  |
+| `spec.data_center_hosted` | - |  |
+
+### type_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.cloud_hosted.ingress[].host_name` | - |  |
+| `spec.cloud_hosted.ingress[].ip_address` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Bot Defense App Infrastructure resources:
+
+### Create Bot Defense App Infrastructure
+
+> "Create a bot-defense-app-infrastructure named 'example' in the 'production' namespace"
+
+### List Bot Defense App Infrastructures
+
+> "List all bot-defense-app-infrastructures in the 'production' namespace"
+
+### Get Bot Defense App Infrastructure Details
+
+> "Get details of the bot-defense-app-infrastructure named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/bot_defense_app_infrastructures" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/bot_defense_app_infrastructures/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/bot_defense_app_infrastructures" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @bot_defense_app_infrastructure.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/bot_defense_app_infrastructures/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

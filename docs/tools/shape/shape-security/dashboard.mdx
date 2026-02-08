@@ -1,0 +1,62 @@
+---
+title: Dashboard
+description: GET Script Overview.
+---
+
+GET script overview data for a script depending on start time and end time.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-shape-dashboard-get` | GET Script Overview. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `id` | ID | `-` |
+| `namespace` | Namespace | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `end_time` | X-required | `-` |
+| `start_time` | X-required | `-` |
+| `type` | X-required | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Dashboard resources:
+
+### Get Dashboard Details
+
+> "Get details of the dashboard named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/dashboards" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/dashboards/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/dashboards" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @dashboard.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/dashboards/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

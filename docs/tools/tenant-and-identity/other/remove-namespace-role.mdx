@@ -1,0 +1,49 @@
+---
+title: Remove Namespace Role
+description: Remove role from User Group.
+---
+
+RemoveRole allows customers to remove a namespace/role from the user group.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-tenantandidentity-remove-namespace-role-update` | Remove role from User Group. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `name` | Name of the user group | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Remove Namespace Role resources:
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/remove_namespace_roles" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/remove_namespace_roles/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/remove_namespace_roles" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @remove_namespace_role.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/remove_namespace_roles/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

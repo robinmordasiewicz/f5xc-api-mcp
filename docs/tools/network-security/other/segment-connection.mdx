@@ -1,0 +1,82 @@
+---
+title: Segment Connection
+description: GET segment connector.
+---
+
+List the set of segment_connection in a namespace.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-networksecurity-segment-connection-get` | GET segment connector. |
+| `f5xc-api-networksecurity-segment-connection-list` | List Segment Connector. |
+| `f5xc-api-networksecurity-segment-connection-update` | Replace segment connector. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+| `metadata.namespace` | Namespace | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### connection_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.connections[].direct` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Segment Connection resources:
+
+### List Segment Connections
+
+> "List all segment-connections in the 'production' namespace"
+
+### Get Segment Connection Details
+
+> "Get details of the segment-connection named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/segment_connections" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/segment_connections/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/segment_connections" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @segment_connection.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/segment_connections/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

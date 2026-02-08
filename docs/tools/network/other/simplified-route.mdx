@@ -1,0 +1,75 @@
+---
+title: Simplified Route
+description: Show Simplified Routes.
+---
+
+Show user-friendly VER routes matching the request.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-network-simplified-route-create` | Show Simplified Routes. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+| `site` | Site Name | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### cluster_node_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `all_nodes` | - |  |
+| `node` | - |  |
+
+### network_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `global_network` | - |  |
+| `segment` | - |  |
+| `sli` | - |  |
+| `slo` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Simplified Route resources:
+
+### Create Simplified Route
+
+> "Create a simplified-route named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/simplified_routes" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/simplified_routes/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/simplified_routes" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @simplified_route.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/simplified_routes/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

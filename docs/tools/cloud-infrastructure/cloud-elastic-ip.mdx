@@ -1,0 +1,77 @@
+---
+title: Cloud Elastic IP
+description: Create Cloud Elastic IP.
+---
+
+GET cloud elastic IP will GET the object from the storage backend for namespace metadata.namespace.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-cloudinfrastructure-cloud-elastic-ip-create` | Create Cloud Elastic IP. |
+| `f5xc-api-cloudinfrastructure-cloud-elastic-ip-get` | GET Cloud Elastic IP. |
+| `f5xc-api-cloudinfrastructure-cloud-elastic-ip-list` | List Cloud Elastic IP. |
+| `f5xc-api-cloudinfrastructure-cloud-elastic-ip-update` | Replace Cloud Elastic IP. |
+| `f5xc-api-cloudinfrastructure-cloud-elastic-ip-delete` | DELETE Cloud Elastic IP. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Cloud Elastic IP resources:
+
+### Create Cloud Elastic IP
+
+> "Create a cloud-elastic-ip named 'example' in the 'production' namespace"
+
+### List Cloud Elastic IPs
+
+> "List all cloud-elastic-ips in the 'production' namespace"
+
+### Get Cloud Elastic IP Details
+
+> "Get details of the cloud-elastic-ip named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/cloud_elastic_ips" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/cloud_elastic_ips/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/cloud_elastic_ips" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @cloud_elastic_ip.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/cloud_elastic_ips/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

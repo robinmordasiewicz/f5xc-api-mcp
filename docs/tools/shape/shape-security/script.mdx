@@ -1,0 +1,68 @@
+---
+title: Script
+description: List Scripts.
+---
+
+List all the scripts for the tenant depending on start time and end time.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-shape-script-create` | List Scripts. |
+| `f5xc-api-shape-script-list` | List Scripts. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `end_time` | X-required | `-` |
+| `page_number` | One-indexed page number (starts from 1), page_number and page_size are optional when page_token is specified. | `-` |
+| `page_size` | The maximum number of scripts to return per page. | `-` |
+| `page_token` | Page_token is the value of listscriptsresponse.next_page_token from previous request. | `-` |
+| `start_time` | X-required | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Script resources:
+
+### Create Script
+
+> "Create a script named 'example' in the 'production' namespace"
+
+### List Scripts
+
+> "List all scripts in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/scripts" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/scripts/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/scripts" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @script.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/scripts/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

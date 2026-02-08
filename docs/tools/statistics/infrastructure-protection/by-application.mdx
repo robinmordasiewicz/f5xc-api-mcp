@@ -1,0 +1,54 @@
+---
+title: By Application
+description: L3l4 Application traffic Query.
+---
+
+Request to GET l3l4 Application traffic data.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-statistics-by-application-create` | L3l4 Application traffic Query. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+| `network_id` | NetworkId | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with By Application resources:
+
+### Create By Application
+
+> "Create a by-application named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/by_applications" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/by_applications/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/by_applications" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @by_application.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/by_applications/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

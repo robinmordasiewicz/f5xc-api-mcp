@@ -1,0 +1,63 @@
+---
+title: App Type
+description: Application Types.
+---
+
+Request to GET list of application types for a given namespace.
+For system namespace, all the
+application types for the tenant
+will be returned in the response.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-telemetryandinsights-app-type-list` | Application Types. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `end_time` | End time of metric collection from which data will be considered to build graph. | `-` |
+| `start_time` | Start time of metric collection from which data will be considered to build graph. | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with App Type resources:
+
+### List App Types
+
+> "List all app-types in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/app_types" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/app_types/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/app_types" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @app_type.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/app_types/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

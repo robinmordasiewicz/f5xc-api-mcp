@@ -1,0 +1,99 @@
+---
+title: Malicious User Mitigation
+description: Create Malicious User Mitigation.
+---
+
+Replace malicious_user_mitigation replaces an existing object in the storage backend for
+metadata.namespace.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-secopsandincidentresponse-malicious-user-mitigation-create` | Create Malicious User Mitigation. |
+| `f5xc-api-secopsandincidentresponse-malicious-user-mitigation-get` | GET Malicious User Mitigation. |
+| `f5xc-api-secopsandincidentresponse-malicious-user-mitigation-list` | List Malicious User Mitigation. |
+| `f5xc-api-secopsandincidentresponse-malicious-user-mitigation-update` | Replace Malicious User Mitigation. |
+| `f5xc-api-secopsandincidentresponse-malicious-user-mitigation-delete` | DELETE Malicious User Mitigation. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### mitigation_action
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.mitigation_type.rules[].mitigation_action.block_temporarily` | - |  |
+| `spec.mitigation_type.rules[].mitigation_action.captcha_challenge` | - |  |
+| `spec.mitigation_type.rules[].mitigation_action.javascript_challenge` | - |  |
+
+### threat_level
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.mitigation_type.rules[].threat_level.high` | - |  |
+| `spec.mitigation_type.rules[].threat_level.low` | - |  |
+| `spec.mitigation_type.rules[].threat_level.medium` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Malicious User Mitigation resources:
+
+### Create Malicious User Mitigation
+
+> "Create a malicious-user-mitigation named 'example' in the 'production' namespace"
+
+### List Malicious User Mitigations
+
+> "List all malicious-user-mitigations in the 'production' namespace"
+
+### Get Malicious User Mitigation Details
+
+> "Get details of the malicious-user-mitigation named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/malicious_user_mitigations" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/malicious_user_mitigations/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/malicious_user_mitigations" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @malicious_user_mitigation.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/malicious_user_mitigations/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

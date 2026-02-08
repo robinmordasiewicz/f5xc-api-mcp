@@ -1,0 +1,62 @@
+---
+title: Status At Site
+description: GET Status.
+---
+
+GET status of an object in a given site.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-telemetryandinsights-status-at-site-get` | GET Status. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `kind` | Kind | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `site` | Site name | `-` |
+| `site_type` | Site type indicates whether the site is CE or RE | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Status At Site resources:
+
+### Get Status At Site Details
+
+> "Get details of the status-at-site named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/status_at_sites" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/status_at_sites/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/status_at_sites" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @status_at_site.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/status_at_sites/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

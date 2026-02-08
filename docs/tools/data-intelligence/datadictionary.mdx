@@ -1,0 +1,53 @@
+---
+title: Datadictionary
+description: GET Data Dictionary.
+---
+
+GET the dataset features from Data dictionary API.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-dataintelligence-datadictionary-list` | GET Data Dictionary. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `dataset` | Dataset | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Datadictionary resources:
+
+### List Datadictionarys
+
+> "List all datadictionarys in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/datadictionarys" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/datadictionarys/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/datadictionarys" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @datadictionary.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/datadictionarys/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

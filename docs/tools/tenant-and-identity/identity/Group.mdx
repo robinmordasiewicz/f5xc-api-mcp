@@ -1,0 +1,75 @@
+---
+title: Group
+description: Create group with users.
+---
+
+List groups based on the given filter.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-tenantandidentity-group-create` | Create group with users. |
+| `f5xc-api-tenantandidentity-group-get` | List group based on ID. |
+| `f5xc-api-tenantandidentity-group-list` | List group based on filters. |
+| `f5xc-api-tenantandidentity-group-update` | Replace group based on ID. |
+| `f5xc-api-tenantandidentity-group-delete` | DELETE group based on ID. |
+| `f5xc-api-tenantandidentity-group-patch` | PATCH group based on ID. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `id` | ID | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `excludedAttributes` | Members"]" | `-` |
+| `count` | The number of entries after filter. | `-` |
+| `filter` | Filter to be used for filtering objects. | `-` |
+| `page` | Start offset. | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Group resources:
+
+### Create Group
+
+> "Create a Group named 'example' in the 'production' namespace"
+
+### List Groups
+
+> "List all Groups in the 'production' namespace"
+
+### Get Group Details
+
+> "Get details of the Group named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/Groups" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/Groups/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/Groups" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @Group.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/Groups/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

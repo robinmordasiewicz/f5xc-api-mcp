@@ -1,0 +1,54 @@
+---
+title: Stop Tcpdump
+description: Stop Tcpdump.
+---
+
+Stop tcpdump running on an interface in a ver node.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-support-stop-tcpdump-create` | Stop Tcpdump. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+| `site` | Site Name | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Stop Tcpdump resources:
+
+### Create Stop Tcpdump
+
+> "Create a stop-tcpdump named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/stop_tcpdumps" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/stop_tcpdumps/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/stop_tcpdumps" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @stop_tcpdump.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/stop_tcpdumps/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

@@ -1,0 +1,61 @@
+---
+title: Exec Log
+description: Exec Log
+---
+
+Retrieve exec history on node.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-support-exec-log-list` | Exec Log |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+| `node` | Node Name | `-` |
+| `site` | Site Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `line_count` | Number of last log lines. | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Exec Log resources:
+
+### List Exec Logs
+
+> "List all exec-logs in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/exec_logs" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/exec_logs/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/exec_logs" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @exec_log.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/exec_logs/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

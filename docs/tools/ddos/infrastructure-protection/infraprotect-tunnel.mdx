@@ -1,0 +1,141 @@
+---
+title: Infraprotect Tunnel
+description: Create DDoS Transit Tunnel.
+---
+
+List the set of infraprotect_tunnel in a namespace.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-ddos-infraprotect-tunnel-create` | Create DDoS Transit Tunnel. |
+| `f5xc-api-ddos-infraprotect-tunnel-get` | GET Tunnel. |
+| `f5xc-api-ddos-infraprotect-tunnel-list` | List Tunnel. |
+| `f5xc-api-ddos-infraprotect-tunnel-update` | Replace DDoS Transit Tunnel. |
+| `f5xc-api-ddos-infraprotect-tunnel-delete` | DELETE Tunnel. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### tunnel_type
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.gre_ipv4` | - |  |
+| `spec.gre_ipv6` | - |  |
+| `spec.ip_in_ip` | - |  |
+| `spec.ipv6_to_ipv6` | - |  |
+
+### peer_secret_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.bgp_information.no_secret` | - |  |
+| `spec.bgp_information.peer_secret_override` | - |  |
+| `spec.bgp_information.use_default_secret` | - |  |
+
+### secret_info_oneof
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.bgp_information.peer_secret_override.blindfold_secret_info` | - |  |
+| `spec.bgp_information.peer_secret_override.clear_secret_info` | - |  |
+
+### fragmentation_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.gre_ipv4.fragmentation_disabled` | - |  |
+| `spec.gre_ipv4.fragmentation_enabled` | - |  |
+
+### ipv6_interconnect_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.gre_ipv4.ipv6_interconnect_disabled` | - |  |
+| `spec.gre_ipv4.ipv6_interconnect_enabled` | - |  |
+
+### keepalive_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.gre_ipv4.keepalive_disabled` | - |  |
+| `spec.gre_ipv4.keepalive_enabled` | - |  |
+
+### ipv4_interconnect_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.gre_ipv6.ipv4_interconnect_disabled` | - |  |
+| `spec.gre_ipv6.ipv4_interconnect_enabled` | - |  |
+
+### zone
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.tunnel_location.zone1` | - |  |
+| `spec.tunnel_location.zone2` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Infraprotect Tunnel resources:
+
+### Create Infraprotect Tunnel
+
+> "Create a infraprotect-tunnel named 'example' in the 'production' namespace"
+
+### List Infraprotect Tunnels
+
+> "List all infraprotect-tunnels in the 'production' namespace"
+
+### Get Infraprotect Tunnel Details
+
+> "Get details of the infraprotect-tunnel named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/infraprotect_tunnels" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/infraprotect_tunnels/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/infraprotect_tunnels" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @infraprotect_tunnel.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/infraprotect_tunnels/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

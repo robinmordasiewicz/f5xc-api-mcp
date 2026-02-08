@@ -1,0 +1,101 @@
+---
+title: K8S Pod Security Admission
+description: Create Configuration Specification.
+---
+
+Replacing an k8s_pod_security_admission object will update the object by replacing the existing spec
+with the provided one.
+For read-then-write operations a resourceVersion mismatch will occur if the
+object was modified between the read and write.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-managedkubernetes-k8s-pod-security-admission-create` | Create Configuration Specification. |
+| `f5xc-api-managedkubernetes-k8s-pod-security-admission-get` | GET Configuration Specification. |
+| `f5xc-api-managedkubernetes-k8s-pod-security-admission-list` | List K8s Pod Security Admission. |
+| `f5xc-api-managedkubernetes-k8s-pod-security-admission-update` | Replace Configuration Specification. |
+| `f5xc-api-managedkubernetes-k8s-pod-security-admission-delete` | DELETE K8s Pod Security Admission. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### admission_mode_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.pod_security_admission_specs[].audit` | - |  |
+| `spec.pod_security_admission_specs[].enforce` | - |  |
+| `spec.pod_security_admission_specs[].warn` | - |  |
+
+### policy_type_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.pod_security_admission_specs[].baseline` | - |  |
+| `spec.pod_security_admission_specs[].privileged` | - |  |
+| `spec.pod_security_admission_specs[].restricted` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with K8S Pod Security Admission resources:
+
+### Create K8S Pod Security Admission
+
+> "Create a k8s-pod-security-admission named 'example' in the 'production' namespace"
+
+### List K8S Pod Security Admissions
+
+> "List all k8s-pod-security-admissions in the 'production' namespace"
+
+### Get K8S Pod Security Admission Details
+
+> "Get details of the k8s-pod-security-admission named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/k8s_pod_security_admissions" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/k8s_pod_security_admissions/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/k8s_pod_security_admissions" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @k8s_pod_security_admission.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/k8s_pod_security_admissions/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

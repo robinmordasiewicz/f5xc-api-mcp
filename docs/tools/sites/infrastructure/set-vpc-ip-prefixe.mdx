@@ -1,0 +1,54 @@
+---
+title: Set VPC IP Prefixe
+description: Configure VPC IP prefixes.
+---
+
+Configure VPC IP prefix set.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-sites-set-vpc-ip-prefixe-create` | Configure VPC IP prefixes. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Set VPC IP Prefixe resources:
+
+### Create Set VPC IP Prefixe
+
+> "Create a set-vpc-ip-prefixe named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/set_vpc_ip_prefixes" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/set_vpc_ip_prefixes/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/set_vpc_ip_prefixes" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @set_vpc_ip_prefixe.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/set_vpc_ip_prefixes/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

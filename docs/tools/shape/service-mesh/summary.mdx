@@ -1,0 +1,58 @@
+---
+title: Summary
+description: Endpoint Summary.
+---
+
+Getbotdetectionrulessummary CustomAPI.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-shape-summary-create` | Endpoint Summary. |
+| `f5xc-api-shape-summary-list` | GET summary of bot detection rules. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Summary resources:
+
+### Create Summary
+
+> "Create a summary named 'example' in the 'production' namespace"
+
+### List Summarys
+
+> "List all summarys in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/summarys" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/summarys/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/summarys" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @summary.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/summarys/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

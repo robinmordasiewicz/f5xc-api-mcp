@@ -1,0 +1,54 @@
+---
+title: Set Cloud Site Info
+description: Configure AWS VPC Site Information.
+---
+
+Configure AWS VPC Site Information like public, private ips, subnet IDs and others.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-sites-set-cloud-site-info-create` | Configure AWS VPC Site Information. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Set Cloud Site Info resources:
+
+### Create Set Cloud Site Info
+
+> "Create a set-cloud-site-info named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/set_cloud_site_infos" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/set_cloud_site_infos/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/set_cloud_site_infos" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @set_cloud_site_info.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/set_cloud_site_infos/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

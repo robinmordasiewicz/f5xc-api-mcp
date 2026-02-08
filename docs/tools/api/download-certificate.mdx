@@ -1,0 +1,64 @@
+---
+title: Download Certificate
+description: Download Certificates.
+---
+
+Download the cerificates files for the Log Collerctor
+In order to establish connection from the
+third party application server to the
+Log Colletor the user should download a zip file with the
+certificates files:
+
+- client.crt
+
+- client.key
+
+- server_ca.crt.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-api-download-certificate-create` | Download Certificates. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `name` | Discovery Name | `-` |
+| `namespace` | Namespace | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Download Certificate resources:
+
+### Create Download Certificate
+
+> "Create a download-certificate named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/download_certificates" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/download_certificates/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/download_certificates" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @download_certificate.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/download_certificates/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

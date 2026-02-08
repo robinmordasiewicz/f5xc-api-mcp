@@ -1,0 +1,56 @@
+---
+title: Disable Visibility
+description: Disable visibility in all workspaces.
+---
+
+Disable Visibility of the service in all workspaces. This will remove the discovered service
+from
+being visible in other wokspaces like WAAP.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-telemetryandinsights-disable-visibility-create` | Disable visibility in all workspaces. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `name` | Service Name | `-` |
+| `namespace` | Namespace | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Disable Visibility resources:
+
+### Create Disable Visibility
+
+> "Create a disable-visibility named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/disable_visibilitys" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/disable_visibilitys/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/disable_visibilitys" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @disable_visibility.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/disable_visibilitys/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

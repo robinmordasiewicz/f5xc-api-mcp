@@ -1,0 +1,56 @@
+---
+title: Hourly Usage Detail
+description: List hourly usage details.
+---
+
+List the usage divided by hour. The usage is hourly aggregated, from the start of UTC hour
+to the
+end of UTC hour. It is used to see the detailed breakdown of the usage received from
+ListUsageDetails.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-billingandusage-hourly-usage-detail-create` | List hourly usage details. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Hourly Usage Detail resources:
+
+### Create Hourly Usage Detail
+
+> "Create a hourly-usage-detail named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/hourly_usage_details" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/hourly_usage_details/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/hourly_usage_details" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @hourly_usage_detail.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/hourly_usage_details/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

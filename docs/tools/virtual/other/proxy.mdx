@@ -1,0 +1,287 @@
+---
+title: Proxy
+description: Create Proxy.
+---
+
+Shape of the TCP loadbalancer replace specification.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-virtual-proxy-create` | Create Proxy. |
+| `f5xc-api-virtual-proxy-get` | GET Proxy |
+| `f5xc-api-virtual-proxy-list` | List Proxy. |
+| `f5xc-api-virtual-proxy-update` | Replace Proxy. |
+| `f5xc-api-virtual-proxy-delete` | DELETE Proxy. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### network_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.site_local_inside_network` | - |  |
+| `spec.site_local_network` | - |  |
+
+### proxy_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.dynamic_proxy` | - |  |
+| `spec.http_proxy` | - |  |
+
+### proxy_policy_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.active_forward_proxy_policies` | - |  |
+| `spec.no_forward_proxy_policy` | - |  |
+
+### site_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.do_not_advertise` | - |  |
+| `spec.site_virtual_sites` | - |  |
+
+### tls_interception_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.no_interception` | - |  |
+| `spec.tls_intercept` | - |  |
+
+### dns_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.dynamic_proxy.disable_dns_masquerade` | - |  |
+| `spec.dynamic_proxy.enable_dns_masquerade` | - |  |
+
+### path_normalize_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.dynamic_proxy.http_proxy.more_option.disable_path_normalize` | - |  |
+| `spec.dynamic_proxy.http_proxy.more_option.enable_path_normalize` | - |  |
+
+### strict_sni_host_header_check_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+
+### value_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.dynamic_proxy.http_proxy.more_option.request_cookies_to_add[].secret_value` | - |  |
+| `spec.dynamic_proxy.http_proxy.more_option.request_cookies_to_add[].value` | - |  |
+
+### secret_info_oneof
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.dynamic_proxy.http_proxy.more_option.request_cookies_to_add[].secret_value.blindfold_secret_info` | - |  |
+| `spec.dynamic_proxy.http_proxy.more_option.request_cookies_to_add[].secret_value.clear_secret_info` | - |  |
+
+### domain_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].add_domain` | - |  |
+| `spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].ignore_domain` | - |  |
+
+### expiry_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].add_expiry` | - |  |
+| `spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].ignore_expiry` | - |  |
+
+### httponly_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].add_httponly` | - |  |
+| `spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].ignore_httponly` | - |  |
+
+### max_age_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].ignore_max_age` | - |  |
+| `spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].max_age_value` | - |  |
+
+### partitioned_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].add_partitioned` | - |  |
+| `spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].ignore_partitioned` | - |  |
+
+### path_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].add_path` | - |  |
+| `spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].ignore_path` | - |  |
+
+### samesite_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].ignore_samesite` | - |  |
+| `spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].samesite_lax` | - |  |
+| `spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].samesite_none` | - |  |
+| `spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].samesite_strict` | - |  |
+
+### secure_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].add_secure` | - |  |
+| `spec.dynamic_proxy.http_proxy.more_option.response_cookies_to_add[].ignore_secure` | - |  |
+
+### mtls_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.dynamic_proxy.https_proxy.tls_params.no_mtls` | - |  |
+| `spec.dynamic_proxy.https_proxy.tls_params.use_mtls` | - |  |
+
+### ocsp_stapling_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.dynamic_proxy.https_proxy.tls_params.tls_certificates[].custom_hash_algorithms` | - |  |
+| `spec.dynamic_proxy.https_proxy.tls_params.tls_certificates[].disable_ocsp_stapling` | - |  |
+| `spec.dynamic_proxy.https_proxy.tls_params.tls_certificates[].use_system_defaults` | - |  |
+
+### choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.dynamic_proxy.https_proxy.tls_params.tls_config.custom_security` | - |  |
+| `spec.dynamic_proxy.https_proxy.tls_params.tls_config.default_security` | - |  |
+| `spec.dynamic_proxy.https_proxy.tls_params.tls_config.low_security` | - |  |
+| `spec.dynamic_proxy.https_proxy.tls_params.tls_config.medium_security` | - |  |
+
+### crl_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.dynamic_proxy.https_proxy.tls_params.use_mtls.crl` | - |  |
+| `spec.dynamic_proxy.https_proxy.tls_params.use_mtls.no_crl` | - |  |
+
+### trusted_ca_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.dynamic_proxy.https_proxy.tls_params.use_mtls.trusted_ca` | - |  |
+| `spec.dynamic_proxy.https_proxy.tls_params.use_mtls.trusted_ca_url` | - |  |
+
+### xfcc_header
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.dynamic_proxy.https_proxy.tls_params.use_mtls.xfcc_disabled` | - |  |
+| `spec.dynamic_proxy.https_proxy.tls_params.use_mtls.xfcc_options` | - |  |
+
+### http_https_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.http_proxy.enable_http` | - |  |
+
+### port_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.site_virtual_sites.advertise_where[].port` | - |  |
+| `spec.site_virtual_sites.advertise_where[].use_default_port` | - |  |
+
+### interception_policy_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.tls_intercept.enable_for_all_domains` | - |  |
+| `spec.tls_intercept.policy` | - |  |
+
+### signing_cert_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.tls_intercept.custom_certificate` | - |  |
+| `spec.tls_intercept.volterra_certificate` | - |  |
+
+### enable_disable_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.tls_intercept.policy.interception_rules[].disable_interception` | - |  |
+| `spec.tls_intercept.policy.interception_rules[].enable_interception` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Proxy resources:
+
+### Create Proxy
+
+> "Create a proxy named 'example' in the 'production' namespace"
+
+### List Proxys
+
+> "List all proxys in the 'production' namespace"
+
+### Get Proxy Details
+
+> "Get details of the proxy named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/proxys" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/proxys/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/proxys" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @proxy.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/proxys/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

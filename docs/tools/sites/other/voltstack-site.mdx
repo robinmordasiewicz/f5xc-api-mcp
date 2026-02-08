@@ -1,0 +1,548 @@
+---
+title: Voltstack Site
+description: Create App Stack site.
+---
+
+List the set of customer_edge_site in a namespace.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-sites-voltstack-site-create` | Create App Stack site. |
+| `f5xc-api-sites-voltstack-site-get` | GET App Stack site. |
+| `f5xc-api-sites-voltstack-site-list` | List Configure App Stack Site. |
+| `f5xc-api-sites-voltstack-site-update` | Replace App Stack site. |
+| `f5xc-api-sites-voltstack-site-delete` | DELETE Configure App Stack Site. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### blocked_services_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.blocked_services` | - |  |
+| `spec.default_blocked_services` | - |  |
+
+### bond_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.bond_device_list` | - |  |
+| `spec.no_bond_devices` | - |  |
+
+### gpu_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.disable_gpu` | - |  |
+| `spec.enable_gpu` | - |  |
+| `spec.enable_vgpu` | - |  |
+
+### k8s_cluster_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.k8s_cluster` | - |  |
+| `spec.no_k8s_cluster` | - |  |
+
+### local_control_plane_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.local_control_plane` | - |  |
+| `spec.no_local_control_plane` | - |  |
+
+### logs_receiver_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.log_receiver` | - |  |
+| `spec.logs_streaming_disabled` | - |  |
+
+### network_cfg_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.custom_network_config` | - |  |
+| `spec.default_network_config` | - |  |
+
+### sriov_interface_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.default_sriov_interface` | - |  |
+| `spec.sriov_interfaces` | - |  |
+
+### storage_cfg_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.custom_storage_config` | - |  |
+| `spec.default_storage_config` | - |  |
+
+### usb_policy_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.allow_all_usb` | - |  |
+| `spec.deny_all_usb` | - |  |
+| `spec.usb_policy` | - |  |
+
+### vm_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.disable_vm` | - |  |
+| `spec.enable_vm` | - |  |
+
+### blocked_services_value_type_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.blocked_services.blocked_sevice[].dns` | - |  |
+| `spec.blocked_services.blocked_sevice[].ssh` | - |  |
+| `spec.blocked_services.blocked_sevice[].web_user_interface` | - |  |
+
+### lacp_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.bond_device_list.bond_devices[].active_backup` | - |  |
+| `spec.bond_device_list.bond_devices[].lacp` | - |  |
+
+### forward_proxy_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.custom_network_config.active_forward_proxy_policies` | - |  |
+| `spec.custom_network_config.forward_proxy_allow_all` | - |  |
+| `spec.custom_network_config.no_forward_proxy` | - |  |
+
+### global_network_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.custom_network_config.global_network_list` | - |  |
+| `spec.custom_network_config.no_global_network` | - |  |
+
+### interface_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.custom_network_config.default_interface_config` | - |  |
+| `spec.custom_network_config.interface_list` | - |  |
+
+### network_policy_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.custom_network_config.active_enhanced_firewall_policies` | - |  |
+| `spec.custom_network_config.active_network_policies` | - |  |
+| `spec.custom_network_config.no_network_policy` | - |  |
+
+### site_mesh_group_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.custom_network_config.site_to_site_tunnel_ip` | - |  |
+| `spec.custom_network_config.sm_connection_public_ip` | - |  |
+| `spec.custom_network_config.sm_connection_pvt_ip` | - |  |
+
+### sli_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.custom_network_config.default_sli_config` | - |  |
+| `spec.custom_network_config.sli_config` | - |  |
+
+### slo_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.custom_network_config.default_config` | - |  |
+| `spec.custom_network_config.slo_config` | - |  |
+
+### connection_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.custom_network_config.global_network_list.global_network_connections[].sli_to_global_dr` | - |  |
+| `spec.custom_network_config.global_network_list.global_network_connections[].slo_to_global_dr` | - |  |
+
+### dc_cluster_group_connectivity_interface_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.custom_network_config.interface_list.interfaces[].dc_cluster_group_connectivity_interface_disabled` | - |  |
+| `spec.custom_network_config.interface_list.interfaces[].dc_cluster_group_connectivity_interface_enabled` | - |  |
+
+### monitoring_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.custom_network_config.interface_list.interfaces[].dedicated_interface.monitor` | - |  |
+| `spec.custom_network_config.interface_list.interfaces[].dedicated_interface.monitor_disabled` | - |  |
+
+### node_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.custom_network_config.interface_list.interfaces[].dedicated_interface.cluster` | - |  |
+| `spec.custom_network_config.interface_list.interfaces[].dedicated_interface.node` | - |  |
+
+### primary_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.custom_network_config.interface_list.interfaces[].dedicated_interface.is_primary` | - |  |
+| `spec.custom_network_config.interface_list.interfaces[].dedicated_interface.not_primary` | - |  |
+
+### address_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_client` | - |  |
+| `spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server` | - |  |
+| `spec.custom_network_config.interface_list.interfaces[].ethernet_interface.static_ip` | - |  |
+
+### ipv6_address_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config` | - |  |
+| `spec.custom_network_config.interface_list.interfaces[].ethernet_interface.no_ipv6_address` | - |  |
+| `spec.custom_network_config.interface_list.interfaces[].ethernet_interface.static_ipv6_address` | - |  |
+
+### network_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.custom_network_config.interface_list.interfaces[].ethernet_interface.segment_network` | - |  |
+| `spec.custom_network_config.interface_list.interfaces[].ethernet_interface.site_local_inside_network` | - |  |
+| `spec.custom_network_config.interface_list.interfaces[].ethernet_interface.site_local_network` | - |  |
+| `spec.custom_network_config.interface_list.interfaces[].ethernet_interface.storage_network` | - |  |
+
+### vlan_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.custom_network_config.interface_list.interfaces[].ethernet_interface.untagged` | - |  |
+| `spec.custom_network_config.interface_list.interfaces[].ethernet_interface.vlan_id` | - |  |
+
+### interfaces_addressing_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.automatic_from_end` | - |  |
+| `spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.automatic_from_start` | - |  |
+| `spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.interface_ip_map` | - |  |
+
+### dns_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.dhcp_networks[].dns_address` | - |  |
+| `spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.dhcp_networks[].same_as_dgw` | - |  |
+
+### gateway_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.dhcp_networks[].dgw_address` | - |  |
+| `spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.dhcp_networks[].first_address` | - |  |
+| `spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.dhcp_networks[].last_address` | - |  |
+
+### network_prefix_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.custom_network_config.interface_list.interfaces[].ethernet_interface.dhcp_server.dhcp_networks[].network_prefix` | - |  |
+
+### autoconfig_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.host` | - |  |
+| `spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router` | - |  |
+
+### local_dns_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.dns_config.local_dns.configured_address` | - |  |
+| `spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.dns_config.local_dns.first_address` | - |  |
+| `spec.custom_network_config.interface_list.interfaces[].ethernet_interface.ipv6_auto_config.router.dns_config.local_dns.last_address` | - |  |
+
+### static_route_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.custom_network_config.sli_config.no_static_routes` | - |  |
+| `spec.custom_network_config.sli_config.static_routes` | - |  |
+
+### static_v6_route_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.custom_network_config.sli_config.no_v6_static_routes` | - |  |
+| `spec.custom_network_config.sli_config.static_v6_routes` | - |  |
+
+### next_hop_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.custom_network_config.sli_config.static_routes.static_routes[].default_gateway` | - |  |
+| `spec.custom_network_config.sli_config.static_routes.static_routes[].ip_address` | - |  |
+| `spec.custom_network_config.sli_config.static_routes.static_routes[].node_interface` | - |  |
+
+### dc_cluster_group_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.custom_network_config.slo_config.dc_cluster_group` | - |  |
+| `spec.custom_network_config.slo_config.no_dc_cluster_group` | - |  |
+
+### storage_class_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.custom_storage_config.default_storage_class` | - |  |
+| `spec.custom_storage_config.storage_class_list` | - |  |
+
+### storage_device_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.custom_storage_config.no_storage_device` | - |  |
+| `spec.custom_storage_config.storage_device_list` | - |  |
+
+### storage_interface_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.custom_storage_config.no_storage_interfaces` | - |  |
+| `spec.custom_storage_config.storage_interface_list` | - |  |
+
+### device_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.custom_storage_config.storage_class_list.storage_classes[].custom_storage` | - |  |
+| `spec.custom_storage_config.storage_class_list.storage_classes[].hpe_storage` | - |  |
+| `spec.custom_storage_config.storage_class_list.storage_classes[].netapp_trident` | - |  |
+| `spec.custom_storage_config.storage_class_list.storage_classes[].pure_service_orchestrator` | - |  |
+
+### secret_info_oneof
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.custom_storage_config.storage_device_list.storage_devices[].hpe_storage.iscsi_chap_password.blindfold_secret_info` | - |  |
+| `spec.custom_storage_config.storage_device_list.storage_devices[].hpe_storage.iscsi_chap_password.clear_secret_info` | - |  |
+
+### backend_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas` | - |  |
+| `spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san` | - |  |
+
+### data_lif
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.data_lif_dns_name` | - |  |
+| `spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.data_lif_ip` | - |  |
+
+### management_lif
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.management_lif_dns_name` | - |  |
+| `spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.management_lif_ip` | - |  |
+
+### qos_policy_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.storage[].volume_defaults.adaptive_qos_policy` | - |  |
+| `spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.storage[].volume_defaults.no_qos` | - |  |
+| `spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_nas.storage[].volume_defaults.qos_policy` | - |  |
+
+### chap_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.no_chap` | - |  |
+| `spec.custom_storage_config.storage_device_list.storage_devices[].netapp_trident.netapp_backend_ontap_san.use_chap` | - |  |
+
+### mgmt_endpoint
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.custom_storage_config.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_array.flash_arrays[].mgmt_dns_name` | - |  |
+| `spec.custom_storage_config.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_array.flash_arrays[].mgmt_ip` | - |  |
+
+### nfs_endpoint
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.custom_storage_config.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_blade.flash_blades[].nfs_endpoint_dns_name` | - |  |
+| `spec.custom_storage_config.storage_device_list.storage_devices[].pure_service_orchestrator.arrays.flash_blade.flash_blades[].nfs_endpoint_ip` | - |  |
+
+### kubernetes_upgrade_drain_enable_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.kubernetes_upgrade_drain.disable_upgrade_drain` | - |  |
+| `spec.kubernetes_upgrade_drain.enable_upgrade_drain` | - |  |
+
+### drain_max_unavailable_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.kubernetes_upgrade_drain.enable_upgrade_drain.drain_max_unavailable_node_count` | - |  |
+
+### vega_upgrade_mode_toggle_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.kubernetes_upgrade_drain.enable_upgrade_drain.disable_vega_upgrade_mode` | - |  |
+| `spec.kubernetes_upgrade_drain.enable_upgrade_drain.enable_vega_upgrade_mode` | - |  |
+
+### bfd_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.local_control_plane.bgp_config.peers[].bfd_disabled` | - |  |
+| `spec.local_control_plane.bgp_config.peers[].bfd_enabled` | - |  |
+
+### enable_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.local_control_plane.bgp_config.peers[].disable` | - |  |
+| `spec.local_control_plane.bgp_config.peers[].routing_policies` | - |  |
+
+### passive_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.local_control_plane.bgp_config.peers[].passive_mode_disabled` | - |  |
+| `spec.local_control_plane.bgp_config.peers[].passive_mode_enabled` | - |  |
+
+### type_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.local_control_plane.bgp_config.peers[].external` | - |  |
+
+### address_choice_v6
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.local_control_plane.bgp_config.peers[].external.address_ipv6` | - |  |
+| `spec.local_control_plane.bgp_config.peers[].external.default_gateway_v6` | - |  |
+| `spec.local_control_plane.bgp_config.peers[].external.disable_v6` | - |  |
+| `spec.local_control_plane.bgp_config.peers[].external.from_site_v6` | - |  |
+| `spec.local_control_plane.bgp_config.peers[].external.subnet_begin_offset_v6` | - |  |
+| `spec.local_control_plane.bgp_config.peers[].external.subnet_end_offset_v6` | - |  |
+
+### auth_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.local_control_plane.bgp_config.peers[].external.md5_auth_key` | - |  |
+| `spec.local_control_plane.bgp_config.peers[].external.no_authentication` | - |  |
+
+### direction
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.local_control_plane.bgp_config.peers[].routing_policies.route_policy[].inbound` | - |  |
+| `spec.local_control_plane.bgp_config.peers[].routing_policies.route_policy[].outbound` | - |  |
+
+### offline_survivability_mode_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.offline_survivability_mode.enable_offline_survivability_mode` | - |  |
+| `spec.offline_survivability_mode.no_offline_survivability_mode` | - |  |
+
+### operating_system_version_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.os.default_os_version` | - |  |
+| `spec.os.operating_system_version` | - |  |
+
+### volterra_sw_version_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.sw.default_sw_version` | - |  |
+| `spec.sw.volterra_software_version` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Voltstack Site resources:
+
+### Create Voltstack Site
+
+> "Create a voltstack-site named 'example' in the 'production' namespace"
+
+### List Voltstack Sites
+
+> "List all voltstack-sites in the 'production' namespace"
+
+### Get Voltstack Site Details
+
+> "Get details of the voltstack-site named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/voltstack_sites" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/voltstack_sites/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/voltstack_sites" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @voltstack_site.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/voltstack_sites/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

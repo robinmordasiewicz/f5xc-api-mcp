@@ -1,0 +1,60 @@
+---
+title: Active Network Policie
+description: Set Active Network Policies.
+---
+
+SetActiveNetworkPolicies sets the active network policies for the namespace
+An emtpy list in the
+request will clear the active network policies for the namespace.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-tenantandidentity-active-network-policie-create` | Set Active Network Policies. |
+| `f5xc-api-tenantandidentity-active-network-policie-list` | GET Active Network Policies. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Active Network Policie resources:
+
+### Create Active Network Policie
+
+> "Create a active-network-policie named 'example' in the 'production' namespace"
+
+### List Active Network Policies
+
+> "List all active-network-policies in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/active_network_policies" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/active_network_policies/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/active_network_policies" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @active_network_policie.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/active_network_policies/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

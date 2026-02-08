@@ -1,0 +1,45 @@
+---
+title: View Preference
+description: GET view preference.
+---
+
+GET view preference gets view preference for specific user.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-tenantandidentity-view-preference-list` | GET view preference. |
+| `f5xc-api-tenantandidentity-view-preference-update` | Set view preference. |
+
+## Example Usage
+
+Ask Claude to help you work with View Preference resources:
+
+### List View Preferences
+
+> "List all view-preferences in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/view_preferences" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/view_preferences/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/view_preferences" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @view_preference.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/view_preferences/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

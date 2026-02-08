@@ -1,0 +1,53 @@
+---
+title: Get Service Operation Statu
+description: GET Service Operation Status.
+---
+
+GET status of an operation command for a given CDN Loadbalancer.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-cdn-get-service-operation-statu-create` | GET Service Operation Status. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Get Service Operation Statu resources:
+
+### Create Get Service Operation Statu
+
+> "Create a get-service-operation-statu named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/get_service_operation_status" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/get_service_operation_status/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/get_service_operation_status" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @get_service_operation_statu.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/get_service_operation_status/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

@@ -1,0 +1,75 @@
+---
+title: Customer Support
+description: Create Customer Support.
+---
+
+Support ticket representation we display to customers. There's much more information associated with
+a ticker but this maybe sensitive/irrelevant.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-support-customer-support-create` | Create Customer Support. |
+| `f5xc-api-support-customer-support-get` | GET Customer Support. |
+| `f5xc-api-support-customer-support-list` | List all tenant tickets. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Customer Support resources:
+
+### Create Customer Support
+
+> "Create a customer-support named 'example' in the 'production' namespace"
+
+### List Customer Supports
+
+> "List all customer-supports in the 'production' namespace"
+
+### Get Customer Support Details
+
+> "Get details of the customer-support named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/customer_supports" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/customer_supports/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/customer_supports" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @customer_support.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/customer_supports/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

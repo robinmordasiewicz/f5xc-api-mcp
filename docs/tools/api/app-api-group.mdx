@@ -1,0 +1,90 @@
+---
+title: App API Group
+description: Create API Group.
+---
+
+Replace app_api_group replaces an existing object in the storage backend for metadata.namespace.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-api-app-api-group-create` | Create API Group. |
+| `f5xc-api-api-app-api-group-get` | GET API Group. |
+| `f5xc-api-api-app-api-group-list` | List App API Group. |
+| `f5xc-api-api-app-api-group-update` | Replace API Group. |
+| `f5xc-api-api-app-api-group-delete` | DELETE App API Group. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### scope_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.bigip_virtual_server` | - |  |
+| `spec.cdn_loadbalancer` | - |  |
+| `spec.http_loadbalancer` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with App API Group resources:
+
+### Create App API Group
+
+> "Create a app-api-group named 'example' in the 'production' namespace"
+
+### List App API Groups
+
+> "List all app-api-groups in the 'production' namespace"
+
+### Get App API Group Details
+
+> "Get details of the app-api-group named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/app_api_groups" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/app_api_groups/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/app_api_groups" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @app_api_group.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/app_api_groups/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

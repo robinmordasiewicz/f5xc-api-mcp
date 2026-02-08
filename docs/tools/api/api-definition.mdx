@@ -1,0 +1,89 @@
+---
+title: API Definition
+description: Create API Definition.
+---
+
+List the set of api_definition in a namespace.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-api-api-definition-create` | Create API Definition. |
+| `f5xc-api-api-api-definition-get` | GET API Definition. |
+| `f5xc-api-api-api-definition-list` | List API Definition. |
+| `f5xc-api-api-api-definition-update` | Replace API Definition. |
+| `f5xc-api-api-api-definition-delete` | DELETE API Definition. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### schema_updates_strategy
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.mixed_schema_origin` | - |  |
+| `spec.strict_schema_origin` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with API Definition resources:
+
+### Create API Definition
+
+> "Create a api-definition named 'example' in the 'production' namespace"
+
+### List API Definitions
+
+> "List all api-definitions in the 'production' namespace"
+
+### Get API Definition Details
+
+> "Get details of the api-definition named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/api_definitions" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/api_definitions/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/api_definitions" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @api_definition.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/api_definitions/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

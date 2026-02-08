@@ -1,0 +1,62 @@
+---
+title: Mobile App Shield
+description: GET List Of Mobile App Shields.
+---
+
+ListMobileAppShields is an API to list all mobile app shields available for download.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-objectstorage-mobile-app-shield-list` | GET List Of Mobile App Shields. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `latest_version_only` | Optional query parameter. If passed, returns only latest version of the objects. | `-` |
+| `name` | Optional query parameter. Name of the stored_object. | `-` |
+| `object_type` | Optional query parameter. Type of the stored_object. | `-` |
+| `query_type` | Optional query parameter. The type of search query needs to be performed. Could be EXACT_MATCH or PREFIX_MATCH. | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Mobile App Shield resources:
+
+### List Mobile App Shields
+
+> "List all mobile-app-shields in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/mobile_app_shields" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/mobile_app_shields/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/mobile_app_shields" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @mobile_app_shield.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/mobile_app_shields/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

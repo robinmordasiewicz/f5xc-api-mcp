@@ -1,0 +1,54 @@
+---
+title: Local Zone File
+description: GET Local Zone File.
+---
+
+GET local zone file from secondary DNS.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-dns-local-zone-file-list` | GET Local Zone File. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `dns_zone_name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Local Zone File resources:
+
+### List Local Zone Files
+
+> "List all local-zone-files in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/local_zone_files" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/local_zone_files/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/local_zone_files" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @local_zone_file.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/local_zone_files/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```
