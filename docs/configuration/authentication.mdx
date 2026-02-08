@@ -1,4 +1,7 @@
-# Authentication
+---
+title: Authentication
+description: Configure authentication for the F5XC API MCP Server
+---
 
 Configure authentication for the F5XC API MCP Server.
 
@@ -35,7 +38,7 @@ The simplest authentication method. Get a token from the F5XC Console.
 #### Getting an API Token
 
 1. Log into F5 Distributed Cloud Console
-2. Navigate to **Administration** → **Personal Management** → **Credentials**
+2. Navigate to **Administration** -> **Personal Management** -> **Credentials**
 3. Click **Add Credentials**
 4. Select **API Token**
 5. Set expiration and copy the token
@@ -82,7 +85,7 @@ More secure, certificate-based authentication.
 #### Getting a P12 Certificate
 
 1. Log into F5 Distributed Cloud Console
-2. Navigate to **Administration** → **Personal Management** → **Credentials**
+2. Navigate to **Administration** -> **Personal Management** -> **Credentials**
 3. Click **Add Credentials**
 4. Select **API Certificate**
 5. Download the `.p12` file and note the password
@@ -123,8 +126,9 @@ claude mcp add --transport stdio f5xc-api \
   -- npx @robinmordasiewicz/f5xc-api-mcp
 ```
 
-!!! warning "Use Absolute Paths"
-    The P12 file path must be absolute, not relative.
+:::caution[Use Absolute Paths]
+The P12 file path must be absolute, not relative.
+:::
 
 ## URL Normalization
 
@@ -199,7 +203,7 @@ The server loads credentials in this order:
 2. **Active profile** - From `~/.config/f5xc/`
 3. **No credentials** - Documentation mode (lowest priority)
 
-See [Security Best Practices](../security.md) for credential storage and management guidance.
+See [Security Best Practices](../security/) for credential storage and management guidance.
 
 ## Environment Variables Reference
 
@@ -311,6 +315,6 @@ Or for unauthenticated:
 
 ## Next Steps
 
-- [MCP Configuration Reference](mcp-json.md)
-- [Environment Variables](environment-variables.md)
-- [Tools Reference](../tools/index.md)
+- [MCP Configuration Reference](../configuration/mcp-json/)
+- [Environment Variables](../configuration/environment-variables/)
+- [Tools Reference](../tools/)

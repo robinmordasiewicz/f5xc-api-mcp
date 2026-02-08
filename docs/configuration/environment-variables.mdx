@@ -1,9 +1,11 @@
-# Environment Variables
+---
+title: Environment Variables
+description: Complete reference for F5XC API MCP Server environment variables
+---
 
-Complete reference for F5XC API MCP Server environment variables.
-
-!!! tip "Quick Setup"
-    For step-by-step authentication setup, see the [Authentication Guide](authentication.md).
+:::tip[Quick Setup]
+For step-by-step authentication setup, see the [Authentication Guide](../configuration/authentication/).
+:::
 
 ## Variable Reference
 
@@ -31,8 +33,9 @@ The F5 Distributed Cloud tenant URL. Multiple formats accepted (auto-normalized)
 export F5XC_API_URL="https://your-tenant.console.ves.volterra.io"
 ```
 
-!!! info "URL Normalization"
-    See [Authentication Guide](authentication.md#url-normalization) for accepted URL formats.
+:::note[URL Normalization]
+See [Authentication Guide](../configuration/authentication/#url-normalization) for accepted URL formats.
+:::
 
 ### F5XC_API_TOKEN
 
@@ -42,8 +45,9 @@ API token from F5XC Console. Required for token-based authentication.
 export F5XC_API_TOKEN="your-api-token"
 ```
 
-!!! warning "Security"
-    Never commit API tokens to version control.
+:::caution[Security]
+Never commit API tokens to version control.
+:::
 
 ### F5XC_P12_BUNDLE
 
@@ -53,8 +57,9 @@ Absolute path to P12 certificate bundle. Required for P12-based certificate auth
 export F5XC_P12_BUNDLE="/path/to/certificate.p12"
 ```
 
-!!! note "Absolute Paths Required"
-    Must be an absolute path, not relative.
+:::note[Absolute Paths Required]
+Must be an absolute path, not relative.
+:::
 
 ### F5XC_CERT
 
@@ -64,8 +69,9 @@ Absolute path to PEM-formatted certificate file. Use with `F5XC_KEY` for PEM-bas
 export F5XC_CERT="/path/to/certificate.pem"
 ```
 
-!!! tip "Alternative to P12"
-    Use `F5XC_CERT` + `F5XC_KEY` as an alternative to P12 bundle authentication.
+:::tip[Alternative to P12]
+Use `F5XC_CERT` + `F5XC_KEY` as an alternative to P12 bundle authentication.
+:::
 
 ### F5XC_KEY
 
@@ -91,10 +97,11 @@ Select a profile from `~/.config/f5xc/profiles/` for multi-tenant credential man
 export F5XC_PROFILE="staging"
 ```
 
-!!! note "Profile-Based Configuration"
-    Profiles are optional. Use the `f5xc-api-configure-auth` MCP tool to set up profiles.
+:::note[Profile-Based Configuration]
+Profiles are optional. Use the `f5xc-api-configure-auth` MCP tool to set up profiles.
 
-    See [Authentication Guide](authentication.md#profile-based-configuration) for details.
+See [Authentication Guide](../configuration/authentication/#profile-based-configuration) for details.
+:::
 
 ---
 
@@ -159,8 +166,9 @@ F5XC_API_TOKEN=your-token
 LOG_LEVEL=info
 ```
 
-!!! danger "Security"
-    Add `.env` to `.gitignore` to prevent committing credentials.
+:::danger[Security]
+Add `.env` to `.gitignore` to prevent committing credentials.
+:::
 
 ### MCP Configuration
 
@@ -212,8 +220,9 @@ When multiple authentication sources are configured:
 3. **No Authentication** (lowest priority) - Documentation mode
    - Returns API documentation without executing operations
 
-!!! tip "Profile Setup"
-    Use the `f5xc-api-configure-auth` MCP tool through your AI assistant to set up profiles.
+:::tip[Profile Setup]
+Use the `f5xc-api-configure-auth` MCP tool through your AI assistant to set up profiles.
+:::
 
 ---
 
@@ -237,7 +246,7 @@ Check for `authenticated: true` and correct `authMethod`.
 
 ## Next Steps
 
-- [Authentication Guide](authentication.md) - Detailed authentication setup and profile configuration
-- [Security Best Practices](../security.md) - Credential storage and management
-- [MCP Configuration](mcp-json.md) - Full MCP config reference
-- [Troubleshooting](../troubleshooting/faq.md) - Common issues
+- [Authentication Guide](../configuration/authentication/) - Detailed authentication setup and profile configuration
+- [Security Best Practices](../security/) - Credential storage and management
+- [MCP Configuration](../configuration/mcp-json/) - Full MCP config reference
+- [Troubleshooting](../troubleshooting/faq/) - Common issues

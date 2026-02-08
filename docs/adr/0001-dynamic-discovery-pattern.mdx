@@ -1,4 +1,7 @@
-# ADR-0001: Dynamic Discovery Pattern
+---
+title: "ADR-0001: Dynamic Discovery Pattern"
+description: Architecture decision for dynamic tool discovery with meta-tools
+---
 
 **Status**: Accepted
 **Date**: 2025-01
@@ -35,7 +38,7 @@ of token efficiency (95%+ reduction), user experience, and scalability.
 
 * **95%+ Token Reduction**: From ~535K tokens to ~500 tokens upfront
 * **Scalability**: Can scale to 10,000+ tools without context issues
-* **User Experience**: Natural discovery workflow (search → describe → execute)
+* **User Experience**: Natural discovery workflow (search -> describe -> execute)
 * **Performance**: <10ms search times with inverted index
 * **Cost Efficiency**: Dramatically reduced token costs per request
 
@@ -65,7 +68,7 @@ of token efficiency (95%+ reduction), user experience, and scalability.
 
 ### Dynamic Discovery with Meta-Tools
 
-* **Good**: 95%+ token reduction (535K → 500 tokens)
+* **Good**: 95%+ token reduction (535K -> 500 tokens)
 * **Good**: Scales to unlimited tools
 * **Good**: Natural search-based discovery
 * **Good**: Fast search performance (<10ms)
@@ -93,11 +96,11 @@ of token efficiency (95%+ reduction), user experience, and scalability.
 ### Discovery Workflow
 
 ```text
-User Query → search-tools → Results with Scores
-                ↓
-         describe-tool → Full Schema
-                ↓
-         execute-tool → API Call or Documentation
+User Query -> search-tools -> Results with Scores
+                |
+         describe-tool -> Full Schema
+                |
+         execute-tool -> API Call or Documentation
 ```
 
 ### Performance Characteristics
@@ -109,7 +112,7 @@ User Query → search-tools → Results with Scores
 
 ## Links
 
-* Related: [ADR-0002: Token Efficiency Strategy](0002-token-efficiency-strategy.md)
+* Related: [ADR-0002: Token Efficiency Strategy](../adr/0002-token-efficiency-strategy/)
 * Implementation: `src/tools/discovery/`
 * Issue: [#203 Search Index Implementation](https://github.com/robinmordasiewicz/f5xc-api-mcp/issues/203)
 

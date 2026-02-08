@@ -4,8 +4,8 @@
 /**
  * Documentation Generation Script
  *
- * Generates MkDocs documentation from the tool registry with proper front matter
- * and organized category structure for API reference.
+ * Generates Starlight-compatible MDX documentation from the tool registry with proper
+ * front matter and organized category structure for API reference.
  *
  * Usage:
  *   npm run generate-docs
@@ -19,7 +19,6 @@ import {
   rmSync,
   readdirSync,
   readFileSync,
-  copyFileSync,
 } from "fs";
 import { basename, join, dirname } from "path";
 import { fileURLToPath } from "url";
@@ -45,17 +44,12 @@ const CONFIG = {
   /** Directory for generated documentation */
   DOCS_DIR: join(__dirname, "..", "docs", "tools"),
 
-  /** MkDocs configuration file */
-  MKDOCS_FILE: join(__dirname, "..", "mkdocs.yml"),
-
   /** Preserve these manual doc files from deletion */
-  PRESERVE_FILES: ["index.md"],
+  PRESERVE_FILES: ["index.mdx"],
 
   /** Large domain threshold for subdivision */
   LARGE_DOMAIN_THRESHOLD: 50,
 
-  /** Backup suffix for mkdocs.yml */
-  BACKUP_SUFFIX: ".backup",
 };
 
 /**
@@ -67,64 +61,6 @@ const log = {
   error: (message: string): void => console.error(`[ERROR] ${message}`),
   success: (message: string): void => console.log(`[SUCCESS] ${message}`),
 };
-
-/**
- * Parse mkdocs.yml and extract configuration
- */
-function parseMkDocsConfig(filePath: string): {
-  config: Record<string, unknown>;
-  hasNav: boolean;
-} {
-  if (!existsSync(filePath)) {
-    throw new Error(`mkdocs.yml not found at ${filePath}`);
-  }
-
-  const content = readFileSync(filePath, "utf-8");
-  const config = YAML.parse(content);
-  const hasNav = "nav" in config;
-
-  return { config, hasNav };
-}
-
-/**
- * Create backup of mkdocs.yml
- */
-function backupMkDocsConfig(filePath: string): string {
-  const backupPath = `${filePath}${CONFIG.BACKUP_SUFFIX}`;
-  copyFileSync(filePath, backupPath);
-  log.info(`Created backup: ${backupPath}`);
-  return backupPath;
-}
-
-/**
- * Validate mkdocs.yml structure
- */
-function validateMkDocsConfig(filePath: string): boolean {
-  try {
-    const content = readFileSync(filePath, "utf-8");
-    const config = YAML.parse(content);
-
-    // Check required sections
-    const required = ["site_name", "theme", "plugins"];
-    for (const section of required) {
-      if (!(section in config)) {
-        log.error(`Missing required section: ${section}`);
-        return false;
-      }
-    }
-
-    // Validate nav is array if present
-    if ("nav" in config && !Array.isArray(config.nav)) {
-      log.error("nav section must be an array");
-      return false;
-    }
-
-    return true;
-  } catch (error) {
-    log.error(`Validation failed: ${error instanceof Error ? error.message : String(error)}`);
-    return false;
-  }
-}
 
 /**
  * Rich metadata aggregated from tools
@@ -204,11 +140,11 @@ function generateCurlCommand(resource: string, operation: string, domain: string
 function getDangerBadge(level: "low" | "medium" | "high" | null): string {
   switch (level) {
     case "high":
-      return '!!! danger "High Risk Operation"\n    This resource includes operations that may cause significant changes. Review carefully before executing.\n\n';
+      return ':::danger[High Risk Operation]\nThis resource includes operations that may cause significant changes. Review carefully before executing.\n:::\n\n';
     case "medium":
-      return '!!! warning "Medium Risk"\n    Some operations on this resource may modify or delete data.\n\n';
+      return ':::caution[Medium Risk]\nSome operations on this resource may modify or delete data.\n:::\n\n';
     case "low":
-      return '!!! info "Low Risk"\n    Operations on this resource are generally safe.\n\n';
+      return ':::note[Low Risk]\nOperations on this resource are generally safe.\n:::\n\n';
     default:
       return "";
   }
@@ -284,7 +220,7 @@ function formatConfigurationChoices(oneOfGroups: OneOfGroup[]): string {
     }
 
     if (group.recommendedOption) {
-      content += `\n!!! tip "Recommended Option"\n    Use \`${group.recommendedOption}\` for most use cases.\n\n`;
+      content += `\n:::tip[Recommended Option]\nUse \`${group.recommendedOption}\` for most use cases.\n:::\n\n`;
     }
 
     content += "\n";
@@ -324,15 +260,14 @@ function generateMarkdown(resourceDoc: ResourceDoc): string {
   const wrappedDescription = wrapText(rawDescription, 80, "  ");
 
   const frontMatter = {
-    page_title: `f5xc_${resource.replace(/-/g, "_")} - f5xc-api-mcp`,
-    subcategory: categoryPath.domainTitle, // Display-friendly domain title
+    title,
     description: wrappedDescription,
   };
 
   // Generate danger badge and confirmation warning
   const dangerBadge = getDangerBadge(metadata.maxDangerLevel);
   const confirmationWarning = metadata.requiresConfirmation
-    ? '!!! note "Confirmation Required"\n    Some operations on this resource require explicit confirmation before execution.\n\n'
+    ? ':::note[Confirmation Required]\nSome operations on this resource require explicit confirmation before execution.\n:::\n\n'
     : "";
 
   // Tools table
@@ -490,8 +425,6 @@ ${generateCurlCommand(resource, "delete", categoryPath.domain)}
 ${YAML.stringify(frontMatter, { lineWidth: 100 }).trim()}
 ---
 
-# ${title}
-
 ${dangerBadge}${confirmationWarning}${wrappedBodyDescription}
 
 ## Tools
@@ -522,9 +455,9 @@ function cleanGeneratedDocs(): void {
     if (entry.isDirectory()) {
       // Remove entire subdirectory
       rmSync(fullPath, { recursive: true, force: true });
-    } else if (entry.name.endsWith(".md")) {
+    } else if (entry.name.endsWith(".mdx")) {
       // Check if it's a top-level generated file (we'll keep manually created ones at root)
-      // For now, preserve all root-level .md files except those in subdirectories
+      // For now, preserve all root-level .mdx files except those in subdirectories
       // The new structure puts all generated files in subcategory subdirectories
     }
   }
@@ -724,7 +657,7 @@ function generateEnhancedNavigation(resourceDocs: ResourceDoc[]): Array<Record<s
         const resources = tagDocs
           .sort((a, b) => a.title.localeCompare(b.title))
           .map((doc) => ({
-            [doc.title]: `tools/${doc.categoryPath.directoryPath}/${doc.resource}.md`,
+            [doc.title]: `tools/${doc.categoryPath.directoryPath}/${doc.resource}.mdx`,
           }));
 
         tagEntries.push({ [tag]: resources });
@@ -736,7 +669,7 @@ function generateEnhancedNavigation(resourceDocs: ResourceDoc[]): Array<Record<s
       const resources = docs
         .sort((a, b) => a.title.localeCompare(b.title))
         .map((doc) => ({
-          [doc.title]: `tools/${doc.categoryPath.directoryPath}/${doc.resource}.md`,
+          [doc.title]: `tools/${doc.categoryPath.directoryPath}/${doc.resource}.mdx`,
         }));
 
       navigation.push({ [domainTitle]: resources });
@@ -765,7 +698,7 @@ function readPagesFile(dirPath: string): Array<Record<string, unknown>> | null {
     if (parsed && "nav" in parsed && Array.isArray(parsed.nav)) {
       // Prefix each file entry with directory path for mkdocs
       return parsed.nav.map((entry: unknown) => {
-        if (typeof entry === "string" && entry.endsWith(".md")) {
+        if (typeof entry === "string" && (entry.endsWith(".mdx") || entry.endsWith(".md"))) {
           return `${dirName}/${entry}`;
         }
         return entry;
@@ -774,78 +707,6 @@ function readPagesFile(dirPath: string): Array<Record<string, unknown>> | null {
     return null;
   } catch {
     return null;
-  }
-}
-
-/**
- * Update mkdocs.yml with new navigation structure
- * Uses surgical text replacement to preserve Python-specific YAML tags
- * (e.g., !!python/name: for pymdownx.emoji) that YAML.stringify cannot handle
- */
-function updateMkDocsNavigation(
-  configPath: string,
-  navigation: Array<Record<string, unknown>>
-): void {
-  const backupFile = backupMkDocsConfig(configPath);
-
-  try {
-    log.info("Updating mkdocs.yml navigation...");
-
-    // Read as text to preserve Python tags and other special YAML constructs
-    const originalContent = readFileSync(configPath, "utf-8");
-
-    // Build complete nav structure (Getting Started section removed - consolidated into index.md)
-    const completeNav = [
-      { Home: "index.md" },
-      { Tools: [{ Overview: "tools/index.md" }, ...navigation] },
-    ];
-
-    // Generate nav YAML only (not the entire config)
-    const navYaml = YAML.stringify({ nav: completeNav }, {
-      lineWidth: 0,
-      indent: 2,
-      defaultKeyType: "PLAIN",
-      defaultStringType: "PLAIN",
-    });
-
-    // Find the nav: section and replace it (nav is at the end of the file)
-    // This regex matches 'nav:' at the start of a line through to EOF
-    const navPattern = /^nav:[\s\S]*$/m;
-
-    let newContent: string;
-    if (navPattern.test(originalContent)) {
-      // Replace existing nav section with new one
-      newContent = originalContent.replace(navPattern, navYaml.trim());
-    } else {
-      // No existing nav, append at end
-      newContent = originalContent.trimEnd() + "\n" + navYaml;
-    }
-
-    // Write the updated content
-    writeFileSync(configPath, newContent);
-
-    // Validate the result
-    if (!validateMkDocsConfig(configPath)) {
-      throw new Error("Generated invalid YAML structure");
-    }
-
-    log.success("mkdocs.yml navigation updated successfully");
-
-    // Cleanup backup on success
-    rmSync(backupFile);
-  } catch (error) {
-    log.error(
-      `Failed to update mkdocs.yml: ${error instanceof Error ? error.message : String(error)}`
-    );
-
-    // Rollback from backup
-    if (existsSync(backupFile)) {
-      copyFileSync(backupFile, configPath);
-      log.info("Rolled back from backup");
-      rmSync(backupFile);
-    }
-
-    throw error;
   }
 }
 
@@ -886,7 +747,7 @@ async function generateDocs(): Promise<void> {
   for (const [, resourceDoc] of resourceDocs) {
     // Use new categoryPath for directory structure
     const outputDir = join(CONFIG.DOCS_DIR, resourceDoc.categoryPath.directoryPath);
-    const outputFile = join(outputDir, `${resourceDoc.resource}.md`);
+    const outputFile = join(outputDir, `${resourceDoc.resource}.mdx`);
 
     // Create directory
     mkdirSync(outputDir, { recursive: true });
@@ -901,18 +762,9 @@ async function generateDocs(): Promise<void> {
 
   log.info(`Generated ${fileCount} documentation files`);
 
-  // Generate enhanced navigation structure
+  // Generate enhanced navigation structure (for reference/logging)
   const navigation = generateEnhancedNavigation(generatedDocs);
-
-  // Update mkdocs.yml automatically
-  try {
-    updateMkDocsNavigation(CONFIG.MKDOCS_FILE, navigation);
-  } catch (error) {
-    log.error("Failed to update mkdocs.yml - navigation changes not applied");
-    log.info("Navigation structure:");
-    console.log(YAML.stringify({ Tools: [{ Overview: "tools/index.md" }, ...navigation] }));
-    throw error;
-  }
+  log.info(`Generated navigation with ${navigation.length} domain entries`);
 
   // Summary
   console.log("=".repeat(60));
@@ -937,7 +789,6 @@ async function generateDocs(): Promise<void> {
   }
 
   log.success("Documentation generation complete!");
-  log.info("mkdocs.yml has been updated automatically.");
 }
 
 /**

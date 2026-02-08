@@ -1,4 +1,7 @@
-# ADR-0005: Generator Architecture
+---
+title: "ADR-0005: Generator Architecture"
+description: Architecture decision for sophisticated tool generation pipeline
+---
 
 **Status**: Accepted
 **Date**: 2025-01
@@ -92,53 +95,53 @@ validation.
 
 ```text
 Stage 1: OpenAPI Spec Loading
-├─ Load 39 domain OpenAPI specs
-├─ Validate spec format and structure
-└─ Cache parsed specs
+|- Load 39 domain OpenAPI specs
+|- Validate spec format and structure
+\- Cache parsed specs
 
 Stage 2: Schema Resolution
-├─ Resolve $ref references
-├─ Extract nested schemas
-├─ Handle circular references
-└─ Build schema dependency graph
+|- Resolve $ref references
+|- Extract nested schemas
+|- Handle circular references
+\- Build schema dependency graph
 
 Stage 3: Dependency Extraction
-├─ Parse resource references
-├─ Extract oneOf patterns
-├─ Map subscription requirements
-└─ Identify addon services
+|- Parse resource references
+|- Extract oneOf patterns
+|- Map subscription requirements
+\- Identify addon services
 
 Stage 4: Tool Generation
-├─ Generate MCP tool definitions
-├─ Create parameter schemas
-├─ Build request body schemas
-└─ Add metadata and examples
+|- Generate MCP tool definitions
+|- Create parameter schemas
+|- Build request body schemas
+\- Add metadata and examples
 
 Stage 5: Validation & Output
-├─ Validate generated tools
-├─ Check schema completeness
-├─ Write JSON tool definitions
-└─ Generate summary report
+|- Validate generated tools
+|- Check schema completeness
+|- Write JSON tool definitions
+\- Generate summary report
 ```
 
 ### Directory Structure
 
 ```text
 src/generator/
-├── index.ts                    # Main generator orchestration
-├── spec-loader.ts              # OpenAPI spec loading
-├── schema-loader.ts            # $ref resolution and schema handling
-├── dependency-extractor.ts     # Resource dependency extraction
-├── tool-generator.ts           # MCP tool definition generation
-├── transformers/               # Schema transformation utilities
-│   ├── normalize-examples.ts   # Example normalization
-│   └── ...
-└── types.ts                    # Generator type definitions
+|- index.ts                    # Main generator orchestration
+|- spec-loader.ts              # OpenAPI spec loading
+|- schema-loader.ts            # $ref resolution and schema handling
+|- dependency-extractor.ts     # Resource dependency extraction
+|- tool-generator.ts           # MCP tool definition generation
+|- transformers/               # Schema transformation utilities
+|   |- normalize-examples.ts   # Example normalization
+|   \- ...
+\- types.ts                    # Generator type definitions
 
 Generated Output:
 src/tools/generated/
-├── {domain}_{operation}_{resource}.json  # 1,548 tool definitions
-└── ...
+|- {domain}_{operation}_{resource}.json  # 1,548 tool definitions
+\- ...
 ```
 
 ### Key Generator Components
@@ -234,26 +237,26 @@ The generator architecture supports:
 
 **Spec Errors**:
 
-* Invalid OpenAPI format → validation error
-* Missing required fields → generation skipped
-* Circular references → depth limit enforcement
+* Invalid OpenAPI format -> validation error
+* Missing required fields -> generation skipped
+* Circular references -> depth limit enforcement
 
 **Schema Errors**:
 
-* Unresolvable $ref → reference error reported
-* Invalid schema structure → transformation failed
-* Complex nesting → max depth protection
+* Unresolvable $ref -> reference error reported
+* Invalid schema structure -> transformation failed
+* Complex nesting -> max depth protection
 
 **Generation Errors**:
 
-* Tool validation failure → tool excluded from output
-* Missing metadata → default values applied
-* Example errors → examples omitted
+* Tool validation failure -> tool excluded from output
+* Missing metadata -> default values applied
+* Example errors -> examples omitted
 
 ## Links
 
-* Related: [ADR-0001: Dynamic Discovery Pattern](0001-dynamic-discovery-pattern.md)
-* Related: [ADR-0002: Token Efficiency Strategy](0002-token-efficiency-strategy.md)
+* Related: [ADR-0001: Dynamic Discovery Pattern](../adr/0001-dynamic-discovery-pattern/)
+* Related: [ADR-0002: Token Efficiency Strategy](../adr/0002-token-efficiency-strategy/)
 * Implementation: `src/generator/`, `scripts/generate-tools.ts`
 * Tests: `tests/unit/generator/`, `tests/integration/generator/`
 * Issues:
