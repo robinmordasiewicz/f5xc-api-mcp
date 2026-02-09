@@ -1,5 +1,5 @@
 ---
-title: "{record Name}"
+title: record Name
 description: DELETE
 ---
 
@@ -73,32 +73,32 @@ This resource includes mutually exclusive configuration options:
 
 ## Example Usage
 
-Ask Claude to help you work with {record Name} resources:
+Ask Claude to help you work with record Name resources:
 
-### List {record Name}s
+### List record Names
 
-> "List all {record-name}s in the 'production' namespace"
+> "List all record-names in the 'production' namespace"
 
 ## CURL Examples
 
 ```bash
 # List resources
-curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/{record_name}s" \
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/record_names" \
   -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
   -H "Content-Type: application/json"
 
 # Get specific resource
-curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/{record_name}s/<name>" \
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/record_names/<name>" \
   -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
   -H "Content-Type: application/json"
 
 # Create resource
-curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/{record_name}s" \
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/record_names" \
   -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
   -H "Content-Type: application/json" \
-  -d @{record_name}.json
+  -d @record_name.json
 
 # Delete resource
-curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/{record_name}s/<name>" \
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/record_names/<name>" \
   -H "Authorization: APIToken ${F5XC_API_TOKEN}"
 ```

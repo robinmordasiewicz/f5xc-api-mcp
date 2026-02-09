@@ -98,6 +98,17 @@ interface ResourceDoc {
 }
 
 /**
+ * Escape JSX-incompatible characters in text that appears outside code blocks.
+ * MDX interprets bare { } as JSX expressions and < as JSX tags.
+ */
+function escapeJsx(text: string): string {
+  return text
+    .replace(/\{/g, "\\{")
+    .replace(/\}/g, "\\}")
+    .replace(/<([a-zA-Z])/g, "\\<$1");
+}
+
+/**
  * Generate CURL command examples for API operations
  */
 function generateCurlCommand(resource: string, operation: string, domain: string): string {
@@ -169,7 +180,7 @@ function formatSideEffects(sideEffects: AggregatedMetadata["sideEffects"]): stri
   if (sideEffects.creates.length > 0) {
     content += "**Creates:**\n\n";
     for (const item of sideEffects.creates) {
-      content += `- ${item}\n`;
+      content += `- ${escapeJsx(item)}\n`;
     }
     content += "\n";
   }
@@ -177,7 +188,7 @@ function formatSideEffects(sideEffects: AggregatedMetadata["sideEffects"]): stri
   if (sideEffects.modifies.length > 0) {
     content += "**Modifies:**\n\n";
     for (const item of sideEffects.modifies) {
-      content += `- ${item}\n`;
+      content += `- ${escapeJsx(item)}\n`;
     }
     content += "\n";
   }
@@ -185,7 +196,7 @@ function formatSideEffects(sideEffects: AggregatedMetadata["sideEffects"]): stri
   if (sideEffects.deletes.length > 0) {
     content += "**Deletes:**\n\n";
     for (const item of sideEffects.deletes) {
-      content += `- ${item}\n`;
+      content += `- ${escapeJsx(item)}\n`;
     }
     content += "\n";
   }
@@ -233,7 +244,11 @@ function formatConfigurationChoices(oneOfGroups: OneOfGroup[]): string {
  * Generate markdown content for a resource
  */
 function generateMarkdown(resourceDoc: ResourceDoc): string {
-  const { resource, categoryPath, title, tools, summary, description, metadata } = resourceDoc;
+  const { resource: rawResource, categoryPath, title: rawTitle, tools, summary, description, metadata } = resourceDoc;
+
+  // Sanitize resource and title: strip curly braces that MDX interprets as JSX expressions
+  const resource = rawResource.replace(/[{}]/g, "");
+  const title = rawTitle.replace(/[{}]/g, "");
 
   // Generate front matter - wrap long descriptions to avoid line length issues
   const rawDescription = summary || `Manage ${title} resources in F5 Distributed Cloud.`;
@@ -279,7 +294,7 @@ function generateMarkdown(resourceDoc: ResourceDoc): string {
       const bOrder = opOrder[b.operation as keyof typeof opOrder] ?? 99;
       return aOrder - bOrder;
     })
-    .map((tool) => `| \`${tool.toolName}\` | ${tool.summary} |`)
+    .map((tool) => `| \`${tool.toolName}\` | ${escapeJsx(tool.summary)} |`)
     .join("\n");
 
   // Collect unique parameters from all tools
@@ -312,12 +327,12 @@ function generateMarkdown(resourceDoc: ResourceDoc): string {
         "| Parameter | Description | Example |\n|-----------|-------------|--------|\n";
       for (const [name, desc] of pathParams) {
         // Clean up description - take first sentence only, escape pipes
-        const cleanDesc = escapeTableCell(
+        const cleanDesc = escapeJsx(escapeTableCell(
           desc
             .split("\n")[0]
             .replace(/x-example:.*$/i, "")
             .trim() || `The ${name} identifier`
-        );
+        ));
         // Get example from aggregated metadata
         const example = escapeTableCell(metadata.parameterExamples[name] || "-");
         parametersSection += `| \`${name}\` | ${cleanDesc} | \`${example}\` |\n`;
@@ -330,12 +345,12 @@ function generateMarkdown(resourceDoc: ResourceDoc): string {
       parametersSection +=
         "| Parameter | Description | Example |\n|-----------|-------------|--------|\n";
       for (const [name, desc] of queryParams) {
-        const cleanDesc = escapeTableCell(
+        const cleanDesc = escapeJsx(escapeTableCell(
           desc
             .split("\n")[0]
             .replace(/x-example:.*$/i, "")
             .trim() || `The ${name} parameter`
-        );
+        ));
         // Get example from aggregated metadata
         const example = escapeTableCell(metadata.parameterExamples[name] || "-");
         parametersSection += `| \`${name}\` | ${cleanDesc} | \`${example}\` |\n`;
@@ -409,9 +424,9 @@ ${generateCurlCommand(resource, "delete", categoryPath.domain)}
     return sanitized;
   };
 
-  const bodyDescription = sanitizeDescription(
+  const bodyDescription = escapeJsx(sanitizeDescription(
     description || summary || `Manage ${title} resources in F5 Distributed Cloud.`
-  );
+  ));
   const wrappedBodyDescription = wrapText(bodyDescription, 100);
 
   // Generate side effects from enriched specs
@@ -657,7 +672,7 @@ function generateEnhancedNavigation(resourceDocs: ResourceDoc[]): Array<Record<s
         const resources = tagDocs
           .sort((a, b) => a.title.localeCompare(b.title))
           .map((doc) => ({
-            [doc.title]: `tools/${doc.categoryPath.directoryPath}/${doc.resource}.mdx`,
+            [doc.title]: `tools/${doc.categoryPath.directoryPath}/${doc.resource.replace(/[{}]/g, "")}.mdx`,
           }));
 
         tagEntries.push({ [tag]: resources });
@@ -669,7 +684,7 @@ function generateEnhancedNavigation(resourceDocs: ResourceDoc[]): Array<Record<s
       const resources = docs
         .sort((a, b) => a.title.localeCompare(b.title))
         .map((doc) => ({
-          [doc.title]: `tools/${doc.categoryPath.directoryPath}/${doc.resource}.mdx`,
+          [doc.title]: `tools/${doc.categoryPath.directoryPath}/${doc.resource.replace(/[{}]/g, "")}.mdx`,
         }));
 
       navigation.push({ [domainTitle]: resources });
@@ -747,7 +762,9 @@ async function generateDocs(): Promise<void> {
   for (const [, resourceDoc] of resourceDocs) {
     // Use new categoryPath for directory structure
     const outputDir = join(CONFIG.DOCS_DIR, resourceDoc.categoryPath.directoryPath);
-    const outputFile = join(outputDir, `${resourceDoc.resource}.mdx`);
+    // Sanitize filename: strip curly braces that break MDX/Astro builds
+    const safeResource = resourceDoc.resource.replace(/[{}]/g, "");
+    const outputFile = join(outputDir, `${safeResource}.mdx`);
 
     // Create directory
     mkdirSync(outputDir, { recursive: true });

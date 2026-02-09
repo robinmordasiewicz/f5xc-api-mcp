@@ -1,5 +1,5 @@
 ---
-title: "{object Type}"
+title: object Type
 description: DELETE Stored Object(s)
 ---
 
@@ -28,7 +28,7 @@ version is created when the content is updated.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `force_delete` | Optional query parameter. If provided will DELETE all the versions of the specified object. | `-` |
-| `version` | Version of the stored_object in "v{n}-{YY}-{MM}-{DD}" formatted string, where n is version number and YY/MM/DD is year, month and date. | `-` |
+| `version` | Version of the stored_object in "v\{n\}-\{YY\}-\{MM\}-\{DD\}" formatted string, where n is version number and YY/MM/DD is year, month and date. | `-` |
 
 
 ## Configuration Choices
@@ -54,28 +54,28 @@ This resource includes mutually exclusive configuration options:
 
 ## Example Usage
 
-Ask Claude to help you work with {object Type} resources:
+Ask Claude to help you work with object Type resources:
 
 ## CURL Examples
 
 ```bash
 # List resources
-curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/{object_type}s" \
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/object_types" \
   -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
   -H "Content-Type: application/json"
 
 # Get specific resource
-curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/{object_type}s/<name>" \
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/object_types/<name>" \
   -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
   -H "Content-Type: application/json"
 
 # Create resource
-curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/{object_type}s" \
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/object_types" \
   -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
   -H "Content-Type: application/json" \
-  -d @{object_type}.json
+  -d @object_type.json
 
 # Delete resource
-curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/{object_type}s/<name>" \
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/object_types/<name>" \
   -H "Authorization: APIToken ${F5XC_API_TOKEN}"
 ```

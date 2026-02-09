@@ -1,5 +1,5 @@
 ---
-title: "{name}"
+title: name
 description: DELETE Stored Object(s)
 ---
 
@@ -33,32 +33,32 @@ GetMobileAppShield is an API to download particular version of mobile app shield
 
 ## Example Usage
 
-Ask Claude to help you work with {name} resources:
+Ask Claude to help you work with name resources:
 
-### Get {name} Details
+### Get name Details
 
-> "Get details of the {name} named 'example' in namespace 'production'"
+> "Get details of the name named 'example' in namespace 'production'"
 
 ## CURL Examples
 
 ```bash
 # List resources
-curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/{name}s" \
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/names" \
   -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
   -H "Content-Type: application/json"
 
 # Get specific resource
-curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/{name}s/<name>" \
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/names/<name>" \
   -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
   -H "Content-Type: application/json"
 
 # Create resource
-curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/{name}s" \
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/names" \
   -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
   -H "Content-Type: application/json" \
-  -d @{name}.json
+  -d @name.json
 
 # Delete resource
-curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/{name}s/<name>" \
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/names/<name>" \
   -H "Authorization: APIToken ${F5XC_API_TOKEN}"
 ```
