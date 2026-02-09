@@ -105,7 +105,7 @@ function escapeJsx(text: string): string {
   return text
     .replace(/\{/g, "\\{")
     .replace(/\}/g, "\\}")
-    .replace(/<([a-zA-Z])/g, "\\<$1");
+    .replace(/</g, "&lt;");
 }
 
 /**
