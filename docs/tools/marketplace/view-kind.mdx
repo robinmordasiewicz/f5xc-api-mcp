@@ -1,5 +1,5 @@
 ---
-title: "{view Kind}"
+title: view Kind
 description: GET Terraform Parameters for view.
 ---
 
@@ -24,32 +24,32 @@ Returned from list of terraform parameter objects for a given view.
 
 ## Example Usage
 
-Ask Claude to help you work with {view Kind} resources:
+Ask Claude to help you work with view Kind resources:
 
-### List {view Kind}s
+### List view Kinds
 
-> "List all {view-kind}s in the 'production' namespace"
+> "List all view-kinds in the 'production' namespace"
 
 ## CURL Examples
 
 ```bash
 # List resources
-curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/{view_kind}s" \
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/view_kinds" \
   -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
   -H "Content-Type: application/json"
 
 # Get specific resource
-curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/{view_kind}s/<name>" \
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/view_kinds/<name>" \
   -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
   -H "Content-Type: application/json"
 
 # Create resource
-curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/{view_kind}s" \
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/view_kinds" \
   -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
   -H "Content-Type: application/json" \
-  -d @{view_kind}.json
+  -d @view_kind.json
 
 # Delete resource
-curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/{view_kind}s/<name>" \
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/view_kinds/<name>" \
   -H "Authorization: APIToken ${F5XC_API_TOKEN}"
 ```
