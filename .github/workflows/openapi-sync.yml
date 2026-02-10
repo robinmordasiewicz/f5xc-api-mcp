@@ -51,12 +51,12 @@ jobs:
             gh pr close "$PR" --comment "Superseded by newer OpenAPI sync" || true
           done
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.REPO_ADMIN_TOKEN }}
 
       - name: Download OpenAPI specs from enriched source
         run: npm run sync-specs
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.REPO_ADMIN_TOKEN }}
 
       - name: Get version info
         id: version
@@ -128,7 +128,7 @@ jobs:
         if: steps.changes.outputs.changed == 'true' || github.event.inputs.force_regenerate == 'true'
         uses: peter-evans/create-pull-request@v7
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.REPO_ADMIN_TOKEN }}
           commit-message: "feat(specs): update to v${{ steps.version.outputs.version }}"
           title: "feat(specs): Update OpenAPI specs to v${{ steps.version.outputs.version }}"
           body: |
@@ -169,7 +169,7 @@ jobs:
         run: |
           gh pr merge ${{ steps.create-pr.outputs.pull-request-number }} --auto --squash
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.REPO_ADMIN_TOKEN }}
 
       - name: Summary
         run: |
