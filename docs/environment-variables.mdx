@@ -3,23 +3,26 @@ title: Environment Variables
 description: Complete reference for F5XC API MCP Server environment variables
 ---
 
-:::tip[Quick Setup]
-For step-by-step authentication setup, see the [Authentication Guide](../configuration/authentication/).
-:::
-
 ## Variable Reference
 
-| Variable | Required | Description |
-|----------|----------|-------------|
-| `F5XC_API_URL` | For auth | Tenant URL (auto-normalized) |
-| `F5XC_API_TOKEN` | Token auth | API token from XC Console |
-| `F5XC_P12_BUNDLE` | Cert auth | Absolute path to P12 certificate bundle |
-| `F5XC_P12_PASSWORD` | Cert auth | Password for P12 certificate |
-| `F5XC_CERT` | Cert auth | Absolute path to PEM certificate file |
-| `F5XC_KEY` | Cert auth | Absolute path to PEM private key file |
-| `F5XC_PROFILE` | No | Profile name from `~/.config/f5xc/profiles/` |
-| `LOG_LEVEL` | No | Logging level: debug, info, warn, error |
-| `NODE_ENV` | No | Node environment: development, production |
+| Variable                      | Required   | Default        | Description                                  |
+| ----------------------------- | ---------- | -------------- | -------------------------------------------- |
+| `F5XC_API_URL`                | For auth   | -              | Tenant URL (auto-normalized)                 |
+| `F5XC_API_TOKEN`              | Token auth | -              | API token from XC Console                    |
+| `F5XC_P12_BUNDLE`             | Cert auth  | -              | Absolute path to P12 certificate bundle      |
+| `F5XC_P12_PASSWORD`           | Cert auth  | -              | Password for P12 certificate                 |
+| `F5XC_CERT`                   | Cert auth  | -              | Absolute path to PEM certificate file        |
+| `F5XC_KEY`                    | Cert auth  | -              | Absolute path to PEM private key file        |
+| `F5XC_PROFILE`                | No         | Active profile | Profile name from `~/.config/f5xc/profiles/` |
+| `F5XC_TLS_INSECURE`           | No         | `false`        | Disable SSL verification (staging only)      |
+| `F5XC_CA_BUNDLE`              | No         | -              | Path to custom CA certificate bundle         |
+| `F5XC_QUOTA_CHECK_ENABLED`    | No         | `true`         | Enable/disable quota validation              |
+| `F5XC_QUOTA_CACHE_TTL`        | No         | `300`          | Quota cache TTL in seconds                   |
+| `F5XC_QUOTA_GREEN_THRESHOLD`  | No         | `79`           | Green zone upper bound (%)                   |
+| `F5XC_QUOTA_YELLOW_THRESHOLD` | No         | `99`           | Yellow zone upper bound (%)                  |
+| `F5XC_QUOTA_RED_THRESHOLD`    | No         | `100`          | Red zone threshold (%)                       |
+| `LOG_LEVEL`                   | No         | `info`         | Logging level: debug, info, warn, error      |
+| `NODE_ENV`                    | No         | `production`   | Node environment: development, production    |
 
 ---
 
@@ -27,15 +30,13 @@ For step-by-step authentication setup, see the [Authentication Guide](../configu
 
 ### F5XC_API_URL
 
-The F5 Distributed Cloud tenant URL. Multiple formats accepted (auto-normalized).
+The F5 Distributed Cloud tenant URL. Multiple formats accepted and auto-normalized.
 
 ```bash
 export F5XC_API_URL="https://your-tenant.console.ves.volterra.io"
 ```
 
-:::note[URL Normalization]
-See [Authentication Guide](../configuration/authentication/#url-normalization) for accepted URL formats.
-:::
+See [URL Normalization](authentication/#url-normalization) for accepted formats.
 
 ### F5XC_API_TOKEN
 
@@ -61,6 +62,14 @@ export F5XC_P12_BUNDLE="/path/to/certificate.p12"
 Must be an absolute path, not relative.
 :::
 
+### F5XC_P12_PASSWORD
+
+Password for the P12 certificate.
+
+```bash
+export F5XC_P12_PASSWORD="certificate-password"
+```
+
 ### F5XC_CERT
 
 Absolute path to PEM-formatted certificate file. Use with `F5XC_KEY` for PEM-based certificate authentication.
@@ -81,14 +90,6 @@ Absolute path to PEM-formatted private key file. Required when using `F5XC_CERT`
 export F5XC_KEY="/path/to/private-key.pem"
 ```
 
-### F5XC_P12_PASSWORD
-
-Password for the P12 certificate.
-
-```bash
-export F5XC_P12_PASSWORD="certificate-password"
-```
-
 ### F5XC_PROFILE
 
 Select a profile from `~/.config/f5xc/profiles/` for multi-tenant credential management.
@@ -97,11 +98,79 @@ Select a profile from `~/.config/f5xc/profiles/` for multi-tenant credential man
 export F5XC_PROFILE="staging"
 ```
 
-:::note[Profile-Based Configuration]
-Profiles are optional. Use the `f5xc-api-configure-auth` MCP tool to set up profiles.
+See [Profile-Based Configuration](authentication/#profile-based-configuration) for setup details.
 
-See [Authentication Guide](../configuration/authentication/#profile-based-configuration) for details.
+---
+
+## SSL/TLS Variables
+
+### F5XC_TLS_INSECURE
+
+Disable SSL certificate verification. **Use only in development/staging environments.**
+
+```bash
+export F5XC_TLS_INSECURE="true"
+```
+
+:::danger[Never use in production]
+This disables all certificate validation.
 :::
+
+### F5XC_CA_BUNDLE
+
+Path to a custom CA certificate bundle for SSL/TLS verification.
+
+```bash
+export F5XC_CA_BUNDLE="/path/to/ca-bundle.crt"
+```
+
+See [SSL/TLS Configuration](advanced/#ssltls-configuration) for staging environment guidance.
+
+---
+
+## Quota Variables
+
+### F5XC_QUOTA_CHECK_ENABLED
+
+Enable or disable pre-flight quota validation before resource creation.
+
+```bash
+export F5XC_QUOTA_CHECK_ENABLED="true"
+```
+
+### F5XC_QUOTA_CACHE_TTL
+
+Cache TTL in seconds for quota data. Default is 300 (5 minutes).
+
+```bash
+export F5XC_QUOTA_CACHE_TTL="300"
+```
+
+### F5XC_QUOTA_GREEN_THRESHOLD
+
+Percentage upper bound for the green zone (no warnings). Default is 79.
+
+```bash
+export F5XC_QUOTA_GREEN_THRESHOLD="79"
+```
+
+### F5XC_QUOTA_YELLOW_THRESHOLD
+
+Percentage upper bound for the yellow zone (warning). Default is 99.
+
+```bash
+export F5XC_QUOTA_YELLOW_THRESHOLD="99"
+```
+
+### F5XC_QUOTA_RED_THRESHOLD
+
+Percentage threshold for the red zone (creation blocked). Default is 100.
+
+```bash
+export F5XC_QUOTA_RED_THRESHOLD="100"
+```
+
+See [Quota Awareness](advanced/#quota-awareness) for threshold behavior details.
 
 ---
 
@@ -115,12 +184,12 @@ Controls logging verbosity. Logs go to stderr to avoid interfering with MCP prot
 export LOG_LEVEL="info"
 ```
 
-| Level | Description |
-|-------|-------------|
-| `debug` | Verbose debugging information |
-| `info` | General operational information (default) |
-| `warn` | Warning messages |
-| `error` | Error messages only |
+| Level   | Description                               |
+| ------- | ----------------------------------------- |
+| `debug` | Verbose debugging information             |
+| `info`  | General operational information (default) |
+| `warn`  | Warning messages                          |
+| `error` | Error messages only                       |
 
 ### NODE_ENV
 
@@ -130,10 +199,10 @@ Node.js environment setting.
 export NODE_ENV="production"
 ```
 
-| Value | Behavior |
-|-------|----------|
-| `development` | Additional debug output |
-| `production` | Optimized for production (default) |
+| Value         | Behavior                           |
+| ------------- | ---------------------------------- |
+| `development` | Additional debug output            |
+| `production`  | Optimized for production (default) |
 
 ---
 
@@ -144,7 +213,7 @@ export NODE_ENV="production"
 ```bash
 export F5XC_API_URL="https://tenant.console.ves.volterra.io"
 export F5XC_API_TOKEN="your-token"
-npx f5xc-api-mcp
+npx @robinmordasiewicz/f5xc-api-mcp
 ```
 
 ### Shell Profile (Persistent)
@@ -170,25 +239,6 @@ LOG_LEVEL=info
 Add `.env` to `.gitignore` to prevent committing credentials.
 :::
 
-### MCP Configuration
-
-Set in `env` block:
-
-```json
-{
-  "mcpServers": {
-    "f5xc-api": {
-      "command": "npx",
-      "args": ["f5xc-api-mcp"],
-      "env": {
-        "F5XC_API_URL": "https://tenant.console.ves.volterra.io",
-        "F5XC_API_TOKEN": "your-token"
-      }
-    }
-  }
-}
-```
-
 ### Docker
 
 Pass with `-e` flags:
@@ -206,23 +256,14 @@ Or with env file:
 docker run -it --env-file .env ghcr.io/robinmordasiewicz/f5xc-api-mcp
 ```
 
+For MCP JSON `env` blocks, see [IDE Setup](ide-setup/).
+
 ---
 
-## Authentication Priority
+## Credential Priority
 
-When multiple authentication sources are configured:
-
-1. **Environment Variables** (highest priority) - `F5XC_API_URL`, `F5XC_API_TOKEN`, etc.
-   - Environment variables override all other sources
-2. **Profile-Based Configuration** - `F5XC_PROFILE` selection from `~/.config/f5xc/profiles/`
-   - Selected by `F5XC_PROFILE` env var or active profile
-   - Supports multiple credentials for different tenants
-3. **No Authentication** (lowest priority) - Documentation mode
-   - Returns API documentation without executing operations
-
-:::tip[Profile Setup]
-Use the `f5xc-api-configure-auth` MCP tool through your AI assistant to set up profiles.
-:::
+Environment variables > active profile > documentation mode.
+See [Authentication](authentication/#credential-priority) for details.
 
 ---
 
@@ -246,7 +287,7 @@ Check for `authenticated: true` and correct `authMethod`.
 
 ## Next Steps
 
-- [Authentication Guide](../configuration/authentication/) - Detailed authentication setup and profile configuration
-- [Security Best Practices](../security/) - Credential storage and management
-- [MCP Configuration](../configuration/mcp-json/) - Full MCP config reference
-- [Troubleshooting](../troubleshooting/faq/) - Common issues
+- [Authentication](authentication/) - Auth setup and profile configuration
+- [IDE Setup](ide-setup/) - MCP JSON configuration for all editors
+- [Advanced Features](advanced/) - Quota awareness, SSL/TLS, server defaults
+- [Troubleshooting](troubleshooting/) - Common issues and solutions

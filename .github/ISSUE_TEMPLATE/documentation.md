@@ -1,4 +1,6 @@
+<!-- markdownlint-disable MD041 MD003 -->
 ---
+
 name: Documentation
 description: Suggest a documentation improvement or report missing docs
 labels: ["documentation"]

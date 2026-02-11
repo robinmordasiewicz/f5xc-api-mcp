@@ -1,4 +1,6 @@
+<!-- markdownlint-disable MD041 MD003 -->
 ---
+
 name: Bug Report
 description: Report a bug or unexpected behavior
 labels: ["bug"]

@@ -1,0 +1,114 @@
+---
+title: Troubleshooting
+description: Common issues and solutions for the F5XC API MCP Server
+---
+
+## Node.js Issues
+
+```bash
+node --version  # Must be 24+
+```
+
+If outdated:
+
+```bash
+# macOS
+brew install node@24
+
+# Linux
+nvm install 24 && nvm use 24
+```
+
+## npx Cache Issues
+
+```bash
+npx clear-npx-cache
+npx -y @robinmordasiewicz/f5xc-api-mcp
+```
+
+## Configuration Issues
+
+1. **Validate JSON syntax** - use a JSON validator; common issues include
+   trailing commas, missing quotes, and unescaped characters
+2. **Check file path** - ensure the config file location matches your OS (see [IDE Setup](ide-setup/))
+3. **Restart application** - completely quit and restart (not just close the window)
+
+## Authentication Errors
+
+### Invalid API Token
+
+1. Check token hasn't expired
+2. Verify token was copied completely (no truncation)
+3. Ensure no extra whitespace
+
+### Certificate Error
+
+1. Verify P12 file path is absolute
+2. Check password is correct
+3. Ensure certificate hasn't expired
+
+### Connection Refused
+
+1. Check URL format (see [URL Normalization](authentication/#url-normalization))
+2. Verify network connectivity to F5XC
+3. Check firewall rules
+
+### Unauthorized
+
+1. Verify credentials have required permissions
+2. Check namespace access rights
+3. Ensure tenant URL matches credential's tenant
+
+### Manual Credential Test
+
+```bash
+curl -H "Authorization: APIToken $F5XC_API_TOKEN" \
+  https://your-tenant.console.ves.volterra.io/api/web/namespaces
+```
+
+## SSL/TLS Errors
+
+For staging environments and custom CAs, see the [SSL/TLS Configuration](advanced/#ssltls-configuration) guide.
+
+Quick reference:
+
+| Error                                               | Solution                                                    |
+| --------------------------------------------------- | ----------------------------------------------------------- |
+| `Hostname/IP does not match certificate's altnames` | Set `F5XC_TLS_INSECURE=true` (dev only) or `F5XC_CA_BUNDLE` |
+| `self signed certificate`                           | Set `F5XC_CA_BUNDLE=/path/to/ca-bundle.crt`                 |
+| `certificate has expired`                           | Contact F5 XC admin                                         |
+| `unable to verify the first certificate`            | Add intermediates to CA bundle                              |
+
+## Common Error Codes
+
+| Error              | Cause                    | Solution                    |
+| ------------------ | ------------------------ | --------------------------- |
+| `ECONNREFUSED`     | Network issue            | Check URL and connectivity  |
+| `401 Unauthorized` | Invalid credentials      | Refresh token or check cert |
+| `403 Forbidden`    | Insufficient permissions | Check RBAC settings         |
+
+## Server Not Starting
+
+1. Test command manually: `npx @robinmordasiewicz/f5xc-api-mcp`
+2. Check Node.js version: `node --version` (must be 24+)
+3. Verify npx is available: `which npx`
+
+## Environment Variables Not Set
+
+1. Check for typos in variable names
+2. Ensure values don't contain unescaped characters
+3. Try hardcoding values temporarily to test
+4. Verify with: `env | grep F5XC`
+
+## MCP Protocol Test
+
+Verify the server responds to MCP protocol:
+
+```bash
+echo '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"capabilities":{}}}' | npx @robinmordasiewicz/f5xc-api-mcp
+```
+
+## Getting Help
+
+- [GitHub Issues](https://github.com/robinmordasiewicz/f5xc-api-mcp/issues) - Report bugs
+- [GitHub Discussions](https://github.com/robinmordasiewicz/f5xc-api-mcp/discussions) - Ask questions
