@@ -1,0 +1,55 @@
+---
+title: API Definitions Without Shared
+description: List Available API Definitions.
+---
+
+List API definitions suitable for API Inventory management
+GET all API Definitions for specific
+namespace exclude shared namespace.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-api-api-definitions-without-shared-list` | List Available API Definitions. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with API Definitions Without Shared resources:
+
+### List API Definitions Without Shareds
+
+> "List all api-definitions-without-shareds in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/api_definitions_without_shareds" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/api_definitions_without_shareds/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/api_definitions_without_shareds" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @api_definitions_without_shared.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/api_definitions_without_shareds/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

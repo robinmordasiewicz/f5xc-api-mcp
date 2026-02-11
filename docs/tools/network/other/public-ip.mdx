@@ -1,0 +1,74 @@
+---
+title: Public IP
+description: GET Public IP.
+---
+
+Replacing an public_ip object will update the object by replacing the existing spec with the
+provided one.
+For read-then-write operations a resourceVersion mismatch will occur if the object was
+modified between the read and write.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-network-public-ip-get` | GET Public IP. |
+| `f5xc-api-network-public-ip-list` | List Public IP. |
+| `f5xc-api-network-public-ip-update` | Replace Public IP. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+| `metadata.namespace` | Namespace | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Public IP resources:
+
+### List Public IPs
+
+> "List all public-ips in the 'production' namespace"
+
+### Get Public IP Details
+
+> "Get details of the public-ip named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/public_ips" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/public_ips/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/public_ips" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @public_ip.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/public_ips/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

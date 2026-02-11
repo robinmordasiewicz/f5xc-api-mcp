@@ -1,0 +1,824 @@
+---
+title: Cdn Loadbalancer
+description: Create CDN Loadbalancer.
+---
+
+List the set of cdn_loadbalancer in a namespace.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-cdn-cdn-loadbalancer-create` | Create CDN Loadbalancer. |
+| `f5xc-api-cdn-cdn-loadbalancer-get` | GET CDN Loadbalancer. |
+| `f5xc-api-cdn-cdn-loadbalancer-list` | List CDN Loadbalancer. |
+| `f5xc-api-cdn-cdn-loadbalancer-update` | Replace CDN Loadbalancer. |
+| `f5xc-api-cdn-cdn-loadbalancer-delete` | DELETE CDN Loadbalancer. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### api_definition_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.api_specification` | - |  |
+| `spec.disable_api_definition` | - |  |
+
+### api_discovery_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.disable_api_discovery` | - |  |
+| `spec.enable_api_discovery` | - |  |
+
+### bot_defense_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.bot_defense` | - |  |
+
+### challenge_type
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.captcha_challenge` | - |  |
+| `spec.enable_challenge` | - |  |
+| `spec.js_challenge` | - |  |
+| `spec.no_challenge` | - |  |
+| `spec.policy_based_challenge` | - |  |
+
+### client_side_defense_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.client_side_defense` | - |  |
+| `spec.disable_client_side_defense` | - |  |
+
+### ip_reputation_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.disable_ip_reputation` | - |  |
+| `spec.enable_ip_reputation` | - |  |
+
+### l7_ddos_auto_mitigation_action
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.l7_ddos_action_block` | - |  |
+| `spec.l7_ddos_action_default` | - |  |
+| `spec.l7_ddos_action_js_challenge` | - |  |
+
+### loadbalancer_type
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.http` | - |  |
+| `spec.https` | - |  |
+| `spec.https_auto_cert` | - |  |
+
+### malicious_user_detection_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.disable_malicious_user_detection` | - |  |
+| `spec.enable_malicious_user_detection` | - |  |
+
+### rate_limit_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.api_rate_limit` | - |  |
+| `spec.disable_rate_limit` | - |  |
+| `spec.rate_limit` | - |  |
+
+### sensitive_data_policy_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.default_sensitive_data_policy` | - |  |
+| `spec.sensitive_data_policy` | - |  |
+
+### service_policy_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.active_service_policies` | - |  |
+| `spec.no_service_policies` | - |  |
+| `spec.service_policies_from_namespace` | - |  |
+
+### slow_ddos_mitigation_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.slow_ddos_mitigation` | - |  |
+| `spec.system_default_timeouts` | - |  |
+
+### threat_mesh_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.disable_threat_mesh` | - |  |
+| `spec.enable_threat_mesh` | - |  |
+
+### user_id_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.user_id_client_ip` | - |  |
+| `spec.user_identification` | - |  |
+
+### waf_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.app_firewall` | - |  |
+| `spec.disable_waf` | - |  |
+
+### ip_allowed_list_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.api_rate_limit.bypass_rate_limiting_rules` | - |  |
+| `spec.api_rate_limit.custom_ip_allowed_list` | - |  |
+| `spec.api_rate_limit.ip_allowed_list` | - |  |
+| `spec.api_rate_limit.no_ip_allowed_list` | - |  |
+
+### domain_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.api_rate_limit.api_endpoint_rules[].any_domain` | - |  |
+| `spec.api_rate_limit.api_endpoint_rules[].specific_domain` | - |  |
+
+### rate_limiter_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.api_rate_limit.api_endpoint_rules[].inline_rate_limiter` | - |  |
+| `spec.api_rate_limit.api_endpoint_rules[].ref_rate_limiter` | - |  |
+
+### client_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.api_rate_limit.api_endpoint_rules[].client_matcher.any_client` | - |  |
+| `spec.api_rate_limit.api_endpoint_rules[].client_matcher.client_selector` | - |  |
+| `spec.api_rate_limit.api_endpoint_rules[].client_matcher.ip_threat_category_list` | - |  |
+
+### ip_asn_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.api_rate_limit.api_endpoint_rules[].client_matcher.any_ip` | - |  |
+| `spec.api_rate_limit.api_endpoint_rules[].client_matcher.asn_list` | - |  |
+| `spec.api_rate_limit.api_endpoint_rules[].client_matcher.asn_matcher` | - |  |
+| `spec.api_rate_limit.api_endpoint_rules[].client_matcher.ip_matcher` | - |  |
+| `spec.api_rate_limit.api_endpoint_rules[].client_matcher.ip_prefix_list` | - |  |
+
+### count_by_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.api_rate_limit.api_endpoint_rules[].inline_rate_limiter.ref_user_id` | - |  |
+| `spec.api_rate_limit.api_endpoint_rules[].inline_rate_limiter.use_http_lb_user_id` | - |  |
+
+### match
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.api_rate_limit.api_endpoint_rules[].request_matcher.cookie_matchers[].check_not_present` | - |  |
+| `spec.api_rate_limit.api_endpoint_rules[].request_matcher.cookie_matchers[].check_present` | - |  |
+| `spec.api_rate_limit.api_endpoint_rules[].request_matcher.cookie_matchers[].item` | - |  |
+
+### destination_type
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].any_url` | - |  |
+| `spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].api_endpoint` | - |  |
+| `spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].api_groups` | - |  |
+| `spec.api_rate_limit.bypass_rate_limiting_rules.bypass_rate_limiting_rules[].base_path` | - |  |
+
+### validation_target_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.api_specification.validation_all_spec_endpoints` | - |  |
+| `spec.api_specification.validation_custom_list` | - |  |
+| `spec.api_specification.validation_disabled` | - |  |
+
+### oversized_body_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+
+### fall_through_mode_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_allow` | - |  |
+| `spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_custom` | - |  |
+
+### action_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].action_block` | - |  |
+| `spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].action_report` | - |  |
+| `spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].action_skip` | - |  |
+
+### condition_type_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].api_endpoint` | - |  |
+| `spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].api_group` | - |  |
+| `spec.api_specification.validation_all_spec_endpoints.fall_through_mode.fall_through_mode_custom.open_api_validation_rules[].base_path` | - |  |
+
+### fail_configuration
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+
+### property_validation_settings_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.api_specification.validation_all_spec_endpoints.settings.property_validation_settings_custom` | - |  |
+| `spec.api_specification.validation_all_spec_endpoints.settings.property_validation_settings_default` | - |  |
+
+### additional_parameters_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.api_specification.validation_all_spec_endpoints.settings.property_validation_settings_custom.queryParameters.allow_additional_parameters` | - |  |
+| `spec.api_specification.validation_all_spec_endpoints.settings.property_validation_settings_custom.queryParameters.disallow_additional_parameters` | - |  |
+
+### response_validation_mode_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.api_specification.validation_all_spec_endpoints.validation_mode.response_validation_mode_active` | - |  |
+| `spec.api_specification.validation_all_spec_endpoints.validation_mode.skip_response_validation` | - |  |
+
+### validation_mode_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.api_specification.validation_all_spec_endpoints.validation_mode.skip_validation` | - |  |
+| `spec.api_specification.validation_all_spec_endpoints.validation_mode.validation_mode_active` | - |  |
+
+### validation_enforcement_type
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.api_specification.validation_all_spec_endpoints.validation_mode.response_validation_mode_active.enforcement_block` | - |  |
+| `spec.api_specification.validation_all_spec_endpoints.validation_mode.response_validation_mode_active.enforcement_report` | - |  |
+
+### client_source_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.blocked_clients[].as_number` | - |  |
+| `spec.blocked_clients[].http_header` | - |  |
+| `spec.blocked_clients[].ip_prefix` | - |  |
+| `spec.blocked_clients[].ipv6_prefix` | - |  |
+| `spec.blocked_clients[].user_identifier` | - |  |
+
+### value_match
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.blocked_clients[].http_header.headers[].exact` | - |  |
+| `spec.blocked_clients[].http_header.headers[].presence` | - |  |
+| `spec.blocked_clients[].http_header.headers[].regex` | - |  |
+
+### cors_support_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.bot_defense.disable_cors_support` | - |  |
+| `spec.bot_defense.enable_cors_support` | - |  |
+
+### java_script_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.bot_defense.policy.disable_js_insert` | - |  |
+| `spec.bot_defense.policy.js_insert_all_pages` | - |  |
+| `spec.bot_defense.policy.js_insert_all_pages_except` | - |  |
+| `spec.bot_defense.policy.js_insertion_rules` | - |  |
+
+### mobile_sdk_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.bot_defense.policy.disable_mobile_sdk` | - |  |
+| `spec.bot_defense.policy.mobile_sdk_config` | - |  |
+
+### domain_matcher_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.bot_defense.policy.js_insert_all_pages_except.exclude_list[].any_domain` | - |  |
+| `spec.bot_defense.policy.js_insert_all_pages_except.exclude_list[].domain` | - |  |
+
+### path_match
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.bot_defense.policy.js_insert_all_pages_except.exclude_list[].path.path` | - |  |
+| `spec.bot_defense.policy.js_insert_all_pages_except.exclude_list[].path.prefix` | - |  |
+| `spec.bot_defense.policy.js_insert_all_pages_except.exclude_list[].path.regex` | - |  |
+
+### app_traffic_type_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.bot_defense.policy.protected_app_endpoints[].mobile` | - |  |
+| `spec.bot_defense.policy.protected_app_endpoints[].web` | - |  |
+| `spec.bot_defense.policy.protected_app_endpoints[].web_mobile` | - |  |
+
+### flow_label_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.bot_defense.policy.protected_app_endpoints[].flow_label` | - |  |
+| `spec.bot_defense.policy.protected_app_endpoints[].undefined_flow_label` | - |  |
+
+### goodbot_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.bot_defense.policy.protected_app_endpoints[].allow_good_bots` | - |  |
+| `spec.bot_defense.policy.protected_app_endpoints[].mitigate_good_bots` | - |  |
+
+### label_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.bot_defense.policy.protected_app_endpoints[].flow_label.account_management.create` | - |  |
+| `spec.bot_defense.policy.protected_app_endpoints[].flow_label.account_management.password_reset` | - |  |
+
+### transaction_result_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.bot_defense.policy.protected_app_endpoints[].flow_label.authentication.login.disable_transaction_result` | - |  |
+| `spec.bot_defense.policy.protected_app_endpoints[].flow_label.authentication.login.transaction_result` | - |  |
+
+### action_type
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.bot_defense.policy.protected_app_endpoints[].mitigation.block` | - |  |
+| `spec.bot_defense.policy.protected_app_endpoints[].mitigation.flag` | - |  |
+| `spec.bot_defense.policy.protected_app_endpoints[].mitigation.redirect` | - |  |
+
+### send_headers_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.bot_defense.policy.protected_app_endpoints[].mitigation.flag.append_headers` | - |  |
+| `spec.bot_defense.policy.protected_app_endpoints[].mitigation.flag.no_headers` | - |  |
+
+### allowed_domains
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.csrf_policy.all_load_balancer_domains` | - |  |
+| `spec.csrf_policy.custom_domain_list` | - |  |
+| `spec.csrf_policy.disabled` | - |  |
+
+### mitigation_action
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.ddos_mitigation_rules[].block` | - |  |
+
+### mitigation_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.ddos_mitigation_rules[].ddos_client_source` | - |  |
+| `spec.ddos_mitigation_rules[].ip_prefix_list` | - |  |
+
+### cache_actions
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.default_cache_action.cache_disabled` | - |  |
+| `spec.default_cache_action.cache_ttl_default` | - |  |
+| `spec.default_cache_action.cache_ttl_override` | - |  |
+
+### api_discovery_settings_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.enable_api_discovery.custom_api_auth_discovery` | - |  |
+| `spec.enable_api_discovery.default_api_auth_discovery` | - |  |
+
+### learn_from_redirect_traffic
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.enable_api_discovery.disable_learn_from_redirect_traffic` | - |  |
+| `spec.enable_api_discovery.enable_learn_from_redirect_traffic` | - |  |
+
+### api_crawler
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.enable_api_discovery.api_crawler.api_crawler_config` | - |  |
+| `spec.enable_api_discovery.api_crawler.disable_api_crawler` | - |  |
+
+### secret_info_oneof
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.enable_api_discovery.api_crawler.api_crawler_config.domains[].simple_login.password.blindfold_secret_info` | - |  |
+| `spec.enable_api_discovery.api_crawler.api_crawler_config.domains[].simple_login.password.clear_secret_info` | - |  |
+
+### api_repos_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.enable_api_discovery.api_discovery_from_code_scan.code_base_integrations[].all_repos` | - |  |
+| `spec.enable_api_discovery.api_discovery_from_code_scan.code_base_integrations[].selected_repos` | - |  |
+
+### captcha_challenge_parameters_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.enable_challenge.captcha_challenge_parameters` | - |  |
+| `spec.enable_challenge.default_captcha_challenge_parameters` | - |  |
+
+### js_challenge_parameters_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.enable_challenge.default_js_challenge_parameters` | - |  |
+| `spec.enable_challenge.js_challenge_parameters` | - |  |
+
+### malicious_user_mitigation_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.enable_challenge.default_mitigation_settings` | - |  |
+| `spec.enable_challenge.malicious_user_mitigation` | - |  |
+
+### method_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.graphql_rules[].method_get` | - |  |
+| `spec.graphql_rules[].method_post` | - |  |
+
+### allow_introspection_queries_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.graphql_rules[].graphql_settings.disable_introspection` | - |  |
+| `spec.graphql_rules[].graphql_settings.enable_introspection` | - |  |
+
+### port_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.http.port` | - |  |
+| `spec.http.port_ranges` | - |  |
+
+### tls_certificates_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.https.tls_cert_options.tls_cert_params` | - |  |
+| `spec.https.tls_cert_options.tls_inline_params` | - |  |
+
+### mtls_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.https.tls_cert_options.tls_cert_params.no_mtls` | - |  |
+| `spec.https.tls_cert_options.tls_cert_params.use_mtls` | - |  |
+
+### choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.https.tls_cert_options.tls_cert_params.tls_config.custom_security` | - |  |
+| `spec.https.tls_cert_options.tls_cert_params.tls_config.default_security` | - |  |
+| `spec.https.tls_cert_options.tls_cert_params.tls_config.low_security` | - |  |
+| `spec.https.tls_cert_options.tls_cert_params.tls_config.medium_security` | - |  |
+
+### crl_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.https.tls_cert_options.tls_cert_params.use_mtls.crl` | - |  |
+| `spec.https.tls_cert_options.tls_cert_params.use_mtls.no_crl` | - |  |
+
+### trusted_ca_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.https.tls_cert_options.tls_cert_params.use_mtls.trusted_ca` | - |  |
+| `spec.https.tls_cert_options.tls_cert_params.use_mtls.trusted_ca_url` | - |  |
+
+### xfcc_header
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.https.tls_cert_options.tls_cert_params.use_mtls.xfcc_disabled` | - |  |
+| `spec.https.tls_cert_options.tls_cert_params.use_mtls.xfcc_options` | - |  |
+
+### ocsp_stapling_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.https.tls_cert_options.tls_inline_params.tls_certificates[].custom_hash_algorithms` | - |  |
+| `spec.https.tls_cert_options.tls_inline_params.tls_certificates[].disable_ocsp_stapling` | - |  |
+| `spec.https.tls_cert_options.tls_inline_params.tls_certificates[].use_system_defaults` | - |  |
+
+### jwks_configuration
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.jwt_validation.jwks_config` | - |  |
+
+### audience_validation
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.jwt_validation.reserved_claims.audience` | - |  |
+| `spec.jwt_validation.reserved_claims.audience_disable` | - |  |
+
+### issuer_validation
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.jwt_validation.reserved_claims.issuer` | - |  |
+| `spec.jwt_validation.reserved_claims.issuer_disable` | - |  |
+
+### validate_period
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.jwt_validation.reserved_claims.validate_period_disable` | - |  |
+| `spec.jwt_validation.reserved_claims.validate_period_enable` | - |  |
+
+### target
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.jwt_validation.target.all_endpoint` | - |  |
+| `spec.jwt_validation.target.api_groups` | - |  |
+| `spec.jwt_validation.target.base_paths` | - |  |
+
+### token_location
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.jwt_validation.token_location.bearer_token` | - |  |
+
+### tls_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.origin_pool.no_tls` | - |  |
+| `spec.origin_pool.use_tls` | - |  |
+
+### public_ip_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.origin_pool.origin_servers[].public_ip.ip` | - |  |
+
+### max_session_keys_type
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.origin_pool.use_tls.default_session_key_caching` | - |  |
+| `spec.origin_pool.use_tls.disable_session_key_caching` | - |  |
+| `spec.origin_pool.use_tls.max_session_keys` | - |  |
+
+### server_validation_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.origin_pool.use_tls.skip_server_verification` | - |  |
+| `spec.origin_pool.use_tls.use_server_verification` | - |  |
+| `spec.origin_pool.use_tls.volterra_trusted_ca` | - |  |
+
+### sni_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.origin_pool.use_tls.disable_sni` | - |  |
+| `spec.origin_pool.use_tls.sni` | - |  |
+| `spec.origin_pool.use_tls.use_host_header_as_sni` | - |  |
+
+### value_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.other_settings.header_options.request_headers_to_add[].secret_value` | - |  |
+| `spec.other_settings.header_options.request_headers_to_add[].value` | - |  |
+
+### challenge_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.policy_based_challenge.always_enable_captcha_challenge` | - |  |
+| `spec.policy_based_challenge.always_enable_js_challenge` | - |  |
+| `spec.policy_based_challenge.no_challenge` | - |  |
+
+### temporary_blocking_parameters_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.policy_based_challenge.default_temporary_blocking_parameters` | - |  |
+| `spec.policy_based_challenge.temporary_user_blocking` | - |  |
+
+### asn_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.policy_based_challenge.rule_list.rules[].spec.any_asn` | - |  |
+| `spec.policy_based_challenge.rule_list.rules[].spec.asn_list` | - |  |
+| `spec.policy_based_challenge.rule_list.rules[].spec.asn_matcher` | - |  |
+
+### challenge_action
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.policy_based_challenge.rule_list.rules[].spec.disable_challenge` | - |  |
+| `spec.policy_based_challenge.rule_list.rules[].spec.enable_captcha_challenge` | - |  |
+| `spec.policy_based_challenge.rule_list.rules[].spec.enable_javascript_challenge` | - |  |
+
+### ip_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.policy_based_challenge.rule_list.rules[].spec.any_ip` | - |  |
+| `spec.policy_based_challenge.rule_list.rules[].spec.ip_matcher` | - |  |
+| `spec.policy_based_challenge.rule_list.rules[].spec.ip_prefix_list` | - |  |
+
+### tls_fingerprint_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.policy_based_challenge.rule_list.rules[].spec.tls_fingerprint_matcher` | - |  |
+
+### cookie_tampering
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.protected_cookies[].disable_tampering_protection` | - |  |
+| `spec.protected_cookies[].enable_tampering_protection` | - |  |
+
+### httponly
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.protected_cookies[].add_httponly` | - |  |
+| `spec.protected_cookies[].ignore_httponly` | - |  |
+
+### max_age
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.protected_cookies[].ignore_max_age` | - |  |
+| `spec.protected_cookies[].max_age_value` | - |  |
+
+### samesite
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.protected_cookies[].ignore_samesite` | - |  |
+| `spec.protected_cookies[].samesite_lax` | - |  |
+| `spec.protected_cookies[].samesite_none` | - |  |
+| `spec.protected_cookies[].samesite_strict` | - |  |
+
+### secure
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.protected_cookies[].add_secure` | - |  |
+| `spec.protected_cookies[].ignore_secure` | - |  |
+
+### policy_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.rate_limit.no_policies` | - |  |
+| `spec.rate_limit.policies` | - |  |
+
+### algorithm
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.rate_limit.rate_limiter.leaky_bucket` | - |  |
+| `spec.rate_limit.rate_limiter.token_bucket` | - |  |
+
+### block_duration_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.rate_limit.rate_limiter.action_block.hours` | - |  |
+| `spec.rate_limit.rate_limiter.action_block.minutes` | - |  |
+| `spec.rate_limit.rate_limiter.action_block.seconds` | - |  |
+
+### request_timeout_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.slow_ddos_mitigation.disable_request_timeout` | - |  |
+| `spec.slow_ddos_mitigation.request_timeout` | - |  |
+
+### waf_exclusion_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.waf_exclusion.waf_exclusion_inline_rules` | - |  |
+| `spec.waf_exclusion.waf_exclusion_policy` | - |  |
+
+### path_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.waf_exclusion.waf_exclusion_inline_rules.rules[].any_path` | - |  |
+| `spec.waf_exclusion.waf_exclusion_inline_rules.rules[].path_prefix` | - |  |
+| `spec.waf_exclusion.waf_exclusion_inline_rules.rules[].path_regex` | - |  |
+
+### waf_advanced_configuration
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.waf_exclusion.waf_exclusion_inline_rules.rules[].app_firewall_detection_control` | - |  |
+| `spec.waf_exclusion.waf_exclusion_inline_rules.rules[].waf_skip_processing` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Cdn Loadbalancer resources:
+
+### Create Cdn Loadbalancer
+
+> "Create a cdn-loadbalancer named 'example' in the 'production' namespace"
+
+### List Cdn Loadbalancers
+
+> "List all cdn-loadbalancers in the 'production' namespace"
+
+### Get Cdn Loadbalancer Details
+
+> "Get details of the cdn-loadbalancer named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/cdn_loadbalancers" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/cdn_loadbalancers/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/cdn_loadbalancers" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @cdn_loadbalancer.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/cdn_loadbalancers/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

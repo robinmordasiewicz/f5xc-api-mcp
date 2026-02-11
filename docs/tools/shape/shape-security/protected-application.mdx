@@ -1,0 +1,220 @@
+---
+title: Protected Application
+description: Create Protected Application.
+---
+
+List the set of protected_application in a namespace.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-shape-protected-application-create` | Create Protected Application. |
+| `f5xc-api-shape-protected-application-get` | GET Protected Application. |
+| `f5xc-api-shape-protected-application-list` | List Protected Application. |
+| `f5xc-api-shape-protected-application-update` | Replace Protected Application. |
+| `f5xc-api-shape-protected-application-delete` | DELETE Protected Application. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### connector_type_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.adobe_commerce_connector` | - |  |
+| `spec.big_ip_iapp` | - |  |
+| `spec.cloudflare` | - |  |
+| `spec.cloudfront` | - |  |
+| `spec.custom_connector` | - |  |
+| `spec.f5_big_ip` | - |  |
+| `spec.salesforce_commerce_connector` | - |  |
+
+### java_script_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.cloudflare.disable_js_insert` | - |  |
+| `spec.cloudflare.js_insertion_rules` | - |  |
+| `spec.cloudflare.manual_js_insert` | - |  |
+
+### mobile_sdk_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.cloudflare.disable_mobile_sdk` | - |  |
+| `spec.cloudflare.mobile_sdk_config` | - |  |
+
+### domain_matcher_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.cloudflare.js_insertion_rules.exclude_list[].any_domain` | - |  |
+| `spec.cloudflare.js_insertion_rules.exclude_list[].domain` | - |  |
+
+### domain_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.cloudflare.js_insertion_rules.exclude_list[].domain.exact_value` | - |  |
+| `spec.cloudflare.js_insertion_rules.exclude_list[].domain.regex_value` | - |  |
+| `spec.cloudflare.js_insertion_rules.exclude_list[].domain.suffix_value` | - |  |
+
+### path_match
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.cloudflare.js_insertion_rules.exclude_list[].path.path` | - |  |
+| `spec.cloudflare.js_insertion_rules.exclude_list[].path.prefix` | - |  |
+| `spec.cloudflare.js_insertion_rules.exclude_list[].path.regex` | - |  |
+
+### uri_path
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.cloudflare.js_insertion_rules.rules[].exact_path` | - |  |
+| `spec.cloudflare.js_insertion_rules.rules[].glob` | - |  |
+| `spec.cloudflare.js_insertion_rules.rules[].prefix` | - |  |
+
+### value_match
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.cloudflare.mobile_sdk_config.mobile_identifier.headers[].exact` | - |  |
+| `spec.cloudflare.mobile_sdk_config.mobile_identifier.headers[].regex` | - |  |
+
+### client_type_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.cloudflare.protected_endpoints[].mobile_client` | - |  |
+| `spec.cloudflare.protected_endpoints[].web_client` | - |  |
+| `spec.cloudflare.protected_endpoints[].web_mobile_client` | - |  |
+
+### mitigation
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.cloudflare.protected_endpoints[].mobile_client.block` | - |  |
+| `spec.cloudflare.protected_endpoints[].mobile_client.continue` | - |  |
+
+### add_header_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.cloudflare.protected_endpoints[].mobile_client.continue.add_header` | - |  |
+| `spec.cloudflare.protected_endpoints[].mobile_client.continue.no_header` | - |  |
+
+### mobile_mitigation
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.cloudflare.protected_endpoints[].web_mobile_client.block_mobile` | - |  |
+| `spec.cloudflare.protected_endpoints[].web_mobile_client.continue_mobile` | - |  |
+
+### web_mitigation
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.cloudflare.protected_endpoints[].web_mobile_client.block_web` | - |  |
+| `spec.cloudflare.protected_endpoints[].web_mobile_client.continue_web` | - |  |
+| `spec.cloudflare.protected_endpoints[].web_mobile_client.redirect_web` | - |  |
+
+### client_source_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.cloudflare.trusted_clients[].http_header` | - |  |
+| `spec.cloudflare.trusted_clients[].ip_prefix` | - |  |
+
+### aws_configuration_type_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.cloudfront.aws_configuration_id_selector` | - |  |
+| `spec.cloudfront.aws_configuration_tag_selector` | - |  |
+| `spec.cloudfront.disable_aws_configuration` | - |  |
+
+### flow_label_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.cloudfront.protected_endpoints[].flow_label` | - |  |
+| `spec.cloudfront.protected_endpoints[].undefined_flow_label` | - |  |
+
+### label_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.cloudfront.protected_endpoints[].flow_label.account_management.create` | - |  |
+| `spec.cloudfront.protected_endpoints[].flow_label.account_management.password_reset` | - |  |
+
+### transaction_result_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.cloudfront.protected_endpoints[].flow_label.authentication.login.disable_transaction_result` | - |  |
+| `spec.cloudfront.protected_endpoints[].flow_label.authentication.login.transaction_result` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Protected Application resources:
+
+### Create Protected Application
+
+> "Create a protected-application named 'example' in the 'production' namespace"
+
+### List Protected Applications
+
+> "List all protected-applications in the 'production' namespace"
+
+### Get Protected Application Details
+
+> "Get details of the protected-application named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/protected_applications" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/protected_applications/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/protected_applications" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @protected_application.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/protected_applications/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

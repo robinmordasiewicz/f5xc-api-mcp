@@ -1,0 +1,44 @@
+---
+title: User Token
+description: GET Web App Scanning Service User Token.
+---
+
+GET one time token to connect Web App Scanning Service.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-tenantandidentity-user-token-list` | GET Web App Scanning Service User Token. |
+
+## Example Usage
+
+Ask Claude to help you work with User Token resources:
+
+### List User Tokens
+
+> "List all user-tokens in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/user_tokens" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/user_tokens/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/user_tokens" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @user_token.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/user_tokens/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

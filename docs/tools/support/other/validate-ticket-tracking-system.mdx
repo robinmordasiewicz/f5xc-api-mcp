@@ -1,0 +1,61 @@
+---
+title: Validate Ticket Tracking System
+description: Validate Ticket Tracking System.
+---
+
+Validate input for the ticket tracking system like the credentials + organization.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-support-validate-ticket-tracking-system-create` | Validate Ticket Tracking System. |
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### provider_config
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `jira_config` | - |  |
+
+### config
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `jira_config.adhoc_rest_api` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Validate Ticket Tracking System resources:
+
+### Create Validate Ticket Tracking System
+
+> "Create a validate-ticket-tracking-system named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/validate_ticket_tracking_systems" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/validate_ticket_tracking_systems/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/validate_ticket_tracking_systems" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @validate_ticket_tracking_system.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/validate_ticket_tracking_systems/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

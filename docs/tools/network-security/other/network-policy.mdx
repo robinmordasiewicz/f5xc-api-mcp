@@ -1,0 +1,120 @@
+---
+title: Network Policy
+description: Create Network Policy.
+---
+
+Replaces configured Network Policy with new set of parameters in specified namespace.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-networksecurity-network-policy-create` | Create Network Policy. |
+| `f5xc-api-networksecurity-network-policy-get` | GET Network Policy. |
+| `f5xc-api-networksecurity-network-policy-list` | List Network Policy. |
+| `f5xc-api-networksecurity-network-policy-update` | Replace Network Policy. |
+| `f5xc-api-networksecurity-network-policy-delete` | DELETE Network Policy. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### endpoint_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.endpoint.any` | - |  |
+| `spec.endpoint.inside_endpoints` | - |  |
+| `spec.endpoint.label_selector` | - |  |
+| `spec.endpoint.outside_endpoints` | - |  |
+| `spec.endpoint.prefix_list` | - |  |
+
+### other_endpoint
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.rules.egress_rules[].any` | - |  |
+| `spec.rules.egress_rules[].inside_endpoints` | - |  |
+| `spec.rules.egress_rules[].ip_prefix_set` | - |  |
+| `spec.rules.egress_rules[].label_selector` | - |  |
+| `spec.rules.egress_rules[].outside_endpoints` | - |  |
+| `spec.rules.egress_rules[].prefix_list` | - |  |
+
+### traffic_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.rules.egress_rules[].all_tcp_traffic` | - |  |
+| `spec.rules.egress_rules[].all_traffic` | - |  |
+| `spec.rules.egress_rules[].all_udp_traffic` | - |  |
+| `spec.rules.egress_rules[].applications` | - |  |
+| `spec.rules.egress_rules[].protocol_port_range` | - |  |
+
+### rule_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.legacy_rules` | - |  |
+| `spec.rules` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Network Policy resources:
+
+### Create Network Policy
+
+> "Create a network-policy named 'example' in the 'production' namespace"
+
+### List Network Policys
+
+> "List all network-policys in the 'production' namespace"
+
+### Get Network Policy Details
+
+> "Get details of the network-policy named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/network_policys" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/network_policys/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/network_policys" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @network_policy.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/network_policys/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

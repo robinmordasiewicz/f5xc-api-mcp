@@ -1,0 +1,44 @@
+---
+title: Import Bind Create
+description: Import BIND Files.
+---
+
+Import BIND Files to Create DNS Zones.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-dns-import-bind-create-create` | Import BIND Files. |
+
+## Example Usage
+
+Ask Claude to help you work with Import Bind Create resources:
+
+### Create Import Bind Create
+
+> "Create a import-bind-create named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/import_bind_creates" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/import_bind_creates/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/import_bind_creates" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @import_bind_create.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/import_bind_creates/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

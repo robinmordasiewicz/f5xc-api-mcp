@@ -1,0 +1,404 @@
+---
+title: Securemesh Site V2
+description: Create Secure Mesh site.
+---
+
+List the set of securemesh_site_v2 in a namespace.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-sites-securemesh-site-v2-create` | Create Secure Mesh site. |
+| `f5xc-api-sites-securemesh-site-v2-get` | GET Secure Mesh site. |
+| `f5xc-api-sites-securemesh-site-v2-list` | List Configure Secure Mesh Site. |
+| `f5xc-api-sites-securemesh-site-v2-update` | Replace Secure Mesh site. |
+| `f5xc-api-sites-securemesh-site-v2-delete` | DELETE Configure Secure Mesh Site. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### blocked_services_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.block_all_services` | - |  |
+| `spec.blocked_services` | - |  |
+
+### enterprise_proxy_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.custom_proxy` | - |  |
+| `spec.f5_proxy` | - |  |
+
+### forward_proxy_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.active_forward_proxy_policies` | - |  |
+| `spec.no_forward_proxy` | - |  |
+
+### logs_receiver_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.log_receiver` | - |  |
+| `spec.logs_streaming_disabled` | - |  |
+
+### network_policy_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.active_enhanced_firewall_policies` | - |  |
+| `spec.no_network_policy` | - |  |
+
+### node_ha_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.disable_ha` | - |  |
+| `spec.enable_ha` | - |  |
+
+### provider_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.aws` | - |  |
+| `spec.azure` | - |  |
+| `spec.baremetal` | - |  |
+| `spec.equinix` | - |  |
+| `spec.gcp` | - |  |
+| `spec.kvm` | - |  |
+| `spec.nutanix` | - |  |
+| `spec.oci` | - |  |
+| `spec.openstack` | - |  |
+| `spec.vmware` | - |  |
+
+### proxy_bypass_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.custom_proxy_bypass` | - |  |
+| `spec.no_proxy_bypass` | - |  |
+
+### s2s_connectivity_sli_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.dc_cluster_group_sli` | - |  |
+| `spec.no_s2s_connectivity_sli` | - |  |
+
+### s2s_connectivity_slo_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.dc_cluster_group_slo` | - |  |
+| `spec.no_s2s_connectivity_slo` | - |  |
+| `spec.site_mesh_group_on_slo` | - |  |
+
+### url_categorization_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.disable_url_categorization` | - |  |
+| `spec.enable_url_categorization` | - |  |
+
+### secret_info_oneof
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.admin_user_credentials.admin_password.blindfold_secret_info` | - |  |
+| `spec.admin_user_credentials.admin_password.clear_secret_info` | - |  |
+
+### orchestration_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.aws.not_managed` | - |  |
+
+### address_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.aws.not_managed.node_list[].interface_list[].dhcp_client` | - |  |
+| `spec.aws.not_managed.node_list[].interface_list[].no_ipv4_address` | - |  |
+| `spec.aws.not_managed.node_list[].interface_list[].static_ip` | - |  |
+
+### interface_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.aws.not_managed.node_list[].interface_list[].bond_interface` | - |  |
+| `spec.aws.not_managed.node_list[].interface_list[].ethernet_interface` | - |  |
+| `spec.aws.not_managed.node_list[].interface_list[].vlan_interface` | - |  |
+
+### ipv6_address_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config` | - |  |
+| `spec.aws.not_managed.node_list[].interface_list[].no_ipv6_address` | - |  |
+| `spec.aws.not_managed.node_list[].interface_list[].static_ipv6_address` | - |  |
+
+### monitoring_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.aws.not_managed.node_list[].interface_list[].monitor` | - |  |
+| `spec.aws.not_managed.node_list[].interface_list[].monitor_disabled` | - |  |
+
+### site_to_site_connectivity_interface_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.aws.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_disabled` | - |  |
+| `spec.aws.not_managed.node_list[].interface_list[].site_to_site_connectivity_interface_enabled` | - |  |
+
+### lacp_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.aws.not_managed.node_list[].interface_list[].bond_interface.active_backup` | - |  |
+| `spec.aws.not_managed.node_list[].interface_list[].bond_interface.lacp` | - |  |
+
+### autoconfig_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config.host` | - |  |
+| `spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config.router` | - |  |
+
+### dns_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.configured_list` | - |  |
+| `spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns` | - |  |
+
+### local_dns_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.configured_address` | - |  |
+| `spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.first_address` | - |  |
+| `spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config.router.dns_config.local_dns.last_address` | - |  |
+
+### interfaces_addressing_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.automatic_from_end` | - |  |
+| `spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.automatic_from_start` | - |  |
+| `spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.interface_ip_map` | - |  |
+
+### network_prefix_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.aws.not_managed.node_list[].interface_list[].ipv6_auto_config.router.stateful.dhcp_networks[].network_prefix` | - |  |
+
+### network_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.aws.not_managed.node_list[].interface_list[].network_option.segment_network` | - |  |
+| `spec.aws.not_managed.node_list[].interface_list[].network_option.site_local_inside_network` | - |  |
+| `spec.aws.not_managed.node_list[].interface_list[].network_option.site_local_network` | - |  |
+
+### blocked_services_value_type_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.blocked_services.blocked_sevice[].dns` | - |  |
+| `spec.blocked_services.blocked_sevice[].ssh` | - |  |
+| `spec.blocked_services.blocked_sevice[].web_user_interface` | - |  |
+
+### use_for_re_tunnel_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.custom_proxy.disable_re_tunnel` | - |  |
+| `spec.custom_proxy.enable_re_tunnel` | - |  |
+
+### dns_server_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.dns_ntp_config.custom_dns` | - |  |
+| `spec.dns_ntp_config.f5_dns_default` | - |  |
+
+### ntp_server_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.dns_ntp_config.custom_ntp` | - |  |
+| `spec.dns_ntp_config.f5_ntp_default` | - |  |
+
+### sli_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.local_vrf.default_sli_config` | - |  |
+| `spec.local_vrf.sli_config` | - |  |
+
+### slo_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.local_vrf.default_config` | - |  |
+| `spec.local_vrf.slo_config` | - |  |
+
+### static_route_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.local_vrf.sli_config.no_static_routes` | - |  |
+| `spec.local_vrf.sli_config.static_routes` | - |  |
+
+### static_v6_route_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.local_vrf.sli_config.no_v6_static_routes` | - |  |
+| `spec.local_vrf.sli_config.static_v6_routes` | - |  |
+
+### next_hop_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.local_vrf.sli_config.static_routes.static_routes[].default_gateway` | - |  |
+| `spec.local_vrf.sli_config.static_routes.static_routes[].ip_address` | - |  |
+| `spec.local_vrf.sli_config.static_routes.static_routes[].node_interface` | - |  |
+
+### offline_survivability_mode_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.offline_survivability_mode.enable_offline_survivability_mode` | - |  |
+| `spec.offline_survivability_mode.no_offline_survivability_mode` | - |  |
+
+### perf_mode_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.performance_enhancement_mode.perf_mode_l3_enhanced` | - |  |
+| `spec.performance_enhancement_mode.perf_mode_l7_enhanced` | - |  |
+
+### re_selection_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.re_select.geo_proximity` | - |  |
+| `spec.re_select.specific_re` | - |  |
+
+### site_mesh_group_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.site_mesh_group_on_slo.no_site_mesh_group` | - |  |
+| `spec.site_mesh_group_on_slo.site_mesh_group` | - |  |
+
+### site_mesh_group_ip_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.site_mesh_group_on_slo.sm_connection_public_ip` | - |  |
+| `spec.site_mesh_group_on_slo.sm_connection_pvt_ip` | - |  |
+
+### operating_system_version_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.software_settings.os.default_os_version` | - |  |
+| `spec.software_settings.os.operating_system_version` | - |  |
+
+### volterra_sw_version_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.software_settings.sw.default_sw_version` | - |  |
+| `spec.software_settings.sw.volterra_software_version` | - |  |
+
+### kubernetes_upgrade_drain_enable_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.upgrade_settings.kubernetes_upgrade_drain.disable_upgrade_drain` | - |  |
+| `spec.upgrade_settings.kubernetes_upgrade_drain.enable_upgrade_drain` | - |  |
+
+### drain_max_unavailable_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.upgrade_settings.kubernetes_upgrade_drain.enable_upgrade_drain.drain_max_unavailable_node_count` | - |  |
+
+### vega_upgrade_mode_toggle_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.upgrade_settings.kubernetes_upgrade_drain.enable_upgrade_drain.disable_vega_upgrade_mode` | - |  |
+| `spec.upgrade_settings.kubernetes_upgrade_drain.enable_upgrade_drain.enable_vega_upgrade_mode` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Securemesh Site V2 resources:
+
+### Create Securemesh Site V2
+
+> "Create a securemesh-site-v2 named 'example' in the 'production' namespace"
+
+### List Securemesh Site V2s
+
+> "List all securemesh-site-v2s in the 'production' namespace"
+
+### Get Securemesh Site V2 Details
+
+> "Get details of the securemesh-site-v2 named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/securemesh_site_v2s" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/securemesh_site_v2s/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/securemesh_site_v2s" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @securemesh_site_v2.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/securemesh_site_v2s/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

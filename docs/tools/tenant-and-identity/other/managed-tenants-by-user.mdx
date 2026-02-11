@@ -1,0 +1,59 @@
+---
+title: Managed Tenants By User
+description: GET List of Managed Tenant By User.
+---
+
+GET list of managed tenants that user have access to based on assigned membership.
+This is an
+optimized list generated based on the requesting user's current group assignments
+that will allow
+access to managed tenant.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-tenantandidentity-managed-tenants-by-user-list` | GET List of Managed Tenant By User. |
+
+## Parameters
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `page_limit` | PageLimit will hold the limit of items required per query. | `-` |
+| `page_start` | PageStart will hold the UUID of the first item in the requested page. | `-` |
+| `search_keyword` | Search Keyword for filtering the Managed Tenant List. | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Managed Tenants By User resources:
+
+### List Managed Tenants By Users
+
+> "List all managed-tenants-by-users in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/managed_tenants_by_users" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/managed_tenants_by_users/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/managed_tenants_by_users" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @managed_tenants_by_user.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/managed_tenants_by_users/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

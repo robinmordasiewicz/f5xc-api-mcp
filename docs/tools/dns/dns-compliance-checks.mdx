@@ -1,0 +1,78 @@
+---
+title: DNS Compliance Checks
+description: Create DNS Compliance Checks.
+---
+
+Create DNS Compliance Checks Specification in a given namespace. If one already exists it will give
+an error.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-dns-dns-compliance-checks-create` | Create DNS Compliance Checks. |
+| `f5xc-api-dns-dns-compliance-checks-get` | GET DNS Compliance Checks. |
+| `f5xc-api-dns-dns-compliance-checks-list` | List Configure DNS Compliance Checks. |
+| `f5xc-api-dns-dns-compliance-checks-update` | Replace DNS Compliance Checks. |
+| `f5xc-api-dns-dns-compliance-checks-delete` | DELETE Configure DNS Compliance Checks. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with DNS Compliance Checks resources:
+
+### Create DNS Compliance Checks
+
+> "Create a dns-compliance-checks named 'example' in the 'production' namespace"
+
+### List DNS Compliance Checkss
+
+> "List all dns-compliance-checkss in the 'production' namespace"
+
+### Get DNS Compliance Checks Details
+
+> "Get details of the dns-compliance-checks named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/dns_compliance_checkss" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/dns_compliance_checkss/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/dns_compliance_checkss" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @dns_compliance_checks.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/dns_compliance_checkss/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

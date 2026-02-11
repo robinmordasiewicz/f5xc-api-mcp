@@ -1,0 +1,54 @@
+---
+title: Set Vpn Tunnel
+description: Configure VPN Tunnels.
+---
+
+Configure VPC IP prefix set.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-sites-set-vpn-tunnel-create` | Configure VPN Tunnels. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Set Vpn Tunnel resources:
+
+### Create Set Vpn Tunnel
+
+> "Create a set-vpn-tunnel named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/set_vpn_tunnels" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/set_vpn_tunnels/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/set_vpn_tunnels" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @set_vpn_tunnel.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/set_vpn_tunnels/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

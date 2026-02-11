@@ -1,0 +1,53 @@
+---
+title: Bot Allowlist Policie
+description: List All Bot Allowlist Policies And Versions.
+---
+
+GET all bot allowlist policies and versions.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-shape-bot-allowlist-policie-list` | List All Bot Allowlist Policies And Versions. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Bot Allowlist Policie resources:
+
+### List Bot Allowlist Policies
+
+> "List all bot-allowlist-policies in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/bot_allowlist_policies" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/bot_allowlist_policies/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/bot_allowlist_policies" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @bot_allowlist_policie.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/bot_allowlist_policies/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

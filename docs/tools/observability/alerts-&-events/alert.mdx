@@ -1,0 +1,63 @@
+---
+title: Alert
+description: GET Alerts.
+---
+
+GET alerts matching the filter for the given namespace.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-observability-alert-list` | GET Alerts. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `filter` | HighDiskUsage\", severity=\"critical\"\}" | `-` |
+| `inactive` | If set to true, active alerts will not be returned in the response. | `-` |
+| `inhibited` | Show inhibited alerts - alerts that are suppressed if certain other alerts are firing. | `-` |
+| `silenced` | Show silenced alerts - alerts that are muted based on the matchers configured in the alert manager. | `-` |
+| `unprocessed` | Show unprocessed alerts. | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Alert resources:
+
+### List Alerts
+
+> "List all alerts in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/alerts" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/alerts/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/alerts" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @alert.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/alerts/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

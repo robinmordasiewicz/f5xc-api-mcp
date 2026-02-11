@@ -1,0 +1,54 @@
+---
+title: Selectee
+description: GET Selectees.
+---
+
+GET the list of objects selected by this Virtual Site based on its selector label expression.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-sites-selectee-get` | GET Selectees. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Selectee resources:
+
+### Get Selectee Details
+
+> "Get details of the selectee named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/selectees" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/selectees/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/selectees" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @selectee.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/selectees/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

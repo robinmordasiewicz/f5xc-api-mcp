@@ -1,0 +1,49 @@
+---
+title: Customer Support
+description: Create customer support ticket in managed tenant.
+---
+
+Creates a new customer support ticket in our customer support provider system.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-tenantandidentity-customer-support-create` | Create customer support ticket in managed tenant. |
+| `f5xc-api-tenantandidentity-customer-support-list` | List tickets of managed tenant. |
+
+## Example Usage
+
+Ask Claude to help you work with Customer Support resources:
+
+### Create Customer Support
+
+> "Create a customer-support named 'example' in the 'production' namespace"
+
+### List Customer Supports
+
+> "List all customer-supports in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/customer_supports" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/customer_supports/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/customer_supports" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @customer_support.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/customer_supports/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

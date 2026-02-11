@@ -1,0 +1,53 @@
+---
+title: Geolocation
+description: Top Human Geolocation.
+---
+
+GET top human geolocation.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-shape-geolocation-create` | Top Human Geolocation. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Geolocation resources:
+
+### Create Geolocation
+
+> "Create a geolocation named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/geolocations" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/geolocations/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/geolocations" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @geolocation.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/geolocations/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

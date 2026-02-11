@@ -1,0 +1,90 @@
+---
+title: Network Policy Rule
+description: Create Network Policy Rule.
+---
+
+Replaces a network policy rule with configured parameters in specified namespace.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-networksecurity-network-policy-rule-create` | Create Network Policy Rule. |
+| `f5xc-api-networksecurity-network-policy-rule-get` | GET Network Policy Rule. |
+| `f5xc-api-networksecurity-network-policy-rule-list` | List Network Policy Rule. |
+| `f5xc-api-networksecurity-network-policy-rule-update` | Replace Network Policy Rule. |
+| `f5xc-api-networksecurity-network-policy-rule-delete` | DELETE Network Policy Rule. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### remote_endpoint
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.ip_prefix_set` | - |  |
+| `spec.prefix` | - |  |
+| `spec.prefix_selector` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Network Policy Rule resources:
+
+### Create Network Policy Rule
+
+> "Create a network-policy-rule named 'example' in the 'production' namespace"
+
+### List Network Policy Rules
+
+> "List all network-policy-rules in the 'production' namespace"
+
+### Get Network Policy Rule Details
+
+> "Get details of the network-policy-rule named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/network_policy_rules" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/network_policy_rules/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/network_policy_rules" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @network_policy_rule.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/network_policy_rules/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

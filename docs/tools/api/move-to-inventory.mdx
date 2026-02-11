@@ -1,0 +1,54 @@
+---
+title: Move To Inventory
+description: Move To API Inventory.
+---
+
+Update the API Definition's include list with the provided API endpoints.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-api-move-to-inventory-create` | Move To API Inventory. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Move To Inventory resources:
+
+### Create Move To Inventory
+
+> "Create a move-to-inventory named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/move_to_inventorys" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/move_to_inventorys/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/move_to_inventorys" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @move_to_inventory.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/move_to_inventorys/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

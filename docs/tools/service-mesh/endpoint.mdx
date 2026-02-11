@@ -1,0 +1,129 @@
+---
+title: Endpoint
+description: Create Endpoint.
+---
+
+Replacing an endpoint object will update the object by replacing the existing spec with the provided
+one.
+For read-then-write operations a resourceVersion mismatch will occur if the object was modified
+between the read and write.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-servicemesh-endpoint-create` | Create Endpoint. |
+| `f5xc-api-servicemesh-endpoint-get` | GET Endpoint. |
+| `f5xc-api-servicemesh-endpoint-list` | List Endpoint. |
+| `f5xc-api-servicemesh-endpoint-update` | Replace Endpoint. |
+| `f5xc-api-servicemesh-endpoint-delete` | DELETE Endpoint. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### endpoint_address
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.dns_name` | - |  |
+| `spec.dns_name_advanced` | - |  |
+| `spec.ip` | - |  |
+| `spec.service_info` | - |  |
+
+### ttl_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.dns_name_advanced.refresh_interval` | - |  |
+
+### service_info
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.service_info.service_name` | - |  |
+| `spec.service_info.service_selector` | - |  |
+
+### snat_pool_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.snat_pool.no_snat_pool` | - |  |
+| `spec.snat_pool.snat_pool` | - |  |
+
+### ref_or_selector
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.where.site` | - |  |
+| `spec.where.virtual_network` | - |  |
+| `spec.where.virtual_site` | - |  |
+
+### internet_vip_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.where.site.disable_internet_vip` | - |  |
+| `spec.where.site.enable_internet_vip` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Endpoint resources:
+
+### Create Endpoint
+
+> "Create a endpoint named 'example' in the 'production' namespace"
+
+### List Endpoints
+
+> "List all endpoints in the 'production' namespace"
+
+### Get Endpoint Details
+
+> "Get details of the endpoint named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/endpoints" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/endpoints/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/endpoints" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @endpoint.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/endpoints/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

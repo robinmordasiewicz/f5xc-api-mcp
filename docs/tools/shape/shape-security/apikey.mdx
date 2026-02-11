@@ -1,0 +1,44 @@
+---
+title: Apikey
+description: API Key
+---
+
+GET API key.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-shape-apikey-list` | API Key |
+
+## Example Usage
+
+Ask Claude to help you work with Apikey resources:
+
+### List Apikeys
+
+> "List all apikeys in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/apikeys" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/apikeys/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/apikeys" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @apikey.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/apikeys/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

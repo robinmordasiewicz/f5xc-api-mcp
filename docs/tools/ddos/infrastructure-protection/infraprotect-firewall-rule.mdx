@@ -1,0 +1,152 @@
+---
+title: Infraprotect Firewall Rule
+description: Create DDoS transit Firewall Rule.
+---
+
+List the set of infraprotect_firewall_rule in a namespace.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-ddos-infraprotect-firewall-rule-create` | Create DDoS transit Firewall Rule. |
+| `f5xc-api-ddos-infraprotect-firewall-rule-get` | GET Infraprotect Firewall Rule. |
+| `f5xc-api-ddos-infraprotect-firewall-rule-list` | List Infraprotect Firewall Rule. |
+| `f5xc-api-ddos-infraprotect-firewall-rule-update` | Replace DDoS transit Firewall Rule. |
+| `f5xc-api-ddos-infraprotect-firewall-rule-delete` | DELETE Infraprotect Firewall Rule. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### action
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.action_allow` | - |  |
+| `spec.action_deny` | - |  |
+
+### destination_prefix
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.destination_prefix_all` | - |  |
+| `spec.destination_prefix_single` | - |  |
+
+### fragments
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.fragments_allow` | - |  |
+| `spec.fragments_deny` | - |  |
+
+### protocol
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.protocol_ah` | - |  |
+| `spec.protocol_all` | - |  |
+| `spec.protocol_esp` | - |  |
+| `spec.protocol_gre` | - |  |
+| `spec.protocol_icmp` | - |  |
+| `spec.protocol_icmp6` | - |  |
+| `spec.protocol_ipv6` | - |  |
+| `spec.protocol_tcp` | - |  |
+| `spec.protocol_udp` | - |  |
+
+### source_prefix
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.source_prefix_all` | - |  |
+| `spec.source_prefix_single` | - |  |
+
+### state
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.state_off` | - |  |
+| `spec.state_on` | - |  |
+
+### version
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.version_ipv4` | - |  |
+| `spec.version_ipv6` | - |  |
+
+### destination_port
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.protocol_tcp.destination_port_all` | - |  |
+| `spec.protocol_tcp.destination_port_range` | - |  |
+
+### source_port
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.protocol_tcp.source_port_all` | - |  |
+| `spec.protocol_tcp.source_port_range` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Infraprotect Firewall Rule resources:
+
+### Create Infraprotect Firewall Rule
+
+> "Create a infraprotect-firewall-rule named 'example' in the 'production' namespace"
+
+### List Infraprotect Firewall Rules
+
+> "List all infraprotect-firewall-rules in the 'production' namespace"
+
+### Get Infraprotect Firewall Rule Details
+
+> "Get details of the infraprotect-firewall-rule named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/infraprotect_firewall_rules" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/infraprotect_firewall_rules/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/infraprotect_firewall_rules" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @infraprotect_firewall_rule.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/infraprotect_firewall_rules/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

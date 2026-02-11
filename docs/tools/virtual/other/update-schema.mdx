@@ -1,0 +1,58 @@
+---
+title: Update Schema
+description: Update API Endpoints Schemas.
+---
+
+Update the payload schema for the specified endpoints or all pending changes if empty list is
+provided.
+NOTE: only API endpoints returned by a call to `GetAPIEndpointsSchemaStates` can be
+updated.
+DEPRECATED. USE virtual host custom API UpdateAPIEndpointsSchemas.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-virtual-update-schema-create` | Update API Endpoints Schemas. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Update Schema resources:
+
+### Create Update Schema
+
+> "Create a update-schema named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/update_schemas" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/update_schemas/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/update_schemas" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @update_schema.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/update_schemas/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

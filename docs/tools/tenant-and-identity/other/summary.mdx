@@ -1,0 +1,53 @@
+---
+title: Summary
+description: Summary
+---
+
+This API returns tenant summary.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-tenantandidentity-summary-list` | Summary |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `tenant` | Tenant ID | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Summary resources:
+
+### List Summarys
+
+> "List all summarys in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/summarys" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/summarys/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/summarys" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @summary.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/summarys/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

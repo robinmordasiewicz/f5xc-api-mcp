@@ -1,0 +1,59 @@
+---
+title: Application
+description: Update Application.
+---
+
+Update an application's information.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-shape-application-create` | Update Application. |
+| `f5xc-api-shape-application-list` | GetApplications. |
+| `f5xc-api-shape-application-delete` | DELETE Application. |
+
+## Parameters
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `app_id` | Target application ID to DELETE. | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Application resources:
+
+### Create Application
+
+> "Create a application named 'example' in the 'production' namespace"
+
+### List Applications
+
+> "List all applications in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/applications" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/applications/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/applications" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @application.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/applications/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

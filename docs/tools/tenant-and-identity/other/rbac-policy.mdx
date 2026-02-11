@@ -1,0 +1,68 @@
+---
+title: Rbac Policy
+description: GET RBAC Policy.
+---
+
+GET rbac_policy reads a given object from storage backend for metadata.namespace.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-tenantandidentity-rbac-policy-get` | GET RBAC Policy. |
+| `f5xc-api-tenantandidentity-rbac-policy-list` | List RBAC Policy. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Rbac Policy resources:
+
+### List Rbac Policys
+
+> "List all rbac-policys in the 'production' namespace"
+
+### Get Rbac Policy Details
+
+> "Get details of the rbac-policy named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/rbac_policys" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/rbac_policys/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/rbac_policys" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @rbac_policy.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/rbac_policys/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

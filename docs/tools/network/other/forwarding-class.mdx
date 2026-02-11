@@ -1,0 +1,104 @@
+---
+title: Forwarding Class
+description: Create Forwarding Class.
+---
+
+Replace Forwarding Class will replace the contains of given object.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-network-forwarding-class-create` | Create Forwarding Class. |
+| `f5xc-api-network-forwarding-class-get` | GET Forwarding Class. |
+| `f5xc-api-network-forwarding-class-list` | List Forwarding Class. |
+| `f5xc-api-network-forwarding-class-update` | Replace Forwarding Class. |
+| `f5xc-api-network-forwarding-class-delete` | DELETE Forwarding Class. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### marking_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.dscp` | - |  |
+| `spec.no_marking` | - |  |
+| `spec.tos_value` | - |  |
+
+### policer_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.no_policer` | - |  |
+| `spec.policer` | - |  |
+
+### queueing_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.dscp_based_queue` | - |  |
+| `spec.queue_id_to_use` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Forwarding Class resources:
+
+### Create Forwarding Class
+
+> "Create a forwarding-class named 'example' in the 'production' namespace"
+
+### List Forwarding Classs
+
+> "List all forwarding-classs in the 'production' namespace"
+
+### Get Forwarding Class Details
+
+> "Get details of the forwarding-class named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/forwarding_classs" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/forwarding_classs/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/forwarding_classs" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @forwarding_class.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/forwarding_classs/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

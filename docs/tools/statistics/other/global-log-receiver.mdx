@@ -1,0 +1,210 @@
+---
+title: Global Log Receiver
+description: Create Global Log Receiver.
+---
+
+Replaces the content of an Global Log Receiver object.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-statistics-global-log-receiver-create` | Create Global Log Receiver. |
+| `f5xc-api-statistics-global-log-receiver-get` | GET Global Log Receiver. |
+| `f5xc-api-statistics-global-log-receiver-list` | List Global Log Receiver. |
+| `f5xc-api-statistics-global-log-receiver-update` | Replace Global Log Receiver. |
+| `f5xc-api-statistics-global-log-receiver-delete` | DELETE Global Log Receiver. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### filter_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.ns_all` | - |  |
+| `spec.ns_current` | - |  |
+| `spec.ns_list` | - |  |
+
+### log_type
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.audit_logs` | - |  |
+| `spec.dns_logs` | - |  |
+| `spec.request_logs` | - |  |
+| `spec.security_events` | - |  |
+
+### receiver
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.aws_cloud_watch_receiver` | - |  |
+| `spec.azure_event_hubs_receiver` | - |  |
+| `spec.azure_receiver` | - |  |
+| `spec.datadog_receiver` | - |  |
+| `spec.gcp_bucket_receiver` | - |  |
+| `spec.http_receiver` | - |  |
+| `spec.kafka_receiver` | - |  |
+| `spec.new_relic_receiver` | - |  |
+| `spec.qradar_receiver` | - |  |
+| `spec.s3_receiver` | - |  |
+| `spec.splunk_receiver` | - |  |
+| `spec.sumo_logic_receiver` | - |  |
+
+### batch_bytes
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.aws_cloud_watch_receiver.batch.max_bytes` | - |  |
+| `spec.aws_cloud_watch_receiver.batch.max_bytes_disabled` | - |  |
+
+### batch_events
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.aws_cloud_watch_receiver.batch.max_events` | - |  |
+| `spec.aws_cloud_watch_receiver.batch.max_events_disabled` | - |  |
+
+### batch_timeout
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.aws_cloud_watch_receiver.batch.timeout_seconds` | - |  |
+| `spec.aws_cloud_watch_receiver.batch.timeout_seconds_default` | - |  |
+
+### compression_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.aws_cloud_watch_receiver.compression.compression_default` | - |  |
+| `spec.aws_cloud_watch_receiver.compression.compression_gzip` | - |  |
+| `spec.aws_cloud_watch_receiver.compression.compression_none` | - |  |
+
+### secret_info_oneof
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.azure_event_hubs_receiver.connection_string.blindfold_secret_info` | - |  |
+| `spec.azure_event_hubs_receiver.connection_string.clear_secret_info` | - |  |
+
+### folder
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.azure_receiver.filename_options.custom_folder` | - |  |
+| `spec.azure_receiver.filename_options.log_type_folder` | - |  |
+| `spec.azure_receiver.filename_options.no_folder` | - |  |
+
+### endpoint_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.datadog_receiver.endpoint` | - |  |
+| `spec.datadog_receiver.site` | - |  |
+
+### tls_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.datadog_receiver.no_tls` | - |  |
+| `spec.datadog_receiver.use_tls` | - |  |
+
+### ca_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.datadog_receiver.use_tls.no_ca` | - |  |
+| `spec.datadog_receiver.use_tls.trusted_ca_url` | - |  |
+
+### mtls_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.datadog_receiver.use_tls.mtls_disabled` | - |  |
+| `spec.datadog_receiver.use_tls.mtls_enable` | - |  |
+
+### verify_certificate
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.datadog_receiver.use_tls.disable_verify_certificate` | - |  |
+| `spec.datadog_receiver.use_tls.enable_verify_certificate` | - |  |
+
+### verify_hostname
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.datadog_receiver.use_tls.disable_verify_hostname` | - |  |
+| `spec.datadog_receiver.use_tls.enable_verify_hostname` | - |  |
+
+### auth_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.http_receiver.auth_basic` | - |  |
+| `spec.http_receiver.auth_none` | - |  |
+| `spec.http_receiver.auth_token` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Global Log Receiver resources:
+
+### Create Global Log Receiver
+
+> "Create a global-log-receiver named 'example' in the 'production' namespace"
+
+### List Global Log Receivers
+
+> "List all global-log-receivers in the 'production' namespace"
+
+### Get Global Log Receiver Details
+
+> "Get details of the global-log-receiver named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/global_log_receivers" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/global_log_receivers/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/global_log_receivers" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @global_log_receiver.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/global_log_receivers/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

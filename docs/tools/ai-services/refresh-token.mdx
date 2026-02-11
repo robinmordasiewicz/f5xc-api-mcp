@@ -1,0 +1,44 @@
+---
+title: Refresh Token
+description: Refresh Token.
+---
+
+Enable service by returning service account details.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-aiservices-refresh-token-create` | Refresh Token. |
+
+## Example Usage
+
+Ask Claude to help you work with Refresh Token resources:
+
+### Create Refresh Token
+
+> "Create a refresh-token named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/refresh_tokens" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/refresh_tokens/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/refresh_tokens" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @refresh_token.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/refresh_tokens/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

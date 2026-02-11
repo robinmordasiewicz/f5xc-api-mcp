@@ -1,0 +1,72 @@
+---
+title: API Endpoint
+description: GET API Endpoints.
+---
+
+GET list of all API Endpoints associated with the HTTP loadbalancer in format suitable for API
+Groups management.
+Deprecated: instead use GetAPIEndpoints in
+VES.I/o.schema.virtual_host.apiepcustomapi.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-virtual-api-endpoint-create` | GET API Endpoints. |
+| `f5xc-api-virtual-api-endpoint-get` | GET API Endpoints. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `name` | HTTP LoadBalancer Name | `-` |
+| `namespace` | Namespace | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `api_endpoint_info_request` | List of additional things that needs to be sent as part of the request | `-` |
+| `apiep_category` | Category of API endpoints. Can be DISCOVERED, INVENTORY or SHADOW API. | `-` |
+| `domains` | List of domains that needs to be sent as part of the request | `-` |
+| `end_time` | Format: unix_timestamp\|RFC 3339 | `-` |
+| `start_time` | Format: unix_timestamp\|RFC 3339 | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with API Endpoint resources:
+
+### Create API Endpoint
+
+> "Create a api-endpoint named 'example' in the 'production' namespace"
+
+### Get API Endpoint Details
+
+> "Get details of the api-endpoint named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/api_endpoints" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/api_endpoints/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/api_endpoints" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @api_endpoint.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/api_endpoints/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

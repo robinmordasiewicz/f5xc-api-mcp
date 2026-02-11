@@ -1,0 +1,55 @@
+---
+title: Force Delete
+description: Force DELETE view.
+---
+
+Force DELETE view object. This can result in staled objects in cloud provider.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-marketplace-force-delete-create` | Force DELETE view. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+| `view_kind` | Kind of View | `-` |
+| `view_name` | Name of view | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Force Delete resources:
+
+### Create Force Delete
+
+> "Create a force-delete named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/force_deletes" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/force_deletes/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/force_deletes" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @force_delete.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/force_deletes/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

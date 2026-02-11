@@ -1,0 +1,55 @@
+---
+title: Swap Primary
+description: Make payment method secondary.
+---
+
+Swaps payment method roles - the payment method used as a parameter will became primary, any other
+will become secondary. The `name` parameter is ignored.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-billingandusage-swap-primary-create` | Make payment method secondary. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Swap Primary resources:
+
+### Create Swap Primary
+
+> "Create a swap-primary named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/swap_primarys" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/swap_primarys/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/swap_primarys" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @swap_primary.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/swap_primarys/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

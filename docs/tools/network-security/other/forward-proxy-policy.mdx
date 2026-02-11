@@ -1,0 +1,155 @@
+---
+title: Forward Proxy Policy
+description: Create Forward Proxy Policy.
+---
+
+Shape of the Forward Proxy Policy replace specification.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-networksecurity-forward-proxy-policy-create` | Create Forward Proxy Policy. |
+| `f5xc-api-networksecurity-forward-proxy-policy-get` | GET Forward Proxy Policy. |
+| `f5xc-api-networksecurity-forward-proxy-policy-list` | List Configure Forward Proxy Policy. |
+| `f5xc-api-networksecurity-forward-proxy-policy-update` | Replace Forward Proxy Policy. |
+| `f5xc-api-networksecurity-forward-proxy-policy-delete` | DELETE Configure Forward Proxy Policy. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### proxy_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.any_proxy` | - |  |
+| `spec.drp_http_connect` | - |  |
+| `spec.network_connector` | - |  |
+| `spec.proxy_label_selector` | - |  |
+
+### rule_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.allow_all` | - |  |
+| `spec.allow_list` | - |  |
+| `spec.deny_list` | - |  |
+| `spec.rule_list` | - |  |
+
+### default_action_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.allow_list.default_action_allow` | - |  |
+| `spec.allow_list.default_action_deny` | - |  |
+| `spec.allow_list.default_action_next_policy` | - |  |
+
+### domain_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.allow_list.http_list[].exact_value` | - |  |
+| `spec.allow_list.http_list[].regex_value` | - |  |
+| `spec.allow_list.http_list[].suffix_value` | - |  |
+
+### path_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.allow_list.http_list[].any_path` | - |  |
+| `spec.allow_list.http_list[].path_exact_value` | - |  |
+| `spec.allow_list.http_list[].path_prefix_value` | - |  |
+| `spec.allow_list.http_list[].path_regex_value` | - |  |
+
+### destination_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.rule_list.rules[].all_destinations` | - |  |
+| `spec.rule_list.rules[].dst_asn_list` | - |  |
+| `spec.rule_list.rules[].dst_asn_set` | - |  |
+| `spec.rule_list.rules[].dst_ip_prefix_set` | - |  |
+| `spec.rule_list.rules[].dst_label_selector` | - |  |
+| `spec.rule_list.rules[].dst_prefix_list` | - |  |
+| `spec.rule_list.rules[].http_list` | - |  |
+| `spec.rule_list.rules[].tls_list` | - |  |
+| `spec.rule_list.rules[].url_category_list` | - |  |
+
+### http_connect_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.rule_list.rules[].no_http_connect_port` | - |  |
+| `spec.rule_list.rules[].port_matcher` | - |  |
+
+### source_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.rule_list.rules[].all_sources` | - |  |
+| `spec.rule_list.rules[].ip_prefix_set` | - |  |
+| `spec.rule_list.rules[].label_selector` | - |  |
+| `spec.rule_list.rules[].prefix_list` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Forward Proxy Policy resources:
+
+### Create Forward Proxy Policy
+
+> "Create a forward-proxy-policy named 'example' in the 'production' namespace"
+
+### List Forward Proxy Policys
+
+> "List all forward-proxy-policys in the 'production' namespace"
+
+### Get Forward Proxy Policy Details
+
+> "Get details of the forward-proxy-policy named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/forward_proxy_policys" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/forward_proxy_policys/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/forward_proxy_policys" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @forward_proxy_policy.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/forward_proxy_policys/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

@@ -1,0 +1,290 @@
+---
+title: Advanced Features
+description: Quota awareness, server-applied defaults, SSL/TLS configuration, resource URIs, and workflow prompts
+---
+
+## Quota Awareness
+
+> Available since v2.1.0
+
+The MCP server automatically checks resource quota availability before
+executing create operations, preventing failures due to quota limits.
+
+- **Pre-Flight Validation** - Checks quota before API calls
+- **Automatic Blocking** - Prevents creation when quota is at 100%
+- **Warning System** - Warns when quota usage is 80-99%
+- **Caching** - 5-minute cache reduces API calls
+- **Per-Namespace Tracking** - Quota limits checked per namespace
+- **Configurable Thresholds** - Customize warning and blocking levels
+
+### Quota MCP Tools
+
+**`f5xc-api-get-quota-status`** - Get quota for a specific resource type:
+
+```typescript
+// Input
+{ "namespace": "production", "resourceType": "healthcheck" }
+
+// Output
+// Quota Status for healthcheck
+// Namespace: production
+// Current Usage: 95/100 (95%)
+// Remaining: 5
+// Status: Warning - Approaching limit
+```
+
+**`f5xc-api-list-namespace-quotas`** - List all quota limits for a namespace:
+
+```typescript
+{ "namespace": "production", "showOnlyLimited": false }
+```
+
+**`f5xc-api-clear-quota-cache`** - Clear cached quota data to force fresh queries:
+
+```typescript
+{ "namespace": "production" }  // optional - clears all if omitted
+```
+
+### Quota Thresholds
+
+| Zone   | Usage  | Behavior                         |
+| ------ | ------ | -------------------------------- |
+| Green  | 0-79%  | Creation allowed, no warnings    |
+| Yellow | 80-99% | Creation allowed, warning logged |
+| Red    | 100%+  | **Creation blocked** with error  |
+
+### Quota Error Messages
+
+When a quota limit is reached:
+
+```text
+ERROR: Resource quota limit reached
+
+Resource Type: healthcheck
+Namespace: production
+Current Usage: 100/100 (100%)
+Status: At limit - cannot create additional resources
+
+Action Required:
+1. Delete unused healthcheck resources in the 'production' namespace
+2. Request quota increase from F5 XC support
+3. Use a different namespace with available quota
+```
+
+### Quota Configuration
+
+Control quota checking behavior with [environment variables](environment-variables/):
+
+| Variable                      | Default | Description                      |
+| ----------------------------- | ------- | -------------------------------- |
+| `F5XC_QUOTA_CHECK_ENABLED`    | `true`  | Enable/disable quota checking    |
+| `F5XC_QUOTA_CACHE_TTL`        | `300`   | Cache TTL in seconds (5 minutes) |
+| `F5XC_QUOTA_GREEN_THRESHOLD`  | `79`    | Green zone upper bound (%)       |
+| `F5XC_QUOTA_YELLOW_THRESHOLD` | `99`    | Yellow zone upper bound (%)      |
+| `F5XC_QUOTA_RED_THRESHOLD`    | `100`   | Red zone threshold (%)           |
+
+## Server-Applied Default Values
+
+> Available since v2.0.28
+
+F5 XC API specifications distinguish between field requirements with
+enhanced metadata, reducing the number of fields you must provide.
+
+### Field Requirement Types
+
+1. **User-Required Fields** (`x-f5xc-required-for.create: true`)
+   - Must be provided by user at creation time
+   - Validation returns **error** if missing
+   - Example: `metadata.name`, `http_health_check.path`
+
+2. **Server-Defaulted Fields** (`x-f5xc-server-default: true`)
+   - Optional at creation time
+   - Server applies default value if omitted
+   - Validation returns **warning** with default value info
+   - Example: `healthcheck.jitter_percent` defaults to `0`
+
+3. **Recommended Values** (`x-f5xc-recommended-value`) - _v2.0.32+_
+   - Suggested values matching F5 XC web UI defaults
+   - Provides guidance without enforcing specific values
+   - Example: `spec.timeout` recommended value is `3`
+
+4. **Schema-Required Fields** (`x-ves-required: true`)
+   - Must have non-zero value when API processes the request
+   - Can be user-provided OR server-defaulted
+
+### Healthcheck Defaults (v2.0.32+)
+
+#### Server-Applied Defaults
+
+| Field                                              | Default Value          |
+| -------------------------------------------------- | ---------------------- |
+| `spec.jitter_percent`                              | `0`                    |
+| `spec.http_health_check.use_http2`                 | `false`                |
+| `spec.http_health_check.headers`                   | `{}`                   |
+| `spec.http_health_check.expected_status_codes`     | `[]` (accepts 200-299) |
+| `spec.http_health_check.request_headers_to_remove` | `[]`                   |
+
+#### Recommended Values (Web UI Defaults)
+
+| Field                      | Recommended        |
+| -------------------------- | ------------------ |
+| `spec.timeout`             | `3` seconds        |
+| `spec.interval`            | `15` seconds       |
+| `spec.unhealthy_threshold` | `1` failure        |
+| `spec.healthy_threshold`   | `3` successes      |
+| `spec.jitter_percent`      | `30`% (production) |
+
+#### Minimal Healthcheck Example
+
+```json
+{
+  "metadata": {
+    "name": "example-hc",
+    "namespace": "default"
+  },
+  "spec": {
+    "timeout": 3,
+    "interval": 15,
+    "unhealthy_threshold": 1,
+    "healthy_threshold": 3,
+    "http_health_check": {
+      "use_origin_server_name": {},
+      "path": "/health"
+    }
+  }
+}
+```
+
+Server automatically applies: `jitter_percent` -> `0`, `use_http2` -> `false`,
+`headers` -> `{}`, `expected_status_codes` -> `[]`.
+
+### Origin Pool Defaults (v2.0.33+)
+
+#### Server-Applied Defaults
+
+| Field                         | Server Default   | UI Default    | Note                   |
+| ----------------------------- | ---------------- | ------------- | ---------------------- |
+| `spec.loadbalancer_algorithm` | `ROUND_ROBIN`    | `LB_OVERRIDE` | See warning below      |
+| `spec.endpoint_selection`     | `DISTRIBUTED`    | -             | Distributed selection  |
+| TLS to origin (`spec.no_tls`) | Disabled         | -             | No TLS by default      |
+| Connection timeout            | 2000 ms          | -             | 2 second timeout       |
+| HTTP idle timeout             | 300000 ms        | -             | 5 minute timeout       |
+| Circuit breaker               | Default enabled  | -             | Auto-enabled           |
+| Outlier detection             | Disabled         | -             | Must enable explicitly |
+| HTTP protocol                 | Auto-negotiation | -             | `auto_http_config`     |
+| Proxy protocol                | Disabled         | -             | Must enable explicitly |
+
+:::caution[UI vs Server Discrepancy]
+The web console pre-selects `LB_OVERRIDE` for the load balancer algorithm,
+but the server applies `ROUND_ROBIN` when the field is omitted.
+This creates behavior mismatches between UI-created and API-created
+configurations.
+:::
+
+#### Minimal Origin Pool Example
+
+```json
+{
+  "metadata": {
+    "name": "example-origin-pool",
+    "namespace": "default"
+  },
+  "spec": {
+    "origin_servers": [
+      {
+        "public_ip": {
+          "ip": "192.0.2.1"
+        }
+      }
+    ],
+    "port": 443,
+    "use_tls": {
+      "use_host_header_as_sni": {}
+    }
+  }
+}
+```
+
+### Validation Behavior
+
+When validating parameters:
+
+- **Missing user-required field** -> Error: "Missing required field: metadata.name"
+- **Missing server-default field** -> Warning: "Field 'jitter_percent' will default to 0"
+- **Recommended values** -> Info: Returned in `recommendedValues` for guidance
+
+## SSL/TLS Configuration
+
+### Staging Environment Certificate Issue
+
+F5 XC staging environments use URLs like
+`tenant.staging.console.ves.volterra.io`, but the SSL certificate only
+covers `*.console.ves.volterra.io`. Wildcards only match a single
+subdomain level, so `tenant.staging` fails validation.
+
+```text
+Hostname/IP does not match certificate's altnames:
+Host: tenant.staging.console.ves.volterra.io
+Cert covers: DNS:*.console.ves.volterra.io, DNS:console.ves.volterra.io
+```
+
+### Option 1: Custom CA Bundle (Recommended)
+
+If your organization uses a custom CA:
+
+```bash
+export F5XC_CA_BUNDLE=/path/to/your/ca-bundle.crt
+```
+
+### Option 2: Disable Verification (Development Only)
+
+:::danger[Never use in production]
+This disables all certificate validation.
+:::
+
+```bash
+export F5XC_TLS_INSECURE=true
+```
+
+### SSL Error Reference
+
+| Error                                               | Cause                   | Solution                                  |
+| --------------------------------------------------- | ----------------------- | ----------------------------------------- |
+| `Hostname/IP does not match certificate's altnames` | Staging URL mismatch    | Use `F5XC_TLS_INSECURE=true` or custom CA |
+| `self signed certificate`                           | Custom CA not trusted   | Set `F5XC_CA_BUNDLE`                      |
+| `certificate has expired`                           | Expired certificate     | Contact F5 XC admin                       |
+| `unable to verify the first certificate`            | Missing intermediate CA | Add intermediates to CA bundle            |
+
+### SSL Best Practices
+
+1. **Prefer `F5XC_CA_BUNDLE` over `F5XC_TLS_INSECURE`** - maintains validation while trusting your organization's certificates
+2. **Contact F5 Support** for staging environments to request the official staging CA certificate
+3. **Never use `F5XC_TLS_INSECURE=true` in production**
+4. **Rotate credentials regularly** according to your organization's security policies
+
+## Resource URIs
+
+Access F5XC resources via URI scheme:
+
+```text
+f5xc://{tenant}/{namespace}/{resource-type}/{name}
+```
+
+Examples:
+
+- `f5xc://mytenant/production/http_loadbalancer/my-app`
+- `f5xc://mytenant/system/namespace/default`
+
+## Workflow Prompts
+
+The server includes guided workflow prompts sourced from upstream enriched specs:
+
+| Prompt                      | Description                                                           |
+| --------------------------- | --------------------------------------------------------------------- |
+| `deploy_http_loadbalancer`  | Create a fully configured HTTP load balancer with backend origin pool |
+| `deploy_https_loadbalancer` | Create HTTPS load balancer with SSL/TLS termination                   |
+| `enable_waf_protection`     | Add web application firewall to existing load balancer                |
+| `configure_origin_pool`     | Set up backend server pool with health checks                         |
+| `configure_dns_zone`        | Set up authoritative DNS zone with records                            |
+| `enable_cdn_distribution`   | Configure CDN for content delivery                                    |
+| `register_site`             | Register and configure a CE site                                      |

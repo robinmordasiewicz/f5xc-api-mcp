@@ -1,0 +1,54 @@
+---
+title: Get Public Key
+description: Public Key.
+---
+
+GetPublicKey API returns public part of the F5 Distributed Cloud secret management key that needs to
+be given to F5 Distributed Cloud secret management tool to do secret encryption.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-blindfold-get-public-key-list` | Public Key. |
+
+## Parameters
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `key_version` | The version of public key. | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Get Public Key resources:
+
+### List Get Public Keys
+
+> "List all get-public-keys in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/get_public_keys" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/get_public_keys/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/get_public_keys" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @get_public_key.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/get_public_keys/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

@@ -1,0 +1,61 @@
+---
+title: Statu
+description: Status
+---
+
+GET Status of F5XC components.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-support-statu-list` | Status |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+| `site` | Site Name | `-` |
+| `vesnamespace` | F5XC Namespace | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `cached` | Use cached results in Status API. | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Statu resources:
+
+### List Status
+
+> "List all status in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/status" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/status/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/status" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @statu.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/status/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

@@ -1,0 +1,44 @@
+---
+title: Subscription Statu
+description: Check subscription status for Flow Collection.
+---
+
+Check subscription status flow Flow Collection.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-telemetryandinsights-subscription-statu-list` | Check subscription status for Flow Collection. |
+
+## Example Usage
+
+Ask Claude to help you work with Subscription Statu resources:
+
+### List Subscription Status
+
+> "List all subscription-status in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/subscription_status" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/subscription_status/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/subscription_status" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @subscription_statu.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/subscription_status/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

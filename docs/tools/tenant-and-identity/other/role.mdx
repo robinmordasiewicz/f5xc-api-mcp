@@ -1,0 +1,66 @@
+---
+title: Role
+description: Custom Create Role.
+---
+
+Create a role object and the rbac_policy object which the role associated with.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-tenantandidentity-role-create` | Custom Create Role. |
+| `f5xc-api-tenantandidentity-role-get` | Custom GET Role. |
+| `f5xc-api-tenantandidentity-role-list` | Custom List Roles. |
+| `f5xc-api-tenantandidentity-role-update` | Custom Replace Role. |
+| `f5xc-api-tenantandidentity-role-delete` | DELETE Role. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Role resources:
+
+### Create Role
+
+> "Create a role named 'example' in the 'production' namespace"
+
+### List Roles
+
+> "List all roles in the 'production' namespace"
+
+### Get Role Details
+
+> "Get details of the role named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/roles" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/roles/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/roles" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @role.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/roles/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

@@ -1,0 +1,332 @@
+---
+title: Origin Pool
+description: Create Origin Pool.
+---
+
+Shape of the origin pool create specification.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-virtual-origin-pool-create` | Create Origin Pool. |
+| `f5xc-api-virtual-origin-pool-get` | GET Origin Pool. |
+| `f5xc-api-virtual-origin-pool-list` | List Origin Pool. |
+| `f5xc-api-virtual-origin-pool-update` | Replace Origin Pool. |
+| `f5xc-api-virtual-origin-pool-delete` | DELETE Origin Pool. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### health_check_port_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.health_check_port` | - |  |
+| `spec.same_as_endpoint_port` | - | ✅ Yes |
+
+:::tip[Recommended Option]
+Use `spec.same_as_endpoint_port` for most use cases.
+:::
+
+
+### port_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.automatic_port` | - |  |
+| `spec.lb_port` | - |  |
+| `spec.port` | - |  |
+
+### tls_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.no_tls` | - | ✅ Yes |
+| `spec.use_tls` | - |  |
+
+:::tip[Recommended Option]
+Use `spec.no_tls` for most use cases.
+:::
+
+
+### circuit_breaker_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.advanced_options.circuit_breaker` | - |  |
+| `spec.advanced_options.default_circuit_breaker` | - | ✅ Yes |
+| `spec.advanced_options.disable_circuit_breaker` | - |  |
+
+:::tip[Recommended Option]
+Use `spec.advanced_options.default_circuit_breaker` for most use cases.
+:::
+
+
+### http_protocol_type
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.advanced_options.auto_http_config` | - | ✅ Yes |
+| `spec.advanced_options.http1_config` | - |  |
+| `spec.advanced_options.http2_options` | - |  |
+
+:::tip[Recommended Option]
+Use `spec.advanced_options.auto_http_config` for most use cases.
+:::
+
+
+### lb_source_ip_persistance_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.advanced_options.disable_lb_source_ip_persistance` | - | ✅ Yes |
+| `spec.advanced_options.enable_lb_source_ip_persistance` | - |  |
+
+:::tip[Recommended Option]
+Use `spec.advanced_options.disable_lb_source_ip_persistance` for most use cases.
+:::
+
+
+### outlier_detection_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.advanced_options.disable_outlier_detection` | - | ✅ Yes |
+| `spec.advanced_options.outlier_detection` | - |  |
+
+:::tip[Recommended Option]
+Use `spec.advanced_options.disable_outlier_detection` for most use cases.
+:::
+
+
+### panic_threshold_type
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.advanced_options.no_panic_threshold` | - | ✅ Yes |
+| `spec.advanced_options.panic_threshold` | - |  |
+
+:::tip[Recommended Option]
+Use `spec.advanced_options.no_panic_threshold` for most use cases.
+:::
+
+
+### proxy_protocol_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.advanced_options.disable_proxy_protocol` | - | ✅ Yes |
+| `spec.advanced_options.proxy_protocol_v1` | - |  |
+| `spec.advanced_options.proxy_protocol_v2` | - |  |
+
+:::tip[Recommended Option]
+Use `spec.advanced_options.disable_proxy_protocol` for most use cases.
+:::
+
+
+### subset_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.advanced_options.disable_subsets` | - | ✅ Yes |
+| `spec.advanced_options.enable_subsets` | - |  |
+
+:::tip[Recommended Option]
+Use `spec.advanced_options.disable_subsets` for most use cases.
+:::
+
+
+### fallback_policy_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.advanced_options.enable_subsets.any_endpoint` | - |  |
+| `spec.advanced_options.enable_subsets.default_subset` | - |  |
+| `spec.advanced_options.enable_subsets.fail_request` | - |  |
+
+### header_transformation_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.advanced_options.http1_config.header_transformation.default_header_transformation` | - |  |
+| `spec.advanced_options.http1_config.header_transformation.legacy_header_transformation` | - |  |
+| `spec.advanced_options.http1_config.header_transformation.preserve_case_header_transformation` | - |  |
+| `spec.advanced_options.http1_config.header_transformation.proper_case_header_transformation` | - |  |
+
+### choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.origin_servers[].cbip_service` | - |  |
+| `spec.origin_servers[].consul_service` | - |  |
+| `spec.origin_servers[].custom_endpoint_object` | - |  |
+| `spec.origin_servers[].k8s_service` | - |  |
+| `spec.origin_servers[].private_ip` | - |  |
+| `spec.origin_servers[].private_name` | - |  |
+| `spec.origin_servers[].public_ip` | - |  |
+| `spec.origin_servers[].public_name` | - |  |
+| `spec.origin_servers[].vn_private_ip` | - |  |
+| `spec.origin_servers[].vn_private_name` | - |  |
+
+### network_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.origin_servers[].consul_service.inside_network` | - |  |
+| `spec.origin_servers[].consul_service.outside_network` | - |  |
+
+### snat_pool_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.origin_servers[].consul_service.snat_pool.no_snat_pool` | - |  |
+| `spec.origin_servers[].consul_service.snat_pool.snat_pool` | - |  |
+
+### service_info
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.origin_servers[].k8s_service.service_name` | - |  |
+
+### private_ip_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.origin_servers[].private_ip.ip` | - |  |
+
+### public_ip_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.origin_servers[].public_ip.ip` | - |  |
+
+### virtual_network_ip_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.origin_servers[].vn_private_ip.ip` | - |  |
+
+### map_downstream_to_upstream_conn_pool_type
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.upstream_conn_pool_reuse_type.disable_conn_pool_reuse` | - |  |
+| `spec.upstream_conn_pool_reuse_type.enable_conn_pool_reuse` | - |  |
+
+### max_session_keys_type
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.use_tls.default_session_key_caching` | - |  |
+| `spec.use_tls.disable_session_key_caching` | - |  |
+| `spec.use_tls.max_session_keys` | - |  |
+
+### mtls_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.use_tls.no_mtls` | - |  |
+| `spec.use_tls.use_mtls` | - |  |
+| `spec.use_tls.use_mtls_obj` | - |  |
+
+### server_validation_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.use_tls.skip_server_verification` | - |  |
+| `spec.use_tls.use_server_verification` | - |  |
+| `spec.use_tls.volterra_trusted_ca` | - |  |
+
+### sni_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.use_tls.disable_sni` | - |  |
+| `spec.use_tls.sni` | - |  |
+| `spec.use_tls.use_host_header_as_sni` | - |  |
+
+### ocsp_stapling_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.use_tls.use_mtls.tls_certificates[].custom_hash_algorithms` | - |  |
+| `spec.use_tls.use_mtls.tls_certificates[].disable_ocsp_stapling` | - |  |
+| `spec.use_tls.use_mtls.tls_certificates[].use_system_defaults` | - |  |
+
+### secret_info_oneof
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.use_tls.use_mtls.tls_certificates[].private_key.blindfold_secret_info` | - |  |
+| `spec.use_tls.use_mtls.tls_certificates[].private_key.clear_secret_info` | - |  |
+
+### trusted_ca_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.use_tls.use_server_verification.trusted_ca` | - |  |
+| `spec.use_tls.use_server_verification.trusted_ca_url` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Origin Pool resources:
+
+### Create Origin Pool
+
+> "Create a origin-pool named 'example' in the 'production' namespace"
+
+### List Origin Pools
+
+> "List all origin-pools in the 'production' namespace"
+
+### Get Origin Pool Details
+
+> "Get details of the origin-pool named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/origin_pools" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/origin_pools/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/origin_pools" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @origin_pool.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/origin_pools/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

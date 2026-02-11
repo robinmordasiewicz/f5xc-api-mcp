@@ -1,0 +1,104 @@
+---
+title: Cloud Connect
+description: Create Cloud Connect.
+---
+
+List the set of cloud_connect in a namespace.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-cloudinfrastructure-cloud-connect-create` | Create Cloud Connect. |
+| `f5xc-api-cloudinfrastructure-cloud-connect-get` | GET Cloud Connect. |
+| `f5xc-api-cloudinfrastructure-cloud-connect-list` | List Cloud Connect. |
+| `f5xc-api-cloudinfrastructure-cloud-connect-update` | Replace Cloud Connect. |
+| `f5xc-api-cloudinfrastructure-cloud-connect-delete` | DELETE Cloud Connect. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### cloud
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.aws_tgw_site` | - |  |
+| `spec.azure_vnet_site` | - |  |
+
+### routing_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.aws_tgw_site.vpc_attachments.vpc_list[].custom_routing` | - |  |
+| `spec.aws_tgw_site.vpc_attachments.vpc_list[].default_route` | - |  |
+| `spec.aws_tgw_site.vpc_attachments.vpc_list[].manual_routing` | - |  |
+
+### default_route_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.aws_tgw_site.vpc_attachments.vpc_list[].default_route.all_route_tables` | - |  |
+| `spec.aws_tgw_site.vpc_attachments.vpc_list[].default_route.selective_route_tables` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Cloud Connect resources:
+
+### Create Cloud Connect
+
+> "Create a cloud-connect named 'example' in the 'production' namespace"
+
+### List Cloud Connects
+
+> "List all cloud-connects in the 'production' namespace"
+
+### Get Cloud Connect Details
+
+> "Get details of the cloud-connect named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/cloud_connects" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/cloud_connects/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/cloud_connects" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @cloud_connect.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/cloud_connects/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

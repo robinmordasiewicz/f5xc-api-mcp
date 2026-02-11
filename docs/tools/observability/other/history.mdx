@@ -1,0 +1,63 @@
+---
+title: History
+description: GET Alerts History.
+---
+
+GET the history of alert notifications sent to the end-user between the start_time and end_time that
+matches the
+filter specified in the request.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-observability-history-list` | GET Alerts History. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `end_time` | Fetch alerts whose timestamp &lt;= end_time | `-` |
+| `filter` | HighDiskUsage\", severity=\"critical\"\}" | `-` |
+| `start_time` | Fetch alerts whose timestamp >= start_time | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with History resources:
+
+### List Historys
+
+> "List all historys in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/historys" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/historys/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/historys" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @history.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/historys/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

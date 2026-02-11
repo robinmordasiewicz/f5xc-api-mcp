@@ -1,0 +1,81 @@
+---
+title: object Type
+description: DELETE Stored Object(s)
+---
+
+CreateObject is an API to upload an object to generic object store. Objects are immutable, a new
+version is created when the content is updated.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-objectstorage-object-type-update` | Create Stored Object. |
+| `f5xc-api-objectstorage-object-type-delete` | DELETE Stored Object(s) |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `object_type` | Object_type | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `force_delete` | Optional query parameter. If provided will DELETE all the versions of the specified object. | `-` |
+| `version` | Version of the stored_object in "v\{n\}-\{YY\}-\{MM\}-\{DD\}" formatted string, where n is version number and YY/MM/DD is year, month and date. | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### contents
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `bytes_value` | - |  |
+| `string_value` | - |  |
+
+### object_attributes
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `mobile_app_shield` | - |  |
+| `mobile_integrator` | - |  |
+| `mobile_sdk` | - |  |
+| `no_attributes` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with object Type resources:
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/object_types" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/object_types/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/object_types" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @object_type.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/object_types/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

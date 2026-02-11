@@ -1,0 +1,71 @@
+---
+title: Scroll
+description: Security Event Scroll Query.
+---
+
+Scroll request is used to fetch large number of security events in multiple batches with each
+SecurityEventResponse
+containing no more than 500 messages. To scroll through more than 500 or all
+messages, one can use the
+SecurityEventScrollRequest. Use the scroll_id returned in the
+SecurityEventResponse to fetch the next batch of security events
+and one can continue this process
+till the scroll_id returned is "" which indicates no more events to scroll.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-virtual-scroll-create` | Security Event Scroll Query. |
+| `f5xc-api-virtual-scroll-list` | Security Event Scroll Query. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `scroll_id` | Long Base-64 encoded string which can be used to retrieve next batch of security events. | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Scroll resources:
+
+### Create Scroll
+
+> "Create a scroll named 'example' in the 'production' namespace"
+
+### List Scrolls
+
+> "List all scrolls in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/scrolls" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/scrolls/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/scrolls" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @scroll.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/scrolls/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

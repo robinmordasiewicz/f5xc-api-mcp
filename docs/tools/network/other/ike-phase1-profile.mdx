@@ -1,0 +1,98 @@
+---
+title: Ike Phase1 Profile
+description: Create IKE Phase1 Profile.
+---
+
+Shape of the IKE Phase1 Profile configuration specification.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-network-ike-phase1-profile-create` | Create IKE Phase1 Profile. |
+| `f5xc-api-network-ike-phase1-profile-get` | GET IKE Phase1 profile configuration. |
+| `f5xc-api-network-ike-phase1-profile-list` | List IKE Phase 1 Profile. |
+| `f5xc-api-network-ike-phase1-profile-update` | Replace IKE Phase1 Profile configuration. |
+| `f5xc-api-network-ike-phase1-profile-delete` | DELETE IKE Phase 1 Profile. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### ike_key_lifetime
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.ike_keylifetime_hours` | - |  |
+| `spec.ike_keylifetime_minutes` | - |  |
+| `spec.use_default_keylifetime` | - |  |
+
+### ike_reauth_timeout
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.reauth_disabled` | - |  |
+| `spec.reauth_timeout_days` | - |  |
+| `spec.reauth_timeout_hours` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Ike Phase1 Profile resources:
+
+### Create Ike Phase1 Profile
+
+> "Create a ike-phase1-profile named 'example' in the 'production' namespace"
+
+### List Ike Phase1 Profiles
+
+> "List all ike-phase1-profiles in the 'production' namespace"
+
+### Get Ike Phase1 Profile Details
+
+> "Get details of the ike-phase1-profile named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/ike_phase1_profiles" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/ike_phase1_profiles/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/ike_phase1_profiles" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @ike_phase1_profile.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/ike_phase1_profiles/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

@@ -1,0 +1,77 @@
+---
+title: Irule
+description: Create iRule.
+---
+
+Create iRule in a given namespace. If one already exists it will give an error.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-bigip-irule-create` | Create iRule. |
+| `f5xc-api-bigip-irule-get` | GET iRule |
+| `f5xc-api-bigip-irule-list` | List Configure iRule. |
+| `f5xc-api-bigip-irule-update` | Replace iRule. |
+| `f5xc-api-bigip-irule-delete` | DELETE Configure iRule. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Irule resources:
+
+### Create Irule
+
+> "Create a irule named 'example' in the 'production' namespace"
+
+### List Irules
+
+> "List all irules in the 'production' namespace"
+
+### Get Irule Details
+
+> "Get details of the irule named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/irules" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/irules/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/irules" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @irule.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/irules/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

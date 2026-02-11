@@ -1,0 +1,60 @@
+---
+title: K8S Event
+description: K8s Events Query.
+---
+
+Request to GET physical K8s events that matches the criteria in request for a given namespace.
+If no
+match conditions are specified in the request, then the response contains all
+K8s events in the
+namespace. User with access to the `system` namespace may query for K8s events across
+all namespaces
+in a K8s Cluster.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-sites-k8s-event-create` | K8s Events Query. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+| `site` | Site | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with K8S Event resources:
+
+### Create K8S Event
+
+> "Create a k8s-event named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/k8s_events" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/k8s_events/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/k8s_events" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @k8s_event.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/k8s_events/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

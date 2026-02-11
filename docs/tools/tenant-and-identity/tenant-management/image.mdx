@@ -1,0 +1,46 @@
+---
+title: Image
+description: DELETE tenant profile image.
+---
+
+Uploads new profile image for the tenant entity.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-tenantandidentity-image-list` | Tenant profile image. |
+| `f5xc-api-tenantandidentity-image-update` | Update tenant profile image. |
+| `f5xc-api-tenantandidentity-image-delete` | DELETE tenant profile image. |
+
+## Example Usage
+
+Ask Claude to help you work with Image resources:
+
+### List Images
+
+> "List all images in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/images" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/images/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/images" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @image.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/images/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

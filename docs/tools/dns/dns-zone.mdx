@@ -1,0 +1,151 @@
+---
+title: DNS Zone
+description: Create DNS Zone.
+---
+
+Create DNS Zone in a given namespace. If one already exist it will give a error.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-dns-dns-zone-create` | Create DNS Zone. |
+| `f5xc-api-dns-dns-zone-get` | GET DNS Zone. |
+| `f5xc-api-dns-dns-zone-list` | List DNS Zone. |
+| `f5xc-api-dns-dns-zone-update` | Replace DNS Zone. |
+| `f5xc-api-dns-dns-zone-delete` | DELETE DNS Zone. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### dns_type
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.primary` | - |  |
+| `spec.secondary` | - |  |
+
+### soa_record_parameters_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.primary.default_soa_parameters` | - |  |
+| `spec.primary.soa_parameters` | - |  |
+
+### type_record_set
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.primary.default_rr_set_group[].a_record` | - |  |
+| `spec.primary.default_rr_set_group[].aaaa_record` | - |  |
+| `spec.primary.default_rr_set_group[].afsdb_record` | - |  |
+| `spec.primary.default_rr_set_group[].alias_record` | - |  |
+| `spec.primary.default_rr_set_group[].caa_record` | - |  |
+| `spec.primary.default_rr_set_group[].cds_record` | - |  |
+| `spec.primary.default_rr_set_group[].cert_record` | - |  |
+| `spec.primary.default_rr_set_group[].cname_record` | - |  |
+| `spec.primary.default_rr_set_group[].ds_record` | - |  |
+| `spec.primary.default_rr_set_group[].eui48_record` | - |  |
+| `spec.primary.default_rr_set_group[].eui64_record` | - |  |
+| `spec.primary.default_rr_set_group[].lb_record` | - |  |
+| `spec.primary.default_rr_set_group[].loc_record` | - |  |
+| `spec.primary.default_rr_set_group[].mx_record` | - |  |
+| `spec.primary.default_rr_set_group[].naptr_record` | - |  |
+| `spec.primary.default_rr_set_group[].ns_record` | - |  |
+| `spec.primary.default_rr_set_group[].ptr_record` | - |  |
+| `spec.primary.default_rr_set_group[].srv_record` | - |  |
+| `spec.primary.default_rr_set_group[].sshfp_record` | - |  |
+| `spec.primary.default_rr_set_group[].tlsa_record` | - |  |
+| `spec.primary.default_rr_set_group[].txt_record` | - |  |
+
+### digest_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.primary.default_rr_set_group[].cds_record.values[].sha1_digest` | - |  |
+| `spec.primary.default_rr_set_group[].cds_record.values[].sha256_digest` | - |  |
+| `spec.primary.default_rr_set_group[].cds_record.values[].sha384_digest` | - |  |
+
+### fingerprint_type
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.primary.default_rr_set_group[].sshfp_record.values[].sha1_fingerprint` | - |  |
+| `spec.primary.default_rr_set_group[].sshfp_record.values[].sha256_fingerprint` | - |  |
+
+### mode
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.primary.dnssec_mode.disable` | - |  |
+| `spec.primary.dnssec_mode.enable` | - |  |
+
+### secret_info_oneof
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.secondary.tsig_key_value.blindfold_secret_info` | - |  |
+| `spec.secondary.tsig_key_value.clear_secret_info` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with DNS Zone resources:
+
+### Create DNS Zone
+
+> "Create a dns-zone named 'example' in the 'production' namespace"
+
+### List DNS Zones
+
+> "List all dns-zones in the 'production' namespace"
+
+### Get DNS Zone Details
+
+> "Get details of the dns-zone named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/dns_zones" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/dns_zones/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/dns_zones" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @dns_zone.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/dns_zones/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

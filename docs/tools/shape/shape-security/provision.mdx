@@ -1,0 +1,58 @@
+---
+title: Provision
+description: PostSafeProvision.
+---
+
+GET Recognize provision status as add-on service.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-shape-provision-create` | PostSafeProvision. |
+| `f5xc-api-shape-provision-list` | GET Recognize Provision Status Addon. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Provision resources:
+
+### Create Provision
+
+> "Create a provision named 'example' in the 'production' namespace"
+
+### List Provisions
+
+> "List all provisions in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/provisions" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/provisions/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/provisions" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @provision.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/provisions/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

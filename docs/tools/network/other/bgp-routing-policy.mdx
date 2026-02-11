@@ -1,0 +1,113 @@
+---
+title: Bgp Routing Policy
+description: Create BGP Routing Policy.
+---
+
+BGP Routing Policy is a list of rules containing match criteria
+and action to be applied. These
+rules help contol routes which are
+imported or exported to BGP peers.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-network-bgp-routing-policy-create` | Create BGP Routing Policy. |
+| `f5xc-api-network-bgp-routing-policy-get` | GET BGP Routing Policy. |
+| `f5xc-api-network-bgp-routing-policy-list` | List BGP Routing Policy. |
+| `f5xc-api-network-bgp-routing-policy-update` | Replace BGP Routing Policy. |
+| `f5xc-api-network-bgp-routing-policy-delete` | DELETE BGP Routing Policy. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### action_type
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.rules[].action.aggregate` | - |  |
+| `spec.rules[].action.allow` | - |  |
+| `spec.rules[].action.as_path` | - |  |
+| `spec.rules[].action.community` | - |  |
+| `spec.rules[].action.deny` | - |  |
+| `spec.rules[].action.local_preference` | - |  |
+| `spec.rules[].action.metric` | - |  |
+
+### type_of_match
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.rules[].match.as_path` | - |  |
+| `spec.rules[].match.community` | - |  |
+| `spec.rules[].match.ip_prefixes` | - |  |
+
+### prefix_length_match
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.rules[].match.ip_prefixes.prefixes[].equal_or_longer_than` | - |  |
+| `spec.rules[].match.ip_prefixes.prefixes[].exact_match` | - |  |
+| `spec.rules[].match.ip_prefixes.prefixes[].longer_than` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Bgp Routing Policy resources:
+
+### Create Bgp Routing Policy
+
+> "Create a bgp-routing-policy named 'example' in the 'production' namespace"
+
+### List Bgp Routing Policys
+
+> "List all bgp-routing-policys in the 'production' namespace"
+
+### Get Bgp Routing Policy Details
+
+> "Get details of the bgp-routing-policy named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/bgp_routing_policys" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/bgp_routing_policys/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/bgp_routing_policys" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @bgp_routing_policy.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/bgp_routing_policys/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

@@ -1,0 +1,224 @@
+---
+title: TCP Loadbalancer
+description: Create TCP Load Balancer.
+---
+
+Shape of the TCP load balancer replace specification.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-virtual-tcp-loadbalancer-create` | Create TCP Load Balancer. |
+| `f5xc-api-virtual-tcp-loadbalancer-get` | GET TCP Load Balancer. |
+| `f5xc-api-virtual-tcp-loadbalancer-list` | List Configure TCP Load Balancer. |
+| `f5xc-api-virtual-tcp-loadbalancer-update` | Replace TCP Load Balancer. |
+| `f5xc-api-virtual-tcp-loadbalancer-delete` | DELETE Configure TCP Load Balancer. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### advertise_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.advertise_custom` | - |  |
+| `spec.advertise_on_public` | - |  |
+| `spec.advertise_on_public_default_vip` | - |  |
+| `spec.do_not_advertise` | - |  |
+
+### cluster_retract_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.do_not_retract_cluster` | - |  |
+| `spec.retract_cluster` | - |  |
+
+### hash_policy_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.hash_policy_choice_least_active` | - |  |
+| `spec.hash_policy_choice_random` | - |  |
+| `spec.hash_policy_choice_round_robin` | - |  |
+| `spec.hash_policy_choice_source_ip_stickiness` | - |  |
+
+### loadbalancer_type
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.tcp` | - |  |
+| `spec.tls_tcp` | - |  |
+| `spec.tls_tcp_auto_cert` | - |  |
+
+### port_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.listen_port` | - |  |
+| `spec.port_ranges` | - |  |
+
+### service_policy_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.active_service_policies` | - |  |
+| `spec.no_service_policies` | - |  |
+| `spec.service_policies_from_namespace` | - |  |
+
+### sni_default_lb_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.default_lb_with_sni` | - |  |
+| `spec.no_sni` | - |  |
+| `spec.sni` | - |  |
+
+### choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.advertise_custom.advertise_where[].advertise_on_public` | - |  |
+| `spec.advertise_custom.advertise_where[].cloud_edge_segment` | - |  |
+| `spec.advertise_custom.advertise_where[].segment` | - |  |
+| `spec.advertise_custom.advertise_where[].site` | - |  |
+| `spec.advertise_custom.advertise_where[].site_segment` | - |  |
+| `spec.advertise_custom.advertise_where[].virtual_network` | - |  |
+| `spec.advertise_custom.advertise_where[].virtual_site` | - |  |
+| `spec.advertise_custom.advertise_where[].virtual_site_segment` | - |  |
+| `spec.advertise_custom.advertise_where[].virtual_site_with_vip` | - |  |
+| `spec.advertise_custom.advertise_where[].vk8s_service` | - |  |
+
+### v6_vip_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.advertise_custom.advertise_where[].virtual_network.default_v6_vip` | - |  |
+| `spec.advertise_custom.advertise_where[].virtual_network.specific_v6_vip` | - |  |
+
+### vip_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.advertise_custom.advertise_where[].virtual_network.default_vip` | - |  |
+| `spec.advertise_custom.advertise_where[].virtual_network.specific_vip` | - |  |
+
+### pool_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.origin_pools_weights[].cluster` | - |  |
+| `spec.origin_pools_weights[].pool` | - |  |
+
+### tls_certificates_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.tls_tcp.tls_cert_params` | - |  |
+| `spec.tls_tcp.tls_parameters` | - |  |
+
+### mtls_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.tls_tcp.tls_cert_params.no_mtls` | - |  |
+| `spec.tls_tcp.tls_cert_params.use_mtls` | - |  |
+
+### crl_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.tls_tcp.tls_cert_params.use_mtls.crl` | - |  |
+| `spec.tls_tcp.tls_cert_params.use_mtls.no_crl` | - |  |
+
+### trusted_ca_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.tls_tcp.tls_cert_params.use_mtls.trusted_ca` | - |  |
+| `spec.tls_tcp.tls_cert_params.use_mtls.trusted_ca_url` | - |  |
+
+### xfcc_header
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.tls_tcp.tls_cert_params.use_mtls.xfcc_disabled` | - |  |
+| `spec.tls_tcp.tls_cert_params.use_mtls.xfcc_options` | - |  |
+
+### ocsp_stapling_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.tls_tcp.tls_parameters.tls_certificates[].custom_hash_algorithms` | - |  |
+| `spec.tls_tcp.tls_parameters.tls_certificates[].disable_ocsp_stapling` | - |  |
+| `spec.tls_tcp.tls_parameters.tls_certificates[].use_system_defaults` | - |  |
+
+### secret_info_oneof
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.tls_tcp.tls_parameters.tls_certificates[].private_key.blindfold_secret_info` | - |  |
+| `spec.tls_tcp.tls_parameters.tls_certificates[].private_key.clear_secret_info` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with TCP Loadbalancer resources:
+
+### Create TCP Loadbalancer
+
+> "Create a tcp-loadbalancer named 'example' in the 'production' namespace"
+
+### List TCP Loadbalancers
+
+> "List all tcp-loadbalancers in the 'production' namespace"
+
+### Get TCP Loadbalancer Details
+
+> "Get details of the tcp-loadbalancer named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/tcp_loadbalancers" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/tcp_loadbalancers/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/tcp_loadbalancers" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @tcp_loadbalancer.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/tcp_loadbalancers/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

@@ -1,0 +1,62 @@
+---
+title: Behavior
+description: List Behaviors By Script.
+---
+
+List all the behaviors for a script depending on start time and end time.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-shape-behavior-get` | List Behaviors By Script. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `id` | ID | `-` |
+| `namespace` | Namespace | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `end_time` | X-required | `-` |
+| `start_time` | X-required | `-` |
+| `type` | X-required | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Behavior resources:
+
+### Get Behavior Details
+
+> "Get details of the behavior named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/behaviors" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/behaviors/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/behaviors" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @behavior.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/behaviors/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

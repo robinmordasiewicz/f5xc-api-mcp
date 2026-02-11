@@ -1,0 +1,54 @@
+---
+title: Start Debug Info Collection
+description: Start Debug Info Collection.
+---
+
+Start collecting a zip file of debug info from node.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-support-start-debug-info-collection-list` | Start Debug Info Collection. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `node` | Node Name | `-` |
+| `site` | Site Name | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Start Debug Info Collection resources:
+
+### List Start Debug Info Collections
+
+> "List all start-debug-info-collections in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/start_debug_info_collections" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/start_debug_info_collections/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/start_debug_info_collections" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @start_debug_info_collection.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/start_debug_info_collections/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

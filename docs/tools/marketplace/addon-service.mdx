@@ -1,0 +1,67 @@
+---
+title: Addon Service
+description: GET Addon Service Details.
+---
+
+Retrieves addon service information for the given addon service name.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-marketplace-addon-service-get` | GET Addon Service Details. |
+| `f5xc-api-marketplace-addon-service-list` | List Addon Service. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Addon Service resources:
+
+### List Addon Services
+
+> "List all addon-services in the 'production' namespace"
+
+### Get Addon Service Details
+
+> "Get details of the addon-service named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/addon_services" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/addon_services/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/addon_services" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @addon_service.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/addon_services/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

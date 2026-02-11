@@ -1,0 +1,64 @@
+---
+title: ResourceType
+description: GET supported resources type.
+---
+
+Getresourcetypesbyid CustomPublicAPI.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-tenantandidentity-resourcetype-get` | GET supported resources type. |
+| `f5xc-api-tenantandidentity-resourcetype-list` | GET supported resources type. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `id` | ID | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `excludedAttributes` | Members"]" | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with ResourceType resources:
+
+### List ResourceTypes
+
+> "List all ResourceTypes in the 'production' namespace"
+
+### Get ResourceType Details
+
+> "Get details of the ResourceType named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/ResourceTypes" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/ResourceTypes/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/ResourceTypes" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @ResourceType.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/ResourceTypes/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

@@ -1,0 +1,61 @@
+---
+title: Detected Domain
+description: GET Detected Domains.
+---
+
+GET the detected domains data for the tenant.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-shape-detected-domain-list` | GET Detected Domains. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `duration` | Length in Days to fetch domain. | `-` |
+| `locations` | List of locations if backend needs to filter with locations passed. | `-` |
+| `risk` | GET the list of high risk domains, all domains is by default. | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Detected Domain resources:
+
+### List Detected Domains
+
+> "List all detected-domains in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/detected_domains" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/detected_domains/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/detected_domains" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @detected_domain.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/detected_domains/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

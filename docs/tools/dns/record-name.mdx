@@ -1,0 +1,104 @@
+---
+title: record Name
+description: DELETE
+---
+
+Replace CustomAPI.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-dns-record-name-list` | GET |
+| `f5xc-api-dns-record-name-update` | Replace |
+| `f5xc-api-dns-record-name-delete` | DELETE |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `dns_zone_name` | Dns_zone_name | `-` |
+| `group_name` | Group_name | `-` |
+| `record_name` | Record_name | `-` |
+| `type` | Type | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### type_record_set
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `rrset.a_record` | - |  |
+| `rrset.aaaa_record` | - |  |
+| `rrset.afsdb_record` | - |  |
+| `rrset.alias_record` | - |  |
+| `rrset.caa_record` | - |  |
+| `rrset.cds_record` | - |  |
+| `rrset.cert_record` | - |  |
+| `rrset.cname_record` | - |  |
+| `rrset.ds_record` | - |  |
+| `rrset.eui48_record` | - |  |
+| `rrset.eui64_record` | - |  |
+| `rrset.lb_record` | - |  |
+| `rrset.loc_record` | - |  |
+| `rrset.mx_record` | - |  |
+| `rrset.naptr_record` | - |  |
+| `rrset.ns_record` | - |  |
+| `rrset.ptr_record` | - |  |
+| `rrset.srv_record` | - |  |
+| `rrset.sshfp_record` | - |  |
+| `rrset.tlsa_record` | - |  |
+| `rrset.txt_record` | - |  |
+
+### digest_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `rrset.cds_record.values[].sha1_digest` | - |  |
+| `rrset.cds_record.values[].sha256_digest` | - |  |
+| `rrset.cds_record.values[].sha384_digest` | - |  |
+
+### fingerprint_type
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `rrset.sshfp_record.values[].sha1_fingerprint` | - |  |
+| `rrset.sshfp_record.values[].sha256_fingerprint` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with record Name resources:
+
+### List record Names
+
+> "List all record-names in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/record_names" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/record_names/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/record_names" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @record_name.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/record_names/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

@@ -1,0 +1,44 @@
+---
+title: Allocateip
+description: Allocate IP through Global IP Allocator.
+---
+
+AllocateIP will allocate an IP address for the tenant read from context.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-aiservices-allocateip-create` | Allocate IP through Global IP Allocator. |
+
+## Example Usage
+
+Ask Claude to help you work with Allocateip resources:
+
+### Create Allocateip
+
+> "Create a allocateip named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/allocateips" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/allocateips/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/allocateips" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @allocateip.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/allocateips/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

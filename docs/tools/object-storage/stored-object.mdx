@@ -1,0 +1,62 @@
+---
+title: Stored Object
+description: GET List Of Stored Objects.
+---
+
+ListObjects is an API to list objects in object store.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-objectstorage-stored-object-list` | GET List Of Stored Objects. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+| `object_type` | Object_type | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `latest_version_only` | Optional query parameter. If passed, returns only latest version of the objects. | `-` |
+| `name` | Optional query parameter. Name of the stored_object. | `-` |
+| `query_type` | Optional query parameter. The type of search query needs to be performed. Could be EXACT_MATCH or PREFIX_MATCH. | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Stored Object resources:
+
+### List Stored Objects
+
+> "List all stored-objects in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/stored_objects" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/stored_objects/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/stored_objects" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @stored_object.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/stored_objects/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

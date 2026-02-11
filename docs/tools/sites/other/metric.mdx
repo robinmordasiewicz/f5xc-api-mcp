@@ -1,0 +1,54 @@
+---
+title: Metric
+description: Pods Metrics.
+---
+
+API to GET pods metrics for a given namespace in a site.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-sites-metric-create` | Pods Metrics. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+| `site` | Site | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Metric resources:
+
+### Create Metric
+
+> "Create a metric named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/metrics" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/metrics/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/metrics" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @metric.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/metrics/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

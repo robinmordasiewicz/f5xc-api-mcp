@@ -1,0 +1,56 @@
+---
+title: Analyze For Deletion
+description: Analyze For Deletion.
+---
+
+AnalyzeForDeletion checks the references of the object to make sure it is deletable.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-tenantandidentity-analyze-for-deletion-create` | Analyze For Deletion. |
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### object_identifier
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `namespace_name_identifier` | - |  |
+| `object_uid` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Analyze For Deletion resources:
+
+### Create Analyze For Deletion
+
+> "Create a analyze-for-deletion named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/analyze_for_deletions" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/analyze_for_deletions/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/analyze_for_deletions" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @analyze_for_deletion.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/analyze_for_deletions/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

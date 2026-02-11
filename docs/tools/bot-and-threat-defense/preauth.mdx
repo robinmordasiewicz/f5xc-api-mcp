@@ -1,0 +1,44 @@
+---
+title: Preauth
+description: Preauth
+---
+
+Pre-flight auth checks before calling the Provision API.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-botandthreatdefense-preauth-create` | Preauth |
+
+## Example Usage
+
+Ask Claude to help you work with Preauth resources:
+
+### Create Preauth
+
+> "Create a preauth named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/preauths" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/preauths/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/preauths" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @preauth.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/preauths/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

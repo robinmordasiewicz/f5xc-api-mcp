@@ -1,0 +1,54 @@
+---
+title: Registration Detail
+description: GET Registration Details.
+---
+
+Use this API to to GET registration details (currently limited to email address and domain)
+associated with a specific asb_message object.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-marketplace-registration-detail-list` | GET Registration Details. |
+
+## Parameters
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `token` | The token contains the encrypted data, secured using an HMAC key. | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Registration Detail resources:
+
+### List Registration Details
+
+> "List all registration-details in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/registration_details" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/registration_details/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/registration_details" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @registration_detail.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/registration_details/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

@@ -1,0 +1,53 @@
+---
+title: Threat Campaign
+description: GET Threat Campaign by ID.
+---
+
+GET Threat Campaign by ID.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-threatcampaign-threat-campaign-get` | GET Threat Campaign by ID. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `id` | ID | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Threat Campaign resources:
+
+### Get Threat Campaign Details
+
+> "Get details of the threat-campaign named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/threat_campaigns" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/threat_campaigns/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/threat_campaigns" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @threat_campaign.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/threat_campaigns/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

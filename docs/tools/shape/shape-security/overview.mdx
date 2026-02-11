@@ -1,0 +1,66 @@
+---
+title: Overview
+description: Top Latency Overview.
+---
+
+GET SAFE Analyst Station Dashboard Transaction Breakdown request.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-shape-overview-create` | Top Latency Overview. |
+| `f5xc-api-shape-overview-list` | GET SAFE Overview. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `from` | Timestamp representing start date of the requested period in millieseconds. | `-` |
+| `to` | Timestamp representing end date of the requested period in millieseconds. | `-` |
+| `version` | The API version to use. | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Overview resources:
+
+### Create Overview
+
+> "Create a overview named 'example' in the 'production' namespace"
+
+### List Overviews
+
+> "List all overviews in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/overviews" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/overviews/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/overviews" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @overview.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/overviews/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

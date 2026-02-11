@@ -1,0 +1,131 @@
+---
+title: External Connector
+description: Create external_connector configuration.
+---
+
+Shape of the external_connector configuration specification.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-marketplace-external-connector-create` | Create external_connector configuration. |
+| `f5xc-api-marketplace-external-connector-get` | GET external_connector configuration. |
+| `f5xc-api-marketplace-external-connector-list` | List External Connector Configuration. |
+| `f5xc-api-marketplace-external-connector-update` | Replace external_connector configuration. |
+| `f5xc-api-marketplace-external-connector-delete` | DELETE External Connector Configuration. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### connection_type
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.ipsec` | - |  |
+
+### dpd_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.ipsec.ike_parameters.dpd_disabled` | - |  |
+| `spec.ipsec.ike_parameters.dpd_keep_alive_timer` | - |  |
+
+### local_ike_id
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.ipsec.ike_parameters.use_default_local_ike_id` | - |  |
+
+### mode_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.ipsec.ike_parameters.initiator` | - |  |
+| `spec.ipsec.ike_parameters.responder` | - |  |
+
+### remote_ike_id
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.ipsec.ike_parameters.rm_hostname` | - |  |
+| `spec.ipsec.ike_parameters.rm_ip_address` | - |  |
+| `spec.ipsec.ike_parameters.use_default_remote_ike_id` | - |  |
+
+### ver
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.ipsec.ike_parameters.rm_ip_address.ipv4` | - |  |
+| `spec.ipsec.ike_parameters.rm_ip_address.ipv6` | - |  |
+
+### tunnel_source_vn
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.ipsec.ipsec_tunnel_parameters.segment` | - |  |
+| `spec.ipsec.ipsec_tunnel_parameters.site_local_inside_network` | - |  |
+| `spec.ipsec.ipsec_tunnel_parameters.site_local_network` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with External Connector resources:
+
+### Create External Connector
+
+> "Create a external-connector named 'example' in the 'production' namespace"
+
+### List External Connectors
+
+> "List all external-connectors in the 'production' namespace"
+
+### Get External Connector Details
+
+> "Get details of the external-connector named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/external_connectors" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/external_connectors/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/external_connectors" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @external_connector.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/external_connectors/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

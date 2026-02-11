@@ -1,0 +1,65 @@
+---
+title: Update Domain
+description: Update Domains.
+---
+
+Update domain from mitigated domains to allowed domains and vice versa.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-shape-update-domain-create` | Update Domains. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### allowed_or_mitigated_domains
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `add_to_allowed_domains` | - |  |
+| `add_to_mitigated_domains` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Update Domain resources:
+
+### Create Update Domain
+
+> "Create a update-domain named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/update_domains" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/update_domains/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/update_domains" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @update_domain.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/update_domains/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

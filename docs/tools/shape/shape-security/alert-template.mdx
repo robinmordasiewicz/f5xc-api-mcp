@@ -1,0 +1,75 @@
+---
+title: Alert Template
+description: Create Domain to protect.
+---
+
+List the set of alert_template in a namespace.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-shape-alert-template-create` | Create Domain to protect. |
+| `f5xc-api-shape-alert-template-get` | GET Protected Domain. |
+| `f5xc-api-shape-alert-template-list` | List BRM Alerts Alert Template. |
+| `f5xc-api-shape-alert-template-delete` | DELETE BRM Alerts Alert Template. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Alert Template resources:
+
+### Create Alert Template
+
+> "Create a alert-template named 'example' in the 'production' namespace"
+
+### List Alert Templates
+
+> "List all alert-templates in the 'production' namespace"
+
+### Get Alert Template Details
+
+> "Get details of the alert-template named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/alert_templates" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/alert_templates/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/alert_templates" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @alert_template.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/alert_templates/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

@@ -1,0 +1,53 @@
+---
+title: Pool Members Health Statu
+description: DNS Load Balancer Pool Members Health Status List.
+---
+
+GET Health Status of all DNS Load Balancer Pool Members in a namespace.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-dns-pool-members-health-statu-list` | DNS Load Balancer Pool Members Health Status List. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Pool Members Health Statu resources:
+
+### List Pool Members Health Status
+
+> "List all pool-members-health-status in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/pool_members_health_status" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/pool_members_health_status/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/pool_members_health_status" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @pool_members_health_statu.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/pool_members_health_status/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

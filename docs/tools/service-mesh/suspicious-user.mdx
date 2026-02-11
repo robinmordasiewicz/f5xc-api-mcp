@@ -1,0 +1,63 @@
+---
+title: Suspicious User
+description: GET Status of Suspicious users.
+---
+
+GET status of suspicious users.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-servicemesh-suspicious-user-get` | GET Status of Suspicious users. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `end_time` | Fetch suspicious users during timestamp &lt;= end_time | `-` |
+| `query` | Blogging_app"\}" | `-` |
+| `start_time` | Fetch suspicious users during timestamp >= start_time | `-` |
+| `topn` | The topn parameter | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Suspicious User resources:
+
+### Get Suspicious User Details
+
+> "Get details of the suspicious-user named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/suspicious_users" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/suspicious_users/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/suspicious_users" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @suspicious_user.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/suspicious_users/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

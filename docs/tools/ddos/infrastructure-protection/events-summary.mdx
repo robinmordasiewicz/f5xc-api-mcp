@@ -1,0 +1,59 @@
+---
+title: Events Summary
+description: Simple events view.
+---
+
+Return a list of available event (suitable for an alert)
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-ddos-events-summary-list` | Simple events view. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `alert_id` | Optional - allows to filter events by alert so only relevant events are returned. If not provided, all user events are returned. | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Events Summary resources:
+
+### List Events Summarys
+
+> "List all events-summarys in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/events_summarys" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/events_summarys/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/events_summarys" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @events_summary.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/events_summarys/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

@@ -1,0 +1,44 @@
+---
+title: Gettopriskyipaddresse
+description: GetTopRiskyIpAddresses.
+---
+
+GET top risky IP addresses data request in a time range.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-shape-gettopriskyipaddresse-create` | GetTopRiskyIpAddresses. |
+
+## Example Usage
+
+Ask Claude to help you work with Gettopriskyipaddresse resources:
+
+### Create Gettopriskyipaddresse
+
+> "Create a gettopriskyipaddresse named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/gettopriskyipaddresses" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/gettopriskyipaddresses/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/gettopriskyipaddresses" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @gettopriskyipaddresse.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/gettopriskyipaddresses/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

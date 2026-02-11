@@ -1,13 +1,12 @@
 # Contributing
 
-Thank you for your interest in contributing. This document describes the workflow
-and rules that all contributors — human and AI — must follow.
+This document describes the workflow and rules that all contributors — human and AI — must follow.
 
 ## Workflow Overview
 
 Every change follows this path:
 
-```text
+```
 Issue → Branch → PR (linked to issue) → CI passes → Merge → Branch auto-deleted
 ```
 
@@ -82,4 +81,5 @@ If you are Claude Code, Copilot, or another AI coding assistant, follow these ru
 4. **Use the `/ship` skill** when available — it handles the full Issue → Branch → PR flow.
 5. **Never force push** or attempt to bypass branch protection.
 6. **Fill out the PR template checklist** completely.
-7. **Respect CODEOWNERS** — `@robinmordasiewicz` is the default reviewer.
+7. **Follow the branch naming convention**: `feature/<issue>-desc`, `fix/<issue>-desc`, `docs/<issue>-desc`.
+8. **Respect CODEOWNERS** — `@robinmordasiewicz` is the default reviewer.

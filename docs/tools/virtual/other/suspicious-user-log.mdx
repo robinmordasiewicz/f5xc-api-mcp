@@ -1,0 +1,59 @@
+---
+title: Suspicious User Log
+description: Suspicious User Logs Query.
+---
+
+GET suspicious user logs for the given namespace.
+For `system` namespace, all suspicious users logs
+for the tenant matching the query specified
+in the request will be returned in the response. User
+may query suspicious user logs that matches various
+fields such as `vh_name`, `user`, `site`,
+`city`, `country`.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-virtual-suspicious-user-log-create` | Suspicious User Logs Query. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Suspicious User Log resources:
+
+### Create Suspicious User Log
+
+> "Create a suspicious-user-log named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/suspicious_user_logs" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/suspicious_user_logs/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/suspicious_user_logs" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @suspicious_user_log.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/suspicious_user_logs/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

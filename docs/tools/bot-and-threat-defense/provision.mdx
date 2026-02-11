@@ -1,0 +1,44 @@
+---
+title: Provision
+description: Provision
+---
+
+Provision CustomAPI.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-botandthreatdefense-provision-create` | Provision |
+
+## Example Usage
+
+Ask Claude to help you work with Provision resources:
+
+### Create Provision
+
+> "Create a provision named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/provisions" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/provisions/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/provisions" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @provision.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/provisions/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

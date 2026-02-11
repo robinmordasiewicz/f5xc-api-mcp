@@ -1,0 +1,56 @@
+---
+title: Justification
+description: Update Script Justification.
+---
+
+DELETE the specified script justification.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-shape-justification-create` | Update Script Justification. |
+| `f5xc-api-shape-justification-delete` | DELETE Script Justification. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+| `script_id` | Script_id | `-` |
+| `justification_id` | Justification_id | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Justification resources:
+
+### Create Justification
+
+> "Create a justification named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/justifications" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/justifications/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/justifications" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @justification.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/justifications/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

@@ -1,0 +1,64 @@
+---
+title: name
+description: DELETE Stored Object(s)
+---
+
+GetMobileAppShield is an API to download particular version of mobile app shield.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-objectstorage-name-get` | GET Mobile App Shield. |
+| `f5xc-api-objectstorage-name-delete` | DELETE Stored Object(s) |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `version` | Version | `-` |
+| `object_type` | Object_type | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `object_type` | X-required | `-` |
+| `force_delete` | Optional query parameter. If provided will DELETE all the versions of the specified object. | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with name resources:
+
+### Get name Details
+
+> "Get details of the name named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/names" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/names/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/names" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @name.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/names/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

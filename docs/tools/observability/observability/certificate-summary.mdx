@@ -1,0 +1,60 @@
+---
+title: Certificate Summary
+description: GET Certificate Summary.
+---
+
+Returns list of TLS certificate expirations in specified time window for HTTPS monitors running in
+namespace.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-observability-certificate-summary-list` | GET Certificate Summary. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `period_in_days` | Period_in_days. | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Certificate Summary resources:
+
+### List Certificate Summarys
+
+> "List all certificate-summarys in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/certificate_summarys" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/certificate_summarys/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/certificate_summarys" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @certificate_summary.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/certificate_summarys/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

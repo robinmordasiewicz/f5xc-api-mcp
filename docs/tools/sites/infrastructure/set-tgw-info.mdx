@@ -1,0 +1,54 @@
+---
+title: Set Tgw Info
+description: Configure TGW Information.
+---
+
+Configure TGW Information like tgw-ID, F5 Distributed Cloud site's VPC-ID.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-sites-set-tgw-info-create` | Configure TGW Information. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Set Tgw Info resources:
+
+### Create Set Tgw Info
+
+> "Create a set-tgw-info named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/set_tgw_infos" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/set_tgw_infos/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/set_tgw_infos" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @set_tgw_info.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/set_tgw_infos/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

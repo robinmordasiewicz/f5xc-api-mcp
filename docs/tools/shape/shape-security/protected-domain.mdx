@@ -1,0 +1,75 @@
+---
+title: Protected Domain
+description: Create Domain to protect.
+---
+
+List the set of protected_domain in a namespace.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-shape-protected-domain-create` | Create Domain to protect. |
+| `f5xc-api-shape-protected-domain-get` | GET Protected Domain. |
+| `f5xc-api-shape-protected-domain-list` | List Client-Side Defense Domain to Protect. |
+| `f5xc-api-shape-protected-domain-delete` | DELETE Client-Side Defense Domain to Protect. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Protected Domain resources:
+
+### Create Protected Domain
+
+> "Create a protected-domain named 'example' in the 'production' namespace"
+
+### List Protected Domains
+
+> "List all protected-domains in the 'production' namespace"
+
+### Get Protected Domain Details
+
+> "Get details of the protected-domain named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/protected_domains" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/protected_domains/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/protected_domains" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @protected_domain.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/protected_domains/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

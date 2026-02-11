@@ -1,0 +1,44 @@
+---
+title: Tenant Escalation Doc
+description: Tenant escalation document.
+---
+
+Receive current tenant escalation document.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-tenantandidentity-tenant-escalation-doc-list` | Tenant escalation document. |
+
+## Example Usage
+
+Ask Claude to help you work with Tenant Escalation Doc resources:
+
+### List Tenant Escalation Docs
+
+> "List all tenant-escalation-docs in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/tenant_escalation_docs" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/tenant_escalation_docs/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/tenant_escalation_docs" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @tenant_escalation_doc.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/tenant_escalation_docs/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

@@ -1,0 +1,60 @@
+---
+title: Fast Acls For Internet Vip
+description: Set FastACLs For Internet VIPs.
+---
+
+SetFastACLsForInternetVIPs activates the passed list of FastACLs for Internet VIPs.
+An emtpy list in
+the request will clear FastACLs for Internet VIPs.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-tenantandidentity-fast-acls-for-internet-vip-create` | Set FastACLs For Internet VIPs. |
+| `f5xc-api-tenantandidentity-fast-acls-for-internet-vip-list` | GET FastACLs For Internet VIPs. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Fast Acls For Internet Vip resources:
+
+### Create Fast Acls For Internet Vip
+
+> "Create a fast-acls-for-internet-vip named 'example' in the 'production' namespace"
+
+### List Fast Acls For Internet Vips
+
+> "List all fast-acls-for-internet-vips in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/fast_acls_for_internet_vips" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/fast_acls_for_internet_vips/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/fast_acls_for_internet_vips" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @fast_acls_for_internet_vip.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/fast_acls_for_internet_vips/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

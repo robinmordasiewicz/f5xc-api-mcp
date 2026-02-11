@@ -1,0 +1,54 @@
+---
+title: Set Vip Info
+description: Configure AWS TGW Site VIP Information.
+---
+
+Configure AWS TGW Site VIP Information.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-sites-set-vip-info-create` | Configure AWS TGW Site VIP Information. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Set Vip Info resources:
+
+### Create Set Vip Info
+
+> "Create a set-vip-info named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/set_vip_infos" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/set_vip_infos/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/set_vip_infos" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @set_vip_info.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/set_vip_infos/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

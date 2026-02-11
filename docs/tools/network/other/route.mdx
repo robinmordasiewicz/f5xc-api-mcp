@@ -1,0 +1,293 @@
+---
+title: Route
+description: Create Route.
+---
+
+Replace route object in a given namespace. Route object is list of route rules.
+Each rule has match
+condition to match incoming requests and actions to take on matching requests.
+Virtual host object
+has reference to route object.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-network-route-create` | Create Route. |
+| `f5xc-api-network-route-get` | GET Route |
+| `f5xc-api-network-route-list` | List Route. |
+| `f5xc-api-network-route-update` | Replace Route. |
+| `f5xc-api-network-route-delete` | DELETE Route. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### bot_defense_javascript_injection_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.routes[].bot_defense_javascript_injection` | - |  |
+| `spec.routes[].inherited_bot_defense_javascript_injection` | - |  |
+
+### route_action
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.routes[].route_destination` | - |  |
+| `spec.routes[].route_direct_response` | - |  |
+| `spec.routes[].route_redirect` | - |  |
+
+### waf_exclusion_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.routes[].inherited_waf_exclusion` | - |  |
+| `spec.routes[].waf_exclusion_policy` | - |  |
+
+### value_match
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.routes[].match[].headers[].exact` | - |  |
+| `spec.routes[].match[].headers[].presence` | - |  |
+| `spec.routes[].match[].headers[].regex` | - |  |
+
+### port_match
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.routes[].match[].incoming_port.no_port_match` | - |  |
+| `spec.routes[].match[].incoming_port.port` | - |  |
+| `spec.routes[].match[].incoming_port.port_ranges` | - |  |
+
+### path_match
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.routes[].match[].path.path` | - |  |
+| `spec.routes[].match[].path.prefix` | - |  |
+| `spec.routes[].match[].path.regex` | - |  |
+
+### value_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.routes[].request_cookies_to_add[].secret_value` | - |  |
+| `spec.routes[].request_cookies_to_add[].value` | - |  |
+
+### secret_info_oneof
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.routes[].request_cookies_to_add[].secret_value.blindfold_secret_info` | - |  |
+| `spec.routes[].request_cookies_to_add[].secret_value.clear_secret_info` | - |  |
+
+### domain_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.routes[].response_cookies_to_add[].add_domain` | - |  |
+| `spec.routes[].response_cookies_to_add[].ignore_domain` | - |  |
+
+### expiry_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.routes[].response_cookies_to_add[].add_expiry` | - |  |
+| `spec.routes[].response_cookies_to_add[].ignore_expiry` | - |  |
+
+### httponly_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.routes[].response_cookies_to_add[].add_httponly` | - |  |
+| `spec.routes[].response_cookies_to_add[].ignore_httponly` | - |  |
+
+### max_age_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.routes[].response_cookies_to_add[].ignore_max_age` | - |  |
+| `spec.routes[].response_cookies_to_add[].max_age_value` | - |  |
+
+### partitioned_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.routes[].response_cookies_to_add[].add_partitioned` | - |  |
+| `spec.routes[].response_cookies_to_add[].ignore_partitioned` | - |  |
+
+### path_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.routes[].response_cookies_to_add[].add_path` | - |  |
+| `spec.routes[].response_cookies_to_add[].ignore_path` | - |  |
+
+### samesite_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.routes[].response_cookies_to_add[].ignore_samesite` | - |  |
+| `spec.routes[].response_cookies_to_add[].samesite_lax` | - |  |
+| `spec.routes[].response_cookies_to_add[].samesite_none` | - |  |
+| `spec.routes[].response_cookies_to_add[].samesite_strict` | - |  |
+
+### secure_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.routes[].response_cookies_to_add[].add_secure` | - |  |
+| `spec.routes[].response_cookies_to_add[].ignore_secure` | - |  |
+
+### cluster_retract_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.routes[].route_destination.do_not_retract_cluster` | - |  |
+| `spec.routes[].route_destination.retract_cluster` | - |  |
+
+### host_rewrite_params
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.routes[].route_destination.auto_host_rewrite` | - |  |
+| `spec.routes[].route_destination.host_rewrite` | - |  |
+
+### route_destination_rewrite
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.routes[].route_destination.prefix_rewrite` | - |  |
+| `spec.routes[].route_destination.regex_rewrite` | - |  |
+
+### allowed_domains
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.routes[].route_destination.csrf_policy.all_load_balancer_domains` | - |  |
+| `spec.routes[].route_destination.csrf_policy.custom_domain_list` | - |  |
+| `spec.routes[].route_destination.csrf_policy.disabled` | - |  |
+
+### policy_specifier
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.routes[].route_destination.hash_policy[].cookie` | - |  |
+| `spec.routes[].route_destination.hash_policy[].header_name` | - |  |
+| `spec.routes[].route_destination.hash_policy[].source_ip` | - |  |
+
+### httponly
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.routes[].route_destination.hash_policy[].cookie.add_httponly` | - |  |
+| `spec.routes[].route_destination.hash_policy[].cookie.ignore_httponly` | - |  |
+
+### samesite
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.routes[].route_destination.hash_policy[].cookie.ignore_samesite` | - |  |
+| `spec.routes[].route_destination.hash_policy[].cookie.samesite_lax` | - |  |
+| `spec.routes[].route_destination.hash_policy[].cookie.samesite_none` | - |  |
+| `spec.routes[].route_destination.hash_policy[].cookie.samesite_strict` | - |  |
+
+### secure
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.routes[].route_destination.hash_policy[].cookie.add_secure` | - |  |
+| `spec.routes[].route_destination.hash_policy[].cookie.ignore_secure` | - |  |
+
+### query_params
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.routes[].route_destination.query_params.remove_all_params` | - |  |
+| `spec.routes[].route_destination.query_params.replace_params` | - |  |
+| `spec.routes[].route_destination.query_params.retain_all_params` | - |  |
+
+### redirect_path_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.routes[].route_redirect.path_redirect` | - |  |
+| `spec.routes[].route_redirect.prefix_rewrite` | - |  |
+
+### service_policy_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.routes[].service_policy.disable` | - |  |
+
+### ref_type
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.routes[].waf_type.app_firewall` | - |  |
+| `spec.routes[].waf_type.disable_waf` | - |  |
+| `spec.routes[].waf_type.inherit_waf` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Route resources:
+
+### Create Route
+
+> "Create a route named 'example' in the 'production' namespace"
+
+### List Routes
+
+> "List all routes in the 'production' namespace"
+
+### Get Route Details
+
+> "Get details of the route named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/routes" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/routes/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/routes" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @route.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/routes/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

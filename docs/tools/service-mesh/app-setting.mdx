@@ -1,0 +1,170 @@
+---
+title: App Setting
+description: Create App Setting.
+---
+
+Replacing an App setting will update the configuration by replacing the existing spec with the
+provided one.
+For read-then-write operations a resourceVersion mismatch will occur if the object was
+modified between the read and write.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-servicemesh-app-setting-create` | Create App Setting. |
+| `f5xc-api-servicemesh-app-setting-get` | GET App Setting. |
+| `f5xc-api-servicemesh-app-setting-list` | List App Setting. |
+| `f5xc-api-servicemesh-app-setting-update` | Replace App Setting. |
+| `f5xc-api-servicemesh-app-setting-delete` | DELETE App Setting. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### learn_from_namespace
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.app_type_settings[].business_logic_markup_setting.disable` | - |  |
+| `spec.app_type_settings[].business_logic_markup_setting.enable` | - |  |
+
+### malicious_user_detection
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.app_type_settings[].user_behavior_analysis_setting.disable_detection` | - |  |
+| `spec.app_type_settings[].user_behavior_analysis_setting.enable_detection` | - |  |
+
+### bola_activity_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.app_type_settings[].user_behavior_analysis_setting.enable_detection.bola_detection_automatic` | - |  |
+| `spec.app_type_settings[].user_behavior_analysis_setting.enable_detection.exclude_bola_detection` | - |  |
+
+### bot_defense_activity_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.app_type_settings[].user_behavior_analysis_setting.enable_detection.exclude_bot_defense_activity` | - |  |
+| `spec.app_type_settings[].user_behavior_analysis_setting.enable_detection.include_bot_defense_activity` | - |  |
+
+### cooling_off_period_setting
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.app_type_settings[].user_behavior_analysis_setting.enable_detection.cooling_off_period` | - |  |
+
+### failed_login_activity_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.app_type_settings[].user_behavior_analysis_setting.enable_detection.exclude_failed_login_activity` | - |  |
+| `spec.app_type_settings[].user_behavior_analysis_setting.enable_detection.include_failed_login_activity` | - |  |
+
+### forbidden_activity_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.app_type_settings[].user_behavior_analysis_setting.enable_detection.exclude_forbidden_activity` | - |  |
+| `spec.app_type_settings[].user_behavior_analysis_setting.enable_detection.include_forbidden_activity` | - |  |
+
+### ip_reputation_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.app_type_settings[].user_behavior_analysis_setting.enable_detection.exclude_ip_reputation` | - |  |
+| `spec.app_type_settings[].user_behavior_analysis_setting.enable_detection.include_ip_reputation` | - |  |
+
+### non_existent_url_activity_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.app_type_settings[].user_behavior_analysis_setting.enable_detection.exclude_non_existent_url_activity` | - |  |
+| `spec.app_type_settings[].user_behavior_analysis_setting.enable_detection.include_non_existent_url_activity_automatic` | - |  |
+| `spec.app_type_settings[].user_behavior_analysis_setting.enable_detection.include_non_existent_url_activity_custom` | - |  |
+
+### rate_limit_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.app_type_settings[].user_behavior_analysis_setting.enable_detection.exclude_rate_limit` | - |  |
+| `spec.app_type_settings[].user_behavior_analysis_setting.enable_detection.include_rate_limit` | - |  |
+
+### waf_activity_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.app_type_settings[].user_behavior_analysis_setting.enable_detection.exclude_waf_activity` | - |  |
+| `spec.app_type_settings[].user_behavior_analysis_setting.enable_detection.include_waf_activity` | - |  |
+
+### sensitivity
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.app_type_settings[].user_behavior_analysis_setting.enable_detection.include_non_existent_url_activity_automatic.high` | - |  |
+| `spec.app_type_settings[].user_behavior_analysis_setting.enable_detection.include_non_existent_url_activity_automatic.low` | - |  |
+| `spec.app_type_settings[].user_behavior_analysis_setting.enable_detection.include_non_existent_url_activity_automatic.medium` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with App Setting resources:
+
+### Create App Setting
+
+> "Create a app-setting named 'example' in the 'production' namespace"
+
+### List App Settings
+
+> "List all app-settings in the 'production' namespace"
+
+### Get App Setting Details
+
+> "Get details of the app-setting named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/app_settings" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/app_settings/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/app_settings" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @app_setting.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/app_settings/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

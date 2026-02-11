@@ -1,0 +1,54 @@
+---
+title: List Policy
+description: List secret policy.
+---
+
+Listpolicy CustomAPI.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-blindfold-list-policy-list` | List secret policy. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+| `policy_state` | Policy_state | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with List Policy resources:
+
+### List List Policys
+
+> "List all list-policys in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/list_policys" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/list_policys/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/list_policys" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @list_policy.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/list_policys/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

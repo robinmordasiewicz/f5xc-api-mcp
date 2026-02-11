@@ -1,0 +1,105 @@
+---
+title: Subnet
+description: Create Subnet.
+---
+
+Subnet object contains configuration for an interface of a VM/pod.
+It is created in user or shared
+namespace.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-network-subnet-create` | Create Subnet. |
+| `f5xc-api-network-subnet-get` | GET Subnet. |
+| `f5xc-api-network-subnet-list` | List Subnet. |
+| `f5xc-api-network-subnet-update` | Replace Subnet. |
+| `f5xc-api-network-subnet-delete` | DELETE Subnet. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### connection_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.connect_to_layer2` | - |  |
+| `spec.connect_to_slo` | - |  |
+| `spec.isolated_nw` | - |  |
+
+### address_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.site_subnet_params[].dhcp` | - |  |
+| `spec.site_subnet_params[].static_ip` | - |  |
+
+### network_prefix_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.site_subnet_params[].subnet_dhcp_server_params.dhcp_networks[].network_prefix` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Subnet resources:
+
+### Create Subnet
+
+> "Create a subnet named 'example' in the 'production' namespace"
+
+### List Subnets
+
+> "List all subnets in the 'production' namespace"
+
+### Get Subnet Details
+
+> "Get details of the subnet named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/subnets" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/subnets/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/subnets" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @subnet.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/subnets/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

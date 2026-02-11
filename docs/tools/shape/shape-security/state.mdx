@@ -1,0 +1,44 @@
+---
+title: State
+description: State
+---
+
+GET customer State if after or before.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-shape-state-list` | State |
+
+## Example Usage
+
+Ask Claude to help you work with State resources:
+
+### List States
+
+> "List all states in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/states" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/states/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/states" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @state.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/states/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

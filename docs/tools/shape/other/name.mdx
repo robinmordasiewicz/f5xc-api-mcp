@@ -1,0 +1,61 @@
+---
+title: name
+description: GET Mobile SDK.
+---
+
+GetMobileSDK is an API to download particular version of SDK.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-shape-name-get` | GET Mobile SDK. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `version` | Version | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `object_type` | X-required | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with name resources:
+
+### Get name Details
+
+> "Get details of the name named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/names" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/names/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/names" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @name.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/names/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

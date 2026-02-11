@@ -1,0 +1,129 @@
+---
+title: Fast Acl
+description: Create Fast ACL.
+---
+
+Replace a `fast_acl` object, `fast_acl` object contains rules to protect site from denial of
+service
+It has destination\{destination IP, destination port) and references to `fast_acl_rule`
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-networksecurity-fast-acl-create` | Create Fast ACL. |
+| `f5xc-api-networksecurity-fast-acl-get` | GET Fast ACL. |
+| `f5xc-api-networksecurity-fast-acl-list` | List Fast ACL. |
+| `f5xc-api-networksecurity-fast-acl-update` | Replace Fast ACL. |
+| `f5xc-api-networksecurity-fast-acl-delete` | DELETE Fast ACL. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### site_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.re_acl` | - |  |
+| `spec.site_acl` | - |  |
+
+### vip_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.re_acl.all_public_vips` | - |  |
+| `spec.re_acl.default_tenant_vip` | - |  |
+| `spec.re_acl.selected_tenant_vip` | - |  |
+
+### source
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.re_acl.fast_acl_rules[].ip_prefix_set` | - |  |
+| `spec.re_acl.fast_acl_rules[].prefix` | - |  |
+
+### action
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.re_acl.fast_acl_rules[].action.policer_action` | - |  |
+| `spec.re_acl.fast_acl_rules[].action.protocol_policer_action` | - |  |
+| `spec.re_acl.fast_acl_rules[].action.simple_action` | - |  |
+
+### port_value_type_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.re_acl.fast_acl_rules[].port[].all` | - |  |
+| `spec.re_acl.fast_acl_rules[].port[].dns` | - |  |
+| `spec.re_acl.fast_acl_rules[].port[].user_defined` | - |  |
+
+### network_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.site_acl.inside_network` | - |  |
+| `spec.site_acl.outside_network` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Fast Acl resources:
+
+### Create Fast Acl
+
+> "Create a fast-acl named 'example' in the 'production' namespace"
+
+### List Fast Acls
+
+> "List all fast-acls in the 'production' namespace"
+
+### Get Fast Acl Details
+
+> "Get details of the fast-acl named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/fast_acls" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/fast_acls/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/fast_acls" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @fast_acl.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/fast_acls/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

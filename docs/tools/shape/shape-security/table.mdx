@@ -1,0 +1,62 @@
+---
+title: Table
+description: GET SAFE Analyst Block Table as a CSV file.
+---
+
+GET Safe block table as CSV file.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-shape-table-list` | GET SAFE Analyst Block Table as a CSV file. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `action` | The action type - can be block or allow. | `-` |
+| `from` | Timestamp representing start date of the requested period in millieseconds. | `-` |
+| `to` | Timestamp representing end date of the requested period in millieseconds. | `-` |
+| `version` | The API version to use. | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Table resources:
+
+### List Tables
+
+> "List all tables in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/tables" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/tables/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/tables" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @table.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/tables/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

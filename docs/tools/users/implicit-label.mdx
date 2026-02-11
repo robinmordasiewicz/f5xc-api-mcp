@@ -1,0 +1,62 @@
+---
+title: Implicit Label
+description: GET Implicit Labels.
+---
+
+GET is generic label query. Two types of queries are supported
+* Return label with exact matching
+entry label key = label value.
+* Return list of labels that have prefix of label key = label
+value.
+Returns list of labels. Query will look into current tenants shared namespace and VES-I/O
+shared.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-users-implicit-label-list` | GET Implicit Labels. |
+
+## Parameters
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `key` | Key string in Query parameters. | `-` |
+| `key_classes` | Key classes | `-` |
+| `query` | Type of Query | `-` |
+| `value` | Value string in Query parameters. | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Implicit Label resources:
+
+### List Implicit Labels
+
+> "List all implicit-labels in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/implicit_labels" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/implicit_labels/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/implicit_labels" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @implicit_label.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/implicit_labels/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

@@ -1,0 +1,76 @@
+---
+title: Tpm Category
+description: Create TPM Category.
+---
+
+Create a Category object, which is a grouping of APIKeys used for TPM provisioning.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-botandthreatdefense-tpm-category-create` | Create TPM Category. |
+| `f5xc-api-botandthreatdefense-tpm-category-get` | GET TPM Category. |
+| `f5xc-api-botandthreatdefense-tpm-category-list` | List TPM Category. |
+| `f5xc-api-botandthreatdefense-tpm-category-update` | Replace TPM Category. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Tpm Category resources:
+
+### Create Tpm Category
+
+> "Create a tpm-category named 'example' in the 'production' namespace"
+
+### List Tpm Categorys
+
+> "List all tpm-categorys in the 'production' namespace"
+
+### Get Tpm Category Details
+
+> "Get details of the tpm-category named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/tpm_categorys" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/tpm_categorys/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/tpm_categorys" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @tpm_category.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/tpm_categorys/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

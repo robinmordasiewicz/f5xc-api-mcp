@@ -1,0 +1,89 @@
+---
+title: API Crawler
+description: Create API Crawler.
+---
+
+List the set of api_crawler in a namespace.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-api-api-crawler-create` | Create API Crawler. |
+| `f5xc-api-api-api-crawler-get` | GET API crawler. |
+| `f5xc-api-api-api-crawler-list` | List API Crawler. |
+| `f5xc-api-api-api-crawler-update` | Replace API crawler. |
+| `f5xc-api-api-api-crawler-delete` | DELETE API Crawler. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### secret_info_oneof
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.domains[].simple_login.password.blindfold_secret_info` | - |  |
+| `spec.domains[].simple_login.password.clear_secret_info` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with API Crawler resources:
+
+### Create API Crawler
+
+> "Create a api-crawler named 'example' in the 'production' namespace"
+
+### List API Crawlers
+
+> "List all api-crawlers in the 'production' namespace"
+
+### Get API Crawler Details
+
+> "Get details of the api-crawler named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/api_crawlers" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/api_crawlers/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/api_crawlers" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @api_crawler.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/api_crawlers/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

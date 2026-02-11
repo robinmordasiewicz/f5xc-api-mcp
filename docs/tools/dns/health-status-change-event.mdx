@@ -1,0 +1,56 @@
+---
+title: Health Status Change Event
+description: DNS Load Balancer Pool Member Health Status Change Events.
+---
+
+GET DNS Load Balancer Pool Health Status Changes.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-dns-health-status-change-event-list` | DNS Load Balancer Pool Member Health Status Change Events. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `dns_lb_name` | DNS Load Balancer Name | `-` |
+| `dns_lb_pool_name` | DNS Load Balancer Pool Name | `-` |
+| `namespace` | Namespace | `-` |
+| `pool_member_address` | DNS Load Balancer Pool Member Address | `-` |
+
+
+## Example Usage
+
+Ask Claude to help you work with Health Status Change Event resources:
+
+### List Health Status Change Events
+
+> "List all health-status-change-events in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/health_status_change_events" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/health_status_change_events/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/health_status_change_events" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @health_status_change_event.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/health_status_change_events/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

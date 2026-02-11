@@ -2,7 +2,7 @@
 # Multi-stage build for minimal production image
 
 # Build stage
-FROM node:24-alpine AS builder
+FROM node:25-alpine AS builder
 
 WORKDIR /app
 
@@ -30,7 +30,7 @@ RUN npm run build
 RUN npm prune --production
 
 # Production stage
-FROM node:24-alpine AS production
+FROM node:25-alpine AS production
 
 WORKDIR /app
 

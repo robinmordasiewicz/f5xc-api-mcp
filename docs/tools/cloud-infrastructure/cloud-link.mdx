@@ -1,0 +1,135 @@
+---
+title: Cloud Link
+description: Create CloudLink.
+---
+
+Replaces configured CloudLink with new set of parameters.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-cloudinfrastructure-cloud-link-create` | Create CloudLink. |
+| `f5xc-api-cloudinfrastructure-cloud-link-get` | GET CloudLink. |
+| `f5xc-api-cloudinfrastructure-cloud-link-list` | List CloudLink. |
+| `f5xc-api-cloudinfrastructure-cloud-link-update` | Replace CloudLink. |
+| `f5xc-api-cloudinfrastructure-cloud-link-delete` | DELETE CloudLink. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+
+## Configuration Choices
+
+This resource includes mutually exclusive configuration options:
+
+### cloud_provider
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.aws` | - |  |
+| `spec.gcp` | - |  |
+
+### enable_connection_to_re_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.disabled` | - |  |
+| `spec.enabled` | - |  |
+
+### cloud_link_type
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.aws.byoc` | - |  |
+
+### direct_connect_gateway_asn_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.aws.custom_asn` | - |  |
+
+### ip_type
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.aws.byoc.connections[].ipv4` | - |  |
+
+### resource_name_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.aws.byoc.connections[].system_generated_name` | - |  |
+| `spec.aws.byoc.connections[].user_assigned_name` | - |  |
+
+### secret_info_oneof
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.aws.byoc.connections[].auth_key.blindfold_secret_info` | - |  |
+| `spec.aws.byoc.connections[].auth_key.clear_secret_info` | - |  |
+
+### project_choice
+
+| Option | Description | Recommended |
+|--------|-------------|-------------|
+| `spec.gcp.byoc.connections[].project` | - |  |
+| `spec.gcp.byoc.connections[].same_as_credential` | - |  |
+
+
+## Example Usage
+
+Ask Claude to help you work with Cloud Link resources:
+
+### Create Cloud Link
+
+> "Create a cloud-link named 'example' in the 'production' namespace"
+
+### List Cloud Links
+
+> "List all cloud-links in the 'production' namespace"
+
+### Get Cloud Link Details
+
+> "Get details of the cloud-link named 'example' in namespace 'production'"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/cloud_links" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/cloud_links/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/cloud_links" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @cloud_link.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/cloud_links/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

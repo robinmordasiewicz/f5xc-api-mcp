@@ -1,0 +1,45 @@
+---
+title: Process Policy Information
+description: ProcessPolicyInformation.
+---
+
+ProcessPolicyInformation API takes policy and secret name as input and returns a document containing
+.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-blindfold-process-policy-information-create` | ProcessPolicyInformation. |
+
+## Example Usage
+
+Ask Claude to help you work with Process Policy Information resources:
+
+### Create Process Policy Information
+
+> "Create a process-policy-information named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/process_policy_informations" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/process_policy_informations/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/process_policy_informations" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @process_policy_information.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/process_policy_informations/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```
