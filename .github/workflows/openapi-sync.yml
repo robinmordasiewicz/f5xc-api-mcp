@@ -126,7 +126,7 @@ jobs:
       - name: Create Pull Request
         id: create-pr
         if: steps.changes.outputs.changed == 'true' || github.event.inputs.force_regenerate == 'true'
-        uses: peter-evans/create-pull-request@v7
+        uses: peter-evans/create-pull-request@v8
         with:
           token: ${{ secrets.REPO_ADMIN_TOKEN }}
           commit-message: "feat(specs): update to v${{ steps.version.outputs.version }}"
