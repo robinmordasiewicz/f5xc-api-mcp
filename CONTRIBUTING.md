@@ -6,7 +6,7 @@ This document describes the workflow and rules that all contributors — human a
 
 Every change follows this path:
 
-```bash
+```
 Issue → Branch → PR (linked to issue) → CI passes → Merge → Branch auto-deleted
 ```
 
