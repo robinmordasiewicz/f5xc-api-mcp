@@ -1,5 +1,3 @@
-# Pull Request
-
 ## Summary
 
 Brief description of the changes in this PR.
