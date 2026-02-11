@@ -4,6 +4,8 @@ description: Suggest a documentation improvement or report missing docs
 labels: ["documentation"]
 ---
 
+# Documentation
+
 ## What Needs to Be Documented
 
 Describe the topic, feature, or area that needs documentation.
