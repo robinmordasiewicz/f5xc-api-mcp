@@ -4,8 +4,6 @@ description: Suggest a new feature or improvement
 labels: ["enhancement"]
 ---
 
-# Feature Request
-
 ## Feature Description
 
 A clear and concise description of the feature you'd like.
