@@ -3,11 +3,7 @@ title: Authentication
 description: Configure authentication for the F5XC API MCP Server
 ---
 
-Configure authentication for the F5XC API MCP Server.
-
 ## Operating Modes
-
-The server operates in two modes based on authentication status:
 
 ### Documentation Mode (Default)
 
@@ -17,8 +13,6 @@ The server operates in two modes based on authentication status:
 - Parameter descriptions and validation
 - CURL command examples
 - Dependency and prerequisite guidance
-
-This mode is ideal for exploring the API and understanding available operations.
 
 ### Execution Mode
 
@@ -33,7 +27,7 @@ This mode is ideal for exploring the API and understanding available operations.
 
 ### API Token
 
-The simplest authentication method. Get a token from the F5XC Console.
+The simplest authentication method.
 
 #### Getting an API Token
 
@@ -52,31 +46,7 @@ export F5XC_API_URL="https://your-tenant.console.ves.volterra.io"
 export F5XC_API_TOKEN="your-api-token-here"
 ```
 
-Or in MCP configuration:
-
-```json
-{
-  "mcpServers": {
-    "f5xc-api": {
-      "command": "npx",
-      "args": ["@robinmordasiewicz/f5xc-api-mcp"],
-      "env": {
-        "F5XC_API_URL": "https://your-tenant.console.ves.volterra.io",
-        "F5XC_API_TOKEN": "your-api-token-here"
-      }
-    }
-  }
-}
-```
-
-Or via `claude mcp add`:
-
-```bash
-claude mcp add --transport stdio f5xc-api \
-  --env F5XC_API_URL=https://your-tenant.console.ves.volterra.io \
-  --env F5XC_API_TOKEN=your-api-token-here \
-  -- npx @robinmordasiewicz/f5xc-api-mcp
-```
+For MCP JSON configuration, see [IDE Setup](ide-setup/).
 
 ### P12 Certificate (mTLS)
 
@@ -94,53 +64,39 @@ More secure, certificate-based authentication.
 
 ```bash
 export F5XC_API_URL="https://your-tenant.console.ves.volterra.io"
-export F5XC_P12_BUNDLE="/path/to/certificate.p12"
+export F5XC_P12_BUNDLE="/absolute/path/to/certificate.p12"
 export F5XC_P12_PASSWORD="your-certificate-password"
-```
-
-Or in MCP configuration:
-
-```json
-{
-  "mcpServers": {
-    "f5xc-api": {
-      "command": "npx",
-      "args": ["@robinmordasiewicz/f5xc-api-mcp"],
-      "env": {
-        "F5XC_API_URL": "https://your-tenant.console.ves.volterra.io",
-        "F5XC_P12_BUNDLE": "/absolute/path/to/certificate.p12",
-        "F5XC_P12_PASSWORD": "your-certificate-password"
-      }
-    }
-  }
-}
-```
-
-Or via `claude mcp add`:
-
-```bash
-claude mcp add --transport stdio f5xc-api \
-  --env F5XC_API_URL=https://your-tenant.console.ves.volterra.io \
-  --env F5XC_P12_BUNDLE=/absolute/path/to/certificate.p12 \
-  --env F5XC_P12_PASSWORD=your-certificate-password \
-  -- npx @robinmordasiewicz/f5xc-api-mcp
 ```
 
 :::caution[Use Absolute Paths]
 The P12 file path must be absolute, not relative.
 :::
 
+For MCP JSON configuration, see [IDE Setup](ide-setup/).
+
+### PEM Certificate
+
+An alternative to P12 bundles using separate certificate and key files:
+
+```bash
+export F5XC_API_URL="https://your-tenant.console.ves.volterra.io"
+export F5XC_CERT="/path/to/certificate.pem"
+export F5XC_KEY="/path/to/private-key.pem"
+```
+
+See [Environment Variables](environment-variables/#f5xc_cert) for details.
+
 ## URL Normalization
 
 The server automatically normalizes various URL formats:
 
-| You Enter | Normalized To |
-|-----------|---------------|
-| `https://tenant.volterra.us` | `https://tenant.console.ves.volterra.io/api` |
-| `https://tenant.volterra.us/` | `https://tenant.console.ves.volterra.io/api` |
-| `https://tenant.volterra.us/api` | `https://tenant.console.ves.volterra.io/api` |
-| `https://tenant.console.ves.volterra.io` | `https://tenant.console.ves.volterra.io/api` |
-| `https://tenant.staging.volterra.us` | `https://tenant.staging.console.ves.volterra.io/api` |
+| You Enter                                | Normalized To                                        |
+| ---------------------------------------- | ---------------------------------------------------- |
+| `https://tenant.volterra.us`             | `https://tenant.console.ves.volterra.io/api`         |
+| `https://tenant.volterra.us/`            | `https://tenant.console.ves.volterra.io/api`         |
+| `https://tenant.volterra.us/api`         | `https://tenant.console.ves.volterra.io/api`         |
+| `https://tenant.console.ves.volterra.io` | `https://tenant.console.ves.volterra.io/api`         |
+| `https://tenant.staging.volterra.us`     | `https://tenant.staging.console.ves.volterra.io/api` |
 
 You can use any of these formats - the server handles the conversion.
 
@@ -163,24 +119,12 @@ Claude will use the `f5xc-api-configure-auth` tool to:
 
 ### MCP Tool Actions
 
-| Action | Description |
-|--------|-------------|
-| `status` | Check current authentication state |
-| `configure` | Save credentials to a new or existing profile |
-| `list-profiles` | List all available profiles |
-| `set-active` | Switch to a different profile |
-
-**Example - Configure Credentials:**
-
-Ask Claude:
-
-> "Use the configure-auth tool with action='configure',
-> tenantUrl='`https://tenant.console.ves.volterra.io`',
-> apiToken='your-token', profileName='production'"
-
-**Example - Switch Profiles:**
-
-> "Use configure-auth to switch to the 'staging' profile"
+| Action          | Description                                   |
+| --------------- | --------------------------------------------- |
+| `status`        | Check current authentication state            |
+| `configure`     | Save credentials to a new or existing profile |
+| `list-profiles` | List all available profiles                   |
+| `set-active`    | Switch to a different profile                 |
 
 ### Profile Storage
 
@@ -195,26 +139,13 @@ Profiles are stored in `~/.config/f5xc/profiles/` (XDG Base Directory compliant)
     └── staging.json        # Staging tenant
 ```
 
-### Credential Priority
+## Credential Priority
 
 The server loads credentials in this order:
 
 1. **Environment variables** (highest priority) - Always override profiles
 2. **Active profile** - From `~/.config/f5xc/`
 3. **No credentials** - Documentation mode (lowest priority)
-
-See [Security Best Practices](../security/) for credential storage and management guidance.
-
-## Environment Variables Reference
-
-| Variable | Required | Description |
-|----------|----------|-------------|
-| `F5XC_API_URL` | For auth | Tenant URL (auto-normalized) |
-| `F5XC_API_TOKEN` | Token auth | API token from XC Console |
-| `F5XC_P12_BUNDLE` | Cert auth | Absolute path to P12 certificate bundle |
-| `F5XC_P12_PASSWORD` | Cert auth | Password for P12 certificate |
-| `F5XC_PROFILE` | No | Profile name from `~/.config/f5xc/profiles/` |
-| `LOG_LEVEL` | No | Logging level (debug, info, warn, error) |
 
 ## Security Best Practices
 
@@ -230,26 +161,7 @@ Add to `.gitignore`:
 
 ### Use Environment Files
 
-Create `.env` (not committed):
-
-```bash
-F5XC_API_URL=https://your-tenant.console.ves.volterra.io
-F5XC_API_TOKEN=your-token
-```
-
-Reference in configuration:
-
-```json
-{
-  "mcpServers": {
-    "f5xc-api": {
-      "command": "npx",
-      "args": ["f5xc-api-mcp"],
-      "envFile": "${workspaceFolder}/.env"
-    }
-  }
-}
-```
+Create `.env` (not committed) and reference via `envFile` in your [IDE configuration](ide-setup/#environment-files).
 
 ### Rotate Credentials Regularly
 
@@ -266,7 +178,7 @@ Check authentication status:
 
 > "Get the F5XC API server info"
 
-Response shows:
+Response for authenticated mode:
 
 ```json
 {
@@ -277,7 +189,7 @@ Response shows:
 }
 ```
 
-Or for unauthenticated:
+Response for unauthenticated mode:
 
 ```json
 {
@@ -287,34 +199,8 @@ Or for unauthenticated:
 }
 ```
 
-## Troubleshooting
-
-### "Invalid API Token"
-
-1. Check token hasn't expired
-2. Verify token was copied completely (no truncation)
-3. Ensure no extra whitespace
-
-### "Certificate Error"
-
-1. Verify P12 file path is absolute
-2. Check password is correct
-3. Ensure certificate hasn't expired
-
-### "Connection Refused"
-
-1. Check URL format
-2. Verify network connectivity to F5XC
-3. Check firewall rules
-
-### "Unauthorized"
-
-1. Verify credentials have required permissions
-2. Check namespace access rights
-3. Ensure tenant URL matches credential's tenant
-
 ## Next Steps
 
-- [MCP Configuration Reference](../configuration/mcp-json/)
-- [Environment Variables](../configuration/environment-variables/)
-- [Tools Reference](../tools/)
+- [IDE Setup](ide-setup/) - MCP JSON configuration for all editors
+- [Environment Variables](environment-variables/) - Complete variable reference
+- [Troubleshooting](troubleshooting/#authentication-errors) - Auth-specific troubleshooting

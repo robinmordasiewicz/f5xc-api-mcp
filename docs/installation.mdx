@@ -1,0 +1,57 @@
+---
+title: Installation
+description: Install the F5XC API MCP Server using npx, npm, Docker, or from source
+---
+
+## MCPB Bundle (Claude Desktop)
+
+1. Download `.mcpb` from [GitHub Releases](https://github.com/robinmordasiewicz/f5xc-api-mcp/releases)
+2. Double-click or drag into Claude Desktop
+3. Click **Install**
+
+## npx (Recommended)
+
+```bash
+npx @robinmordasiewicz/f5xc-api-mcp
+```
+
+## npm Global
+
+```bash
+npm install -g @robinmordasiewicz/f5xc-api-mcp
+f5xc-api-mcp
+```
+
+## Docker
+
+```bash
+docker pull ghcr.io/robinmordasiewicz/f5xc-api-mcp:latest
+docker run -it ghcr.io/robinmordasiewicz/f5xc-api-mcp
+```
+
+## From Source
+
+```bash
+git clone https://github.com/robinmordasiewicz/f5xc-api-mcp.git
+cd f5xc-api-mcp
+npm install && npm run build && npm start
+```
+
+## Verify Installation
+
+### Version Check
+
+```bash
+npx @robinmordasiewicz/f5xc-api-mcp --version
+```
+
+### MCP Protocol Test
+
+```bash
+echo '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"capabilities":{}}}' | npx @robinmordasiewicz/f5xc-api-mcp
+```
+
+## Next Steps
+
+- [IDE Setup](ide-setup/) - Configure your editor to use the server
+- [Authentication](authentication/) - Add credentials for execution mode

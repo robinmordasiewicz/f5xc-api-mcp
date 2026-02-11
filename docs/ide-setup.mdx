@@ -1,0 +1,462 @@
+---
+title: IDE Setup
+description: Configure MCP server integration for Claude Desktop, Claude Code, VS Code, Cursor, and OpenCode
+---
+
+## Claude Desktop
+
+### Config File Location
+
+| OS      | Path                                                              |
+| ------- | ----------------------------------------------------------------- |
+| macOS   | `~/Library/Application Support/Claude/claude_desktop_config.json` |
+| Windows | `%APPDATA%\Claude\claude_desktop_config.json`                     |
+| Linux   | `~/.config/Claude/claude_desktop_config.json`                     |
+
+### Documentation Mode
+
+No credentials required - explore APIs, view schemas, get CURL examples:
+
+```json
+{
+  "mcpServers": {
+    "f5xc-api": {
+      "command": "npx",
+      "args": ["@robinmordasiewicz/f5xc-api-mcp"]
+    }
+  }
+}
+```
+
+### Execution Mode
+
+Add credentials to execute API calls directly:
+
+```json
+{
+  "mcpServers": {
+    "f5xc-api": {
+      "command": "npx",
+      "args": ["@robinmordasiewicz/f5xc-api-mcp"],
+      "env": {
+        "F5XC_API_URL": "https://your-tenant.console.ves.volterra.io",
+        "F5XC_API_TOKEN": "your-api-token"
+      }
+    }
+  }
+}
+```
+
+:::caution[Full Restart Required]
+Completely quit and restart Claude Desktop for changes to take effect.
+Just closing the window is not sufficient.
+:::
+
+### Multiple Servers
+
+```json
+{
+  "mcpServers": {
+    "f5xc-api": {
+      "command": "npx",
+      "args": ["@robinmordasiewicz/f5xc-api-mcp"]
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-filesystem", "/path/to/dir"]
+    }
+  }
+}
+```
+
+## Claude Code CLI
+
+### Quick Install
+
+```bash
+claude mcp add f5xc-api \
+  --env F5XC_API_URL=https://your-tenant.console.ves.volterra.io \
+  --env F5XC_API_TOKEN=your-api-token \
+  -- npx @robinmordasiewicz/f5xc-api-mcp
+```
+
+### Scope Options
+
+| Scope   | Flag              | Storage                           | Use Case                |
+| ------- | ----------------- | --------------------------------- | ----------------------- |
+| Local   | `--scope local`   | `~/.claude.json` (project-scoped) | Default, private to you |
+| Project | `--scope project` | `.mcp.json` (in project root)     | Share with team         |
+| User    | `--scope user`    | `~/.claude.json` (global)         | All projects            |
+
+### Management Commands
+
+```bash
+claude mcp list              # List all servers
+claude mcp get f5xc-api      # Get server details
+claude mcp remove f5xc-api   # Remove server
+```
+
+### Manual Configuration
+
+Create `.mcp.json` in your project root:
+
+```json
+{
+  "mcpServers": {
+    "f5xc-api": {
+      "command": "npx",
+      "args": ["@robinmordasiewicz/f5xc-api-mcp"],
+      "env": {
+        "F5XC_API_URL": "https://your-tenant.console.ves.volterra.io",
+        "F5XC_API_TOKEN": "your-api-token"
+      }
+    }
+  }
+}
+```
+
+### Global Configuration
+
+For system-wide availability, add to `~/.claude/settings.local.json`.
+
+### Usage
+
+```bash
+claude                           # Interactive mode
+claude -p "List F5XC tools"      # Direct command
+claude --mcp-debug               # Debug mode
+```
+
+## VS Code
+
+VS Code supports MCP through **Cline** or **Continue** extensions.
+
+### Option 1: Cline
+
+1. Install [Cline](https://marketplace.visualstudio.com/items?itemName=saoudrizwan.claude-dev)
+2. Open Cline panel -> Click gear icon -> MCP Servers -> Add
+3. Or edit the config file directly:
+
+| OS      | Path                                                                                                            |
+| ------- | --------------------------------------------------------------------------------------------------------------- |
+| macOS   | `~/Library/Application Support/Code/User/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json` |
+| Windows | `%APPDATA%\Code\User\globalStorage\saoudrizwan.claude-dev\settings\cline_mcp_settings.json`                     |
+| Linux   | `~/.config/Code/User/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json`                     |
+
+```json
+{
+  "mcpServers": {
+    "f5xc-api": {
+      "command": "npx",
+      "args": ["@robinmordasiewicz/f5xc-api-mcp"],
+      "env": {
+        "F5XC_API_URL": "https://your-tenant.console.ves.volterra.io",
+        "F5XC_API_TOKEN": "your-api-token"
+      }
+    }
+  }
+}
+```
+
+### Option 2: Continue
+
+1. Install [Continue](https://marketplace.visualstudio.com/items?itemName=Continue.continue)
+2. Edit `~/.continue/config.json`:
+
+```json
+{
+  "models": [],
+  "mcpServers": {
+    "f5xc-api": {
+      "command": "npx",
+      "args": ["@robinmordasiewicz/f5xc-api-mcp"],
+      "env": {
+        "F5XC_API_URL": "https://your-tenant.console.ves.volterra.io",
+        "F5XC_API_TOKEN": "your-api-token"
+      }
+    }
+  }
+}
+```
+
+### Workspace Configuration
+
+Create `.vscode/mcp.json` for project-specific settings:
+
+```json
+{
+  "mcpServers": {
+    "f5xc-api": {
+      "command": "npx",
+      "args": ["@robinmordasiewicz/f5xc-api-mcp"],
+      "envFile": "${workspaceFolder}/.env"
+    }
+  }
+}
+```
+
+:::tip[Secure Credentials]
+Store credentials in `.env` and add to `.gitignore`:
+
+```bash
+F5XC_API_URL=https://your-tenant.console.ves.volterra.io
+F5XC_API_TOKEN=your-api-token
+```
+
+:::
+
+## Cursor
+
+### Configuration
+
+1. Open Cursor Settings (`Cmd/Ctrl + ,`)
+2. Navigate to MCP section
+3. Add configuration:
+
+```json
+{
+  "mcpServers": {
+    "f5xc-api": {
+      "command": "npx",
+      "args": ["@robinmordasiewicz/f5xc-api-mcp"],
+      "env": {
+        "F5XC_API_URL": "https://your-tenant.console.ves.volterra.io",
+        "F5XC_API_TOKEN": "your-api-token"
+      }
+    }
+  }
+}
+```
+
+:::caution[Full Restart Required]
+Restart Cursor completely (quit and reopen) for changes to take effect.
+:::
+
+### Project Configuration
+
+Create `.cursor/mcp.json` with environment variable references:
+
+```json
+{
+  "mcpServers": {
+    "f5xc-api": {
+      "command": "npx",
+      "args": ["@robinmordasiewicz/f5xc-api-mcp"],
+      "env": {
+        "F5XC_API_URL": "https://your-tenant.console.ves.volterra.io",
+        "F5XC_API_TOKEN": "${env:F5XC_API_TOKEN}"
+      }
+    }
+  }
+}
+```
+
+### Composer Integration
+
+Use Cursor's Composer (`Cmd/Ctrl + I`) for multi-resource generation:
+
+> "Create a complete F5XC setup with HTTP load balancer, origin pool, and WAF"
+
+## OpenCode
+
+:::note[Different Configuration Schema]
+OpenCode uses `"mcp"` (not `"mcpServers"`), `"command"` as array, and `"environment"` (not `"env"`).
+:::
+
+### Config File Location
+
+| Scope   | Path                               |
+| ------- | ---------------------------------- |
+| Project | `opencode.json` in project root    |
+| Global  | `~/.config/opencode/opencode.json` |
+
+### Configuration
+
+```json
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "f5xc-api": {
+      "type": "local",
+      "command": ["npx", "@robinmordasiewicz/f5xc-api-mcp"],
+      "environment": {
+        "F5XC_API_URL": "https://your-tenant.console.ves.volterra.io",
+        "F5XC_API_TOKEN": "your-api-token"
+      }
+    }
+  }
+}
+```
+
+:::caution[Full Restart Required]
+Completely quit and restart OpenCode for changes to take effect.
+:::
+
+### Field Reference
+
+| Field         | Required | Description                               |
+| ------------- | -------- | ----------------------------------------- |
+| `type`        | Yes      | Must be `"local"` for stdio-based servers |
+| `command`     | Yes      | Array format: `["npx", "package"]`        |
+| `environment` | No       | Environment variables object              |
+| `enabled`     | No       | Load on startup (default: `true`)         |
+| `timeout`     | No       | Response timeout in ms (default: `5000`)  |
+
+### Environment Variable References
+
+```json
+{
+  "environment": {
+    "F5XC_API_URL": "{env:F5XC_API_URL}",
+    "F5XC_API_TOKEN": "{env:F5XC_API_TOKEN}"
+  }
+}
+```
+
+## Docker Configuration
+
+Pass credentials with `-e` flags:
+
+```json
+{
+  "mcpServers": {
+    "f5xc-api": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "-e",
+        "F5XC_API_URL=https://your-tenant.console.ves.volterra.io",
+        "-e",
+        "F5XC_API_TOKEN=your-api-token",
+        "ghcr.io/robinmordasiewicz/f5xc-api-mcp"
+      ]
+    }
+  }
+}
+```
+
+### With Volume Mounts
+
+For P12 certificate authentication:
+
+```json
+{
+  "mcpServers": {
+    "f5xc-api": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "-e",
+        "F5XC_API_URL",
+        "-e",
+        "F5XC_API_TOKEN",
+        "-v",
+        "/Users/username/certs:/certs:ro",
+        "ghcr.io/robinmordasiewicz/f5xc-api-mcp"
+      ],
+      "env": {
+        "F5XC_API_URL": "https://your-tenant.console.ves.volterra.io",
+        "F5XC_API_TOKEN": "your-api-token"
+      }
+    }
+  }
+}
+```
+
+## Environment Files
+
+Use `envFile` to load credentials from a `.env` file instead of inline values:
+
+```json
+{
+  "mcpServers": {
+    "f5xc-api": {
+      "command": "npx",
+      "args": ["@robinmordasiewicz/f5xc-api-mcp"],
+      "envFile": "${workspaceFolder}/.env"
+    }
+  }
+}
+```
+
+With `.env`:
+
+```bash
+F5XC_API_URL=https://your-tenant.console.ves.volterra.io
+F5XC_API_TOKEN=your-api-token
+LOG_LEVEL=info
+```
+
+:::danger[Security]
+Add `.env` to `.gitignore` to prevent committing credentials.
+:::
+
+## Variable Substitution
+
+Some clients support variable substitution in configuration values:
+
+| Variable             | Description                 |
+| -------------------- | --------------------------- |
+| `${workspaceFolder}` | Current workspace root      |
+| `${env:VAR_NAME}`    | System environment variable |
+| `${userHome}`        | User's home directory       |
+
+Example:
+
+```json
+{
+  "envFile": "${workspaceFolder}/.env",
+  "env": {
+    "F5XC_API_TOKEN": "${env:F5XC_API_TOKEN}"
+  }
+}
+```
+
+## MCP Configuration Schema
+
+The standard MCP configuration schema used by Claude Desktop, Claude Code, Cline, Continue, and Cursor:
+
+```json
+{
+  "mcpServers": {
+    "<server-name>": {
+      "command": "<executable>",
+      "args": ["<arg1>", "<arg2>"],
+      "env": {
+        "<VAR_NAME>": "<value>"
+      },
+      "cwd": "<working-directory>",
+      "envFile": "<path-to-env-file>"
+    }
+  }
+}
+```
+
+### Field Descriptions
+
+| Field     | Required | Description                                 |
+| --------- | -------- | ------------------------------------------- |
+| `command` | Yes      | Executable to run (`npx`, `node`, `docker`) |
+| `args`    | Yes      | Array of command-line arguments             |
+| `env`     | No       | Environment variables passed to the server  |
+| `cwd`     | No       | Working directory for the server process    |
+| `envFile` | No       | Path to environment file                    |
+
+## Configuration File Locations
+
+| Application              | Location                                                          |
+| ------------------------ | ----------------------------------------------------------------- |
+| Claude Desktop (macOS)   | `~/Library/Application Support/Claude/claude_desktop_config.json` |
+| Claude Desktop (Windows) | `%APPDATA%\Claude\claude_desktop_config.json`                     |
+| Claude Desktop (Linux)   | `~/.config/Claude/claude_desktop_config.json`                     |
+| Claude Code (Project)    | `.mcp.json` in project root                                       |
+| Claude Code (Global)     | `~/.claude/mcp.json`                                              |
+| OpenCode (Project)       | `opencode.json` or `opencode.jsonc` in project root               |
+| OpenCode (Global)        | `~/.config/opencode/opencode.json`                                |
+| VS Code (Cline)          | Cline extension settings                                          |
+| VS Code (Continue)       | `~/.continue/config.json`                                         |
+| Cursor                   | Cursor settings or `.cursor/mcp.json`                             |
