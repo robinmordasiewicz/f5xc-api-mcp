@@ -1,6 +1,4 @@
-<!-- markdownlint-disable MD041 MD003 -->
 ---
-
 name: Feature Request
 description: Suggest a new feature or improvement
 labels: ["enhancement"]
