@@ -4,6 +4,8 @@ description: Report a bug or unexpected behavior
 labels: ["bug"]
 ---
 
+# Bug Report
+
 ## Describe the Bug
 
 A clear and concise description of what the bug is.
