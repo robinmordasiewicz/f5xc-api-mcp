@@ -1,81 +1,58 @@
-# Pre-commit hooks for f5xc-api-mcp
-# Install: pip install pre-commit && pre-commit install
-# Run manually: pre-commit run --all-files
-
+---
 repos:
-  # Standard pre-commit hooks
+  - repo: local
+    hooks:
+      - id: local-hooks
+        name: Repository-specific hooks
+        entry: bash -c 'if [ -x scripts/pre-commit-local.sh ]; then scripts/pre-commit-local.sh; fi'
+        language: system
+        always_run: true
+        pass_filenames: false
+
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0
     hooks:
-      - id: trailing-whitespace
-        exclude: ^specs/raw/
-      - id: end-of-file-fixer
-        exclude: ^specs/raw/
-      - id: check-yaml
-        exclude: ^(specs/raw/|mkdocs\.yml)
-      - id: check-json
-        exclude: ^specs/raw/
-      - id: check-added-large-files
-        args: ["--maxkb=1024"]
-        exclude: ^specs/domains/
-      - id: check-merge-conflict
-      - id: detect-private-key
       - id: no-commit-to-branch
         args: ["--branch", "main"]
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+        args: ["--fix=lf"]
+      - id: check-yaml
+        args: ["--allow-multiple-documents"]
+      - id: check-json
+      - id: check-added-large-files
+        args: ["--maxkb=1024"]
+      - id: check-merge-conflict
+      - id: detect-private-key
 
-  # Secrets detection
-  - repo: https://github.com/trufflesecurity/trufflehog
-    rev: v3.92.3
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.30.0
     hooks:
-      - id: trufflehog
-        entry: trufflehog filesystem --fail --no-update
-        args: ["--only-verified"]
+      - id: gitleaks
 
-  # TypeScript/JavaScript linting and formatting
-  # Note: Generated tools are created by CI/CD pipeline, not pre-commit
-  - repo: local
+  - repo: https://github.com/adrienverge/yamllint
+    rev: v1.38.0
     hooks:
-      - id: eslint
-        name: ESLint
-        entry: npm run lint
-        language: system
-        files: \.(ts|tsx|js|jsx)$
-        pass_filenames: false
+      - id: yamllint
 
-      - id: prettier
-        name: Prettier
-        entry: bash -c 'npm run format && git add -u'
-        language: system
-        files: \.(ts|tsx|js|jsx|json|md|yaml|yml)$
-        exclude: ^specs/raw/
-        pass_filenames: false
-
-      - id: typecheck
-        name: TypeScript Check
-        entry: npm run typecheck
-        language: system
-        files: \.ts$
-        pass_filenames: false
-
-  # Markdown linting
   - repo: https://github.com/igorshubovych/markdownlint-cli
     rev: v0.47.0
     hooks:
       - id: markdownlint
         args: ["--fix"]
-        exclude: ^(node_modules/|specs/raw/)
 
-  # YAML linting
-  - repo: https://github.com/adrienverge/yamllint
-    rev: v1.37.1
+  - repo: https://github.com/shellcheck-py/shellcheck-py
+    rev: v0.11.0.1
     hooks:
-      - id: yamllint
-        args: ["-c", ".yamllint.yml"]
-        exclude: ^(node_modules/|specs/raw/)
+      - id: shellcheck
 
-  # Commit message validation
-  - repo: https://github.com/commitizen-tools/commitizen
-    rev: v4.10.1
+  - repo: https://github.com/rhysd/actionlint
+    rev: v1.7.10
     hooks:
-      - id: commitizen
-        stages: [commit-msg]
+      - id: actionlint
+
+ci:
+  autofix_prs: true
+  autoupdate_schedule: weekly
+  skip: [local-hooks, gitleaks]
