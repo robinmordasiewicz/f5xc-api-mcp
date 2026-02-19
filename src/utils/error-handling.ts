@@ -379,7 +379,7 @@ tenant.staging.console.ves.volterra.io.
 SOLUTIONS:
 1. (Recommended) Set F5XC_CA_BUNDLE=/path/to/custom-ca.crt
 2. (Development only) Set F5XC_TLS_INSECURE=true to bypass verification
-   WARNING: Never use insecure mode in production!
+    WARNING: Never use insecure mode in production!
 
 Example:
   export F5XC_TLS_INSECURE=true`;
