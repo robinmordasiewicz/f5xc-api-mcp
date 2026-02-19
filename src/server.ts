@@ -155,6 +155,24 @@ export async function createServer(): Promise<F5XCApiServer> {
     }
   }
 
+  // Guard: reject F5XC_TLS_INSECURE for production domains
+  if (process.env.F5XC_TLS_INSECURE === "true" && apiUrl) {
+    const normalizedForCheck = normalizeF5XCUrl(apiUrl);
+    try {
+      const hostname = new URL(normalizedForCheck).hostname.toLowerCase();
+      const isProduction = hostname.endsWith(".console.ves.volterra.io") && !hostname.includes(".staging.");
+      if (isProduction) {
+        logger.warn(
+          "F5XC_TLS_INSECURE=true is not allowed for production domains. Clearing the flag.",
+          { hostname }
+        );
+        delete process.env.F5XC_TLS_INSECURE;
+      }
+    } catch {
+      // URL parse failed — normalizeF5XCUrl already warned
+    }
+  }
+
   const credentialManager = new CredentialManager();
   await credentialManager.initialize();
 
