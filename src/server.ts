@@ -160,7 +160,8 @@ export async function createServer(): Promise<F5XCApiServer> {
     const normalizedForCheck = normalizeF5XCUrl(apiUrl);
     try {
       const hostname = new URL(normalizedForCheck).hostname.toLowerCase();
-      const isProduction = hostname.endsWith(".console.ves.volterra.io") && !hostname.includes(".staging.");
+      const isProduction =
+        hostname.endsWith(".console.ves.volterra.io") && !hostname.includes(".staging.");
       if (isProduction) {
         logger.warn(
           "F5XC_TLS_INSECURE=true is not allowed for production domains. Clearing the flag.",
