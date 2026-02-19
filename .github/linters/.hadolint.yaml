@@ -1,0 +1,6 @@
+# Hadolint configuration for Dockerfile linting
+# https://github.com/hadolint/hadolint
+
+ignored:
+  # Multiple consecutive COPY --from is acceptable in multi-stage builds
+  - DL3059
