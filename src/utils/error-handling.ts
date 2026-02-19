@@ -333,7 +333,6 @@ export function withErrorHandling<T extends unknown[], R>(
       if (error instanceof Error) {
         throw new F5XCError(error.message, "UNKNOWN_ERROR", {
           originalError: error.name,
-          stack: error.stack,
         });
       }
       throw new F5XCError(String(error), "UNKNOWN_ERROR");
