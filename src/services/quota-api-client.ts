@@ -44,7 +44,8 @@ export async function fetchQuotaUsage(
       error: error instanceof Error ? error.message : String(error),
     });
     throw new Error(
-      `Failed to fetch quota usage: ${error instanceof Error ? error.message : String(error)}`
+      `Failed to fetch quota usage: ${error instanceof Error ? error.message : String(error)}`,
+      { cause: error }
     );
   }
 }
@@ -78,7 +79,8 @@ export async function fetchQuotaLimits(
       error: error instanceof Error ? error.message : String(error),
     });
     throw new Error(
-      `Failed to fetch quota limits: ${error instanceof Error ? error.message : String(error)}`
+      `Failed to fetch quota limits: ${error instanceof Error ? error.message : String(error)}`,
+      { cause: error }
     );
   }
 }
