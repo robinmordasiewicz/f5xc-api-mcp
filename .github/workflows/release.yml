@@ -62,15 +62,15 @@ jobs:
         run: |
           # Get upstream API version
           UPSTREAM_VERSION=$(node scripts/version.js upstream)
-          echo "upstream_version=$UPSTREAM_VERSION" >> $GITHUB_OUTPUT
+          echo "upstream_version=$UPSTREAM_VERSION" >> "$GITHUB_OUTPUT"
 
           # Generate full version (v{upstream}-{YYMMDDHHMM})
           VERSION=$(node scripts/version.js)
-          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
 
           # npm version (without v prefix)
           NPM_VERSION="${VERSION#v}"
-          echo "npm_version=$NPM_VERSION" >> $GITHUB_OUTPUT
+          echo "npm_version=$NPM_VERSION" >> "$GITHUB_OUTPUT"
 
           echo "Generated version: $VERSION"
           echo "NPM version: $NPM_VERSION"
@@ -79,7 +79,7 @@ jobs:
       - name: Update package.json version
         run: |
           node scripts/version.js update
-          cat package.json | jq '.version'
+          jq '.version' package.json
 
       - name: Build with updated version
         run: npm run build
@@ -157,9 +157,9 @@ jobs:
       - name: Verify dist contents
         run: |
           echo "Domain count:"
-          find dist/tools/generated -maxdepth 1 -type d | wc -l
+          find dist/tools/generated -maxdepth 1 -type d | grep -c .
           echo "Missing modules check:"
-          grep "import.*generated" dist/tools/registry.js | wc -l
+          grep -c "import.*generated" dist/tools/registry.js
 
       - name: Install MCPB CLI
         run: npm install -g @anthropic-ai/mcpb
@@ -167,10 +167,10 @@ jobs:
       - name: Create MCPB bundle
         run: |
           echo "Files before packing:"
-          ls -la dist/tools/generated/ | tail -5
-          mcpb pack . f5xc-api-mcp-${{ needs.release.outputs.version }}.mcpb
+          find dist/tools/generated/ -maxdepth 1 -type f | tail -5
+          mcpb pack . "f5xc-api-mcp-${{ needs.release.outputs.version }}.mcpb"
           echo "Created bundle:"
-          ls -lh *.mcpb
+          ls -lh ./*.mcpb
 
       - name: Upload MCPB to release
         uses: softprops/action-gh-release@v2
@@ -264,23 +264,25 @@ jobs:
     steps:
       - name: Create Summary
         run: |
-          echo "## Release ${{ needs.release.outputs.version }}" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**Upstream API Version:** ${{ needs.release.outputs.upstream_version }}" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "### Published Artifacts" >> $GITHUB_STEP_SUMMARY
-          echo "- **MCPB**: Download from [Releases](https://github.com/${{ github.repository }}/releases/tag/${{ needs.release.outputs.version }})" >> $GITHUB_STEP_SUMMARY
-          echo "- **npm**: \`npx @robinmordasiewicz/f5xc-api-mcp@${{ needs.release.outputs.npm_version }}\`" >> $GITHUB_STEP_SUMMARY
-          echo "- **Docker**: \`docker pull ghcr.io/${{ github.repository }}:${{ needs.release.outputs.npm_version }}\`" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "### Installation" >> $GITHUB_STEP_SUMMARY
-          echo '```bash' >> $GITHUB_STEP_SUMMARY
-          echo '# MCPB (Claude Desktop - Drag and Drop)' >> $GITHUB_STEP_SUMMARY
-          echo '# Download .mcpb file from releases and double-click to install' >> $GITHUB_STEP_SUMMARY
-          echo '' >> $GITHUB_STEP_SUMMARY
-          echo '# npm' >> $GITHUB_STEP_SUMMARY
-          echo "npx @robinmordasiewicz/f5xc-api-mcp@${{ needs.release.outputs.npm_version }}" >> $GITHUB_STEP_SUMMARY
-          echo '' >> $GITHUB_STEP_SUMMARY
-          echo '# Docker' >> $GITHUB_STEP_SUMMARY
-          echo "docker run -it ghcr.io/${{ github.repository }}:${{ needs.release.outputs.npm_version }}" >> $GITHUB_STEP_SUMMARY
-          echo '```' >> $GITHUB_STEP_SUMMARY
+          {
+            echo "## Release ${{ needs.release.outputs.version }}"
+            echo ""
+            echo "**Upstream API Version:** ${{ needs.release.outputs.upstream_version }}"
+            echo ""
+            echo "### Published Artifacts"
+            echo "- **MCPB**: Download from [Releases](https://github.com/${{ github.repository }}/releases/tag/${{ needs.release.outputs.version }})"
+            echo "- **npm**: \`npx @robinmordasiewicz/f5xc-api-mcp@${{ needs.release.outputs.npm_version }}\`"
+            echo "- **Docker**: \`docker pull ghcr.io/${{ github.repository }}:${{ needs.release.outputs.npm_version }}\`"
+            echo ""
+            echo "### Installation"
+            echo '```bash'
+            echo '# MCPB (Claude Desktop - Drag and Drop)'
+            echo '# Download .mcpb file from releases and double-click to install'
+            echo ''
+            echo '# npm'
+            echo "npx @robinmordasiewicz/f5xc-api-mcp@${{ needs.release.outputs.npm_version }}"
+            echo ''
+            echo '# Docker'
+            echo "docker run -it ghcr.io/${{ github.repository }}:${{ needs.release.outputs.npm_version }}"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
