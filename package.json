@@ -60,7 +60,8 @@
     "version:get:beta": "node scripts/version.js --beta",
     "version:update": "node scripts/version.js update",
     "version:update:beta": "node scripts/version.js update --beta",
-    "version:upstream": "node scripts/version.js upstream"
+    "version:upstream": "node scripts/version.js upstream",
+    "setup": "npm run sync-specs && npm run generate"
   },
   "keywords": [
     "f5",
