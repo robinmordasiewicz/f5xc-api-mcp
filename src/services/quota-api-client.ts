@@ -30,7 +30,7 @@ export async function fetchQuotaUsage(
     logger.debug(`Fetching quota usage for namespace: ${namespace}`);
 
     // Normalize path - remove /api prefix since baseURL includes it
-    const path = `/web/namespaces/${namespace}/quota/usage`;
+    const path = `/web/namespaces/${encodeURIComponent(namespace)}/quota/usage`;
 
     const response = await httpClient.get<F5XCQuotaUsageResponse>(path);
 
@@ -65,7 +65,7 @@ export async function fetchQuotaLimits(
     logger.debug(`Fetching quota limits for namespace: ${namespace}`);
 
     // Normalize path - remove /api prefix since baseURL includes it
-    const path = `/web/namespaces/${namespace}/quota/limits`;
+    const path = `/web/namespaces/${encodeURIComponent(namespace)}/quota/limits`;
 
     const response = await httpClient.get<F5XCQuotaLimitsResponse>(path);
 
