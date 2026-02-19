@@ -16,6 +16,10 @@ import { quotaService } from "../../services/quota-service.js";
 import type { QuotaInfo } from "../../types/quota.js";
 import { formatQuotaError } from "../../services/quota-formatter.js";
 import { validateRequestBody, createValidationConfigFromEnv } from "../../utils/validation.js";
+import { createRateLimiterFromEnv } from "../../utils/rate-limiter.js";
+
+/** Module-level rate limiter singleton, configured from environment variables */
+const rateLimiter = createRateLimiterFromEnv();
 
 /**
  * Tool execution parameters
@@ -343,28 +347,29 @@ export async function executeTool(
 
     logger.debug(`Executing tool: ${toolName}`, { method: tool.method, path: fullPath });
 
-    let response: { data: unknown; status: number };
+    // Rate-limit HTTP calls to prevent API abuse
+    const response = await rateLimiter.execute(async () => {
+      let res: { data: unknown; status: number };
 
-    switch (tool.method.toUpperCase()) {
-      case "GET":
-        response = await httpClient.get(fullPath);
-        break;
-      case "POST":
-        response = await httpClient.post(fullPath, body);
-        break;
-      case "PUT":
-        response = await httpClient.put(fullPath, body);
-        break;
-      case "DELETE":
-        response = await httpClient.delete(fullPath);
-        break;
-      default:
-        return {
-          success: false,
-          error: `Unsupported HTTP method: ${tool.method}`,
-          toolInfo,
-        };
-    }
+      switch (tool.method.toUpperCase()) {
+        case "GET":
+          res = await httpClient.get(fullPath);
+          break;
+        case "POST":
+          res = await httpClient.post(fullPath, body);
+          break;
+        case "PUT":
+          res = await httpClient.put(fullPath, body);
+          break;
+        case "DELETE":
+          res = await httpClient.delete(fullPath);
+          break;
+        default:
+          throw new Error(`Unsupported HTTP method: ${tool.method}`);
+      }
+
+      return res;
+    });
 
     return {
       success: true,
