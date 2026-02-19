@@ -10,7 +10,7 @@
 import type { ParsedOperation } from "../../generator/openapi-parser.js";
 import { getToolByName } from "../registry.js";
 import { toolExists, getToolEntry, getToolIndex } from "./index-loader.js";
-import { generateExamplePayload } from "./schema.js";
+import { generateSmartExamplePayload } from "./schema.js";
 
 /**
  * Simplified tool description for MCP response
@@ -153,7 +153,7 @@ export function describeTool(toolName: string): ToolDescription | null {
     queryParameters: tool.queryParameters.map(extractParameterDescription),
     hasRequestBody: tool.requestBodySchema !== null,
     requestBodyRef,
-    requestBodyExample: tool.requestBodySchema ? generateExamplePayload(tool.toolName) : null,
+    requestBodyExample: tool.requestBodySchema ? generateSmartExamplePayload(tool.toolName) : null,
   };
 }
 

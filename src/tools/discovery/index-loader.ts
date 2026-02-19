@@ -34,8 +34,6 @@ function generateIndex(): ToolIndex {
       operation: tool.operation,
       summary: tool.summary,
       dangerLevel: tool.dangerLevel ?? "low",
-      // Note: isDeprecated not yet extracted from x-ves-deprecated in parser
-      isDeprecated: false,
       // Domain metadata from upstream specs
       domainCategory: domainMeta?.domainCategory ?? null,
       uiCategory: domainMeta?.uiCategory ?? null,

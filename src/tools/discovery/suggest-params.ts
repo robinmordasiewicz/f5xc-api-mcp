@@ -425,28 +425,6 @@ function buildNotesFromOneOfGroups(groups: MutuallyExclusiveGroup[]): string[] {
 }
 
 /**
- * Get suggested parameters (legacy interface for backward compatibility)
- *
- * @deprecated Use suggestParameters() for richer metadata
- */
-export function suggestParametersLegacy(toolName: string): {
-  examplePayload: Record<string, unknown>;
-  description: string;
-  notes?: string[];
-} | null {
-  const result = suggestParameters(toolName);
-  if (!result) {
-    return null;
-  }
-
-  return {
-    examplePayload: result.examplePayload,
-    description: result.description,
-    notes: result.notes,
-  };
-}
-
-/**
  * Get all available example tools (curated only)
  *
  * @returns List of tool names that have curated pre-built examples

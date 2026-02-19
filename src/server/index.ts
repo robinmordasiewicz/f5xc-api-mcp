@@ -3,7 +3,7 @@
 /**
  * Server Module Exports
  *
- * Re-exports for backward compatibility and modular access.
+ * Re-exports for modular access.
  */
 
 // Types

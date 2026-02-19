@@ -22,7 +22,6 @@ describe("Search Index", () => {
       operation: "create",
       summary: "Create an HTTP load balancer with routing rules",
       dangerLevel: "low",
-      isDeprecated: false,
     },
     {
       name: "virtual_origin-pool_create",
@@ -31,7 +30,6 @@ describe("Search Index", () => {
       operation: "create",
       summary: "Create an origin pool for backend servers",
       dangerLevel: "low",
-      isDeprecated: false,
     },
     {
       name: "virtual_http-loadbalancer_list",
@@ -40,7 +38,6 @@ describe("Search Index", () => {
       operation: "list",
       summary: "List all HTTP load balancers",
       dangerLevel: "low",
-      isDeprecated: false,
     },
     {
       name: "waap_bot-defense_create",
@@ -49,7 +46,6 @@ describe("Search Index", () => {
       operation: "create",
       summary: "Create bot defense policy for application protection",
       dangerLevel: "medium",
-      isDeprecated: false,
     },
     {
       name: "waap_waf-policy_update",
@@ -58,7 +54,6 @@ describe("Search Index", () => {
       operation: "update",
       summary: "Update WAF policy configuration",
       dangerLevel: "medium",
-      isDeprecated: false,
     },
   ];
 
@@ -348,8 +343,7 @@ describe("Search Index", () => {
           operation: ["create", "list", "update", "delete"][i % 4] as string,
           summary: `Tool ${i} for testing performance`,
           dangerLevel: "low",
-          isDeprecated: false,
-        });
+            });
       }
 
       const startBuild = Date.now();
@@ -376,8 +370,7 @@ describe("Search Index", () => {
           operation: "create",
           summary: "Test tool",
           dangerLevel: "low",
-          isDeprecated: false,
-        });
+            });
       }
 
       const largeIndex = buildSearchIndex(largeToolSet);

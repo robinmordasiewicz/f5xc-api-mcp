@@ -68,7 +68,6 @@ export {
   getMinimumConfiguration,
   getRequiredFields,
   getMutuallyExclusiveFields,
-  generateExamplePayload,
   generateSmartExamplePayload,
   getComprehensiveSchemaInfo,
   type ResolvedSchema,
@@ -216,10 +215,6 @@ export const DISCOVERY_TOOLS = {
         excludeDangerous: {
           type: "boolean",
           description: "Exclude high-danger operations from results",
-        },
-        excludeDeprecated: {
-          type: "boolean",
-          description: "Exclude deprecated operations from results",
         },
         includeDependencies: {
           type: "boolean",
