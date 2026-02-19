@@ -35,14 +35,14 @@ jobs:
           echo "Updating @robinmordasiewicz/f5xc-auth to version $VERSION"
 
           # Update package.json with specific version
-          npm install --save @robinmordasiewicz/f5xc-auth@$VERSION
+          npm install --save "@robinmordasiewicz/f5xc-auth@$VERSION"
 
           # Capture changes
           if git diff --quiet package.json package-lock.json; then
-            echo "updated=false" >> $GITHUB_OUTPUT
+            echo "updated=false" >> "$GITHUB_OUTPUT"
             echo "No changes detected"
           else
-            echo "updated=true" >> $GITHUB_OUTPUT
+            echo "updated=true" >> "$GITHUB_OUTPUT"
             echo "Changes detected"
           fi
 
