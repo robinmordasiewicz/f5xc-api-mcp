@@ -15,6 +15,7 @@ import { logger } from "../../utils/logging.js";
 import { quotaService } from "../../services/quota-service.js";
 import type { QuotaInfo } from "../../types/quota.js";
 import { formatQuotaError } from "../../services/quota-formatter.js";
+import { validateRequestBody, createValidationConfigFromEnv } from "../../utils/validation.js";
 
 /**
  * Tool execution parameters
@@ -328,6 +329,12 @@ export async function executeTool(
           }
         }
       }
+    }
+
+    // Validate request body depth/size to prevent resource exhaustion
+    if (body && Object.keys(body).length > 0) {
+      const validationConfig = createValidationConfigFromEnv();
+      validateRequestBody(body, validationConfig);
     }
 
     const path = buildPath(normalizeToolPath(tool.path), pathParams);
