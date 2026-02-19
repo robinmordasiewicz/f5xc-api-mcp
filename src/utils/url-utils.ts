@@ -31,6 +31,44 @@ export function normalizePath(path: string): string {
 }
 
 /**
+ * Default allowed domain patterns for F5XC API endpoints.
+ * These are the legitimate F5 Distributed Cloud domains.
+ */
+const F5XC_DEFAULT_ALLOWED_DOMAINS = [
+  ".console.ves.volterra.io",
+  ".staging.volterra.us",
+  ".ves.volterra.io",
+];
+
+/**
+ * Check whether a hostname belongs to an allowed F5XC domain.
+ *
+ * Matches against the built-in allowlist plus any additional domains
+ * specified in the F5XC_ALLOWED_DOMAINS environment variable
+ * (comma-separated list of domain suffixes).
+ *
+ * @param hostname - Hostname to validate (e.g. "tenant.console.ves.volterra.io")
+ * @returns true if the hostname matches an allowed domain
+ */
+export function isAllowedF5XCDomain(hostname: string): boolean {
+  const lower = hostname.toLowerCase();
+
+  // Build full allowlist: defaults + custom
+  const allowed = [...F5XC_DEFAULT_ALLOWED_DOMAINS];
+  const custom = process.env.F5XC_ALLOWED_DOMAINS;
+  if (custom) {
+    for (const domain of custom.split(",")) {
+      const trimmed = domain.trim();
+      if (trimmed) {
+        allowed.push(trimmed.startsWith(".") ? trimmed : `.${trimmed}`);
+      }
+    }
+  }
+
+  return allowed.some((suffix) => lower.endsWith(suffix));
+}
+
+/**
  * Normalize F5XC tenant URL to consistent format.
  *
  * Handles various input formats:
@@ -74,9 +112,22 @@ export function normalizeF5XCUrl(input: string): string {
   // Validate it's a proper URL
   try {
     const parsed = new URL(url);
+
+    // SSRF protection: validate hostname against allowed F5XC domains
+    if (!isAllowedF5XCDomain(parsed.hostname)) {
+      throw new Error(
+        `Domain "${parsed.hostname}" is not an allowed F5XC domain. ` +
+          `Allowed: ${F5XC_DEFAULT_ALLOWED_DOMAINS.join(", ")}. ` +
+          `Set F5XC_ALLOWED_DOMAINS to add custom domains.`
+      );
+    }
+
     // Reconstruct to ensure consistency
     return `${parsed.protocol}//${parsed.hostname}${parsed.port ? `:${parsed.port}` : ""}`;
-  } catch {
+  } catch (error) {
+    if (error instanceof Error && error.message.includes("not an allowed F5XC domain")) {
+      throw error; // Re-throw domain validation errors
+    }
     // If URL parsing fails, return the cleaned input
     logger.warn(`Could not parse URL: ${input}, returning cleaned input`);
     return url;
@@ -137,8 +188,24 @@ export async function verifyF5XCEndpoint(
 ): Promise<UrlVerificationResult> {
   const { timeoutMs = 10000, skipVerification = false } = options;
 
-  const normalizedUrl = normalizeF5XCUrl(url);
-  const tenant = extractTenantFromUrl(normalizedUrl);
+  let normalizedUrl: string;
+  let tenant: string | null;
+  try {
+    normalizedUrl = normalizeF5XCUrl(url);
+    tenant = extractTenantFromUrl(normalizedUrl);
+  } catch (error) {
+    // Domain validation failed (SSRF protection)
+    return {
+      valid: false,
+      normalizedUrl: url,
+      tenant: null,
+      error: error instanceof Error ? error.message : String(error),
+      suggestions: [
+        "Verify the tenant URL is a valid F5XC domain",
+        "Set F5XC_ALLOWED_DOMAINS to add custom domain suffixes",
+      ],
+    };
+  }
 
   // If verification is skipped, just return the normalized URL
   if (skipVerification) {
