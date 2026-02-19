@@ -408,35 +408,6 @@ describe("Parameter Validation", () => {
         expect(result.appliedDefaults).toHaveLength(1);
       });
 
-      it("should fallback to legacy requiredFields when no fieldDefaults", () => {
-        // Arrange
-        const mockTool: ParsedOperation = {
-          toolName: "test-tool",
-          domain: "virtual",
-          method: "POST",
-          path: "/api/v1/resource",
-          operation: "create",
-          pathParameters: [],
-          queryParameters: [],
-          requestBodySchema: { type: "object" },
-          requiredFields: ["metadata.name", "spec.value"],
-          // No fieldDefaults - use legacy behavior
-        } as any;
-        vi.mocked(getToolByName).mockReturnValue(mockTool);
-
-        // Act
-        const result = validateToolParams({
-          toolName: "test-tool",
-          body: { metadata: {} }, // Missing both
-        });
-
-        // Assert
-        expect(result.valid).toBe(false);
-        expect(result.errors).toHaveLength(2);
-        expect(result.errors.some((e) => e.path === "body.metadata.name")).toBe(true);
-        expect(result.errors.some((e) => e.path === "body.spec.value")).toBe(true);
-      });
-
       it("should error on all user-required fields when no body", () => {
         // Arrange
         const mockTool: ParsedOperation = {

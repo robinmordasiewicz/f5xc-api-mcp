@@ -10,7 +10,6 @@ import {
   getRequiredFields,
   getMutuallyExclusiveFields,
   generateSmartExamplePayload,
-  generateExamplePayload,
   getComprehensiveSchemaInfo,
   type ResolvedSchema,
   type MinimumConfiguration,
@@ -719,40 +718,6 @@ describe("Schema Module", () => {
       expect(Array.isArray((result as any).arrayField)).toBe(true);
       expect(result).toHaveProperty("objectField");
       expect(typeof (result as any).objectField).toBe("object");
-    });
-  });
-
-  describe("generateExamplePayload (legacy)", () => {
-    it("should generate example from raw schema", () => {
-      // Arrange
-      vi.mocked(getToolByName).mockReturnValue({
-        toolName: "test-tool",
-        requestBodySchema: {
-          type: "object",
-          properties: {
-            name: { type: "string", example: "test-name" },
-          },
-        },
-      } as any);
-
-      // Act
-      const result = generateExamplePayload("test-tool");
-
-      // Assert
-      expect(result).toHaveProperty("name", "test-name");
-    });
-
-    it("should return null for tool without schema", () => {
-      // Arrange
-      vi.mocked(getToolByName).mockReturnValue({
-        toolName: "test-tool",
-      } as any);
-
-      // Act
-      const result = generateExamplePayload("test-tool");
-
-      // Assert
-      expect(result).toBeNull();
     });
   });
 

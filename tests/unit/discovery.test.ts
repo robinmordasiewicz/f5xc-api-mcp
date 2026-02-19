@@ -482,7 +482,6 @@ describe("Token Efficiency Validation", () => {
       "operation",
       "summary",
       "dangerLevel",
-      "isDeprecated",
       "domainCategory",
       "uiCategory",
       // v1.0.84+ resource-level metadata fields

@@ -37,7 +37,6 @@ export function registerSearchToolsTool(server: McpServer): void {
       domains: z.array(z.string()).optional().describe("Filter by domains"),
       operations: z.array(z.string()).optional().describe("Filter by operations"),
       excludeDangerous: z.boolean().optional().describe("Exclude high-danger operations"),
-      excludeDeprecated: z.boolean().optional().describe("Exclude deprecated operations"),
       includeDependencies: z
         .boolean()
         .optional()
@@ -49,7 +48,6 @@ export function registerSearchToolsTool(server: McpServer): void {
         domains: args.domains,
         operations: args.operations,
         excludeDangerous: args.excludeDangerous,
-        excludeDeprecated: args.excludeDeprecated,
         includeDependencies: args.includeDependencies,
       });
 
@@ -64,7 +62,6 @@ export function registerSearchToolsTool(server: McpServer): void {
           summary: r.tool.summary,
           score: Math.round(r.score * 100) / 100,
           dangerLevel: r.tool.dangerLevel,
-          isDeprecated: r.tool.isDeprecated,
           ...(r.prerequisites && { prerequisites: r.prerequisites }),
         })),
         hint: "Use f5xc-api-describe-tool to get full schema for a specific tool.",

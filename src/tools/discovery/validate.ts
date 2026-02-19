@@ -394,9 +394,6 @@ function validateRequiredFields(
         serverDefaulted.push(fieldMeta.fieldPath);
       }
     }
-  } else {
-    // Fallback: Use legacy requiredFields (all treated as user-required)
-    userRequired.push(...(tool.requiredFields || []));
   }
 
   // Validate user-required fields (errors for missing)

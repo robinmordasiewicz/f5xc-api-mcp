@@ -77,7 +77,6 @@ export function searchTools(query: string, options: SearchOptions = {}): SearchR
     operations,
     minScore = 0.1,
     excludeDangerous,
-    excludeDeprecated,
     includeDependencies,
   } = options;
 
@@ -119,11 +118,6 @@ export function searchTools(query: string, options: SearchOptions = {}): SearchR
 
     // Phase A: Apply danger level filter
     if (excludeDangerous && tool.dangerLevel === "high") {
-      continue;
-    }
-
-    // Phase A: Apply deprecation filter
-    if (excludeDeprecated && tool.isDeprecated) {
       continue;
     }
 

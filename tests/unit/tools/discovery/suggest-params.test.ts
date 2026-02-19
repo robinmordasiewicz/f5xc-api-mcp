@@ -3,7 +3,6 @@
 import { describe, it, expect, beforeEach, vi } from "vitest";
 import {
   suggestParameters,
-  suggestParametersLegacy,
   getAvailableExamples,
   hasSuggestedParameters,
   hasCuratedExample,
@@ -499,42 +498,6 @@ describe("Parameter Suggestions", () => {
       // Assert
       expect(result?.curlExample).toBe("curl -X POST ...");
       expect(result?.yamlExample).toBe("test: value");
-    });
-  });
-
-  describe("suggestParametersLegacy", () => {
-    it("should return legacy format", () => {
-      // Arrange
-      vi.mocked(getToolByName).mockReturnValue({
-        toolName: "f5xc-api-virtual-http-loadbalancer-create",
-        resource: "http-loadbalancer",
-        operation: "create",
-      } as any);
-
-      vi.mocked(getMinimumConfiguration).mockReturnValue(null);
-      vi.mocked(getRequiredFields).mockReturnValue([]);
-      vi.mocked(getMutuallyExclusiveFields).mockReturnValue([]);
-
-      // Act
-      const result = suggestParametersLegacy("f5xc-api-virtual-http-loadbalancer-create");
-
-      // Assert
-      expect(result).not.toBeNull();
-      expect(result).toHaveProperty("examplePayload");
-      expect(result).toHaveProperty("description");
-      expect(result).toHaveProperty("notes");
-      expect(result).not.toHaveProperty("source"); // Legacy doesn't include source
-    });
-
-    it("should return null for non-existent tool", () => {
-      // Arrange
-      vi.mocked(getToolByName).mockReturnValue(undefined);
-
-      // Act
-      const result = suggestParametersLegacy("nonexistent-tool");
-
-      // Assert
-      expect(result).toBeNull();
     });
   });
 

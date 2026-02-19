@@ -228,11 +228,5 @@ describe("Discovery Queries - User Experience Simulation", () => {
       expect(safeResults.every((r) => r.tool.dangerLevel !== "high")).toBe(true);
     });
 
-    it("should be able to exclude deprecated operations", () => {
-      const activeResults = searchTools("http", { excludeDeprecated: true, limit: 20 });
-
-      // No deprecated tools in results
-      expect(activeResults.every((r) => !r.tool.isDeprecated)).toBe(true);
-    });
   });
 });

@@ -27,8 +27,6 @@ export interface ToolIndexEntry {
   summary: string;
   /** Danger level (Phase A): low, medium, high */
   dangerLevel: "low" | "medium" | "high";
-  /** Deprecation status (Phase A) */
-  isDeprecated: boolean;
   /** Domain category from upstream specs (e.g., "Security", "Platform") */
   domainCategory: string | null;
   /** UI category from upstream specs (e.g., "API Protection", "Sites") */
@@ -92,8 +90,6 @@ export interface SearchOptions {
   minScore?: number;
   /** Exclude high-danger operations from results (Phase A) */
   excludeDangerous?: boolean;
-  /** Exclude deprecated operations from results (Phase A) */
-  excludeDeprecated?: boolean;
   /** Include prerequisite hints for create operations (Phase B) */
   includeDependencies?: boolean;
 }
