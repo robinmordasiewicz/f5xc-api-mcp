@@ -17,9 +17,13 @@ import type { QuotaInfo } from "../../types/quota.js";
 import { formatQuotaError } from "../../services/quota-formatter.js";
 import { validateRequestBody, createValidationConfigFromEnv } from "../../utils/validation.js";
 import { createRateLimiterFromEnv } from "../../utils/rate-limiter.js";
+import { createHttpCacheFromEnv } from "../../utils/http-cache.js";
 
 /** Module-level rate limiter singleton, configured from environment variables */
 const rateLimiter = createRateLimiterFromEnv();
+
+/** Module-level HTTP cache singleton for GET responses */
+const httpCache = createHttpCacheFromEnv();
 
 /**
  * Tool execution parameters
@@ -347,6 +351,20 @@ export async function executeTool(
 
     logger.debug(`Executing tool: ${toolName}`, { method: tool.method, path: fullPath });
 
+    // Check cache for GET requests before making HTTP call
+    if (tool.method.toUpperCase() === "GET") {
+      const cached = httpCache.get(fullPath);
+      if (cached) {
+        logger.debug(`Cache hit for: ${fullPath}`);
+        return {
+          success: true,
+          data: cached.data,
+          statusCode: cached.status,
+          toolInfo,
+        };
+      }
+    }
+
     // Rate-limit HTTP calls to prevent API abuse
     const response = await rateLimiter.execute(async () => {
       let res: { data: unknown; status: number };
@@ -370,6 +388,16 @@ export async function executeTool(
 
       return res;
     });
+
+    // Cache successful GET responses
+    if (tool.method.toUpperCase() === "GET" && response.status >= 200 && response.status < 300) {
+      httpCache.set(fullPath, response);
+    }
+
+    // Invalidate cache for mutating operations on the same resource path
+    if (["POST", "PUT", "DELETE"].includes(tool.method.toUpperCase())) {
+      httpCache.invalidate(fullPath);
+    }
 
     return {
       success: true,
