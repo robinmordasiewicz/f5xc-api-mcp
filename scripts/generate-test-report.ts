@@ -89,9 +89,7 @@ async function generateReport(): Promise<void> {
   console.log(`📄 Processing most recent: ${resultFiles[0].name}\n`);
 
   // Parse results
-  const results: VitestResults = JSON.parse(
-    fs.readFileSync(resultFiles[0].path, "utf-8")
-  );
+  const results: VitestResults = JSON.parse(fs.readFileSync(resultFiles[0].path, "utf-8"));
 
   // Categorize issues
   const issues = categorizeIssues(results);
@@ -103,7 +101,10 @@ async function generateReport(): Promise<void> {
   generateBugsMarkdown(issues, patterns, timestamp);
   generateEnhancementsMarkdown(issues, timestamp);
   generateSummaryMarkdown(results, issues, patterns, timestamp);
-  generateGitHubIssues(issues.filter((i) => i.severity === "critical"), timestamp);
+  generateGitHubIssues(
+    issues.filter((i) => i.severity === "critical"),
+    timestamp
+  );
 
   console.log("\n✅ Report generation complete!");
   console.log(`\n📂 Generated files in project root:`);
@@ -151,7 +152,7 @@ function categorizeFailure(
 
   // Critical: 500 errors, null pointer, system crashes
   if (
-    httpStatus && httpStatus >= 500 ||
+    (httpStatus && httpStatus >= 500) ||
     errorMsg.includes("null pointer") ||
     errorMsg.includes("cannot read property") ||
     errorMsg.includes("internal server error") ||
@@ -163,7 +164,7 @@ function categorizeFailure(
   }
   // High: Incorrect behavior, authentication issues, data corruption
   else if (
-    errorMsg.includes("expected") && errorMsg.includes("received") ||
+    (errorMsg.includes("expected") && errorMsg.includes("received")) ||
     httpStatus === 401 ||
     httpStatus === 403 ||
     errorMsg.includes("schema mismatch") ||
@@ -171,9 +172,10 @@ function categorizeFailure(
     errorMsg.includes("validation failed")
   ) {
     severity = "high";
-    category = httpStatus === 401 || httpStatus === 403
-      ? "Authentication/Authorization"
-      : "Incorrect Behavior";
+    category =
+      httpStatus === 401 || httpStatus === 403
+        ? "Authentication/Authorization"
+        : "Incorrect Behavior";
   }
   // Medium: API inconsistencies, undocumented behavior
   else if (
@@ -231,9 +233,7 @@ function identifyPatterns(issues: CategorizedIssue[]): IssuePattern[] {
   }
 
   // Convert to array and sort by occurrences
-  return Array.from(patternMap.values()).sort(
-    (a, b) => b.occurrences - a.occurrences
-  );
+  return Array.from(patternMap.values()).sort((a, b) => b.occurrences - a.occurrences);
 }
 
 /**
@@ -320,10 +320,7 @@ function generateBugsMarkdown(
 /**
  * Generate ENHANCEMENTS.md file
  */
-function generateEnhancementsMarkdown(
-  issues: CategorizedIssue[],
-  timestamp: string
-): void {
+function generateEnhancementsMarkdown(issues: CategorizedIssue[], timestamp: string): void {
   let markdown = `# Feature Enhancement Opportunities - F5XC API MCP Server\n\n`;
   markdown += `**Report Generated**: ${new Date(timestamp).toLocaleString()}\n\n`;
 
@@ -397,10 +394,7 @@ function generateSummaryMarkdown(
   patterns: IssuePattern[],
   timestamp: string
 ): void {
-  const passRate = (
-    (results.numPassedTests / results.numTotalTests) *
-    100
-  ).toFixed(1);
+  const passRate = ((results.numPassedTests / results.numTotalTests) * 100).toFixed(1);
 
   let markdown = `# Test Discovery Report - ${new Date(timestamp).toLocaleString()}\n\n`;
 
@@ -439,11 +433,7 @@ function generateSummaryMarkdown(
   markdown += `- **Enhancements**: See ENHANCEMENTS.md for improvement opportunities\n`;
   markdown += `- **GitHub Issues**: See test-reports/github-issues/ for critical bug templates\n\n`;
 
-  const summaryPath = path.join(
-    process.cwd(),
-    "test-reports",
-    `summary-${timestamp}.md`
-  );
+  const summaryPath = path.join(process.cwd(), "test-reports", `summary-${timestamp}.md`);
   fs.writeFileSync(summaryPath, markdown);
   console.log(`✅ Generated test-reports/summary-${timestamp}.md`);
 }
@@ -451,10 +441,7 @@ function generateSummaryMarkdown(
 /**
  * Generate GitHub issue templates for critical bugs
  */
-function generateGitHubIssues(
-  criticalIssues: CategorizedIssue[],
-  timestamp: string
-): void {
+function generateGitHubIssues(criticalIssues: CategorizedIssue[], timestamp: string): void {
   const issuesDir = path.join(process.cwd(), "test-reports", "github-issues");
 
   if (!fs.existsSync(issuesDir)) {
@@ -503,7 +490,7 @@ function generateGitHubIssues(
     markdown += `This is a CRITICAL bug that blocks functionality and requires immediate attention.\n\n`;
 
     markdown += `## Environment\n\n`;
-    markdown += `- F5XC Tenant: nferreira.staging.volterra.us\n`;
+    markdown += `- F5XC Tenant: ${process.env.TEST_TENANT_NAME ?? "staging-test"}.staging.volterra.us\n`;
     markdown += `- Test Framework: Vitest\n`;
     markdown += `- Discovered: ${new Date(timestamp).toLocaleString()}\n`;
 

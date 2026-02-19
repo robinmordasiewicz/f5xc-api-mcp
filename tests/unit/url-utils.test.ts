@@ -173,7 +173,7 @@ describe("URL Utilities", () => {
     });
 
     it("should extract tenant from staging URL", () => {
-      expect(extractTenantFromUrl("https://nferreira.staging.volterra.us")).toBe("nferreira");
+      expect(extractTenantFromUrl("https://staging-test.staging.volterra.us")).toBe("staging-test");
     });
 
     it("should extract tenant from protocol-less URL", () => {
