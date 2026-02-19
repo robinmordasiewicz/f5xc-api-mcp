@@ -1,0 +1,49 @@
+name: Super-Linter
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  super-linter:
+    name: Lint (Super-Linter)
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      statuses: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Run Super-Linter
+        uses: super-linter/super-linter/slim@v7
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_ALL_CODEBASE: true
+
+          # Opt-in: only enable linters that add CI value
+          # ESLint/Prettier/TypeScript are handled by ci.yml with project deps
+          VALIDATE_BASH: true
+          VALIDATE_DOCKERFILE_HADOLINT: true
+          VALIDATE_EDITORCONFIG: true
+          VALIDATE_GITHUB_ACTIONS: true
+          VALIDATE_GITLEAKS: true
+          VALIDATE_JSON: true
+          VALIDATE_MARKDOWN: true
+          VALIDATE_YAML: true
+
+          # Config file overrides
+          MARKDOWN_CONFIG_FILE: .markdown-lint.json
+
+          # Exclude generated/downloaded content and MDX files
+          FILTER_REGEX_EXCLUDE: .*\.mdx$|^specs/.*|^coverage/.*|^dist/.*
