@@ -13,6 +13,9 @@ import { handleConfigureAuth } from "../../src/tools/configure-auth.js";
 import { normalizePath, normalizeF5XCUrl } from "../../src/utils/url-utils.js";
 import { buildApiPath } from "../../src/resources/templates.js";
 
+/** Staging tenant name — override with TEST_TENANT_NAME env var */
+const TEST_TENANT = process.env.TEST_TENANT_NAME ?? "staging-test";
+
 describe("URL Normalization Acceptance Tests", () => {
   describe("URL Format Variations", () => {
     const urlVariations = [
@@ -37,23 +40,23 @@ describe("URL Normalization Acceptance Tests", () => {
         description: "console URL without protocol, with /api",
       },
       {
-        input: "https://nferreira.staging.volterra.us",
-        expected: "https://nferreira.staging.volterra.us",
+        input: `https://${TEST_TENANT}.staging.volterra.us`,
+        expected: `https://${TEST_TENANT}.staging.volterra.us`,
         description: "staging URL",
       },
       {
-        input: "https://nferreira.staging.volterra.us/api",
-        expected: "https://nferreira.staging.volterra.us",
+        input: `https://${TEST_TENANT}.staging.volterra.us/api`,
+        expected: `https://${TEST_TENANT}.staging.volterra.us`,
         description: "staging URL with /api suffix",
       },
       {
-        input: "nferreira.staging.volterra.us",
-        expected: "https://nferreira.staging.volterra.us",
+        input: `${TEST_TENANT}.staging.volterra.us`,
+        expected: `https://${TEST_TENANT}.staging.volterra.us`,
         description: "staging URL without protocol",
       },
       {
-        input: "nferreira.staging.volterra.us/api",
-        expected: "https://nferreira.staging.volterra.us",
+        input: `${TEST_TENANT}.staging.volterra.us/api`,
+        expected: `https://${TEST_TENANT}.staging.volterra.us`,
         description: "staging URL without protocol, with /api",
       },
       {
@@ -263,19 +266,19 @@ describe("URL Normalization Acceptance Tests", () => {
     // These test cases are based on actual user-reported URL formats
     const userReportedPatterns = [
       {
-        input: "https://nferreira.staging.volterra.us",
+        input: `https://${TEST_TENANT}.staging.volterra.us`,
         description: "Staging environment (user format 1)",
       },
       {
-        input: "https://nferreira.staging.volterra.us/api",
+        input: `https://${TEST_TENANT}.staging.volterra.us/api`,
         description: "Staging environment with /api (user format 2)",
       },
       {
-        input: "nferreira.staging.volterra.us",
+        input: `${TEST_TENANT}.staging.volterra.us`,
         description: "Staging without protocol (user format 3)",
       },
       {
-        input: "nferreira.staging.volterra.us/api",
+        input: `${TEST_TENANT}.staging.volterra.us/api`,
         description: "Staging without protocol, with /api (user format 4)",
       },
     ];

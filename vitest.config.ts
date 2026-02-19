@@ -11,7 +11,7 @@ export default defineConfig({
       "dist",
       // Exclude authenticated tests that require F5XC API credentials
       // Run explicitly with npm run test:discover, test:errors, test:performance, test:workflows
-      "tests/acceptance/nferreira-tools-comprehensive.test.ts",
+      "tests/acceptance/tools-comprehensive.test.ts",
       "tests/acceptance/error-scenarios.test.ts",
       "tests/acceptance/performance-baseline.test.ts",
       "tests/integration/network-failures.test.ts",
@@ -26,12 +26,7 @@ export default defineConfig({
       provider: "v8",
       reporter: ["text", "json", "html", "lcov"],
       include: ["src/**/*.ts"],
-      exclude: [
-        "src/**/*.d.ts",
-        "src/**/index.ts",
-        "src/**/*.test.ts",
-        "src/**/*.spec.ts",
-      ],
+      exclude: ["src/**/*.d.ts", "src/**/index.ts", "src/**/*.test.ts", "src/**/*.spec.ts"],
       thresholds: {
         global: {
           branches: 70,

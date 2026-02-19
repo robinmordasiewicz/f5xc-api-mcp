@@ -18,11 +18,15 @@ import { describe, it, expect, beforeAll } from "vitest";
 import { CredentialManager } from "@robinmordasiewicz/f5xc-auth";
 import axios, { AxiosInstance, AxiosError } from "axios";
 
+/** Staging tenant name — override with TEST_TENANT_NAME env var */
+const TEST_TENANT = process.env.TEST_TENANT_NAME ?? "staging-test";
+const STAGING_BASE_URL = `https://${TEST_TENANT}.staging.volterra.us`;
+
 describe("Error Scenario Tests", () => {
   describe("Authentication Errors", () => {
     it("should handle invalid API token (401 Unauthorized)", async () => {
       const httpClient = axios.create({
-        baseURL: "https://nferreira.staging.volterra.us",
+        baseURL: STAGING_BASE_URL,
         headers: {
           Authorization: "APIToken invalid-token-12345",
           "Content-Type": "application/json",
@@ -41,7 +45,7 @@ describe("Error Scenario Tests", () => {
 
     it("should handle malformed API token format", async () => {
       const httpClient = axios.create({
-        baseURL: "https://nferreira.staging.volterra.us",
+        baseURL: STAGING_BASE_URL,
         headers: {
           Authorization: "Bearer malformed-not-apitoken",
           "Content-Type": "application/json",
@@ -60,7 +64,7 @@ describe("Error Scenario Tests", () => {
 
     it("should handle missing authorization header", async () => {
       const httpClient = axios.create({
-        baseURL: "https://nferreira.staging.volterra.us",
+        baseURL: STAGING_BASE_URL,
         headers: {
           "Content-Type": "application/json",
         },
@@ -78,7 +82,7 @@ describe("Error Scenario Tests", () => {
     it("should handle expired API token scenario", async () => {
       // Simulate expired token (will get 401)
       const httpClient = axios.create({
-        baseURL: "https://nferreira.staging.volterra.us",
+        baseURL: STAGING_BASE_URL,
         headers: {
           Authorization: "APIToken expired-token-00000000",
           "Content-Type": "application/json",
@@ -119,7 +123,9 @@ describe("Error Scenario Tests", () => {
 
     it("should handle 404 Not Found gracefully", async () => {
       try {
-        await validHttpClient.get("/api/config/namespaces/system/http_loadbalancers/nonexistent-resource-12345");
+        await validHttpClient.get(
+          "/api/config/namespaces/system/http_loadbalancers/nonexistent-resource-12345"
+        );
         expect.fail("Should have thrown 404 error");
       } catch (error: any) {
         expect(error.response?.status).toBe(404);
@@ -130,7 +136,9 @@ describe("Error Scenario Tests", () => {
     it("should handle 403 Forbidden gracefully", async () => {
       // Attempt to access a restricted namespace
       try {
-        await validHttpClient.get("/api/config/namespaces/restricted-namespace-test/http_loadbalancers");
+        await validHttpClient.get(
+          "/api/config/namespaces/restricted-namespace-test/http_loadbalancers"
+        );
 
         // If no error, that's fine (namespace might not exist or we have access)
         expect(true).toBe(true);
@@ -164,7 +172,9 @@ describe("Error Scenario Tests", () => {
 
     it("should include error details in response", async () => {
       try {
-        await validHttpClient.get("/api/config/namespaces/system/http_loadbalancers/nonexistent-12345");
+        await validHttpClient.get(
+          "/api/config/namespaces/system/http_loadbalancers/nonexistent-12345"
+        );
         expect.fail("Should have thrown 404 error");
       } catch (error: any) {
         expect(error.response?.status).toBe(404);
@@ -180,7 +190,7 @@ describe("Error Scenario Tests", () => {
   describe("Network and Timeout Errors", () => {
     it("should handle connection timeout gracefully", async () => {
       const httpClient = axios.create({
-        baseURL: "https://nferreira.staging.volterra.us",
+        baseURL: STAGING_BASE_URL,
         headers: {
           Authorization: "APIToken test-token",
         },
@@ -213,7 +223,7 @@ describe("Error Scenario Tests", () => {
 
     it("should handle invalid port (connection refused)", async () => {
       const httpClient = axios.create({
-        baseURL: "https://nferreira.staging.volterra.us:9999",
+        baseURL: `${STAGING_BASE_URL}:9999`,
         timeout: 5000,
       });
 
@@ -338,7 +348,7 @@ describe("Error Scenario Tests", () => {
   describe("Graceful Degradation", () => {
     it("should provide meaningful error messages", async () => {
       const httpClient = axios.create({
-        baseURL: "https://nferreira.staging.volterra.us",
+        baseURL: STAGING_BASE_URL,
         headers: {
           Authorization: "APIToken invalid-token",
         },
@@ -359,7 +369,7 @@ describe("Error Scenario Tests", () => {
 
     it("should preserve error context through axios", async () => {
       const httpClient = axios.create({
-        baseURL: "https://nferreira.staging.volterra.us",
+        baseURL: STAGING_BASE_URL,
         headers: {
           Authorization: "APIToken invalid-token",
         },

@@ -1,7 +1,8 @@
 /**
  * Comprehensive F5XC API Tool Validation Tests
  *
- * Validates all 1,535 F5XC API tools against nferreira.staging.volterra.us tenant.
+ * Validates all 1,535 F5XC API tools against a configurable staging tenant.
+ * Set TEST_TENANT_NAME env var to override the default tenant (staging-test).
  * Purpose: Bug discovery and feature enhancement identification.
  *
  * Execution Strategy:
@@ -73,9 +74,7 @@ function loadToolRegistrySync(): any {
     const entries = fs.readdirSync(distDir, { withFileTypes: true });
 
     // Filter for directories (each domain is a directory)
-    const domainDirs = entries
-      .filter((entry) => entry.isDirectory())
-      .map((entry) => entry.name);
+    const domainDirs = entries.filter((entry) => entry.isDirectory()).map((entry) => entry.name);
 
     for (const domainName of domainDirs) {
       const indexPath = path.join(distDir, domainName, "index.js");
@@ -88,7 +87,7 @@ function loadToolRegistrySync(): any {
           const module = require(indexPath);
 
           // Find the tools array export (e.g., virtualTools, wafTools, etc.)
-          const toolsArrayName = Object.keys(module).find(key => key.endsWith('Tools'));
+          const toolsArrayName = Object.keys(module).find((key) => key.endsWith("Tools"));
 
           if (toolsArrayName && Array.isArray(module[toolsArrayName])) {
             const tools = module[toolsArrayName];
@@ -150,9 +149,7 @@ beforeAll(async () => {
 
   // Initialize rate limiter
   rateLimiter = new RateLimiter(TEST_CONFIG.rateLimit);
-  console.log(
-    `⏱️  Rate Limiter: ${TEST_CONFIG.rateLimit.requestsPerMinute} requests/minute\n`
-  );
+  console.log(`⏱️  Rate Limiter: ${TEST_CONFIG.rateLimit.requestsPerMinute} requests/minute\n`);
 
   // Initialize resource tracker
   resourceTracker = new ResourceTracker();
@@ -164,7 +161,9 @@ beforeAll(async () => {
     }
   }
 
-  console.log(`📊 Loaded ${toolRegistry.totalTools} tools across ${toolRegistry.domains.length} domains\n`);
+  console.log(
+    `📊 Loaded ${toolRegistry.totalTools} tools across ${toolRegistry.domains.length} domains\n`
+  );
 }, 60000);
 
 /**
@@ -245,7 +244,7 @@ function printFinalStatistics(): void {
     const rbacByDomain = new Map<string, string[]>();
 
     // Group RBAC tools by domain
-    stats.rbacTools.forEach(toolName => {
+    stats.rbacTools.forEach((toolName) => {
       const domainMatch = toolName.match(/^f5xc-api-([^-]+)/);
       if (domainMatch) {
         const domain = domainMatch[1];
@@ -266,20 +265,19 @@ function printFinalStatistics(): void {
   console.log("Domain Breakdown:\n");
 
   // Sort domains by failure rate
-  const sortedDomains = Array.from(stats.domainStats.entries()).sort(
-    (a, b) => {
-      const failRateA = a[1].total > 0 ? a[1].failed / a[1].total : 0;
-      const failRateB = b[1].total > 0 ? b[1].failed / b[1].total : 0;
-      return failRateB - failRateA;
-    }
-  );
+  const sortedDomains = Array.from(stats.domainStats.entries()).sort((a, b) => {
+    const failRateA = a[1].total > 0 ? a[1].failed / a[1].total : 0;
+    const failRateB = b[1].total > 0 ? b[1].failed / b[1].total : 0;
+    return failRateB - failRateA;
+  });
 
   for (const [domain, domainStat] of sortedDomains) {
     if (domainStat.total === 0) continue;
 
     const passRate = ((domainStat.passed / domainStat.total) * 100).toFixed(1);
     const rbacInfo = domainStat.rbac > 0 ? ` (${domainStat.rbac} RBAC)` : "";
-    const icon = domainStat.failed === 0 ? "✅" : domainStat.failed > domainStat.passed ? "❌" : "⚠️";
+    const icon =
+      domainStat.failed === 0 ? "✅" : domainStat.failed > domainStat.passed ? "❌" : "⚠️";
 
     console.log(
       `  ${icon} ${domain.padEnd(30)} ${domainStat.passed}/${domainStat.total} (${passRate}%)${rbacInfo}`
@@ -308,9 +306,7 @@ async function validateListOperation(tool: any, domain: string): Promise<void> {
   }
 
   // Replace path parameters with test values
-  const testUrl = tool.path
-    .replace("{namespace}", "system")
-    .replace("{name}", "test-resource");
+  const testUrl = tool.path.replace("{namespace}", "system").replace("{name}", "test-resource");
 
   try {
     const response = await executeWithRateLimit(() => httpClient.get(testUrl));
@@ -360,9 +356,7 @@ async function validateGetOperation(tool: any, domain: string): Promise<void> {
   const testResourceName = generateTestResourceName("get-test");
 
   // Replace path parameters
-  const testUrl = tool.path
-    .replace("{namespace}", "system")
-    .replace("{name}", testResourceName);
+  const testUrl = tool.path.replace("{namespace}", "system").replace("{name}", testResourceName);
 
   try {
     const response = await executeWithRateLimit(() => httpClient.get(testUrl));
@@ -422,9 +416,7 @@ async function validateCreateOperation(tool: any, domain: string): Promise<void>
   };
 
   // Replace path parameters
-  const testUrl = tool.path
-    .replace("{namespace}", "system")
-    .replace("{name}", testName);
+  const testUrl = tool.path.replace("{namespace}", "system").replace("{name}", testName);
 
   try {
     const response = await executeWithRateLimit(() => httpClient.post(testUrl, payload));
@@ -495,57 +487,51 @@ async function validateDocumentationMode(tool: any, domain: string): Promise<voi
 // TEST SUITES BY DOMAIN
 // ============================================================================
 
-describe(
-  "F5XC API Comprehensive Tool Validation",
-  () => {
+describe("F5XC API Comprehensive Tool Validation", () => {
   // Generate test suites for each domain
   for (const domain of toolRegistry.domains) {
     describe(`domain: ${domain}`, () => {
       const tools = toolRegistry.toolsByDomain.get(domain) || [];
 
       for (const tool of tools) {
-        it(
-          `should validate ${tool.toolName}`,
-          { timeout: TEST_CONFIG.timeout },
-          async () => {
-            // Check if domain should be skipped
-            if (shouldSkipDomain(domain)) {
-              console.log(`⏭️  Skipping ${domain} domain due to high failure rate`);
-              stats.skipped++;
-              return;
-            }
-
-            stats.total++;
-
-            try {
-              // Determine operation type and validate accordingly
-              const operation = tool.operation?.toLowerCase() || "list";
-
-              if (operation === "list") {
-                await validateListOperation(tool, domain);
-              } else if (operation === "get") {
-                await validateGetOperation(tool, domain);
-              } else if (operation === "create") {
-                await validateCreateOperation(tool, domain);
-              } else if (operation === "update" || operation === "delete") {
-                await validateDocumentationMode(tool, domain);
-              } else {
-                // Default to documentation mode for unknown operations
-                await validateDocumentationMode(tool, domain);
-              }
-
-              // Log progress
-              logProgress();
-            } catch (error: any) {
-              stats.failed++;
-              updateDomainStats(domain, false);
-              logProgress();
-
-              // Re-throw to fail the test
-              throw error;
-            }
+        it(`should validate ${tool.toolName}`, { timeout: TEST_CONFIG.timeout }, async () => {
+          // Check if domain should be skipped
+          if (shouldSkipDomain(domain)) {
+            console.log(`⏭️  Skipping ${domain} domain due to high failure rate`);
+            stats.skipped++;
+            return;
           }
-        );
+
+          stats.total++;
+
+          try {
+            // Determine operation type and validate accordingly
+            const operation = tool.operation?.toLowerCase() || "list";
+
+            if (operation === "list") {
+              await validateListOperation(tool, domain);
+            } else if (operation === "get") {
+              await validateGetOperation(tool, domain);
+            } else if (operation === "create") {
+              await validateCreateOperation(tool, domain);
+            } else if (operation === "update" || operation === "delete") {
+              await validateDocumentationMode(tool, domain);
+            } else {
+              // Default to documentation mode for unknown operations
+              await validateDocumentationMode(tool, domain);
+            }
+
+            // Log progress
+            logProgress();
+          } catch (error: any) {
+            stats.failed++;
+            updateDomainStats(domain, false);
+            logProgress();
+
+            // Re-throw to fail the test
+            throw error;
+          }
+        });
       }
     });
   }

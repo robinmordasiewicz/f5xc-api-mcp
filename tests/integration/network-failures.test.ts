@@ -15,11 +15,15 @@
 import { describe, it, expect } from "vitest";
 import axios, { AxiosError } from "axios";
 
+/** Staging tenant name — override with TEST_TENANT_NAME env var */
+const TEST_TENANT = process.env.TEST_TENANT_NAME ?? "staging-test";
+const STAGING_BASE_URL = `https://${TEST_TENANT}.staging.volterra.us`;
+
 describe("Network Failure Integration Tests", () => {
   describe("Connection Timeout Scenarios", () => {
     it("should handle ETIMEDOUT with very short timeout", async () => {
       const httpClient = axios.create({
-        baseURL: "https://nferreira.staging.volterra.us",
+        baseURL: STAGING_BASE_URL,
         timeout: 1, // 1ms timeout - will fail
       });
 
@@ -35,7 +39,7 @@ describe("Network Failure Integration Tests", () => {
 
     it("should provide timeout context in error", async () => {
       const httpClient = axios.create({
-        baseURL: "https://nferreira.staging.volterra.us",
+        baseURL: STAGING_BASE_URL,
         timeout: 1,
       });
 
@@ -52,7 +56,7 @@ describe("Network Failure Integration Tests", () => {
 
     it("should handle read timeout vs connection timeout", async () => {
       const httpClient = axios.create({
-        baseURL: "https://nferreira.staging.volterra.us",
+        baseURL: STAGING_BASE_URL,
         timeout: 1,
       });
 
