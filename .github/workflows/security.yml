@@ -183,14 +183,16 @@ jobs:
     steps:
       - name: Check security scan results
         run: |
-          echo "## Security Scan Summary" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "| Scan | Status |" >> $GITHUB_STEP_SUMMARY
-          echo "|------|--------|" >> $GITHUB_STEP_SUMMARY
-          echo "| Dependency Scan | ${{ needs.dependency-scan.result == 'success' && '✅ Passed' || '❌ Failed' }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Secret Detection | ${{ needs.secret-scan.result == 'success' && '✅ Passed' || (needs.secret-scan.result == 'skipped' && '⏭️ Skipped' || '❌ Failed') }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| License Check | ${{ needs.license-check.result == 'success' && '✅ Passed' || '❌ Failed' }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| CodeQL Analysis | ${{ needs.codeql.result == 'success' && '✅ Passed' || '❌ Failed' }} |" >> $GITHUB_STEP_SUMMARY
+          {
+            echo "## Security Scan Summary"
+            echo ""
+            echo "| Scan | Status |"
+            echo "|------|--------|"
+            echo "| Dependency Scan | ${{ needs.dependency-scan.result == 'success' && '✅ Passed' || '❌ Failed' }} |"
+            echo "| Secret Detection | ${{ needs.secret-scan.result == 'success' && '✅ Passed' || (needs.secret-scan.result == 'skipped' && '⏭️ Skipped' || '❌ Failed') }} |"
+            echo "| License Check | ${{ needs.license-check.result == 'success' && '✅ Passed' || '❌ Failed' }} |"
+            echo "| CodeQL Analysis | ${{ needs.codeql.result == 'success' && '✅ Passed' || '❌ Failed' }} |"
+          } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Fail if any security check failed
         if: |
