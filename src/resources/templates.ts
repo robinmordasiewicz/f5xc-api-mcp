@@ -294,10 +294,10 @@ export function buildApiPath(
     return null;
   }
 
-  let path = rt.apiPath.replace("{namespace}", namespace);
+  let path = rt.apiPath.replace("{namespace}", encodeURIComponent(namespace));
 
   if (name) {
-    path += `/${name}`;
+    path += `/${encodeURIComponent(name)}`;
   }
 
   return path;
