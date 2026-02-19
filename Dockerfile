@@ -44,6 +44,7 @@ RUN addgroup -g 1001 -S nodejs && \
 COPY --from=builder --chown=mcp:nodejs /app/dist ./dist
 COPY --from=builder --chown=mcp:nodejs /app/node_modules ./node_modules
 COPY --from=builder --chown=mcp:nodejs /app/package.json ./
+COPY --from=builder --chown=mcp:nodejs /app/specs ./specs
 COPY --chown=mcp:nodejs manifest.json ./
 
 # Switch to non-root user

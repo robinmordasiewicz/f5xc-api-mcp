@@ -65,13 +65,17 @@ jobs:
             VERSION=$(jq -r '.version // "unknown"' specs/index.json)
             DOMAIN_COUNT=$(jq -r '.domains | length // 0' specs/index.json)
             TOOL_COUNT=$(jq -r '.toolCount // 0' specs/index.json)
-            echo "version=$VERSION" >> $GITHUB_OUTPUT
-            echo "domain_count=$DOMAIN_COUNT" >> $GITHUB_OUTPUT
-            echo "tool_count=$TOOL_COUNT" >> $GITHUB_OUTPUT
+            {
+              echo "version=$VERSION"
+              echo "domain_count=$DOMAIN_COUNT"
+              echo "tool_count=$TOOL_COUNT"
+            } >> "$GITHUB_OUTPUT"
           else
-            echo "version=unknown" >> $GITHUB_OUTPUT
-            echo "domain_count=0" >> $GITHUB_OUTPUT
-            echo "tool_count=0" >> $GITHUB_OUTPUT
+            {
+              echo "version=unknown"
+              echo "domain_count=0"
+              echo "tool_count=0"
+            } >> "$GITHUB_OUTPUT"
           fi
 
       - name: Generate tools from specs
@@ -84,11 +88,11 @@ jobs:
         id: changes
         run: |
           if [[ -n $(git status src/tools/ tests/fixtures/ --porcelain) ]]; then
-            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "changed=true" >> "$GITHUB_OUTPUT"
             echo "Generated code has changed"
             git status src/tools/ tests/fixtures/ --porcelain
           else
-            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "changed=false" >> "$GITHUB_OUTPUT"
             echo "No changes to generated code"
           fi
 
@@ -116,11 +120,15 @@ jobs:
           if [[ -f tests/fixtures/generated.ts ]]; then
             TOTAL_TOOLS=$(grep -o 'totalTools: [0-9]*' tests/fixtures/generated.ts | grep -o '[0-9]*' || echo "0")
             TOTAL_DOMAINS=$(grep -o 'totalDomains: [0-9]*' tests/fixtures/generated.ts | grep -o '[0-9]*' || echo "0")
-            echo "total_tools=$TOTAL_TOOLS" >> $GITHUB_OUTPUT
-            echo "total_domains=$TOTAL_DOMAINS" >> $GITHUB_OUTPUT
+            {
+              echo "total_tools=$TOTAL_TOOLS"
+              echo "total_domains=$TOTAL_DOMAINS"
+            } >> "$GITHUB_OUTPUT"
           else
-            echo "total_tools=0" >> $GITHUB_OUTPUT
-            echo "total_domains=0" >> $GITHUB_OUTPUT
+            {
+              echo "total_tools=0"
+              echo "total_domains=0"
+            } >> "$GITHUB_OUTPUT"
           fi
 
       - name: Create Pull Request
@@ -129,6 +137,9 @@ jobs:
         uses: peter-evans/create-pull-request@v8
         with:
           token: ${{ secrets.REPO_ADMIN_TOKEN }}
+          add-paths: |
+            src/tools/
+            tests/fixtures/
           commit-message: "feat(specs): update to v${{ steps.version.outputs.version }}"
           title: "feat(specs): Update OpenAPI specs to v${{ steps.version.outputs.version }}"
           body: |
@@ -173,20 +184,22 @@ jobs:
 
       - name: Summary
         run: |
-          echo "## OpenAPI Sync Summary" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          if [[ "${{ steps.changes.outputs.changed }}" == "true" ]] || [[ "${{ github.event.inputs.force_regenerate }}" == "true" ]]; then
-            echo "✅ Specs updated and PR created" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo "### Version Information" >> $GITHUB_STEP_SUMMARY
-            echo "- **Version**: ${{ steps.version.outputs.version }}" >> $GITHUB_STEP_SUMMARY
-            echo "- **Total Tools**: ${{ steps.stats.outputs.total_tools }}" >> $GITHUB_STEP_SUMMARY
-            echo "- **Total Domains**: ${{ steps.stats.outputs.total_domains }}" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo "### Changed Files" >> $GITHUB_STEP_SUMMARY
-            echo '```' >> $GITHUB_STEP_SUMMARY
-            git status src/tools/ tests/fixtures/ --porcelain >> $GITHUB_STEP_SUMMARY || true
-            echo '```' >> $GITHUB_STEP_SUMMARY
-          else
-            echo "ℹ️ No changes detected in generated code (specs are up to date)" >> $GITHUB_STEP_SUMMARY
-          fi
+          {
+            echo "## OpenAPI Sync Summary"
+            echo ""
+            if [[ "${{ steps.changes.outputs.changed }}" == "true" ]] || [[ "${{ github.event.inputs.force_regenerate }}" == "true" ]]; then
+              echo "✅ Specs updated and PR created"
+              echo ""
+              echo "### Version Information"
+              echo "- **Version**: ${{ steps.version.outputs.version }}"
+              echo "- **Total Tools**: ${{ steps.stats.outputs.total_tools }}"
+              echo "- **Total Domains**: ${{ steps.stats.outputs.total_domains }}"
+              echo ""
+              echo "### Changed Files"
+              echo '```'
+              git status src/tools/ tests/fixtures/ --porcelain || true
+              echo '```'
+            else
+              echo "ℹ️ No changes detected in generated code (specs are up to date)"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
