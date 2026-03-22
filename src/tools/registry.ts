@@ -29,6 +29,7 @@ import { network_securityTools } from "./generated/network_security/index.js";
 import { nginx_oneTools } from "./generated/nginx_one/index.js";
 import { object_storageTools } from "./generated/object_storage/index.js";
 import { observabilityTools } from "./generated/observability/index.js";
+import { otherTools } from "./generated/other/index.js";
 import { rate_limitingTools } from "./generated/rate_limiting/index.js";
 import { secops_and_incident_responseTools } from "./generated/secops_and_incident_response/index.js";
 import { service_meshTools } from "./generated/service_mesh/index.js";
@@ -71,6 +72,7 @@ export const allTools: ParsedOperation[] = [
   ...nginx_oneTools,
   ...object_storageTools,
   ...observabilityTools,
+  ...otherTools,
   ...rate_limitingTools,
   ...secops_and_incident_responseTools,
   ...service_meshTools,

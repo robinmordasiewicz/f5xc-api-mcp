@@ -1223,6 +1223,41 @@ export const billing_and_usageTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [],
   },
+  {
+    toolName: "f5xc-api-billingandusage-usage-summary-create",
+    method: "POST",
+    path: "/api/data/namespaces/system/billing/usage_summary",
+    operation: "create",
+    domain: "billing_and_usage",
+    resource: "usage-summary",
+    summary: "Billing Usage Summary.",
+    description:
+      "GET the aggregated billing usage data for each feature/SKU over the specified duration.",
+    pathParameters: [],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/billingBillingUsageSummaryRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/billingBillingUsageSummaryResponse",
+    },
+    requiredParams: ["body"],
+    operationId: "ves.io.schema.billing.CustomPublicAPI.BillingUsageSummary",
+    tags: ["Billing"],
+    sourceFile: "domains/billing_and_usage.json",
+    displayName: null,
+    dangerLevel: null,
+    sideEffects: null,
+    requiredFields: [],
+    confirmationRequired: false,
+    parameterExamples: {},
+    validationRules: {},
+    operationMetadata: null,
+    curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
+  },
 ];
 
 export default billing_and_usageTools;

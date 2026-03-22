@@ -440,11 +440,7 @@ export const virtualTools: ParsedOperation[] = [
       {
         choiceField: "detection_setting_choice",
         fieldPath: "spec.detection_setting_choice",
-        options: [
-          "spec.ai_risk_based_blocking",
-          "spec.default_detection_settings",
-          "spec.detection_settings",
-        ],
+        options: ["spec.default_detection_settings", "spec.detection_settings"],
         recommendedOption: "spec.default_detection_settings",
       },
       {
@@ -452,6 +448,12 @@ export const virtualTools: ParsedOperation[] = [
         fieldPath: "spec.enforcement_mode_choice",
         options: ["spec.blocking", "spec.monitoring"],
         recommendedOption: "spec.monitoring",
+      },
+      {
+        choiceField: "enhance_with_ai_choice",
+        fieldPath: "spec.enhance_with_ai_choice",
+        options: ["spec.disable_ai_enhancements", "spec.enable_ai_enhancements"],
+        recommendedOption: "spec.disable_ai_enhancements",
       },
       {
         choiceField: "anonymization_choice",
@@ -519,6 +521,14 @@ export const virtualTools: ParsedOperation[] = [
           "spec.detection_settings.signature_selection_setting.high_medium_accuracy_signatures",
           "spec.detection_settings.signature_selection_setting.high_medium_low_accuracy_signatures",
           "spec.detection_settings.signature_selection_setting.only_high_accuracy_signatures",
+        ],
+      },
+      {
+        choiceField: "risk_score_action_choice",
+        fieldPath: "spec.enable_ai_enhancements.risk_score_action_choice",
+        options: [
+          "spec.enable_ai_enhancements.mitigate_high_medium_risk_action",
+          "spec.enable_ai_enhancements.mitigate_high_risk_action",
         ],
       },
     ],
@@ -900,11 +910,7 @@ export const virtualTools: ParsedOperation[] = [
       {
         choiceField: "detection_setting_choice",
         fieldPath: "spec.detection_setting_choice",
-        options: [
-          "spec.ai_risk_based_blocking",
-          "spec.default_detection_settings",
-          "spec.detection_settings",
-        ],
+        options: ["spec.default_detection_settings", "spec.detection_settings"],
         recommendedOption: "spec.default_detection_settings",
       },
       {
@@ -912,6 +918,12 @@ export const virtualTools: ParsedOperation[] = [
         fieldPath: "spec.enforcement_mode_choice",
         options: ["spec.blocking", "spec.monitoring"],
         recommendedOption: "spec.monitoring",
+      },
+      {
+        choiceField: "enhance_with_ai_choice",
+        fieldPath: "spec.enhance_with_ai_choice",
+        options: ["spec.disable_ai_enhancements", "spec.enable_ai_enhancements"],
+        recommendedOption: "spec.disable_ai_enhancements",
       },
       {
         choiceField: "anonymization_choice",
@@ -979,6 +991,14 @@ export const virtualTools: ParsedOperation[] = [
           "spec.detection_settings.signature_selection_setting.high_medium_accuracy_signatures",
           "spec.detection_settings.signature_selection_setting.high_medium_low_accuracy_signatures",
           "spec.detection_settings.signature_selection_setting.only_high_accuracy_signatures",
+        ],
+      },
+      {
+        choiceField: "risk_score_action_choice",
+        fieldPath: "spec.enable_ai_enhancements.risk_score_action_choice",
+        options: [
+          "spec.enable_ai_enhancements.mitigate_high_medium_risk_action",
+          "spec.enable_ai_enhancements.mitigate_high_risk_action",
         ],
       },
     ],
