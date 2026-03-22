@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-03-21T06:21:19.083922+00:00",
-  "totalResources": 793,
+  "generatedAt": "2026-03-22T06:36:30.193716+00:00",
+  "totalResources": 819,
   "dependencies": {
     "admin_console_and_ui/static-component": {
       "resource": "static-component",
@@ -1540,6 +1540,423 @@
         "bigip/apm"
       ]
     },
+    "bigip/application-profiles": {
+      "resource": "application-profiles",
+      "domain": "bigip",
+      "requires": [
+        {
+          "resourceType": "application-profiles",
+          "domain": "",
+          "fieldPath": "",
+          "required": false,
+          "inline": false
+        },
+        {
+          "resourceType": "schema-object-create-meta",
+          "domain": "",
+          "fieldPath": "metadata",
+          "required": false,
+          "inline": false
+        },
+        {
+          "resourceType": "application-profiles-create",
+          "domain": "",
+          "fieldPath": "spec",
+          "required": false,
+          "inline": false
+        },
+        {
+          "resourceType": "schema-object-replace-meta",
+          "domain": "",
+          "fieldPath": "metadata",
+          "required": false,
+          "inline": false
+        },
+        {
+          "resourceType": "application-profiles-replace",
+          "domain": "",
+          "fieldPath": "spec",
+          "required": false,
+          "inline": false
+        }
+      ],
+      "requiredBy": [],
+      "oneOfGroups": [
+        {
+          "choiceField": "tcp_advanced_profile_choice",
+          "options": [
+            "spec.advanced_tcp_profile.disable_tcp_advanced_profile",
+            "spec.advanced_tcp_profile.enable_tcp_advanced_profile"
+          ],
+          "fieldPath": "spec.advanced_tcp_profile.tcp_advanced_profile_choice"
+        },
+        {
+          "choiceField": "ddos_mitigation_choice",
+          "options": [
+            "spec.ddos_profile.disable_ddos_mitigation",
+            "spec.ddos_profile.enable_ddos_mitigation"
+          ],
+          "fieldPath": "spec.ddos_profile.ddos_mitigation_choice"
+        },
+        {
+          "choiceField": "virtual_server_type",
+          "options": [
+            "spec.virtual_server.http",
+            "spec.virtual_server.https",
+            "spec.virtual_server.tcp",
+            "spec.virtual_server.udp"
+          ],
+          "fieldPath": "spec.virtual_server.virtual_server_type"
+        },
+        {
+          "choiceField": "address_translation_choice",
+          "options": [
+            "spec.virtual_server.address_translation.address_translation_disable",
+            "spec.virtual_server.address_translation.address_translation_enable"
+          ],
+          "fieldPath": "spec.virtual_server.address_translation.address_translation_choice"
+        },
+        {
+          "choiceField": "auto_last_hop_choice",
+          "options": [
+            "spec.virtual_server.auto_last_hop.auto_last_hop_default",
+            "spec.virtual_server.auto_last_hop.auto_last_hop_disable",
+            "spec.virtual_server.auto_last_hop.auto_last_hop_enable"
+          ],
+          "fieldPath": "spec.virtual_server.auto_last_hop.auto_last_hop_choice"
+        },
+        {
+          "choiceField": "connection_rate_limit_mode_choice",
+          "options": [
+            "spec.virtual_server.connection_rate_limit_mode.per_destination_address",
+            "spec.virtual_server.connection_rate_limit_mode.per_source_address",
+            "spec.virtual_server.connection_rate_limit_mode.per_source_destination_address",
+            "spec.virtual_server.connection_rate_limit_mode.per_virtual_server",
+            "spec.virtual_server.connection_rate_limit_mode.per_virtual_server_destination_address",
+            "spec.virtual_server.connection_rate_limit_mode.per_virtual_server_source_address",
+            "spec.virtual_server.connection_rate_limit_mode.per_virtual_server_source_destination_address"
+          ],
+          "fieldPath": "spec.virtual_server.connection_rate_limit_mode.connection_rate_limit_mode_choice"
+        },
+        {
+          "choiceField": "immediate_action_on_service_down_choice",
+          "options": [
+            "spec.virtual_server.immediate_action_on_service_down.immediate_action_on_service_down_drop",
+            "spec.virtual_server.immediate_action_on_service_down.immediate_action_on_service_down_none",
+            "spec.virtual_server.immediate_action_on_service_down.immediate_action_on_service_down_reset"
+          ],
+          "fieldPath": "spec.virtual_server.immediate_action_on_service_down.immediate_action_on_service_down_choice"
+        },
+        {
+          "choiceField": "nat64_choice",
+          "options": [
+            "spec.virtual_server.nat64.nat64_disable",
+            "spec.virtual_server.nat64.nat64_enable"
+          ],
+          "fieldPath": "spec.virtual_server.nat64.nat64_choice"
+        },
+        {
+          "choiceField": "port_translation_choice",
+          "options": [
+            "spec.virtual_server.port_translation.port_translation_disable",
+            "spec.virtual_server.port_translation.port_translation_enable"
+          ],
+          "fieldPath": "spec.virtual_server.port_translation.port_translation_choice"
+        },
+        {
+          "choiceField": "source_port_choice",
+          "options": [
+            "spec.virtual_server.source_port.source_port_change",
+            "spec.virtual_server.source_port.source_port_preserve",
+            "spec.virtual_server.source_port.source_port_preserve_strict"
+          ],
+          "fieldPath": "spec.virtual_server.source_port.source_port_choice"
+        },
+        {
+          "choiceField": "state_choice",
+          "options": [
+            "spec.virtual_server.virtual_server_state.state_disabled",
+            "spec.virtual_server.virtual_server_state.state_enabled"
+          ],
+          "fieldPath": "spec.virtual_server.virtual_server_state.state_choice"
+        }
+      ],
+      "subscriptions": [],
+      "creationOrder": [
+        "unknown/application-profiles",
+        "unknown/schema-object-create-meta",
+        "unknown/application-profiles-create",
+        "unknown/schema-object-replace-meta",
+        "unknown/application-profiles-replace",
+        "bigip/application-profiles"
+      ]
+    },
+    "bigip/bigip-http-proxy": {
+      "resource": "bigip-http-proxy",
+      "domain": "bigip",
+      "requires": [
+        {
+          "resourceType": "bigip-http-proxy",
+          "domain": "",
+          "fieldPath": "",
+          "required": false,
+          "inline": false
+        },
+        {
+          "resourceType": "schema-object-create-meta",
+          "domain": "",
+          "fieldPath": "metadata",
+          "required": false,
+          "inline": false
+        },
+        {
+          "resourceType": "viewsbigip-http-proxy-create",
+          "domain": "",
+          "fieldPath": "spec",
+          "required": false,
+          "inline": false
+        },
+        {
+          "resourceType": "schema-object-replace-meta",
+          "domain": "",
+          "fieldPath": "metadata",
+          "required": false,
+          "inline": false
+        },
+        {
+          "resourceType": "viewsbigip-http-proxy-replace",
+          "domain": "",
+          "fieldPath": "spec",
+          "required": false,
+          "inline": false
+        }
+      ],
+      "requiredBy": [],
+      "oneOfGroups": [
+        {
+          "choiceField": "choice",
+          "options": [
+            "spec.advanced_profile.disable",
+            "spec.advanced_profile.enable_default_profile"
+          ],
+          "fieldPath": "spec.advanced_profile.choice"
+        },
+        {
+          "choiceField": "ddos_mitigation_choice",
+          "options": [
+            "spec.ddos_profile.disable_ddos_mitigation",
+            "spec.ddos_profile.enable_ddos_mitigation"
+          ],
+          "fieldPath": "spec.ddos_profile.ddos_mitigation_choice"
+        },
+        {
+          "choiceField": "lb_algorithm_choice",
+          "options": [
+            "spec.lb_algorithm.round_robin"
+          ],
+          "fieldPath": "spec.lb_algorithm.lb_algorithm_choice"
+        },
+        {
+          "choiceField": "port_choice",
+          "options": [
+            "spec.origin_pools.pools[].origin_servers.automatic_port",
+            "spec.origin_pools.pools[].origin_servers.lb_port",
+            "spec.origin_pools.pools[].origin_servers.port"
+          ],
+          "fieldPath": "spec.origin_pools.pools[].origin_servers.port_choice"
+        },
+        {
+          "choiceField": "network_choice",
+          "options": [
+            "spec.origin_pools.pools[].origin_servers.origin_servers[].k8s_service.inside_network",
+            "spec.origin_pools.pools[].origin_servers.origin_servers[].k8s_service.outside_network",
+            "spec.origin_pools.pools[].origin_servers.origin_servers[].k8s_service.vk8s_networks"
+          ],
+          "fieldPath": "spec.origin_pools.pools[].origin_servers.origin_servers[].k8s_service.network_choice"
+        },
+        {
+          "choiceField": "service_info",
+          "options": [
+            "spec.origin_pools.pools[].origin_servers.origin_servers[].k8s_service.service_name"
+          ],
+          "fieldPath": "spec.origin_pools.pools[].origin_servers.origin_servers[].k8s_service.service_info"
+        },
+        {
+          "choiceField": "snat_pool_choice",
+          "options": [
+            "spec.origin_pools.pools[].origin_servers.origin_servers[].k8s_service.snat_pool.no_snat_pool",
+            "spec.origin_pools.pools[].origin_servers.origin_servers[].k8s_service.snat_pool.snat_pool"
+          ],
+          "fieldPath": "spec.origin_pools.pools[].origin_servers.origin_servers[].k8s_service.snat_pool.snat_pool_choice"
+        },
+        {
+          "choiceField": "private_ip_choice",
+          "options": [
+            "spec.origin_pools.pools[].origin_servers.origin_servers[].private_ip.ip"
+          ],
+          "fieldPath": "spec.origin_pools.pools[].origin_servers.origin_servers[].private_ip.private_ip_choice"
+        },
+        {
+          "choiceField": "public_ip_choice",
+          "options": [
+            "spec.origin_pools.pools[].origin_servers.origin_servers[].public_ip.ip"
+          ],
+          "fieldPath": "spec.origin_pools.pools[].origin_servers.origin_servers[].public_ip.public_ip_choice"
+        },
+        {
+          "choiceField": "advertise_choice",
+          "options": [
+            "spec.proxy_advertisement.advertise_custom",
+            "spec.proxy_advertisement.do_not_advertise"
+          ],
+          "fieldPath": "spec.proxy_advertisement.advertise_choice"
+        },
+        {
+          "choiceField": "v6_vip_choice",
+          "options": [
+            "spec.proxy_advertisement.advertise_custom.advertise_where[].virtual_network.default_v6_vip",
+            "spec.proxy_advertisement.advertise_custom.advertise_where[].virtual_network.specific_v6_vip"
+          ],
+          "fieldPath": "spec.proxy_advertisement.advertise_custom.advertise_where[].virtual_network.v6_vip_choice"
+        },
+        {
+          "choiceField": "vip_choice",
+          "options": [
+            "spec.proxy_advertisement.advertise_custom.advertise_where[].virtual_network.default_vip",
+            "spec.proxy_advertisement.advertise_custom.advertise_where[].virtual_network.specific_vip"
+          ],
+          "fieldPath": "spec.proxy_advertisement.advertise_custom.advertise_where[].virtual_network.vip_choice"
+        },
+        {
+          "choiceField": "loadbalancer_type",
+          "options": [
+            "spec.proxy_config.http",
+            "spec.proxy_config.https",
+            "spec.proxy_config.https_auto_cert"
+          ],
+          "fieldPath": "spec.proxy_config.loadbalancer_type"
+        },
+        {
+          "choiceField": "default_lb_choice",
+          "options": [
+            "spec.proxy_config.https.default_loadbalancer",
+            "spec.proxy_config.https.non_default_loadbalancer"
+          ],
+          "fieldPath": "spec.proxy_config.https.default_lb_choice"
+        },
+        {
+          "choiceField": "path_normalize_choice",
+          "options": [
+            "spec.proxy_config.https.disable_path_normalize",
+            "spec.proxy_config.https.enable_path_normalize"
+          ],
+          "fieldPath": "spec.proxy_config.https.path_normalize_choice"
+        },
+        {
+          "choiceField": "server_header_choice",
+          "options": [
+            "spec.proxy_config.https.append_server_name",
+            "spec.proxy_config.https.default_header",
+            "spec.proxy_config.https.pass_through",
+            "spec.proxy_config.https.server_name"
+          ],
+          "fieldPath": "spec.proxy_config.https.server_header_choice"
+        },
+        {
+          "choiceField": "tls_certificates_choice",
+          "options": [
+            "spec.proxy_config.https.tls_cert_params",
+            "spec.proxy_config.https.tls_parameters"
+          ],
+          "fieldPath": "spec.proxy_config.https.tls_certificates_choice"
+        },
+        {
+          "choiceField": "coalescing_choice",
+          "options": [
+            "spec.proxy_config.https.coalescing_options.default_coalescing",
+            "spec.proxy_config.https.coalescing_options.strict_coalescing"
+          ],
+          "fieldPath": "spec.proxy_config.https.coalescing_options.coalescing_choice"
+        },
+        {
+          "choiceField": "http_protocol_choice",
+          "options": [
+            "spec.proxy_config.https.http_protocol_options.http_protocol_enable_v1_only",
+            "spec.proxy_config.https.http_protocol_options.http_protocol_enable_v1_v2",
+            "spec.proxy_config.https.http_protocol_options.http_protocol_enable_v2_only"
+          ],
+          "fieldPath": "spec.proxy_config.https.http_protocol_options.http_protocol_choice"
+        },
+        {
+          "choiceField": "header_transformation_choice",
+          "options": [
+            "spec.proxy_config.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.default_header_transformation",
+            "spec.proxy_config.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.legacy_header_transformation",
+            "spec.proxy_config.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.preserve_case_header_transformation",
+            "spec.proxy_config.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.proper_case_header_transformation"
+          ],
+          "fieldPath": "spec.proxy_config.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.header_transformation_choice"
+        },
+        {
+          "choiceField": "mtls_choice",
+          "options": [
+            "spec.proxy_config.https.tls_cert_params.no_mtls",
+            "spec.proxy_config.https.tls_cert_params.use_mtls"
+          ],
+          "fieldPath": "spec.proxy_config.https.tls_cert_params.mtls_choice"
+        },
+        {
+          "choiceField": "crl_choice",
+          "options": [
+            "spec.proxy_config.https.tls_cert_params.use_mtls.crl",
+            "spec.proxy_config.https.tls_cert_params.use_mtls.no_crl"
+          ],
+          "fieldPath": "spec.proxy_config.https.tls_cert_params.use_mtls.crl_choice"
+        },
+        {
+          "choiceField": "trusted_ca_choice",
+          "options": [
+            "spec.proxy_config.https.tls_cert_params.use_mtls.trusted_ca",
+            "spec.proxy_config.https.tls_cert_params.use_mtls.trusted_ca_url"
+          ],
+          "fieldPath": "spec.proxy_config.https.tls_cert_params.use_mtls.trusted_ca_choice"
+        },
+        {
+          "choiceField": "xfcc_header",
+          "options": [
+            "spec.proxy_config.https.tls_cert_params.use_mtls.xfcc_disabled",
+            "spec.proxy_config.https.tls_cert_params.use_mtls.xfcc_options"
+          ],
+          "fieldPath": "spec.proxy_config.https.tls_cert_params.use_mtls.xfcc_header"
+        },
+        {
+          "choiceField": "ocsp_stapling_choice",
+          "options": [
+            "spec.proxy_config.https.tls_parameters.tls_certificates[].custom_hash_algorithms",
+            "spec.proxy_config.https.tls_parameters.tls_certificates[].disable_ocsp_stapling",
+            "spec.proxy_config.https.tls_parameters.tls_certificates[].use_system_defaults"
+          ],
+          "fieldPath": "spec.proxy_config.https.tls_parameters.tls_certificates[].ocsp_stapling_choice"
+        },
+        {
+          "choiceField": "secret_info_oneof",
+          "options": [
+            "spec.proxy_config.https.tls_parameters.tls_certificates[].private_key.blindfold_secret_info",
+            "spec.proxy_config.https.tls_parameters.tls_certificates[].private_key.clear_secret_info"
+          ],
+          "fieldPath": "spec.proxy_config.https.tls_parameters.tls_certificates[].private_key.secret_info_oneof"
+        }
+      ],
+      "subscriptions": [],
+      "creationOrder": [
+        "unknown/bigip-http-proxy",
+        "unknown/schema-object-create-meta",
+        "unknown/viewsbigip-http-proxy-create",
+        "unknown/schema-object-replace-meta",
+        "unknown/viewsbigip-http-proxy-replace",
+        "bigip/bigip-http-proxy"
+      ]
+    },
     "bigip/bigip-virtual-server": {
       "resource": "bigip-virtual-server",
       "domain": "bigip",
@@ -1886,6 +2303,17 @@
       "creationOrder": [
         "unknown/bigipapm-metric",
         "bigip/metric"
+      ]
+    },
+    "billing_and_usage/usage-summary": {
+      "resource": "usage-summary",
+      "domain": "billing_and_usage",
+      "requires": [],
+      "requiredBy": [],
+      "oneOfGroups": [],
+      "subscriptions": [],
+      "creationOrder": [
+        "billing_and_usage/usage-summary"
       ]
     },
     "billing_and_usage/subscribe": {
@@ -4372,6 +4800,68 @@
         "cdn/cdn-loadbalancer"
       ]
     },
+    "cdn/cdn-purge-command": {
+      "resource": "cdn-purge-command",
+      "domain": "cdn",
+      "requires": [
+        {
+          "resourceType": "cdn-purge-command",
+          "domain": "",
+          "fieldPath": "",
+          "required": false,
+          "inline": false
+        },
+        {
+          "resourceType": "schema-object-create-meta",
+          "domain": "",
+          "fieldPath": "metadata",
+          "required": false,
+          "inline": false
+        },
+        {
+          "resourceType": "schemacdn-purge-command-create",
+          "domain": "",
+          "fieldPath": "spec",
+          "required": false,
+          "inline": false
+        }
+      ],
+      "requiredBy": [],
+      "oneOfGroups": [
+        {
+          "choiceField": "pattern_type",
+          "options": [
+            "spec.hostname",
+            "spec.pattern",
+            "spec.purge_all",
+            "spec.url_path"
+          ],
+          "fieldPath": "spec.pattern_type"
+        },
+        {
+          "choiceField": "purge_type",
+          "options": [
+            "spec.hard_purge",
+            "spec.soft_purge"
+          ],
+          "fieldPath": "spec.purge_type"
+        }
+      ],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_content_delivery_network_standard",
+          "displayName": "F5XC Content Delivery Network Standard",
+          "tier": "standard",
+          "required": false
+        }
+      ],
+      "creationOrder": [
+        "unknown/cdn-purge-command",
+        "unknown/schema-object-create-meta",
+        "unknown/schemacdn-purge-command-create",
+        "cdn/cdn-purge-command"
+      ]
+    },
     "cdn/get-security-config": {
       "resource": "get-security-config",
       "domain": "cdn",
@@ -5010,6 +5500,245 @@
       "subscriptions": [],
       "creationOrder": [
         "ce_management/upgradable-sw-version"
+      ]
+    },
+    "ce_management/get-image-download-url": {
+      "resource": "get-image-download-url",
+      "domain": "ce_management",
+      "requires": [],
+      "requiredBy": [],
+      "oneOfGroups": [],
+      "subscriptions": [],
+      "creationOrder": [
+        "ce_management/get-image-download-url"
+      ]
+    },
+    "ce_management/get-registrations-by-token": {
+      "resource": "get-registrations-by-token",
+      "domain": "ce_management",
+      "requires": [],
+      "requiredBy": [],
+      "oneOfGroups": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_site_management_standard",
+          "displayName": "F5XC Site Management Standard",
+          "tier": "standard",
+          "required": false
+        }
+      ],
+      "creationOrder": [
+        "ce_management/get-registrations-by-token"
+      ]
+    },
+    "ce_management/suggest-value": {
+      "resource": "suggest-value",
+      "domain": "ce_management",
+      "requires": [],
+      "requiredBy": [],
+      "oneOfGroups": [],
+      "subscriptions": [],
+      "creationOrder": [
+        "ce_management/suggest-value"
+      ]
+    },
+    "ce_management/registration": {
+      "resource": "registration",
+      "domain": "ce_management",
+      "requires": [
+        {
+          "resourceType": "registration",
+          "domain": "",
+          "fieldPath": "",
+          "required": false,
+          "inline": false
+        },
+        {
+          "resourceType": "schema-object-create-meta",
+          "domain": "",
+          "fieldPath": "metadata",
+          "required": false,
+          "inline": false
+        },
+        {
+          "resourceType": "schemaregistration-create",
+          "domain": "",
+          "fieldPath": "spec",
+          "required": false,
+          "inline": false
+        },
+        {
+          "resourceType": "schema-object-replace-meta",
+          "domain": "",
+          "fieldPath": "metadata",
+          "required": false,
+          "inline": false
+        },
+        {
+          "resourceType": "schemaregistration-replace",
+          "domain": "",
+          "fieldPath": "spec",
+          "required": false,
+          "inline": false
+        }
+      ],
+      "requiredBy": [],
+      "oneOfGroups": [
+        {
+          "choiceField": "operating_system_version_choice",
+          "options": [
+            "spec.passport.default_os_version",
+            "spec.passport.operating_system_version"
+          ],
+          "fieldPath": "spec.passport.operating_system_version_choice"
+        },
+        {
+          "choiceField": "volterra_sw_version_choice",
+          "options": [
+            "spec.passport.default_sw_version",
+            "spec.passport.volterra_software_version"
+          ],
+          "fieldPath": "spec.passport.volterra_sw_version_choice"
+        }
+      ],
+      "subscriptions": [],
+      "creationOrder": [
+        "unknown/registration",
+        "unknown/schema-object-create-meta",
+        "unknown/schemaregistration-create",
+        "unknown/schema-object-replace-meta",
+        "unknown/schemaregistration-replace",
+        "ce_management/registration"
+      ]
+    },
+    "ce_management/listregistrationsbystate": {
+      "resource": "listregistrationsbystate",
+      "domain": "ce_management",
+      "requires": [],
+      "requiredBy": [],
+      "oneOfGroups": [],
+      "subscriptions": [],
+      "creationOrder": [
+        "ce_management/listregistrationsbystate"
+      ]
+    },
+    "ce_management/approve": {
+      "resource": "approve",
+      "domain": "ce_management",
+      "requires": [
+        {
+          "resourceType": "schema-site-to-site-tunnel",
+          "domain": "",
+          "fieldPath": "tunnel_type",
+          "required": false,
+          "inline": false
+        }
+      ],
+      "requiredBy": [],
+      "oneOfGroups": [
+        {
+          "choiceField": "operating_system_version_choice",
+          "options": [
+            "passport.default_os_version",
+            "passport.operating_system_version"
+          ],
+          "fieldPath": "passport.operating_system_version_choice"
+        },
+        {
+          "choiceField": "volterra_sw_version_choice",
+          "options": [
+            "passport.default_sw_version",
+            "passport.volterra_software_version"
+          ],
+          "fieldPath": "passport.volterra_sw_version_choice"
+        }
+      ],
+      "subscriptions": [],
+      "creationOrder": [
+        "unknown/schema-site-to-site-tunnel",
+        "ce_management/approve"
+      ]
+    },
+    "ce_management/registrations-by-site": {
+      "resource": "registrations-by-site",
+      "domain": "ce_management",
+      "requires": [],
+      "requiredBy": [],
+      "oneOfGroups": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_site_management_standard",
+          "displayName": "F5XC Site Management Standard",
+          "tier": "standard",
+          "required": false
+        }
+      ],
+      "creationOrder": [
+        "ce_management/registrations-by-site"
+      ]
+    },
+    "ce_management/registerBootstrap": {
+      "resource": "registerBootstrap",
+      "domain": "ce_management",
+      "requires": [
+        {
+          "resourceType": "registration-registration",
+          "domain": "",
+          "fieldPath": "",
+          "required": false,
+          "inline": false
+        },
+        {
+          "resourceType": "schema-object-create-meta",
+          "domain": "",
+          "fieldPath": "metadata",
+          "required": false,
+          "inline": false
+        },
+        {
+          "resourceType": "schemaregistration-create",
+          "domain": "",
+          "fieldPath": "spec",
+          "required": false,
+          "inline": false
+        }
+      ],
+      "requiredBy": [],
+      "oneOfGroups": [
+        {
+          "choiceField": "operating_system_version_choice",
+          "options": [
+            "spec.passport.default_os_version",
+            "spec.passport.operating_system_version"
+          ],
+          "fieldPath": "spec.passport.operating_system_version_choice"
+        },
+        {
+          "choiceField": "volterra_sw_version_choice",
+          "options": [
+            "spec.passport.default_sw_version",
+            "spec.passport.volterra_software_version"
+          ],
+          "fieldPath": "spec.passport.volterra_sw_version_choice"
+        }
+      ],
+      "subscriptions": [],
+      "creationOrder": [
+        "unknown/registration-registration",
+        "unknown/schema-object-create-meta",
+        "unknown/schemaregistration-create",
+        "ce_management/registerBootstrap"
+      ]
+    },
+    "ce_management/requestConfig": {
+      "resource": "requestConfig",
+      "domain": "ce_management",
+      "requires": [],
+      "requiredBy": [],
+      "oneOfGroups": [],
+      "subscriptions": [],
+      "creationOrder": [
+        "ce_management/requestConfig"
       ]
     },
     "certificates/certificate-chain": {
@@ -7799,6 +8528,30 @@
       ],
       "creationOrder": [
         "ddos/annotation"
+      ]
+    },
+    "ddos/countermeasure": {
+      "resource": "countermeasure",
+      "domain": "ddos",
+      "requires": [],
+      "requiredBy": [],
+      "oneOfGroups": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
+      "creationOrder": [
+        "ddos/countermeasure"
       ]
     },
     "ddos/ip": {
@@ -13624,6 +14377,17 @@
         "object_storage/mobile-integrator"
       ]
     },
+    "object_storage/mobile-sdk-self-serve": {
+      "resource": "mobile-sdk-self-serve",
+      "domain": "object_storage",
+      "requires": [],
+      "requiredBy": [],
+      "oneOfGroups": [],
+      "subscriptions": [],
+      "creationOrder": [
+        "object_storage/mobile-sdk-self-serve"
+      ]
+    },
     "object_storage/stored-object": {
       "resource": "stored-object",
       "domain": "object_storage",
@@ -14288,6 +15052,239 @@
       "subscriptions": [],
       "creationOrder": [
         "observability/tls-summary"
+      ]
+    },
+    "other/discovered": {
+      "resource": "discovered",
+      "domain": "other",
+      "requires": [],
+      "requiredBy": [],
+      "oneOfGroups": [],
+      "subscriptions": [],
+      "creationOrder": [
+        "other/discovered"
+      ]
+    },
+    "other/authorization-server": {
+      "resource": "authorization-server",
+      "domain": "other",
+      "requires": [
+        {
+          "resourceType": "authorization-server",
+          "domain": "",
+          "fieldPath": "",
+          "required": false,
+          "inline": false
+        },
+        {
+          "resourceType": "schema-object-create-meta",
+          "domain": "",
+          "fieldPath": "metadata",
+          "required": false,
+          "inline": false
+        },
+        {
+          "resourceType": "authorization-server-create",
+          "domain": "",
+          "fieldPath": "spec",
+          "required": false,
+          "inline": false
+        },
+        {
+          "resourceType": "schema-object-replace-meta",
+          "domain": "",
+          "fieldPath": "metadata",
+          "required": false,
+          "inline": false
+        },
+        {
+          "resourceType": "authorization-server-replace",
+          "domain": "",
+          "fieldPath": "spec",
+          "required": false,
+          "inline": false
+        }
+      ],
+      "requiredBy": [],
+      "oneOfGroups": [],
+      "subscriptions": [],
+      "creationOrder": [
+        "unknown/authorization-server",
+        "unknown/schema-object-create-meta",
+        "unknown/authorization-server-create",
+        "unknown/schema-object-replace-meta",
+        "unknown/authorization-server-replace",
+        "other/authorization-server"
+      ]
+    },
+    "other/dns-proxy": {
+      "resource": "dns-proxy",
+      "domain": "other",
+      "requires": [
+        {
+          "resourceType": "dns-proxy",
+          "domain": "",
+          "fieldPath": "",
+          "required": false,
+          "inline": false
+        },
+        {
+          "resourceType": "schema-object-create-meta",
+          "domain": "",
+          "fieldPath": "metadata",
+          "required": false,
+          "inline": false
+        },
+        {
+          "resourceType": "schemadns-proxy-create",
+          "domain": "",
+          "fieldPath": "spec",
+          "required": false,
+          "inline": false
+        },
+        {
+          "resourceType": "schema-object-replace-meta",
+          "domain": "",
+          "fieldPath": "metadata",
+          "required": false,
+          "inline": false
+        },
+        {
+          "resourceType": "schemadns-proxy-replace",
+          "domain": "",
+          "fieldPath": "spec",
+          "required": false,
+          "inline": false
+        }
+      ],
+      "requiredBy": [],
+      "oneOfGroups": [
+        {
+          "choiceField": "cache_profile_choice",
+          "options": [
+            "spec.cache_profile.cache_size",
+            "spec.cache_profile.disable_cache_profile"
+          ],
+          "fieldPath": "spec.cache_profile.cache_profile_choice"
+        },
+        {
+          "choiceField": "ddos_mitigation_choice",
+          "options": [
+            "spec.ddos_profile.disable_ddos_mitigation",
+            "spec.ddos_profile.enable_ddos_mitigation"
+          ],
+          "fieldPath": "spec.ddos_profile.ddos_mitigation_choice"
+        },
+        {
+          "choiceField": "lb_algorithm_choice",
+          "options": [
+            "spec.lb_algorithm.round_robin"
+          ],
+          "fieldPath": "spec.lb_algorithm.lb_algorithm_choice"
+        },
+        {
+          "choiceField": "choice",
+          "options": [
+            "spec.origin_servers.health_checks.health_check[].dns_health_check",
+            "spec.origin_servers.health_checks.health_check[].icmp_health_check",
+            "spec.origin_servers.health_checks.health_check[].tcp_health_check"
+          ],
+          "fieldPath": "spec.origin_servers.health_checks.health_check[].choice"
+        },
+        {
+          "choiceField": "proximity_choice",
+          "options": [
+            "spec.origin_servers.origin_servers[].no_preference",
+            "spec.origin_servers.origin_servers[].site_preferences"
+          ],
+          "fieldPath": "spec.origin_servers.origin_servers[].proximity_choice"
+        },
+        {
+          "choiceField": "network_choice",
+          "options": [
+            "spec.origin_servers.origin_servers[].k8s_service.inside_network",
+            "spec.origin_servers.origin_servers[].k8s_service.outside_network",
+            "spec.origin_servers.origin_servers[].k8s_service.vk8s_networks"
+          ],
+          "fieldPath": "spec.origin_servers.origin_servers[].k8s_service.network_choice"
+        },
+        {
+          "choiceField": "service_info",
+          "options": [
+            "spec.origin_servers.origin_servers[].k8s_service.service_name"
+          ],
+          "fieldPath": "spec.origin_servers.origin_servers[].k8s_service.service_info"
+        },
+        {
+          "choiceField": "snat_pool_choice",
+          "options": [
+            "spec.origin_servers.origin_servers[].k8s_service.snat_pool.no_snat_pool",
+            "spec.origin_servers.origin_servers[].k8s_service.snat_pool.snat_pool"
+          ],
+          "fieldPath": "spec.origin_servers.origin_servers[].k8s_service.snat_pool.snat_pool_choice"
+        },
+        {
+          "choiceField": "public_ip_choice",
+          "options": [
+            "spec.origin_servers.origin_servers[].public_ip.ip"
+          ],
+          "fieldPath": "spec.origin_servers.origin_servers[].public_ip.public_ip_choice"
+        },
+        {
+          "choiceField": "advertise_choice",
+          "options": [
+            "spec.proxy_advertisement.advertise_custom",
+            "spec.proxy_advertisement.advertise_on_public",
+            "spec.proxy_advertisement.advertise_on_public_default_vip",
+            "spec.proxy_advertisement.do_not_advertise"
+          ],
+          "fieldPath": "spec.proxy_advertisement.advertise_choice"
+        },
+        {
+          "choiceField": "port_choice",
+          "options": [
+            "spec.proxy_advertisement.advertise_custom.advertise_where[].port",
+            "spec.proxy_advertisement.advertise_custom.advertise_where[].port_ranges",
+            "spec.proxy_advertisement.advertise_custom.advertise_where[].use_default_port"
+          ],
+          "fieldPath": "spec.proxy_advertisement.advertise_custom.advertise_where[].port_choice"
+        },
+        {
+          "choiceField": "v6_vip_choice",
+          "options": [
+            "spec.proxy_advertisement.advertise_custom.advertise_where[].virtual_network.default_v6_vip",
+            "spec.proxy_advertisement.advertise_custom.advertise_where[].virtual_network.specific_v6_vip"
+          ],
+          "fieldPath": "spec.proxy_advertisement.advertise_custom.advertise_where[].virtual_network.v6_vip_choice"
+        },
+        {
+          "choiceField": "vip_choice",
+          "options": [
+            "spec.proxy_advertisement.advertise_custom.advertise_where[].virtual_network.default_vip",
+            "spec.proxy_advertisement.advertise_custom.advertise_where[].virtual_network.specific_vip"
+          ],
+          "fieldPath": "spec.proxy_advertisement.advertise_custom.advertise_where[].virtual_network.vip_choice"
+        }
+      ],
+      "subscriptions": [],
+      "creationOrder": [
+        "unknown/dns-proxy",
+        "unknown/schema-object-create-meta",
+        "unknown/schemadns-proxy-create",
+        "unknown/schema-object-replace-meta",
+        "unknown/schemadns-proxy-replace",
+        "other/dns-proxy"
+      ]
+    },
+    "other/update": {
+      "resource": "update",
+      "domain": "other",
+      "requires": [],
+      "requiredBy": [],
+      "oneOfGroups": [],
+      "subscriptions": [],
+      "creationOrder": [
+        "other/update"
       ]
     },
     "rate_limiting/policer": {
@@ -18120,6 +19117,30 @@
         "unknown/schema-object-create-meta",
         "unknown/protected-domain-create",
         "shape/protected-domain"
+      ]
+    },
+    "shape/detectedDomain": {
+      "resource": "detectedDomain",
+      "domain": "shape",
+      "requires": [],
+      "requiredBy": [],
+      "oneOfGroups": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
+      "creationOrder": [
+        "shape/detectedDomain"
       ]
     },
     "shape/detected-domain": {
@@ -22969,6 +23990,24 @@
         "sites/global-network"
       ]
     },
+    "sites/interface": {
+      "resource": "interface",
+      "domain": "sites",
+      "requires": [],
+      "requiredBy": [],
+      "oneOfGroups": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_site_management_standard",
+          "displayName": "F5XC Site Management Standard",
+          "tier": "standard",
+          "required": false
+        }
+      ],
+      "creationOrder": [
+        "sites/interface"
+      ]
+    },
     "sites/segment": {
       "resource": "segment",
       "domain": "sites",
@@ -24824,6 +25863,17 @@
         "statistics/catalog"
       ]
     },
+    "support/allow-f5-ssh": {
+      "resource": "allow-f5-ssh",
+      "domain": "support",
+      "requires": [],
+      "requiredBy": [],
+      "oneOfGroups": [],
+      "subscriptions": [],
+      "creationOrder": [
+        "support/allow-f5-ssh"
+      ]
+    },
     "support/check-debug-info-collection": {
       "resource": "check-debug-info-collection",
       "domain": "support",
@@ -25291,6 +26341,17 @@
       "creationOrder": [
         "unknown/customer-support-attachment",
         "support/tax-exempt-request"
+      ]
+    },
+    "support/attachment": {
+      "resource": "attachment",
+      "domain": "support",
+      "requires": [],
+      "requiredBy": [],
+      "oneOfGroups": [],
+      "subscriptions": [],
+      "creationOrder": [
+        "support/attachment"
       ]
     },
     "support/customer-support": {
@@ -25816,6 +26877,17 @@
         "telemetry_and_insights/suggest-value"
       ]
     },
+    "tenant_and_identity/discover-network": {
+      "resource": "discover-network",
+      "domain": "tenant_and_identity",
+      "requires": [],
+      "requiredBy": [],
+      "oneOfGroups": [],
+      "subscriptions": [],
+      "creationOrder": [
+        "tenant_and_identity/discover-network"
+      ]
+    },
     "tenant_and_identity/suggest-value": {
       "resource": "suggest-value",
       "domain": "tenant_and_identity",
@@ -26292,6 +27364,17 @@
         "unknown/namespace-third-party-application-filter",
         "unknown/namespace-udploadbalancer-inventory-filter",
         "tenant_and_identity/application-inventory"
+      ]
+    },
+    "tenant_and_identity/dynamic-data": {
+      "resource": "dynamic-data",
+      "domain": "tenant_and_identity",
+      "requires": [],
+      "requiredBy": [],
+      "oneOfGroups": [],
+      "subscriptions": [],
+      "creationOrder": [
+        "tenant_and_identity/dynamic-data"
       ]
     },
     "tenant_and_identity/fast-acls-for-internet-vip": {
@@ -26994,6 +28077,17 @@
       "creationOrder": [
         "unknown/customer-support-attachment",
         "tenant_and_identity/comment"
+      ]
+    },
+    "tenant_and_identity/attachment": {
+      "resource": "attachment",
+      "domain": "tenant_and_identity",
+      "requires": [],
+      "requiredBy": [],
+      "oneOfGroups": [],
+      "subscriptions": [],
+      "creationOrder": [
+        "tenant_and_identity/attachment"
       ]
     },
     "tenant_and_identity/escalate": {
@@ -28175,7 +29269,6 @@
         {
           "choiceField": "detection_setting_choice",
           "options": [
-            "spec.ai_risk_based_blocking",
             "spec.default_detection_settings",
             "spec.detection_settings"
           ],
@@ -28190,6 +29283,15 @@
           ],
           "fieldPath": "spec.enforcement_mode_choice",
           "recommendedOption": "spec.monitoring"
+        },
+        {
+          "choiceField": "enhance_with_ai_choice",
+          "options": [
+            "spec.disable_ai_enhancements",
+            "spec.enable_ai_enhancements"
+          ],
+          "fieldPath": "spec.enhance_with_ai_choice",
+          "recommendedOption": "spec.disable_ai_enhancements"
         },
         {
           "choiceField": "anonymization_choice",
@@ -28249,6 +29351,14 @@
             "spec.detection_settings.signature_selection_setting.only_high_accuracy_signatures"
           ],
           "fieldPath": "spec.detection_settings.signature_selection_setting.signature_selection_by_accuracy"
+        },
+        {
+          "choiceField": "risk_score_action_choice",
+          "options": [
+            "spec.enable_ai_enhancements.mitigate_high_medium_risk_action",
+            "spec.enable_ai_enhancements.mitigate_high_risk_action"
+          ],
+          "fieldPath": "spec.enable_ai_enhancements.risk_score_action_choice"
         }
       ],
       "subscriptions": [
@@ -32638,6 +33748,8 @@
       "ai_services/refresh-token",
       "authentication/scim-token",
       "ce_management/fleet",
+      "ce_management/get-registrations-by-token",
+      "ce_management/registrations-by-site",
       "container_services/virtual-k8s",
       "container_services/workload-flavor",
       "container_services/workload",
@@ -32689,6 +33801,7 @@
       "sites/upgrade-o",
       "sites/upgrade-sw",
       "sites/global-network",
+      "sites/interface",
       "sites/segment",
       "sites/selectee",
       "sites/statu",
@@ -32798,6 +33911,7 @@
       "ddos/events-summary",
       "ddos/mitigation",
       "ddos/annotation",
+      "ddos/countermeasure",
       "ddos/ip",
       "ddos/network",
       "ddos/report",
@@ -32902,6 +34016,7 @@
       "shape/allowed-domain",
       "shape/mitigated-domain",
       "shape/protected-domain",
+      "shape/detectedDomain",
       "shape/detected-domain",
       "shape/domain-detail",
       "shape/formField",
@@ -33036,6 +34151,7 @@
       "ddos/events-summary",
       "ddos/mitigation",
       "ddos/annotation",
+      "ddos/countermeasure",
       "ddos/ip",
       "ddos/network",
       "ddos/report",
@@ -33140,6 +34256,7 @@
       "shape/allowed-domain",
       "shape/mitigated-domain",
       "shape/protected-domain",
+      "shape/detectedDomain",
       "shape/detected-domain",
       "shape/domain-detail",
       "shape/formField",
@@ -33216,6 +34333,7 @@
       "cdn/cache-purge",
       "cdn/cdn-cache-rule",
       "cdn/cdn-loadbalancer",
+      "cdn/cdn-purge-command",
       "cdn/get-security-config",
       "cdn/suggestion",
       "cdn/dos-automitigation-rule"
@@ -33304,6 +34422,20 @@
       },
       {
         "resourceType": "apm",
+        "domain": "bigip",
+        "fieldPath": "metadata",
+        "required": false,
+        "inline": false
+      },
+      {
+        "resourceType": "application-profiles",
+        "domain": "bigip",
+        "fieldPath": "metadata",
+        "required": false,
+        "inline": false
+      },
+      {
+        "resourceType": "bigip-http-proxy",
         "domain": "bigip",
         "fieldPath": "metadata",
         "required": false,
@@ -33401,6 +34533,13 @@
         "inline": false
       },
       {
+        "resourceType": "cdn-purge-command",
+        "domain": "cdn",
+        "fieldPath": "metadata",
+        "required": false,
+        "inline": false
+      },
+      {
         "resourceType": "fleet",
         "domain": "ce_management",
         "fieldPath": "metadata",
@@ -33416,6 +34555,20 @@
       },
       {
         "resourceType": "usb-policy",
+        "domain": "ce_management",
+        "fieldPath": "metadata",
+        "required": false,
+        "inline": false
+      },
+      {
+        "resourceType": "registration",
+        "domain": "ce_management",
+        "fieldPath": "metadata",
+        "required": false,
+        "inline": false
+      },
+      {
+        "resourceType": "registerBootstrap",
         "domain": "ce_management",
         "fieldPath": "metadata",
         "required": false,
@@ -33893,6 +35046,20 @@
       {
         "resourceType": "v1-http-monitor",
         "domain": "observability",
+        "fieldPath": "metadata",
+        "required": false,
+        "inline": false
+      },
+      {
+        "resourceType": "authorization-server",
+        "domain": "other",
+        "fieldPath": "metadata",
+        "required": false,
+        "inline": false
+      },
+      {
+        "resourceType": "dns-proxy",
+        "domain": "other",
         "fieldPath": "metadata",
         "required": false,
         "inline": false
@@ -34413,6 +35580,20 @@
         "inline": false
       },
       {
+        "resourceType": "application-profiles",
+        "domain": "bigip",
+        "fieldPath": "metadata",
+        "required": false,
+        "inline": false
+      },
+      {
+        "resourceType": "bigip-http-proxy",
+        "domain": "bigip",
+        "fieldPath": "metadata",
+        "required": false,
+        "inline": false
+      },
+      {
         "resourceType": "bigip-virtual-server",
         "domain": "bigip",
         "fieldPath": "metadata",
@@ -34519,6 +35700,13 @@
       },
       {
         "resourceType": "usb-policy",
+        "domain": "ce_management",
+        "fieldPath": "metadata",
+        "required": false,
+        "inline": false
+      },
+      {
+        "resourceType": "registration",
         "domain": "ce_management",
         "fieldPath": "metadata",
         "required": false,
@@ -35024,6 +36212,20 @@
       {
         "resourceType": "v1-http-monitor",
         "domain": "observability",
+        "fieldPath": "metadata",
+        "required": false,
+        "inline": false
+      },
+      {
+        "resourceType": "authorization-server",
+        "domain": "other",
+        "fieldPath": "metadata",
+        "required": false,
+        "inline": false
+      },
+      {
+        "resourceType": "dns-proxy",
+        "domain": "other",
         "fieldPath": "metadata",
         "required": false,
         "inline": false
@@ -35762,6 +36964,60 @@
         "inline": false
       }
     ],
+    "unknown/application-profiles": [
+      {
+        "resourceType": "application-profiles",
+        "domain": "bigip",
+        "fieldPath": "",
+        "required": false,
+        "inline": false
+      }
+    ],
+    "unknown/application-profiles-create": [
+      {
+        "resourceType": "application-profiles",
+        "domain": "bigip",
+        "fieldPath": "spec",
+        "required": false,
+        "inline": false
+      }
+    ],
+    "unknown/application-profiles-replace": [
+      {
+        "resourceType": "application-profiles",
+        "domain": "bigip",
+        "fieldPath": "spec",
+        "required": false,
+        "inline": false
+      }
+    ],
+    "unknown/bigip-http-proxy": [
+      {
+        "resourceType": "bigip-http-proxy",
+        "domain": "bigip",
+        "fieldPath": "",
+        "required": false,
+        "inline": false
+      }
+    ],
+    "unknown/viewsbigip-http-proxy-create": [
+      {
+        "resourceType": "bigip-http-proxy",
+        "domain": "bigip",
+        "fieldPath": "spec",
+        "required": false,
+        "inline": false
+      }
+    ],
+    "unknown/viewsbigip-http-proxy-replace": [
+      {
+        "resourceType": "bigip-http-proxy",
+        "domain": "bigip",
+        "fieldPath": "spec",
+        "required": false,
+        "inline": false
+      }
+    ],
     "unknown/bigip-virtual-server": [
       {
         "resourceType": "bigip-virtual-server",
@@ -36167,6 +37423,24 @@
         "inline": false
       }
     ],
+    "unknown/cdn-purge-command": [
+      {
+        "resourceType": "cdn-purge-command",
+        "domain": "cdn",
+        "fieldPath": "",
+        "required": false,
+        "inline": false
+      }
+    ],
+    "unknown/schemacdn-purge-command-create": [
+      {
+        "resourceType": "cdn-purge-command",
+        "domain": "cdn",
+        "fieldPath": "spec",
+        "required": false,
+        "inline": false
+      }
+    ],
     "unknown/fleet": [
       {
         "resourceType": "fleet",
@@ -36244,6 +37518,58 @@
         "resourceType": "usb-policy",
         "domain": "ce_management",
         "fieldPath": "spec",
+        "required": false,
+        "inline": false
+      }
+    ],
+    "unknown/registration": [
+      {
+        "resourceType": "registration",
+        "domain": "ce_management",
+        "fieldPath": "",
+        "required": false,
+        "inline": false
+      }
+    ],
+    "unknown/schemaregistration-create": [
+      {
+        "resourceType": "registration",
+        "domain": "ce_management",
+        "fieldPath": "spec",
+        "required": false,
+        "inline": false
+      },
+      {
+        "resourceType": "registerBootstrap",
+        "domain": "ce_management",
+        "fieldPath": "spec",
+        "required": false,
+        "inline": false
+      }
+    ],
+    "unknown/schemaregistration-replace": [
+      {
+        "resourceType": "registration",
+        "domain": "ce_management",
+        "fieldPath": "spec",
+        "required": false,
+        "inline": false
+      }
+    ],
+    "unknown/schema-site-to-site-tunnel": [
+      {
+        "resourceType": "approve",
+        "domain": "ce_management",
+        "fieldPath": "tunnel_type",
+        "required": false,
+        "inline": false
+      }
+    ],
+    "unknown/registration-registration": [
+      {
+        "resourceType": "registerBootstrap",
+        "domain": "ce_management",
+        "fieldPath": "",
         "required": false,
         "inline": false
       }
@@ -38408,6 +39734,60 @@
       {
         "resourceType": "v1-http-monitor",
         "domain": "observability",
+        "fieldPath": "spec",
+        "required": false,
+        "inline": false
+      }
+    ],
+    "unknown/authorization-server": [
+      {
+        "resourceType": "authorization-server",
+        "domain": "other",
+        "fieldPath": "",
+        "required": false,
+        "inline": false
+      }
+    ],
+    "unknown/authorization-server-create": [
+      {
+        "resourceType": "authorization-server",
+        "domain": "other",
+        "fieldPath": "spec",
+        "required": false,
+        "inline": false
+      }
+    ],
+    "unknown/authorization-server-replace": [
+      {
+        "resourceType": "authorization-server",
+        "domain": "other",
+        "fieldPath": "spec",
+        "required": false,
+        "inline": false
+      }
+    ],
+    "unknown/dns-proxy": [
+      {
+        "resourceType": "dns-proxy",
+        "domain": "other",
+        "fieldPath": "",
+        "required": false,
+        "inline": false
+      }
+    ],
+    "unknown/schemadns-proxy-create": [
+      {
+        "resourceType": "dns-proxy",
+        "domain": "other",
+        "fieldPath": "spec",
+        "required": false,
+        "inline": false
+      }
+    ],
+    "unknown/schemadns-proxy-replace": [
+      {
+        "resourceType": "dns-proxy",
+        "domain": "other",
         "fieldPath": "spec",
         "required": false,
         "inline": false

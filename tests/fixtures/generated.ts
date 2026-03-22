@@ -5,51 +5,52 @@
  * These fixtures are dynamically generated from the current OpenAPI specs
  * to ensure tests always use real values and don't hardcode spec content.
  *
- * Generated at: 2026-03-22T06:21:26.103Z
- * Total tools: 1536
- * Total domains: 37
+ * Generated at: 2026-03-22T06:38:50.330Z
+ * Total tools: 1586
+ * Total domains: 38
  */
 
 /**
  * Registry statistics
  */
 export const REGISTRY_STATS = {
-  totalTools: 1536,
-  totalDomains: 37,
+  totalTools: 1586,
+  totalDomains: 38,
   domainCounts: {
     admin_console_and_ui: 2,
     ai_services: 11,
     api: 52,
     authentication: 9,
-    bigip: 25,
-    billing_and_usage: 23,
+    bigip: 35,
+    billing_and_usage: 24,
     blindfold: 32,
     bot_and_threat_defense: 20,
-    cdn: 22,
-    ce_management: 19,
+    cdn: 26,
+    ce_management: 32,
     certificates: 20,
     cloud_infrastructure: 33,
     container_services: 16,
     data_and_privacy_security: 13,
     data_intelligence: 15,
-    ddos: 68,
+    ddos: 69,
     dns: 52,
     managed_kubernetes: 25,
     marketplace: 36,
     network: 98,
     network_security: 69,
     nginx_one: 14,
-    object_storage: 7,
+    object_storage: 8,
     observability: 45,
+    other: 12,
     rate_limiting: 15,
     secops_and_incident_response: 5,
     service_mesh: 44,
-    shape: 180,
-    sites: 106,
+    shape: 182,
+    sites: 107,
     statistics: 70,
-    support: 47,
+    support: 49,
     telemetry_and_insights: 23,
-    tenant_and_identity: 180,
+    tenant_and_identity: 183,
     threat_campaign: 1,
     users: 12,
     virtual: 126,
@@ -85,6 +86,7 @@ export const AVAILABLE_DOMAINS = [
   "nginx_one",
   "object_storage",
   "observability",
+  "other",
   "rate_limiting",
   "secops_and_incident_response",
   "service_mesh",

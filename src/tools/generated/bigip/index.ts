@@ -1051,6 +1051,1873 @@ export const bigipTools: ParsedOperation[] = [
     subscriptionRequirements: [],
   },
   {
+    toolName: "f5xc-api-bigip-application-profiles-create",
+    method: "POST",
+    path: "/api/config/namespaces/{metadata.namespace}/application_profiless",
+    operation: "create",
+    domain: "bigip",
+    resource: "application-profiles",
+    summary: "Create Application Profiles.",
+    description:
+      "Create Application Profiles in a given namespace. If one already exists it will give an error.",
+    pathParameters: [
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Namespace",
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/application_profilesCreateRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/application_profilesCreateResponse",
+    },
+    requiredParams: ["body", "metadata.namespace"],
+    operationId: "ves.io.schema.bigcne.application_profiles.API.Create",
+    tags: ["Other"],
+    sourceFile: "domains/bigip.json",
+    displayName: null,
+    dangerLevel: null,
+    sideEffects: null,
+    requiredFields: [],
+    confirmationRequired: false,
+    parameterExamples: {},
+    validationRules: {},
+    operationMetadata: null,
+    curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "application-profiles",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "application-profiles-create",
+      },
+    ],
+    oneOfGroups: [
+      {
+        choiceField: "tcp_advanced_profile_choice",
+        fieldPath: "spec.advanced_tcp_profile.tcp_advanced_profile_choice",
+        options: [
+          "spec.advanced_tcp_profile.disable_tcp_advanced_profile",
+          "spec.advanced_tcp_profile.enable_tcp_advanced_profile",
+        ],
+      },
+      {
+        choiceField: "ddos_mitigation_choice",
+        fieldPath: "spec.ddos_profile.ddos_mitigation_choice",
+        options: [
+          "spec.ddos_profile.disable_ddos_mitigation",
+          "spec.ddos_profile.enable_ddos_mitigation",
+        ],
+      },
+      {
+        choiceField: "virtual_server_type",
+        fieldPath: "spec.virtual_server.virtual_server_type",
+        options: [
+          "spec.virtual_server.http",
+          "spec.virtual_server.https",
+          "spec.virtual_server.tcp",
+          "spec.virtual_server.udp",
+        ],
+      },
+      {
+        choiceField: "address_translation_choice",
+        fieldPath: "spec.virtual_server.address_translation.address_translation_choice",
+        options: [
+          "spec.virtual_server.address_translation.address_translation_disable",
+          "spec.virtual_server.address_translation.address_translation_enable",
+        ],
+      },
+      {
+        choiceField: "auto_last_hop_choice",
+        fieldPath: "spec.virtual_server.auto_last_hop.auto_last_hop_choice",
+        options: [
+          "spec.virtual_server.auto_last_hop.auto_last_hop_default",
+          "spec.virtual_server.auto_last_hop.auto_last_hop_disable",
+          "spec.virtual_server.auto_last_hop.auto_last_hop_enable",
+        ],
+      },
+      {
+        choiceField: "connection_rate_limit_mode_choice",
+        fieldPath:
+          "spec.virtual_server.connection_rate_limit_mode.connection_rate_limit_mode_choice",
+        options: [
+          "spec.virtual_server.connection_rate_limit_mode.per_destination_address",
+          "spec.virtual_server.connection_rate_limit_mode.per_source_address",
+          "spec.virtual_server.connection_rate_limit_mode.per_source_destination_address",
+          "spec.virtual_server.connection_rate_limit_mode.per_virtual_server",
+          "spec.virtual_server.connection_rate_limit_mode.per_virtual_server_destination_address",
+          "spec.virtual_server.connection_rate_limit_mode.per_virtual_server_source_address",
+          "spec.virtual_server.connection_rate_limit_mode.per_virtual_server_source_destination_address",
+        ],
+      },
+      {
+        choiceField: "immediate_action_on_service_down_choice",
+        fieldPath:
+          "spec.virtual_server.immediate_action_on_service_down.immediate_action_on_service_down_choice",
+        options: [
+          "spec.virtual_server.immediate_action_on_service_down.immediate_action_on_service_down_drop",
+          "spec.virtual_server.immediate_action_on_service_down.immediate_action_on_service_down_none",
+          "spec.virtual_server.immediate_action_on_service_down.immediate_action_on_service_down_reset",
+        ],
+      },
+      {
+        choiceField: "nat64_choice",
+        fieldPath: "spec.virtual_server.nat64.nat64_choice",
+        options: [
+          "spec.virtual_server.nat64.nat64_disable",
+          "spec.virtual_server.nat64.nat64_enable",
+        ],
+      },
+      {
+        choiceField: "port_translation_choice",
+        fieldPath: "spec.virtual_server.port_translation.port_translation_choice",
+        options: [
+          "spec.virtual_server.port_translation.port_translation_disable",
+          "spec.virtual_server.port_translation.port_translation_enable",
+        ],
+      },
+      {
+        choiceField: "source_port_choice",
+        fieldPath: "spec.virtual_server.source_port.source_port_choice",
+        options: [
+          "spec.virtual_server.source_port.source_port_change",
+          "spec.virtual_server.source_port.source_port_preserve",
+          "spec.virtual_server.source_port.source_port_preserve_strict",
+        ],
+      },
+      {
+        choiceField: "state_choice",
+        fieldPath: "spec.virtual_server.virtual_server_state.state_choice",
+        options: [
+          "spec.virtual_server.virtual_server_state.state_disabled",
+          "spec.virtual_server.virtual_server_state.state_enabled",
+        ],
+      },
+    ],
+    subscriptionRequirements: [],
+  },
+  {
+    toolName: "f5xc-api-bigip-application-profiles-delete",
+    method: "DELETE",
+    path: "/api/config/namespaces/{namespace}/application_profiless/{name}",
+    operation: "delete",
+    domain: "bigip",
+    resource: "application-profiles",
+    summary: "DELETE Configure Application Profiles.",
+    description: "DELETE the specified application_profiles.",
+    pathParameters: [
+      {
+        description: "Name\nName of the configuration object.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Name",
+      },
+      {
+        description: "Namespace\nNamespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Namespace",
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/application_profilesDeleteRequest",
+    },
+    responseSchema: {},
+    requiredParams: ["body", "name", "namespace"],
+    operationId: "ves.io.schema.bigcne.application_profiles.API.Delete",
+    tags: ["Other"],
+    sourceFile: "domains/bigip.json",
+    displayName: null,
+    dangerLevel: null,
+    sideEffects: null,
+    requiredFields: [],
+    confirmationRequired: false,
+    parameterExamples: {},
+    validationRules: {},
+    operationMetadata: null,
+    curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "application-profiles",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
+  },
+  {
+    toolName: "f5xc-api-bigip-application-profiles-get",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/application_profiless/{name}",
+    operation: "get",
+    domain: "bigip",
+    resource: "application-profiles",
+    summary: "GET Application Profiles.",
+    description: "GET Application Profiles details.",
+    pathParameters: [
+      {
+        description: "Name\nThe name of the configuration object to be fetched.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Name",
+      },
+      {
+        description: "Namespace\nThe namespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Namespace",
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "The format in which the configuration object is to be fetched. This could be for example\n - in GetSpec form for the contents of object\n - in CreateRequest form to create a new similar object\n - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object.",
+        in: "query",
+        name: "response_format",
+        required: false,
+        schema: {
+          default: "GET_RSP_FORMAT_DEFAULT",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_FOR_CREATE",
+            "GET_RSP_FORMAT_FOR_REPLACE",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          type: "string",
+        },
+        "x-displayname": "Broken Referred Objects.",
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/application_profilesGetResponse",
+    },
+    requiredParams: ["name", "namespace"],
+    operationId: "ves.io.schema.bigcne.application_profiles.API.Get",
+    tags: ["Other"],
+    sourceFile: "domains/bigip.json",
+    displayName: null,
+    dangerLevel: null,
+    sideEffects: null,
+    requiredFields: [],
+    confirmationRequired: false,
+    parameterExamples: {},
+    validationRules: {},
+    operationMetadata: null,
+    curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
+  },
+  {
+    toolName: "f5xc-api-bigip-application-profiles-list",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/application_profiless",
+    operation: "list",
+    domain: "bigip",
+    resource: "application-profiles",
+    summary: "List Configure Application Profiles.",
+    description: "List the set of application_profiles in a namespace.",
+    pathParameters: [
+      {
+        description: "Namespace\nNamespace to scope the listing of application_profiles.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Namespace",
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "A LabelSelectorType expression that every item in list response will satisfy.",
+        in: "query",
+        name: "label_filter",
+        required: false,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Label Filter.",
+      },
+      {
+        description: 'X-example: ""\nExtra fields to return along with summary fields.',
+        in: "query",
+        name: "report_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+        "x-displayname": "Report Fields.",
+      },
+      {
+        description: 'X-example: ""\nExtra status fields to return along with summary fields.',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+        "x-displayname": "Report Status Fields.",
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/application_profilesListResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.bigcne.application_profiles.API.List",
+    tags: ["Other"],
+    sourceFile: "domains/bigip.json",
+    displayName: null,
+    dangerLevel: null,
+    sideEffects: null,
+    requiredFields: [],
+    confirmationRequired: false,
+    parameterExamples: {},
+    validationRules: {},
+    operationMetadata: null,
+    curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
+  },
+  {
+    toolName: "f5xc-api-bigip-application-profiles-update",
+    method: "PUT",
+    path: "/api/config/namespaces/{metadata.namespace}/application_profiless/{metadata.name}",
+    operation: "update",
+    domain: "bigip",
+    resource: "application-profiles",
+    summary: "Replace Application Profiles.",
+    description: "Replace Application Profiles in a given namespace.",
+    pathParameters: [
+      {
+        description: "Name\nThe configuration object to be replaced will be looked up by name.",
+        in: "path",
+        name: "metadata.name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Name",
+      },
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Namespace",
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/application_profilesReplaceRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/application_profilesReplaceResponse",
+    },
+    requiredParams: ["body", "metadata.name", "metadata.namespace"],
+    operationId: "ves.io.schema.bigcne.application_profiles.API.Replace",
+    tags: ["Other"],
+    sourceFile: "domains/bigip.json",
+    displayName: null,
+    dangerLevel: null,
+    sideEffects: null,
+    requiredFields: [],
+    confirmationRequired: false,
+    parameterExamples: {},
+    validationRules: {},
+    operationMetadata: null,
+    curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "application-profiles",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "application-profiles-replace",
+      },
+    ],
+    oneOfGroups: [
+      {
+        choiceField: "tcp_advanced_profile_choice",
+        fieldPath: "spec.advanced_tcp_profile.tcp_advanced_profile_choice",
+        options: [
+          "spec.advanced_tcp_profile.disable_tcp_advanced_profile",
+          "spec.advanced_tcp_profile.enable_tcp_advanced_profile",
+        ],
+      },
+      {
+        choiceField: "ddos_mitigation_choice",
+        fieldPath: "spec.ddos_profile.ddos_mitigation_choice",
+        options: [
+          "spec.ddos_profile.disable_ddos_mitigation",
+          "spec.ddos_profile.enable_ddos_mitigation",
+        ],
+      },
+      {
+        choiceField: "virtual_server_type",
+        fieldPath: "spec.virtual_server.virtual_server_type",
+        options: [
+          "spec.virtual_server.http",
+          "spec.virtual_server.https",
+          "spec.virtual_server.tcp",
+          "spec.virtual_server.udp",
+        ],
+      },
+      {
+        choiceField: "address_translation_choice",
+        fieldPath: "spec.virtual_server.address_translation.address_translation_choice",
+        options: [
+          "spec.virtual_server.address_translation.address_translation_disable",
+          "spec.virtual_server.address_translation.address_translation_enable",
+        ],
+      },
+      {
+        choiceField: "auto_last_hop_choice",
+        fieldPath: "spec.virtual_server.auto_last_hop.auto_last_hop_choice",
+        options: [
+          "spec.virtual_server.auto_last_hop.auto_last_hop_default",
+          "spec.virtual_server.auto_last_hop.auto_last_hop_disable",
+          "spec.virtual_server.auto_last_hop.auto_last_hop_enable",
+        ],
+      },
+      {
+        choiceField: "connection_rate_limit_mode_choice",
+        fieldPath:
+          "spec.virtual_server.connection_rate_limit_mode.connection_rate_limit_mode_choice",
+        options: [
+          "spec.virtual_server.connection_rate_limit_mode.per_destination_address",
+          "spec.virtual_server.connection_rate_limit_mode.per_source_address",
+          "spec.virtual_server.connection_rate_limit_mode.per_source_destination_address",
+          "spec.virtual_server.connection_rate_limit_mode.per_virtual_server",
+          "spec.virtual_server.connection_rate_limit_mode.per_virtual_server_destination_address",
+          "spec.virtual_server.connection_rate_limit_mode.per_virtual_server_source_address",
+          "spec.virtual_server.connection_rate_limit_mode.per_virtual_server_source_destination_address",
+        ],
+      },
+      {
+        choiceField: "immediate_action_on_service_down_choice",
+        fieldPath:
+          "spec.virtual_server.immediate_action_on_service_down.immediate_action_on_service_down_choice",
+        options: [
+          "spec.virtual_server.immediate_action_on_service_down.immediate_action_on_service_down_drop",
+          "spec.virtual_server.immediate_action_on_service_down.immediate_action_on_service_down_none",
+          "spec.virtual_server.immediate_action_on_service_down.immediate_action_on_service_down_reset",
+        ],
+      },
+      {
+        choiceField: "nat64_choice",
+        fieldPath: "spec.virtual_server.nat64.nat64_choice",
+        options: [
+          "spec.virtual_server.nat64.nat64_disable",
+          "spec.virtual_server.nat64.nat64_enable",
+        ],
+      },
+      {
+        choiceField: "port_translation_choice",
+        fieldPath: "spec.virtual_server.port_translation.port_translation_choice",
+        options: [
+          "spec.virtual_server.port_translation.port_translation_disable",
+          "spec.virtual_server.port_translation.port_translation_enable",
+        ],
+      },
+      {
+        choiceField: "source_port_choice",
+        fieldPath: "spec.virtual_server.source_port.source_port_choice",
+        options: [
+          "spec.virtual_server.source_port.source_port_change",
+          "spec.virtual_server.source_port.source_port_preserve",
+          "spec.virtual_server.source_port.source_port_preserve_strict",
+        ],
+      },
+      {
+        choiceField: "state_choice",
+        fieldPath: "spec.virtual_server.virtual_server_state.state_choice",
+        options: [
+          "spec.virtual_server.virtual_server_state.state_disabled",
+          "spec.virtual_server.virtual_server_state.state_enabled",
+        ],
+      },
+    ],
+    subscriptionRequirements: [],
+  },
+  {
+    toolName: "f5xc-api-bigip-bigip-http-proxy-create",
+    method: "POST",
+    path: "/api/config/namespaces/{metadata.namespace}/bigip_http_proxys",
+    operation: "create",
+    domain: "bigip",
+    resource: "bigip-http-proxy",
+    summary: "Create BIG-IP HTTP Proxy.",
+    description:
+      "Create BIG-IP HTTP Proxy in a given namespace. If one already exists, it will give an error.",
+    pathParameters: [
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Namespace",
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/bigip_http_proxyCreateRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/bigip_http_proxyCreateResponse",
+    },
+    requiredParams: ["body", "metadata.namespace"],
+    operationId: "ves.io.schema.views.bigip_http_proxy.API.Create",
+    tags: ["Other"],
+    sourceFile: "domains/bigip.json",
+    displayName: null,
+    dangerLevel: null,
+    sideEffects: null,
+    requiredFields: [],
+    confirmationRequired: false,
+    parameterExamples: {},
+    validationRules: {},
+    operationMetadata: null,
+    curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "bigip-http-proxy",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "viewsbigip-http-proxy-create",
+      },
+    ],
+    oneOfGroups: [
+      {
+        choiceField: "choice",
+        fieldPath: "spec.advanced_profile.choice",
+        options: ["spec.advanced_profile.disable", "spec.advanced_profile.enable_default_profile"],
+      },
+      {
+        choiceField: "ddos_mitigation_choice",
+        fieldPath: "spec.ddos_profile.ddos_mitigation_choice",
+        options: [
+          "spec.ddos_profile.disable_ddos_mitigation",
+          "spec.ddos_profile.enable_ddos_mitigation",
+        ],
+      },
+      {
+        choiceField: "lb_algorithm_choice",
+        fieldPath: "spec.lb_algorithm.lb_algorithm_choice",
+        options: ["spec.lb_algorithm.round_robin"],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.origin_pools.pools[].origin_servers.port_choice",
+        options: [
+          "spec.origin_pools.pools[].origin_servers.automatic_port",
+          "spec.origin_pools.pools[].origin_servers.lb_port",
+          "spec.origin_pools.pools[].origin_servers.port",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.origin_pools.pools[].origin_servers.health_checks.health_check[].choice",
+        options: [
+          "spec.origin_pools.pools[].origin_servers.health_checks.health_check[].icmp_health_check",
+          "spec.origin_pools.pools[].origin_servers.health_checks.health_check[].tcp_health_check",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.origin_pools.pools[].origin_servers.origin_servers[].choice",
+        options: [
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].k8s_service",
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].private_ip",
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].public_ip",
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].public_name",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath:
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].k8s_service.network_choice",
+        options: [
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].k8s_service.inside_network",
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].k8s_service.outside_network",
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].k8s_service.vk8s_networks",
+        ],
+      },
+      {
+        choiceField: "service_info",
+        fieldPath:
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].k8s_service.service_info",
+        options: [
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].k8s_service.service_name",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].k8s_service.site_locator.choice",
+        options: [
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].k8s_service.site_locator.site",
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].k8s_service.site_locator.virtual_site",
+        ],
+      },
+      {
+        choiceField: "snat_pool_choice",
+        fieldPath:
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].k8s_service.snat_pool.snat_pool_choice",
+        options: [
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].k8s_service.snat_pool.no_snat_pool",
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].k8s_service.snat_pool.snat_pool",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath:
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].private_ip.network_choice",
+        options: [
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].private_ip.inside_network",
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].private_ip.outside_network",
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].private_ip.segment",
+        ],
+      },
+      {
+        choiceField: "private_ip_choice",
+        fieldPath:
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].private_ip.private_ip_choice",
+        options: ["spec.origin_pools.pools[].origin_servers.origin_servers[].private_ip.ip"],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].private_ip.site_locator.choice",
+        options: [
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].private_ip.site_locator.site",
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].private_ip.site_locator.virtual_site",
+        ],
+      },
+      {
+        choiceField: "snat_pool_choice",
+        fieldPath:
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].private_ip.snat_pool.snat_pool_choice",
+        options: [
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].private_ip.snat_pool.no_snat_pool",
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].private_ip.snat_pool.snat_pool",
+        ],
+      },
+      {
+        choiceField: "public_ip_choice",
+        fieldPath:
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].public_ip.public_ip_choice",
+        options: ["spec.origin_pools.pools[].origin_servers.origin_servers[].public_ip.ip"],
+      },
+      {
+        choiceField: "advertise_choice",
+        fieldPath: "spec.proxy_advertisement.advertise_choice",
+        options: [
+          "spec.proxy_advertisement.advertise_custom",
+          "spec.proxy_advertisement.do_not_advertise",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.proxy_advertisement.advertise_custom.advertise_where[].choice",
+        options: [
+          "spec.proxy_advertisement.advertise_custom.advertise_where[].advertise_on_public",
+          "spec.proxy_advertisement.advertise_custom.advertise_where[].cloud_edge_segment",
+          "spec.proxy_advertisement.advertise_custom.advertise_where[].segment",
+          "spec.proxy_advertisement.advertise_custom.advertise_where[].site",
+          "spec.proxy_advertisement.advertise_custom.advertise_where[].site_segment",
+          "spec.proxy_advertisement.advertise_custom.advertise_where[].virtual_network",
+          "spec.proxy_advertisement.advertise_custom.advertise_where[].virtual_site",
+          "spec.proxy_advertisement.advertise_custom.advertise_where[].virtual_site_segment",
+          "spec.proxy_advertisement.advertise_custom.advertise_where[].virtual_site_with_vip",
+          "spec.proxy_advertisement.advertise_custom.advertise_where[].vk8s_service",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.proxy_advertisement.advertise_custom.advertise_where[].port_choice",
+        options: [
+          "spec.proxy_advertisement.advertise_custom.advertise_where[].port",
+          "spec.proxy_advertisement.advertise_custom.advertise_where[].port_ranges",
+          "spec.proxy_advertisement.advertise_custom.advertise_where[].use_default_port",
+        ],
+      },
+      {
+        choiceField: "v6_vip_choice",
+        fieldPath:
+          "spec.proxy_advertisement.advertise_custom.advertise_where[].virtual_network.v6_vip_choice",
+        options: [
+          "spec.proxy_advertisement.advertise_custom.advertise_where[].virtual_network.default_v6_vip",
+          "spec.proxy_advertisement.advertise_custom.advertise_where[].virtual_network.specific_v6_vip",
+        ],
+      },
+      {
+        choiceField: "vip_choice",
+        fieldPath:
+          "spec.proxy_advertisement.advertise_custom.advertise_where[].virtual_network.vip_choice",
+        options: [
+          "spec.proxy_advertisement.advertise_custom.advertise_where[].virtual_network.default_vip",
+          "spec.proxy_advertisement.advertise_custom.advertise_where[].virtual_network.specific_vip",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.proxy_advertisement.advertise_custom.advertise_where[].vk8s_service.choice",
+        options: [
+          "spec.proxy_advertisement.advertise_custom.advertise_where[].vk8s_service.site",
+          "spec.proxy_advertisement.advertise_custom.advertise_where[].vk8s_service.virtual_site",
+        ],
+      },
+      {
+        choiceField: "loadbalancer_type",
+        fieldPath: "spec.proxy_config.loadbalancer_type",
+        options: [
+          "spec.proxy_config.http",
+          "spec.proxy_config.https",
+          "spec.proxy_config.https_auto_cert",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.proxy_config.http.port_choice",
+        options: ["spec.proxy_config.http.port", "spec.proxy_config.http.port_ranges"],
+      },
+      {
+        choiceField: "default_lb_choice",
+        fieldPath: "spec.proxy_config.https.default_lb_choice",
+        options: [
+          "spec.proxy_config.https.default_loadbalancer",
+          "spec.proxy_config.https.non_default_loadbalancer",
+        ],
+      },
+      {
+        choiceField: "path_normalize_choice",
+        fieldPath: "spec.proxy_config.https.path_normalize_choice",
+        options: [
+          "spec.proxy_config.https.disable_path_normalize",
+          "spec.proxy_config.https.enable_path_normalize",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.proxy_config.https.port_choice",
+        options: ["spec.proxy_config.https.port", "spec.proxy_config.https.port_ranges"],
+      },
+      {
+        choiceField: "server_header_choice",
+        fieldPath: "spec.proxy_config.https.server_header_choice",
+        options: [
+          "spec.proxy_config.https.append_server_name",
+          "spec.proxy_config.https.default_header",
+          "spec.proxy_config.https.pass_through",
+          "spec.proxy_config.https.server_name",
+        ],
+      },
+      {
+        choiceField: "tls_certificates_choice",
+        fieldPath: "spec.proxy_config.https.tls_certificates_choice",
+        options: [
+          "spec.proxy_config.https.tls_cert_params",
+          "spec.proxy_config.https.tls_parameters",
+        ],
+      },
+      {
+        choiceField: "coalescing_choice",
+        fieldPath: "spec.proxy_config.https.coalescing_options.coalescing_choice",
+        options: [
+          "spec.proxy_config.https.coalescing_options.default_coalescing",
+          "spec.proxy_config.https.coalescing_options.strict_coalescing",
+        ],
+      },
+      {
+        choiceField: "http_protocol_choice",
+        fieldPath: "spec.proxy_config.https.http_protocol_options.http_protocol_choice",
+        options: [
+          "spec.proxy_config.https.http_protocol_options.http_protocol_enable_v1_only",
+          "spec.proxy_config.https.http_protocol_options.http_protocol_enable_v1_v2",
+          "spec.proxy_config.https.http_protocol_options.http_protocol_enable_v2_only",
+        ],
+      },
+      {
+        choiceField: "header_transformation_choice",
+        fieldPath:
+          "spec.proxy_config.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.header_transformation_choice",
+        options: [
+          "spec.proxy_config.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.default_header_transformation",
+          "spec.proxy_config.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.legacy_header_transformation",
+          "spec.proxy_config.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.preserve_case_header_transformation",
+          "spec.proxy_config.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.proper_case_header_transformation",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath: "spec.proxy_config.https.tls_cert_params.mtls_choice",
+        options: [
+          "spec.proxy_config.https.tls_cert_params.no_mtls",
+          "spec.proxy_config.https.tls_cert_params.use_mtls",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.proxy_config.https.tls_cert_params.tls_config.choice",
+        options: [
+          "spec.proxy_config.https.tls_cert_params.tls_config.custom_security",
+          "spec.proxy_config.https.tls_cert_params.tls_config.default_security",
+          "spec.proxy_config.https.tls_cert_params.tls_config.low_security",
+          "spec.proxy_config.https.tls_cert_params.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath: "spec.proxy_config.https.tls_cert_params.use_mtls.crl_choice",
+        options: [
+          "spec.proxy_config.https.tls_cert_params.use_mtls.crl",
+          "spec.proxy_config.https.tls_cert_params.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath: "spec.proxy_config.https.tls_cert_params.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.proxy_config.https.tls_cert_params.use_mtls.trusted_ca",
+          "spec.proxy_config.https.tls_cert_params.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath: "spec.proxy_config.https.tls_cert_params.use_mtls.xfcc_header",
+        options: [
+          "spec.proxy_config.https.tls_cert_params.use_mtls.xfcc_disabled",
+          "spec.proxy_config.https.tls_cert_params.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath: "spec.proxy_config.https.tls_parameters.mtls_choice",
+        options: [
+          "spec.proxy_config.https.tls_parameters.no_mtls",
+          "spec.proxy_config.https.tls_parameters.use_mtls",
+        ],
+      },
+      {
+        choiceField: "ocsp_stapling_choice",
+        fieldPath: "spec.proxy_config.https.tls_parameters.tls_certificates[].ocsp_stapling_choice",
+        options: [
+          "spec.proxy_config.https.tls_parameters.tls_certificates[].custom_hash_algorithms",
+          "spec.proxy_config.https.tls_parameters.tls_certificates[].disable_ocsp_stapling",
+          "spec.proxy_config.https.tls_parameters.tls_certificates[].use_system_defaults",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.proxy_config.https.tls_parameters.tls_certificates[].private_key.secret_info_oneof",
+        options: [
+          "spec.proxy_config.https.tls_parameters.tls_certificates[].private_key.blindfold_secret_info",
+          "spec.proxy_config.https.tls_parameters.tls_certificates[].private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.proxy_config.https.tls_parameters.tls_config.choice",
+        options: [
+          "spec.proxy_config.https.tls_parameters.tls_config.custom_security",
+          "spec.proxy_config.https.tls_parameters.tls_config.default_security",
+          "spec.proxy_config.https.tls_parameters.tls_config.low_security",
+          "spec.proxy_config.https.tls_parameters.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath: "spec.proxy_config.https.tls_parameters.use_mtls.crl_choice",
+        options: [
+          "spec.proxy_config.https.tls_parameters.use_mtls.crl",
+          "spec.proxy_config.https.tls_parameters.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath: "spec.proxy_config.https.tls_parameters.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.proxy_config.https.tls_parameters.use_mtls.trusted_ca",
+          "spec.proxy_config.https.tls_parameters.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath: "spec.proxy_config.https.tls_parameters.use_mtls.xfcc_header",
+        options: [
+          "spec.proxy_config.https.tls_parameters.use_mtls.xfcc_disabled",
+          "spec.proxy_config.https.tls_parameters.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "default_lb_choice",
+        fieldPath: "spec.proxy_config.https_auto_cert.default_lb_choice",
+        options: [
+          "spec.proxy_config.https_auto_cert.default_loadbalancer",
+          "spec.proxy_config.https_auto_cert.non_default_loadbalancer",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath: "spec.proxy_config.https_auto_cert.mtls_choice",
+        options: [
+          "spec.proxy_config.https_auto_cert.no_mtls",
+          "spec.proxy_config.https_auto_cert.use_mtls",
+        ],
+      },
+      {
+        choiceField: "path_normalize_choice",
+        fieldPath: "spec.proxy_config.https_auto_cert.path_normalize_choice",
+        options: [
+          "spec.proxy_config.https_auto_cert.disable_path_normalize",
+          "spec.proxy_config.https_auto_cert.enable_path_normalize",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.proxy_config.https_auto_cert.port_choice",
+        options: [
+          "spec.proxy_config.https_auto_cert.port",
+          "spec.proxy_config.https_auto_cert.port_ranges",
+        ],
+      },
+      {
+        choiceField: "server_header_choice",
+        fieldPath: "spec.proxy_config.https_auto_cert.server_header_choice",
+        options: [
+          "spec.proxy_config.https_auto_cert.append_server_name",
+          "spec.proxy_config.https_auto_cert.default_header",
+          "spec.proxy_config.https_auto_cert.pass_through",
+          "spec.proxy_config.https_auto_cert.server_name",
+        ],
+      },
+      {
+        choiceField: "coalescing_choice",
+        fieldPath: "spec.proxy_config.https_auto_cert.coalescing_options.coalescing_choice",
+        options: [
+          "spec.proxy_config.https_auto_cert.coalescing_options.default_coalescing",
+          "spec.proxy_config.https_auto_cert.coalescing_options.strict_coalescing",
+        ],
+      },
+      {
+        choiceField: "http_protocol_choice",
+        fieldPath: "spec.proxy_config.https_auto_cert.http_protocol_options.http_protocol_choice",
+        options: [
+          "spec.proxy_config.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only",
+          "spec.proxy_config.https_auto_cert.http_protocol_options.http_protocol_enable_v1_v2",
+          "spec.proxy_config.https_auto_cert.http_protocol_options.http_protocol_enable_v2_only",
+        ],
+      },
+      {
+        choiceField: "header_transformation_choice",
+        fieldPath:
+          "spec.proxy_config.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.header_transformation_choice",
+        options: [
+          "spec.proxy_config.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.default_header_transformation",
+          "spec.proxy_config.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.legacy_header_transformation",
+          "spec.proxy_config.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.preserve_case_header_transformation",
+          "spec.proxy_config.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.proper_case_header_transformation",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.proxy_config.https_auto_cert.tls_config.choice",
+        options: [
+          "spec.proxy_config.https_auto_cert.tls_config.custom_security",
+          "spec.proxy_config.https_auto_cert.tls_config.default_security",
+          "spec.proxy_config.https_auto_cert.tls_config.low_security",
+          "spec.proxy_config.https_auto_cert.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath: "spec.proxy_config.https_auto_cert.use_mtls.crl_choice",
+        options: [
+          "spec.proxy_config.https_auto_cert.use_mtls.crl",
+          "spec.proxy_config.https_auto_cert.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath: "spec.proxy_config.https_auto_cert.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.proxy_config.https_auto_cert.use_mtls.trusted_ca",
+          "spec.proxy_config.https_auto_cert.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath: "spec.proxy_config.https_auto_cert.use_mtls.xfcc_header",
+        options: [
+          "spec.proxy_config.https_auto_cert.use_mtls.xfcc_disabled",
+          "spec.proxy_config.https_auto_cert.use_mtls.xfcc_options",
+        ],
+      },
+    ],
+    subscriptionRequirements: [],
+  },
+  {
+    toolName: "f5xc-api-bigip-bigip-http-proxy-delete",
+    method: "DELETE",
+    path: "/api/config/namespaces/{namespace}/bigip_http_proxys/{name}",
+    operation: "delete",
+    domain: "bigip",
+    resource: "bigip-http-proxy",
+    summary: "DELETE Configure BIG-IP HTTP Proxy.",
+    description: "DELETE the specified bigip_http_proxy.",
+    pathParameters: [
+      {
+        description: "Name\nName of the configuration object.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Name",
+      },
+      {
+        description: "Namespace\nNamespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Namespace",
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/bigip_http_proxyDeleteRequest",
+    },
+    responseSchema: {},
+    requiredParams: ["body", "name", "namespace"],
+    operationId: "ves.io.schema.views.bigip_http_proxy.API.Delete",
+    tags: ["Other"],
+    sourceFile: "domains/bigip.json",
+    displayName: null,
+    dangerLevel: null,
+    sideEffects: null,
+    requiredFields: [],
+    confirmationRequired: false,
+    parameterExamples: {},
+    validationRules: {},
+    operationMetadata: null,
+    curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "bigip-http-proxy",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
+  },
+  {
+    toolName: "f5xc-api-bigip-bigip-http-proxy-get",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/bigip_http_proxys/{name}",
+    operation: "get",
+    domain: "bigip",
+    resource: "bigip-http-proxy",
+    summary: "GET BIG-IP HTTP Proxy.",
+    description: "GET BIG-IP HTTP Proxy details.",
+    pathParameters: [
+      {
+        description: "Name\nThe name of the configuration object to be fetched.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Name",
+      },
+      {
+        description: "Namespace\nThe namespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Namespace",
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "The format in which the configuration object is to be fetched. This could be for example\n - in GetSpec form for the contents of object\n - in CreateRequest form to create a new similar object\n - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object.",
+        in: "query",
+        name: "response_format",
+        required: false,
+        schema: {
+          default: "GET_RSP_FORMAT_DEFAULT",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_FOR_CREATE",
+            "GET_RSP_FORMAT_FOR_REPLACE",
+            "GET_RSP_FORMAT_STATUS",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          type: "string",
+        },
+        "x-displayname": "Broken Referred Objects.",
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/bigip_http_proxyGetResponse",
+    },
+    requiredParams: ["name", "namespace"],
+    operationId: "ves.io.schema.views.bigip_http_proxy.API.Get",
+    tags: ["Other"],
+    sourceFile: "domains/bigip.json",
+    displayName: null,
+    dangerLevel: null,
+    sideEffects: null,
+    requiredFields: [],
+    confirmationRequired: false,
+    parameterExamples: {},
+    validationRules: {},
+    operationMetadata: null,
+    curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
+  },
+  {
+    toolName: "f5xc-api-bigip-bigip-http-proxy-list",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/bigip_http_proxys",
+    operation: "list",
+    domain: "bigip",
+    resource: "bigip-http-proxy",
+    summary: "List Configure BIG-IP HTTP Proxy.",
+    description: "List the set of bigip_http_proxy in a namespace.",
+    pathParameters: [
+      {
+        description: "Namespace\nNamespace to scope the listing of bigip_http_proxy.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Namespace",
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "A LabelSelectorType expression that every item in list response will satisfy.",
+        in: "query",
+        name: "label_filter",
+        required: false,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Label Filter.",
+      },
+      {
+        description: 'X-example: ""\nExtra fields to return along with summary fields.',
+        in: "query",
+        name: "report_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+        "x-displayname": "Report Fields.",
+      },
+      {
+        description: 'X-example: ""\nExtra status fields to return along with summary fields.',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+        "x-displayname": "Report Status Fields.",
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/bigip_http_proxyListResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.views.bigip_http_proxy.API.List",
+    tags: ["Other"],
+    sourceFile: "domains/bigip.json",
+    displayName: null,
+    dangerLevel: null,
+    sideEffects: null,
+    requiredFields: [],
+    confirmationRequired: false,
+    parameterExamples: {},
+    validationRules: {},
+    operationMetadata: null,
+    curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
+  },
+  {
+    toolName: "f5xc-api-bigip-bigip-http-proxy-update",
+    method: "PUT",
+    path: "/api/config/namespaces/{metadata.namespace}/bigip_http_proxys/{metadata.name}",
+    operation: "update",
+    domain: "bigip",
+    resource: "bigip-http-proxy",
+    summary: "Replace BIG-IP HTTP Proxy.",
+    description: "Replace BIG-IP HTTP Proxy in a given namespace.",
+    pathParameters: [
+      {
+        description: "Name\nThe configuration object to be replaced will be looked up by name.",
+        in: "path",
+        name: "metadata.name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Name",
+      },
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Namespace",
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/bigip_http_proxyReplaceRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/bigip_http_proxyReplaceResponse",
+    },
+    requiredParams: ["body", "metadata.name", "metadata.namespace"],
+    operationId: "ves.io.schema.views.bigip_http_proxy.API.Replace",
+    tags: ["Other"],
+    sourceFile: "domains/bigip.json",
+    displayName: null,
+    dangerLevel: null,
+    sideEffects: null,
+    requiredFields: [],
+    confirmationRequired: false,
+    parameterExamples: {},
+    validationRules: {},
+    operationMetadata: null,
+    curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "bigip-http-proxy",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "viewsbigip-http-proxy-replace",
+      },
+    ],
+    oneOfGroups: [
+      {
+        choiceField: "choice",
+        fieldPath: "spec.advanced_profile.choice",
+        options: ["spec.advanced_profile.disable", "spec.advanced_profile.enable_default_profile"],
+      },
+      {
+        choiceField: "ddos_mitigation_choice",
+        fieldPath: "spec.ddos_profile.ddos_mitigation_choice",
+        options: [
+          "spec.ddos_profile.disable_ddos_mitigation",
+          "spec.ddos_profile.enable_ddos_mitigation",
+        ],
+      },
+      {
+        choiceField: "lb_algorithm_choice",
+        fieldPath: "spec.lb_algorithm.lb_algorithm_choice",
+        options: ["spec.lb_algorithm.round_robin"],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.origin_pools.pools[].origin_servers.port_choice",
+        options: [
+          "spec.origin_pools.pools[].origin_servers.automatic_port",
+          "spec.origin_pools.pools[].origin_servers.lb_port",
+          "spec.origin_pools.pools[].origin_servers.port",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.origin_pools.pools[].origin_servers.health_checks.health_check[].choice",
+        options: [
+          "spec.origin_pools.pools[].origin_servers.health_checks.health_check[].icmp_health_check",
+          "spec.origin_pools.pools[].origin_servers.health_checks.health_check[].tcp_health_check",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.origin_pools.pools[].origin_servers.origin_servers[].choice",
+        options: [
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].k8s_service",
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].private_ip",
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].public_ip",
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].public_name",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath:
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].k8s_service.network_choice",
+        options: [
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].k8s_service.inside_network",
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].k8s_service.outside_network",
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].k8s_service.vk8s_networks",
+        ],
+      },
+      {
+        choiceField: "service_info",
+        fieldPath:
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].k8s_service.service_info",
+        options: [
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].k8s_service.service_name",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].k8s_service.site_locator.choice",
+        options: [
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].k8s_service.site_locator.site",
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].k8s_service.site_locator.virtual_site",
+        ],
+      },
+      {
+        choiceField: "snat_pool_choice",
+        fieldPath:
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].k8s_service.snat_pool.snat_pool_choice",
+        options: [
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].k8s_service.snat_pool.no_snat_pool",
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].k8s_service.snat_pool.snat_pool",
+        ],
+      },
+      {
+        choiceField: "network_choice",
+        fieldPath:
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].private_ip.network_choice",
+        options: [
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].private_ip.inside_network",
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].private_ip.outside_network",
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].private_ip.segment",
+        ],
+      },
+      {
+        choiceField: "private_ip_choice",
+        fieldPath:
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].private_ip.private_ip_choice",
+        options: ["spec.origin_pools.pools[].origin_servers.origin_servers[].private_ip.ip"],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].private_ip.site_locator.choice",
+        options: [
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].private_ip.site_locator.site",
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].private_ip.site_locator.virtual_site",
+        ],
+      },
+      {
+        choiceField: "snat_pool_choice",
+        fieldPath:
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].private_ip.snat_pool.snat_pool_choice",
+        options: [
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].private_ip.snat_pool.no_snat_pool",
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].private_ip.snat_pool.snat_pool",
+        ],
+      },
+      {
+        choiceField: "public_ip_choice",
+        fieldPath:
+          "spec.origin_pools.pools[].origin_servers.origin_servers[].public_ip.public_ip_choice",
+        options: ["spec.origin_pools.pools[].origin_servers.origin_servers[].public_ip.ip"],
+      },
+      {
+        choiceField: "advertise_choice",
+        fieldPath: "spec.proxy_advertisement.advertise_choice",
+        options: [
+          "spec.proxy_advertisement.advertise_custom",
+          "spec.proxy_advertisement.do_not_advertise",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.proxy_advertisement.advertise_custom.advertise_where[].choice",
+        options: [
+          "spec.proxy_advertisement.advertise_custom.advertise_where[].advertise_on_public",
+          "spec.proxy_advertisement.advertise_custom.advertise_where[].cloud_edge_segment",
+          "spec.proxy_advertisement.advertise_custom.advertise_where[].segment",
+          "spec.proxy_advertisement.advertise_custom.advertise_where[].site",
+          "spec.proxy_advertisement.advertise_custom.advertise_where[].site_segment",
+          "spec.proxy_advertisement.advertise_custom.advertise_where[].virtual_network",
+          "spec.proxy_advertisement.advertise_custom.advertise_where[].virtual_site",
+          "spec.proxy_advertisement.advertise_custom.advertise_where[].virtual_site_segment",
+          "spec.proxy_advertisement.advertise_custom.advertise_where[].virtual_site_with_vip",
+          "spec.proxy_advertisement.advertise_custom.advertise_where[].vk8s_service",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.proxy_advertisement.advertise_custom.advertise_where[].port_choice",
+        options: [
+          "spec.proxy_advertisement.advertise_custom.advertise_where[].port",
+          "spec.proxy_advertisement.advertise_custom.advertise_where[].port_ranges",
+          "spec.proxy_advertisement.advertise_custom.advertise_where[].use_default_port",
+        ],
+      },
+      {
+        choiceField: "v6_vip_choice",
+        fieldPath:
+          "spec.proxy_advertisement.advertise_custom.advertise_where[].virtual_network.v6_vip_choice",
+        options: [
+          "spec.proxy_advertisement.advertise_custom.advertise_where[].virtual_network.default_v6_vip",
+          "spec.proxy_advertisement.advertise_custom.advertise_where[].virtual_network.specific_v6_vip",
+        ],
+      },
+      {
+        choiceField: "vip_choice",
+        fieldPath:
+          "spec.proxy_advertisement.advertise_custom.advertise_where[].virtual_network.vip_choice",
+        options: [
+          "spec.proxy_advertisement.advertise_custom.advertise_where[].virtual_network.default_vip",
+          "spec.proxy_advertisement.advertise_custom.advertise_where[].virtual_network.specific_vip",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath:
+          "spec.proxy_advertisement.advertise_custom.advertise_where[].vk8s_service.choice",
+        options: [
+          "spec.proxy_advertisement.advertise_custom.advertise_where[].vk8s_service.site",
+          "spec.proxy_advertisement.advertise_custom.advertise_where[].vk8s_service.virtual_site",
+        ],
+      },
+      {
+        choiceField: "loadbalancer_type",
+        fieldPath: "spec.proxy_config.loadbalancer_type",
+        options: [
+          "spec.proxy_config.http",
+          "spec.proxy_config.https",
+          "spec.proxy_config.https_auto_cert",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.proxy_config.http.port_choice",
+        options: ["spec.proxy_config.http.port", "spec.proxy_config.http.port_ranges"],
+      },
+      {
+        choiceField: "default_lb_choice",
+        fieldPath: "spec.proxy_config.https.default_lb_choice",
+        options: [
+          "spec.proxy_config.https.default_loadbalancer",
+          "spec.proxy_config.https.non_default_loadbalancer",
+        ],
+      },
+      {
+        choiceField: "path_normalize_choice",
+        fieldPath: "spec.proxy_config.https.path_normalize_choice",
+        options: [
+          "spec.proxy_config.https.disable_path_normalize",
+          "spec.proxy_config.https.enable_path_normalize",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.proxy_config.https.port_choice",
+        options: ["spec.proxy_config.https.port", "spec.proxy_config.https.port_ranges"],
+      },
+      {
+        choiceField: "server_header_choice",
+        fieldPath: "spec.proxy_config.https.server_header_choice",
+        options: [
+          "spec.proxy_config.https.append_server_name",
+          "spec.proxy_config.https.default_header",
+          "spec.proxy_config.https.pass_through",
+          "spec.proxy_config.https.server_name",
+        ],
+      },
+      {
+        choiceField: "tls_certificates_choice",
+        fieldPath: "spec.proxy_config.https.tls_certificates_choice",
+        options: [
+          "spec.proxy_config.https.tls_cert_params",
+          "spec.proxy_config.https.tls_parameters",
+        ],
+      },
+      {
+        choiceField: "coalescing_choice",
+        fieldPath: "spec.proxy_config.https.coalescing_options.coalescing_choice",
+        options: [
+          "spec.proxy_config.https.coalescing_options.default_coalescing",
+          "spec.proxy_config.https.coalescing_options.strict_coalescing",
+        ],
+      },
+      {
+        choiceField: "http_protocol_choice",
+        fieldPath: "spec.proxy_config.https.http_protocol_options.http_protocol_choice",
+        options: [
+          "spec.proxy_config.https.http_protocol_options.http_protocol_enable_v1_only",
+          "spec.proxy_config.https.http_protocol_options.http_protocol_enable_v1_v2",
+          "spec.proxy_config.https.http_protocol_options.http_protocol_enable_v2_only",
+        ],
+      },
+      {
+        choiceField: "header_transformation_choice",
+        fieldPath:
+          "spec.proxy_config.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.header_transformation_choice",
+        options: [
+          "spec.proxy_config.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.default_header_transformation",
+          "spec.proxy_config.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.legacy_header_transformation",
+          "spec.proxy_config.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.preserve_case_header_transformation",
+          "spec.proxy_config.https.http_protocol_options.http_protocol_enable_v1_only.header_transformation.proper_case_header_transformation",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath: "spec.proxy_config.https.tls_cert_params.mtls_choice",
+        options: [
+          "spec.proxy_config.https.tls_cert_params.no_mtls",
+          "spec.proxy_config.https.tls_cert_params.use_mtls",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.proxy_config.https.tls_cert_params.tls_config.choice",
+        options: [
+          "spec.proxy_config.https.tls_cert_params.tls_config.custom_security",
+          "spec.proxy_config.https.tls_cert_params.tls_config.default_security",
+          "spec.proxy_config.https.tls_cert_params.tls_config.low_security",
+          "spec.proxy_config.https.tls_cert_params.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath: "spec.proxy_config.https.tls_cert_params.use_mtls.crl_choice",
+        options: [
+          "spec.proxy_config.https.tls_cert_params.use_mtls.crl",
+          "spec.proxy_config.https.tls_cert_params.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath: "spec.proxy_config.https.tls_cert_params.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.proxy_config.https.tls_cert_params.use_mtls.trusted_ca",
+          "spec.proxy_config.https.tls_cert_params.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath: "spec.proxy_config.https.tls_cert_params.use_mtls.xfcc_header",
+        options: [
+          "spec.proxy_config.https.tls_cert_params.use_mtls.xfcc_disabled",
+          "spec.proxy_config.https.tls_cert_params.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath: "spec.proxy_config.https.tls_parameters.mtls_choice",
+        options: [
+          "spec.proxy_config.https.tls_parameters.no_mtls",
+          "spec.proxy_config.https.tls_parameters.use_mtls",
+        ],
+      },
+      {
+        choiceField: "ocsp_stapling_choice",
+        fieldPath: "spec.proxy_config.https.tls_parameters.tls_certificates[].ocsp_stapling_choice",
+        options: [
+          "spec.proxy_config.https.tls_parameters.tls_certificates[].custom_hash_algorithms",
+          "spec.proxy_config.https.tls_parameters.tls_certificates[].disable_ocsp_stapling",
+          "spec.proxy_config.https.tls_parameters.tls_certificates[].use_system_defaults",
+        ],
+      },
+      {
+        choiceField: "secret_info_oneof",
+        fieldPath:
+          "spec.proxy_config.https.tls_parameters.tls_certificates[].private_key.secret_info_oneof",
+        options: [
+          "spec.proxy_config.https.tls_parameters.tls_certificates[].private_key.blindfold_secret_info",
+          "spec.proxy_config.https.tls_parameters.tls_certificates[].private_key.clear_secret_info",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.proxy_config.https.tls_parameters.tls_config.choice",
+        options: [
+          "spec.proxy_config.https.tls_parameters.tls_config.custom_security",
+          "spec.proxy_config.https.tls_parameters.tls_config.default_security",
+          "spec.proxy_config.https.tls_parameters.tls_config.low_security",
+          "spec.proxy_config.https.tls_parameters.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath: "spec.proxy_config.https.tls_parameters.use_mtls.crl_choice",
+        options: [
+          "spec.proxy_config.https.tls_parameters.use_mtls.crl",
+          "spec.proxy_config.https.tls_parameters.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath: "spec.proxy_config.https.tls_parameters.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.proxy_config.https.tls_parameters.use_mtls.trusted_ca",
+          "spec.proxy_config.https.tls_parameters.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath: "spec.proxy_config.https.tls_parameters.use_mtls.xfcc_header",
+        options: [
+          "spec.proxy_config.https.tls_parameters.use_mtls.xfcc_disabled",
+          "spec.proxy_config.https.tls_parameters.use_mtls.xfcc_options",
+        ],
+      },
+      {
+        choiceField: "default_lb_choice",
+        fieldPath: "spec.proxy_config.https_auto_cert.default_lb_choice",
+        options: [
+          "spec.proxy_config.https_auto_cert.default_loadbalancer",
+          "spec.proxy_config.https_auto_cert.non_default_loadbalancer",
+        ],
+      },
+      {
+        choiceField: "mtls_choice",
+        fieldPath: "spec.proxy_config.https_auto_cert.mtls_choice",
+        options: [
+          "spec.proxy_config.https_auto_cert.no_mtls",
+          "spec.proxy_config.https_auto_cert.use_mtls",
+        ],
+      },
+      {
+        choiceField: "path_normalize_choice",
+        fieldPath: "spec.proxy_config.https_auto_cert.path_normalize_choice",
+        options: [
+          "spec.proxy_config.https_auto_cert.disable_path_normalize",
+          "spec.proxy_config.https_auto_cert.enable_path_normalize",
+        ],
+      },
+      {
+        choiceField: "port_choice",
+        fieldPath: "spec.proxy_config.https_auto_cert.port_choice",
+        options: [
+          "spec.proxy_config.https_auto_cert.port",
+          "spec.proxy_config.https_auto_cert.port_ranges",
+        ],
+      },
+      {
+        choiceField: "server_header_choice",
+        fieldPath: "spec.proxy_config.https_auto_cert.server_header_choice",
+        options: [
+          "spec.proxy_config.https_auto_cert.append_server_name",
+          "spec.proxy_config.https_auto_cert.default_header",
+          "spec.proxy_config.https_auto_cert.pass_through",
+          "spec.proxy_config.https_auto_cert.server_name",
+        ],
+      },
+      {
+        choiceField: "coalescing_choice",
+        fieldPath: "spec.proxy_config.https_auto_cert.coalescing_options.coalescing_choice",
+        options: [
+          "spec.proxy_config.https_auto_cert.coalescing_options.default_coalescing",
+          "spec.proxy_config.https_auto_cert.coalescing_options.strict_coalescing",
+        ],
+      },
+      {
+        choiceField: "http_protocol_choice",
+        fieldPath: "spec.proxy_config.https_auto_cert.http_protocol_options.http_protocol_choice",
+        options: [
+          "spec.proxy_config.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only",
+          "spec.proxy_config.https_auto_cert.http_protocol_options.http_protocol_enable_v1_v2",
+          "spec.proxy_config.https_auto_cert.http_protocol_options.http_protocol_enable_v2_only",
+        ],
+      },
+      {
+        choiceField: "header_transformation_choice",
+        fieldPath:
+          "spec.proxy_config.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.header_transformation_choice",
+        options: [
+          "spec.proxy_config.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.default_header_transformation",
+          "spec.proxy_config.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.legacy_header_transformation",
+          "spec.proxy_config.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.preserve_case_header_transformation",
+          "spec.proxy_config.https_auto_cert.http_protocol_options.http_protocol_enable_v1_only.header_transformation.proper_case_header_transformation",
+        ],
+      },
+      {
+        choiceField: "choice",
+        fieldPath: "spec.proxy_config.https_auto_cert.tls_config.choice",
+        options: [
+          "spec.proxy_config.https_auto_cert.tls_config.custom_security",
+          "spec.proxy_config.https_auto_cert.tls_config.default_security",
+          "spec.proxy_config.https_auto_cert.tls_config.low_security",
+          "spec.proxy_config.https_auto_cert.tls_config.medium_security",
+        ],
+      },
+      {
+        choiceField: "crl_choice",
+        fieldPath: "spec.proxy_config.https_auto_cert.use_mtls.crl_choice",
+        options: [
+          "spec.proxy_config.https_auto_cert.use_mtls.crl",
+          "spec.proxy_config.https_auto_cert.use_mtls.no_crl",
+        ],
+      },
+      {
+        choiceField: "trusted_ca_choice",
+        fieldPath: "spec.proxy_config.https_auto_cert.use_mtls.trusted_ca_choice",
+        options: [
+          "spec.proxy_config.https_auto_cert.use_mtls.trusted_ca",
+          "spec.proxy_config.https_auto_cert.use_mtls.trusted_ca_url",
+        ],
+      },
+      {
+        choiceField: "xfcc_header",
+        fieldPath: "spec.proxy_config.https_auto_cert.use_mtls.xfcc_header",
+        options: [
+          "spec.proxy_config.https_auto_cert.use_mtls.xfcc_disabled",
+          "spec.proxy_config.https_auto_cert.use_mtls.xfcc_options",
+        ],
+      },
+    ],
+    subscriptionRequirements: [],
+  },
+  {
     toolName: "f5xc-api-bigip-bigip-irule-create",
     method: "POST",
     path: "/api/bigipconnector/namespaces/{metadata.namespace}/bigip_irules",

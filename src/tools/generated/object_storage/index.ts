@@ -187,6 +187,96 @@ export const object_storageTools: ParsedOperation[] = [
     subscriptionRequirements: [],
   },
   {
+    toolName: "f5xc-api-objectstorage-mobile-sdk-self-serve-list",
+    method: "GET",
+    path: "/api/object_store/namespaces/{namespace}/stored_objects/mobile-sdk-self-serve",
+    operation: "list",
+    domain: "object_storage",
+    resource: "mobile-sdk-self-serve",
+    summary: "GET List Of Mobile SDKs self serve.",
+    description:
+      "ListMobileSDKs is an API to list all mobile SDKs available for download Bot advanced Self serve.",
+    pathParameters: [
+      {
+        description: "Namespace\nx-required\nNamespace of the stored_object.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Namespace",
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "Optional query parameter. If passed, returns only latest version of the objects.",
+        in: "query",
+        name: "latest_version_only",
+        required: false,
+        schema: {
+          format: "boolean",
+          type: "boolean",
+        },
+        "x-displayname": "Latest Versions Only.",
+      },
+      {
+        description: "Optional query parameter. Name of the stored_object.",
+        in: "query",
+        name: "name",
+        required: false,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Name",
+      },
+      {
+        description: "Optional query parameter. Type of the stored_object.",
+        in: "query",
+        name: "object_type",
+        required: false,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Object Type.",
+      },
+      {
+        description:
+          "Optional query parameter. The type of search query needs to be performed. Could be EXACT_MATCH or PREFIX_MATCH.\nEXACT_MATCH returns the objects with exact match on the name filed, while PREFIX_MATCH returns the list of object matching the 'name' prefix. Default is EXACT_MATCH.\n\n- EXACT_MATCH: EXACT_MATCH\n\nReturns list of objects with exact match on the name filed.\n- PREFIX_MATCH: PREFIX_MATCH\n\nReturns the list of object matching the 'name' prefix.",
+        in: "query",
+        name: "query_type",
+        required: false,
+        schema: {
+          default: "EXACT_MATCH",
+          enum: ["EXACT_MATCH", "PREFIX_MATCH"],
+          type: "string",
+        },
+        "x-displayname": "PREFIX MATCH.",
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/stored_objectListObjectsResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.stored_object.MobileSdkSelfServeCustomAPI.ListMobileSDKSelfServe",
+    tags: ["Other"],
+    sourceFile: "domains/object_storage.json",
+    displayName: null,
+    dangerLevel: null,
+    sideEffects: null,
+    requiredFields: [],
+    confirmationRequired: false,
+    parameterExamples: {},
+    validationRules: {},
+    operationMetadata: null,
+    curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
+  },
+  {
     toolName: "f5xc-api-objectstorage-name-delete",
     method: "DELETE",
     path: "/api/object_store/namespaces/{namespace}/stored_objects/{object_type}/{name}/{version}",
